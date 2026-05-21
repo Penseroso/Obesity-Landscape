@@ -1,0 +1,61 @@
+{
+  "company": "Structure Therapeutics",
+  "sourceUrl": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-phase-2",
+  "checkedAt": "2026-05-21",
+  "assets": [
+    {
+      "id": "structure-aleniglipron-obesity",
+      "company": "Structure Therapeutics",
+      "assetName": "Aleniglipron",
+      "codeName": "GSBR-1290",
+      "targetClass": "Oral small-molecule GLP-1 receptor agonist",
+      "mechanism": "Orally available biased small-molecule GLP-1 receptor agonism",
+      "indication": ["Obesity"],
+      "route": ["Oral"],
+      "dosageForm": "Tablet",
+      "dosingInterval": "Daily",
+      "stage": "Phase 2",
+      "stageRaw": "Phase 2 ACCESS/ACCESS II data; Phase 3 initiation planned for 2H 2026/Q3 2026",
+      "differentiator": "Once-daily oral nonpeptide small-molecule GLP-1RA",
+      "description": "Oral GLP-1 receptor agonist in development for obesity and overweight with weight-related comorbidity.",
+      "sourceType": "Press release",
+      "sourceUrl": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-phase-2",
+      "lastChecked": "2026-05-21",
+      "confidence": "High",
+      "status": "Active",
+      "qaStatus": "Needs review",
+      "notes": "Company March 16, 2026 release reports Phase 2 ACCESS II data and says Phase 3 initiation remains on track for 2H 2026; normalized to Phase 2 because Phase 3 had not yet started."
+    },
+    {
+      "id": "structure-accg2671-obesity",
+      "company": "Structure Therapeutics",
+      "assetName": "ACCG-2671",
+      "codeName": "ACCG-2671",
+      "targetClass": "Other incretin-related therapy",
+      "mechanism": "Oral small-molecule amylin receptor agonism",
+      "indication": ["Obesity"],
+      "route": ["Oral"],
+      "dosageForm": "Tablet",
+      "dosingInterval": "Unknown",
+      "stage": "Phase 1",
+      "stageRaw": "Initial data from Phase 1 study expected; ADA 2026 combination treatment presentation listed",
+      "differentiator": "Oral small-molecule amylin agonist with potential combination use with aleniglipron",
+      "description": "Next-generation oral amylin receptor agonist in Structure's metabolic franchise.",
+      "sourceType": "Press release",
+      "sourceUrl": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-first-quarter-2026-financial",
+      "lastChecked": "2026-05-21",
+      "confidence": "Medium",
+      "status": "Active",
+      "qaStatus": "Needs review",
+      "notes": "Included as incretin-adjacent obesity pipeline candidate. Source lists amylin receptor agonists ACCG-2671 and ACCG-3535 and an ADA 2026 presentation for aleniglipron plus ACCG-2671 combination in obese NHPs; exact clinical stage should be QA-checked."
+    }
+  ],
+  "extractionNotes": [
+    "Small 01 screening pass limited to Structure Therapeutics.",
+    "Aleniglipron has strong company source support; ACCG-2671 is included as an adjacent obesity/amylin pipeline candidate and requires QA."
+  ],
+  "unresolvedQuestions": [
+    "Confirm whether ACCG-2671 should remain in GLP-1 tracker scope as a standalone amylin agonist or only as a combination-relevant asset.",
+    "Confirm whether aleniglipron Type 2 diabetes should be represented as a separate candidate row once active stage is verified."
+  ]
+}

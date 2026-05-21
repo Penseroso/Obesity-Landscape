@@ -360,7 +360,6 @@ export function QaReviewClient({ candidates }: { candidates: CandidateFileRecord
                       "Stage",
                       "Stage Raw",
                       "Confidence",
-                      "QA",
                       "Source",
                       "Notes",
                     ].map((header) => (
@@ -419,9 +418,6 @@ export function QaReviewClient({ candidates }: { candidates: CandidateFileRecord
                           {displayValue(asset.confidence)}
                         </td>
                         <td className="px-4 py-3 text-muted-foreground">
-                          {displayValue(asset.qaStatus)}
-                        </td>
-                        <td className="px-4 py-3 text-muted-foreground">
                           {asset.sourceUrl ? (
                             <a
                               href={asset.sourceUrl}
@@ -443,7 +439,7 @@ export function QaReviewClient({ candidates }: { candidates: CandidateFileRecord
                   ) : (
                     <tr>
                       <td
-                        colSpan={14}
+                        colSpan={13}
                         className="px-4 py-6 text-center text-muted-foreground"
                       >
                         No asset candidates in this file.
