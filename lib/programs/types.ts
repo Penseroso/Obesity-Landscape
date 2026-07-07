@@ -1,3 +1,5 @@
+import type { developmentStages, developmentStatuses } from "./constants";
+
 export type Company = {
   id: string;
   name: string;
@@ -29,23 +31,9 @@ export type AdministrationProfile = {
   dosingInterval: string | null;
 };
 
-export type DevelopmentStage =
-  | "Discovery"
-  | "Preclinical"
-  | "IND-enabling"
-  | "Phase 1"
-  | "Phase 2"
-  | "Phase 3"
-  | "Filed"
-  | "Approved"
-  | "Unknown";
+export type DevelopmentStage = (typeof developmentStages)[number];
 
-export type DevelopmentStatus =
-  | "Planned"
-  | "Active"
-  | "On hold"
-  | "Discontinued"
-  | "Unknown";
+export type DevelopmentStatus = (typeof developmentStatuses)[number];
 
 export type DevelopmentProfile = {
   stage: DevelopmentStage;
