@@ -83,6 +83,21 @@ Prefer:
 An official topline release confirms **what the company announced**, but must
 **not** be treated as independent validation.
 
+## Stage evidence rules
+
+Explicit evidence required to assign each enumerated stage:
+
+- **Discovery** — evidence of an exploratory program or candidate-identification
+  stage; no named clinical candidate yet.
+- **Preclinical** — a named candidate undergoing nonclinical development.
+- **IND-enabling** — formal IND/CTA-enabling work explicitly underway.
+- **Phase 1–3** — actual trial initiation, an active registry entry, or
+  equivalent direct evidence. **Planned initiation alone does not advance the
+  stage** to Phase 1–3.
+- **Filed** — the filing has been formally submitted or accepted.
+- **Approved** — regulator approval is confirmed.
+- **Unknown** — a confirmed program whose stage is unresolved.
+
 ## Discovery versus confirmation
 
 - Industry news, databases, articles, and search results **may be used to
@@ -133,6 +148,10 @@ General requirements:
 - Use `Unknown` **only** for the unresolved stage or status of a **confirmed**
   program.
 - Use consistent normalized expressions where practical.
+- **Required non-null fields** — if route, dosage form, indication, asset
+  identity, or responsible company **cannot be confirmed**, do **not** infer a
+  value and do **not** enter the record. Defer it as an unresolved pilot case
+  rather than entering a partial or guessed record.
 
 `null` and `Unknown` are **not interchangeable**: `null` marks an absent
 nullable field value; `Unknown` is an enumerated stage/status for a confirmed

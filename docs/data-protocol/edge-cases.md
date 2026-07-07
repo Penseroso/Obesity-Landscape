@@ -23,7 +23,7 @@ is invented here.**
 | Conjugates | Provisionally distinct asset; document conjugate identity. | Conjugate identity rules undefined. | open until pilot | Yes |
 | Fixed-dose combinations | Provisionally one combination asset; document components. | Combination-to-component identity unmodeled. | assumption at risk | Yes |
 | Indication-specific stages | Split into separate rows per differing stage/status. | One stage/status per row; may multiply rows. | assumption at risk | Yes |
-| Combined Phase 1/2 trials | Record the stage that best reflects current development; note in sources. | Single enumerated stage cannot express Phase 1/2. | open until pilot | Yes |
+| Combined Phase 1/2 trials | Do not map subjectively to Phase 1 or Phase 2; keep as an edge case until a pilot-based mapping rule is approved. | Single enumerated stage cannot express Phase 1/2. | open until pilot | Yes |
 | Silent pipeline removal | Do not infer discontinuation from disappearance; keep prior status until evidenced. | Snapshot cannot represent "quietly dropped". | provisionally usable | No |
 | Completed trial with unclear program continuation | Keep program status as-is; a completed trial is not discontinuation. | No trial-vs-program distinction in status. | provisionally usable | No |
 | Country-specific approvals | Record `Approved` when approved by a tracked regulator; note jurisdiction in sources. | No per-jurisdiction approval fields. | assumption at risk | Yes |

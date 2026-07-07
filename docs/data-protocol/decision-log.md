@@ -24,7 +24,8 @@ decision, rationale, consequences.
 - **Rationale:** Stability enables deduplication, updates, and cross-record
   references.
 - **Consequences:** Renames change display values only; IDs never change. The
-  exact program-ID suffix scheme is deferred (see ADR-0011 group).
+  exact program-ID suffix scheme is deferred (see
+  [Deferred decisions](#deferred-decisions-open-until-pilot) below).
 
 ## ADR-0003 — Stage/status excluded from program identity
 
@@ -122,3 +123,5 @@ when decided, recorded as a new appended ADR.
 - **Field-level provenance** — whether sources should attach per field.
 - **Exact adjacent-program inclusion boundary** — precise criteria for tracking
   non-GLP-1 strategic competitors.
+- **Program-ID suffix scheme** — the exact algorithm for the stable
+  configuration suffix referenced in ADR-0002.
