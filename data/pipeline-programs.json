@@ -1,1 +1,223 @@
-[]
+[
+  {
+    "id": "ascletis-pharma-asc30-oral-tablets",
+    "assetId": "asc30",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC30",
+    "codeName": "ASC30",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": "AISBDD"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Chronic weight management",
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://www.ascletis.com/news_detail/200/id/1388.html",
+          "title": "Ascletis Reinforces Its Differentiated Obesity Portfolio at American Diabetes Association (ADA) 2026 Scientific Sessions, Showcasing ASC30 Clinical Data and Exciting Preclinical Findings from ASC37 and ASC39",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-08",
+          "checkedAt": "2026-07-07"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07002905",
+          "title": "A Study to Evaluate the Efficacy, Safety, and Tolerability in Participants With Obesity or Overweight With Weight-Related Comorbidities",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-12-15",
+          "checkedAt": "2026-07-07"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07321678",
+          "title": "A Study to Evaluate the Efficacy, Safety, and Tolerability of ASC30 Tablets in Participants With Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-04-30",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc30-subcutaneous-depot-injection",
+    "assetId": "asc30",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC30",
+    "codeName": "ASC30",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": "ULAP"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Slow-release depot injection",
+      "dosingInterval": "Once monthly to once quarterly"
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://www.ascletis.com/",
+          "title": "Ascletis Pharma Inc.",
+          "sourceType": "company website",
+          "checkedAt": "2026-07-07"
+        },
+        {
+          "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_SQ_obesity_week_Obesity_week.pdf",
+          "title": "ASC30, a Once-Monthly SQ Injected Small Molecule GLP-1RA in Participants with Obesity: A Ph Ib Study",
+          "sourceType": "company scientific presentation",
+          "publishedAt": "2025-11",
+          "checkedAt": "2026-07-07"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06679959",
+          "title": "A Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of ASC30 Injection in Participants With Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-06-26",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc35-subcutaneous-depot-injection",
+    "assetId": "asc35",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC35",
+    "codeName": "ASC35",
+    "technical": {
+      "mechanism": "GLP-1R/GIPR dual agonist",
+      "platform": "AISBDD; ULAP"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "SALD depot injection",
+      "dosingInterval": "Once monthly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "IND-enabling",
+      "status": "Planned"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://www.ascletis.com/news_detail/200/id/1404.html",
+          "title": "Ascletis Announces U.S. FDA IND Clearance for Phase I Study of Once-Monthly Subcutaneously Administered GLP-1R/GIPR Dual Peptide Agonist, ASC35, for the Treatment of Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-23",
+          "checkedAt": "2026-07-07"
+        },
+        {
+          "url": "https://www.ascletis.com/data/upload/pdf/EASO-2026-ASC35.pdf",
+          "title": "ASC35, a Once-Monthly Next-Generation GLP-1R/GIPR Dual Agonist Peptide, Demonstrated 14-day Average Observed Half-life, 6-fold Longer than Tirzepatide, in NHP Model and 71% More Relative Weight Loss than Tirzepatide in DIO Mouse Model",
+          "sourceType": "company scientific presentation",
+          "publishedAt": "2026-05",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc36-35-fdc-subcutaneous-injection-co-formulation",
+    "assetId": "asc36-35-fdc",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC36_35 FDC",
+    "codeName": "ASC36_35 FDC",
+    "technical": {
+      "mechanism": "Amylin receptor agonist plus GLP-1R/GIPR dual agonist",
+      "platform": "ULAP"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "SALD injection co-formulation",
+      "dosingInterval": "Once monthly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "IND-enabling",
+      "status": "Planned"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://www.ascletis.com/news_detail/200/id/1415.html",
+          "title": "Ascletis Submits Two IND Applications to the U.S. FDA for the Treatment of Obesity: ASC36 Once-Monthly Injection, a Peptide Amylin Receptor Agonist, and ASC36_35 FDC Once-Monthly Injection, a Co-Formulation of ASC36 Plus Peptide GLP-1R/GIPR Agonist ASC35",
+          "sourceType": "company press release",
+          "publishedAt": "2026-07-06",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc37-oral-tablets",
+    "assetId": "asc37",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC37",
+    "codeName": "ASC37",
+    "technical": {
+      "mechanism": "GLP-1R/GIPR/GCGR triple agonist",
+      "platform": "POTENT"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily or potentially less frequent"
+    },
+    "indications": [
+      "Obesity and metabolic diseases"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://www.ascletis.com/news_detail/200/id/1388.html",
+          "title": "Ascletis Reinforces Its Differentiated Obesity Portfolio at American Diabetes Association (ADA) 2026 Scientific Sessions, Showcasing ASC30 Clinical Data and Exciting Preclinical Findings from ASC37 and ASC39",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-08",
+          "checkedAt": "2026-07-07"
+        },
+        {
+          "url": "https://www.ascletis.com/index/index/relation1/cate_id/198.html",
+          "title": "Scientific Presentations - Metabolic Diseases",
+          "sourceType": "company scientific presentations index",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  }
+]
