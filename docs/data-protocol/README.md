@@ -30,7 +30,7 @@ logged as edge cases rather than resolved by schema changes.
 
 - GLP-1 receptor agonists.
 - GLP-1-containing dual or triple agonists.
-- GLP-1-based combinations.
+- GLP-1-based combination products and GLP-1-based regimens.
 - Any route or formulation of the above with a **named developer** and
   **confirmed development intent**.
 
@@ -59,18 +59,24 @@ unconfirmed program.
 
 ## Data layout
 
-- `data/companies/<company-id>/company.json` and
-  `data/companies/<company-id>/pipeline-programs.json` are the human-edited
-  operating source of truth.
+- `data/companies/<company-id>/company.json`,
+  `data/companies/<company-id>/pipeline-programs.json`, and
+  `data/companies/<company-id>/regimens.json` are the human-edited operating
+  source of truth.
 - `data/generated/companies.json` and
-  `data/generated/pipeline-programs.json` are deterministic aggregate outputs
-  consumed by the UI and loader. Do not edit generated files directly.
-- `data/stress-tests/<fixture-id>/` contains isolated fixtures for contract
-  stress tests and regression validation. Stress-test fixtures are excluded from
-  production aggregate generation.
+  `data/generated/pipeline-programs.json` and `data/generated/regimens.json`
+  are deterministic aggregate outputs consumed by loaders. Do not edit
+  generated files directly.
+- `data/stress-tests/<case-id>/` contains isolated diagnostic references from
+  stress-test pilots. Diagnostic archives are excluded from production
+  aggregate generation and are not golden expected output.
+  `data:validate:stress` checks archive presence, JSON shape, minimum references,
+  and diagnostic preservation; it does not certify semantic completeness.
 - `data/registries/development-stages.json` and
-  `data/registries/regulatory-states.json` define the accepted controlled
-  vocabulary for stage and regulatory-state entry.
+  `data/registries/regulatory-states.json` and
+  `data/registries/company-relationship-roles.json` define the accepted
+  controlled vocabulary for stage, regulatory-state, and relationship-role
+  entry.
 
 ## Operating model
 
@@ -85,12 +91,20 @@ unconfirmed program.
 - **Company** — the current principal development entity tracked by a record
   (see `entities-and-rows.md`). Not necessarily the originator, licensor,
   licensee, regional rights holder, or every co-development partner.
-- **Asset** — one molecular or biologic identity, carrying one stable
-  `assetId` across routes, formulations, indications, and development-state
-  changes.
+- **Asset** — one molecular/biologic identity or official combination product
+  identity, carrying one stable `assetId` across routes, formulations,
+  indications, and development-state changes.
+- **Combination asset** — a fixed-dose combination or co-formulation developed
+  as one product, represented as one pipeline asset/program with component
+  references.
 - **Program** — one development configuration of an asset by a company (company
   + asset + route + dosage form, and indication scope where needed to
   distinguish concurrent programs).
+- **Regimen** — a development strategy in which multiple independent products
+  are administered together; distinct from a pipeline program and combination
+  asset.
+- **Company relationship** — a program/regimen-level role, rights, or territory
+  relationship for an internal or external company.
 - **Program identity** — the stable set of properties that defines a program
   and its stable ID. Excludes mutable development stage and status.
 - **Mutable development state** — the properties that change over a program's

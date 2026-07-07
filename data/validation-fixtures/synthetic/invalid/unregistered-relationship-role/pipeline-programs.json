@@ -1,0 +1,15 @@
+[
+  {
+    "id": "a",
+    "assetId": "a",
+    "companyId": "fixture-co",
+    "assetName": "A",
+    "codeName": null,
+    "technical": { "mechanism": null, "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Active" },
+    "relationships": [{ "externalCompanyName": "X", "role": "invented partner" }],
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  }
+]

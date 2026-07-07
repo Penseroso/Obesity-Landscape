@@ -1,0 +1,194 @@
+[
+  {
+    "id": "fixture-co-alpha-oral-tablets",
+    "assetId": "alpha",
+    "companyId": "fixture-co",
+    "assetName": "Alpha",
+    "codeName": "ALP",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-alpha",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "fixture-co-beta-subcutaneous-injection",
+    "assetId": "beta",
+    "companyId": "fixture-co",
+    "assetName": "Beta",
+    "codeName": "BET",
+    "technical": {
+      "mechanism": "amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-beta",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-06",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "fixture-co-alpha-beta-fdc-oral-tablets",
+    "assetId": "alpha-beta-fdc",
+    "companyId": "fixture-co",
+    "assetType": "fixed-dose-combination",
+    "assetName": "Alpha/Beta FDC",
+    "codeName": "ALP-BET",
+    "components": [
+      {
+        "assetId": "alpha",
+        "companyId": "fixture-co",
+        "role": "component"
+      },
+      {
+        "assetId": "beta",
+        "companyId": "fixture-co",
+        "role": "component"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1R agonist plus amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Planned"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "License Partner Ltd.",
+        "role": "licensor",
+        "territories": [
+          "Global"
+        ],
+        "rights": [
+          "development",
+          "commercialization"
+        ],
+        "effectiveDate": "2026-07",
+        "sourceUrls": [
+          "https://example.com/fixture-license"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-fdc",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07-07",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "fixture-co-alpha-gamma-coform-subcutaneous-injection",
+    "assetId": "alpha-gamma-coform",
+    "companyId": "fixture-co",
+    "assetType": "co-formulation",
+    "assetName": "Alpha/Gamma co-formulation",
+    "codeName": "ALP-GAM",
+    "components": [
+      {
+        "assetId": "alpha",
+        "companyId": "fixture-co",
+        "role": "component"
+      },
+      {
+        "codeName": "GAM",
+        "assetName": "Gamma",
+        "externalCompanyName": "External Bio Inc.",
+        "role": "component"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1R agonist plus GIPR agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection co-formulation",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "IND-enabling",
+      "status": "Planned"
+    },
+    "regulatoryStates": [
+      {
+        "state": "IND submitted",
+        "jurisdiction": "United States",
+        "authority": "U.S. FDA",
+        "date": "2026-07"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-coform",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  }
+]

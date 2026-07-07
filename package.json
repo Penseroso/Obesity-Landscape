@@ -11,7 +11,8 @@
     "data:validate:companies": "node scripts/data-registry.mjs validate:companies",
     "data:validate:generated": "node scripts/data-registry.mjs validate:generated",
     "data:validate:registries": "node scripts/data-registry.mjs validate:registries",
-    "data:validate:stress": "node scripts/data-registry.mjs validate:stress"
+    "data:validate:stress": "node scripts/data-registry.mjs validate:stress",
+    "data:validate:synthetic": "node scripts/data-registry.mjs validate:synthetic"
   },
   "dependencies": {
     "next": "16.2.6",

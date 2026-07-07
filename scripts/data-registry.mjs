@@ -1,4 +1,10 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import path from "node:path";
 import process from "node:process";
 
@@ -8,9 +14,19 @@ const companySourceDir = path.join(dataDir, "companies");
 const generatedDir = path.join(dataDir, "generated");
 const stressTestDir = path.join(dataDir, "stress-tests");
 const registryDir = path.join(dataDir, "registries");
+const syntheticFixtureDir = path.join(dataDir, "validation-fixtures", "synthetic");
 
 const fullDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 const partialDatePattern = /^\d{4}(-\d{2}(-\d{2})?)?$/;
+const assetTypes = new Set([
+  "single-asset",
+  "fixed-dose-combination",
+  "co-formulation",
+]);
+const combinationAssetTypes = new Set([
+  "fixed-dose-combination",
+  "co-formulation",
+]);
 const developmentStatuses = new Set([
   "Planned",
   "Active",
@@ -29,6 +45,10 @@ function writeJson(filePath, value) {
 
 function normalize(value) {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function sortedStrings(values) {
+  return [...values].sort((a, b) => a.localeCompare(b));
 }
 
 function assert(condition, message) {
@@ -105,19 +125,6 @@ function validateUniqueRegistryText(entries, label) {
   }
 }
 
-function loadRegistries() {
-  const stages = readJson(path.join(registryDir, "development-stages.json"));
-  const regulatoryStates = readJson(path.join(registryDir, "regulatory-states.json"));
-
-  validateRegistryEntries(stages, "development-stages", true);
-  validateRegistryEntries(regulatoryStates, "regulatory-states", false);
-
-  return {
-    stageLabels: new Set(stages.map((stage) => stage.label)),
-    regulatoryStateLabels: new Set(regulatoryStates.map((state) => state.label)),
-  };
-}
-
 function validateRegistryEntries(entries, label, requireFamily) {
   assert(Array.isArray(entries), `${label} registry must be an array`);
 
@@ -147,6 +154,22 @@ function validateRegistryEntries(entries, label, requireFamily) {
   validateUniqueRegistryText(entries, label);
 }
 
+function loadRegistries() {
+  const stages = readJson(path.join(registryDir, "development-stages.json"));
+  const regulatoryStates = readJson(path.join(registryDir, "regulatory-states.json"));
+  const relationshipRoles = readJson(path.join(registryDir, "company-relationship-roles.json"));
+
+  validateRegistryEntries(stages, "development-stages", true);
+  validateRegistryEntries(regulatoryStates, "regulatory-states", false);
+  validateRegistryEntries(relationshipRoles, "company-relationship-roles", false);
+
+  return {
+    stageLabels: new Set(stages.map((stage) => stage.label)),
+    regulatoryStateLabels: new Set(regulatoryStates.map((state) => state.label)),
+    relationshipRoleLabels: new Set(relationshipRoles.map((role) => role.label)),
+  };
+}
+
 function validateCompany(company, context) {
   assert(isObject(company), `${context}: company must be an object`);
   assert(isNonEmptyString(company.id), `${context}: company.id is required`);
@@ -170,13 +193,273 @@ function validateSource(source, context) {
   }
 }
 
-function validateProgram(program, context, registries) {
+function validateMetadata(metadata, context) {
+  assert(isObject(metadata), `${context}: metadata is required`);
+  assert(
+    isValidFullDate(metadata.lastVerifiedAt),
+    `${context}: metadata.lastVerifiedAt must be YYYY-MM-DD`,
+  );
+  assert(isValidFullDate(metadata.updatedAt), `${context}: metadata.updatedAt must be YYYY-MM-DD`);
+  assert(Array.isArray(metadata.sources), `${context}: metadata.sources must be an array`);
+
+  for (const [index, source] of metadata.sources.entries()) {
+    validateSource(source, `${context}: metadata.sources[${index}]`);
+  }
+}
+
+function validateDevelopment(development, context, registries) {
+  assert(isObject(development), `${context}: development is required`);
+  assert(
+    registries.stageLabels.has(development.stage),
+    `${context}: development.stage "${development.stage}" is not in the registry`,
+  );
+  assert(
+    developmentStatuses.has(development.status),
+    `${context}: development.status "${development.status}" is not allowed`,
+  );
+}
+
+function validateAdministration(administration, context, required) {
+  if (administration === undefined && !required) {
+    return;
+  }
+
+  assert(isObject(administration), `${context}: administration is required`);
+  assert(isNonEmptyString(administration.route), `${context}: route is required`);
+  assert(isNonEmptyString(administration.dosageForm), `${context}: dosageForm is required`);
+  assert(
+    administration.dosingInterval === null ||
+      isNonEmptyString(administration.dosingInterval),
+    `${context}: invalid dosingInterval`,
+  );
+}
+
+function validateIndications(indications, context) {
+  assert(Array.isArray(indications), `${context}: indications must be an array`);
+  assert(indications.length > 0, `${context}: at least one indication is required`);
+  for (const indication of indications) {
+    assert(isNonEmptyString(indication), `${context}: empty indication`);
+  }
+}
+
+function validateRegulatoryStates(regulatoryStates, context, registries) {
+  if (regulatoryStates === undefined) {
+    return;
+  }
+
+  assert(Array.isArray(regulatoryStates), `${context}: regulatoryStates must be an array`);
+  for (const [index, regulatoryState] of regulatoryStates.entries()) {
+    const stateContext = `${context}: regulatoryStates[${index}]`;
+    assert(isObject(regulatoryState), `${stateContext} must be an object`);
+    assert(
+      registries.regulatoryStateLabels.has(regulatoryState.state),
+      `${stateContext}.state "${regulatoryState.state}" is not in the registry`,
+    );
+    assert(isNonEmptyString(regulatoryState.jurisdiction), `${stateContext}.jurisdiction is required`);
+    assert(isNonEmptyString(regulatoryState.authority), `${stateContext}.authority is required`);
+
+    if (regulatoryState.date !== undefined) {
+      assert(
+        isNonEmptyString(regulatoryState.date) && isValidPartialDate(regulatoryState.date),
+        `${stateContext}.date must be YYYY, YYYY-MM, or YYYY-MM-DD`,
+      );
+    }
+  }
+}
+
+function validateStringArray(value, context, required) {
+  if (value === undefined && !required) {
+    return;
+  }
+
+  assert(Array.isArray(value), `${context} must be an array`);
+  assert(!required || value.length > 0, `${context} must not be empty`);
+
+  for (const item of value) {
+    assert(isNonEmptyString(item), `${context} has an empty value`);
+  }
+}
+
+function getComponentKey(component) {
+  if (component.assetId) {
+    return `asset:${normalize(component.assetId)}`;
+  }
+
+  const assetName = component.assetName ? normalize(component.assetName) : "";
+  const codeName = component.codeName ? normalize(component.codeName) : "";
+  const company = component.companyId
+    ? `company:${normalize(component.companyId)}`
+    : `external:${normalize(component.externalCompanyName ?? "")}`;
+
+  return `named:${company}:${assetName}:${codeName}`;
+}
+
+function getComponentSetKey(components) {
+  return sortedStrings(components.map((component) => getComponentKey(component))).join("|");
+}
+
+function validateComponent(component, context, dataset) {
+  assert(isObject(component), `${context}: component must be an object`);
+  assert(
+    component.assetId === undefined || isNonEmptyString(component.assetId),
+    `${context}: assetId must be non-empty when present`,
+  );
+  assert(
+    component.assetName === undefined || isNonEmptyString(component.assetName),
+    `${context}: assetName must be non-empty when present`,
+  );
+  assert(
+    component.codeName === undefined || isNonEmptyString(component.codeName),
+    `${context}: codeName must be non-empty when present`,
+  );
+  assert(
+    component.companyId === undefined || isNonEmptyString(component.companyId),
+    `${context}: companyId must be non-empty when present`,
+  );
+  assert(
+    component.externalCompanyName === undefined ||
+      isNonEmptyString(component.externalCompanyName),
+    `${context}: externalCompanyName must be non-empty when present`,
+  );
+  assert(
+    component.role === undefined || isNonEmptyString(component.role),
+    `${context}: role must be non-empty when present`,
+  );
+  assert(
+    !(component.companyId && component.externalCompanyName),
+    `${context}: use either companyId or externalCompanyName, not both`,
+  );
+
+  if (component.assetId) {
+    assert(
+      dataset.assetIds.has(component.assetId),
+      `${context}: internal assetId ${component.assetId} does not exist`,
+    );
+    assert(
+      component.assetName === undefined && component.codeName === undefined,
+      `${context}: internal assetId reference must not also provide assetName or codeName`,
+    );
+  } else {
+    assert(
+      isNonEmptyString(component.assetName) || isNonEmptyString(component.codeName),
+      `${context}: external or untracked component needs assetName or codeName`,
+    );
+  }
+
+  if (component.companyId) {
+    assert(
+      dataset.companyIds.has(component.companyId),
+      `${context}: internal companyId ${component.companyId} does not exist`,
+    );
+  }
+}
+
+function validateComponents(components, context, dataset, minimumCount) {
+  assert(Array.isArray(components), `${context}: components must be an array`);
+  assert(components.length >= minimumCount, `${context}: at least ${minimumCount} components required`);
+
+  const componentKeys = new Set();
+  for (const [index, component] of components.entries()) {
+    validateComponent(component, `${context}: components[${index}]`, dataset);
+    const key = getComponentKey(component);
+    assert(!componentKeys.has(key), `${context}: duplicate component ${key}`);
+    componentKeys.add(key);
+  }
+}
+
+function getRelationshipKey(relationship) {
+  const company = relationship.companyId
+    ? `company:${normalize(relationship.companyId)}`
+    : `external:${normalize(relationship.externalCompanyName ?? "")}`;
+  const territories = sortedStrings((relationship.territories ?? []).map(normalize)).join(",");
+  const rights = sortedStrings((relationship.rights ?? []).map(normalize)).join(",");
+
+  return [
+    company,
+    normalize(relationship.role),
+    territories,
+    rights,
+    relationship.effectiveDate ?? "",
+  ].join("|");
+}
+
+function validateRelationships(relationships, context, registries, dataset) {
+  if (relationships === undefined) {
+    return;
+  }
+
+  assert(Array.isArray(relationships), `${context}: relationships must be an array`);
+
+  const relationshipKeys = new Set();
+  for (const [index, relationship] of relationships.entries()) {
+    const relationshipContext = `${context}: relationships[${index}]`;
+    assert(isObject(relationship), `${relationshipContext}: relationship must be an object`);
+    assert(
+      isNonEmptyString(relationship.role) &&
+        registries.relationshipRoleLabels.has(relationship.role),
+      `${relationshipContext}: role "${relationship.role}" is not in the registry`,
+    );
+    assert(
+      isNonEmptyString(relationship.companyId) ||
+        isNonEmptyString(relationship.externalCompanyName),
+      `${relationshipContext}: companyId or externalCompanyName is required`,
+    );
+    assert(
+      !(relationship.companyId && relationship.externalCompanyName),
+      `${relationshipContext}: use either companyId or externalCompanyName, not both`,
+    );
+
+    if (relationship.companyId) {
+      assert(
+        dataset.companyIds.has(relationship.companyId),
+        `${relationshipContext}: internal companyId ${relationship.companyId} does not exist`,
+      );
+    }
+
+    validateStringArray(relationship.territories, `${relationshipContext}.territories`, false);
+    validateStringArray(relationship.rights, `${relationshipContext}.rights`, false);
+    validateStringArray(relationship.sourceUrls, `${relationshipContext}.sourceUrls`, false);
+
+    if (relationship.effectiveDate !== undefined) {
+      assert(
+        isNonEmptyString(relationship.effectiveDate) &&
+          isValidPartialDate(relationship.effectiveDate),
+        `${relationshipContext}: effectiveDate must be YYYY, YYYY-MM, or YYYY-MM-DD`,
+      );
+    }
+
+    const key = getRelationshipKey(relationship);
+    assert(!relationshipKeys.has(key), `${context}: duplicate relationship ${key}`);
+    relationshipKeys.add(key);
+  }
+}
+
+function createDatasetContext(companies, programs) {
+  return {
+    companyIds: new Set(companies.map((company) => company.id)),
+    assetIds: new Set(programs.map((program) => program.assetId)),
+  };
+}
+
+function validateProgram(program, context, registries, dataset) {
   assert(isObject(program), `${context}: program must be an object`);
   assert(isNonEmptyString(program.id), `${context}: program.id is required`);
   assert(isNonEmptyString(program.assetId), `${context}: program.assetId is required`);
   assert(isNonEmptyString(program.companyId), `${context}: program.companyId is required`);
   assert(isNonEmptyString(program.assetName), `${context}: program.assetName is required`);
   assert(program.codeName === null || isNonEmptyString(program.codeName), `${context}: invalid codeName`);
+
+  const assetType = program.assetType ?? "single-asset";
+  assert(assetTypes.has(assetType), `${context}: unsupported assetType ${assetType}`);
+
+  if (assetType === "single-asset") {
+    assert(
+      program.components === undefined,
+      `${context}: single-asset programs must not define components`,
+    );
+  } else {
+    validateComponents(program.components, context, dataset, 2);
+  }
 
   assert(isObject(program.technical), `${context}: technical is required`);
   assert(
@@ -188,71 +471,45 @@ function validateProgram(program, context, registries) {
     `${context}: invalid platform`,
   );
 
-  assert(isObject(program.administration), `${context}: administration is required`);
-  assert(isNonEmptyString(program.administration.route), `${context}: route is required`);
-  assert(isNonEmptyString(program.administration.dosageForm), `${context}: dosageForm is required`);
-  assert(
-    program.administration.dosingInterval === null ||
-      isNonEmptyString(program.administration.dosingInterval),
-    `${context}: invalid dosingInterval`,
-  );
-
-  assert(Array.isArray(program.indications), `${context}: indications must be an array`);
-  assert(program.indications.length > 0, `${context}: at least one indication is required`);
-  for (const indication of program.indications) {
-    assert(isNonEmptyString(indication), `${context}: empty indication`);
-  }
-
-  assert(isObject(program.development), `${context}: development is required`);
-  assert(
-    registries.stageLabels.has(program.development.stage),
-    `${context}: development.stage "${program.development.stage}" is not in the registry`,
-  );
-  assert(
-    developmentStatuses.has(program.development.status),
-    `${context}: development.status "${program.development.status}" is not allowed`,
-  );
-
-  if (program.regulatoryStates !== undefined) {
-    assert(Array.isArray(program.regulatoryStates), `${context}: regulatoryStates must be an array`);
-    for (const [index, regulatoryState] of program.regulatoryStates.entries()) {
-      const stateContext = `${context}: regulatoryStates[${index}]`;
-      assert(isObject(regulatoryState), `${stateContext} must be an object`);
-      assert(
-        registries.regulatoryStateLabels.has(regulatoryState.state),
-        `${stateContext}.state "${regulatoryState.state}" is not in the registry`,
-      );
-      assert(isNonEmptyString(regulatoryState.jurisdiction), `${stateContext}.jurisdiction is required`);
-      assert(isNonEmptyString(regulatoryState.authority), `${stateContext}.authority is required`);
-
-      if (regulatoryState.date !== undefined) {
-        assert(
-          isNonEmptyString(regulatoryState.date) && isValidPartialDate(regulatoryState.date),
-          `${stateContext}.date must be YYYY, YYYY-MM, or YYYY-MM-DD`,
-        );
-      }
-    }
-  }
-
-  assert(isObject(program.metadata), `${context}: metadata is required`);
-  assert(
-    isValidFullDate(program.metadata.lastVerifiedAt),
-    `${context}: metadata.lastVerifiedAt must be YYYY-MM-DD`,
-  );
-  assert(isValidFullDate(program.metadata.updatedAt), `${context}: metadata.updatedAt must be YYYY-MM-DD`);
-  assert(Array.isArray(program.metadata.sources), `${context}: metadata.sources must be an array`);
-  for (const [index, source] of program.metadata.sources.entries()) {
-    validateSource(source, `${context}: metadata.sources[${index}]`);
-  }
+  validateAdministration(program.administration, `${context}: administration`, true);
+  validateIndications(program.indications, context);
+  validateDevelopment(program.development, context, registries);
+  validateRegulatoryStates(program.regulatoryStates, context, registries);
+  validateRelationships(program.relationships, context, registries, dataset);
+  validateMetadata(program.metadata, context);
 }
 
-function validateDataset(companies, programs, context, registries) {
+function validateRegimen(regimen, context, registries, dataset) {
+  assert(isObject(regimen), `${context}: regimen must be an object`);
+  assert(isNonEmptyString(regimen.id), `${context}: regimen.id is required`);
+  assert(isNonEmptyString(regimen.companyId), `${context}: regimen.companyId is required`);
+  assert(isNonEmptyString(regimen.name), `${context}: regimen.name is required`);
+  assert(
+    dataset.companyIds.has(regimen.companyId),
+    `${context}: missing companyId reference ${regimen.companyId}`,
+  );
+
+  validateComponents(regimen.components, context, dataset, 2);
+  validateIndications(regimen.indications, context);
+  validateDevelopment(regimen.development, context, registries);
+  validateRegulatoryStates(regimen.regulatoryStates, context, registries);
+  validateAdministration(regimen.administration, `${context}: administration`, false);
+  validateRelationships(regimen.relationships, context, registries, dataset);
+  validateMetadata(regimen.metadata, context);
+}
+
+function validateDataset(companies, programs, regimens, context, registries) {
   assert(Array.isArray(companies), `${context}: companies must be an array`);
   assert(Array.isArray(programs), `${context}: programs must be an array`);
+  assert(Array.isArray(regimens), `${context}: regimens must be an array`);
 
   const companyIds = new Set();
   const programIds = new Set();
+  const regimenIds = new Set();
   const assetIdentityById = new Map();
+  const programIdentityKeys = new Set();
+  const combinationIdentityKeys = new Set();
+  const regimenIdentityKeys = new Set();
 
   for (const company of companies) {
     validateCompany(company, context);
@@ -260,8 +517,10 @@ function validateDataset(companies, programs, context, registries) {
     companyIds.add(company.id);
   }
 
+  const dataset = createDatasetContext(companies, programs);
+
   for (const program of programs) {
-    validateProgram(program, `${context}: ${program.id ?? "unknown-program"}`, registries);
+    validateProgram(program, `${context}: ${program.id ?? "unknown-program"}`, registries, dataset);
     assert(!programIds.has(program.id), `${context}: duplicate program id ${program.id}`);
     assert(companyIds.has(program.companyId), `${context}: missing companyId reference ${program.companyId}`);
     programIds.add(program.id);
@@ -276,6 +535,52 @@ function validateDataset(companies, programs, context, registries) {
       `${context}: assetId ${program.assetId} is reused with conflicting asset identity`,
     );
     assetIdentityById.set(program.assetId, identity);
+
+    const programIdentityKey = [
+      program.companyId,
+      program.assetId,
+      normalize(program.administration.route),
+      normalize(program.administration.dosageForm),
+      sortedStrings(program.indications.map(normalize)).join(","),
+    ].join("|");
+    assert(
+      !programIdentityKeys.has(programIdentityKey),
+      `${context}: duplicate program identity ${programIdentityKey}`,
+    );
+    programIdentityKeys.add(programIdentityKey);
+
+    if (combinationAssetTypes.has(program.assetType)) {
+      const combinationKey = [
+        program.companyId,
+        program.assetType,
+        getComponentSetKey(program.components),
+        normalize(program.administration.route),
+        normalize(program.administration.dosageForm),
+        sortedStrings(program.indications.map(normalize)).join(","),
+      ].join("|");
+      assert(
+        !combinationIdentityKeys.has(combinationKey),
+        `${context}: duplicate combination identity ${combinationKey}`,
+      );
+      combinationIdentityKeys.add(combinationKey);
+    }
+  }
+
+  for (const regimen of regimens) {
+    validateRegimen(regimen, `${context}: ${regimen.id ?? "unknown-regimen"}`, registries, dataset);
+    assert(!regimenIds.has(regimen.id), `${context}: duplicate regimen id ${regimen.id}`);
+    regimenIds.add(regimen.id);
+
+    const regimenIdentityKey = [
+      regimen.companyId,
+      getComponentSetKey(regimen.components),
+      sortedStrings(regimen.indications.map(normalize)).join(","),
+    ].join("|");
+    assert(
+      !regimenIdentityKeys.has(regimenIdentityKey),
+      `${context}: duplicate regimen identity ${regimenIdentityKey}`,
+    );
+    regimenIdentityKeys.add(regimenIdentityKey);
   }
 }
 
@@ -290,11 +595,22 @@ function getCompanySourceFolders(baseDir) {
     .sort((a, b) => a.localeCompare(b));
 }
 
-function readCompanyFolder(baseDir, folderName) {
+function requireJsonFile(filePath, context) {
+  assert(existsSync(filePath), `${context}: missing ${path.basename(filePath)}`);
+  return readJson(filePath);
+}
+
+function readCompanyFolder(baseDir, folderName, requireRegimens) {
   const folderPath = path.join(baseDir, folderName);
+  const regimensPath = path.join(folderPath, "regimens.json");
+
   return {
-    company: readJson(path.join(folderPath, "company.json")),
-    programs: readJson(path.join(folderPath, "pipeline-programs.json")),
+    company: requireJsonFile(path.join(folderPath, "company.json"), folderName),
+    programs: requireJsonFile(path.join(folderPath, "pipeline-programs.json"), folderName),
+    regimens:
+      existsSync(regimensPath) || requireRegimens
+        ? requireJsonFile(regimensPath, folderName)
+        : [],
   };
 }
 
@@ -303,27 +619,38 @@ function validateCompanySources() {
   const folders = getCompanySourceFolders(companySourceDir);
 
   for (const folder of folders) {
-    const { company, programs } = readCompanyFolder(companySourceDir, folder);
-    validateDataset([company], programs, `data/companies/${folder}`, registries);
+    const { company, programs, regimens } = readCompanyFolder(companySourceDir, folder, true);
+    validateDataset([company], programs, regimens, `data/companies/${folder}`, registries);
   }
 
   console.log(`Validated ${folders.length} company source folder(s).`);
 }
 
 function validateStressTests() {
-  const registries = loadRegistries();
   const folders = getCompanySourceFolders(stressTestDir);
 
   for (const folder of folders) {
     const folderPath = path.join(stressTestDir, folder);
-    const { company, programs } = readCompanyFolder(stressTestDir, folder);
-    validateDataset([company], programs, `data/stress-tests/${folder}`, registries);
+    const company = requireJsonFile(path.join(folderPath, "company.json"), folder);
+    const programs = requireJsonFile(path.join(folderPath, "pipeline-programs.json"), folder);
+
+    validateCompany(company, `data/stress-tests/${folder}`);
+    assert(Array.isArray(programs), `${folder}: pipeline-programs.json must be an array`);
+    for (const program of programs) {
+      assert(isObject(program), `${folder}: archive program must be an object`);
+      assert(isNonEmptyString(program.id), `${folder}: archive program id is required`);
+      assert(
+        program.companyId === company.id,
+        `${folder}: archive program ${program.id} must reference archive company id`,
+      );
+    }
+
     assert(existsSync(path.join(folderPath, "deferred-items.json")), `${folder}: deferred-items.json is required`);
     assert(existsSync(path.join(folderPath, "findings.md")), `${folder}: findings.md is required`);
     assert(existsSync(path.join(folderPath, "contract-gaps.md")), `${folder}: contract-gaps.md is required`);
   }
 
-  console.log(`Validated ${folders.length} stress-test fixture(s).`);
+  console.log(`Validated ${folders.length} stress-test diagnostic archive(s).`);
 }
 
 function generateAggregates() {
@@ -331,31 +658,87 @@ function generateAggregates() {
   const folders = getCompanySourceFolders(companySourceDir);
   const companies = [];
   const programs = [];
+  const regimens = [];
 
   for (const folder of folders) {
-    const { company, programs: companyPrograms } = readCompanyFolder(companySourceDir, folder);
-    validateDataset([company], companyPrograms, `data/companies/${folder}`, registries);
+    const {
+      company,
+      programs: companyPrograms,
+      regimens: companyRegimens,
+    } = readCompanyFolder(companySourceDir, folder, true);
+    validateDataset([company], companyPrograms, companyRegimens, `data/companies/${folder}`, registries);
     companies.push(company);
     programs.push(...companyPrograms);
+    regimens.push(...companyRegimens);
   }
 
-  validateDataset(companies, programs, "generated aggregate", registries);
+  validateDataset(companies, programs, regimens, "generated aggregate", registries);
   companies.sort((a, b) => a.id.localeCompare(b.id));
   programs.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
+  regimens.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
 
   mkdirSync(generatedDir, { recursive: true });
   writeJson(path.join(generatedDir, "companies.json"), companies);
   writeJson(path.join(generatedDir, "pipeline-programs.json"), programs);
-  console.log(`Generated ${companies.length} company record(s) and ${programs.length} program record(s).`);
+  writeJson(path.join(generatedDir, "regimens.json"), regimens);
+  console.log(
+    `Generated ${companies.length} company record(s), ${programs.length} program record(s), and ${regimens.length} regimen record(s).`,
+  );
 }
 
 function validateGenerated() {
   const registries = loadRegistries();
   const companies = readJson(path.join(generatedDir, "companies.json"));
   const programs = readJson(path.join(generatedDir, "pipeline-programs.json"));
+  const regimens = readJson(path.join(generatedDir, "regimens.json"));
 
-  validateDataset(companies, programs, "data/generated", registries);
-  console.log(`Validated generated aggregate with ${companies.length} company record(s).`);
+  validateDataset(companies, programs, regimens, "data/generated", registries);
+  console.log(
+    `Validated generated aggregate with ${companies.length} company record(s), ${programs.length} program record(s), and ${regimens.length} regimen record(s).`,
+  );
+}
+
+function validateSyntheticFixtures() {
+  const registries = loadRegistries();
+  const validDir = path.join(syntheticFixtureDir, "valid");
+  const valid = readCompanyFolder(validDir, "fixture-co", true);
+  validateDataset(
+    [valid.company],
+    valid.programs,
+    valid.regimens,
+    "data/validation-fixtures/synthetic/valid/fixture-co",
+    registries,
+  );
+
+  const invalidExpectations = [
+    ["duplicate-combination-order", /duplicate combination identity/],
+    ["duplicate-regimen-order", /duplicate regimen identity/],
+    ["unregistered-relationship-role", /not in the registry/],
+    ["bad-internal-reference", /does not exist/],
+  ];
+
+  for (const [folder, expectedError] of invalidExpectations) {
+    const fixture = readCompanyFolder(path.join(syntheticFixtureDir, "invalid"), folder, true);
+    let failed = false;
+    try {
+      validateDataset(
+        [fixture.company],
+        fixture.programs,
+        fixture.regimens,
+        `data/validation-fixtures/synthetic/invalid/${folder}`,
+        registries,
+      );
+    } catch (error) {
+      failed = true;
+      assert(
+        expectedError.test(error instanceof Error ? error.message : String(error)),
+        `${folder}: expected ${expectedError}, received ${error instanceof Error ? error.message : error}`,
+      );
+    }
+    assert(failed, `${folder}: invalid fixture unexpectedly passed`);
+  }
+
+  console.log("Validated synthetic fixtures.");
 }
 
 const command = process.argv[2];
@@ -371,6 +754,9 @@ try {
       break;
     case "validate:stress":
       validateStressTests();
+      break;
+    case "validate:synthetic":
+      validateSyntheticFixtures();
       break;
     case "generate":
       generateAggregates();

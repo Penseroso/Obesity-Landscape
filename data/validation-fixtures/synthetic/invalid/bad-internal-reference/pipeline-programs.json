@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ab",
+    "assetId": "ab",
+    "companyId": "fixture-co",
+    "assetType": "co-formulation",
+    "assetName": "AB",
+    "codeName": null,
+    "components": [{ "assetId": "missing-a" }, { "assetName": "B" }],
+    "technical": { "mechanism": null, "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Planned" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  }
+]

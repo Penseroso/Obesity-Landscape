@@ -183,3 +183,76 @@ when decided, recorded as a new appended ADR.
 - **Rationale:** Sources often disclose only month or year precision.
 - **Consequences:** Unknown months or days must not be filled with artificial
   `01` values.
+
+## ADR-0016 — Combination assets keep one program identity
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** Fixed-dose combinations and co-formulations are represented as
+  one pipeline asset/program with one stable `assetId`, plus component
+  references.
+- **Rationale:** A combination product is developed as a single product
+  configuration even when components can be named independently.
+- **Consequences:** Component order does not affect identity. Validators reject
+  duplicate component sets and require at least two components for combination
+  asset types.
+
+## ADR-0017 — Regimen is separate from pipeline program
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** Multi-product co-administration strategies are modeled as
+  regimen records, not pipeline program rows.
+- **Rationale:** Regimens do not create one product/formulation asset and must
+  not be confused with fixed-dose combinations or co-formulations.
+- **Consequences:** `data/generated/regimens.json` is generated separately.
+  The current UI does not display regimens.
+
+## ADR-0018 — Program and regimen company relationships
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** Co-development, licensing, territory, rights, sponsor,
+  commercialization, and manufacturing relationships are stored on the relevant
+  program or regimen record.
+- **Rationale:** Company roles vary by asset, program, regimen, jurisdiction,
+  and rights category; they are not company-global facts.
+- **Consequences:** Relationship data is optional and must be directly
+  supported. Validators reject duplicate relationships.
+
+## ADR-0019 — Principal companyId remains singular
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** Existing `companyId` remains the principal development company
+  used for grouping and record ownership.
+- **Rationale:** Preserving the single principal company keeps the current UI and
+  generated aggregate behavior stable.
+- **Consequences:** Additional companies are represented through
+  program/regimen-level `relationships`, not by replacing `companyId` with a
+  company array.
+
+## ADR-0020 — Company relationship role registry
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** Company relationship roles are controlled by
+  `data/registries/company-relationship-roles.json`.
+- **Rationale:** Relationship role vocabulary is likely to expand during
+  research and needs alias handling and promotion rules.
+- **Consequences:** Validators reject relationship roles absent from the
+  registry. New official role concepts can be promoted during the same research
+  execution and commit.
+
+## ADR-0021 — Ascletis archive is diagnostic reference only
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** `data/stress-tests/ascletis-pharma/` is preserved as diagnostic
+  stress-test evidence and pilot output, not production data and not golden
+  expected output.
+- **Rationale:** The archive was created under earlier provisional contracts and
+  should not be treated as semantic truth for the current model.
+- **Consequences:** Stress validation checks archive integrity and production
+  exclusion, not semantic completeness. A future fresh Ascletis investigation
+  and explicit review is required before any golden fixture promotion.

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fixture-co-alpha-background-obesity",
+    "companyId": "fixture-co",
+    "name": "Alpha plus background therapy",
+    "components": [
+      {
+        "assetId": "alpha",
+        "companyId": "fixture-co",
+        "role": "investigational component"
+      },
+      {
+        "assetName": "Approved Background",
+        "externalCompanyName": "Background Pharma",
+        "role": "background therapy"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1/2",
+      "status": "Active"
+    },
+    "administration": {
+      "route": "Multiple",
+      "dosageForm": "Separate products",
+      "dosingInterval": null
+    },
+    "relationships": [
+      {
+        "companyId": "fixture-co",
+        "role": "trial sponsor",
+        "territories": [
+          "United States"
+        ],
+        "rights": [
+          "development"
+        ],
+        "sourceUrls": [
+          "https://example.com/fixture-regimen"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-regimen",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  }
+]

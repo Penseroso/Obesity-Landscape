@@ -21,8 +21,8 @@ updating its records in the same execution. Follow these steps:
 2. **Inspect current data.** Read company source folders under
    `data/companies/`, generated aggregate files under `data/generated/`,
    registries under `data/registries/`, and `lib/programs/types.ts` for the
-   current contract. Find any existing records for `<COMPANY_NAME>` and its
-   programs.
+   current contract. Find any existing program and regimen records for
+   `<COMPANY_NAME>`.
 
 3. **Choose the approach automatically.** If the company is absent, perform an
    **initial company-wide investigation**; if the company or related records are
@@ -38,19 +38,26 @@ updating its records in the same execution. Follow these steps:
 5. **Apply the Module 5 rules.** Enforce the dataset scope, stage evidence
    thresholds, entity/asset/program identity, row-splitting rules, and
    field-entry rules from the data protocol. Keep regulatory state separate
-   from development stage.
+   from development stage. Distinguish single asset programs, combination
+   products, regimens, external background therapies, and company relationships.
 
 6. **Promote registry values when justified.** If official evidence requires a
-   development-stage or regulatory-state value that is semantically distinct
-   from existing registry labels and aliases, add it to the relevant registry in
-   the same execution and commit. Do not approximate a precise official value to
-   an existing broader value. If officiality or meaning is unclear, defer it.
+   development-stage, regulatory-state, or company-relationship-role value that
+   is semantically distinct from existing registry labels and aliases, add it to
+   the relevant registry in the same execution and commit. Do not approximate a
+   precise official value to an existing broader value. If officiality or
+   meaning is unclear, defer it.
 
 7. **Update records in the same execution.** Automatically create or update a
    company/program record only when it is in scope, identity and required
    non-null fields are confirmed, sources satisfy the field-specific source
    policy, it is representable by the current contract, and it is not a duplicate
    configuration.
+
+   Enter regimen records only when official regimen development intent,
+   component identity, and indication are sufficiently confirmed. Enter company
+   relationships only when role, company identity, and any stored rights or
+   territory are directly supported.
 
 8. **Defer, do not block.** Report unsupported or structurally unresolved
    findings (ambiguous ownership, unrepresentable configurations, unconfirmed

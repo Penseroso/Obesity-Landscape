@@ -1,0 +1,20 @@
+[
+  {
+    "id": "regimen-1",
+    "companyId": "fixture-co",
+    "name": "A plus B",
+    "components": [{ "assetId": "a" }, { "assetId": "b" }],
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 1", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  },
+  {
+    "id": "regimen-2",
+    "companyId": "fixture-co",
+    "name": "B plus A",
+    "components": [{ "assetId": "b" }, { "assetId": "a" }],
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 1", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  }
+]

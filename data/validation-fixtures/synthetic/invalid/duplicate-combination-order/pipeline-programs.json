@@ -1,0 +1,54 @@
+[
+  {
+    "id": "a",
+    "assetId": "a",
+    "companyId": "fixture-co",
+    "assetName": "A",
+    "codeName": null,
+    "technical": { "mechanism": null, "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  },
+  {
+    "id": "b",
+    "assetId": "b",
+    "companyId": "fixture-co",
+    "assetName": "B",
+    "codeName": null,
+    "technical": { "mechanism": null, "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  },
+  {
+    "id": "ab-1",
+    "assetId": "ab-1",
+    "companyId": "fixture-co",
+    "assetType": "fixed-dose-combination",
+    "assetName": "AB",
+    "codeName": null,
+    "components": [{ "assetId": "a" }, { "assetId": "b" }],
+    "technical": { "mechanism": null, "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Planned" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  },
+  {
+    "id": "ab-2",
+    "assetId": "ab-2",
+    "companyId": "fixture-co",
+    "assetType": "fixed-dose-combination",
+    "assetName": "BA",
+    "codeName": null,
+    "components": [{ "assetId": "b" }, { "assetId": "a" }],
+    "technical": { "mechanism": null, "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Planned" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  }
+]

@@ -93,6 +93,15 @@ Prefer:
 - annual reports
 - dated transaction disclosures
 
+### Combination, regimen, and company relationships
+
+Prefer official company materials, trial registry records, regulatory filings,
+or transaction disclosures that directly identify the component products,
+relationship role, territory, rights, and responsible company. Do not infer
+component identity, a fixed-dose/co-formulation relationship, a regimen
+relationship, territory, rights, or an external asset developer from context
+alone.
+
 ### Clinical results
 
 Prefer:
@@ -158,6 +167,13 @@ Rules by field.
 - **Development status** — one of the enumerated statuses; see status rules.
 - **Regulatory state** — one or more registry-backed regulatory milestones,
   separate from development stage.
+- **Asset type** — `single-asset`, `fixed-dose-combination`, or
+  `co-formulation`; omit for ordinary single-asset programs.
+- **Components** — only when official evidence confirms a combination asset or
+  regimen component. Use internal `assetId` references when available; otherwise
+  store official component code/name and company information when confirmed.
+- **Company relationships** — program/regimen-level company roles, territories,
+  rights, and dates only as published.
 
 General requirements:
 
@@ -250,8 +266,8 @@ field-level provenance is logged as an edge case.
 
 ## Registry promotion
 
-During research, add a new development-stage or regulatory-state registry entry
-only when all of the following are true:
+During research, add a new development-stage, regulatory-state, or company
+relationship-role registry entry only when all of the following are true:
 
 - the value is confirmed by a regulator, trial registry, official company
   announcement, or official scientific material.
@@ -277,6 +293,9 @@ Before entering or updating a record:
 - [ ] Confirm **indication**.
 - [ ] Confirm **stage** and **status**.
 - [ ] Confirm regulatory state separately from development stage when present.
+- [ ] Distinguish single asset, combination product, regimen, and external
+  background therapy.
+- [ ] Confirm component identities and company relationships without inference.
 - [ ] Check registry labels and aliases before adding new vocabulary.
 - [ ] Retrieve appropriate **primary or direct official sources** for each claim.
 - [ ] Record **publication and access dates**.

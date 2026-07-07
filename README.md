@@ -12,6 +12,7 @@ The current operating dataset is empty:
 
 - `data/generated/companies.json` contains `[]`
 - `data/generated/pipeline-programs.json` contains `[]`
+- `data/generated/regimens.json` contains `[]`
 
 ## Program Row Rule
 
@@ -28,16 +29,20 @@ For company research and automatic record updates, see the [`docs/research-workf
 
 - `data/companies/<company-id>/company.json` and
   `data/companies/<company-id>/pipeline-programs.json` are the human-edited
-  operating source-of-truth files.
+  operating source-of-truth files. New company folders also include
+  `regimens.json`, using `[]` when no regimens are tracked.
 - `data/generated/companies.json` and
   `data/generated/pipeline-programs.json` are generated aggregate files read by
-  the UI and data loader. Do not edit generated files directly.
-- `data/stress-tests/<fixture-id>/` contains isolated stress-test fixtures that
-  use the same contract and validator but are excluded from production
-  aggregate generation.
+  the UI and data loader. `data/generated/regimens.json` is generated and
+  type-safe for future use but is not displayed by the current UI. Do not edit
+  generated files directly.
+- `data/stress-tests/<case-id>/` contains isolated diagnostic references from
+  stress-test pilots. These archives are excluded from production aggregate
+  generation and are not golden expected output.
 - `data/registries/development-stages.json` and
   `data/registries/regulatory-states.json` define accepted development-stage
-  and regulatory-state vocabulary.
+  and regulatory-state vocabulary. `data/registries/company-relationship-roles.json`
+  defines program/regimen relationship roles.
 - `lib/programs/types.ts` defines the program data contract.
 - `lib/programs/data.ts` loads generated JSON data and resolves program
   `companyId` values to companies.
@@ -75,6 +80,7 @@ npm run data:validate:companies
 npm run data:generate
 npm run data:validate:generated
 npm run data:validate:stress
+npm run data:validate:synthetic
 ```
 
 ## Scope

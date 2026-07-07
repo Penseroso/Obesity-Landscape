@@ -13,18 +13,31 @@ status are mutable state and are never part of program identity or stable IDs**.
   that record.
 - It does **not** necessarily represent the originator, licensor, licensee,
   regional rights holder, or every co-development partner.
-- Ambiguous ownership structures (joint development, regional rights, licensing
-  transfers, acquisitions, unclear primary company) must be **logged as edge
-  cases** rather than forced into the current single-`companyId` schema.
+- Additional program/regimen-level company roles, rights, and territories belong
+  in `relationships`, not in a company-global record.
 
 ## Asset
 
-- An asset is **one molecular or biologic identity**.
+- An asset is **one molecular or biologic identity** or an official combination
+  product identity.
 - The same molecule shares **one stable `assetId`** across routes,
   formulations, indications, and development-state changes.
 - **Renaming** an asset does **not** create a new `assetId`.
-- Salt, prodrug, conjugate, and combination identity rules remain
-  **provisional** and must be documented as edge cases (see `edge-cases.md`).
+- Fixed-dose combinations and co-formulations keep one stable combination
+  `assetId` and may store component references. Component order does not affect
+  identity.
+- Salt, prodrug, and conjugate identity rules remain **provisional** and must be
+  documented as edge cases (see `edge-cases.md`).
+
+## Regimen
+
+- A regimen is a separate entity for multiple independent products administered
+  together.
+- Do not model a regimen as a pipeline program unless the products are confirmed
+  to be one fixed-dose combination or co-formulation product.
+- Regimen identity uses principal company, component set, indication or official
+  regimen identity, and never development stage or status.
+- Component order does not create a distinct regimen.
 
 ## Program identity
 
@@ -65,6 +78,9 @@ Create **separate program rows** when concurrently active records differ by:
 - dosage form
 - indication scope **with a different stage or status**
 - another development configuration that cannot be represented in one row
+
+Create **regimen records**, not program rows, when multiple independent products
+are only being co-administered.
 
 Multiple indications may **share one row** only when **all** of the following
 are the same:

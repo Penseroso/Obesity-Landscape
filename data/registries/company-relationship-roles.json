@@ -1,0 +1,55 @@
+[
+  {
+    "id": "originator",
+    "label": "originator",
+    "aliases": []
+  },
+  {
+    "id": "principal-developer",
+    "label": "principal developer",
+    "aliases": [
+      "lead developer"
+    ]
+  },
+  {
+    "id": "co-developer",
+    "label": "co-developer",
+    "aliases": [
+      "co-development partner"
+    ]
+  },
+  {
+    "id": "licensor",
+    "label": "licensor",
+    "aliases": []
+  },
+  {
+    "id": "licensee",
+    "label": "licensee",
+    "aliases": []
+  },
+  {
+    "id": "trial-sponsor",
+    "label": "trial sponsor",
+    "aliases": [
+      "study sponsor"
+    ]
+  },
+  {
+    "id": "regional-rights-holder",
+    "label": "regional rights holder",
+    "aliases": []
+  },
+  {
+    "id": "commercialization-partner",
+    "label": "commercialization partner",
+    "aliases": [
+      "commercial partner"
+    ]
+  },
+  {
+    "id": "manufacturing-partner",
+    "label": "manufacturing partner",
+    "aliases": []
+  }
+]
