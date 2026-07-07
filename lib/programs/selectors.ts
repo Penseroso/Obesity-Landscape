@@ -1,6 +1,8 @@
 import {
   clinicalDevelopmentStages,
   developmentStageRank,
+  developmentStages,
+  developmentStatuses,
 } from "./constants";
 import type {
   Company,
@@ -54,8 +56,12 @@ export function getProgramFilterOptions(
     ),
     indications: uniqueSorted(programs.flatMap((program) => program.indications)),
     routes: uniqueSorted(programs.map((program) => program.administration.route)),
-    stages: uniqueSorted(programs.map((program) => program.development.stage)),
-    statuses: uniqueSorted(programs.map((program) => program.development.status)),
+    stages: developmentStages.filter((stage) =>
+      programs.some((program) => program.development.stage === stage),
+    ),
+    statuses: developmentStatuses.filter((status) =>
+      programs.some((program) => program.development.status === status),
+    ),
   };
 }
 
