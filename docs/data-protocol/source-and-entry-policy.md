@@ -174,6 +174,12 @@ Rules by field.
   store official component code/name and company information when confirmed.
 - **Company relationships** — program/regimen-level company roles, territories,
   rights, and dates only as published.
+- **Regimen configuration key** — optional stable discriminator for officially
+  distinct regimens sharing the same principal company, component set, and
+  indication scope. Use official regimen codes, sponsor-defined configuration
+  labels, protocol/program identifiers, or stable simultaneous/sequential style
+  labels when directly supported. Do not use display names, stage/status, dates,
+  results, or arbitrary numbering.
 
 Company source folders are independent validation units. Use component
 `assetId`, component `companyId`, and relationship `companyId` only for entities
@@ -304,6 +310,8 @@ Before entering or updating a record:
 - [ ] Confirm component identities and company relationships without inference.
 - [ ] Keep internal references company-folder-local and represent other
   companies/assets as external references.
+- [ ] Add regimen `configurationKey` only when an official stable configuration
+  discriminator is needed and confirmed.
 - [ ] Check registry labels and aliases before adding new vocabulary.
 - [ ] Retrieve appropriate **primary or direct official sources** for each claim.
 - [ ] Record **publication and access dates**.

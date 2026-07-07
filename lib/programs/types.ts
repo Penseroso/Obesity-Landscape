@@ -96,6 +96,7 @@ export type RegimenRecord = {
   id: string;
   companyId: string;
   name: string;
+  configurationKey?: string;
   components: ComponentReference[];
   indications: string[];
   development: DevelopmentProfile;

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "regimen-1",
+    "companyId": "fixture-co",
+    "name": "A plus B simultaneous",
+    "configurationKey": "simultaneous-administration",
+    "components": [{ "assetId": "a" }, { "assetName": "B" }],
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 1", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  },
+  {
+    "id": "regimen-2",
+    "companyId": "fixture-co",
+    "name": "A plus B simultaneous duplicate",
+    "configurationKey": "simultaneous-administration",
+    "components": [{ "assetName": "B" }, { "assetId": "a" }],
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 1", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  }
+]

@@ -218,6 +218,14 @@ that the same external asset may appear by name in multiple company records, and
 aliases or renames are not unified until a future cross-company entity
 resolution module exists.
 
+When two regimens share the same principal company, component set, and
+indication scope, create separate records only if an official stable
+configuration discriminator is confirmed. Store that discriminator in
+`configurationKey` and use it as the basis for any stable regimen ID suffix.
+Do not use display name, stage/status, results, dates, or arbitrary numbering.
+If only one of the related records has `configurationKey`, or the discriminator
+is not official, defer the ambiguous record.
+
 ## 10. Result reporting
 
 There is **no rigid report schema**, no fixed table set, and no mandatory

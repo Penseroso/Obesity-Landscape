@@ -273,3 +273,19 @@ when decided, recorded as a new appended ADR.
   company records. Generator and validator do not perform cross-company entity
   resolution, external-to-internal conversion, alias matching, or automatic
   deduplication. A future cross-company resolution module can revisit this.
+
+## ADR-0023 — Regimen configuration identity
+
+- **Date:** 2026-07-07
+- **Status:** Accepted (fixed now)
+- **Decision:** Regimens may use optional `configurationKey` to distinguish
+  multiple officially distinct configurations with the same principal company,
+  component set, and indication scope.
+- **Rationale:** Component set and indication alone can collide for real
+  simultaneous/sequential, route/formulation, protocol, dose-level development,
+  or sponsor-defined regimen configurations. Display names are mutable and
+  should not define stable identity.
+- **Consequences:** Duplicate validation includes normalized
+  `configurationKey`. If multiple regimens share a base identity, all related
+  records must provide `configurationKey`. Stage, status, dates, results, and
+  arbitrary suffixes are invalid discriminators.

@@ -47,6 +47,9 @@ For company research and automatic record updates, see the [`docs/research-workf
   Assets or companies owned by another company are stored with names and
   `externalCompanyName`; generated aggregates do not perform cross-company
   reference resolution.
+- Regimens with the same principal company, component set, and indication scope
+  may use `configurationKey` only when official evidence confirms a distinct
+  stable configuration.
 - `lib/programs/types.ts` defines the program data contract.
 - `lib/programs/data.ts` loads generated JSON data and resolves program
   `companyId` values to companies.

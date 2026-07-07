@@ -47,6 +47,12 @@ status are mutable state and are never part of program identity or stable IDs**.
 - Component order does not create a distinct regimen.
 - Regimen components follow the same local/external reference rule as
   combination components.
+- When the same principal company, component set, and indication scope have
+  multiple officially distinct regimen configurations, use `configurationKey` as
+  the stable discriminator. Display name is not stable identity. Stage, status,
+  dates, results, and arbitrary suffixes must not be used as `configurationKey`.
+- If a second regimen needs a `configurationKey` but the official configuration
+  discriminator cannot be confirmed, defer it instead of inventing one.
 
 ## Program identity
 

@@ -298,6 +298,20 @@ function getComponentSetKey(components) {
   return sortedStrings(components.map((component) => getComponentKey(component))).join("|");
 }
 
+function getRegimenBaseIdentityKey(regimen) {
+  return [
+    regimen.companyId,
+    getComponentSetKey(regimen.components),
+    sortedStrings(regimen.indications.map(normalize)).join(","),
+  ].join("|");
+}
+
+function getNormalizedConfigurationKey(regimen) {
+  return regimen.configurationKey === undefined
+    ? ""
+    : normalize(regimen.configurationKey);
+}
+
 function validateComponent(component, context, dataset) {
   assert(isObject(component), `${context}: component must be an object`);
   assert(
@@ -493,6 +507,24 @@ function validateRegimen(regimen, context, registries, dataset) {
   assert(isNonEmptyString(regimen.id), `${context}: regimen.id is required`);
   assert(isNonEmptyString(regimen.companyId), `${context}: regimen.companyId is required`);
   assert(isNonEmptyString(regimen.name), `${context}: regimen.name is required`);
+  if (regimen.configurationKey !== undefined) {
+    assert(
+      isNonEmptyString(regimen.configurationKey),
+      `${context}: configurationKey must be a non-empty string`,
+    );
+    assert(
+      regimen.configurationKey === regimen.configurationKey.trim(),
+      `${context}: configurationKey must not have leading or trailing whitespace`,
+    );
+    assert(
+      !developmentStatuses.has(regimen.configurationKey),
+      `${context}: configurationKey must not be a development status`,
+    );
+    assert(
+      !registries.stageLabels.has(regimen.configurationKey),
+      `${context}: configurationKey must not be a development stage`,
+    );
+  }
   assert(
     dataset.companyIds.has(regimen.companyId),
     `${context}: missing companyId reference ${regimen.companyId}`,
@@ -525,7 +557,7 @@ function validateDataset(
   const assetIdentityById = new Map();
   const programIdentityKeys = new Set();
   const combinationIdentityKeys = new Set();
-  const regimenIdentityKeys = new Set();
+  const regimensByBaseIdentity = new Map();
 
   for (const company of companies) {
     validateCompany(company, context);
@@ -593,16 +625,35 @@ function validateDataset(
     assert(!regimenIds.has(regimen.id), `${context}: duplicate regimen id ${regimen.id}`);
     regimenIds.add(regimen.id);
 
-    const regimenIdentityKey = [
-      regimen.companyId,
-      getComponentSetKey(regimen.components),
-      sortedStrings(regimen.indications.map(normalize)).join(","),
-    ].join("|");
-    assert(
-      !regimenIdentityKeys.has(regimenIdentityKey),
-      `${context}: duplicate regimen identity ${regimenIdentityKey}`,
+    const baseIdentityKey = getRegimenBaseIdentityKey(regimen);
+    const baseRegimens = regimensByBaseIdentity.get(baseIdentityKey) ?? [];
+    baseRegimens.push(regimen);
+    regimensByBaseIdentity.set(baseIdentityKey, baseRegimens);
+  }
+
+  for (const [baseIdentityKey, baseRegimens] of regimensByBaseIdentity.entries()) {
+    if (baseRegimens.length === 1) {
+      continue;
+    }
+
+    const missingConfiguration = baseRegimens.filter(
+      (regimen) => regimen.configurationKey === undefined,
     );
-    regimenIdentityKeys.add(regimenIdentityKey);
+    assert(
+      missingConfiguration.length === 0 ||
+        missingConfiguration.length === baseRegimens.length,
+      `${context}: ambiguous regimen identity ${baseIdentityKey}; multiple regimens share the same company, component set, and indications, so every related record must provide configurationKey`,
+    );
+
+    const configurationKeys = new Set();
+    for (const regimen of baseRegimens) {
+      const configurationKey = getNormalizedConfigurationKey(regimen);
+      assert(
+        !configurationKeys.has(configurationKey),
+        `${context}: duplicate regimen identity ${baseIdentityKey}|${configurationKey}`,
+      );
+      configurationKeys.add(configurationKey);
+    }
   }
 }
 
@@ -744,6 +795,10 @@ function validateSyntheticFixtures() {
   const invalidExpectations = [
     ["duplicate-combination-order", /duplicate combination identity/],
     ["duplicate-regimen-order", /duplicate regimen identity/],
+    ["duplicate-regimen-configuration", /duplicate regimen identity/],
+    ["partial-regimen-configuration", /ambiguous regimen identity/],
+    ["blank-regimen-configuration", /configurationKey must be a non-empty string/],
+    ["case-regimen-configuration", /duplicate regimen identity/],
     ["unregistered-relationship-role", /not in the registry/],
     ["bad-internal-reference", /Use assetName or codeName with externalCompanyName/],
     ["foreign-company-id", /Use externalCompanyName for another company/],

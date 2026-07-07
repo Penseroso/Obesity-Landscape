@@ -1,0 +1,12 @@
+[
+  {
+    "id": "regimen-1",
+    "companyId": "fixture-co",
+    "name": "A plus B",
+    "configurationKey": " ",
+    "components": [{ "assetId": "a" }, { "assetName": "B" }],
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 1", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+  }
+]

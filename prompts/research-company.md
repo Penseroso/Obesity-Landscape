@@ -67,6 +67,13 @@ updating its records in the same execution. Follow these steps:
    another company folder for IDs, and do not promote external references to
    internal references.
 
+   For regimens, the base identity is principal company, component set, and
+   indication scope. If multiple official configurations share that base
+   identity, store a stable `configurationKey` confirmed from official evidence
+   and base any regimen ID suffix on it. Do not use display name, stage/status,
+   dates, results, or arbitrary numbering. If the configuration discriminator is
+   needed but unconfirmed, defer the additional regimen.
+
 8. **Defer, do not block.** Report unsupported or structurally unresolved
    findings (ambiguous ownership, unrepresentable configurations, unconfirmed
    identity) without blocking the company's other valid updates.
