@@ -15,10 +15,12 @@ The current dataset is empty:
 
 ## Program Row Rule
 
-- One program record represents one asset with one route, one dosage form, one development stage, and one development status.
-- Programs with different routes, dosage forms, stages, or statuses must use separate records.
-- Multiple indications may share one record only when their stage and status are the same.
+- Stable program identity is company, asset, route, and dosage form (plus indication scope when needed to distinguish concurrent programs).
+- Development stage and development status are mutable state, not identity: when they change, the existing record is updated in place.
 - Records for the same asset share the same `assetId` and use different program `id` values.
+- Multiple indications may share one record only when company, asset, route, dosage form, stage, and status are all the same.
+
+See [`docs/data-protocol/`](docs/data-protocol/) for the full research and data-entry protocol, including entity/row rules, field-specific source policy, edge cases, and decisions.
 
 ## Architecture
 
