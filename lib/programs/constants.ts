@@ -1,5 +1,3 @@
-import type { DevelopmentStage } from "./types";
-
 export const developmentStages = [
   "Discovery",
   "Preclinical",
@@ -20,7 +18,10 @@ export const developmentStatuses = [
   "Unknown",
 ] as const;
 
-export const developmentStageRank: Record<DevelopmentStage, number> = {
+export const developmentStageRank: Record<
+  (typeof developmentStages)[number],
+  number
+> = {
   Unknown: 0,
   Discovery: 1,
   Preclinical: 2,
@@ -38,4 +39,4 @@ export const clinicalDevelopmentStages = [
   "Phase 3",
   "Filed",
   "Approved",
-] as const satisfies readonly DevelopmentStage[];
+] as const satisfies readonly (typeof developmentStages)[number][];
