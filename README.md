@@ -22,6 +22,8 @@ The current dataset is empty:
 
 See [`docs/data-protocol/`](docs/data-protocol/) for the full research and data-entry protocol, including entity/row rules, field-specific source policy, edge cases, and decisions.
 
+For company research and automatic record updates, see the [`docs/research-workflow.md`](docs/research-workflow.md) workflow and the reusable [`prompts/research-company.md`](prompts/research-company.md) prompt.
+
 ## Architecture
 
 - `data/companies.json` and `data/pipeline-programs.json` are the source data files.
