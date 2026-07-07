@@ -38,8 +38,10 @@ logged as edge cases rather than resolved by schema changes.
 
 - Non-GLP-1 programs, such as amylin programs, **only** when intentionally
   tracked as direct strategic competitors.
-- Adjacent inclusion **requires an explicit reason** for inclusion, recorded
-  with the record's sources.
+- Adjacent inclusion **requires an explicit reason**. The current JSON schema
+  has **no field** for an inclusion rationale — record the reason in research
+  output or decision documentation (for example `decision-log.md`) until the
+  contract provides a proper field.
 
 ### Default exclusion
 
