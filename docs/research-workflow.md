@@ -102,7 +102,51 @@ company's other, fully confirmed assets.
   prior-state support.
 - **Avoid duplicate** source entries.
 
-## 5. Metadata updates
+## 5. Deterministic ID rules (provisional)
+
+These are **provisional operating rules**, subject to review after the first
+pilot.
+
+Before creating any record, **search existing company, asset, and program
+identities and reuse existing IDs whenever applicable.**
+
+For new records:
+
+- **`companyId`** — lowercase kebab-case slug of the canonical official
+  company name.
+- **`assetId`** — lowercase kebab-case slug of the official development code
+  when available; otherwise the canonical asset name.
+- **`programId`** — a stable combination of `companyId`, `assetId`, route, and
+  dosage form.
+- Add an **indication-scope suffix only when required** to distinguish
+  concurrently active programs (see the row-splitting rules in the data
+  protocol).
+- **Never include stage or status in an ID.**
+- **Normalize whitespace and punctuation consistently** when slugging.
+- **Do not change IDs** after renaming, licensing, stage progression, or
+  status change — IDs are stable; the data protocol's mutable-state rules
+  still apply to the record's content.
+- **Check for collisions** before creation.
+- When a deterministic collision **cannot be resolved from verified identity
+  information**, **defer the record** instead of inventing an arbitrary ID.
+
+## 6. Company creation rule
+
+The current `Company` contract requires:
+
+- canonical company name
+- `headquartersCountry`
+
+**Create a new Company record only when both are confirmed** from reliable
+current sources.
+
+If headquarters country is **unresolved**:
+
+- do **not** guess.
+- do **not** create a partial Company record.
+- **defer** and report the company/program finding instead.
+
+## 7. Metadata updates
 
 When **stored values change**:
 
@@ -119,7 +163,7 @@ When a record is **reverified without a value change**:
 Do **not** mark unrelated programs as reverified when they were not actually
 checked in this run.
 
-## 6. Result reporting
+## 8. Result reporting
 
 There is **no rigid report schema**, no fixed table set, and no mandatory
 section order. Choose a form appropriate to the company's complexity — tables,
@@ -135,7 +179,7 @@ Whatever the form, the final response must communicate:
 - the **main supporting sources**.
 - **validation results**.
 
-## 7. Failure handling
+## 9. Failure handling
 
 Before modifying any data, verify that **current external sources can actually
 be accessed**.
@@ -149,7 +193,7 @@ If current-source research is unavailable:
 A record must never be created or updated from memory or assumption when live
 sources could not be reached.
 
-## 8. Non-goals
+## 10. Non-goals
 
 This workflow does **not** introduce:
 

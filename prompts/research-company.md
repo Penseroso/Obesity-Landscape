@@ -53,16 +53,34 @@ updating its records in the same execution. Follow these steps:
    current sources omit them, and do not overwrite strong evidence with weaker
    secondary reporting. Preserve useful historical sources; avoid duplicates.
 
-9. **Use current dates for verification metadata.** On a value change, update
+9. **Apply the provisional deterministic ID rules when creating new records.**
+   Search existing identities first and reuse IDs whenever applicable. For new
+   IDs: `companyId` is a lowercase kebab-case slug of the canonical official
+   company name; `assetId` is a lowercase kebab-case slug of the official
+   development code when available, otherwise the canonical asset name;
+   `programId` stably combines `companyId`, `assetId`, route, and dosage form,
+   with an indication-scope suffix only when required to distinguish
+   concurrent programs. Never include stage or status in an ID. Check for
+   collisions before creation; if a collision cannot be resolved from verified
+   identity information, defer the record rather than inventing an arbitrary
+   ID. These rules are provisional pending the first pilot.
+
+10. **Apply the Company creation rule.** Create a new `Company` record only
+    when both the canonical company name and `headquartersCountry` are
+    confirmed from reliable current sources. If `headquartersCountry` is
+    unresolved, do not guess and do not create a partial Company record —
+    defer and report the finding instead.
+
+11. **Use current dates for verification metadata.** On a value change, update
    `updatedAt` and `lastVerifiedAt` and add/update sources with `checkedAt`. On
    reverification without change, keep `updatedAt`, update `lastVerifiedAt`, and
    refresh source verification metadata. Use `YYYY-MM-DD`. Do not estimate
    unknown dates. Do not mark unchecked programs as reverified.
 
-10. **Validate.** Run `npm run lint`, `npm run build`, and `git diff --check`.
+12. **Validate.** Run `npm run lint`, `npm run build`, and `git diff --check`.
     Confirm any data edits keep the JSON valid.
 
-11. **Report flexibly but completely.** In whatever form suits the company's
+13. **Report flexibly but completely.** In whatever form suits the company's
     complexity (tables, asset-by-asset sections, or concise lists — no fixed
     template), communicate: whether this was an initial investigation or a
     refresh; the relevant assets found; records created or changed; important
