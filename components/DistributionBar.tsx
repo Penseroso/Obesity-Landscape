@@ -8,21 +8,16 @@ export function DistributionBar({ label, count, share }: DistributionBarProps) {
   const percent = Math.round(share * 100);
 
   return (
-    <div className="flex items-center gap-3">
-      <span
-        className="w-28 shrink-0 truncate text-sm text-foreground"
-        title={label}
-      >
+    <div className="grid grid-cols-[7rem_minmax(0,1fr)_auto] items-center gap-3">
+      <span className="truncate text-sm font-medium text-foreground" title={label}>
         {label}
       </span>
-      <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
-        <div
-          className="h-full rounded-full bg-primary transition-[width]"
-          style={{ width: `${percent}%` }}
-        />
+      <div className="h-3 overflow-hidden rounded-sm border border-border bg-muted">
+        <div className="h-full bg-primary" style={{ width: `${percent}%` }} />
       </div>
-      <span className="w-20 shrink-0 text-right text-sm tabular-nums text-muted-foreground">
-        {count} &middot; {percent}%
+      <span className="text-right text-sm font-semibold tabular-nums text-primary">
+        {count}
+        <span className="ml-1 font-normal text-muted-foreground">{percent}%</span>
       </span>
     </div>
   );
