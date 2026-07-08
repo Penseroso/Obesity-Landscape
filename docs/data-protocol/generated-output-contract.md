@@ -97,6 +97,10 @@ Downstream UI, report, and tool consumers:
 - **Should** treat generated files that are stale relative to operating data as a
   build/validation failure to be fixed by regeneration, never as a competing
   source of truth.
+- **Must** describe counts derived from these files as **tracked
+  obesity/incretin competitive program** counts (the v1.1 scope, ADR-0026), not
+  GLP-1 receptor agonist-only counts; presence of a record does not imply the
+  program is a GLP-1 RA or GLP-1-containing.
 
 ## 6. Validation contract
 

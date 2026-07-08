@@ -45,7 +45,18 @@ updating its records in the same execution. Follow these steps:
 
 5. **Apply the Module 5 rules.** Enforce the dataset scope, stage evidence
    thresholds, entity/asset/program identity, row-splitting rules, and
-   field-entry rules from the data protocol. Set `development.stage` to the most
+   field-entry rules from the data protocol. The v1.1 scope (ADR-0026) is the
+   competitive **obesity/incretin** landscape: include GLP-1 receptor agonists,
+   GLP-1-containing dual/triple agonists, GLP-1-based combinations and regimens,
+   amylin-only and amylin-containing obesity programs, and GIP-only,
+   glucagon-only, or other incretin/amylin/glucagon-axis obesity programs when
+   official evidence confirms obesity or weight-management development intent.
+   Defer to v2 (unless already GLP-1-based) muscle-preserving/body-composition
+   adjuncts, non-incretin anti-obesity classes (MC4R, CB1, CNS-appetite, lipase
+   inhibitor, unrelated small-molecule weight-loss), and MASH-only, T2D-only, or
+   comorbidity-only programs; do not include a program merely for lack of GLP-1
+   biology or merely because it may later become obesity-relevant. Inclusion does
+   not imply GLP-1 RA or GLP-1-containing status. Set `development.stage` to the most
    advanced official current development stage for the program scope;
    regulatory-development milestones such as `IND submitted` and `IND cleared`
    are valid stages when they are the most advanced official current stage and

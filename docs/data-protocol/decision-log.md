@@ -20,6 +20,7 @@ entry.
 - **Company relationship roles:** ADR-0020.
 - **Internal reference scope:** ADR-0022.
 - **v1 data contract freeze:** ADR-0025.
+- **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
 
 ---
 
@@ -139,7 +140,8 @@ when decided, recorded as a new appended ADR.
   components.~~ Resolved by ADR-0016.
 - **Field-level provenance** — whether sources should attach per field.
 - **Exact adjacent-program inclusion boundary** — precise criteria for tracking
-  non-GLP-1 strategic competitors.
+  non-GLP-1 strategic competitors. Clarified for v1.1 by ADR-0026 for the
+  obesity/incretin axis; the full obesity-pharmacotherapy boundary stays v2.
 - **Program-ID suffix scheme** — the exact algorithm for the stable
   configuration suffix referenced in ADR-0002.
 
@@ -376,3 +378,61 @@ when decided, recorded as a new appended ADR.
   field, an excluded/deferred candidate ledger, the program-ID suffix scheme,
   and the other open-until-pilot and edge-case items. Contract Consolidation
   (Module 2) may begin on this frozen v1 baseline.
+
+## ADR-0026 — Product scope clarified as a v1.1 obesity/incretin landscape
+
+- **Date:** 2026-07-08
+- **Status:** Accepted (fixed now)
+- **Decision:** The product is a **competitive obesity/incretin development
+  landscape**, initially centered on GLP-1, incretin, amylin, and glucagon-axis
+  obesity pharmacotherapy. It is **not** a GLP-1 receptor agonist-only tracker
+  and **not yet** a full obesity-pharmacotherapy landscape. This clarifies —
+  without changing any data shape, schema, validator, registry, or generated
+  output — the earlier GLP-1-centered wording, and refines the deferred "exact
+  adjacent-program inclusion boundary" decision for v1.1. It is a **semantic
+  scope amendment**, not a contract-shape change, so the ADR-0025 v1 freeze and
+  ADR-0024 stage semantics remain intact. The clarified scope is labeled v1.1.
+- **v1.1 included classes** (named developer + confirmed official development
+  intent required for each):
+  - GLP-1 receptor agonists.
+  - GLP-1-containing dual or triple agonists.
+  - GLP-1-based combination products and GLP-1-based regimens.
+  - amylin-only obesity programs.
+  - amylin-containing obesity combination products or regimens.
+  - GIP-only obesity programs, only when official evidence confirms obesity or
+    weight-management development intent.
+  - glucagon-only obesity programs, only when official evidence confirms obesity
+    or weight-management development intent.
+  - other incretin/amylin/glucagon-axis obesity programs when official evidence
+    supports obesity or weight-management development intent.
+- **v2-deferred classes** (not in v1.1 unless already GLP-1-based):
+  - muscle-preserving, lean-mass preservation, or body-composition adjunct
+    programs.
+  - non-incretin anti-obesity classes such as MC4R, CB1, CNS appetite, lipase
+    inhibitor, or unrelated small-molecule weight-loss programs.
+  - MASH-only programs.
+  - T2D-only programs.
+  - CKD/CV/lipid/metabolic comorbidity-only programs.
+  - broad metabolic platforms without official obesity or weight-management
+    development intent.
+- **Clarifications:**
+  - A GLP-1-based regimen or combination may still be included even if one
+    component is outside the core incretin/amylin/glucagon-axis classes.
+  - A standalone non-incretin body-composition or lean-mass program is not
+    included in v1.1 merely because it may become relevant to obesity treatment;
+    that is a v2 scope expansion.
+  - Inclusion in the dataset does **not** imply GLP-1 receptor agonist status or
+    GLP-1-containing status.
+  - Generated counts are **tracked obesity/incretin competitive program** counts,
+    not GLP-1 RA-only counts.
+- **Default-exclusion basis:** a program is excluded for lack of v1.1
+  obesity/incretin/amylin/glucagon-axis relevance, lack of official
+  obesity/weight-management development intent, or lack of confirmed development
+  evidence — **not** for lack of GLP-1 biology alone.
+- **Consequences:** No records are added or re-researched under this decision,
+  and no GIP-only, glucagon-only, or amylin-only candidate is backfilled without
+  current official-evidence review. Previously excluded candidates that are now
+  potentially in v1.1 scope (for example GIP-only or glucagon-only programs with
+  possible obesity intent) are **re-review candidates** for a later company
+  refresh, not silent additions. Future company investigations follow the v1.1
+  scope.

@@ -1,7 +1,13 @@
 # GLP-1 Pipeline Board
 
-Frontend and data-model skeleton for tracking companies and development
-programs related to GLP-1 receptor agonists and adjacent incretin therapies.
+Frontend and data-model skeleton for tracking the competitive **obesity/incretin
+development landscape** — initially centered on GLP-1, incretin, amylin, and
+glucagon-axis obesity pharmacotherapy (v1.1 scope, see ADR-0026). It is not a
+GLP-1 receptor agonist-only tracker; inclusion of a program does not imply it is
+a GLP-1 receptor agonist or GLP-1-containing, and tracked counts are
+obesity/incretin competitive programs, not GLP-1 RA-only counts. See
+[`docs/data-protocol/README.md`](docs/data-protocol/README.md) for the full
+dataset scope.
 
 The project uses a minimal TPP-oriented dataset covering mechanism, platform,
 indication, route, dosage form, dosing interval, development stage, and

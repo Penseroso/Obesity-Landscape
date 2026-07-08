@@ -85,8 +85,13 @@ Deferred to v2; none is implemented in v1. Treatment and status live in
 
 ## Purpose
 
-- The application tracks the **current competitive development landscape** for
-  GLP-1-related programs.
+- The application tracks the **current competitive obesity/incretin development
+  landscape** (v1.1, ADR-0026): initially centered on GLP-1, incretin, amylin,
+  and glucagon-axis obesity pharmacotherapy. It is **not** a GLP-1 receptor
+  agonist-only tracker and **not yet** a full obesity-pharmacotherapy landscape.
+- Inclusion does **not** imply that a program is a GLP-1 receptor agonist or
+  GLP-1-containing; tracked counts are obesity/incretin competitive programs,
+  not GLP-1 RA-only counts.
 - The dataset is a **current-state snapshot**, not an event history.
 - Module 5 defines **research and entry rules only**.
 - Historical event tracking, validation, automation, and real data entry are
@@ -94,27 +99,54 @@ Deferred to v2; none is implemented in v1. Treatment and status live in
 
 ## Dataset scope
 
+The scope below is the v1.1 clarification recorded in ADR-0026. Every included
+program requires a **named developer** and **confirmed official development
+intent**; any route or formulation of an included class is in scope.
+
 ### Core inclusion
 
 - GLP-1 receptor agonists.
 - GLP-1-containing dual or triple agonists.
 - GLP-1-based combination products and GLP-1-based regimens.
-- Any route or formulation of the above with a **named developer** and
-  **confirmed development intent**.
+- amylin-only obesity programs.
+- amylin-containing obesity combination products or regimens.
+- GIP-only obesity programs, only when official evidence confirms obesity or
+  weight-management development intent.
+- glucagon-only obesity programs, only when official evidence confirms obesity
+  or weight-management development intent.
+- other incretin/amylin/glucagon-axis obesity programs when official evidence
+  supports obesity or weight-management development intent.
 
-### Adjacent inclusion
+A GLP-1-based regimen or combination may still be included even if one component
+is outside the core incretin/amylin/glucagon-axis classes.
 
-- Non-GLP-1 programs, such as amylin programs, **only** when intentionally
-  tracked as direct strategic competitors.
-- Adjacent inclusion **requires an explicit reason**. The current JSON schema
-  has **no field** for an inclusion rationale — record the reason in research
-  output or decision documentation (for example `decision-log.md`) until the
-  contract provides a proper field.
+### Deferred to v2 scope expansion
+
+Not included in v1.1 unless already GLP-1-based:
+
+- muscle-preserving, lean-mass preservation, or body-composition adjunct
+  programs.
+- non-incretin anti-obesity classes such as MC4R, CB1, CNS appetite, lipase
+  inhibitor, or unrelated small-molecule weight-loss programs.
+- MASH-only programs.
+- T2D-only programs.
+- CKD/CV/lipid/metabolic comorbidity-only programs.
+- broad metabolic platforms without official obesity or weight-management
+  development intent.
+
+A standalone non-incretin body-composition or lean-mass program is not included
+in v1.1 merely because it may become relevant to obesity treatment; record that
+as a v2 scope expansion. A durable adjacent-inclusion rationale field remains a
+v2 backlog item — until it exists, record any adjacent-inclusion reason in
+research output or decision documentation (for example `decision-log.md`).
 
 ### Default exclusion
 
-- GLP-1-unrelated GIP-only or glucagon-only programs.
-- Broad metabolic programs without direct relevance.
+A program is excluded for **lack of v1.1 obesity/incretin/amylin/glucagon-axis
+relevance, lack of official obesity or weight-management development intent, or
+lack of confirmed development evidence** — not for lack of GLP-1 biology alone.
+This also excludes:
+
 - Academic-only assets.
 - Patent-only assets.
 - Rumored or unconfirmed programs.
