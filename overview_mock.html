@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obesity Landscape — Overview Mock</title>
+<style>
+  :root {
+    --canvas: #f5f1ed;
+    --surface: #fffdfb;
+    --surface-subtle: #faf6f2;
+    --surface-strong: #eee6de;
+    --ink: #211b17;
+    --ink-soft: #514740;
+    --muted: #786d65;
+    --line: #ddd2c9;
+    --line-strong: #c7b8ad;
+    --accent: #b84a1b;
+    --accent-dark: #823313;
+    --accent-soft: #f3dfd2;
+    --clinical: #6c4936;
+    --regulatory: #a96b3c;
+    --early: #d7b89d;
+    --focus: #e4a06d;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--canvas); }
+
+  body {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 18px 28px 48px;
+    color: var(--ink);
+    background: var(--canvas);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Noto Sans KR", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+
+  .brand-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+  }
+
+  .brand-subtitle {
+    margin: 1px 0 0;
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 28px;
+  }
+
+  .nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 650;
+  }
+
+  .nav a:hover { color: var(--accent-dark); }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin: 26px 0 24px;
+  }
+
+  .eyebrow {
+    margin: 0 0 10px;
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 820;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 46px;
+    line-height: 1.02;
+    font-weight: 840;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-copy {
+    max-width: 740px;
+    margin: 14px 0 0;
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    width: fit-content;
+    margin-top: 18px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .meta-item {
+    padding: 10px 14px;
+    border-right: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+
+  .meta-item:last-child { border-right: 0; }
+
+  .meta-item strong {
+    color: var(--ink);
+    font-weight: 760;
+  }
+
+  .section-shell {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px rgba(44, 33, 25, 0.04);
+  }
+
+  .section-header {
+    display: flex;
+    gap: 18px;
+    align-items: end;
+    justify-content: space-between;
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+  }
+
+  .section-subtitle {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .swatch {
+    width: 18px;
+    height: 9px;
+    border: 1px solid var(--line-strong);
+  }
+
+  .swatch.early { background: #f2dfcf; }
+  .swatch.regulatory { background: #e6c5a8; }
+  .swatch.clinical { background: #b77448; }
+  .swatch.late { background: var(--accent-dark); }
+
+  .matrix-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .matrix {
+    min-width: 920px;
+    font-size: 13px;
+  }
+
+  th, td {
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    padding: 11px 12px;
+    background: var(--surface-strong);
+    color: var(--ink-soft);
+    font-size: 11px;
+    font-weight: 840;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 9px 12px;
+    background: var(--surface);
+  }
+
+  tbody tr:nth-child(even) td { background: #fcf9f6; }
+  tbody tr:hover td { background: #f8eee6; }
+
+  .company-cell {
+    width: 210px;
+    font-weight: 760;
+  }
+
+  .count-cell {
+    min-width: 92px;
+  }
+
+  .heat {
+    display: inline-flex;
+    min-width: 34px;
+    height: 26px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    font-weight: 780;
+  }
+
+  .h0 { background: #fffdfb; color: #aaa097; }
+  .h1 { background: #f4e6da; }
+  .h2 { background: #eacdb6; }
+  .h3 { background: #d9aa85; }
+  .h4 { background: #c57c4d; color: #fff; border-color: #b46d42; }
+  .h5 { background: #8f3f0d; color: #fff; border-color: #8f3f0d; }
+
+  .total-cell {
+    color: var(--accent-dark);
+    font-weight: 820;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .maturity {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 7px;
+    align-items: center;
+    min-width: 120px;
+  }
+
+  .maturity-bar {
+    height: 6px;
+    border-radius: 100px;
+    background: #eadfd7;
+    overflow: hidden;
+  }
+
+  .maturity-fill {
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .maturity span {
+    color: var(--ink-soft);
+    font-size: 12px;
+    font-weight: 720;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .panel-body {
+    padding: 16px 18px 18px;
+  }
+
+  .bar-list {
+    display: grid;
+    gap: 13px;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr) 32px;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .bar-label {
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+
+  .bar-track {
+    height: 12px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #f6eee7;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .bar-count {
+    color: var(--accent-dark);
+    font-variant-numeric: tabular-nums;
+    font-weight: 820;
+    text-align: right;
+  }
+
+  .mini-table th {
+    padding: 10px 12px;
+  }
+
+  .mini-table td {
+    padding: 10px 12px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3px 7px;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 12px;
+    font-weight: 780;
+  }
+
+  .note {
+    margin-top: 16px;
+    padding: 13px 15px;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--accent);
+    border-radius: 4px;
+    background: #fff9f4;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+
+  .note strong {
+    color: var(--accent-dark);
+  }
+
+  @media (max-width: 960px) {
+    body { padding: 16px 18px 36px; }
+    h1 { font-size: 38px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 620px) {
+    body { padding: 14px 12px 28px; }
+    .topbar { align-items: flex-start; }
+    .nav { gap: 16px; }
+    h1 { font-size: 32px; }
+    .meta-strip { width: 100%; }
+    .meta-item {
+      width: 50%;
+      border-bottom: 1px solid var(--line);
+    }
+    .meta-item:nth-child(even) { border-right: 0; }
+    .bar-row { grid-template-columns: 96px minmax(0, 1fr) 28px; }
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">OL</div>
+      <div>
+        <p class="brand-title">Obesity Landscape</p>
+        <p class="brand-subtitle">Obesity/incretin pipeline intelligence</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="#">Overview</a>
+      <a href="#">Programs</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Pipeline intelligence</p>
+        <h1>Obesity Landscape</h1>
+        <p class="hero-copy">
+          Competitive obesity/incretin program map across companies, development maturity,
+          route, and most advanced assets. Mock data assumes 10 companies and 60 tracked programs.
+        </p>
+        <div class="meta-strip" aria-label="Dataset metadata">
+          <div class="meta-item"><strong>10</strong> companies</div>
+          <div class="meta-item"><strong>60</strong> programs</div>
+          <div class="meta-item"><strong>33</strong> clinical-phase</div>
+          <div class="meta-item"><strong>2026-07-08</strong> latest verified</div>
+          <div class="meta-item"><strong>Scope v1.1</strong></div>
+          <div class="meta-item"><strong>Contract 1.0</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" aria-labelledby="matrix-title">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title" id="matrix-title">Company × Development Stage Matrix</h2>
+          <p class="section-subtitle">
+            Ordered stage distribution by company. Regulatory milestones are shown separately from clinical phases.
+          </p>
+        </div>
+        <div class="legend" aria-label="Heat legend">
+          <span class="legend-item"><span class="swatch early"></span>Early</span>
+          <span class="legend-item"><span class="swatch regulatory"></span>Regulatory milestone</span>
+          <span class="legend-item"><span class="swatch clinical"></span>Clinical</span>
+          <span class="legend-item"><span class="swatch late"></span>Late-stage</span>
+        </div>
+      </div>
+      <div class="matrix-wrap">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Preclinical</th>
+              <th>IND / CTA</th>
+              <th>Phase 1</th>
+              <th>Phase 2</th>
+              <th>Phase 3</th>
+              <th>Filed / Approved</th>
+              <th>Total</th>
+              <th>Maturity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="company-cell">Eli Lilly</td>
+              <td class="count-cell"><span class="heat h1">1</span></td>
+              <td class="count-cell"><span class="heat h1">1</span></td>
+              <td class="count-cell"><span class="heat h2">2</span></td>
+              <td class="count-cell"><span class="heat h2">2</span></td>
+              <td class="count-cell"><span class="heat h2">2</span></td>
+              <td class="count-cell"><span class="heat h1">1</span></td>
+              <td class="total-cell">9</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 84%"></div></div><span>84</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Novo Nordisk</td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h3">3</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td class="total-cell">8</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 88%"></div></div><span>88</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Ascletis Pharma</td>
+              <td><span class="heat h4">4</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">9</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 48%"></div></div><span>48</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Roche</td>
+              <td><span class="heat h3">3</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">7</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 43%"></div></div><span>43</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Zealand Pharma</td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">5</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 62%"></div></div><span>62</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Structure Therapeutics</td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">5</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 50%"></div></div><span>50</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Viking Therapeutics</td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">4</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 54%"></div></div><span>54</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Amgen</td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">3</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 51%"></div></div><span>51</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">Pfizer</td>
+              <td><span class="heat h2">2</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">4</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 36%"></div></div><span>36</span></div></td>
+            </tr>
+            <tr>
+              <td class="company-cell">BioAge Labs</td>
+              <td><span class="heat h5">5</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h1">1</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td><span class="heat h0">0</span></td>
+              <td class="total-cell">6</td>
+              <td><div class="maturity"><div class="maturity-bar"><div class="maturity-fill" style="width: 24%"></div></div><span>24</span></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="section-shell" aria-labelledby="route-title">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title" id="route-title">Route Mix</h2>
+            <p class="section-subtitle">Program count by administration route.</p>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="bar-list">
+            <div class="bar-row">
+              <div class="bar-label">Subcutaneous</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 62%"></div></div>
+              <div class="bar-count">37</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Oral</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 27%"></div></div>
+              <div class="bar-count">16</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Dual route</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 8%"></div></div>
+              <div class="bar-count">5</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Other / TBD</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 3%"></div></div>
+              <div class="bar-count">2</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" aria-labelledby="advanced-title">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title" id="advanced-title">Most Advanced Programs</h2>
+            <p class="section-subtitle">Highest-stage mock programs across the landscape.</p>
+          </div>
+        </div>
+        <div class="matrix-wrap">
+          <table class="mini-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Asset</th>
+                <th>Stage</th>
+                <th>Route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Novo Nordisk</td>
+                <td>CagriSema</td>
+                <td><span class="badge">Filed</span></td>
+                <td>Subcutaneous</td>
+              </tr>
+              <tr>
+                <td>Eli Lilly</td>
+                <td>Retatrutide</td>
+                <td><span class="badge">Phase 3</span></td>
+                <td>Subcutaneous</td>
+              </tr>
+              <tr>
+                <td>Zealand Pharma</td>
+                <td>Petrelintide</td>
+                <td><span class="badge">Phase 3</span></td>
+                <td>Subcutaneous</td>
+              </tr>
+              <tr>
+                <td>Viking Therapeutics</td>
+                <td>VK2735</td>
+                <td><span class="badge">Phase 2</span></td>
+                <td>SC / oral</td>
+              </tr>
+              <tr>
+                <td>Ascletis Pharma</td>
+                <td>ASC30</td>
+                <td><span class="badge">Phase 2</span></td>
+                <td>Oral</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div class="note">
+      <strong>Data freshness:</strong>
+      latest program record verified 2026-07-08. This static mock uses fabricated distribution counts
+      to test dashboard layout only; it is not source-derived competitive intelligence.
+    </div>
+  </main>
+</body>
+</html>
