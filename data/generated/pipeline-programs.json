@@ -683,5 +683,49 @@
         }
       ]
     }
+  },
+  {
+    "id": "zealand-pharma-zp6590-subcutaneous-injection",
+    "assetId": "zp6590",
+    "companyId": "zealand-pharma",
+    "assetName": "ZP6590",
+    "codeName": "ZP6590",
+    "technical": {
+      "mechanism": "GIP receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Potential once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-08",
+      "updatedAt": "2026-07-08",
+      "sources": [
+        {
+          "url": "https://www.zealandpharma.com/pipeline/zp6590/",
+          "title": "ZP6590 - Pipeline - Zealand Pharma",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-08"
+        },
+        {
+          "url": "https://www.zealandpharma.com/media/lbwavfca/zp6590-plus-sema-dio-rat-obesityweek-2022.pdf",
+          "title": "Anti-obesity Effects of GIP Analogue ZP6590 in Combination with Semaglutide in DIO Mice",
+          "sourceType": "scientific presentation",
+          "publishedAt": "2022-11-02",
+          "checkedAt": "2026-07-08"
+        }
+      ]
+    }
   }
 ]
