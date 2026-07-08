@@ -18,7 +18,7 @@ export type ProgramTableColumn = {
   defaultVisible: boolean;
 };
 
-export const programTableLocale: ProgramTableLocale = "ko";
+export const programTableLocale: ProgramTableLocale = "en";
 
 export const programTableColumns: ProgramTableColumn[] = [
   {

@@ -31,10 +31,10 @@ export function ProgramDetailDrawer({
     <div className="fixed inset-0 z-50">
       <button
         aria-label="Close program detail"
-        className="absolute inset-0 cursor-default bg-slate-950/30"
+        className="absolute inset-0 cursor-default bg-foreground/30"
         onClick={onClose}
       />
-      <aside className="absolute right-0 top-0 flex h-full w-full max-w-2xl flex-col bg-card shadow-2xl">
+      <aside className="absolute right-0 top-0 flex h-full w-full max-w-2xl flex-col border-l border-border bg-card shadow-soft">
         <div className="border-b border-border px-6 py-5">
           <div className="flex items-start justify-between gap-4">
             <div>
@@ -51,7 +51,7 @@ export function ProgramDetailDrawer({
             <button
               type="button"
               onClick={onClose}
-              className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
+              className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               Close
             </button>
@@ -104,7 +104,7 @@ export function ProgramDetailDrawer({
                       href={source.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="block font-medium text-primary hover:underline"
+                      className="block font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
                       {source.title ?? source.url}
                     </a>

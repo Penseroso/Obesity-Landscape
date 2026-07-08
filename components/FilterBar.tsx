@@ -9,7 +9,7 @@ type FilterBarProps = {
 };
 
 const selectClassName =
-  "h-10 rounded-md border border-border bg-card px-3 text-sm text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15";
+  "h-9 rounded-md border border-border bg-card px-3 text-sm text-foreground outline-none transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20";
 
 function SelectFilter({
   label,
@@ -47,7 +47,7 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
   };
 
   return (
-    <section className="rounded-lg border border-border bg-card p-4 shadow-soft">
+    <section className="rounded-md border border-border bg-card p-4 shadow-soft">
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
         <label className="flex min-w-0 flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground xl:col-span-2">
           Keyword
@@ -55,7 +55,7 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
             value={filters.keyword}
             onChange={(event) => update({ keyword: event.target.value })}
             placeholder="Search programs, mechanisms, platforms"
-            className="h-10 rounded-md border border-border bg-card px-3 text-sm font-normal normal-case tracking-normal text-foreground outline-none transition placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/15"
+            className="h-9 rounded-md border border-border bg-card px-3 text-sm font-normal normal-case tracking-normal text-foreground outline-none transition placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
           />
         </label>
         <SelectFilter

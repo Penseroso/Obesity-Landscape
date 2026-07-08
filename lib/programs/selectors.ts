@@ -3,6 +3,9 @@ import {
   developmentStageRank,
   developmentStages,
   developmentStatuses,
+  getStageBucketId,
+  stageBuckets,
+  type StageBucketId,
 } from "./constants";
 import type {
   Company,
@@ -63,6 +66,99 @@ export function getProgramFilterOptions(
       programs.some((program) => program.development.status === status),
     ),
   };
+}
+
+export type CompanyStageMatrixRow = {
+  companyId: string;
+  companyName: string;
+  counts: Record<StageBucketId, number>;
+  total: number;
+};
+
+export type CompanyStageMatrix = {
+  columns: { id: StageBucketId; label: string }[];
+  rows: CompanyStageMatrixRow[];
+  maxCellCount: number;
+};
+
+export function getCompanyStageMatrix(
+  companyRecords: Company[],
+  programs: PipelineProgram[],
+): CompanyStageMatrix {
+  const programsByCompanyId = new Map<string, PipelineProgram[]>();
+
+  for (const program of programs) {
+    const companyPrograms = programsByCompanyId.get(program.companyId) ?? [];
+    companyPrograms.push(program);
+    programsByCompanyId.set(program.companyId, companyPrograms);
+  }
+
+  let maxCellCount = 0;
+
+  const rows = companyRecords
+    .map((company) => {
+      const companyPrograms = programsByCompanyId.get(company.id) ?? [];
+      const counts = Object.fromEntries(
+        stageBuckets.map((bucket) => [bucket.id, 0]),
+      ) as Record<StageBucketId, number>;
+
+      for (const program of companyPrograms) {
+        const bucketId = getStageBucketId(program.development.stage);
+        counts[bucketId] += 1;
+        maxCellCount = Math.max(maxCellCount, counts[bucketId]);
+      }
+
+      return {
+        companyId: company.id,
+        companyName: company.name,
+        counts,
+        total: companyPrograms.length,
+      };
+    })
+    .sort((a, b) => a.companyName.localeCompare(b.companyName));
+
+  return { columns: stageBuckets, rows, maxCellCount };
+}
+
+export type RouteDistributionEntry = {
+  route: string;
+  count: number;
+  share: number;
+};
+
+export function getRouteDistribution(
+  programs: PipelineProgram[],
+): RouteDistributionEntry[] {
+  const counts = new Map<string, number>();
+
+  for (const program of programs) {
+    const route = program.administration.route?.trim() || "Unknown";
+    counts.set(route, (counts.get(route) ?? 0) + 1);
+  }
+
+  const total = programs.length || 1;
+
+  return Array.from(counts.entries())
+    .map(([route, count]) => ({ route, count, share: count / total }))
+    .sort((a, b) => b.count - a.count || a.route.localeCompare(b.route));
+}
+
+export function getMostAdvancedPrograms(
+  programs: PipelineProgram[],
+  limit = 5,
+): PipelineProgram[] {
+  return programs
+    .slice()
+    .sort((a, b) => {
+      const rankDiff =
+        (developmentStageRank[b.development.stage] ?? 0) -
+        (developmentStageRank[a.development.stage] ?? 0);
+
+      return rankDiff !== 0
+        ? rankDiff
+        : a.assetName.localeCompare(b.assetName);
+    })
+    .slice(0, limit);
 }
 
 export function getCompanySummaries(

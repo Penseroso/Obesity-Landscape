@@ -74,7 +74,7 @@ export function PipelineTable({ programs }: PipelineTableProps) {
   return (
     <div className="space-y-4">
       <FilterBar filters={filters} options={options} onChange={setFilters} />
-      <section className="overflow-hidden rounded-lg border border-border bg-card shadow-soft">
+      <section className="overflow-hidden rounded-md border border-border bg-card shadow-soft">
         <div className="flex flex-col gap-2 border-b border-border px-5 py-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-base font-semibold text-card-foreground">
@@ -87,7 +87,7 @@ export function PipelineTable({ programs }: PipelineTableProps) {
           <button
             type="button"
             onClick={() => setFilters(emptyProgramFilters)}
-            className="self-start rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground sm:self-auto"
+            className="self-start rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:self-auto"
           >
             Reset filters
           </button>
@@ -97,7 +97,7 @@ export function PipelineTable({ programs }: PipelineTableProps) {
             <thead className="bg-muted/70 text-xs uppercase tracking-[0.12em] text-muted-foreground">
               <tr>
                 {visibleColumns.map((column) => (
-                  <th key={column.id} className="px-4 py-3 font-semibold">
+                  <th key={column.id} className="px-4 py-2.5 font-semibold">
                     {getProgramTableColumnLabel(column)}
                   </th>
                 ))}
@@ -107,13 +107,21 @@ export function PipelineTable({ programs }: PipelineTableProps) {
               {filteredPrograms.map((program) => (
                 <tr
                   key={program.id}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => setSelectedProgram(program)}
-                  className="cursor-pointer bg-card transition hover:bg-accent/45"
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      setSelectedProgram(program);
+                    }
+                  }}
+                  className="cursor-pointer bg-card transition hover:bg-accent/45 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
                 >
                   {visibleColumns.map((column) => (
                     <td
                       key={column.id}
-                      className="whitespace-nowrap px-4 py-4 text-muted-foreground"
+                      className="whitespace-nowrap px-4 py-2.5 text-muted-foreground"
                     >
                       {column.id === "development" ? (
                         <span className="rounded-md bg-accent px-2.5 py-1 text-xs font-semibold text-accent-foreground">
