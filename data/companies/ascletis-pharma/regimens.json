@@ -9,8 +9,7 @@
         "role": "GLP-1R/GIPR/GCGR triple agonist"
       },
       {
-        "codeName": "ASC36",
-        "companyId": "ascletis-pharma",
+        "assetId": "asc36",
         "role": "amylin receptor agonist"
       }
     ],
@@ -32,6 +31,94 @@
           "sourceType": "company press release",
           "publishedAt": "2026-01-20",
           "checkedAt": "2026-07-07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc31-asc47-combination",
+    "companyId": "ascletis-pharma",
+    "name": "ASC31 plus ASC47 combination",
+    "components": [
+      {
+        "assetId": "asc31",
+        "role": "GLP-1R/GIPR dual agonist"
+      },
+      {
+        "codeName": "ASC47",
+        "companyId": "ascletis-pharma",
+        "role": "THR-beta agonist"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-08",
+      "updatedAt": "2026-07-08",
+      "sources": [
+        {
+          "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC31_ASC47_in_DIO_mice.pdf",
+          "title": "GLP-1R/GIPR Peptide Agonist ASC31 + ASC47 Shows 119.6% More Weight Loss than Tirzepatide in DIO Mice",
+          "sourceType": "scientific presentation",
+          "publishedAt": "2025-11",
+          "checkedAt": "2026-07-08"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ascletis-announces-the-combination-of-asc47-and-asc31-its-dual-glp-1rgipr-peptide-agonist-demonstrated-significantly-greater-weight-loss-compared-to-the-combination-of-asc47-and-tirzepatide-in-an-animal-model-of-obesity-302531465.html",
+          "title": "Ascletis Announces the Combination of ASC47 and ASC31, its Dual GLP-1R/GIPR Peptide Agonist, Demonstrated Significantly Greater Weight Loss Compared to the Combination of ASC47 and Tirzepatide in an Animal Model of Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2025-08-17",
+          "checkedAt": "2026-07-08"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc47-semaglutide-combination",
+    "companyId": "ascletis-pharma",
+    "name": "ASC47 plus semaglutide combination",
+    "components": [
+      {
+        "codeName": "ASC47",
+        "companyId": "ascletis-pharma",
+        "role": "THR-beta agonist"
+      },
+      {
+        "assetName": "Semaglutide",
+        "role": "GLP-1R agonist"
+      }
+    ],
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-08",
+      "updatedAt": "2026-07-08",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06972992",
+          "title": "A Study to Evaluate Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of ASC47 in Combination With Semaglutide",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-05-15",
+          "checkedAt": "2026-07-08"
+        },
+        {
+          "url": "https://www.ascletis.com/data/upload/pdf/EASO-ASC47-103.pdf",
+          "title": "ASC47 in Combination with Semaglutide Demonstrated Up to 111.8% Greater Relative Weight Loss in Participants with Obesity Compared to Semaglutide Monotherapy",
+          "sourceType": "scientific presentation",
+          "publishedAt": "2026-05",
+          "checkedAt": "2026-07-08"
         }
       ]
     }
