@@ -31,6 +31,10 @@ The company-research workflow
 protocol and point here for scope, evidence, identity, row, and entry rules
 rather than restating them.
 
+A point-in-time check that the registries, TypeScript types, validators,
+operating data, and generated outputs agree is recorded in
+[`consistency-audit.md`](./consistency-audit.md).
+
 ## Frozen v1 contract at a glance
 
 A compact map of the frozen v1 contract. Each line links to its authoritative
