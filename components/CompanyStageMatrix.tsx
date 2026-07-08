@@ -18,8 +18,8 @@ export function CompanyStageMatrix({ matrix }: CompanyStageMatrixProps) {
 
   return (
     <section className="rounded-md border border-border bg-card shadow-soft">
-      <div className="border-b border-border px-5 py-4">
-        <h2 className="text-base font-semibold text-card-foreground">
+      <div className="border-b border-border px-5 py-5">
+        <h2 className="text-lg font-semibold tracking-tight text-card-foreground">
           Company &times; Development Stage Matrix
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -56,7 +56,9 @@ export function CompanyStageMatrix({ matrix }: CompanyStageMatrixProps) {
                       className="px-3 py-2.5 text-center text-muted-foreground"
                       style={cellStyle(count, maxCellCount)}
                     >
-                      {count > 0 ? count : (
+                      {count > 0 ? (
+                        <span className="font-medium">{count}</span>
+                      ) : (
                         <span className="text-border">&ndash;</span>
                       )}
                     </td>

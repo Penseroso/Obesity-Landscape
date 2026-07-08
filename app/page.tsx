@@ -43,9 +43,10 @@ export default function OverviewPage() {
 
       <CompanyStageMatrix matrix={stageMatrix} />
 
-      <RouteMixPanel entries={routeDistribution} />
-
-      <MostAdvancedProgramsTable programs={mostAdvancedPrograms} />
+      <section className="grid items-stretch gap-6 md:grid-cols-2">
+        <RouteMixPanel entries={routeDistribution} />
+        <MostAdvancedProgramsTable programs={mostAdvancedPrograms} />
+      </section>
     </div>
   );
 }

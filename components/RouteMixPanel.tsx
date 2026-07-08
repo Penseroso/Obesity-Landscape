@@ -7,12 +7,16 @@ type RouteMixPanelProps = {
 
 export function RouteMixPanel({ entries }: RouteMixPanelProps) {
   return (
-    <section className="rounded-md border border-border bg-card p-5 shadow-soft">
-      <h2 className="text-base font-semibold text-card-foreground">Route Mix</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Programs by administration route.
-      </p>
-      <div className="mt-4 space-y-3">
+    <section className="flex h-full flex-col rounded-md border border-border bg-card shadow-soft">
+      <div className="border-b border-border px-5 py-4">
+        <h2 className="text-base font-semibold text-card-foreground">
+          Route Mix
+        </h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Programs by administration route.
+        </p>
+      </div>
+      <div className="flex-1 space-y-3 px-5 py-4">
         {entries.length > 0 ? (
           entries.map((entry) => (
             <DistributionBar
