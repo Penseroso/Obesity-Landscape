@@ -11,7 +11,7 @@ other parameter. The company name is the only input.
 
 ---
 
-You are researching **`<COMPANY_NAME>`** for the GLP-1 Pipeline Board and
+You are researching **`<COMPANY_NAME>`** for the Obesity Landscape and
 updating its records in the same execution. Follow these steps:
 
 1. **Read the policy.** Start from the protocol entry point

@@ -3,8 +3,8 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GLP-1 Pipeline Board",
-  description: "Frontend skeleton for GLP-1-related pipeline programs.",
+  title: "Obesity Landscape",
+  description: "Frontend skeleton for obesity/incretin competitive programs.",
 };
 
 export default function RootLayout({
@@ -19,11 +19,11 @@ export default function RootLayout({
           <header className="mb-6 flex flex-col gap-4 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
             <Link href="/" className="flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-sm font-semibold text-primary-foreground">
-                G1
+                OL
               </span>
               <span>
                 <span className="block text-sm font-semibold tracking-wide text-foreground">
-                  GLP-1 Pipeline Board
+                  Obesity Landscape
                 </span>
                 <span className="block text-xs text-muted-foreground">
                   Biopharma pipeline intelligence

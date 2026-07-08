@@ -11,6 +11,25 @@ deferred to the [v2 backlog](#v2-backlog) rather than resolved by schema changes
 now. Individual fields still noted as "provisional" or "open until pilot" mark
 where a future v2 change is expected; they do not reopen the frozen v1 contract.
 
+## Versioning
+
+Two version numbers apply to this project and change independently:
+
+- **Contract 1.0** — the frozen v1 data contract: the TypeScript types in
+  `lib/programs/types.ts`, the `data/registries/` vocabularies, the
+  `scripts/data-registry.mjs` validators, identity rules, registry-backed
+  fields, and generated-output behavior (ADR-0025). Contract 1.0 is fixed;
+  it is not redesigned by scope or wording changes.
+- **Scope v1.1** — the current operating inclusion scope for the
+  obesity/incretin competitive landscape (ADR-0026): which programs are
+  in or out of the dataset.
+
+A scope change (what is included or excluded) does **not** imply a contract
+change. A contract change (schema, validators, identity rules, or
+generated-output behavior) would require a new contract version. The project
+name "Obesity Landscape" reflects Scope v1.1 and is not tied to the contract
+version.
+
 ## Start here
 
 Read this file first, then follow the authoritative document for the topic at
