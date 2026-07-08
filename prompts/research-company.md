@@ -54,9 +54,10 @@ updating its records in the same execution. Follow these steps:
    Defer to v2 (unless already GLP-1-based) muscle-preserving/body-composition
    adjuncts, non-incretin anti-obesity classes (MC4R, CB1, CNS-appetite, lipase
    inhibitor, unrelated small-molecule weight-loss), and MASH-only, T2D-only, or
-   comorbidity-only programs; do not include a program merely for lack of GLP-1
-   biology or merely because it may later become obesity-relevant. Inclusion does
-   not imply GLP-1 RA or GLP-1-containing status. Set `development.stage` to the most
+   comorbidity-only programs. Do not exclude a program merely for lack of GLP-1
+   biology when it otherwise satisfies v1.1 scope; also do not include standalone
+   v2-deferred programs merely because they may later become obesity-relevant.
+   Inclusion does not imply GLP-1 RA or GLP-1-containing status. Set `development.stage` to the most
    advanced official current development stage for the program scope;
    regulatory-development milestones such as `IND submitted` and `IND cleared`
    are valid stages when they are the most advanced official current stage and
