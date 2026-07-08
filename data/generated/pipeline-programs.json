@@ -189,10 +189,10 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Preclinical",
+      "stage": "IND cleared",
       "status": "Active",
-      "stageBasis": "Regulatory milestone separated from clinical stage",
-      "stageOperationalState": "Not separately confirmed"
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Cleared, not yet initiated"
     },
     "regulatoryStates": [
       {
@@ -247,10 +247,10 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Preclinical",
+      "stage": "IND submitted",
       "status": "Active",
-      "stageBasis": "Regulatory milestone separated from clinical stage",
-      "stageOperationalState": "Not separately confirmed"
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Submitted, pending clearance"
     },
     "regulatoryStates": [
       {

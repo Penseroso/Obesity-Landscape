@@ -62,13 +62,15 @@ export type DevelopmentStatus = (typeof developmentStatuses)[number];
 export type DevelopmentStageBasis =
   | "Sponsor-declared current pipeline stage"
   | "Operational evidence"
-  | "Regulatory milestone separated from clinical stage";
+  | "Official regulatory-development milestone";
 
 export type DevelopmentStageOperationalState =
   | "Initiated or active"
   | "Active not recruiting"
   | "Not yet recruiting"
   | "Planned, not yet initiated"
+  | "Submitted, pending clearance"
+  | "Cleared, not yet initiated"
   | "Paused"
   | "Completed"
   | "Not separately confirmed";

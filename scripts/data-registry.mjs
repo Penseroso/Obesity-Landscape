@@ -37,13 +37,15 @@ const developmentStatuses = new Set([
 const developmentStageBases = new Set([
   "Sponsor-declared current pipeline stage",
   "Operational evidence",
-  "Regulatory milestone separated from clinical stage",
+  "Official regulatory-development milestone",
 ]);
 const developmentStageOperationalStates = new Set([
   "Initiated or active",
   "Active not recruiting",
   "Not yet recruiting",
   "Planned, not yet initiated",
+  "Submitted, pending clearance",
+  "Cleared, not yet initiated",
   "Paused",
   "Completed",
   "Not separately confirmed",

@@ -30,6 +30,44 @@
     "sortRank": 30
   },
   {
+    "id": "ind-submitted",
+    "label": "IND submitted",
+    "family": "Regulatory-development milestone",
+    "aliases": [
+      "Investigational New Drug application submitted",
+      "IND application submitted"
+    ],
+    "sortRank": 31
+  },
+  {
+    "id": "ind-cleared",
+    "label": "IND cleared",
+    "family": "Regulatory-development milestone",
+    "aliases": [
+      "IND clearance",
+      "Investigational New Drug clearance"
+    ],
+    "sortRank": 32
+  },
+  {
+    "id": "cta-submitted",
+    "label": "CTA submitted",
+    "family": "Regulatory-development milestone",
+    "aliases": [
+      "Clinical Trial Application submitted"
+    ],
+    "sortRank": 33
+  },
+  {
+    "id": "cta-approved",
+    "label": "CTA approved",
+    "family": "Regulatory-development milestone",
+    "aliases": [
+      "Clinical Trial Application approved"
+    ],
+    "sortRank": 34
+  },
+  {
     "id": "phase-1",
     "label": "Phase 1",
     "family": "Phase 1",

@@ -310,19 +310,21 @@ when decided, recorded as a new appended ADR.
 
 - **Date:** 2026-07-08
 - **Status:** Accepted (fixed now)
-- **Decision:** For v1, `development.stage` is the current
-  competitive-development stage. It may be supported by operational evidence or
-  by an explicit sponsor-declared current pipeline stage from a current company
-  pipeline page, investor presentation, filing, or equivalent official source.
-  Store optional `development.stageBasis` and
-  `development.stageOperationalState` when sponsor-declared stage and
-  operational evidence need to be distinguished.
-- **Rationale:** Competitive intelligence needs to reflect sponsor pipeline
-  positioning, while audits still need to know whether the stage is initiated,
+- **Decision:** For v1, `development.stage` is the most advanced official
+  current development stage for the specific program scope. It includes
+  nonclinical stages, regulatory-development milestones such as
+  `IND submitted`, `IND cleared`, `CTA submitted`, and `CTA approved`, clinical
+  phases, filing, and approval. Store optional `development.stageBasis` and
+  `development.stageOperationalState` when evidence source and operational
+  state need to be distinguished from the stored stage.
+- **Rationale:** Competitive intelligence needs one comparable stage axis
+  covering regulatory-development milestones and clinical phases, while audits
+  still need to know whether a stage is submitted, cleared, initiated,
   recruiting, not yet recruiting, planned, paused, completed, or not separately
   confirmed.
-- **Consequences:** A vague future plan alone does not advance
-  `development.stage`. A registered not-yet-recruiting trial or an explicit
-  current sponsor pipeline stage may support the stored stage when annotated.
-  Regulatory states such as `IND submitted` and `IND cleared` remain separate
-  from clinical stage unless clinical-stage evidence is also present.
+- **Consequences:** A vague future plan or secondary news alone does not
+  advance `development.stage`. `IND submitted`, `IND cleared`, and
+  `CTA approved` are valid stages when they are the most advanced official
+  current development stage, but they are not approximated as `Phase 1` without
+  separate official clinical-stage evidence. Detailed jurisdiction, authority,
+  and date remain in `regulatoryStates` when available.

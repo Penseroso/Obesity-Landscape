@@ -74,15 +74,17 @@ Treat these as **mutable properties**, not identity:
 
 - development stage
 - development status
-- regulatory state
+- regulatory state details
 
 - When a program progresses from **Phase 1 to Phase 2**, update the existing
   record rather than creating a new record solely because the stage changed.
 - When a program changes from **Active to Discontinued**, update the existing
   record rather than creating a new record solely because the status changed.
-- When a program receives **IND submitted** or **IND cleared** evidence, update
-  regulatory-state data without promoting or approximating the development
-  stage unless actual development-stage evidence also changed.
+- When a program receives **IND submitted** or **IND cleared** evidence, use
+  that milestone as `development.stage` when it is the most advanced official
+  current stage for the program scope. Preserve jurisdiction, authority, and
+  date in regulatory-state details when available, and do not approximate the
+  milestone as a clinical phase.
 
 ## Row splitting
 
@@ -92,7 +94,14 @@ Create **separate program rows** when concurrently active records differ by:
 - route
 - dosage form
 - indication scope **with a different stage or status**
+- indication or program scope with a different current `development.stage`,
+  status, or `stageOperationalState` for the same asset, route, and dosage form
 - another development configuration that cannot be represented in one row
+
+Do not create a new row for ordinary sequential progression of the same program
+scope; update the existing row instead. For example, Zealand petrelintide may
+have a Phase 2 obesity/overweight row and a planned Phase 3 chronic
+weight-management row because the current program scopes differ.
 
 Create **regimen records**, not program rows, when multiple independent products
 are only being co-administered.
