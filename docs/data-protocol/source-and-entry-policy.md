@@ -140,9 +140,11 @@ vague future plans or secondary news alone.
   stage; no named clinical candidate yet.
 - **Preclinical** — a named candidate undergoing nonclinical development.
 - **IND-enabling** — formal IND/CTA-enabling work explicitly underway.
-- **Phase 1–3** — actual trial initiation, an active registry entry, or
-  equivalent direct evidence. **Planned initiation alone does not advance the
-  stage** to Phase 1–3.
+- **Phase 1–3** — supported by actual trial initiation, an active or registered
+  trial entry, an explicit current sponsor pipeline marker, or equivalent direct
+  official evidence. Planned initiation language alone does not advance the
+  stage unless an official current source presents that phase as the current
+  development stage; record the operational state separately.
 - **Filed** — the filing has been formally submitted or accepted.
 - **Approved** — regulator approval is confirmed.
 - **Unknown** — a confirmed program whose stage is unresolved.
