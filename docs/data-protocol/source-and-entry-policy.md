@@ -116,6 +116,15 @@ An official topline release confirms **what the company announced**, but must
 
 ## Stage evidence rules
 
+For v1, `development.stage` is the program's current competitive-development
+stage. It may be supported by either operational evidence or by the sponsor's
+explicit current pipeline positioning in a current company pipeline page,
+investor presentation, filing, or equivalent official source. When these differ,
+store the sponsor-declared current stage only if it is presented as the current
+pipeline stage rather than a vague future plan, and use optional
+`development.stageBasis` and `development.stageOperationalState` to preserve the
+evidence basis and operational state.
+
 Explicit evidence required to assign each enumerated stage:
 
 - **Discovery** — evidence of an exploratory program or candidate-identification
@@ -128,6 +137,21 @@ Explicit evidence required to assign each enumerated stage:
 - **Filed** — the filing has been formally submitted or accepted.
 - **Approved** — regulator approval is confirmed.
 - **Unknown** — a confirmed program whose stage is unresolved.
+
+Optional stage annotations:
+
+- **`stageBasis`** records why the stored stage is valid:
+  `Sponsor-declared current pipeline stage`, `Operational evidence`, or
+  `Regulatory milestone separated from clinical stage`.
+- **`stageOperationalState`** records the operational state relevant to the
+  stored stage: `Initiated or active`, `Active not recruiting`,
+  `Not yet recruiting`, `Planned, not yet initiated`, `Paused`, `Completed`, or
+  `Not separately confirmed`.
+
+Regulatory progress remains separate from clinical stage. `IND submitted` or
+`IND cleared` does not by itself support `Phase 1`; keep the clinical stage at
+the supported nonclinical or sponsor-declared stage and record the regulatory
+state separately.
 
 ## Discovery versus confirmation
 

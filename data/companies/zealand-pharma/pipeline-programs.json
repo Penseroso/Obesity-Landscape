@@ -20,7 +20,9 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Active"
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
     },
     "relationships": [
       {
@@ -68,6 +70,61 @@
     }
   },
   {
+    "id": "zealand-pharma-petrelintide-subcutaneous-injection-chronic-weight-management",
+    "assetId": "petrelintide",
+    "companyId": "zealand-pharma",
+    "assetName": "Petrelintide",
+    "codeName": "ZP8396",
+    "technical": {
+      "mechanism": "Long-acting amylin analog",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Planned",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Planned, not yet initiated"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Roche",
+        "role": "co-developer",
+        "territories": [
+          "Europe",
+          "United States"
+        ],
+        "rights": [
+          "co-commercialization",
+          "co-development"
+        ],
+        "effectiveDate": "2025-03",
+        "sourceUrls": [
+          "https://www.zealandpharma.com/pipeline/petrelintide/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-08",
+      "updatedAt": "2026-07-08",
+      "sources": [
+        {
+          "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
+          "title": "Petrelintide - Pipeline - Zealand Pharma",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-08"
+        }
+      ]
+    }
+  },
+  {
     "id": "zealand-pharma-dapiglutide-subcutaneous-injection",
     "assetId": "dapiglutide",
     "companyId": "zealand-pharma",
@@ -87,7 +144,9 @@
     ],
     "development": {
       "stage": "Phase 1b",
-      "status": "On hold"
+      "status": "On hold",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Paused"
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
@@ -142,8 +201,10 @@
       "Overweight"
     ],
     "development": {
-      "stage": "Phase 1",
-      "status": "Active"
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
     },
     "relationships": [
       {

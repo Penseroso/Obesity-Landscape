@@ -16,6 +16,7 @@ entry.
 - **Rights and regional ownership model:** ADR-0018 / ADR-0019.
 - **Regimen vs. pipeline program:** ADR-0017.
 - **Regimen configuration identity:** ADR-0023.
+- **Stage semantics and operational-state annotation:** ADR-0024.
 - **Company relationship roles:** ADR-0020.
 - **Internal reference scope:** ADR-0022.
 
@@ -304,3 +305,24 @@ when decided, recorded as a new appended ADR.
   `configurationKey`. If multiple regimens share a base identity, all related
   records must provide `configurationKey`. Stage, status, dates, results, and
   arbitrary suffixes are invalid discriminators.
+
+## ADR-0024 — Stage semantics and operational-state annotation
+
+- **Date:** 2026-07-08
+- **Status:** Accepted (fixed now)
+- **Decision:** For v1, `development.stage` is the current
+  competitive-development stage. It may be supported by operational evidence or
+  by an explicit sponsor-declared current pipeline stage from a current company
+  pipeline page, investor presentation, filing, or equivalent official source.
+  Store optional `development.stageBasis` and
+  `development.stageOperationalState` when sponsor-declared stage and
+  operational evidence need to be distinguished.
+- **Rationale:** Competitive intelligence needs to reflect sponsor pipeline
+  positioning, while audits still need to know whether the stage is initiated,
+  recruiting, not yet recruiting, planned, paused, completed, or not separately
+  confirmed.
+- **Consequences:** A vague future plan alone does not advance
+  `development.stage`. A registered not-yet-recruiting trial or an explicit
+  current sponsor pipeline stage may support the stored stage when annotated.
+  Regulatory states such as `IND submitted` and `IND cleared` remain separate
+  from clinical stage unless clinical-stage evidence is also present.
