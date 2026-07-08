@@ -34,6 +34,22 @@ const developmentStatuses = new Set([
   "Discontinued",
   "Unknown",
 ]);
+const developmentStageBases = new Set([
+  "Sponsor-declared current pipeline stage",
+  "Operational evidence",
+  "Official regulatory-development milestone",
+]);
+const developmentStageOperationalStates = new Set([
+  "Initiated or active",
+  "Active not recruiting",
+  "Not yet recruiting",
+  "Planned, not yet initiated",
+  "Submitted, pending clearance",
+  "Cleared, not yet initiated",
+  "Paused",
+  "Completed",
+  "Not separately confirmed",
+]);
 
 function readJson(filePath) {
   return JSON.parse(readFileSync(filePath, "utf8"));
@@ -217,6 +233,18 @@ function validateDevelopment(development, context, registries) {
     developmentStatuses.has(development.status),
     `${context}: development.status "${development.status}" is not allowed`,
   );
+  if (development.stageBasis !== undefined) {
+    assert(
+      developmentStageBases.has(development.stageBasis),
+      `${context}: development.stageBasis "${development.stageBasis}" is not allowed`,
+    );
+  }
+  if (development.stageOperationalState !== undefined) {
+    assert(
+      developmentStageOperationalStates.has(development.stageOperationalState),
+      `${context}: development.stageOperationalState "${development.stageOperationalState}" is not allowed`,
+    );
+  }
 }
 
 function validateAdministration(administration, context, required) {

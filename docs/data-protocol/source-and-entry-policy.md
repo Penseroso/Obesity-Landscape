@@ -46,9 +46,11 @@ precision. For example, `Phase 1b`, `Phase 2a`, and `Phase 1/2` are not reduced
 to broader labels solely to fit existing vocabulary; if they satisfy the
 registry promotion rules, add the canonical value to the registry and use it.
 
-### Regulatory state
+### Regulatory state details
 
-Regulatory progress is separate from development stage. Examples include:
+Regulatory-development milestones can be `development.stage` values when they
+are the most advanced official current stage. Preserve jurisdiction, authority,
+and date as regulatory-state details when available. Examples include:
 
 - `IND submitted`
 - `IND cleared`
@@ -116,18 +118,54 @@ An official topline release confirms **what the company announced**, but must
 
 ## Stage evidence rules
 
+For v1, `development.stage` is the most advanced official current development
+stage for the specific program scope. It includes Discovery, Preclinical,
+IND-enabling, regulatory-development milestones such as `IND submitted`,
+`IND cleared`, `CTA submitted`, and `CTA approved`, clinical phases, Filed, and
+Approved. Clinical phase is one category within `development.stage`, not a
+separate concept. When official sources differ, store the most advanced official
+current stage and use optional `development.stageBasis` and
+`development.stageOperationalState` to preserve the evidence basis and
+operational state.
+
 Explicit evidence required to assign each enumerated stage:
+
+Accepted evidence includes explicit current sponsor pipeline markers, official
+investor presentations, filings, current pipeline tables, applicable trial
+registry phases, and official announcements of regulatory milestones, trial
+initiation, first-patient-dosed, filing, or approval. Do not promote stage from
+vague future plans or secondary news alone.
 
 - **Discovery** — evidence of an exploratory program or candidate-identification
   stage; no named clinical candidate yet.
 - **Preclinical** — a named candidate undergoing nonclinical development.
 - **IND-enabling** — formal IND/CTA-enabling work explicitly underway.
-- **Phase 1–3** — actual trial initiation, an active registry entry, or
-  equivalent direct evidence. **Planned initiation alone does not advance the
-  stage** to Phase 1–3.
+- **Phase 1–3** — supported by actual trial initiation, an active or registered
+  trial entry, an explicit current sponsor pipeline marker, or equivalent direct
+  official evidence. Planned initiation language alone does not advance the
+  stage unless an official current source presents that phase as the current
+  development stage; record the operational state separately.
 - **Filed** — the filing has been formally submitted or accepted.
 - **Approved** — regulator approval is confirmed.
 - **Unknown** — a confirmed program whose stage is unresolved.
+
+Optional stage annotations:
+
+- **`stageBasis`** records why the stored stage is valid:
+  `Sponsor-declared current pipeline stage`, `Operational evidence`, or
+  `Official regulatory-development milestone`.
+- **`stageOperationalState`** records the operational state relevant to the
+  stored stage: `Initiated or active`, `Active not recruiting`,
+  `Not yet recruiting`, `Planned, not yet initiated`,
+  `Submitted, pending clearance`, `Cleared, not yet initiated`, `Paused`,
+  `Completed`, or `Not separately confirmed`.
+
+Regulatory-development milestones are valid `development.stage` values when
+they are the most advanced official current development stage. Preserve
+jurisdiction, authority, and date details in `regulatoryStates` when available.
+Do not approximate these milestones as clinical phases: `IND submitted`,
+`IND cleared`, or `CTA approved` is not `Phase 1` unless separate official
+clinical-stage evidence supports Phase 1.
 
 ## Discovery versus confirmation
 
@@ -167,6 +205,9 @@ Rules by field.
 - **Development status** — one of the enumerated statuses; see status rules.
 - **Regulatory state** — one or more registry-backed regulatory milestones,
   separate from development stage.
+  For v1, this means detailed regulatory-state data supplements the unified
+  `development.stage`; it does not exclude regulatory-development milestones
+  from being stage values.
 - **Asset type** — `single-asset`, `fixed-dose-combination`, or
   `co-formulation`; omit for ordinary single-asset programs.
 - **Components** — only when official evidence confirms a combination asset or
@@ -315,7 +356,8 @@ Before entering or updating a record:
 - [ ] Confirm **route** and **dosage form**.
 - [ ] Confirm **indication**.
 - [ ] Confirm **stage** and **status**.
-- [ ] Confirm regulatory state separately from development stage when present.
+- [ ] Confirm regulatory-development stage and regulatory-state details when
+      present.
 - [ ] Distinguish single asset, combination product, regimen, and external
   background therapy.
 - [ ] Confirm component identities and company relationships without inference.

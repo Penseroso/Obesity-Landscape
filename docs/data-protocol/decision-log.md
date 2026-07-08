@@ -16,6 +16,7 @@ entry.
 - **Rights and regional ownership model:** ADR-0018 / ADR-0019.
 - **Regimen vs. pipeline program:** ADR-0017.
 - **Regimen configuration identity:** ADR-0023.
+- **Stage semantics and operational-state annotation:** ADR-0024.
 - **Company relationship roles:** ADR-0020.
 - **Internal reference scope:** ADR-0022.
 
@@ -304,3 +305,26 @@ when decided, recorded as a new appended ADR.
   `configurationKey`. If multiple regimens share a base identity, all related
   records must provide `configurationKey`. Stage, status, dates, results, and
   arbitrary suffixes are invalid discriminators.
+
+## ADR-0024 — Stage semantics and operational-state annotation
+
+- **Date:** 2026-07-08
+- **Status:** Accepted (fixed now)
+- **Decision:** For v1, `development.stage` is the most advanced official
+  current development stage for the specific program scope. It includes
+  nonclinical stages, regulatory-development milestones such as
+  `IND submitted`, `IND cleared`, `CTA submitted`, and `CTA approved`, clinical
+  phases, filing, and approval. Store optional `development.stageBasis` and
+  `development.stageOperationalState` when evidence source and operational
+  state need to be distinguished from the stored stage.
+- **Rationale:** Competitive intelligence needs one comparable stage axis
+  covering regulatory-development milestones and clinical phases, while audits
+  still need to know whether a stage is submitted, cleared, initiated,
+  recruiting, not yet recruiting, planned, paused, completed, or not separately
+  confirmed.
+- **Consequences:** A vague future plan or secondary news alone does not
+  advance `development.stage`. `IND submitted`, `IND cleared`, and
+  `CTA approved` are valid stages when they are the most advanced official
+  current development stage, but they are not approximated as `Phase 1` without
+  separate official clinical-stage evidence. Detailed jurisdiction, authority,
+  and date remain in `regulatoryStates` when available.

@@ -141,8 +141,10 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Preclinical",
-      "status": "Active"
+      "stage": "IND cleared",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Cleared, not yet initiated"
     },
     "regulatoryStates": [
       {
@@ -197,8 +199,10 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Preclinical",
-      "status": "Active"
+      "stage": "IND submitted",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Submitted, pending clearance"
     },
     "regulatoryStates": [
       {
