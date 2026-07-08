@@ -49,9 +49,9 @@ export default function OverviewPage() {
           helper="Local pipeline program records"
         />
         <StatCard
-          label="Clinical-stage Programs"
+          label="Clinical-phase Programs"
           value={clinicalStagePrograms}
-          helper="Phase 1 or later"
+          helper="Phase 1 or later; excludes regulatory milestones"
         />
         <StatCard
           label="Last Updated"
