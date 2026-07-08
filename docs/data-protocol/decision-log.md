@@ -19,6 +19,7 @@ entry.
 - **Stage semantics and operational-state annotation:** ADR-0024.
 - **Company relationship roles:** ADR-0020.
 - **Internal reference scope:** ADR-0022.
+- **v1 data contract freeze:** ADR-0025.
 
 ---
 
@@ -328,3 +329,50 @@ when decided, recorded as a new appended ADR.
   current development stage, but they are not approximated as `Phase 1` without
   separate official clinical-stage evidence. Detailed jurisdiction, authority,
   and date remain in `regulatoryStates` when available.
+
+## ADR-0025 — v1 data contract freeze
+
+- **Date:** 2026-07-08
+- **Status:** Accepted (fixed now)
+- **Decision:** The v1 data contract is frozen. After Ascletis Pharma and
+  Zealand Pharma stress testing, the current contract — `lib/programs/types.ts`,
+  the `data/registries/` vocabularies, the `scripts/data-registry.mjs`
+  validators, and the `docs/data-protocol/` rules — satisfies the v1 freeze
+  criteria and requires no further structural change for v1. No blocker was
+  found across the protocol documents, registries, validators, and current
+  Ascletis / Zealand data.
+- **Rationale:** The two operating companies exercised the contract's hard cases
+  and each resolved without a schema change:
+  - **Company-local identity** — company, asset, and program IDs are stable and
+    reused; external companies and assets are represented by name with
+    `externalCompanyName`, requiring no global entity graph (ADR-0022).
+  - **Program row identity** — stage and status stay mutable and out of stable
+    IDs (ADR-0003); rows split only when program/indication scope differs.
+    Zealand petrelintide's Phase 2 obesity/overweight row and planned Phase 3
+    chronic weight-management row are valid concurrent scopes.
+  - **Development stage semantics** — `development.stage` is the most advanced
+    official current stage for the program scope; regulatory-development
+    milestones such as `IND submitted` and `IND cleared` are first-class stages
+    with jurisdiction, authority, and date preserved in `regulatoryStates`, and
+    are never approximated as clinical phases. `stageBasis` and
+    `stageOperationalState` annotate evidence basis and operational state
+    (ADR-0024).
+  - **Combination and regimen handling** — fixed-dose combinations and
+    co-formulations are one combination asset/program with components (ADR-0016);
+    independently administered products are regimens (ADR-0017). Ascletis
+    ASC30_39 FDC, ASC36_35 FDC, the ASC37 plus ASC36 regimen, and Zealand
+    petrelintide / CT-388 FDC all fit.
+  - **Source and provenance** — record-level `metadata.sources` are sufficient
+    for v1; field-level provenance stays deferred to v2.
+  - **Adjacent and excluded candidates** — adjacent non-GLP-1 inclusion
+    rationale stays report-level and excluded candidates stay out of operating
+    data.
+  - **Generated outputs** — `data/generated/*` are deterministic aggregates of
+    the operating source folders and reflect current records after
+    `data:generate`.
+- **Consequences:** No new companies, schema fields, UI, or workflow changes are
+  introduced under this freeze. The v2 backlog is unchanged and remains
+  deferred: field-level provenance, a durable adjacent-inclusion rationale
+  field, an excluded/deferred candidate ledger, the program-ID suffix scheme,
+  and the other open-until-pilot and edge-case items. Contract Consolidation
+  (Module 2) may begin on this frozen v1 baseline.
