@@ -21,11 +21,11 @@ export default function OverviewPage() {
             Pipeline intelligence
           </p>
           <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            GLP-1 Pipeline Board
+            Obesity Landscape
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
-            Tracks companies and development programs related to GLP-1 receptor
-            agonists and adjacent incretin therapies as company source records
+            Tracks companies and development programs across the
+            obesity/incretin competitive landscape as company source records
             are added.
           </p>
         </div>
