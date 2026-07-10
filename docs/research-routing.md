@@ -28,6 +28,8 @@ endpoint, result, efficacy, or safety extraction.
 
 Requests with explicit clinical-evidence intent are reserved for a future
 **Clinical Evidence Research** workflow. This route is not implemented.
+The minimum semantic contract for that future domain is
+[`clinical-evidence/README.md`](./clinical-evidence/README.md).
 
 Explicit clinical-evidence intent includes terms such as:
 

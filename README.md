@@ -35,6 +35,8 @@ The operating dataset is generated from `data/companies/` source folders:
 See [`docs/data-protocol/`](docs/data-protocol/) for the full research and data-entry protocol, including entity/row rules, field-specific source policy, edge cases, and decisions.
 
 For company research and automatic record updates, see the [`docs/research-workflow.md`](docs/research-workflow.md) workflow and the reusable [`prompts/research-company.md`](prompts/research-company.md) prompt.
+For the future, separate Clinical Evidence domain boundary, see
+[`docs/clinical-evidence/README.md`](docs/clinical-evidence/README.md).
 
 ## Architecture
 

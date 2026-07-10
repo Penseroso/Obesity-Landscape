@@ -22,6 +22,7 @@ entry.
 - **v1 data contract freeze:** ADR-0025.
 - **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
 - **Research routing boundary:** ADR-0027.
+- **Clinical Evidence semantic contract:** ADR-0028.
 
 ---
 
@@ -468,3 +469,32 @@ when decided, recorded as a new appended ADR.
   Company/Pipeline Research behavior. The intended future combined order is
   Company/Pipeline Research first and Clinical Evidence Research second, but that
   order is not implemented by this ADR.
+
+## ADR-0028 - Clinical Evidence semantic contract
+
+- **Date:** 2026-07-10
+- **Status:** Accepted
+- **Decision:** Clinical Evidence is a separate future domain from the frozen
+  Company/Pipeline Contract 1.0. Its minimum semantic contract is documented in
+  [`docs/clinical-evidence/README.md`](../clinical-evidence/README.md). The
+  domain follows Scope v1.1 by reference and stores only human interventional
+  clinical studies with publicly disclosed study-specific results.
+- **Rationale:** Clinical result interpretation requires entity boundaries and
+  comparison safeguards that are different from pipeline-stage tracking.
+  Keeping the domain separate preserves Contract 1.0 semantics while allowing a
+  later implementation to link evidence to existing company, asset, program, or
+  regimen identities.
+- **Entity boundaries:** A Study is one identifiable clinical protocol; an Arm
+  is one treatment or comparator configuration; an Endpoint is one defined
+  outcome and assessment timepoint; and an Outcome is one reported result tied
+  to an endpoint, arm or comparison, and analysis population.
+- **Eligibility and safeguards:** Planned, recruiting, completed-without-results,
+  protocol-only, preclinical, non-human, observational, or out-of-scope studies
+  are excluded. When disclosed, dose, treatment duration, comparator, timepoint,
+  analysis population, estimand, result basis, and source-reported versus
+  derived values must be preserved. Ranking and UI comparison logic are not
+  defined by this ADR.
+- **Consequences:** This ADR adds documentation and contract decisions only. It
+  does not create Clinical Evidence types, schemas, validators, data files,
+  prompts, workflows, generated outputs, or UI; does not collect actual clinical
+  data; and does not alter `PipelineProgramRecord`, Contract 1.0, or Scope v1.1.
