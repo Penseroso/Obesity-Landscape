@@ -21,6 +21,7 @@ entry.
 - **Internal reference scope:** ADR-0022.
 - **v1 data contract freeze:** ADR-0025.
 - **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
+- **Research routing boundary:** ADR-0027.
 
 ---
 
@@ -436,3 +437,34 @@ when decided, recorded as a new appended ADR.
   possible obesity intent) are **re-review candidates** for a later company
   refresh, not silent additions. Future company investigations follow the v1.1
   scope.
+
+## ADR-0027 - Research routing boundary and reserved clinical intent
+
+- **Date:** 2026-07-10
+- **Status:** Accepted
+- **Decision:** Company/Pipeline Research remains the only currently executable
+  research workflow. Generic company research, investigation, review, refresh,
+  or update requests continue to route to
+  [`prompts/research-company.md`](../../prompts/research-company.md). Requests
+  with explicit clinical-evidence intent are reserved for a future Clinical
+  Evidence Research workflow and must not be routed to Company/Pipeline
+  Research as a substitute.
+- **Rationale:** The v2 Clinical Evidence domain needs its own workflow and
+  contract boundary. Generic company research should remain stable and should
+  not silently expand into detailed clinical-trial design, endpoint, result,
+  efficacy, or safety extraction. Conversely, explicit clinical-evidence
+  requests should not receive an incomplete substitute workflow that could imply
+  clinical research was completed.
+- **Routing rules:** Explicit clinical-evidence intent includes terms such as
+  `임상`, `clinical`, `trial`, `시험`, `endpoint`, `results`, and `결과`.
+  Ambiguous requests default to Company/Pipeline Research unless clinical intent
+  is explicit. If a request contains both company and clinical-evidence intent,
+  the Company/Pipeline Research portion may run first, but the clinical-evidence
+  portion must be reported as pending implementation.
+- **Consequences:** This is documentation and routing policy only. It does not
+  create a Clinical Evidence prompt or workflow; does not create study, arm,
+  endpoint, outcome, efficacy, or safety schemas; and does not change types,
+  validators, registries, operating data, generated outputs, UI, or existing
+  Company/Pipeline Research behavior. The intended future combined order is
+  Company/Pipeline Research first and Clinical Evidence Research second, but that
+  order is not implemented by this ADR.
