@@ -1,42 +1,65 @@
 # Clinical Evidence Contract
 
-Authoritative minimum semantic contract for the future Clinical Evidence
-domain. This document defines what may be represented when that domain is later
-implemented. It does not create a workflow, data files, schemas, validators,
-generated outputs, UI, or a research prompt.
+Authoritative semantic contract for the future Clinical Evidence domain. This
+document defines what may be represented when that domain is later implemented.
+It does not create a workflow, data files, schemas, validators, generated
+outputs, UI, or a research prompt.
 
-## Eligibility
+## Evidence Scope
 
-Clinical Evidence follows the existing **Scope v1.1** inclusion boundary from
-the data protocol and ADR-0026. This document does not restate, broaden, or
-override that indication and product scope.
+Clinical Evidence v2 initially covers only **human interventional clinical
+studies relevant to obesity or weight management that have publicly available
+results**.
 
-Store only **human interventional clinical studies with publicly disclosed
-study-specific results**. Results may be interim, topline,
-conference-presented, registry-posted, or peer-reviewed.
+Include a study only when both are true:
 
-Do not store:
+- the enrolled population or explicit development objective includes obesity,
+  overweight, chronic weight management, or weight reduction.
+- at least one study-specific result is publicly available from an acceptable
+  source.
 
-- planned studies.
-- recruiting studies without public results.
-- completed studies without public results.
-- protocol-only studies.
-- observational or non-interventional studies.
+A result may be final, interim, topline, conference-presented, registry-posted,
+or peer-reviewed, but its maturity must be distinguishable.
+
+Do not include:
+
+- registered, planned, recruiting, or completed studies with no disclosed
+  results.
+- protocol-only or design-only disclosures.
+- healthy-volunteer PK studies without an explicit obesity or weight-management
+  objective.
+- MASH-only, T2D-only, CKD/CV/lipid/comorbidity-only studies.
+- studies where body weight is incidental and obesity or weight management is
+  not an explicit study population or objective.
 - preclinical, animal, in vitro, or other non-human studies.
-- studies outside Scope v1.1.
+
+A study enrolling participants with obesity or overweight plus T2D remains
+eligible when weight management is an explicit objective. It is not treated as
+T2D-only in that case.
+
+MASH and other indication expansion remain outside the initial Clinical Evidence
+scope until a later scope decision.
 
 ## Entity Boundaries
 
-These are semantic boundaries only; they are not schemas.
+These are semantic boundaries only; they are not TypeScript types or JSON
+schemas.
 
-- **Study** - one identifiable clinical protocol.
-- **Arm** - one treatment or comparator configuration within a study.
-- **Endpoint** - one defined outcome and assessment timepoint.
-- **Outcome** - one reported result tied to an endpoint, arm or comparison, and
-  analysis population.
+- **Study** - one identifiable clinical protocol or registry study.
+- **Arm / intervention** - the administered treatment configuration,
+  comparator, dose, route, and schedule.
+- **Endpoint** - the prespecified outcome definition and assessment timepoint.
+- **Outcome** - a reported result for a specific endpoint, arm or comparison,
+  analysis population, and timepoint.
+- **Source** - the artifact supporting the study design or reported outcome.
 
 An Outcome requires a disclosed result. A protocol-defined endpoint without a
 reported value is not enough to create Clinical Evidence.
+
+A Source may support study design, study status, endpoint definition, arm
+configuration, outcome value, result maturity, or correction/update history.
+The future implementation may attach more than one source to the same study or
+outcome because design and result facts often come from different artifacts.
 
 ## Linkage To Contract 1.0
 
@@ -51,44 +74,90 @@ the Company/Pipeline domain:
 - `programId`
 - regimen identity
 
-These links identify the relevant company, asset, program, or regimen. They do
-not move clinical-study details into pipeline records, change program identity,
-or change development-stage and status semantics.
+Clinical Evidence must not duplicate or redefine company, asset, program,
+regimen, stage, or status semantics. Study designs and outcomes must not be
+stored inside existing pipeline records.
+
+Link studies as follows:
+
+- link to an **asset** when the study tests one tracked asset but the exact
+  program configuration is not represented or cannot be resolved.
+- link to a **program** when the study aligns with a specific existing
+  `programId`.
+- link to a **regimen** when independently administered products are studied
+  together as a regimen.
+- link to **multiple interventions** when the study includes tracked
+  combinations, active comparators, background therapy, or arms sponsored by
+  different companies.
+
+Existing company-local identity rules remain in force. This module does not
+require cross-company entity resolution; external companies and assets may need
+name-based references in a future implementation contract.
+
+## Minimum Information Contract
+
+A future Clinical Evidence record must preserve the minimum information needed
+to interpret a result without inventing missing facts:
+
+- study identity and registry or protocol identifiers.
+- phase and study status.
+- population and key eligibility context.
+- randomization, masking, comparator, and study design.
+- treatment arms, dose, route, frequency, and duration.
+- primary and key secondary endpoints.
+- analysis population and estimand when disclosed.
+- endpoint timepoint and unit.
+- arm-level and comparator results.
+- placebo-adjusted or active-comparator effect when directly reported or
+  deterministically derivable.
+- confidence interval, p-value, and responder threshold when reported.
+- result maturity: interim, topline, final, registry result, conference result,
+  or peer-reviewed publication.
+- essential safety findings without attempting exhaustive adverse-event capture.
+- source and verification metadata.
+
+Preserve reported values as source facts. Any derived value must be explicitly
+distinguishable from a reported value and must not overwrite it. A future
+implementation must state how derived values are calculated and attributed
+before storing them.
 
 ## Comparison Safeguards
 
-When disclosed, preserve the facts needed to understand a reported result:
+Cross-study comparison must retain or expose:
 
-- dose.
 - treatment duration.
+- dose and titration.
 - comparator.
-- endpoint timepoint.
 - analysis population.
 - estimand.
-- result basis, such as interim, topline, conference, registry, or
-  peer-reviewed.
+- missing-data handling when disclosed.
+- baseline population context.
+- whether the value is absolute, relative, placebo-adjusted, active-comparator
+  adjusted, or responder-based.
 
-Distinguish source-reported values from derived values. Derived values may be
-introduced only by a future implementation contract that states how they are
-calculated and attributed.
+Do not define a ranking algorithm, cross-trial score, or UI comparison metric in
+this module.
 
-Do not define ranking, cross-trial comparison, scoring, or UI comparison logic
-in this contract.
-
-## Source And Update Principles
+## Source And Update Policy
 
 Reuse the existing field-specific source policy in
-[`../data-protocol/source-and-entry-policy.md`](../data-protocol/source-and-entry-policy.md),
-including the Clinical results source class.
+[`../data-protocol/source-and-entry-policy.md`](../data-protocol/source-and-entry-policy.md)
+where applicable, including the Clinical results source class.
 
-Preserve result maturity and source provenance. Later authoritative results may
-update earlier findings, but must not silently erase historical support that
-explains how the result record evolved.
+Acceptable result sources include:
 
-An official topline release confirms what the company announced, but it is not
-independent validation. Registry results, conference materials, peer-reviewed
-publications, and official releases should be treated according to the claim they
-support.
+- peer-reviewed publications.
+- conference presentations, abstracts, or posters.
+- registry-posted results.
+- official company topline releases.
+
+Company topline results record what the sponsor reported and are not independent
+validation.
+
+Later authoritative results may supplement or supersede earlier result maturity
+without erasing useful historical sources. Corrected or updated results must
+remain traceable. Study existence without publicly disclosed study-specific
+results is insufficient for entry into Clinical Evidence operating data.
 
 ## Non-Goals
 
@@ -96,7 +165,7 @@ This contract does not introduce:
 
 - a Clinical Evidence Research workflow.
 - a reusable research prompt.
-- study, arm, endpoint, or outcome schemas.
+- TypeScript types or JSON schemas.
 - validators, registries, generated outputs, or data files.
 - ranking or UI comparison behavior.
 - actual clinical evidence collection.

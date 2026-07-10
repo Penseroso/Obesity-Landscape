@@ -22,7 +22,7 @@ entry.
 - **v1 data contract freeze:** ADR-0025.
 - **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
 - **Research routing boundary:** ADR-0027.
-- **Clinical Evidence semantic contract:** ADR-0028.
+- **Clinical Evidence semantic contract:** ADR-0029 (refines ADR-0028).
 
 ---
 
@@ -498,3 +498,41 @@ when decided, recorded as a new appended ADR.
   does not create Clinical Evidence types, schemas, validators, data files,
   prompts, workflows, generated outputs, or UI; does not collect actual clinical
   data; and does not alter `PipelineProgramRecord`, Contract 1.0, or Scope v1.1.
+
+## ADR-0029 - Clinical Evidence obesity-result contract
+
+- **Date:** 2026-07-10
+- **Status:** Accepted
+- **Decision:** ADR-0028 is refined by the fuller Clinical Evidence contract in
+  [`docs/clinical-evidence/README.md`](../clinical-evidence/README.md).
+  Clinical Evidence remains a separate future domain from the frozen
+  Company/Pipeline Contract 1.0 and initially covers only human interventional
+  clinical studies relevant to obesity or weight management that have publicly
+  available study-specific results.
+- **Result-bearing-study requirement:** A study is eligible only when the
+  enrolled population or explicit development objective includes obesity,
+  overweight, chronic weight management, or weight reduction, and at least one
+  study-specific result is publicly available from an acceptable source. The
+  result may be final, interim, topline, conference-presented, registry-posted,
+  or peer-reviewed, but result maturity must remain distinguishable.
+- **Initial indication boundary:** MASH-only, T2D-only,
+  CKD/CV/lipid/comorbidity-only, protocol-only, design-only, no-results,
+  healthy-volunteer PK without explicit obesity or weight-management objective,
+  incidental body-weight, preclinical, animal, and other non-human studies are
+  excluded. A study enrolling participants with obesity or overweight plus T2D
+  remains eligible when weight management is an explicit objective.
+- **Entity boundaries and linkage:** A Study is one identifiable clinical
+  protocol or registry study; an Arm / intervention is the administered
+  treatment configuration, comparator, dose, route, and schedule; an Endpoint is
+  the prespecified outcome definition and assessment timepoint; an Outcome is a
+  reported result for a specific endpoint, arm or comparison, analysis
+  population, and timepoint; and a Source is the artifact supporting study
+  design or reported outcome. Clinical Evidence may link to existing
+  `companyId`, `assetId`, `programId`, and regimen identity where applicable,
+  but must not duplicate or redefine company, asset, program, regimen, stage, or
+  status semantics.
+- **Consequences:** This ADR adds documentation and contract decisions only. It
+  does not create TypeScript types, JSON schemas, validators, registries,
+  generated files, research prompts, workflows, data, or UI; does not modify
+  frozen Contract 1.0 semantics; does not broaden Scope v1.1 beyond obesity and
+  weight management; and does not collect or invent clinical data.
