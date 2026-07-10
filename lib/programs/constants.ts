@@ -23,6 +23,19 @@ export const developmentStatuses = [
   "Unknown",
 ] as const;
 
+/**
+ * Contract 1.1 asset alias types. An alias records an asset's former names,
+ * confirmed development codes, brand names, or alternative spellings for
+ * search and traceability. `assetId` is immutable and `assetName` is the
+ * current official canonical name; aliases never redefine identity.
+ */
+export const assetAliasTypes = [
+  "former-name",
+  "development-code",
+  "brand-name",
+  "alternative-spelling",
+] as const;
+
 export const developmentStageRank = Object.fromEntries(
   stageRegistry.map((stage) => [stage.label, stage.sortRank]),
 ) as Record<string, number>;

@@ -6,10 +6,10 @@ company name; the agent decides everything else automatically.
 
 This workflow is subordinate to the data protocol, whose entry point is
 [`docs/data-protocol/README.md`](./data-protocol/README.md). The data protocol
-is the authoritative research and entry policy and reflects the frozen v1
-contract (ADR-0025). Where this document is silent, the data protocol governs;
-where the data protocol defines scope, evidence, identity, row, or entry rules,
-they apply here unchanged.
+is the authoritative research and entry policy and reflects Contract 1.1
+(ADR-0030). Where this document is silent, the data protocol governs; where the
+data protocol defines scope, evidence, identity, row, or entry rules, they apply
+here unchanged.
 
 ## 1. Single company-research entry point
 
@@ -171,6 +171,12 @@ non-goals).
 
 - **Reuse** stable company, asset, and program IDs.
 - Do **not** regenerate IDs because names, stage, or status changed.
+- On a **rename**, update `assetName` to the current canonical name and record
+  the former name as a `former-name` alias; keep the same `assetId` and program
+  `id`. A rename never creates a new asset or program.
+- Capture confirmed former names, development codes, brand names, and
+  alternative spellings as typed `aliases`, identical across all rows sharing an
+  `assetId`.
 - **Update** stage/status in the existing record (they are mutable state).
 - Do **not** delete old values solely because current sources omit them.
 - Do **not** replace strong existing evidence with weaker secondary reporting.
@@ -180,9 +186,9 @@ non-goals).
 
 ## 6. Deterministic ID rules
 
-These ID rules operate under the frozen v1 contract (ADR-0025). Only the exact
-program-ID suffix scheme remains a v2 backlog item (see the data protocol's
-deferred decisions); keep suffixes stable and minimal until it is decided.
+These ID rules operate under Contract 1.1 (ADR-0030). Only the exact program-ID
+suffix scheme remains a v2 backlog item (see the data protocol's deferred
+decisions); keep suffixes stable and minimal until it is decided.
 
 Before creating any record, **search existing company, asset, and program
 identities and reuse existing IDs whenever applicable.**

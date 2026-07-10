@@ -3,9 +3,9 @@
 Defines the contract for derived files under `data/generated/`: what they are,
 how they are produced, what they guarantee to downstream consumers (UI, reports,
 future tools), and what they do not. The Company/Pipeline aggregates describe
-current v1 behavior and do not change the frozen v1 contract (ADR-0025) or the
-stage semantics (ADR-0024). `clinical-evidence.json` belongs to the separate
-Clinical Evidence data layer.
+current Contract 1.1 behavior (ADR-0030) and preserve the stage semantics
+(ADR-0024); generation is a verbatim passthrough and adds no new fields.
+`clinical-evidence.json` belongs to the separate Clinical Evidence data layer.
 
 ## 1. Source-of-truth boundary
 
@@ -68,7 +68,7 @@ source records — every field is passed through verbatim, none added or strippe
 For pipeline programs the generated output preserves, when present in the source:
 
 - `id`, `assetId`, `companyId`
-- `assetType`, `assetName`, `codeName`, `components`
+- `assetType`, `assetName`, `codeName`, `aliases`, `components`
 - `technical` (`mechanism`, `platform`)
 - `administration` (`route`, `dosageForm`, `dosingInterval`)
 - `indications`
@@ -121,8 +121,8 @@ Downstream UI, report, and tool consumers:
   full dataset validation (identity uniqueness, row/combination/regimen identity,
   registry-backed stage/regulatory-state/relationship values, component and
   reference rules, metadata and date rules). It guarantees the generated
-  aggregate is **structurally valid and internally consistent** under the frozen
-  v1 contract.
+  aggregate is **structurally valid and internally consistent** under
+  Contract 1.1.
 - It does **not** by itself prove the generated files are **up-to-date** with
   operating data. Staleness is detected by running `npm run data:generate` and
   confirming `git diff` shows no change under `data/generated/`.
@@ -139,10 +139,10 @@ Downstream UI, report, and tool consumers:
   [`../research-workflow.md`](../research-workflow.md) and
   [`../../prompts/research-company.md`](../../prompts/research-company.md)).
 
-## 7. Relationship with frozen v1 semantics
+## 7. Relationship with Contract 1.1 semantics
 
 Because generation is a verbatim passthrough, generated outputs preserve the
-ADR-0024 / ADR-0025 stage semantics exactly:
+ADR-0024 / ADR-0030 stage and identity semantics exactly:
 
 - `development.stage` remains the most advanced official current development
   stage for the program scope.
@@ -154,6 +154,9 @@ ADR-0024 / ADR-0025 stage semantics exactly:
   can display them.
 - There is **no** separate generated-only interpretation of stage or status; the
   generated value is the operating value.
+- `assetId` is immutable, `assetName` is the canonical name, and typed `aliases`
+  are passed through verbatim; generation does not rename, merge, or resolve
+  aliases across companies.
 
 ## 8. V2 boundary
 

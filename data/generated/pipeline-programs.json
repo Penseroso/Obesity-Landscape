@@ -445,6 +445,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Zenagamtide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
     "technical": {
       "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
       "platform": null
@@ -484,6 +490,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Zenagamtide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
     "technical": {
       "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
       "platform": null
@@ -536,6 +548,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Zenagamtide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
     "technical": {
       "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
       "platform": null
@@ -816,6 +834,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Liraglutide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Saxenda"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": null
@@ -867,6 +891,20 @@
     "companyId": "novo-nordisk",
     "assetName": "Semaglutide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Wegovy"
+      },
+      {
+        "type": "brand-name",
+        "value": "Ozempic"
+      },
+      {
+        "type": "brand-name",
+        "value": "Rybelsus"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": null
@@ -919,6 +957,20 @@
     "companyId": "novo-nordisk",
     "assetName": "Semaglutide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Wegovy"
+      },
+      {
+        "type": "brand-name",
+        "value": "Ozempic"
+      },
+      {
+        "type": "brand-name",
+        "value": "Rybelsus"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": null

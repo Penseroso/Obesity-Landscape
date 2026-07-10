@@ -39,7 +39,13 @@ Prefer:
 - company pipeline or clinical development presentation
 
 Use registry evidence where available, but **allow direct official company
-evidence** when registration is delayed or unavailable.
+evidence** when registration is delayed or unavailable. Program state (phase and
+trial status) is best evidenced by the applicable **trial registry**; basic
+company research **may cite NCT registry records** to verify that a program
+exists and its current phase/status. Detailed trial design, arm, endpoint, and
+result modeling is **owned by the separate Clinical Evidence domain** (see
+[`../clinical-evidence/README.md`](../clinical-evidence/README.md)) and is not
+entered into `PipelineProgramRecord`.
 
 Phase sub-stages and combined stages must preserve their official semantic
 precision. For example, `Phase 1b`, `Phase 2a`, and `Phase 1/2` are not reduced
@@ -74,6 +80,14 @@ Prefer:
 - product label
 - official company announcement **supported by** regulator evidence
 
+Approval evidence is **route-specific**: an `Approved` stage requires regulator
+evidence for the **specific route and formulation** of that program row; approval
+of one route or product does not approve another. Preserve the filed and approved
+regulatory details — state, jurisdiction, authority, and date — in
+`regulatoryStates`, separate from `development.stage`. For example Novo Nordisk's
+CagriSema `Filed` row keeps its `NDA submitted` United States / FDA entry with
+date in `regulatoryStates`.
+
 ### Mechanism, formulation, and platform
 
 Prefer:
@@ -88,12 +102,19 @@ A patent does **not** prove active development.
 
 ### Licensing, acquisition, and rights changes
 
-Prefer:
+Company relationships (licensing, acquisition, rights, territory, role) require
+**transaction sources** that directly identify the relationship. Prefer
+**primary official sources** and allow secondary coverage only as a fallback:
 
 - regulatory filings
 - official announcements from the involved companies
 - annual reports
 - dated transaction disclosures
+
+Use secondary/press coverage of a deal **only when** a primary official
+disclosure is unavailable, and do not let secondary coverage override a primary
+source. Record the confirmed role, rights, territory, and effective date in
+`relationships`.
 
 ### Combination, regimen, and company relationships
 
@@ -192,8 +213,19 @@ Rules by field.
 
 - **Canonical company name** — preserve official spelling; use one canonical
   form so it resolves against `companies.json`.
-- **Asset name** — preserve the sponsor's official name and spelling.
-- **Code name** — store internal development codes; `null` if none.
+- **Asset name** — store the asset's **current official canonical name** with the
+  sponsor's official spelling. `assetId` is immutable, so a rename updates
+  `assetName` only. Record the prior name as a `former-name` alias.
+- **Aliases** — optional typed alternate labels for the asset:
+  `former-name` (a superseded official name), `development-code` (a confirmed
+  internal code beyond the one in `codeName`), `brand-name` (a marketed trade
+  name), or `alternative-spelling`. Each alias has a `type` and a `value`; a
+  value must not repeat the canonical `assetName`. Enter only labels supported by
+  official or authoritative evidence. Aliases are asset-level and must be
+  identical on every program row that shares the same `assetId`.
+- **Code name** — store a single **confirmed internal development code**; `null`
+  if none is confirmed. Do not place brand names, former names, or unconfirmed
+  codes here — use `aliases`.
 - **Mechanism** — only as published; `null` if not disclosed.
 - **Platform** — only as published; `null` if not disclosed.
 - **Route** — only as published; do not infer.
@@ -274,6 +306,30 @@ Additional rules:
   `status: "Planned"` with `stage: "Unknown"` where appropriate. Do **not**
   inherit stage, status, or administration details from the component programs.
 
+### Status and operational-state combinations
+
+`development.status` and `development.stageOperationalState` describe different
+axes and are combined, not conflated: status is the program's overall lifecycle
+state; `stageOperationalState` annotates the operational state of the stored
+stage. Valid combinations include:
+
+- **`Active` + `Initiated or active` / `Active not recruiting` /
+  `Not yet recruiting`** — an in-development program at its stored stage.
+- **`Active` + `Completed`** — the program is still active even though the trial
+  supporting the stored stage has **completed**; a completed trial is not
+  program discontinuation. For example Novo Nordisk's IcoSema (`Active`,
+  `Completed`) and the Zenagamtide type-2-diabetes row (`Active`, `Completed`).
+- **`Active` + `Submitted, pending clearance` / `Cleared, not yet initiated`** —
+  a regulatory-development-milestone stage whose trial has not yet started.
+- **`Planned` + `Planned, not yet initiated`** — a sponsor-declared future
+  program not yet operational.
+- **`On hold` + `Paused`** — an explicitly paused program.
+- **`Active` + `Not separately confirmed`** — the operational state is not
+  separately evidenced.
+
+Do not use `stageOperationalState: "Completed"` to force
+`status: "Discontinued"`; discontinuation requires explicit evidence.
+
 ## Date semantics
 
 - **`checkedAt`** — date the source was accessed.
@@ -350,8 +406,10 @@ deferred finding.
 Before entering or updating a record:
 
 - [ ] Search for an existing **company** (reuse it if found).
-- [ ] Search for an existing **asset** (reuse it if found).
-- [ ] **Reuse stable IDs**; do not renumber.
+- [ ] Search for an existing **asset** (reuse it if found), including by known
+      **aliases**, former names, and development codes.
+- [ ] **Reuse stable IDs**; do not renumber. On a rename, update `assetName` and
+      add the former name as a `former-name` alias — never a new `assetId`.
 - [ ] Confirm **development intent**.
 - [ ] Confirm **route** and **dosage form**.
 - [ ] Confirm **indication**.

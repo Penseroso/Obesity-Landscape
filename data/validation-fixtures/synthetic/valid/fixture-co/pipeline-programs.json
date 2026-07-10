@@ -5,6 +5,12 @@
     "companyId": "fixture-co",
     "assetName": "Alpha",
     "codeName": "ALP",
+    "aliases": [
+      { "type": "former-name", "value": "Alfa" },
+      { "type": "development-code", "value": "FC-0001" },
+      { "type": "brand-name", "value": "Alphavia" },
+      { "type": "alternative-spelling", "value": "Alpha-1" }
+    ],
     "technical": {
       "mechanism": "GLP-1R agonist",
       "platform": null

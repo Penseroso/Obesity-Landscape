@@ -26,13 +26,34 @@ status are mutable state and are never part of program identity or stable IDs**.
   product identity.
 - The same molecule shares **one stable `assetId`** across routes,
   formulations, indications, and development-state changes.
-- **Renaming** an asset does **not** create a new `assetId`.
+- **`assetId` is immutable.** It never changes for renames, licensing,
+  stage/status progression, or any other mutable event.
+- **`assetName` is the current official canonical name.** Store the sponsor's
+  current official name and spelling; update it when the canonical name changes.
+- **Renaming** an asset updates `assetName` and does **not** create a new
+  `assetId`, a new asset, or a new program. Record the prior name as an alias
+  (below) so search and traceability survive the rename. For example Novo
+  Nordisk's `amycretin` asset now uses the canonical `assetName` "Zenagamtide"
+  with the former name "Amycretin" preserved as an alias, on the same
+  `assetId`.
+- **Typed `aliases`** carry an asset's non-canonical labels for search and
+  traceability without redefining identity. Each alias has a `type` —
+  `former-name`, `development-code`, `brand-name`, or `alternative-spelling` —
+  and a `value`. An alias `value` must not repeat the canonical `assetName`.
+  Aliases are asset-level: every program row that shares an `assetId` must carry
+  the same alias set.
+- **`codeName`** stores a single confirmed **internal development code** for the
+  asset (for example `ZP8396`), or `null` when none is confirmed. Do not store
+  unconfirmed codes, brand names, or former names in `codeName`; those belong in
+  `aliases`.
 - Fixed-dose combinations and co-formulations keep one stable combination
   `assetId` and may store component references. Component order does not affect
   identity.
 - Component `assetId` references are local to the current company source folder.
   Use `assetName` or `codeName` with `externalCompanyName` for another company's
-  asset, even when that company or asset exists elsewhere in the tracker.
+  asset, even when that company or asset exists elsewhere in the tracker. An
+  external component reference is allowed whenever no internal asset record
+  exists for that component.
 - Salt, prodrug, and conjugate identity rules remain **provisional** and must be
   documented as edge cases (see `edge-cases.md`).
 
@@ -53,6 +74,34 @@ status are mutable state and are never part of program identity or stable IDs**.
   dates, results, and arbitrary suffixes must not be used as `configurationKey`.
 - If a second regimen needs a `configurationKey` but the official configuration
   discriminator cannot be confirmed, defer it instead of inventing one.
+
+## Combination and regimen boundaries
+
+- A **fixed-dose combination** or **co-formulation** is developed and
+  administered as **one product**. Model it as **one** combination asset/program
+  (`assetType` `fixed-dose-combination` or `co-formulation`) with a stable
+  combination `assetId` and component references — never as a regimen.
+- A **regimen** is multiple **independently administered** products used
+  together. Model it as a separate **regimen record**, never as a pipeline
+  program row, unless the products are confirmed to be one fixed-dose
+  combination or co-formulation.
+- Do not infer a fixed-dose/co-formulation relationship, a regimen relationship,
+  or component identity from context; each requires official evidence
+  (see `source-and-entry-policy.md`).
+- Combination and regimen components may use **external component references**
+  (`assetName`/`codeName` plus `externalCompanyName`) whenever no internal asset
+  record exists for the component.
+
+## Licensed and in-licensed assets
+
+- A licensed or in-licensed asset that the principal company develops is tracked
+  as a **company-local program row** under that company, reusing the standard
+  identity rules.
+- Record the company role, rights, territory, and effective date in
+  program/regimen `relationships`; keep the principal `companyId` singular
+  (ADR-0018, ADR-0019). For example Novo Nordisk's `ubt251` row is company-local
+  while the originator/licensor roles, territories, rights, and effective date
+  are captured in `relationships`.
 
 ## Program identity
 
@@ -85,6 +134,9 @@ Treat these as **mutable properties**, not identity:
   current stage for the program scope. Preserve jurisdiction, authority, and
   date in regulatory-state details when available, and do not approximate the
   milestone as a clinical phase.
+- When an asset or program is **renamed**, update `assetName` and add the former
+  name as a `former-name` alias. Do **not** create a new record, `assetId`, or
+  program `id`; a rename is a display change over stable identity.
 
 ## Row splitting
 

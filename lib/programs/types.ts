@@ -1,4 +1,4 @@
-import type { developmentStatuses } from "./constants";
+import type { assetAliasTypes, developmentStatuses } from "./constants";
 
 export type Company = {
   id: string;
@@ -24,6 +24,19 @@ export type AssetType =
   | "single-asset"
   | "fixed-dose-combination"
   | "co-formulation";
+
+export type AssetAliasType = (typeof assetAliasTypes)[number];
+
+/**
+ * An alternative label for the asset that is not its current official
+ * canonical `assetName`: a former name after a rename, a confirmed internal
+ * development code, a brand name, or an alternative spelling. Aliases support
+ * search and traceability; they never change `assetId` or asset identity.
+ */
+export type AssetAlias = {
+  type: AssetAliasType;
+  value: string;
+};
 
 export type ComponentReference = {
   assetId?: string;
@@ -96,6 +109,7 @@ export type PipelineProgramRecord = {
   assetType?: AssetType;
   assetName: string;
   codeName: string | null;
+  aliases?: AssetAlias[];
   components?: ComponentReference[];
   technical: TechnicalProfile;
   administration: AdministrationProfile;

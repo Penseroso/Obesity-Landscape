@@ -171,4 +171,4 @@ This data layer does not introduce:
 - real clinical evidence records.
 - routing activation.
 - UI, ranking, scoring, or comparison behavior.
-- changes to Contract 1.0 or Scope v1.1.
+- changes to Contract 1.1 or Scope v1.1.

@@ -18,7 +18,7 @@ updating its records in the same execution. Follow these steps:
    [`docs/data-protocol/README.md`](../docs/data-protocol/README.md), then read
    [`docs/research-workflow.md`](../docs/research-workflow.md). They are
    authoritative for scope, evidence, identity, row, and entry rules, and
-   reflect the frozen v1 contract (ADR-0025).
+   reflect Contract 1.1 (ADR-0030).
 
 2. **Inspect current data.** Read company source folders under
    `data/companies/`, generated aggregate files under `data/generated/`,
@@ -130,13 +130,19 @@ updating its records in the same execution. Follow these steps:
    identity) without blocking the company's other valid updates.
 
 10. **Protect existing data.** Reuse stable company, asset, and program IDs;
-   never regenerate them because a name, stage, or status changed. Update
-   mutable stage/status in place. Do not delete confirmed values merely because
-   current sources omit them, and do not overwrite strong evidence with weaker
-   secondary reporting. Preserve useful historical sources; avoid duplicates.
+   never regenerate them because a name, stage, or status changed. `assetId` is
+   immutable: on a rename, update `assetName` to the current canonical name and
+   record the former name as a `former-name` alias — do not create a new asset
+   or program. Capture confirmed former names, development codes, brand names,
+   and alternative spellings as typed `aliases` (identical across every row that
+   shares an `assetId`); keep `codeName` limited to a confirmed internal
+   development code. Update mutable stage/status in place. Do not delete
+   confirmed values merely because current sources omit them, and do not
+   overwrite strong evidence with weaker secondary reporting. Preserve useful
+   historical sources; avoid duplicates.
 
 11. **Apply the deterministic ID rules when creating new records.** These rules
-   operate under the frozen Contract 1.0 (ADR-0025); only the exact
+   operate under Contract 1.1 (ADR-0030); only the exact
    program-ID suffix scheme remains v2 backlog. Search existing identities
    first and reuse IDs whenever applicable. For new IDs: `companyId` is a
    lowercase kebab-case slug of the canonical official company name;

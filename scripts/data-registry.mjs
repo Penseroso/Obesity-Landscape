@@ -30,6 +30,12 @@ const combinationAssetTypes = new Set([
   "fixed-dose-combination",
   "co-formulation",
 ]);
+const assetAliasTypes = new Set([
+  "former-name",
+  "development-code",
+  "brand-name",
+  "alternative-spelling",
+]);
 const developmentStatuses = new Set([
   "Planned",
   "Active",
@@ -330,6 +336,44 @@ function validateStringArray(value, context, required) {
   }
 }
 
+function validateAliases(aliases, assetName, context) {
+  if (aliases === undefined) {
+    return;
+  }
+
+  assert(Array.isArray(aliases), `${context}: aliases must be an array`);
+
+  const seen = new Set();
+  const canonical = normalize(assetName);
+  for (const [index, alias] of aliases.entries()) {
+    const aliasContext = `${context}: aliases[${index}]`;
+    assert(isObject(alias), `${aliasContext} must be an object`);
+    assert(
+      assetAliasTypes.has(alias.type),
+      `${aliasContext}.type "${alias.type}" is not allowed`,
+    );
+    assert(isNonEmptyString(alias.value), `${aliasContext}.value is required`);
+    assert(
+      normalize(alias.value) !== canonical,
+      `${aliasContext}.value "${alias.value}" duplicates the canonical assetName; an alias records a different label`,
+    );
+
+    const key = `${alias.type}|${normalize(alias.value)}`;
+    assert(!seen.has(key), `${aliasContext} duplicates ${alias.type} "${alias.value}"`);
+    seen.add(key);
+  }
+}
+
+function getAliasesIdentityKey(aliases) {
+  if (aliases === undefined) {
+    return "";
+  }
+
+  return sortedStrings(
+    aliases.map((alias) => `${alias.type}:${normalize(alias.value)}`),
+  ).join("|");
+}
+
 function getComponentKey(component) {
   if (component.assetId) {
     return `asset:${normalize(component.assetId)}`;
@@ -521,6 +565,7 @@ function validateProgram(program, context, registries, dataset) {
   assert(isNonEmptyString(program.companyId), `${context}: program.companyId is required`);
   assert(isNonEmptyString(program.assetName), `${context}: program.assetName is required`);
   assert(program.codeName === null || isNonEmptyString(program.codeName), `${context}: invalid codeName`);
+  validateAliases(program.aliases, program.assetName, context);
 
   const assetType = program.assetType ?? "single-asset";
   assert(assetTypes.has(assetType), `${context}: unsupported assetType ${assetType}`);
@@ -628,6 +673,7 @@ function validateDataset(
     const identity = JSON.stringify({
       assetName: program.assetName,
       codeName: program.codeName,
+      aliases: getAliasesIdentityKey(program.aliases),
     });
     const assetIdentityKey = `${program.companyId}|${program.assetId}`;
     const priorIdentity = assetIdentityById.get(assetIdentityKey);
@@ -1440,6 +1486,7 @@ function validateSyntheticFixtures() {
     ["blank-regimen-configuration", /configurationKey must be a non-empty string/],
     ["case-regimen-configuration", /duplicate regimen identity/],
     ["unregistered-relationship-role", /not in the registry/],
+    ["invalid-alias-type", /aliases\[0\]\.type "nickname" is not allowed/],
     ["bad-internal-reference", /Use assetName or codeName with externalCompanyName/],
     ["foreign-company-id", /Use externalCompanyName for another company/],
     ["mixed-company-identity", /companyId and externalCompanyName cannot both be used/],
