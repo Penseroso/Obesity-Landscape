@@ -17,7 +17,6 @@ export function filterPrograms(
 
   return programs.filter((program) => {
     const companyName = program.company?.name ?? "";
-    const companyCountry = program.company?.headquartersCountry ?? "";
     const matchesCompany =
       filters.company === "All" || companyName === filters.company;
     const matchesIndication =
@@ -30,12 +29,12 @@ export function filterPrograms(
     const matchesStatus =
       filters.status === "All" || program.development.status === filters.status;
 
+    // Keyword search is limited to fields a user can actually see somewhere
+    // in the UI (company, asset, code name, mechanism, platform, indication,
+    // route, dosage form, dosing interval, stage, status) - internal
+    // identifiers such as id/assetId/companyId are never matched.
     const searchable = [
-      program.id,
-      program.assetId,
-      program.companyId,
       companyName,
-      companyCountry,
       program.assetName,
       program.codeName,
       program.technical.mechanism,

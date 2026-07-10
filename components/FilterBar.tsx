@@ -56,7 +56,7 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
           <input
             value={filters.keyword}
             onChange={(event) => update({ keyword: event.target.value })}
-            placeholder="Search programs, mechanisms, platforms"
+            placeholder="Search company, asset, mechanism, indication"
             className="h-9 rounded-md border border-border bg-card px-3 text-sm font-normal normal-case tracking-normal text-foreground outline-none transition placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
           />
         </label>

@@ -23,6 +23,12 @@
 > "Remediation status" line on each finding below and the updated Module 4.3
 > entry in section F. All other findings are unchanged from the original
 > audit.
+>
+> **Update (Module 4.4, 2026-07-10):** UI-V1-001 (active navigation state)
+> and UI-V1-011 (keyword search scope) have been fixed. See the
+> "Remediation status" line on each finding below and the updated Module 4.4
+> entry in section F. All findings are now remediated except the items
+> explicitly marked as deferred/intentional V1 limitations in section E.
 
 ## A. Audit metadata
 
@@ -87,6 +93,7 @@ Severity legend: **Blocker** (release-stopping) · **Major** (fix before V2) ·
 - **Confidence:** Confirmed
 - **Remediation scope:** Small (add active class + `aria-current` via a client nav component).
 - **Blocks V1 closure:** No · **Fix before V2:** Optional.
+- **Remediation status (Module 4.4, 2026-07-10):** **Fixed.** Extracted the nav into a new small client component, `components/PrimaryNav.tsx`, using `usePathname()` to compare the current route against each nav item's `href`. The active link gets `aria-current="page"` and a persistent `bg-muted font-semibold text-foreground` treatment (the same tone vocabulary already used for hover states elsewhere, just persistent instead of hover-only); the inactive link keeps its original hover-only style. `app/layout.tsx` itself stays a server component - only the nav was extracted. Nav labels and routes are unchanged. Verified: on `/`, the Overview link has `aria-current="page"` and the active class, Program Register does not; on `/assets`, the reverse; Tab/Enter keyboard navigation through both links still works and still navigates correctly.
 
 ### UI-V1-002 — Destination named three different ways
 - **Severity:** Minor · **Surface:** Global shell / Register · **Category:** semantic accuracy / consistency
@@ -199,6 +206,7 @@ Severity legend: **Blocker** (release-stopping) · **Major** (fix before V2) ·
 - **Confidence:** Confirmed (behavior is intentional/broad, not a crash)
 - **Remediation scope:** Small.
 - **Blocks V1 closure:** No · **Fix before V2:** Optional.
+- **Remediation status (Module 4.4, 2026-07-10):** **Fixed (restricted to visible fields).** Removed `program.id`, `program.assetId`, `program.companyId`, and `companyCountry` from the `searchable` array in `lib/programs/filters.ts`; keyword matching now covers only company name, asset name, code name, mechanism, platform, route, dosage form, dosing interval, indications, development stage, and status - fields represented somewhere in the Register UI. Updated the FilterBar placeholder from "Search programs, mechanisms, platforms" to "Search company, asset, mechanism, indication" to stay truthful to the scope. Verified: the internal company slug `zealand-pharma` and an internal program-id fragment (`ascletis-pharma-asc30`) now return 0 results; company name, asset name, code name, mechanism, indication, route, dosage form, dosing interval, stage, and status terms all still return matches; combined structured-filter + keyword search and Reset filters still work correctly.
 
 ### UI-V1-012 — Drawer lacks dialog semantics
 - **Severity:** **Major** · **Surface:** Drawer integration · **Category:** accessibility
@@ -275,7 +283,7 @@ Grouped into the smallest reasonable follow-up modules:
 - **Module 4.1 — Responsive & layout fixes:** UI-V1-004, UI-V1-008, UI-V1-009. (Grid `min-w-0`; register table width vs. page gutter; company truncation.) Small, self-contained, high user-visible value. **Status: done (2026-07-10)** — see per-finding "Remediation status" entries above.
 - **Module 4.2 — Drawer accessibility hardening:** UI-V1-012, UI-V1-013, UI-V1-014, UI-V1-015. Dialog role + `aria-modal` + label, focus trap/restore, Escape, scroll-lock. May be merged into the deferred V2 drawer redesign if that lands first, but the a11y basics should not wait on content depth. **Status: done (2026-07-10)** — see per-finding "Remediation status" entries above.
 - **Module 4.3 — Copy & semantic accuracy:** UI-V1-002, UI-V1-003, UI-V1-005, UI-V1-006, UI-V1-007, UI-V1-010. Nav/label/title consistency, "Latest verified" vs `updatedAt`, unified clinical-phase definition (UI-only; do not reopen the frozen registry), asset-header consistency, milestone badge differentiation. **Status: done (2026-07-10)** — see per-finding "Remediation status" entries above.
-- **Module 4.4 — Navigation & filter polish (optional):** UI-V1-001 (active nav + `aria-current`), UI-V1-011 (keyword scope / placeholder honesty).
+- **Module 4.4 — Navigation & filter polish (optional):** UI-V1-001 (active nav + `aria-current`), UI-V1-011 (keyword scope / placeholder honesty). **Status: done (2026-07-10)** — see per-finding "Remediation status" entries above.
 
 ## Validation results (post-report)
 
