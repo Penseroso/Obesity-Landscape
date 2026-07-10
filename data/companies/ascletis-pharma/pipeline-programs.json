@@ -4,7 +4,7 @@
     "assetId": "asc30",
     "companyId": "ascletis-pharma",
     "assetName": "ASC30",
-    "codeName": "ASC30",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R agonist",
       "platform": "AISBDD"
@@ -48,7 +48,7 @@
     "assetId": "asc30",
     "companyId": "ascletis-pharma",
     "assetName": "ASC30",
-    "codeName": "ASC30",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R agonist",
       "platform": "ULAP"
@@ -84,7 +84,7 @@
     "assetId": "asc31",
     "companyId": "ascletis-pharma",
     "assetName": "ASC31",
-    "codeName": "ASC31",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR dual agonist",
       "platform": "ULAP"
@@ -127,7 +127,7 @@
     "assetId": "asc35",
     "companyId": "ascletis-pharma",
     "assetName": "ASC35",
-    "codeName": "ASC35",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR dual agonist",
       "platform": "ULAP"
@@ -173,7 +173,7 @@
     "assetId": "asc36",
     "companyId": "ascletis-pharma",
     "assetName": "ASC36",
-    "codeName": "ASC36",
+    "codeName": null,
     "technical": {
       "mechanism": "Amylin receptor agonist",
       "platform": "ULAP"
@@ -220,7 +220,7 @@
     "companyId": "ascletis-pharma",
     "assetType": "co-formulation",
     "assetName": "ASC36_35 FDC",
-    "codeName": "ASC36_35 FDC",
+    "codeName": null,
     "components": [
       {
         "assetId": "asc36",
@@ -276,7 +276,7 @@
     "assetId": "asc37",
     "companyId": "ascletis-pharma",
     "assetName": "ASC37",
-    "codeName": "ASC37",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR/GCGR triple agonist",
       "platform": "POTENT"
@@ -319,7 +319,7 @@
     "assetId": "asc37",
     "companyId": "ascletis-pharma",
     "assetName": "ASC37",
-    "codeName": "ASC37",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR/GCGR triple agonist",
       "platform": "ULAP"
@@ -355,7 +355,7 @@
     "assetId": "asc39",
     "companyId": "ascletis-pharma",
     "assetName": "ASC39",
-    "codeName": "ASC39",
+    "codeName": null,
     "technical": {
       "mechanism": "Amylin-selective amylin receptor agonist",
       "platform": "AISBDD"
@@ -398,7 +398,7 @@
     "companyId": "ascletis-pharma",
     "assetType": "fixed-dose-combination",
     "assetName": "ASC30_39 FDC",
-    "codeName": "ASC30_39 FDC",
+    "codeName": null,
     "components": [
       {
         "assetId": "asc30",

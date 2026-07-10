@@ -173,7 +173,7 @@
     "assetId": "zp6590",
     "companyId": "zealand-pharma",
     "assetName": "ZP6590",
-    "codeName": "ZP6590",
+    "codeName": null,
     "technical": {
       "mechanism": "GIP receptor agonist",
       "platform": null

@@ -1,4 +1,4 @@
-import type { assetAliasTypes, developmentStatuses } from "./constants";
+import type { developmentStatuses } from "./constants";
 
 export type Company = {
   id: string;
@@ -25,7 +25,16 @@ export type AssetType =
   | "fixed-dose-combination"
   | "co-formulation";
 
-export type AssetAliasType = (typeof assetAliasTypes)[number];
+/**
+ * Contract 1.1 asset alias types. The runtime value list is single-sourced in
+ * `asset-alias-types.json` (see `constants.ts` and the validator); this union
+ * is its compile-time counterpart.
+ */
+export type AssetAliasType =
+  | "former-name"
+  | "development-code"
+  | "brand-name"
+  | "alternative-spelling";
 
 /**
  * An alternative label for the asset that is not its current official

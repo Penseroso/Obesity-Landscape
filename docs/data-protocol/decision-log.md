@@ -22,7 +22,8 @@ entry.
 - **Company/Pipeline data contract version:** ADR-0030 (Contract 1.1; supersedes
   the ADR-0025 baseline).
 - **Asset aliases, immutable `assetId`, canonical `assetName`, rename identity:**
-  ADR-0030.
+  ADR-0030, hardened by ADR-0031 (alias-type single source, `codeName` ≠
+  `assetName`, unique alias values, enforced status × operational-state matrix).
 - **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
 - **Research routing boundary:** ADR-0027.
 - **Clinical Evidence semantic contract:** ADR-0029 (refines ADR-0028).
@@ -624,3 +625,39 @@ when decided, recorded as a new appended ADR.
   a cross-company alias registry and company former-name aliases), per-jurisdiction
   approval modeling, and the other open-until-pilot and edge-case items remain
   deferred.
+
+## ADR-0031 — Contract 1.1 hardening
+
+- **Date:** 2026-07-10
+- **Status:** Accepted (current)
+- **Refines:** ADR-0030. Does not change the Contract 1.1 shape or add fields.
+- **Decision:** Harden the Contract 1.1 identity and status rules and remove a
+  duplicated definition, without redesigning the contract:
+  1. **Single source of truth for alias types.** The `former-name`,
+     `development-code`, `brand-name`, `alternative-spelling` list lives once in
+     `lib/programs/asset-alias-types.json`. `lib/programs/constants.ts` and the
+     `scripts/data-registry.mjs` validator both consume it; `types.ts` declares
+     the matching `AssetAliasType` union. The validator no longer hard-codes a
+     second copy.
+  2. **`codeName` may not equal `assetName`.** When the development code is
+     itself the canonical name, `codeName` is `null`. This removes redundant
+     duplication of the name.
+  3. **Alias values are unique within an asset.** The same normalized value must
+     not repeat across alias types.
+  4. **Enforced `development.status` × `stageOperationalState` matrix.** When
+     `stageOperationalState` is present it must be valid for the row's `status`
+     (see `source-and-entry-policy.md`); `Not separately confirmed` is allowed
+     with any status, and `Active` + `Completed` remains valid.
+- **Rationale:** These are the redundancy and consistency gaps left implicit by
+  ADR-0030. Enforcing them in the validator (with synthetic invalid fixtures)
+  prevents drift and makes the documented rules executable, while the shared
+  JSON removes the only remaining duplicated alias-type definition.
+- **Backward compatibility:** All existing records remain valid after a
+  no-information-loss migration: 15 rows whose `codeName` repeated `assetName`
+  (Ascletis `ASC*`, Zealand `ZP6590`, Novo Nordisk `CagriSema`/`IcoSema`/
+  `UBT251`) now use `codeName: null`; the code is still carried by the canonical
+  `assetName`. No `assetId` or `programId` changed. Every in-use
+  `status`×`stageOperationalState` pair already satisfies the enforced matrix,
+  so no status data changed.
+- **Consequences:** No new fields, registries, UI, or workflow changes. The v2
+  backlog is unchanged.

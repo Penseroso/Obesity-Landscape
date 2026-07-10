@@ -5,7 +5,7 @@
     "companyId": "ascletis-pharma",
     "assetType": "fixed-dose-combination",
     "assetName": "ASC30_39 FDC",
-    "codeName": "ASC30_39 FDC",
+    "codeName": null,
     "components": [
       {
         "assetId": "asc30",
@@ -51,7 +51,7 @@
     "assetId": "asc30",
     "companyId": "ascletis-pharma",
     "assetName": "ASC30",
-    "codeName": "ASC30",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R agonist",
       "platform": "AISBDD"
@@ -95,7 +95,7 @@
     "assetId": "asc30",
     "companyId": "ascletis-pharma",
     "assetName": "ASC30",
-    "codeName": "ASC30",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R agonist",
       "platform": "ULAP"
@@ -131,7 +131,7 @@
     "assetId": "asc31",
     "companyId": "ascletis-pharma",
     "assetName": "ASC31",
-    "codeName": "ASC31",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR dual agonist",
       "platform": "ULAP"
@@ -174,7 +174,7 @@
     "assetId": "asc35",
     "companyId": "ascletis-pharma",
     "assetName": "ASC35",
-    "codeName": "ASC35",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR dual agonist",
       "platform": "ULAP"
@@ -221,7 +221,7 @@
     "companyId": "ascletis-pharma",
     "assetType": "co-formulation",
     "assetName": "ASC36_35 FDC",
-    "codeName": "ASC36_35 FDC",
+    "codeName": null,
     "components": [
       {
         "assetId": "asc36",
@@ -277,7 +277,7 @@
     "assetId": "asc36",
     "companyId": "ascletis-pharma",
     "assetName": "ASC36",
-    "codeName": "ASC36",
+    "codeName": null,
     "technical": {
       "mechanism": "Amylin receptor agonist",
       "platform": "ULAP"
@@ -323,7 +323,7 @@
     "assetId": "asc37",
     "companyId": "ascletis-pharma",
     "assetName": "ASC37",
-    "codeName": "ASC37",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR/GCGR triple agonist",
       "platform": "POTENT"
@@ -366,7 +366,7 @@
     "assetId": "asc37",
     "companyId": "ascletis-pharma",
     "assetName": "ASC37",
-    "codeName": "ASC37",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1R/GIPR/GCGR triple agonist",
       "platform": "ULAP"
@@ -402,7 +402,7 @@
     "assetId": "asc39",
     "companyId": "ascletis-pharma",
     "assetName": "ASC39",
-    "codeName": "ASC39",
+    "codeName": null,
     "technical": {
       "mechanism": "Amylin-selective amylin receptor agonist",
       "platform": "AISBDD"
@@ -638,7 +638,7 @@
     "companyId": "novo-nordisk",
     "assetType": "fixed-dose-combination",
     "assetName": "CagriSema",
-    "codeName": "CagriSema",
+    "codeName": null,
     "components": [
       {
         "assetId": "cagrilintide",
@@ -701,7 +701,7 @@
     "companyId": "novo-nordisk",
     "assetType": "fixed-dose-combination",
     "assetName": "CagriSema",
-    "codeName": "CagriSema",
+    "codeName": null,
     "components": [
       {
         "assetId": "cagrilintide",
@@ -764,7 +764,7 @@
     "companyId": "novo-nordisk",
     "assetType": "co-formulation",
     "assetName": "IcoSema",
-    "codeName": "IcoSema",
+    "codeName": null,
     "components": [
       {
         "assetName": "Insulin icodec",
@@ -1029,7 +1029,7 @@
     "assetId": "ubt251",
     "companyId": "novo-nordisk",
     "assetName": "UBT251",
-    "codeName": "UBT251",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
       "platform": null
@@ -1385,7 +1385,7 @@
     "assetId": "zp6590",
     "companyId": "zealand-pharma",
     "assetName": "ZP6590",
-    "codeName": "ZP6590",
+    "codeName": null,
     "technical": {
       "mechanism": "GIP receptor agonist",
       "platform": null

@@ -108,9 +108,10 @@ Audited the Contract 1.1 change (ADR-0030): the `aliases` surface across
 **Result: consistent.**
 
 - **Alias types agree** across the four surfaces: `former-name`,
-  `development-code`, `brand-name`, `alternative-spelling`. `constants.ts`
-  (`assetAliasTypes`) is the single source; `types.ts` derives `AssetAliasType`
-  from it, and the validator's allowed set matches.
+  `development-code`, `brand-name`, `alternative-spelling`. The list is
+  single-sourced in `lib/programs/asset-alias-types.json`, consumed by
+  `constants.ts` (`assetAliasTypes`) and by the validator (see the hardening
+  module below); `types.ts` declares the matching `AssetAliasType` union.
 - **Validator coverage:** `aliases` is validated for array shape, allowed
   `type`, non-empty `value`, no value equal to the canonical `assetName`, and
   no duplicate `type`+`value`. The alias set is folded into the asset-identity
@@ -124,3 +125,29 @@ Audited the Contract 1.1 change (ADR-0030): the `aliases` surface across
 - **Generated output:** `npm run data:generate` passes aliases through verbatim
   into `data/generated/pipeline-programs.json` (6 alias-bearing rows) with no
   further diff on re-run; validators, `lint`, and `build` all pass.
+
+## Module — Contract 1.1 hardening — 2026-07-10
+
+Audited the Contract 1.1 hardening patch (ADR-0031).
+
+**Result: consistent.**
+
+- **Single source of truth:** the alias-type list now lives only in
+  `lib/programs/asset-alias-types.json`. `lib/programs/constants.ts` imports it
+  (typed as `readonly AssetAliasType[]`), `lib/programs/types.ts` declares the
+  matching union, and `scripts/data-registry.mjs` reads the same JSON — the
+  validator no longer hard-codes a duplicate list.
+- **New validator rules:** `codeName` may not equal `assetName`; alias values
+  are unique within an asset (no repeat across alias types after normalization);
+  and `development.stageOperationalState`, when present, must be in the allowed
+  set for the row's `development.status`. All three have synthetic invalid
+  fixtures (`codename-equals-assetname`, `duplicate-alias-value`,
+  `invalid-status-operational-state`).
+- **Backward-compatible migration:** 15 operating rows whose `codeName` merely
+  repeated `assetName` (Ascletis `ASC*`, Zealand `ZP6590`, Novo Nordisk
+  `CagriSema`/`IcoSema`/`UBT251`) now store `codeName: null`; no `assetId`,
+  `programId`, or other value changed, and no information is lost because the
+  code remains the canonical `assetName`. Every in-use
+  `status`×`stageOperationalState` pair already satisfies the enforced matrix.
+- **Checks:** all data validators, `data:generate` (no re-run diff), `lint`, and
+  `build` pass.

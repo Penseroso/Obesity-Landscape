@@ -30,12 +30,10 @@ const combinationAssetTypes = new Set([
   "fixed-dose-combination",
   "co-formulation",
 ]);
-const assetAliasTypes = new Set([
-  "former-name",
-  "development-code",
-  "brand-name",
-  "alternative-spelling",
-]);
+// Single source of truth shared with the TypeScript app (lib/programs).
+const assetAliasTypes = new Set(
+  readJson(path.join(root, "lib", "programs", "asset-alias-types.json")),
+);
 const developmentStatuses = new Set([
   "Planned",
   "Active",
@@ -59,6 +57,29 @@ const developmentStageOperationalStates = new Set([
   "Completed",
   "Not separately confirmed",
 ]);
+// Contract 1.1 allowed development.status x stageOperationalState combinations.
+// "Not separately confirmed" is the neutral escape hatch allowed for any status.
+const stageOperationalStatesByStatus = {
+  Planned: new Set([
+    "Planned, not yet initiated",
+    "Not yet recruiting",
+    "Submitted, pending clearance",
+    "Cleared, not yet initiated",
+    "Not separately confirmed",
+  ]),
+  Active: new Set([
+    "Initiated or active",
+    "Active not recruiting",
+    "Not yet recruiting",
+    "Submitted, pending clearance",
+    "Cleared, not yet initiated",
+    "Completed",
+    "Not separately confirmed",
+  ]),
+  "On hold": new Set(["Paused", "Not separately confirmed"]),
+  Discontinued: new Set(["Paused", "Completed", "Not separately confirmed"]),
+  Unknown: new Set(["Not separately confirmed"]),
+};
 const clinicalArmRoles = new Set([
   "experimental",
   "placebo",
@@ -272,6 +293,12 @@ function validateDevelopment(development, context, registries) {
       developmentStageOperationalStates.has(development.stageOperationalState),
       `${context}: development.stageOperationalState "${development.stageOperationalState}" is not allowed`,
     );
+    const allowedOperationalStates = stageOperationalStatesByStatus[development.status];
+    assert(
+      allowedOperationalStates !== undefined &&
+        allowedOperationalStates.has(development.stageOperationalState),
+      `${context}: development.stageOperationalState "${development.stageOperationalState}" is not allowed with status "${development.status}"`,
+    );
   }
 }
 
@@ -353,14 +380,16 @@ function validateAliases(aliases, assetName, context) {
       `${aliasContext}.type "${alias.type}" is not allowed`,
     );
     assert(isNonEmptyString(alias.value), `${aliasContext}.value is required`);
+    const normalizedValue = normalize(alias.value);
     assert(
-      normalize(alias.value) !== canonical,
+      normalizedValue !== canonical,
       `${aliasContext}.value "${alias.value}" duplicates the canonical assetName; an alias records a different label`,
     );
-
-    const key = `${alias.type}|${normalize(alias.value)}`;
-    assert(!seen.has(key), `${aliasContext} duplicates ${alias.type} "${alias.value}"`);
-    seen.add(key);
+    assert(
+      !seen.has(normalizedValue),
+      `${aliasContext} duplicates alias value "${alias.value}"; the same value must not repeat across alias types`,
+    );
+    seen.add(normalizedValue);
   }
 }
 
@@ -565,6 +594,10 @@ function validateProgram(program, context, registries, dataset) {
   assert(isNonEmptyString(program.companyId), `${context}: program.companyId is required`);
   assert(isNonEmptyString(program.assetName), `${context}: program.assetName is required`);
   assert(program.codeName === null || isNonEmptyString(program.codeName), `${context}: invalid codeName`);
+  assert(
+    program.codeName === null || normalize(program.codeName) !== normalize(program.assetName),
+    `${context}: codeName must not duplicate assetName; leave codeName null when the development code is the canonical name`,
+  );
   validateAliases(program.aliases, program.assetName, context);
 
   const assetType = program.assetType ?? "single-asset";
@@ -1487,6 +1520,9 @@ function validateSyntheticFixtures() {
     ["case-regimen-configuration", /duplicate regimen identity/],
     ["unregistered-relationship-role", /not in the registry/],
     ["invalid-alias-type", /aliases\[0\]\.type "nickname" is not allowed/],
+    ["codename-equals-assetname", /codeName must not duplicate assetName/],
+    ["duplicate-alias-value", /duplicates alias value/],
+    ["invalid-status-operational-state", /is not allowed with status/],
     ["bad-internal-reference", /Use assetName or codeName with externalCompanyName/],
     ["foreign-company-id", /Use externalCompanyName for another company/],
     ["mixed-company-identity", /companyId and externalCompanyName cannot both be used/],

@@ -144,7 +144,7 @@
     "companyId": "novo-nordisk",
     "assetType": "fixed-dose-combination",
     "assetName": "CagriSema",
-    "codeName": "CagriSema",
+    "codeName": null,
     "components": [
       {
         "assetId": "cagrilintide",
@@ -207,7 +207,7 @@
     "companyId": "novo-nordisk",
     "assetType": "fixed-dose-combination",
     "assetName": "CagriSema",
-    "codeName": "CagriSema",
+    "codeName": null,
     "components": [
       {
         "assetId": "cagrilintide",
@@ -269,7 +269,7 @@
     "assetId": "ubt251",
     "companyId": "novo-nordisk",
     "assetName": "UBT251",
-    "codeName": "UBT251",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
       "platform": null
@@ -381,7 +381,7 @@
     "companyId": "novo-nordisk",
     "assetType": "co-formulation",
     "assetName": "IcoSema",
-    "codeName": "IcoSema",
+    "codeName": null,
     "components": [
       {
         "assetName": "Insulin icodec",

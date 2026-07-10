@@ -45,7 +45,9 @@ status are mutable state and are never part of program identity or stable IDs**.
 - **`codeName`** stores a single confirmed **internal development code** for the
   asset (for example `ZP8396`), or `null` when none is confirmed. Do not store
   unconfirmed codes, brand names, or former names in `codeName`; those belong in
-  `aliases`.
+  `aliases`. `codeName` must **not duplicate** the canonical `assetName`: when
+  the development code is itself the canonical name (for example `ASC30` or
+  `UBT251`), leave `codeName` `null` rather than repeating the name.
 - Fixed-dose combinations and co-formulations keep one stable combination
   `assetId` and may store component references. Component order does not affect
   identity.

@@ -220,12 +220,16 @@ Rules by field.
   `former-name` (a superseded official name), `development-code` (a confirmed
   internal code beyond the one in `codeName`), `brand-name` (a marketed trade
   name), or `alternative-spelling`. Each alias has a `type` and a `value`; a
-  value must not repeat the canonical `assetName`. Enter only labels supported by
-  official or authoritative evidence. Aliases are asset-level and must be
-  identical on every program row that shares the same `assetId`.
+  value must not repeat the canonical `assetName`, and the **same value must not
+  repeat across alias types** (each alias value is unique within the asset).
+  Enter only labels supported by official or authoritative evidence. Aliases are
+  asset-level and must be identical on every program row that shares the same
+  `assetId`.
 - **Code name** — store a single **confirmed internal development code**; `null`
   if none is confirmed. Do not place brand names, former names, or unconfirmed
-  codes here — use `aliases`.
+  codes here — use `aliases`. `codeName` must **not equal** the canonical
+  `assetName`; when the development code is itself the canonical name, leave
+  `codeName` `null`.
 - **Mechanism** — only as published; `null` if not disclosed.
 - **Platform** — only as published; `null` if not disclosed.
 - **Route** — only as published; do not infer.
@@ -311,24 +315,24 @@ Additional rules:
 `development.status` and `development.stageOperationalState` describe different
 axes and are combined, not conflated: status is the program's overall lifecycle
 state; `stageOperationalState` annotates the operational state of the stored
-stage. Valid combinations include:
+stage. When `stageOperationalState` is present, the validator enforces the
+following allowed combinations per Contract 1.1 (`Not separately confirmed` is
+the neutral value permitted with any status):
 
-- **`Active` + `Initiated or active` / `Active not recruiting` /
-  `Not yet recruiting`** — an in-development program at its stored stage.
-- **`Active` + `Completed`** — the program is still active even though the trial
-  supporting the stored stage has **completed**; a completed trial is not
-  program discontinuation. For example Novo Nordisk's IcoSema (`Active`,
-  `Completed`) and the Zenagamtide type-2-diabetes row (`Active`, `Completed`).
-- **`Active` + `Submitted, pending clearance` / `Cleared, not yet initiated`** —
-  a regulatory-development-milestone stage whose trial has not yet started.
-- **`Planned` + `Planned, not yet initiated`** — a sponsor-declared future
-  program not yet operational.
-- **`On hold` + `Paused`** — an explicitly paused program.
-- **`Active` + `Not separately confirmed`** — the operational state is not
-  separately evidenced.
+| `status` | Allowed `stageOperationalState` |
+| --- | --- |
+| `Planned` | `Planned, not yet initiated`, `Not yet recruiting`, `Submitted, pending clearance`, `Cleared, not yet initiated`, `Not separately confirmed` |
+| `Active` | `Initiated or active`, `Active not recruiting`, `Not yet recruiting`, `Submitted, pending clearance`, `Cleared, not yet initiated`, `Completed`, `Not separately confirmed` |
+| `On hold` | `Paused`, `Not separately confirmed` |
+| `Discontinued` | `Paused`, `Completed`, `Not separately confirmed` |
+| `Unknown` | `Not separately confirmed` |
 
-Do not use `stageOperationalState: "Completed"` to force
-`status: "Discontinued"`; discontinuation requires explicit evidence.
+Notably, **`Active` + `Completed`** is valid: a program stays active even though
+the trial supporting the stored stage has completed — a completed trial is not
+program discontinuation (for example Novo Nordisk's IcoSema and the Zenagamtide
+type-2-diabetes row). Conversely, do not use
+`stageOperationalState: "Completed"` to force `status: "Discontinued"`;
+discontinuation requires explicit evidence.
 
 ## Date semantics
 

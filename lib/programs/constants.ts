@@ -1,4 +1,6 @@
 import developmentStageRegistry from "@/data/registries/development-stages.json";
+import assetAliasTypeSource from "./asset-alias-types.json";
+import type { AssetAliasType } from "./types";
 
 export type DevelopmentStageRegistryEntry = {
   id: string;
@@ -28,13 +30,11 @@ export const developmentStatuses = [
  * confirmed development codes, brand names, or alternative spellings for
  * search and traceability. `assetId` is immutable and `assetName` is the
  * current official canonical name; aliases never redefine identity.
+ *
+ * The canonical list lives in `asset-alias-types.json` so the TypeScript app
+ * and the `scripts/data-registry.mjs` validator share one source of truth.
  */
-export const assetAliasTypes = [
-  "former-name",
-  "development-code",
-  "brand-name",
-  "alternative-spelling",
-] as const;
+export const assetAliasTypes = assetAliasTypeSource as readonly AssetAliasType[];
 
 export const developmentStageRank = Object.fromEntries(
   stageRegistry.map((stage) => [stage.label, stage.sortRank]),
