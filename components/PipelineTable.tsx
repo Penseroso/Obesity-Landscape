@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import {
-  defaultProgramTableColumns,
   getProgramTableColumnLabel,
   type ProgramTableColumnId,
 } from "@/config/program-table";
@@ -16,10 +15,12 @@ import {
 } from "@/lib/programs/selectors";
 import type { PipelineProgram, ProgramFilters } from "@/lib/programs/types";
 import { formatInlineValues, formatNullableValue } from "@/lib/format";
+import { ColumnSettings } from "./ColumnSettings";
 import { EmptyState } from "./EmptyState";
 import { FilterBar } from "./FilterBar";
 import { ProgramDetailDrawer } from "./ProgramDetailDrawer";
 import { StageBadge } from "./StageBadge";
+import { useProgramTableColumns } from "./useProgramTableColumns";
 
 type PipelineTableProps = {
   programs: PipelineProgram[];
@@ -42,6 +43,8 @@ const truncatedCellClassName: Partial<Record<ProgramTableColumnId, string>> = {
   mechanism: "max-w-[200px] truncate",
   dosageForm: "max-w-[120px] truncate",
   dosingInterval: "max-w-[150px] truncate",
+  indications: "max-w-[200px] truncate",
+  platform: "max-w-[160px] truncate",
 };
 
 function getProgramCellValue(
@@ -89,7 +92,8 @@ export function PipelineTable({ programs }: PipelineTableProps) {
     () => filterPrograms(orderedPrograms, filters),
     [orderedPrograms, filters],
   );
-  const visibleColumns = defaultProgramTableColumns;
+  const columnControls = useProgramTableColumns();
+  const visibleColumns = columnControls.visibleColumns;
   const resetFilters = () => setFilters(emptyProgramFilters);
 
   return (
@@ -105,13 +109,16 @@ export function PipelineTable({ programs }: PipelineTableProps) {
               {filteredPrograms.length} of {programs.length} programs shown
             </p>
           </div>
-          <button
-            type="button"
-            onClick={resetFilters}
-            className="self-start rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:self-auto"
-          >
-            Reset filters
-          </button>
+          <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+            <ColumnSettings controls={columnControls} />
+            <button
+              type="button"
+              onClick={resetFilters}
+              className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              Reset filters
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[980px] border-collapse text-left text-sm">

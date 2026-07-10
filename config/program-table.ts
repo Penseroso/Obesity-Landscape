@@ -85,6 +85,39 @@ export const defaultProgramTableColumns = programTableColumns.filter(
   (column) => column.defaultVisible,
 );
 
+// Company and Asset are always shown, always first/second, and cannot be
+// hidden or reordered. Everything else is user-customizable.
+export const lockedColumnIds: ProgramTableColumnId[] = ["company", "asset"];
+
+export const programTableColumnById: Record<
+  ProgramTableColumnId,
+  ProgramTableColumn
+> = Object.fromEntries(
+  programTableColumns.map((column) => [column.id, column]),
+) as Record<ProgramTableColumnId, ProgramTableColumn>;
+
+// Canonical ordering of every supported column, used as the default order
+// and as the append order for newly supported columns loaded from older
+// saved preferences.
+export const defaultColumnOrder: ProgramTableColumnId[] =
+  programTableColumns.map((column) => column.id);
+
+export const defaultColumnVisibility: Record<ProgramTableColumnId, boolean> =
+  Object.fromEntries(
+    programTableColumns.map((column) => [column.id, column.defaultVisible]),
+  ) as Record<ProgramTableColumnId, boolean>;
+
+export function isLockedColumn(id: ProgramTableColumnId): boolean {
+  return lockedColumnIds.includes(id);
+}
+
+export function isKnownColumnId(value: unknown): value is ProgramTableColumnId {
+  return (
+    typeof value === "string" &&
+    Object.prototype.hasOwnProperty.call(programTableColumnById, value)
+  );
+}
+
 export function getProgramTableColumnLabel(column: ProgramTableColumn) {
   return column.labels[programTableLocale];
 }
