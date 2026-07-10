@@ -7,7 +7,7 @@ type RouteMixPanelProps = {
 
 export function RouteMixPanel({ entries }: RouteMixPanelProps) {
   return (
-    <section className="flex h-full flex-col rounded-md border border-border bg-card shadow-soft">
+    <section className="flex h-full min-w-0 flex-col rounded-md border border-border bg-card shadow-soft">
       <div className="border-b border-border px-5 py-4">
         <h2 className="text-base font-semibold text-card-foreground">
           Route Mix

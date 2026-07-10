@@ -38,11 +38,11 @@ function getAssetLabel(program: PipelineProgram) {
 }
 
 const truncatedCellClassName: Partial<Record<ProgramTableColumnId, string>> = {
-  company: "max-w-[140px] truncate",
-  asset: "max-w-[200px] truncate",
-  mechanism: "max-w-[200px] truncate",
-  dosageForm: "max-w-[120px] truncate",
-  dosingInterval: "max-w-[150px] truncate",
+  company: "max-w-[175px] truncate",
+  asset: "max-w-[185px] truncate",
+  mechanism: "max-w-[180px] truncate",
+  dosageForm: "max-w-[110px] truncate",
+  dosingInterval: "max-w-[140px] truncate",
   indications: "max-w-[200px] truncate",
   platform: "max-w-[160px] truncate",
 };
@@ -125,7 +125,7 @@ export function PipelineTable({ programs }: PipelineTableProps) {
             <thead className="bg-muted/70 text-xs uppercase tracking-[0.12em] text-muted-foreground">
               <tr>
                 {visibleColumns.map((column) => (
-                  <th key={column.id} className="px-4 py-2.5 font-semibold">
+                  <th key={column.id} className="px-3 py-2.5 font-semibold">
                     {getProgramTableColumnLabel(column)}
                   </th>
                 ))}
@@ -153,7 +153,7 @@ export function PipelineTable({ programs }: PipelineTableProps) {
                     return (
                       <td
                         key={column.id}
-                        className="px-4 py-2.5 text-muted-foreground"
+                        className="px-3 py-2.5 text-muted-foreground"
                       >
                         {column.id === "development" ? (
                           <StageBadge stage={value} />

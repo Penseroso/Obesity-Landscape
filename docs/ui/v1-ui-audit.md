@@ -3,6 +3,11 @@
 > Diagnostic-only audit of the V1 UI after Modules 1–3.1A. No implementation,
 > data, registry, validator, generator, contract, or workflow file was changed
 > as part of this audit. The only repository change is this report.
+>
+> **Update (Module 4.1, 2026-07-10):** UI-V1-004, UI-V1-008, and UI-V1-009 have
+> been fixed. See the "Remediation status" line on each finding below and the
+> updated Module 4.1 entry in section F. All other findings are unchanged from
+> the original audit.
 
 ## A. Audit metadata
 
@@ -100,6 +105,7 @@ Severity legend: **Blocker** (release-stopping) · **Major** (fix before V2) ·
 - **Confidence:** Confirmed
 - **Remediation scope:** Small (`min-w-0` on the grid items / panel roots; ensure inner scroll wrappers set `min-w-0`).
 - **Blocks V1 closure:** No (functionality intact) · **Fix before V2:** **Yes.**
+- **Remediation status (Module 4.1, 2026-07-10):** **Fixed.** Added `min-w-0` to the `RouteMixPanel` and `MostAdvancedProgramsTable` root `<section>` elements so they can shrink below their content's intrinsic min-width instead of stretching the single-column grid track. Verified: `documentElement.scrollWidth === clientWidth` (no page overflow) at 390/768/1280/1600px; desktop 2-column layout at ≥768px unchanged (screenshot-verified).
 
 ### UI-V1-005 — "Latest verified" label shows `updatedAt`, not `lastVerifiedAt`
 - **Severity:** Minor · **Surface:** Overview · **Category:** semantic accuracy
@@ -142,6 +148,7 @@ Severity legend: **Blocker** (release-stopping) · **Major** (fix before V2) ·
 - **Confidence:** Confirmed
 - **Remediation scope:** Small–Medium (tighten column widths, reduce padding, or widen the shell for this route).
 - **Blocks V1 closure:** No · **Fix before V2:** Recommended (primary indicator partially hidden by default).
+- **Remediation status (Module 4.1, 2026-07-10):** **Fixed.** Reduced header/cell padding from `px-4` to `px-3` and rebalanced per-column truncation max-widths in `components/PipelineTable.tsx` (no columns hidden or merged; same 7 default columns/order). Verified: at 1280px and 1600px the table's `scrollWidth` now exactly equals its wrapper's `clientWidth` (1214px, no clipping) — all 7 columns including full Development Stage badges ("IND submitted", "IND cleared", etc.) are visible with zero horizontal scroll. At 390/768px the table still scrolls internally within its own `overflow-x-auto` wrapper (page itself does not overflow) — the shell (`app/layout.tsx`) was not touched.
 
 ### UI-V1-009 — Company column truncates even when space is available
 - **Severity:** Polish · **Surface:** Program Register · **Category:** visual consistency
@@ -151,6 +158,7 @@ Severity legend: **Blocker** (release-stopping) · **Major** (fix before V2) ·
 - **Confidence:** Confirmed
 - **Remediation scope:** Trivial (raise max-width).
 - **Blocks V1 closure:** No · **Fix before V2:** Optional.
+- **Remediation status (Module 4.1, 2026-07-10):** **Fixed.** Raised the Company column's truncation width from `max-w-[140px]` to `max-w-[175px]` (part of the same rebalance as UI-V1-008). Verified: "Ascletis Pharma Inc." (the longest current company name) now renders in full with no ellipsis at 1280/1600px, screenshot-confirmed; `title` tooltip retained as a fallback for longer names.
 
 ### UI-V1-010 — Milestone vs clinical stage badges not visually differentiated in the Register
 - **Severity:** Minor · **Surface:** Program Register · **Category:** visual consistency / semantic accuracy
@@ -239,7 +247,7 @@ Severity legend: **Blocker** (release-stopping) · **Major** (fix before V2) ·
 
 Grouped into the smallest reasonable follow-up modules:
 
-- **Module 4.1 — Responsive & layout fixes:** UI-V1-004, UI-V1-008, UI-V1-009. (Grid `min-w-0`; register table width vs. page gutter; company truncation.) Small, self-contained, high user-visible value.
+- **Module 4.1 — Responsive & layout fixes:** UI-V1-004, UI-V1-008, UI-V1-009. (Grid `min-w-0`; register table width vs. page gutter; company truncation.) Small, self-contained, high user-visible value. **Status: done (2026-07-10)** — see per-finding "Remediation status" entries above.
 - **Module 4.2 — Drawer accessibility hardening:** UI-V1-012, UI-V1-013, UI-V1-014, UI-V1-015. Dialog role + `aria-modal` + label, focus trap/restore, Escape, scroll-lock. May be merged into the deferred V2 drawer redesign if that lands first, but the a11y basics should not wait on content depth.
 - **Module 4.3 — Copy & semantic accuracy:** UI-V1-002, UI-V1-003, UI-V1-005, UI-V1-006, UI-V1-007, UI-V1-010. Nav/label/title consistency, "Latest verified" vs `updatedAt`, unified clinical-phase definition (UI-only; do not reopen the frozen registry), asset-header consistency, milestone badge differentiation.
 - **Module 4.4 — Navigation & filter polish (optional):** UI-V1-001 (active nav + `aria-current`), UI-V1-011 (keyword scope / placeholder honesty).
