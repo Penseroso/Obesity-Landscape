@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.prnewswire.com)",
+      "WebFetch(domain:www.novonordisk.com)",
+      "WebFetch(domain:www.sec.gov)",
+      "WebFetch(domain:www.globenewswire.com)",
+      "Bash(npm run *)"
+    ]
+  }
+}

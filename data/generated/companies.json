@@ -5,6 +5,11 @@
     "headquartersCountry": "China"
   },
   {
+    "id": "novo-nordisk",
+    "name": "Novo Nordisk",
+    "headquartersCountry": "Denmark"
+  },
+  {
     "id": "zealand-pharma",
     "name": "Zealand Pharma",
     "headquartersCountry": "Denmark"

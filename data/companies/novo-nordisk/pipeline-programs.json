@@ -1,0 +1,269 @@
+[
+  {
+    "id": "novo-nordisk-semaglutide-subcutaneous-injection",
+    "assetId": "semaglutide",
+    "companyId": "novo-nordisk",
+    "assetName": "Semaglutide",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight",
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Approved",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-10",
+      "updatedAt": "2026-07-10",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT03548987",
+          "title": "Research Study Investigating How Well Semaglutide Works in People Suffering From Overweight or Obesity (STEP 1)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/fda-approves-novo-nordisks-wegovy-pill-the-first-and-only-oral-glp-1-for-weight-loss-in-adults-302648344.html",
+          "title": "FDA approves Novo Nordisk's Wegovy pill, the first and only oral GLP-1 for weight loss in adults",
+          "sourceType": "company press release",
+          "publishedAt": "2025-12-22",
+          "checkedAt": "2026-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "novo-nordisk-semaglutide-oral-tablets",
+    "assetId": "semaglutide",
+    "companyId": "novo-nordisk",
+    "assetName": "Semaglutide",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight",
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Approved",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-10",
+      "updatedAt": "2026-07-10",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/fda-approves-novo-nordisks-wegovy-pill-the-first-and-only-oral-glp-1-for-weight-loss-in-adults-302648344.html",
+          "title": "FDA approves Novo Nordisk's Wegovy pill, the first and only oral GLP-1 for weight loss in adults",
+          "sourceType": "company press release",
+          "publishedAt": "2025-12-22",
+          "checkedAt": "2026-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "novo-nordisk-cagrisema-subcutaneous-injection",
+    "assetId": "cagrisema",
+    "companyId": "novo-nordisk",
+    "assetType": "fixed-dose-combination",
+    "assetName": "CagriSema",
+    "codeName": "CagriSema",
+    "components": [
+      {
+        "assetId": "cagrilintide",
+        "role": "amylin analog"
+      },
+      {
+        "assetId": "semaglutide",
+        "role": "GLP-1 receptor agonist"
+      }
+    ],
+    "technical": {
+      "mechanism": "Long-acting amylin analog plus GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Filed",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-10",
+      "updatedAt": "2026-07-10",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/novo-nordisk-files-for-fda-approval-of-cagrisema-the-first-once-weekly-combination-of-glp1-and-amylin-analogues-for-weight-management-302645862.html",
+          "title": "Novo Nordisk files for FDA approval of CagriSema, the first once-weekly combination of GLP-1 and amylin analogues for weight management",
+          "sourceType": "company press release",
+          "publishedAt": "2025-12-18",
+          "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-cardiometabolic-pipeline-with-new-data-featuring-cagrisema-and-zenagamtide-at-the-american-diabetes-associations-2026-scientific-sessions-302783110.html",
+          "title": "Novo Nordisk advances cardiometabolic pipeline with new data featuring CagriSema and zenagamtide at the American Diabetes Association's 2026 Scientific Sessions",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06",
+          "checkedAt": "2026-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "novo-nordisk-cagrilintide-subcutaneous-injection",
+    "assetId": "cagrilintide",
+    "companyId": "novo-nordisk",
+    "assetName": "Cagrilintide",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Long-acting amylin analog",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-10",
+      "updatedAt": "2026-07-10",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2025/09/16/3150597/0/en/Novo-Nordisk-presents-phase-3-data-for-next-generation-amylin-cagrilintide-leading-to-advancement-into-dedicated-clinical-programme.html",
+          "title": "Novo Nordisk presents phase 3 data for next-generation amylin cagrilintide, leading to advancement into dedicated clinical programme",
+          "sourceType": "company press release",
+          "publishedAt": "2025-09-16",
+          "checkedAt": "2026-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "novo-nordisk-amycretin-subcutaneous-injection",
+    "assetId": "amycretin",
+    "companyId": "novo-nordisk",
+    "assetName": "Amycretin",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-10",
+      "updatedAt": "2026-07-10",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
+          "title": "Novo Nordisk advances early-stage obesity medication, amycretin, to phase 3 clinical development based on early-phase clinical trial results in people with obesity or excess weight, published in The Lancet",
+          "sourceType": "company press release",
+          "publishedAt": "2025-06-20",
+          "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07503210",
+          "title": "A Study of Zenagamtide (Amycretin) for the Maintenance of Weight Loss in People With Obesity (AMAZE 12)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html",
+          "title": "Novo Nordisk's investigational zenagamtide shows significant A1C reductions with up to 14.6% weight loss in adults with type 2 diabetes -- presented at ADA 2026",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06",
+          "checkedAt": "2026-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "id": "novo-nordisk-amycretin-oral-tablets",
+    "assetId": "amycretin",
+    "companyId": "novo-nordisk",
+    "assetName": "Amycretin",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-10",
+      "updatedAt": "2026-07-10",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
+          "title": "Novo Nordisk advances early-stage obesity medication, amycretin, to phase 3 clinical development based on early-phase clinical trial results in people with obesity or excess weight, published in The Lancet",
+          "sourceType": "company press release",
+          "publishedAt": "2025-06-20",
+          "checkedAt": "2026-07-10"
+        }
+      ]
+    }
+  }
+]
