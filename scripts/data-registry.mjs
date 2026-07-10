@@ -932,6 +932,7 @@ function validateClinicalStudy(study, context, references) {
   assertOptionalNonEmptyString(study.followUpDuration, `${context}: followUpDuration`);
   assertOptionalNonEmptyString(study.safetySummary, `${context}: safetySummary`);
   validateMetadata(study.metadata, context);
+  assert(study.metadata.sources.length > 0, `${context}: metadata.sources must contain at least one source`);
 }
 
 function validateClinicalLinkedAsset(linkedAsset, context, references) {
@@ -996,12 +997,19 @@ function validateClinicalOutcome(outcome, context) {
     clinicalResultTypes.has(outcome.result.resultType),
     `${context}: result.resultType "${outcome.result.resultType}" is not allowed`,
   );
+  if (outcome.result.resultType === "arm-level") {
+    assert(outcome.armIds.length === 1, `${context}: arm-level outcomes require exactly one armId`);
+  }
+  if (outcome.result.resultType === "between-arm") {
+    assert(outcome.armIds.length >= 2, `${context}: between-arm outcomes require at least two armIds`);
+  }
   assertOptionalNonEmptyString(outcome.result.comparisonType, `${context}: result.comparisonType`);
   assertOptionalNonEmptyString(outcome.result.confidenceInterval, `${context}: result.confidenceInterval`);
   assertOptionalNonEmptyString(outcome.result.pValue, `${context}: result.pValue`);
   assertOptionalNonEmptyString(outcome.result.responderThreshold, `${context}: result.responderThreshold`);
   assert(clinicalResultMaturities.has(outcome.maturity), `${context}: maturity "${outcome.maturity}" is not allowed`);
   validateMetadata(outcome.metadata, context);
+  assert(outcome.metadata.sources.length > 0, `${context}: metadata.sources must contain at least one source`);
 }
 
 function getClinicalOutcomeSemanticKey(outcome) {
@@ -1357,6 +1365,18 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["missing-result", /source-reported result value is required/, (fixture) => {
       fixture.outcomes[0].result.value = "";
+    }],
+    ["study-without-source", /metadata\.sources must contain at least one source/, (fixture) => {
+      fixture.studies[0].metadata.sources = [];
+    }],
+    ["outcome-without-source", /metadata\.sources must contain at least one source/, (fixture) => {
+      fixture.outcomes[0].metadata.sources = [];
+    }],
+    ["arm-level-multiple-arms", /arm-level outcomes require exactly one armId/, (fixture) => {
+      fixture.outcomes[0].result.resultType = "arm-level";
+    }],
+    ["between-arm-single-arm", /between-arm outcomes require at least two armIds/, (fixture) => {
+      fixture.outcomes[0].armIds = [fixture.outcomes[0].armIds[0]];
     }],
     ["study-without-arm", /has no arms/, (fixture) => {
       fixture.studies.push(secondStudy);

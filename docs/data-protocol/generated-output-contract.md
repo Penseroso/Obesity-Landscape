@@ -10,8 +10,11 @@ Clinical Evidence data layer.
 ## 1. Source-of-truth boundary
 
 - `data/companies/<company-id>/{company,pipeline-programs,regimens}.json` are the
-  **only** human-edited operating source of truth.
-- `data/generated/*.json` are **generated artifacts**. Do not edit them by hand.
+  human-edited Company/Pipeline operating source of truth.
+- `data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json` files
+  are the human-edited Clinical Evidence source of truth.
+- `data/generated/*.json` files are **generated artifacts**. Do not edit them by
+  hand.
 - They are produced only by `npm run data:generate`
   (`scripts/data-registry.mjs`) from operating data plus the
   repository-controlled registries under `data/registries/`.
@@ -50,7 +53,7 @@ output.
 | `companies.json` | every `data/companies/*/company.json` | JSON array of `Company` | flat aggregate | UI company lists, report grouping, loader | yes |
 | `pipeline-programs.json` | every `data/companies/*/pipeline-programs.json` | JSON array of `PipelineProgramRecord` | flat aggregate | UI program board/detail, filtering, reports | yes |
 | `regimens.json` | every `data/companies/*/regimens.json` | JSON array of `RegimenRecord` | flat aggregate | future regimen views/tooling (no current UI) | yes |
-| `clinical-evidence.json` | every `data/clinical-evidence/*/*/clinical-evidence.json` | object with `studies`, `arms`, `endpoints`, and `outcomes` arrays | flat aggregate | future Clinical Evidence tooling (no current UI) | yes |
+| `clinical-evidence.json` | every `data/clinical-evidence/*/*/clinical-evidence.json` | object with `studies`, `arms`, `endpoints`, and `outcomes` arrays | flat aggregate | future Clinical Evidence tooling (no current UI) | no; separate v2 Clinical Evidence output |
 
 Each file is a flat concatenation of the corresponding operating records across
 all source folders, then sorted per §2. None is a joined view, index, or
@@ -97,8 +100,9 @@ Downstream UI, report, and tool consumers:
 
 - **May** read generated files for display, filtering, sorting, and
   board/report views.
-- **Must not** treat generated files as an editable source of truth; edits
-  belong in `data/companies/`.
+- **Must not** treat generated files as an editable source of truth.
+- **Must** make Company/Pipeline edits in `data/companies/`.
+- **Must** make Clinical Evidence edits in `data/clinical-evidence/`.
 - **Must not** infer an absent source fact from a generated-field omission — an
   omitted optional field means "not recorded", not a semantic negative.
 - **Must** trace semantic questions (why a stage, what evidence) back to the
