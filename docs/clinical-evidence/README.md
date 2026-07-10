@@ -5,6 +5,11 @@ This module implements source files, TypeScript types, validation, synthetic
 checks, and a deterministic generated aggregate. It does not implement research
 execution, routing activation, UI, ranking, or comparison logic.
 
+For the reusable research workflow and prompt, see
+[`../clinical-evidence-workflow.md`](../clinical-evidence-workflow.md) and
+[`../../prompts/research-clinical-evidence.md`](../../prompts/research-clinical-evidence.md).
+The workflow remains inactive until routing is explicitly activated.
+
 ## Evidence Scope
 
 Clinical Evidence v2 initially covers only **human interventional clinical
@@ -164,8 +169,6 @@ and invalid checks. The synthetic fixtures are not real clinical evidence.
 This data layer does not introduce:
 
 - real clinical evidence records.
-- a Clinical Evidence Research workflow.
-- a reusable research prompt.
 - routing activation.
 - UI, ranking, scoring, or comparison behavior.
 - changes to Contract 1.0 or Scope v1.1.

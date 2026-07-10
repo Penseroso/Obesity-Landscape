@@ -2,8 +2,9 @@
 
 Authoritative routing boundary for research requests. This document decides
 which research workflow a natural-language request may enter. It does not define
-the Company/Pipeline Research protocol and does not create a Clinical Evidence
-Research workflow.
+the Company/Pipeline Research protocol. A reusable Clinical Evidence workflow
+document and prompt exist, but the route remains inactive until a later module
+activates it.
 
 ## Current executable route
 
@@ -27,9 +28,11 @@ endpoint, result, efficacy, or safety extraction.
 ## Reserved clinical-evidence route
 
 Requests with explicit clinical-evidence intent are reserved for a future
-**Clinical Evidence Research** workflow. This route is not implemented.
-The minimum semantic contract for that future domain is
-[`clinical-evidence/README.md`](./clinical-evidence/README.md).
+**Clinical Evidence Research** route. The workflow document and reusable prompt
+exist at [`clinical-evidence-workflow.md`](./clinical-evidence-workflow.md) and
+[`../prompts/research-clinical-evidence.md`](../prompts/research-clinical-evidence.md),
+but this route remains inactive pending Module 5 validation. The semantic
+contract is [`clinical-evidence/README.md`](./clinical-evidence/README.md).
 
 Explicit clinical-evidence intent includes terms such as:
 
@@ -46,13 +49,13 @@ Examples:
 - `semaglutide 임상 조사`
 - `Novo Nordisk 주요 임상시험 조사`
 
-Until the Clinical Evidence Research workflow exists:
+Until the Clinical Evidence route is activated:
 
 - do not route explicit clinical-evidence requests to
   [`../prompts/research-company.md`](../prompts/research-company.md) as a
   substitute.
 - do not claim clinical-evidence research was completed.
-- identify the route as reserved but not yet implemented.
+- identify the route as reserved and inactive pending Module 5 validation.
 - do not create study, arm, endpoint, outcome, efficacy, or safety schemas as
   part of routing.
 
@@ -67,8 +70,8 @@ The intended future combined execution order is:
 1. Company/Pipeline Research.
 2. Clinical Evidence Research.
 
-This is a routing contract only. It does not implement the Clinical Evidence
-Research workflow.
+This is a routing contract only. It does not activate the Clinical Evidence
+Research route.
 
 ## Ambiguous input default
 

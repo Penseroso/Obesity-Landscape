@@ -44,6 +44,7 @@ it instead of restating it at length.
 | Structural cases the v1 contract cannot yet represent (v2 backlog) | [`edge-cases.md`](./edge-cases.md) |
 | What `data/generated/` guarantees to downstream consumers | [`generated-output-contract.md`](./generated-output-contract.md) |
 | Separate Clinical Evidence domain boundary | [`../clinical-evidence/README.md`](../clinical-evidence/README.md) |
+| Clinical Evidence research workflow (inactive until routing activation) | [`../clinical-evidence-workflow.md`](../clinical-evidence-workflow.md) |
 | Dataset scope, data layout, operating model, glossary | [`README.md`](./README.md) (this file) |
 
 The company-research workflow
@@ -97,8 +98,7 @@ Deferred to v2; none is implemented in v1. Treatment and status live in
 - field-level provenance
 - durable adjacent-inclusion rationale field
 - excluded/deferred candidate ledger
-- Clinical Evidence research workflow, routing activation, UI, and comparison
-  logic
+- Clinical Evidence routing activation, UI, and comparison logic
 - program-ID suffix scheme
 - salts, prodrugs, conjugates, and other open-until-pilot identity cases
 - per-jurisdiction approval modeling
