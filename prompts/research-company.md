@@ -116,17 +116,18 @@ updating its records in the same execution. Follow these steps:
    current sources omit them, and do not overwrite strong evidence with weaker
    secondary reporting. Preserve useful historical sources; avoid duplicates.
 
-10. **Apply the provisional deterministic ID rules when creating new records.**
-   Search existing identities first and reuse IDs whenever applicable. For new
-   IDs: `companyId` is a lowercase kebab-case slug of the canonical official
-   company name; `assetId` is a lowercase kebab-case slug of the official
-   development code when available, otherwise the canonical asset name;
-   `programId` stably combines `companyId`, `assetId`, route, and dosage form,
-   with an indication-scope suffix only when required to distinguish
-   concurrent programs. Never include stage or status in an ID. Check for
-   collisions before creation; if a collision cannot be resolved from verified
-   identity information, defer the record rather than inventing an arbitrary
-   ID. These rules are provisional pending the first pilot.
+10. **Apply the deterministic ID rules when creating new records.** These rules
+   operate under the frozen Contract 1.0 (ADR-0025); only the exact
+   program-ID suffix scheme remains v2 backlog. Search existing identities
+   first and reuse IDs whenever applicable. For new IDs: `companyId` is a
+   lowercase kebab-case slug of the canonical official company name;
+   `assetId` is a lowercase kebab-case slug of the official development code
+   when available, otherwise the canonical asset name; `programId` stably
+   combines `companyId`, `assetId`, route, and dosage form, with an
+   indication-scope suffix only when required to distinguish concurrent
+   programs. Never include stage or status in an ID. Check for collisions
+   before creation; if a collision cannot be resolved from verified identity
+   information, defer the record rather than inventing an arbitrary ID.
 
 11. **Apply the Company creation rule.** Create a new `Company` record only
     when both the canonical company name and `headquartersCountry` are

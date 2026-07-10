@@ -1,8 +1,8 @@
 # Edge Cases
 
-Real situations the current **provisional** contract cannot yet cleanly
-represent. Each is logged for later contract review. **No final schema solution
-is invented here.**
+Real situations the frozen Contract 1.0 (ADR-0025) cannot yet cleanly
+represent. Each is logged for later contract review as v2 backlog. **No final
+schema solution is invented here.**
 
 **Decision status** is one of:
 
@@ -11,7 +11,7 @@ is invented here.**
 - **assumption at risk** — a current schema assumption likely to fail; expect a
   contract change.
 
-| Case | Current provisional treatment | Model limitation | Decision status | Contract review needed |
+| Case | Current treatment | Model limitation | Decision status | Contract review needed |
 | --- | --- | --- | --- | --- |
 | Joint development | Keep principal `companyId`; store confirmed role details in program/regimen `relationships`. | Relationship UI is not implemented. | provisionally usable | Yes |
 | Regional rights | Store confirmed territories and rights in program/regimen `relationships`. | Relationship UI is not implemented. | provisionally usable | Yes |

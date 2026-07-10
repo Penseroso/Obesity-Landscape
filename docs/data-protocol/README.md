@@ -233,5 +233,6 @@ unconfirmed program.
 - **Confirmation source** — a source appropriate to the specific claim being
   entered (see the field-specific source policy). Required before a fact is
   stored.
-- **Edge case** — a real situation the current provisional contract cannot
-  cleanly represent, logged in `edge-cases.md` for later contract review.
+- **Edge case** — a real situation the frozen Contract 1.0 cannot cleanly
+  represent, logged in `edge-cases.md` for later contract review as v2
+  backlog.
