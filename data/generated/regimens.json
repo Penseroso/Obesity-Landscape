@@ -124,10 +124,9 @@
     }
   },
   {
-    "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity-bimagrumab-10-semaglutide-1",
+    "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity",
     "companyId": "eli-lilly-and-company",
-    "name": "Bimagrumab 10 mg/kg plus semaglutide 1.0 mg",
-    "configurationKey": "bimagrumab-10-mg-kg-semaglutide-1-mg",
+    "name": "Bimagrumab plus semaglutide for obesity or overweight",
     "components": [
       {
         "assetName": "Bimagrumab",
@@ -146,9 +145,9 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not separately confirmed"
+      "stageOperationalState": "Completed"
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-12",
@@ -164,10 +163,9 @@
     }
   },
   {
-    "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity-bimagrumab-10-semaglutide-2-4",
+    "id": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
-    "name": "Bimagrumab 10 mg/kg plus semaglutide 2.4 mg",
-    "configurationKey": "bimagrumab-10-mg-kg-semaglutide-2-4-mg",
+    "name": "Bimagrumab plus tirzepatide for obesity or overweight",
     "components": [
       {
         "assetName": "Bimagrumab",
@@ -175,9 +173,8 @@
         "role": "activin type II receptor antibody"
       },
       {
-        "assetName": "Semaglutide",
-        "externalCompanyName": "Novo Nordisk A/S",
-        "role": "GLP-1 receptor agonist"
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
       }
     ],
     "indications": [
@@ -186,17 +183,17 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not separately confirmed"
+      "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-12",
       "updatedAt": "2026-07-12",
       "sources": [
         {
-          "url": "https://clinicaltrials.gov/study/NCT05616013",
-          "title": "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
+          "url": "https://clinicaltrials.gov/study/NCT06643728",
+          "title": "A Study to Investigate Weight Management With Bimagrumab (LY3985863) and Tirzepatide (LY3298176), Alone or in Combination, in Adults With Obesity or Overweight",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-12"
         }
@@ -204,79 +201,43 @@
     }
   },
   {
-    "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity-bimagrumab-30-semaglutide-1",
+    "id": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
-    "name": "Bimagrumab 30 mg/kg plus semaglutide 1.0 mg",
-    "configurationKey": "bimagrumab-30-mg-kg-semaglutide-1-mg",
+    "name": "Eloralintide plus tirzepatide for obesity or overweight",
     "components": [
       {
-        "assetName": "Bimagrumab",
-        "codeName": "LY3985863",
-        "role": "activin type II receptor antibody"
+        "assetId": "ly3841136",
+        "role": "amylin receptor agonist"
       },
       {
-        "assetName": "Semaglutide",
-        "externalCompanyName": "Novo Nordisk A/S",
-        "role": "GLP-1 receptor agonist"
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
       }
     ],
     "indications": [
       "Obesity",
-      "Overweight"
+      "Overweight",
+      "Type 2 diabetes"
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not separately confirmed"
+      "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-12",
       "updatedAt": "2026-07-12",
       "sources": [
         {
-          "url": "https://clinicaltrials.gov/study/NCT05616013",
-          "title": "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
+          "url": "https://clinicaltrials.gov/study/NCT06603571",
+          "title": "A Study to Investigate Weight Management With LY3841136 and Tirzepatide (LY3298176), Alone or in Combination, in Adult Participants With Obesity or Overweight With Type 2 Diabetes",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-12"
-        }
-      ]
-    }
-  },
-  {
-    "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity-bimagrumab-30-semaglutide-2-4",
-    "companyId": "eli-lilly-and-company",
-    "name": "Bimagrumab 30 mg/kg plus semaglutide 2.4 mg",
-    "configurationKey": "bimagrumab-30-mg-kg-semaglutide-2-4-mg",
-    "components": [
-      {
-        "assetName": "Bimagrumab",
-        "codeName": "LY3985863",
-        "role": "activin type II receptor antibody"
-      },
-      {
-        "assetName": "Semaglutide",
-        "externalCompanyName": "Novo Nordisk A/S",
-        "role": "GLP-1 receptor agonist"
-      }
-    ],
-    "indications": [
-      "Obesity",
-      "Overweight"
-    ],
-    "development": {
-      "stage": "Phase 2",
-      "status": "Unknown",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not separately confirmed"
-    },
-    "metadata": {
-      "lastVerifiedAt": "2026-07-12",
-      "updatedAt": "2026-07-12",
-      "sources": [
+        },
         {
-          "url": "https://clinicaltrials.gov/study/NCT05616013",
-          "title": "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
+          "url": "https://clinicaltrials.gov/study/NCT06345066",
+          "title": "A Study of LY3841136 in Overweight and Obese Participants",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-12"
         }
@@ -356,6 +317,95 @@
           "url": "https://clinicaltrials.gov/study/NCT06588296",
           "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Psoriatic Arthritis and Obesity or Overweight (TOGETHER-PsA)",
           "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
+    "companyId": "eli-lilly-and-company",
+    "name": "Macupatide plus eloralintide for obesity or overweight",
+    "components": [
+      {
+        "assetId": "ly3532226",
+        "role": "GIP receptor agonist"
+      },
+      {
+        "assetId": "ly3841136",
+        "role": "amylin receptor agonist"
+      }
+    ],
+    "indications": [
+      "Obesity",
+      "Overweight",
+      "Type 2 diabetes"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-12",
+      "updatedAt": "2026-07-12",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07215559",
+          "title": "A Study of Macupatide (LY3532226) and Eloralintide (LY3841136), Alone or in Combination, in Adults With Obesity or Overweight and With Type 2 Diabetes",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07589608",
+          "title": "A Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
+    "companyId": "eli-lilly-and-company",
+    "name": "Mibavademab plus tirzepatide for obesity",
+    "components": [
+      {
+        "assetName": "Mibavademab",
+        "codeName": "REGN4461",
+        "externalCompanyName": "Regeneron Pharmaceuticals, Inc.",
+        "role": "leptin receptor agonist antibody"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-12",
+      "updatedAt": "2026-07-12",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06373146",
+          "title": "A Study of Tirzepatide (LY3298176) Plus Mibavademab Compared With Tirzepatide Alone in Adult Participants With Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        },
+        {
+          "url": "https://newsroom.regeneron.com/static-files/dfd33cbe-4887-4752-917a-6256f3ef165d",
+          "title": "Regeneron Pharmaceuticals Form 10-Q",
+          "sourceType": "partner regulatory filing",
+          "publishedAt": "2025-08-01",
           "checkedAt": "2026-07-12"
         }
       ]
