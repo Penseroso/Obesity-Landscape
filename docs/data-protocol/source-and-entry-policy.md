@@ -125,6 +125,20 @@ component identity, a fixed-dose/co-formulation relationship, a regimen
 relationship, territory, rights, or an external asset developer from context
 alone.
 
+Classifying a study as a confirmed **regimen** component (rather than an
+unconfirmed add-on/background-therapy program) requires the source to name the
+**specific** background or concomitant product **and** show the sponsor treats
+the co-administration as a distinct development configuration or
+investigational combination strategy (for example, an "alone or in
+combination" trial design). An unspecified therapy class (for example "a
+weekly incretin") does not confirm a regimen component, and neither does a
+named product studied only as protocol-required standard-of-care background
+therapy (for example background basal insulin or metformin) — that remains
+background therapy regardless of naming. Attributing an indication from a
+**platform or master protocol** requires the source to explicitly nest that
+indication — a named sub-population, sub-study, or dedicated outcome measure —
+not only the trial's general population.
+
 ### Clinical results
 
 Prefer:
@@ -235,8 +249,15 @@ Rules by field.
 - **Route** — only as published; do not infer.
 - **Dosage form** — only as published; do not infer.
 - **Dosing interval** — only as published; `null` if not disclosed.
-- **Indications** — as published; may hold multiple values under the row rules
-  in `entities-and-rows.md`.
+- **Indications** — a **disease or clinically defined treatment indication**
+  only, as published; may hold multiple values under the row rules in
+  `entities-and-rows.md`. Do **not** store background or concomitant therapy,
+  prior-treatment or inadequate-control conditions, age-cohort descriptors,
+  trial objectives, outcome/endpoint labels, or other population descriptors as
+  an indication value. For example, a required background incretin is not an
+  indication, and a trial-objective phrase such as "morbidity and mortality in
+  obesity" is not a disease indication — capture that framing in research
+  reporting or the separate Clinical Evidence domain, not in `indications`.
 - **Development stage** — one of the enumerated stages; see status/stage rules.
 - **Development status** — one of the enumerated statuses; see status rules.
 - **Regulatory state** — one or more registry-backed regulatory milestones,
@@ -420,8 +441,13 @@ Before entering or updating a record:
 - [ ] Confirm **stage** and **status**.
 - [ ] Confirm regulatory-development stage and regulatory-state details when
       present.
-- [ ] Distinguish single asset, combination product, regimen, and external
-  background therapy.
+- [ ] Classify each surfaced study on both axes — **intervention model**
+  (monotherapy, combination product, regimen, or add-on/background-therapy
+  program) and **protocol structure** (standalone or platform/master
+  protocol) — before modeling it as a row (see `entities-and-rows.md`).
+- [ ] Confirm each `indications` value is a disease or clinically defined
+  treatment indication, not background therapy, prior-treatment conditions, age
+  cohorts, trial objectives, outcome labels, or other population descriptors.
 - [ ] Confirm component identities and company relationships without inference.
 - [ ] Keep internal references company-folder-local and represent other
   companies/assets as external references.

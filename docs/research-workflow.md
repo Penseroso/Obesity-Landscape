@@ -44,7 +44,9 @@ The overall path is the same regardless of the internal decision:
 company-centred discovery
 -> in-scope asset inventory
 -> asset / code-name reverse search
--> single asset, combination product, regimen, and background therapy split
+-> intervention-model (single asset, combination product, regimen, or
+add-on/background-therapy) and protocol-structure (standalone or
+platform/master-protocol) classification
 -> registry, partner, rights, and official-source verification
 -> comparison with existing records
 -> confirmed record creation or update
@@ -60,12 +62,27 @@ record, extract every distinct development entity and configuration it discloses
 regimens, and company relationships), not only the record that led you to it. A
 single release often announces multiple programs.
 
+Apply scope at the **asset level**. Once an asset qualifies for the core
+landscape by mechanism or confirmed obesity/weight-management program intent,
+investigate all of its current official programs that Contract 1.1 can
+represent; do not limit discovery to obesity-indication rows. Continue to
+exclude unrelated non-core assets and programs under the existing scope rules.
+Split program rows when stage, development status, or operational state
+differs. That equality is necessary but not sufficient to merge: merge
+indications only when company, asset, route, dosage form, stage, status, and
+operational state are identical, the records belong to the same
+sponsor-defined development program or trial family, and the source bundle
+directly supports the full merged scope — otherwise defer (see the data
+protocol's row-splitting rule). A study requiring background or concomitant
+therapy is not monotherapy evidence for the focal asset; classify it per the
+data protocol before recording indications.
+
 ### Initial investigation
 
 - Inspect the company's **current pipeline broadly**.
 - Identify **all** candidates relevant to the Module 5 scope (see the data
   protocol's dataset scope).
-- Distinguish **included**, **excluded**, and **unresolved** candidates.
+- Classify candidates as **entered**, **merged**, **deferred**, or **excluded**.
 - Verify **each included asset independently**.
 - Do **not** research only the first obvious asset.
 
@@ -117,9 +134,11 @@ company's other, fully confirmed assets.
 
 **Classify every surfaced entity.** Each named program, formulation, combination
 product, regimen, or relationship surfaced during research must end the run in
-exactly one of three states:
+exactly one of four states:
 
-- **entered/updated** — confirmed and representable, so a record was written.
+- **entered** — confirmed and representable, so a record was created or updated.
+- **merged** — confirmed but consolidated into an existing record under the row
+  or regimen-granularity rules, with the destination record identified.
 - **deferred** — with a specific reason (for example, unconfirmed route,
   unconfirmed configuration discriminator, or ambiguous identity).
 - **excluded** — with a scope or evidence reason (for example, out of dataset
@@ -134,8 +153,9 @@ regeneration, validation, and reporting — run a **coverage audit**. Its purpos
 is recall: catching in-scope candidates the primary research pass missed. It is
 mandatory in every run, initial investigation and refresh alike.
 
-**Audit checks.** Recheck coverage against each of the following, comparing what
-they disclose with the run's classified candidates:
+**Audit checks.** Reconcile every relevant entry in the sponsor's current
+official pipeline and trial sources against operating data, then recheck each of
+the following against the run's classified candidates:
 
 - the company's **official pipeline page and current investor materials**
   (pipeline slides, annual and quarterly reports, R&D-day presentations).
@@ -150,8 +170,9 @@ they disclose with the run's classified candidates:
   no longer appear in the current pipeline presentation.
 
 Every candidate the audit surfaces must be classified under the rules above:
-**entered/updated**, **deferred** with a specific reason, or **excluded** with a
-scope or evidence reason.
+**entered**, **merged**, **deferred**, or **excluded**, with a reason. Nothing
+found in the sponsor's current official pipeline or trial sources may be
+silently omitted.
 
 **Independent second discovery pass.** After the audit checks, repeat discovery
 **once, independently**: re-run company-centred discovery from scratch, without
@@ -258,15 +279,31 @@ is unclear, defer the finding instead of approximating it.
 
 ## 10. Combination, regimen, and relationship handling
 
-For each candidate, distinguish:
+For each candidate, distinguish on two independent axes.
 
-- single asset program.
+Intervention model:
+
+- single asset (monotherapy) program.
 - fixed-dose combination or co-formulation program.
-- regimen of independently administered products.
-- external background therapy.
-- program/regimen-level co-development, licensing, regional rights, trial
-  sponsor, commercialization, manufacturing, or other confirmed company
-  relationship.
+- regimen of independently administered products — only when the sponsor
+  treats the co-administration as a distinct development configuration (for
+  example an "alone or in combination" trial design); a named background
+  product studied only as protocol-required standard-of-care is not a
+  regimen.
+- add-on/background-therapy program — a concomitant or background therapy
+  required by the protocol that is not a confirmed regimen component; not
+  monotherapy evidence for the focal asset.
+
+Protocol structure:
+
+- standalone trial.
+- platform or master protocol — may test any intervention model above in its
+  nested sub-studies; evidences only its explicitly nested indications, not
+  the general population by inference.
+
+Also distinguish program/regimen-level co-development, licensing, regional
+rights, trial sponsor, commercialization, manufacturing, or other confirmed
+company relationship.
 
 Do not infer component identity, FDC versus regimen status, principal-company
 adjacent roles, rights, territory, or external asset developer. Store confirmed
@@ -294,9 +331,13 @@ is a distinct entity, not the sum of its components.
 
 When two regimens share the same principal company, component set, and
 indication scope, create separate records only if an official stable
-configuration discriminator is confirmed. Store that discriminator in
+product or regimen configuration is confirmed and remains meaningfully distinct
+independently of trial-arm dosing. Store that discriminator in
 `configurationKey` and use it as the basis for any stable regimen ID suffix.
-Do not use display name, stage/status, results, dates, or arbitrary numbering.
+Dose, dose ratio, titration schedule, cohort, and clinical trial arm differences
+do not create regimen identities; they belong to the future Clinical Evidence
+Arm layer. Do not use display name, stage/status, results, dates, dosing, or
+arbitrary numbering.
 If only one of the related records has `configurationKey`, or the discriminator
 is not official, defer the ambiguous record.
 
@@ -312,7 +353,7 @@ Whatever the form, the final response must communicate:
 - the **relevant assets** found.
 - records **created or changed**.
 - important records **reverified without change**.
-- findings **deferred or excluded**, and why.
+- findings **merged, deferred, or excluded**, and why.
 - the **coverage-audit outcome** — either that the final independent discovery
   pass surfaced no unclassified candidate, or which new candidates the audit
   surfaced and how each was classified.

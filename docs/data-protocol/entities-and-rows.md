@@ -72,8 +72,14 @@ status are mutable state and are never part of program identity or stable IDs**.
   combination components.
 - When the same principal company, component set, and indication scope have
   multiple officially distinct regimen configurations, use `configurationKey` as
-  the stable discriminator. Display name is not stable identity. Stage, status,
-  dates, results, and arbitrary suffixes must not be used as `configurationKey`.
+  the stable discriminator only when those configurations remain meaningfully
+  distinct independently of trial-arm dosing. Display name, stage, status,
+  dates, results, dose, dose ratio, titration schedule, cohort, clinical trial
+  arm, and arbitrary suffixes must not be used as `configurationKey`.
+- Dose or trial-arm differences do not create regimen identities. For example,
+  dose arms of `bimagrumab + semaglutide` are one component-level regimen under
+  Contract 1.1; dose-level arms belong to the future Clinical Evidence Arm
+  layer, not the current regimen registry.
 - If a second regimen needs a `configurationKey` but the official configuration
   discriminator cannot be confirmed, defer it instead of inventing one.
 
@@ -93,6 +99,58 @@ status are mutable state and are never part of program identity or stable IDs**.
 - Combination and regimen components may use **external component references**
   (`assetName`/`codeName` plus `externalCompanyName`) whenever no internal asset
   record exists for the component.
+
+### Study classification
+
+Before creating or updating any row, classify the surfaced study or program on
+**two independent axes**:
+
+- **Intervention model** — exactly one of:
+  - **monotherapy** — the focal asset alone, per protocol.
+  - **combination product** — a fixed-dose combination or co-formulation (see
+    above).
+  - **regimen** — independently administered products used together (see
+    above).
+  - **add-on/background-therapy program** — the focal asset is studied on top
+    of a required concomitant or background therapy that is **not** a
+    confirmed regimen component.
+- **Protocol structure** — exactly one of:
+  - **standalone** — a single trial registration with one indication scope.
+  - **platform/master protocol** — one sponsor protocol that formally nests
+    multiple distinct indications or sub-studies under one trial
+    registration.
+
+These axes are **independent**: a platform/master protocol may test a
+monotherapy, a combination product, a regimen, or an add-on/background-therapy
+program in any of its nested sub-studies. Classify each nested sub-study's
+intervention model on its own; the protocol-structure classification does not
+determine it.
+
+A study whose protocol requires a concomitant or background therapy — whether
+or not that therapy is a confirmed regimen component — is **not** monotherapy
+evidence for the focal asset. Do not attribute its indications to the focal
+asset's monotherapy row.
+
+**A named background product is not automatically a regimen.** Regimen
+classification requires official evidence that the sponsor treats the
+co-administration as a **distinct development configuration or investigational
+combination strategy** — for example, an "alone or in combination" trial
+design that names both products as the deliberate intervention being
+evaluated — not merely that the protocol names a specific background product.
+**Protocol-required standard-of-care background therapy remains background
+therapy** (for example, background basal insulin or metformin in a diabetes
+trial) even when the product is named, unless the sponsor separately develops
+that named product as a combination strategy with the focal asset. If the
+co-administration is not confirmed as a distinct development configuration,
+classify the study as an add-on/background-therapy program and **defer** it
+(see `edge-cases.md`) rather than folding it into an existing row or inventing
+a regimen record.
+
+A platform or master protocol evidences only the indications its source
+**explicitly nests** — a named sub-population, sub-study, or dedicated outcome
+measure — not every indication of its general population by inference. See
+`source-and-entry-policy.md` for the evidence standard required to attribute a
+nested indication.
 
 ## Licensed and in-licensed assets
 
@@ -147,7 +205,7 @@ Create **separate program rows** when concurrently active records differ by:
 - responsible company
 - route
 - dosage form
-- indication scope **with a different stage or status**
+- indication scope **with a different stage, status, or operational state**
 - indication or program scope with a different current `development.stage`,
   status, or `stageOperationalState` for the same asset, route, and dosage form
 - another development configuration that cannot be represented in one row
@@ -169,9 +227,26 @@ are the same:
 - dosage form
 - stage
 - status
+- operational state (`development.stageOperationalState`)
 
-If indications have **different stages or statuses**, split them into separate
-rows.
+This equality is **necessary but not sufficient**. Merging additionally
+requires **both**:
+
+- the records belong to the **same sponsor-defined development program or
+  trial family** (for example, the same named platform/master protocol or
+  umbrella trial program) — not merely records that happen to share a stage,
+  status, and operational state; and
+- the attached source bundle **directly supports the full merged scope** — an
+  indication is not carried into a row on the strength of a broader pipeline
+  summary or an unrelated trial in the same asset's program.
+
+If indications have a different stage, development status, or operational
+state, split them into separate rows. If they match on all of the fields above
+but still fail either merge condition, do not merge them: split into a separate
+row if it can be represented cleanly, or **defer** the indication (see
+`edge-cases.md`) rather than merging on state equality alone or inferring
+evidence. Content rules for what may populate `indications` are defined in
+`source-and-entry-policy.md`, not here.
 
 ## Stable IDs
 
@@ -193,4 +268,6 @@ document is the authoritative source. Specifically, it:
 - **Refines** "separate records for different routes/dosage forms" by tying row
   splitting to concurrently active development configurations.
 - **Adds** the indication-scope condition (same company/asset/route/dosage
-  form/stage/status) for when indications may share a row.
+  form/stage/status/operational state, the same sponsor-defined development
+  program or trial family, and direct source support for the full merged
+  scope) for when indications may share a row.

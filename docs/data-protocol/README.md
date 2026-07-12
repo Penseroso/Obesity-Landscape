@@ -149,6 +149,13 @@ The scope below is the v1.1 clarification recorded in ADR-0026. Every included
 program requires a **named developer** and **confirmed official development
 intent**; any route or formulation of an included class is in scope.
 
+Scope qualification is **asset-level**, not limited to obesity-indication rows.
+"Obesity landscape" does not mean "obesity-indication rows only." Once an
+asset qualifies for the core landscape by mechanism or by confirmed obesity or
+weight-management program intent, investigate all current official development
+programs for that asset that are representable under Contract 1.1. Apply the
+existing exclusions below to unrelated non-core assets and programs.
+
 ### Core inclusion
 
 - GLP-1 receptor agonists.

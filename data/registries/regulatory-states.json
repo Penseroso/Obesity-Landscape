@@ -36,5 +36,13 @@
       "New Drug Application submitted",
       "NDA filed"
     ]
+  },
+  {
+    "id": "nda-approved",
+    "label": "NDA approved",
+    "aliases": [
+      "New Drug Application approved",
+      "FDA approved"
+    ]
   }
 ]

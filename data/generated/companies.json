@@ -5,6 +5,11 @@
     "headquartersCountry": "China"
   },
   {
+    "id": "eli-lilly-and-company",
+    "name": "Eli Lilly and Company",
+    "headquartersCountry": "United States"
+  },
+  {
     "id": "novo-nordisk",
     "name": "Novo Nordisk",
     "headquartersCountry": "Denmark"

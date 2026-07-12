@@ -40,8 +40,8 @@ updating its records in the same execution. Follow these steps:
    formulations, combination products, regimens, and relationships — not only
    the record that led you to the source. Every named program, formulation,
    combination product, regimen, or relationship you surface must finish the run
-   classified as entered/updated, deferred with a specific reason, or excluded
-   with a scope or evidence reason; nothing surfaced is silently dropped.
+   classified as entered, merged, deferred, or excluded, with a reason; nothing
+   surfaced is silently dropped.
 
 5. **Apply the Module 5 rules.** Enforce the dataset scope, stage evidence
    thresholds, entity/asset/program identity, row-splitting rules, and
@@ -57,16 +57,37 @@ updating its records in the same execution. Follow these steps:
    comorbidity-only programs. Do not exclude a program merely for lack of GLP-1
    biology when it otherwise satisfies v1.1 scope; also do not include standalone
    v2-deferred programs merely because they may later become obesity-relevant.
-   Inclusion does not imply GLP-1 RA or GLP-1-containing status. Set `development.stage` to the most
-   advanced official current development stage for the program scope;
+   Inclusion does not imply GLP-1 RA or GLP-1-containing status. "Obesity
+   landscape" does not mean "obesity-indication rows only": once an asset
+   qualifies by core mechanism or confirmed obesity/weight-management intent,
+   investigate all current official programs for that asset that Contract 1.1
+   can represent, while retaining the exclusions for unrelated non-core assets
+   and programs. Split program rows when stage, status, or operational state
+   differs; that equality is necessary but not sufficient to merge — merge
+   indications only when company, asset, route, dosage form, stage, status,
+   and operational state are identical, the records share the same
+   sponsor-defined development program or trial family, and the source bundle
+   directly supports the full merged scope, otherwise defer. Set `development.stage`
+   to the most advanced official current development stage for the program scope;
    regulatory-development milestones such as `IND submitted` and `IND cleared`
    are valid stages when they are the most advanced official current stage and
    are never approximated as clinical phases (ADR-0024). Keep the detailed
    `regulatoryStates` entries (jurisdiction, authority, date) as a field
    separate from `development.stage`, and use `stageBasis` and
    `stageOperationalState` to annotate evidence basis and operational state.
-   Distinguish single asset programs, combination products, regimens, external
-   background therapies, and company relationships.
+   Classify each candidate on two independent axes before modeling it:
+   intervention model (monotherapy program, combination product, regimen, or
+   add-on/background-therapy program) and protocol structure (standalone or
+   platform/master protocol — a platform/master protocol may test any
+   intervention model in its nested sub-studies). Distinguish company
+   relationships separately. A study requiring background or concomitant
+   therapy is not monotherapy evidence for the focal asset. A named
+   background product is not automatically a regimen: regimen classification
+   requires official evidence the sponsor treats the co-administration as a
+   distinct development configuration, not merely protocol-required
+   standard-of-care background therapy. `indications` holds disease/treatment
+   indications only, never background therapy, prior-treatment conditions, age
+   cohorts, trial objectives, outcome labels, or population descriptors.
 
 6. **Promote registry values when justified.** If official evidence requires a
    development-stage, regulatory-state, or company-relationship-role value that
@@ -101,10 +122,16 @@ updating its records in the same execution. Follow these steps:
 
    For regimens, the base identity is principal company, component set, and
    indication scope. If multiple official configurations share that base
-   identity, store a stable `configurationKey` confirmed from official evidence
-   and base any regimen ID suffix on it. Do not use display name, stage/status,
-   dates, results, or arbitrary numbering. If the configuration discriminator is
-   needed but unconfirmed, defer the additional regimen.
+   identity, store a stable `configurationKey` only for an officially defined
+   product or regimen configuration that remains meaningfully distinct
+   independently of trial-arm dosing, and base any regimen ID suffix on it.
+   Dose, dose ratio, titration schedule, cohort, and clinical trial arm
+   differences do not create regimen identities; for example, dose arms of
+   `bimagrumab + semaglutide` are one component-level regimen. Dose-level arms
+   belong to the future Clinical Evidence Arm layer. Do not use display name,
+   stage/status, dates, results, dosing, or arbitrary numbering. If the
+   configuration discriminator is needed but unconfirmed, defer the additional
+   regimen.
 
 8. **Run the mandatory coverage audit.** After record updates — and before
    regeneration, validation, and reporting — audit coverage for recall. Recheck
@@ -114,9 +141,10 @@ updating its records in the same execution. Follow these steps:
    development-stage pipeline entries; run sponsor-based, asset-name, and
    code-name registry searches; and check licensed, acquired, partnered,
    renamed, and historical assets that may not appear in the current pipeline
-   presentation. Classify every candidate the audit surfaces as
-   entered/updated, deferred with a specific reason, or excluded with a scope
-   or evidence reason. Then repeat discovery once, independently — re-run
+   presentation. Reconcile every relevant entry in the sponsor's current
+   official pipeline and trial sources against operating data. Classify every
+   candidate as entered, merged, deferred, or excluded, with a reason; nothing
+   discovered may be silently omitted. Then repeat discovery once, independently — re-run
    company-centred discovery from scratch without starting from the first
    pass's source list or asset inventory. If the second pass surfaces any
    candidate not already classified in this run, the run is not complete:
@@ -177,7 +205,8 @@ updating its records in the same execution. Follow these steps:
     complexity (tables, asset-by-asset sections, or concise lists — no fixed
     template), communicate: whether this was an initial investigation or a
     refresh; the relevant assets found; records created or changed; important
-    records reverified without change; findings deferred or excluded and why;
+    records reverified without change; findings merged, deferred, or excluded
+    and why;
     the coverage-audit outcome (either that the final independent discovery
     pass surfaced no unclassified candidate, or which new candidates it
     surfaced and how each was classified);

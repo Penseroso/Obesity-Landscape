@@ -27,6 +27,9 @@ entry.
 - **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
 - **Research routing boundary:** ADR-0027.
 - **Clinical Evidence semantic contract:** ADR-0029 (refines ADR-0028).
+- **Study classification, indication scope, and row-merge sufficiency:**
+  ADR-0032 (refines ADR-0030's row-splitting rule), corrected by ADR-0033
+  (independent classification axes, tightened regimen test).
 
 ---
 
@@ -135,7 +138,10 @@ entry.
 Listed, **not resolved**. Each will be revisited with real pilot evidence and,
 when decided, recorded as a new appended ADR.
 
-- **Indication-level row granularity** — how far to split rows by indication.
+- ~~**Indication-level row granularity** — how far to split rows by
+  indication.~~ Resolved for the merge/split sufficiency test by ADR-0032
+  (same sponsor-defined program/trial family and directly-evidenced merged
+  scope required, in addition to identical stage/status/operational state).
 - **Primary company for co-development** — how to choose/represent the principal
   entity when development is shared.
 - ~~**Rights and regional ownership model** — whether to model licensor/licensee
@@ -661,3 +667,81 @@ when decided, recorded as a new appended ADR.
   so no status data changed.
 - **Consequences:** No new fields, registries, UI, or workflow changes. The v2
   backlog is unchanged.
+
+## ADR-0032 — Study classification, indication scope, and merge sufficiency
+
+- **Date:** 2026-07-12
+- **Status:** Accepted (current)
+- **Refines:** ADR-0030 (Contract 1.1) and the row-splitting rule in
+  `entities-and-rows.md`. Does not change the Contract 1.1 shape, add fields,
+  or change validators.
+- **Decision:** Clarify Module 5 research and entry practice, without
+  redesigning the contract:
+  1. Classify each surfaced study before row creation as monotherapy,
+     combination product, regimen, add-on/background-therapy program, or
+     platform/master protocol.
+  2. A study requiring concomitant or background therapy is not monotherapy
+     evidence for the focal asset, whether or not the background component is
+     a confirmed regimen component.
+  3. `indications` holds disease or clinically defined treatment indications
+     only — not background therapy, prior-treatment conditions, age cohorts,
+     trial objectives, outcome/endpoint labels, or other population
+     descriptors.
+  4. Identical stage, status, and operational state are **necessary but not
+     sufficient** to merge indications into one row.
+  5. Merging additionally requires the records to belong to the same
+     sponsor-defined development program or trial family, and the source
+     bundle to directly support the full merged scope.
+  6. Defer a program rather than force a row or merge that would lose the
+     sponsor's actual scope or trial structure under the current schema.
+- **Rationale:** Real research runs folded a required-background-therapy trial
+  (an unspecified weekly-incretin add-on study) into a monotherapy program row,
+  and merged evidence from unrelated trial families into one row on the
+  strength of matching stage/status/operational state alone. Both are
+  representable today without a schema change; they were process gaps in how
+  Module 5 classified studies and tested merge sufficiency, not contract gaps.
+- **Consequences:** No new fields, registries, validators, or `assetType`
+  values. Resolves the **Indication-level row granularity** deferred decision
+  above for the merge/split test (further indication-granularity questions
+  remain open only where they are not covered by rules 1–6). Existing operating
+  data is not retroactively modified by this ADR; any row that no longer
+  satisfies rules 4–5 is a data-correction follow-up, not a contract change.
+
+## ADR-0033 — Correct ADR-0032: independent classification axes, tightened regimen test
+
+- **Date:** 2026-07-12
+- **Status:** Accepted (current)
+- **Refines:** ADR-0032. Does not rewrite it (see the append-only rule at the
+  top of this log); this entry corrects a modeling regression found while
+  applying ADR-0032 to real data. Does not change the Contract 1.1 shape, add
+  fields, or change validators.
+- **Decision:**
+  1. Study classification (ADR-0032 rule 1) is **two independent axes**, not
+     one flat enum: **intervention model** (monotherapy, combination product,
+     regimen, or add-on/background-therapy program) and **protocol structure**
+     (standalone or platform/master protocol). A platform/master protocol may
+     test any intervention model in any of its nested sub-studies; classify
+     each nested sub-study's intervention model on its own.
+  2. **A named background product is not automatically a regimen.** Regimen
+     classification requires official evidence the sponsor treats the
+     co-administration as a distinct development configuration or
+     investigational combination strategy (for example, an "alone or in
+     combination" trial design) — not merely that the protocol names a
+     specific background product. Protocol-required standard-of-care
+     background therapy (for example background basal insulin or metformin)
+     remains background therapy even when named.
+- **Rationale:** ADR-0032's flat 5-way enum could not express that a platform
+  or master protocol (a protocol-structure property) commonly tests a
+  monotherapy or a regimen (an intervention-model property) within its nested
+  sub-studies — conflating the two axes into one enum was itself a modeling
+  error, not merely an omission. Separately, ADR-0032's regimen sentence ("if
+  the background component is officially confirmed and stable, model it under
+  the regimen rules") read as though naming a background product were
+  sufficient to make it a regimen, which would misclassify the many trials
+  where a focal asset is studied on protocol-required standard-of-care
+  background therapy (for example background basal insulin/metformin in a
+  diabetes trial) as a regimen rather than background therapy.
+- **Consequences:** No new fields, registries, validators, or `assetType`
+  values. Existing operating data is not retroactively modified by this ADR;
+  applying the corrected rules to the Eli Lilly dataset is a data-correction
+  follow-up, tracked separately.
