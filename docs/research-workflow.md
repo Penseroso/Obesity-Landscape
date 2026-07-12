@@ -44,7 +44,8 @@ The overall path is the same regardless of the internal decision:
 company-centred discovery
 -> in-scope asset inventory
 -> asset / code-name reverse search
--> single asset, combination product, regimen, and background therapy split
+-> single asset, combination product, regimen, add-on/background-therapy, and
+platform/master-protocol classification
 -> registry, partner, rights, and official-source verification
 -> comparison with existing records
 -> confirmed record creation or update
@@ -65,9 +66,15 @@ landscape by mechanism or confirmed obesity/weight-management program intent,
 investigate all of its current official programs that Contract 1.1 can
 represent; do not limit discovery to obesity-indication rows. Continue to
 exclude unrelated non-core assets and programs under the existing scope rules.
-Split program rows when stage, development status, or operational state differs.
-Merge indications only when company, asset, route, dosage form, stage, status,
-and operational state are identical.
+Split program rows when stage, development status, or operational state
+differs. That equality is necessary but not sufficient to merge: merge
+indications only when company, asset, route, dosage form, stage, status, and
+operational state are identical, the records belong to the same
+sponsor-defined development program or trial family, and the source bundle
+directly supports the full merged scope — otherwise defer (see the data
+protocol's row-splitting rule). A study requiring background or concomitant
+therapy is not monotherapy evidence for the focal asset; classify it per the
+data protocol before recording indications.
 
 ### Initial investigation
 
@@ -273,10 +280,14 @@ is unclear, defer the finding instead of approximating it.
 
 For each candidate, distinguish:
 
-- single asset program.
+- single asset (monotherapy) program.
 - fixed-dose combination or co-formulation program.
 - regimen of independently administered products.
-- external background therapy.
+- add-on/background-therapy program — a concomitant or background therapy
+  required by the protocol that is not a confirmed regimen component; not
+  monotherapy evidence for the focal asset.
+- platform or master protocol — evidences only its explicitly nested
+  indications, not the general population by inference.
 - program/regimen-level co-development, licensing, regional rights, trial
   sponsor, commercialization, manufacturing, or other confirmed company
   relationship.

@@ -100,6 +100,37 @@ status are mutable state and are never part of program identity or stable IDs**.
   (`assetName`/`codeName` plus `externalCompanyName`) whenever no internal asset
   record exists for the component.
 
+### Study classification
+
+Before creating or updating any row, classify the surfaced study or program as
+exactly one of:
+
+- **monotherapy** — the focal asset alone, per protocol.
+- **combination product** — a fixed-dose combination or co-formulation (see
+  above).
+- **regimen** — independently administered products used together (see
+  above).
+- **add-on/background-therapy program** — the focal asset is studied on top of
+  a required concomitant or background therapy that is **not** a confirmed
+  regimen component.
+- **platform/master protocol** — one sponsor protocol that formally nests
+  multiple distinct indications or sub-studies under one trial registration.
+
+A study whose protocol requires a concomitant or background therapy — whether
+or not that therapy is a confirmed regimen component — is **not** monotherapy
+evidence for the focal asset. Do not attribute its indications to the focal
+asset's monotherapy row. If the background component is officially confirmed
+and stable, model it under the regimen rules above; if it is unconfirmed,
+generic, or another sponsor's unspecified product, classify the study as an
+add-on/background-therapy program and **defer** it (see `edge-cases.md`)
+rather than folding it into an existing row or inventing a regimen component.
+
+A platform or master protocol evidences only the indications its source
+**explicitly nests** — a named sub-population, sub-study, or dedicated outcome
+measure — not every indication of its general population by inference. See
+`source-and-entry-policy.md` for the evidence standard required to attribute a
+nested indication.
+
 ## Licensed and in-licensed assets
 
 - A licensed or in-licensed asset that the principal company develops is tracked
@@ -177,9 +208,24 @@ are the same:
 - status
 - operational state (`development.stageOperationalState`)
 
+This equality is **necessary but not sufficient**. Merging additionally
+requires **both**:
+
+- the records belong to the **same sponsor-defined development program or
+  trial family** (for example, the same named platform/master protocol or
+  umbrella trial program) — not merely records that happen to share a stage,
+  status, and operational state; and
+- the attached source bundle **directly supports the full merged scope** — an
+  indication is not carried into a row on the strength of a broader pipeline
+  summary or an unrelated trial in the same asset's program.
+
 If indications have a different stage, development status, or operational
-state, split them into separate rows. Merge indications only when company,
-asset, route, dosage form, stage, status, and operational state are identical.
+state, split them into separate rows. If they match on all of the fields above
+but still fail either merge condition, do not merge them: split into a separate
+row if it can be represented cleanly, or **defer** the indication (see
+`edge-cases.md`) rather than merging on state equality alone or inferring
+evidence. Content rules for what may populate `indications` are defined in
+`source-and-entry-policy.md`, not here.
 
 ## Stable IDs
 
@@ -201,4 +247,6 @@ document is the authoritative source. Specifically, it:
 - **Refines** "separate records for different routes/dosage forms" by tying row
   splitting to concurrently active development configurations.
 - **Adds** the indication-scope condition (same company/asset/route/dosage
-  form/stage/status/operational state) for when indications may share a row.
+  form/stage/status/operational state, the same sponsor-defined development
+  program or trial family, and direct source support for the full merged
+  scope) for when indications may share a row.

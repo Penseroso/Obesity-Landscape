@@ -22,7 +22,7 @@ invented here.**
 | Prodrugs | Provisionally distinct asset when developed as a distinct molecule; document. | Prodrug/parent relationship unmodeled. | open until pilot | Yes |
 | Conjugates | Provisionally distinct asset; document conjugate identity. | Conjugate identity rules undefined. | open until pilot | Yes |
 | Fixed-dose combinations | Model as one combination asset/program with component references. | Component relationship UI is not implemented. | provisionally usable | Yes |
-| Indication-specific development state | Split into separate rows when stage, status, or operational state differs; otherwise merge indications when all row-defining fields are identical. | One development state per row; may multiply rows. | assumption at risk | Yes |
+| Indication-specific development state | Split into separate rows when stage, status, or operational state differs; when those fields match, merge indications only if the records also share the same sponsor-defined program/trial family and the source bundle directly supports the full merged scope, otherwise defer. | One development state per row; may multiply rows. | assumption at risk | Yes |
 | Combined Phase 1/2 trials | Use the registry-backed `Phase 1/2` development stage directly; do not collapse into Phase 1 or Phase 2. | None; `Phase 1/2` is a distinct registry stage (ADR-0013). | provisionally usable | No |
 | Silent pipeline removal | Do not infer discontinuation from disappearance; keep prior status until evidenced. | Snapshot cannot represent "quietly dropped". | provisionally usable | No |
 | Completed trial with unclear program continuation | Keep program status as-is; a completed trial is not discontinuation. | No trial-vs-program distinction in status. | provisionally usable | No |
@@ -36,6 +36,8 @@ invented here.**
 | Regimen display | Store regimens separately from pipeline programs. | Current UI does not display regimens. | provisionally usable | Yes |
 | Cross-company entity resolution | Use external names for other companies and their assets. | No global company/asset graph, alias registry, or automatic linking. | open until needed | Yes |
 | Dose-level regimen arms | Merge dose, dose-ratio, titration, cohort, and trial-arm variants into one component-level regimen; for example, represent `bimagrumab + semaglutide` once. Use `configurationKey` only for an officially defined product or regimen configuration that remains distinct independently of arm dosing. | Dose-level arms belong to the future Clinical Evidence Arm layer; the current regimen registry has no arm model. | provisionally usable | Yes |
+| Required background/concomitant therapy with unconfirmed component | Classify as an add-on/background-therapy program, not focal-asset monotherapy; do not invent a regimen component; defer the specific indication until an official source names the exact background or concomitant product. | No `assetType` value; classification is a research-time judgment applied before row creation, not a stored field. | provisionally usable | No |
+| Platform or master-protocol nested sub-studies | Attribute only the source's explicitly nested indications or sub-studies to the asset; do not infer unlisted indications from the trial's general population. | No `assetType` value; classification is a research-time judgment applied before row creation, not a stored field. | provisionally usable | No |
 
 ## Module B: Contract readiness classification
 

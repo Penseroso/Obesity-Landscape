@@ -63,8 +63,11 @@ updating its records in the same execution. Follow these steps:
    investigate all current official programs for that asset that Contract 1.1
    can represent, while retaining the exclusions for unrelated non-core assets
    and programs. Split program rows when stage, status, or operational state
-   differs; merge indications only when company, asset, route, dosage form,
-   stage, status, and operational state are identical. Set `development.stage`
+   differs; that equality is necessary but not sufficient to merge — merge
+   indications only when company, asset, route, dosage form, stage, status,
+   and operational state are identical, the records share the same
+   sponsor-defined development program or trial family, and the source bundle
+   directly supports the full merged scope, otherwise defer. Set `development.stage`
    to the most advanced official current development stage for the program scope;
    regulatory-development milestones such as `IND submitted` and `IND cleared`
    are valid stages when they are the most advanced official current stage and
@@ -72,8 +75,13 @@ updating its records in the same execution. Follow these steps:
    `regulatoryStates` entries (jurisdiction, authority, date) as a field
    separate from `development.stage`, and use `stageBasis` and
    `stageOperationalState` to annotate evidence basis and operational state.
-   Distinguish single asset programs, combination products, regimens, external
-   background therapies, and company relationships.
+   Classify each candidate as a monotherapy program, combination product,
+   regimen, add-on/background-therapy program, or platform/master protocol
+   before modeling it, and distinguish company relationships separately. A
+   study requiring background or concomitant therapy is not monotherapy
+   evidence for the focal asset; `indications` holds disease/treatment
+   indications only, never background therapy, prior-treatment conditions, age
+   cohorts, trial objectives, outcome labels, or population descriptors.
 
 6. **Promote registry values when justified.** If official evidence requires a
    development-stage, regulatory-state, or company-relationship-role value that
