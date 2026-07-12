@@ -770,6 +770,54 @@
     }
   },
   {
+    "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-surmount-mmo",
+    "assetId": "ly3298176",
+    "companyId": "eli-lilly-and-company",
+    "assetName": "Tirzepatide",
+    "codeName": "LY3298176",
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Mounjaro"
+      },
+      {
+        "type": "brand-name",
+        "value": "Zepbound"
+      }
+    ],
+    "technical": {
+      "mechanism": "GIP and GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-12",
+      "updatedAt": "2026-07-12",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05556512",
+          "title": "A Study of Tirzepatide on the Reduction of Morbidity and Mortality in Adults With Obesity (SURMOUNT-MMO)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        }
+      ]
+    }
+  },
+  {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-type-1-diabetes",
     "assetId": "ly3298176",
     "companyId": "eli-lilly-and-company",
@@ -812,60 +860,6 @@
         {
           "url": "https://clinicaltrials.gov/study/NCT06914895",
           "title": "A Study of Tirzepatide Compared With Placebo in Adults With Type 1 Diabetes and Obesity or Overweight (SURPASS-T1D-1)",
-          "sourceType": "trial registry",
-          "checkedAt": "2026-07-12"
-        }
-      ]
-    }
-  },
-  {
-    "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-weight-management-platform",
-    "assetId": "ly3298176",
-    "companyId": "eli-lilly-and-company",
-    "assetName": "Tirzepatide",
-    "codeName": "LY3298176",
-    "aliases": [
-      {
-        "type": "brand-name",
-        "value": "Mounjaro"
-      },
-      {
-        "type": "brand-name",
-        "value": "Zepbound"
-      }
-    ],
-    "technical": {
-      "mechanism": "GIP and GLP-1 receptor agonist",
-      "platform": null
-    },
-    "administration": {
-      "route": "Subcutaneous",
-      "dosageForm": "Injection",
-      "dosingInterval": "Once weekly"
-    },
-    "indications": [
-      "Obesity",
-      "Overweight"
-    ],
-    "development": {
-      "stage": "Phase 3",
-      "status": "Active",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Active not recruiting"
-    },
-    "metadata": {
-      "lastVerifiedAt": "2026-07-12",
-      "updatedAt": "2026-07-12",
-      "sources": [
-        {
-          "url": "https://clinicaltrials.gov/study/NCT06143956",
-          "title": "A Master Protocol Study (LY900038) of Multiple Intervention-Specific-Appendices in Adult Participants With Obesity or Overweight",
-          "sourceType": "trial registry",
-          "checkedAt": "2026-07-12"
-        },
-        {
-          "url": "https://clinicaltrials.gov/study/NCT05556512",
-          "title": "A Study of Tirzepatide on the Reduction of Morbidity and Mortality in Adults With Obesity (SURMOUNT-MMO)",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-12"
         }

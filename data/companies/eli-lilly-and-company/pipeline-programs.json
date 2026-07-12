@@ -70,7 +70,7 @@
     }
   },
   {
-    "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-weight-management-platform",
+    "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-surmount-mmo",
     "assetId": "ly3298176",
     "companyId": "eli-lilly-and-company",
     "assetName": "Tirzepatide",
@@ -92,12 +92,6 @@
       "lastVerifiedAt": "2026-07-12",
       "updatedAt": "2026-07-12",
       "sources": [
-        {
-          "url": "https://clinicaltrials.gov/study/NCT06143956",
-          "title": "A Master Protocol Study (LY900038) of Multiple Intervention-Specific-Appendices in Adult Participants With Obesity or Overweight",
-          "sourceType": "trial registry",
-          "checkedAt": "2026-07-12"
-        },
         {
           "url": "https://clinicaltrials.gov/study/NCT05556512",
           "title": "A Study of Tirzepatide on the Reduction of Morbidity and Mortality in Adults With Obesity (SURMOUNT-MMO)",
