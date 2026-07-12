@@ -30,6 +30,10 @@ const combinationAssetTypes = new Set([
   "fixed-dose-combination",
   "co-formulation",
 ]);
+// Single source of truth shared with the TypeScript app (lib/programs).
+const assetAliasTypes = new Set(
+  readJson(path.join(root, "lib", "programs", "asset-alias-types.json")),
+);
 const developmentStatuses = new Set([
   "Planned",
   "Active",
@@ -53,6 +57,29 @@ const developmentStageOperationalStates = new Set([
   "Completed",
   "Not separately confirmed",
 ]);
+// Contract 1.1 allowed development.status x stageOperationalState combinations.
+// "Not separately confirmed" is the neutral escape hatch allowed for any status.
+const stageOperationalStatesByStatus = {
+  Planned: new Set([
+    "Planned, not yet initiated",
+    "Not yet recruiting",
+    "Submitted, pending clearance",
+    "Cleared, not yet initiated",
+    "Not separately confirmed",
+  ]),
+  Active: new Set([
+    "Initiated or active",
+    "Active not recruiting",
+    "Not yet recruiting",
+    "Submitted, pending clearance",
+    "Cleared, not yet initiated",
+    "Completed",
+    "Not separately confirmed",
+  ]),
+  "On hold": new Set(["Paused", "Not separately confirmed"]),
+  Discontinued: new Set(["Paused", "Completed", "Not separately confirmed"]),
+  Unknown: new Set(["Not separately confirmed"]),
+};
 const clinicalArmRoles = new Set([
   "experimental",
   "placebo",
@@ -266,6 +293,12 @@ function validateDevelopment(development, context, registries) {
       developmentStageOperationalStates.has(development.stageOperationalState),
       `${context}: development.stageOperationalState "${development.stageOperationalState}" is not allowed`,
     );
+    const allowedOperationalStates = stageOperationalStatesByStatus[development.status];
+    assert(
+      allowedOperationalStates !== undefined &&
+        allowedOperationalStates.has(development.stageOperationalState),
+      `${context}: development.stageOperationalState "${development.stageOperationalState}" is not allowed with status "${development.status}"`,
+    );
   }
 }
 
@@ -328,6 +361,46 @@ function validateStringArray(value, context, required) {
   for (const item of value) {
     assert(isNonEmptyString(item), `${context} has an empty value`);
   }
+}
+
+function validateAliases(aliases, assetName, context) {
+  if (aliases === undefined) {
+    return;
+  }
+
+  assert(Array.isArray(aliases), `${context}: aliases must be an array`);
+
+  const seen = new Set();
+  const canonical = normalize(assetName);
+  for (const [index, alias] of aliases.entries()) {
+    const aliasContext = `${context}: aliases[${index}]`;
+    assert(isObject(alias), `${aliasContext} must be an object`);
+    assert(
+      assetAliasTypes.has(alias.type),
+      `${aliasContext}.type "${alias.type}" is not allowed`,
+    );
+    assert(isNonEmptyString(alias.value), `${aliasContext}.value is required`);
+    const normalizedValue = normalize(alias.value);
+    assert(
+      normalizedValue !== canonical,
+      `${aliasContext}.value "${alias.value}" duplicates the canonical assetName; an alias records a different label`,
+    );
+    assert(
+      !seen.has(normalizedValue),
+      `${aliasContext} duplicates alias value "${alias.value}"; the same value must not repeat across alias types`,
+    );
+    seen.add(normalizedValue);
+  }
+}
+
+function getAliasesIdentityKey(aliases) {
+  if (aliases === undefined) {
+    return "";
+  }
+
+  return sortedStrings(
+    aliases.map((alias) => `${alias.type}:${normalize(alias.value)}`),
+  ).join("|");
 }
 
 function getComponentKey(component) {
@@ -521,6 +594,11 @@ function validateProgram(program, context, registries, dataset) {
   assert(isNonEmptyString(program.companyId), `${context}: program.companyId is required`);
   assert(isNonEmptyString(program.assetName), `${context}: program.assetName is required`);
   assert(program.codeName === null || isNonEmptyString(program.codeName), `${context}: invalid codeName`);
+  assert(
+    program.codeName === null || normalize(program.codeName) !== normalize(program.assetName),
+    `${context}: codeName must not duplicate assetName; leave codeName null when the development code is the canonical name`,
+  );
+  validateAliases(program.aliases, program.assetName, context);
 
   const assetType = program.assetType ?? "single-asset";
   assert(assetTypes.has(assetType), `${context}: unsupported assetType ${assetType}`);
@@ -628,6 +706,7 @@ function validateDataset(
     const identity = JSON.stringify({
       assetName: program.assetName,
       codeName: program.codeName,
+      aliases: getAliasesIdentityKey(program.aliases),
     });
     const assetIdentityKey = `${program.companyId}|${program.assetId}`;
     const priorIdentity = assetIdentityById.get(assetIdentityKey);
@@ -1440,6 +1519,10 @@ function validateSyntheticFixtures() {
     ["blank-regimen-configuration", /configurationKey must be a non-empty string/],
     ["case-regimen-configuration", /duplicate regimen identity/],
     ["unregistered-relationship-role", /not in the registry/],
+    ["invalid-alias-type", /aliases\[0\]\.type "nickname" is not allowed/],
+    ["codename-equals-assetname", /codeName must not duplicate assetName/],
+    ["duplicate-alias-value", /duplicates alias value/],
+    ["invalid-status-operational-state", /is not allowed with status/],
     ["bad-internal-reference", /Use assetName or codeName with externalCompanyName/],
     ["foreign-company-id", /Use externalCompanyName for another company/],
     ["mixed-company-identity", /companyId and externalCompanyName cannot both be used/],

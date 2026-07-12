@@ -19,7 +19,11 @@ entry.
 - **Stage semantics and operational-state annotation:** ADR-0024.
 - **Company relationship roles:** ADR-0020.
 - **Internal reference scope:** ADR-0022.
-- **v1 data contract freeze:** ADR-0025.
+- **Company/Pipeline data contract version:** ADR-0030 (Contract 1.1; supersedes
+  the ADR-0025 baseline).
+- **Asset aliases, immutable `assetId`, canonical `assetName`, rename identity:**
+  ADR-0030, hardened by ADR-0031 (alias-type single source, `codeName` ≠
+  `assetName`, unique alias values, enforced status × operational-state matrix).
 - **Product scope (v1.1 obesity/incretin landscape):** ADR-0026.
 - **Research routing boundary:** ADR-0027.
 - **Clinical Evidence semantic contract:** ADR-0029 (refines ADR-0028).
@@ -334,15 +338,22 @@ when decided, recorded as a new appended ADR.
   separate official clinical-stage evidence. Detailed jurisdiction, authority,
   and date remain in `regulatoryStates` when available.
 
-## ADR-0025 — v1 data contract freeze
+## ADR-0025 — v1 data contract baseline (superseded)
 
 - **Date:** 2026-07-08
-- **Status:** Accepted (fixed now)
-- **Decision:** The v1 data contract is frozen. After Ascletis Pharma and
+- **Status:** Superseded by ADR-0030 (Contract 1.1)
+- **Superseded by:** ADR-0030. This entry is retained as history. Its readiness
+  findings (company-local identity, mutable stage/status, stage semantics,
+  combination/regimen handling, record-level provenance) carry forward into
+  Contract 1.1; the "no further structural change" clause no longer holds —
+  Contract 1.1 adds typed asset `aliases` and sharpened identity, row-splitting,
+  source, and status rules.
+- **Decision (historical):** The v1 data contract baseline was fixed. After
+  Ascletis Pharma and
   Zealand Pharma stress testing, the current contract — `lib/programs/types.ts`,
   the `data/registries/` vocabularies, the `scripts/data-registry.mjs`
-  validators, and the `docs/data-protocol/` rules — satisfies the v1 freeze
-  criteria and requires no further structural change for v1. No blocker was
+  validators, and the `docs/data-protocol/` rules — satisfied the v1 baseline
+  criteria at the time. No blocker was
   found across the protocol documents, registries, validators, and current
   Ascletis / Zealand data.
 - **Rationale:** The two operating companies exercised the contract's hard cases
@@ -375,11 +386,11 @@ when decided, recorded as a new appended ADR.
     the operating source folders and reflect current records after
     `data:generate`.
 - **Consequences:** No new companies, schema fields, UI, or workflow changes are
-  introduced under this freeze. The v2 backlog is unchanged and remains
+  introduced under this baseline. The v2 backlog is unchanged and remains
   deferred: field-level provenance, a durable adjacent-inclusion rationale
   field, an excluded/deferred candidate ledger, the program-ID suffix scheme,
   and the other open-until-pilot and edge-case items. Contract Consolidation
-  (Module 2) may begin on this frozen v1 baseline.
+  (Module 2) may begin on this v1 baseline.
 
 ## ADR-0026 — Product scope clarified as a v1.1 obesity/incretin landscape
 
@@ -392,7 +403,7 @@ when decided, recorded as a new appended ADR.
   without changing any data shape, schema, validator, registry, or generated
   output — the earlier GLP-1-centered wording, and refines the deferred "exact
   adjacent-program inclusion boundary" decision for v1.1. It is a **semantic
-  scope amendment**, not a contract-shape change, so the ADR-0025 v1 freeze and
+  scope amendment**, not a contract-shape change, so the ADR-0025 v1 baseline and
   ADR-0024 stage semantics remain intact. The clarified scope is labeled v1.1.
 - **v1.1 included classes** (named developer + confirmed official development
   intent required for each):
@@ -474,14 +485,14 @@ when decided, recorded as a new appended ADR.
 
 - **Date:** 2026-07-10
 - **Status:** Accepted
-- **Decision:** Clinical Evidence is a separate future domain from the frozen
-  Company/Pipeline Contract 1.0. Its minimum semantic contract is documented in
+- **Decision:** Clinical Evidence is a separate future domain from the
+  Company/Pipeline Contract (Contract 1.1). Its minimum semantic contract is documented in
   [`docs/clinical-evidence/README.md`](../clinical-evidence/README.md). The
   domain follows Scope v1.1 by reference and stores only human interventional
   clinical studies with publicly disclosed study-specific results.
 - **Rationale:** Clinical result interpretation requires entity boundaries and
   comparison safeguards that are different from pipeline-stage tracking.
-  Keeping the domain separate preserves Contract 1.0 semantics while allowing a
+  Keeping the domain separate preserves Company/Pipeline Contract semantics while allowing a
   later implementation to link evidence to existing company, asset, program, or
   regimen identities.
 - **Entity boundaries:** A Study is one identifiable clinical protocol; an Arm
@@ -497,7 +508,7 @@ when decided, recorded as a new appended ADR.
 - **Consequences:** This ADR adds documentation and contract decisions only. It
   does not create Clinical Evidence types, schemas, validators, data files,
   prompts, workflows, generated outputs, or UI; does not collect actual clinical
-  data; and does not alter `PipelineProgramRecord`, Contract 1.0, or Scope v1.1.
+  data; and does not alter `PipelineProgramRecord`, Contract 1.1, or Scope v1.1.
 
 ## ADR-0029 - Clinical Evidence obesity-result contract
 
@@ -505,8 +516,8 @@ when decided, recorded as a new appended ADR.
 - **Status:** Accepted
 - **Decision:** ADR-0028 is refined by the fuller Clinical Evidence contract in
   [`docs/clinical-evidence/README.md`](../clinical-evidence/README.md).
-  Clinical Evidence remains a separate future domain from the frozen
-  Company/Pipeline Contract 1.0 and initially covers only human interventional
+  Clinical Evidence remains a separate future domain from the
+  Company/Pipeline Contract (Contract 1.1) and initially covers only human interventional
   clinical studies relevant to obesity or weight management that have publicly
   available study-specific results.
 - **Result-bearing-study requirement:** A study is eligible only when the
@@ -534,5 +545,119 @@ when decided, recorded as a new appended ADR.
 - **Consequences:** This ADR adds documentation and contract decisions only. It
   does not create TypeScript types, JSON schemas, validators, registries,
   generated files, research prompts, workflows, data, or UI; does not modify
-  frozen Contract 1.0 semantics; does not broaden Scope v1.1 beyond obesity and
+  Company/Pipeline Contract semantics; does not broaden Scope v1.1 beyond obesity and
   weight management; and does not collect or invent clinical data.
+
+## ADR-0030 — Company/Pipeline Contract 1.1
+
+- **Date:** 2026-07-10
+- **Status:** Accepted (current)
+- **Supersedes:** ADR-0025. Refines ADR-0002, ADR-0003, ADR-0004, ADR-0005,
+  ADR-0016, ADR-0017, ADR-0018, ADR-0024; does not change Scope v1.1 (ADR-0026)
+  or the routing/Clinical Evidence boundary (ADR-0027, ADR-0028, ADR-0029).
+- **Decision:** The Company/Pipeline data contract advances from the earlier v1
+  baseline to **Contract 1.1**. The contract is no longer described as "frozen";
+  it is a versioned contract that is updated in place. Contract 1.1 keeps the
+  stable, company-local identity model and adds the following rules across the
+  authoritative documents, TypeScript types (`lib/programs/types.ts`), validators
+  and generator (`scripts/data-registry.mjs`), and existing records:
+  1. **`assetId` is immutable; `assetName` is the current official canonical
+     name.** A rename updates `assetName` only.
+  2. **Typed `aliases`** — an optional `aliases` array on
+     `PipelineProgramRecord`, each entry `{ type, value }` with `type` in
+     `former-name`, `development-code`, `brand-name`, `alternative-spelling`.
+     Aliases carry former names, confirmed development codes, brand names, and
+     alternative spellings for search and traceability, never redefining
+     identity. An alias `value` may not repeat the canonical `assetName`, and the
+     alias set must be identical across every program row that shares an
+     `assetId` (enforced by the asset-identity consistency check).
+  3. **`codeName` accepts only a single confirmed internal development code**
+     (or `null`); brand/former names belong in `aliases`.
+  4. **A rename does not create a new asset or program** — same `assetId` and
+     program `id`; add a `former-name` alias.
+  5. **Row splitting** — split program rows when an indication-specific
+     `development.stage`, `development.status`, or `stageOperationalState`
+     differs for the same asset, route, and dosage form.
+  6. **Combination and regimen boundaries** — fixed-dose combinations and
+     co-formulations are one combination asset/program with component references;
+     independently administered products are regimens; neither is inferred from
+     context.
+  7. **External component references** are allowed whenever no internal asset
+     record exists for a component.
+  8. **Licensed assets** may hold a company-local program row, with company role,
+     rights, territory, and effective date recorded in `relationships`.
+  9. **Source-specific evidence** — trial-registry evidence for program state,
+     transaction sources for relationships, and route-specific regulator evidence
+     for approvals.
+  10. **Primary official sources are preferred for relationships**; secondary
+      coverage is a fallback only and does not override a primary source.
+  11. **Valid `development.status` × `stageOperationalState` combinations** are
+      defined, including `Active` with a `Completed` supporting trial (a
+      completed trial is not program discontinuation).
+  12. **Filed regulatory details are preserved in `regulatoryStates`** (state,
+      jurisdiction, authority, date), separate from `development.stage`.
+  13. **Basic company research may use NCT records** to verify a program's
+      existence and stage/status; detailed trial design, arm, endpoint, and
+      result modeling is owned by the separate Clinical Evidence domain.
+  14. **Deferred and excluded candidates remain execution-report output only**,
+      never operating/app data.
+- **Rationale:** The two operating companies plus Novo Nordisk exercised real
+  cases the earlier baseline could only note as gaps — most notably the
+  Amycretin→Zenagamtide rename and multi-brand assets (semaglutide is marketed as
+  Wegovy, Ozempic, and Rybelsus). A typed alias field resolves the former-name
+  search/traceability edge case (see `edge-cases.md`) without a global entity
+  graph, while the remaining rules make already-practiced conventions explicit
+  and enforceable. None of this changes the current-state-snapshot model,
+  company-local reference scope, or Scope v1.1.
+- **Backward compatibility:** All existing records remain valid; `aliases` is
+  optional. Records with real, evidence-supported aliases were migrated in place
+  (Novo Nordisk semaglutide brand names, `amycretin` former name "Amycretin" on
+  the canonical `assetName` "Zenagamtide", liraglutide brand name "Saxenda").
+  All company, asset, and program IDs are preserved. Generation is a verbatim
+  passthrough, so `aliases` flows into `data/generated/pipeline-programs.json`
+  unchanged. No parallel Contract 1.1 document set was created; the existing
+  documents were updated in place.
+- **Consequences:** The "frozen" framing is retired across the authoritative
+  documents. Contract 1.1 is now the versioned baseline that future contract
+  changes advance from. The v2 backlog is unchanged: field-level provenance, a
+  durable adjacent-inclusion rationale field, an excluded/deferred candidate
+  ledger, the program-ID suffix scheme, cross-company entity resolution (including
+  a cross-company alias registry and company former-name aliases), per-jurisdiction
+  approval modeling, and the other open-until-pilot and edge-case items remain
+  deferred.
+
+## ADR-0031 — Contract 1.1 hardening
+
+- **Date:** 2026-07-10
+- **Status:** Accepted (current)
+- **Refines:** ADR-0030. Does not change the Contract 1.1 shape or add fields.
+- **Decision:** Harden the Contract 1.1 identity and status rules and remove a
+  duplicated definition, without redesigning the contract:
+  1. **Single source of truth for alias types.** The `former-name`,
+     `development-code`, `brand-name`, `alternative-spelling` list lives once in
+     `lib/programs/asset-alias-types.json`. `lib/programs/constants.ts` and the
+     `scripts/data-registry.mjs` validator both consume it; `types.ts` declares
+     the matching `AssetAliasType` union. The validator no longer hard-codes a
+     second copy.
+  2. **`codeName` may not equal `assetName`.** When the development code is
+     itself the canonical name, `codeName` is `null`. This removes redundant
+     duplication of the name.
+  3. **Alias values are unique within an asset.** The same normalized value must
+     not repeat across alias types.
+  4. **Enforced `development.status` × `stageOperationalState` matrix.** When
+     `stageOperationalState` is present it must be valid for the row's `status`
+     (see `source-and-entry-policy.md`); `Not separately confirmed` is allowed
+     with any status, and `Active` + `Completed` remains valid.
+- **Rationale:** These are the redundancy and consistency gaps left implicit by
+  ADR-0030. Enforcing them in the validator (with synthetic invalid fixtures)
+  prevents drift and makes the documented rules executable, while the shared
+  JSON removes the only remaining duplicated alias-type definition.
+- **Backward compatibility:** All existing records remain valid after a
+  no-information-loss migration: 15 rows whose `codeName` repeated `assetName`
+  (Ascletis `ASC*`, Zealand `ZP6590`, Novo Nordisk `CagriSema`/`IcoSema`/
+  `UBT251`) now use `codeName: null`; the code is still carried by the canonical
+  `assetName`. No `assetId` or `programId` changed. Every in-use
+  `status`×`stageOperationalState` pair already satisfies the enforced matrix,
+  so no status data changed.
+- **Consequences:** No new fields, registries, UI, or workflow changes. The v2
+  backlog is unchanged.

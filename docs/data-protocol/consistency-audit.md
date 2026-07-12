@@ -1,9 +1,10 @@
 # Registry / Type / Validator Consistency Audit
 
-Point-in-time verification that the frozen v1 contract surfaces agree with each
-other. This is a **verification record**, not a contract change and not an ADR.
-The governing decisions remain ADR-0025 (v1 freeze) and ADR-0024 (stage
-semantics), unchanged.
+Point-in-time verification that the Contract 1.1 surfaces agree with each other.
+This is a **verification record**, not a contract change and not an ADR. The
+governing decisions are ADR-0030 (Contract 1.1) and ADR-0024 (stage semantics).
+The Module 3 section below was recorded for the earlier baseline and remains a
+valid historical readback.
 
 ## Module 3 — 2026-07-08
 
@@ -20,7 +21,7 @@ documentation, operating-data, or generated-output change was required.**
 - Every `development.stage` used in operating data (`Preclinical`,
   `IND submitted`, `IND cleared`, `Phase 1b`, `Phase 2`, `Phase 3`, `Unknown`)
   is present in `data/registries/development-stages.json`.
-- The frozen v1 stage axis is complete: `Unknown`, `Discovery`, `Preclinical`,
+- The Contract 1.1 stage axis is complete: `Unknown`, `Discovery`, `Preclinical`,
   `IND-enabling`, `IND submitted`, `IND cleared`, `CTA submitted`,
   `CTA approved`, clinical phases and substages (`Phase 1`/`1a`/`1b`/`1/2`,
   `Phase 2`/`2a`/`2b`, `Phase 3`), `Filed`, and `Approved`.
@@ -97,3 +98,56 @@ documentation, operating-data, or generated-output change was required.**
 `data:generate`, `data:validate:companies`, `data:validate:generated`,
 `data:validate:registries`, `data:validate:stress`, `data:validate:synthetic`,
 `lint`, and `build` all pass; `git diff --check` is clean.
+
+## Module — Contract 1.1 — 2026-07-10
+
+Audited the Contract 1.1 change (ADR-0030): the `aliases` surface across
+`lib/programs/types.ts`, `lib/programs/constants.ts`,
+`scripts/data-registry.mjs`, migrated operating data, and generated output.
+
+**Result: consistent.**
+
+- **Alias types agree** across the four surfaces: `former-name`,
+  `development-code`, `brand-name`, `alternative-spelling`. The list is
+  single-sourced in `lib/programs/asset-alias-types.json`, consumed by
+  `constants.ts` (`assetAliasTypes`) and by the validator (see the hardening
+  module below); `types.ts` declares the matching `AssetAliasType` union.
+- **Validator coverage:** `aliases` is validated for array shape, allowed
+  `type`, non-empty `value`, no value equal to the canonical `assetName`, and
+  no duplicate `type`+`value`. The alias set is folded into the asset-identity
+  consistency check, so every program row sharing an `assetId` must carry the
+  same aliases. A synthetic invalid fixture (`invalid-alias-type`) exercises the
+  rejection path; the valid fixture exercises all four alias types.
+- **Migration:** Novo Nordisk semaglutide (brand names Wegovy/Ozempic/Rybelsus),
+  `amycretin` (former-name "Amycretin" on canonical `assetName` "Zenagamtide"),
+  and liraglutide (brand name "Saxenda") carry evidence-based aliases; all
+  `assetId`/`programId` values are unchanged.
+- **Generated output:** `npm run data:generate` passes aliases through verbatim
+  into `data/generated/pipeline-programs.json` (6 alias-bearing rows) with no
+  further diff on re-run; validators, `lint`, and `build` all pass.
+
+## Module — Contract 1.1 hardening — 2026-07-10
+
+Audited the Contract 1.1 hardening patch (ADR-0031).
+
+**Result: consistent.**
+
+- **Single source of truth:** the alias-type list now lives only in
+  `lib/programs/asset-alias-types.json`. `lib/programs/constants.ts` imports it
+  (typed as `readonly AssetAliasType[]`), `lib/programs/types.ts` declares the
+  matching union, and `scripts/data-registry.mjs` reads the same JSON — the
+  validator no longer hard-codes a duplicate list.
+- **New validator rules:** `codeName` may not equal `assetName`; alias values
+  are unique within an asset (no repeat across alias types after normalization);
+  and `development.stageOperationalState`, when present, must be in the allowed
+  set for the row's `development.status`. All three have synthetic invalid
+  fixtures (`codename-equals-assetname`, `duplicate-alias-value`,
+  `invalid-status-operational-state`).
+- **Backward-compatible migration:** 15 operating rows whose `codeName` merely
+  repeated `assetName` (Ascletis `ASC*`, Zealand `ZP6590`, Novo Nordisk
+  `CagriSema`/`IcoSema`/`UBT251`) now store `codeName: null`; no `assetId`,
+  `programId`, or other value changed, and no information is lost because the
+  code remains the canonical `assetName`. Every in-use
+  `status`×`stageOperationalState` pair already satisfies the enforced matrix.
+- **Checks:** all data validators, `data:generate` (no re-run diff), `lint`, and
+  `build` pass.

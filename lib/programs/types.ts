@@ -25,6 +25,28 @@ export type AssetType =
   | "fixed-dose-combination"
   | "co-formulation";
 
+/**
+ * Contract 1.1 asset alias types. The runtime value list is single-sourced in
+ * `asset-alias-types.json` (see `constants.ts` and the validator); this union
+ * is its compile-time counterpart.
+ */
+export type AssetAliasType =
+  | "former-name"
+  | "development-code"
+  | "brand-name"
+  | "alternative-spelling";
+
+/**
+ * An alternative label for the asset that is not its current official
+ * canonical `assetName`: a former name after a rename, a confirmed internal
+ * development code, a brand name, or an alternative spelling. Aliases support
+ * search and traceability; they never change `assetId` or asset identity.
+ */
+export type AssetAlias = {
+  type: AssetAliasType;
+  value: string;
+};
+
 export type ComponentReference = {
   assetId?: string;
   assetName?: string;
@@ -96,6 +118,7 @@ export type PipelineProgramRecord = {
   assetType?: AssetType;
   assetName: string;
   codeName: string | null;
+  aliases?: AssetAlias[];
   components?: ComponentReference[];
   technical: TechnicalProfile;
   administration: AdministrationProfile;

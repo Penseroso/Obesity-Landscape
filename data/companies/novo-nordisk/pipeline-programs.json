@@ -5,6 +5,20 @@
     "companyId": "novo-nordisk",
     "assetName": "Semaglutide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Wegovy"
+      },
+      {
+        "type": "brand-name",
+        "value": "Ozempic"
+      },
+      {
+        "type": "brand-name",
+        "value": "Rybelsus"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": null
@@ -64,6 +78,20 @@
     "companyId": "novo-nordisk",
     "assetName": "Semaglutide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Wegovy"
+      },
+      {
+        "type": "brand-name",
+        "value": "Ozempic"
+      },
+      {
+        "type": "brand-name",
+        "value": "Rybelsus"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": null
@@ -116,7 +144,7 @@
     "companyId": "novo-nordisk",
     "assetType": "fixed-dose-combination",
     "assetName": "CagriSema",
-    "codeName": "CagriSema",
+    "codeName": null,
     "components": [
       {
         "assetId": "cagrilintide",
@@ -179,7 +207,7 @@
     "companyId": "novo-nordisk",
     "assetType": "fixed-dose-combination",
     "assetName": "CagriSema",
-    "codeName": "CagriSema",
+    "codeName": null,
     "components": [
       {
         "assetId": "cagrilintide",
@@ -241,7 +269,7 @@
     "assetId": "ubt251",
     "companyId": "novo-nordisk",
     "assetName": "UBT251",
-    "codeName": "UBT251",
+    "codeName": null,
     "technical": {
       "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
       "platform": null
@@ -353,7 +381,7 @@
     "companyId": "novo-nordisk",
     "assetType": "co-formulation",
     "assetName": "IcoSema",
-    "codeName": "IcoSema",
+    "codeName": null,
     "components": [
       {
         "assetName": "Insulin icodec",
@@ -423,6 +451,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Liraglutide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Saxenda"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": null
@@ -520,6 +554,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Zenagamtide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
     "technical": {
       "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
       "platform": null
@@ -572,6 +612,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Zenagamtide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
     "technical": {
       "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
       "platform": null
@@ -610,6 +656,12 @@
     "companyId": "novo-nordisk",
     "assetName": "Zenagamtide",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
     "technical": {
       "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
       "platform": null

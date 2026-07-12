@@ -9,9 +9,10 @@ obesity/incretin competitive programs, not GLP-1 RA-only counts. See
 [`docs/data-protocol/README.md`](docs/data-protocol/README.md) for the full
 dataset scope.
 
-**Contract 1.0** (the frozen data model, validators, identity rules,
-registry-backed fields, and generated-output behavior) and **Scope v1.1**
-(the current obesity/incretin operating inclusion scope) are independent —
+**Contract 1.1** (the data model, validators, identity rules including immutable
+`assetId`, canonical `assetName`, and typed asset `aliases`, registry-backed
+fields, and generated-output behavior — ADR-0030) and **Scope v1.1** (the
+current obesity/incretin operating inclusion scope) are independent —
 see [Versioning](docs/data-protocol/README.md#versioning) for the full note.
 
 The project uses a minimal TPP-oriented dataset covering mechanism, platform,
@@ -32,7 +33,9 @@ The operating dataset is generated from `data/companies/` source folders:
 - Stable program identity is company, asset, route, and dosage form (plus indication scope when needed to distinguish concurrent programs).
 - Development stage and development status are mutable state, not identity: when they change, the existing record is updated in place.
 - Records for the same asset share the same `assetId` and use different program `id` values.
-- Multiple indications may share one record only when company, asset, route, dosage form, stage, and status are all the same.
+- `assetId` is immutable and `assetName` holds the current official canonical name; a rename updates `assetName` and records the former name as a typed alias, never a new asset or program.
+- Former names, confirmed development codes, brand names, and alternative spellings are stored as typed `aliases`, identical across every row that shares an `assetId`.
+- Multiple indications may share one record only when company, asset, route, dosage form, stage, and status are all the same; split rows when an indication-specific stage, status, or operational state differs.
 
 See [`docs/data-protocol/`](docs/data-protocol/) for the full research and data-entry protocol, including entity/row rules, field-specific source policy, edge cases, and decisions.
 

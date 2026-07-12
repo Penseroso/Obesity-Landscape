@@ -2,33 +2,39 @@
 
 Operating rules for competitor pipeline research and pilot data entry.
 
-This protocol (Module 5) defines **how data is researched and entered**. The v1
-data contract — the TypeScript types in `lib/programs/types.ts`, the
+This protocol (Module 5) defines **how data is researched and entered**. The
+current data contract — the TypeScript types in `lib/programs/types.ts`, the
 `data/registries/` vocabularies, the `scripts/data-registry.mjs` validators, and
-these protocol documents — is **frozen** by ADR-0025. The schema is not
-redesigned in v1; remaining structural gaps are logged as edge cases and
-deferred to the [v2 backlog](#v2-backlog) rather than resolved by schema changes
-now. Individual fields still noted as "provisional" or "open until pilot" mark
-where a future v2 change is expected; they do not reopen the frozen v1 contract.
+these protocol documents — is **Contract 1.1** (ADR-0030). Contract 1.1 keeps
+the stable, company-local identity model of the earlier baseline and adds typed
+asset `aliases`, sharpened identity, row-splitting, combination/regimen, source,
+and status/operational-state rules (see [Contract 1.1 at a
+glance](#contract-11-at-a-glance)). Remaining structural gaps are logged as edge
+cases and deferred to the [v2 backlog](#v2-backlog) rather than resolved by
+speculative schema changes now. Individual fields still noted as "provisional" or
+"open until pilot" mark where a future change is expected; they do not by
+themselves reopen Contract 1.1.
 
 ## Versioning
 
 Two version numbers apply to this project and change independently:
 
-- **Contract 1.0** — the frozen v1 data contract: the TypeScript types in
+- **Contract 1.1** — the current data contract: the TypeScript types in
   `lib/programs/types.ts`, the `data/registries/` vocabularies, the
-  `scripts/data-registry.mjs` validators, identity rules, registry-backed
-  fields, and generated-output behavior (ADR-0025). Contract 1.0 is fixed;
-  it is not redesigned by scope or wording changes.
+  `scripts/data-registry.mjs` validators, identity rules (including immutable
+  `assetId`, canonical `assetName`, and typed `aliases`), registry-backed
+  fields, and generated-output behavior (ADR-0030, which supersedes the earlier
+  ADR-0025 baseline). Contract 1.1 is the versioned schema; it is not redesigned
+  by scope or wording changes.
 - **Scope v1.1** — the current operating inclusion scope for the
   obesity/incretin competitive landscape (ADR-0026): which programs are
   in or out of the dataset.
 
 A scope change (what is included or excluded) does **not** imply a contract
 change. A contract change (schema, validators, identity rules, or
-generated-output behavior) would require a new contract version. The project
-name "Obesity Landscape" reflects Scope v1.1 and is not tied to the contract
-version.
+generated-output behavior) is a new contract version — the move from the earlier
+baseline to Contract 1.1 is exactly such a change (ADR-0030). The project name
+"Obesity Landscape" reflects Scope v1.1 and is not tied to the contract version.
 
 ## Start here
 
@@ -57,18 +63,25 @@ A point-in-time check that the registries, TypeScript types, validators,
 operating data, and generated outputs agree is recorded in
 [`consistency-audit.md`](./consistency-audit.md).
 
-## Frozen v1 contract at a glance
+## Contract 1.1 at a glance
 
-A compact map of the frozen v1 contract. Each line links to its authoritative
-rule; the governing ADRs are noted in parentheses.
+A compact map of Contract 1.1. Each line links to its authoritative rule; the
+governing ADRs are noted in parentheses.
 
 - **Identity is stable and company-local.** Company, asset, and program IDs are
   stable and reused; other companies and their assets are represented by name
   with `externalCompanyName`, with no global entity graph. See
   [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0002, ADR-0022).
+- **`assetId` is immutable; `assetName` is the current official canonical
+  name.** A rename updates `assetName` (and records the former name as an alias)
+  and never creates a new asset or program. Former names, confirmed development
+  codes, brand names, and alternative spellings are stored as typed `aliases`.
+  See [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0030).
 - **Stage and status are mutable, never identity.** They update the existing
-  record and never appear in stable IDs. See
-  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0003, ADR-0004).
+  record and never appear in stable IDs. Split program rows when an
+  indication-specific `development.stage`, `development.status`, or
+  `stageOperationalState` differs for the same asset/route/dosage form. See
+  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0003, ADR-0004, ADR-0030).
 - **`development.stage` is the most advanced official current development
   stage** for the specific program scope. Clinical phase is one category within
   it; regulatory-development milestones such as `IND submitted` and
@@ -81,6 +94,17 @@ rule; the governing ADRs are noted in parentheses.
   are one combination asset/program with component references; independently
   administered products are regimens. See
   [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0016, ADR-0017).
+- **Licensed assets can hold a company-local row.** A licensed or in-licensed
+  asset may be tracked as a company-local program row, with company role,
+  rights, territory, and effective date recorded in `relationships`. See
+  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0018, ADR-0030).
+- **Evidence is source-specific.** Program state prefers trial-registry (and
+  NCT) or official pipeline evidence; relationships require transaction sources;
+  approvals require route-specific regulator evidence. Prefer primary official
+  sources for relationships and allow secondary coverage only as a fallback.
+  Basic company research may cite NCT records to verify a program; detailed
+  trial modeling belongs to Clinical Evidence. See
+  [`source-and-entry-policy.md`](./source-and-entry-policy.md) (ADR-0005, ADR-0030).
 - **Provenance is record-level.** `metadata.sources` collectively cover the key
   claims; field-level provenance is deferred. See
   [`source-and-entry-policy.md`](./source-and-entry-policy.md).
@@ -237,6 +261,9 @@ unconfirmed program.
 - **Confirmation source** — a source appropriate to the specific claim being
   entered (see the field-specific source policy). Required before a fact is
   stored.
-- **Edge case** — a real situation the frozen Contract 1.0 cannot cleanly
-  represent, logged in `edge-cases.md` for later contract review as v2
-  backlog.
+- **Edge case** — a real situation Contract 1.1 cannot cleanly represent, logged
+  in `edge-cases.md` for later contract review as v2 backlog.
+- **Alias** — a former name, confirmed development code, brand name, or
+  alternative spelling of an asset, stored as a typed `aliases` entry for search
+  and traceability. An alias never changes `assetId` or the canonical
+  `assetName`.

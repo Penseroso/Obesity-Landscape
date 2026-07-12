@@ -1,8 +1,8 @@
 # Edge Cases
 
-Real situations the frozen Contract 1.0 (ADR-0025) cannot yet cleanly
-represent. Each is logged for later contract review as v2 backlog. **No final
-schema solution is invented here.**
+Real situations Contract 1.1 (ADR-0030) cannot yet cleanly represent. Each is
+logged for later contract review as v2 backlog. **No final schema solution is
+invented here.**
 
 **Decision status** is one of:
 
@@ -17,7 +17,7 @@ schema solution is invented here.**
 | Regional rights | Store confirmed territories and rights in program/regimen `relationships`. | Relationship UI is not implemented. | provisionally usable | Yes |
 | Licensing transfer | Update principal `companyId` when it changes; store current confirmed program/regimen relationships. | No relationship history in a current-state snapshot. | provisionally usable | Yes |
 | Company acquisition | Point records to the surviving/controlling entity; keep asset/program IDs stable. | No parent/successor modeling. | provisionally usable | Yes |
-| Company or asset rename | Update display name; keep the stable ID unchanged. | No former-name field for search/traceability. | provisionally usable | No |
+| Company or asset rename | Update `assetName`; keep the stable `assetId`; record the former name as a `former-name` alias. | Resolved for assets by typed `aliases` (ADR-0030); company former-name aliases remain a future item. | provisionally usable | No |
 | Salts | Treat as the same asset identity unless clearly a distinct program; document. | No salt distinction in `assetId`. | open until pilot | Yes |
 | Prodrugs | Provisionally distinct asset when developed as a distinct molecule; document. | Prodrug/parent relationship unmodeled. | open until pilot | Yes |
 | Conjugates | Provisionally distinct asset; document conjugate identity. | Conjugate identity rules undefined. | open until pilot | Yes |
@@ -37,11 +37,12 @@ schema solution is invented here.**
 | Cross-company entity resolution | Use external names for other companies and their assets. | No global company/asset graph, alias registry, or automatic linking. | open until needed | Yes |
 | Dose-level regimen arms | Use `configurationKey` only for sponsor-defined regimen configurations. | No dose-level clinical arm model. | open until needed | Yes |
 
-## Module B: v1 Contract Freeze Classification
+## Module B: Contract readiness classification
 
 These classifications use the first two operating companies, Ascletis Pharma
 and Zealand Pharma, as readiness evidence only. They do not change company data
-or the current protocol.
+or the current protocol. They were recorded for the earlier baseline and carry
+forward unchanged into Contract 1.1 (ADR-0030).
 
 | Issue | Classification | Example | Current handling | V1 decision | Reason |
 | --- | --- | --- | --- | --- | --- |
