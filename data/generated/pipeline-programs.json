@@ -925,6 +925,24 @@
           "title": "A Study of Retatrutide (LY3437943) in Participants With Obesity or Overweight (TRIUMPH-8)",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-12"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06383390",
+          "title": "The Effect of Retatrutide Once Weekly on Cardiovascular Outcomes and Kidney Outcomes in Adults Living With Obesity (TRIUMPH-Outcomes)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06260722",
+          "title": "Effect of Retatrutide Compared With Semaglutide in Adult Participants With Type 2 Diabetes and Inadequate Glycemic Control With Metformin With or Without SGLT2 Inhibitor (TRANSCEND-T2D-2)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06297603",
+          "title": "Effect of Retatrutide Compared With Placebo in Participants With Type 2 Diabetes and Moderate or Severe Renal Impairment, With Inadequate Glycemic Control on Basal Insulin, With or Without Metformin and/or SGLT2 Inhibitor (TRANSCEND-T2D-3)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-12"
         }
       ]
     }
@@ -1633,8 +1651,7 @@
       "Overweight",
       "Type 2 diabetes",
       "Osteoarthritis of the knee",
-      "Obstructive sleep apnea",
-      "Persistent obesity on weekly incretin therapy"
+      "Obstructive sleep apnea"
     ],
     "development": {
       "stage": "Phase 3",
@@ -1667,12 +1684,6 @@
         {
           "url": "https://clinicaltrials.gov/study/NCT07369011",
           "title": "A Study of Eloralintide in Participants With Obstructive Sleep Apnea and Obesity or Overweight",
-          "sourceType": "trial registry",
-          "checkedAt": "2026-07-12"
-        },
-        {
-          "url": "https://clinicaltrials.gov/study/NCT07392190",
-          "title": "A Study of Eloralintide in Participants With Persistent Obesity Who Are Treated With a Weekly Incretin",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-12"
         },
