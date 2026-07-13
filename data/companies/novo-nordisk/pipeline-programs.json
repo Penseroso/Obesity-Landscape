@@ -449,6 +449,26 @@
       "stageBasis": "Official regulatory-development milestone",
       "stageOperationalState": "Not separately confirmed"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "European Union",
+        "authority": "European Commission",
+        "date": "2025-11-24"
+      },
+      {
+        "state": "NDA approved",
+        "jurisdiction": "Japan",
+        "authority": "Ministry of Health, Labour and Welfare (MHLW)",
+        "date": "2026-02-19"
+      },
+      {
+        "state": "NDA approved",
+        "jurisdiction": "China",
+        "authority": "National Medical Products Administration (NMPA)",
+        "date": "2026-03-03"
+      }
+    ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
       "updatedAt": "2026-07-13",
@@ -486,6 +506,41 @@
           "title": "Innovation and therapeutic focus - Annual Report 2025",
           "sourceType": "company annual report",
           "publishedAt": "2026-02-04",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/kyinsu",
+          "title": "Kyinsu EPAR",
+          "sourceType": "regulatory review",
+          "publishedAt": "2026-02-12",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.novonordisk.co.jp/news/media/2026/02/20260219_1.html",
+          "title": "Kyinsu manufacturing and marketing approval in Japan",
+          "sourceType": "company press release",
+          "publishedAt": "2026-02-19",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/620023_39695A1G1027_1_01",
+          "title": "Kyinsu Japanese prescribing information",
+          "sourceType": "drug label",
+          "publishedAt": "2026-02",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.ncsti.gov.cn/kjdt/scyq/wlkxc/wldt/202603/t20260310_240433.html",
+          "title": "IcoSema approved for marketing in China",
+          "sourceType": "government announcement",
+          "publishedAt": "2026-03-10",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/353278/000035327826000018/caq12026.htm",
+          "title": "Novo Nordisk Q1 2026 financial report",
+          "sourceType": "regulatory filing",
+          "publishedAt": "2026-05-06",
           "checkedAt": "2026-07-13"
         }
       ]
