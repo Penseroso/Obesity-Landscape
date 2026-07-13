@@ -342,9 +342,9 @@
             "checkedAt": "2026-07-13"
           },
           {
-            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-foundayo-and-lower-dose-zepbound-helped-people-maintain",
-            "title": "Lilly SURMOUNT-MAINTAIN topline results",
-            "sourceType": "company topline",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "title": "Tirzepatide for maintenance of bodyweight reduction in adults with obesity",
+            "sourceType": "peer-reviewed publication",
             "publishedAt": "2026-05-12",
             "checkedAt": "2026-07-13"
           }
@@ -2971,10 +2971,37 @@
       "armIds": [
         "elora-p2-1mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-1mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-1mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-7.3",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -2998,10 +3025,37 @@
       "armIds": [
         "elora-p2-3mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-3mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-3mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-10.5",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3025,10 +3079,37 @@
       "armIds": [
         "elora-p2-3to9"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-16",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-3to9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-3to9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-14.6",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3052,10 +3133,37 @@
       "armIds": [
         "elora-p2-6mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-18",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-6mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-6mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-13.8",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3079,10 +3187,37 @@
       "armIds": [
         "elora-p2-6to9"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-20",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-6to9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-6to9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-15.8",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3106,10 +3241,37 @@
       "armIds": [
         "elora-p2-9mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-20",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-9mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-9mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-17.5",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3133,10 +3295,37 @@
       "armIds": [
         "elora-p2-placebo"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-0.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.3",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3181,6 +3370,33 @@
       }
     },
     {
+      "id": "glory1-weight-maz4-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.05",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "glory1-weight-maz6",
       "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
       "endpointId": "glory1-weight-week48",
@@ -3191,6 +3407,33 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-14.01",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz6-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.84",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3235,6 +3478,33 @@
       }
     },
     {
+      "id": "glory1-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.47",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "glory2-weight-maz9",
       "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
       "endpointId": "glory2-weight-week60",
@@ -3245,6 +3515,33 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-16.65",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-maz9-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-18.55",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3289,6 +3586,33 @@
       }
     },
     {
+      "id": "glory2-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.02",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "attain1-weight-orfor12",
       "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
       "endpointId": "attain1-weight-week72",
@@ -3299,6 +3623,33 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-8.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor12-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor12"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.3",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3343,6 +3694,33 @@
       }
     },
     {
+      "id": "attain1-weight-orfor36-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor36"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "attain1-weight-orfor6",
       "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
       "endpointId": "attain1-weight-week72",
@@ -3353,6 +3731,33 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-7.5",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor6-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-7.8",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3397,6 +3802,33 @@
       }
     },
     {
+      "id": "attain1-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "attain2-weight-orfor12",
       "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
       "endpointId": "attain2-weight-week72",
@@ -3407,6 +3839,33 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-7.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor12-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor12"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-7.8",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3451,6 +3910,33 @@
       }
     },
     {
+      "id": "attain2-weight-orfor36-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor36"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.5",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "attain2-weight-orfor6",
       "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
       "endpointId": "attain2-weight-week72",
@@ -3461,6 +3947,33 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-5.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor6-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-5.5",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3505,13 +4018,40 @@
       }
     },
     {
+      "id": "attain2-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "reta-p2-weight-12mg",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week48",
       "armIds": [
         "reta-p2-12mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-24.2",
@@ -3538,7 +4078,7 @@
       "armIds": [
         "reta-p2-1mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-8.7",
@@ -3565,7 +4105,7 @@
       "armIds": [
         "reta-p2-4mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-17.1",
@@ -3592,7 +4132,7 @@
       "armIds": [
         "reta-p2-8mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-22.8",
@@ -3619,7 +4159,7 @@
       "armIds": [
         "reta-p2-placebo"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.1",
@@ -3646,10 +4186,37 @@
       "armIds": [
         "triumph4-placebo"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-4.6",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3673,10 +4240,37 @@
       "armIds": [
         "triumph4-reta12"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-28.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-reta12-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-reta12"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-23.7",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3700,10 +4294,37 @@
       "armIds": [
         "triumph4-reta9"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-26.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-reta9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-reta9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-20.0",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3727,10 +4348,37 @@
       "armIds": [
         "triumph4-placebo"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.4",
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.1",
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -3754,10 +4402,37 @@
       "armIds": [
         "triumph4-reta12"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-4.4",
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-reta12-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-reta12"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-3.7",
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -3781,10 +4456,37 @@
       "armIds": [
         "triumph4-reta9"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-4.5",
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-reta9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-reta9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-4.0",
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -3809,7 +4511,7 @@
         "summit-tirz",
         "summit-placebo"
       ],
-      "analysisPopulation": "Intention-to-treat population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "result": {
         "value": "0.54",
         "unit": "hazard ratio",
@@ -3837,7 +4539,7 @@
       "armIds": [
         "summit-placebo"
       ],
-      "analysisPopulation": "Intention-to-treat population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "result": {
         "value": "14.2",
         "unit": "percent of participants",
@@ -3863,7 +4565,7 @@
       "armIds": [
         "summit-tirz"
       ],
-      "analysisPopulation": "Intention-to-treat population (overall)",
+      "analysisPopulation": "Intention-to-treat (overall)",
       "result": {
         "value": "8.0",
         "unit": "percent of participants",
@@ -3889,10 +4591,37 @@
       "armIds": [
         "sm1-placebo"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-3.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3916,10 +4645,37 @@
       "armIds": [
         "sm1-tirz10"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-19.5",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz10-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3943,10 +4699,37 @@
       "armIds": [
         "sm1-tirz15"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-20.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz15-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-22.5",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3970,10 +4753,37 @@
       "armIds": [
         "sm1-tirz5"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-15.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz5-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz5"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.0",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3997,10 +4807,37 @@
       "armIds": [
         "sm2-placebo"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-3.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.3",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4024,10 +4861,37 @@
       "armIds": [
         "sm2-tirz10"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-12.8",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-tirz10-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-13.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4051,10 +4915,37 @@
       "armIds": [
         "sm2-tirz15"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-14.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-tirz15-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.7",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4078,10 +4969,37 @@
       "armIds": [
         "sm3-placebo"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
-      "estimand": "Efficacy estimand",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "2.5",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm3-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "endpointId": "sm3-weight-week72",
+      "armIds": [
+        "sm3-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "3.3",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4105,10 +5023,37 @@
       "armIds": [
         "sm3-tirz"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
-      "estimand": "Efficacy estimand",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-18.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm3-weight-tirz-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "endpointId": "sm3-weight-week72",
+      "armIds": [
+        "sm3-tirz"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.1",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4132,10 +5077,37 @@
       "armIds": [
         "sm4-placebo"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
-      "estimand": "Efficacy estimand",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "14.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm4-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "endpointId": "sm4-weight-week88",
+      "armIds": [
+        "sm4-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "14.8",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4159,8 +5131,8 @@
       "armIds": [
         "sm4-tirz"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
-      "estimand": "Efficacy estimand",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-5.5",
         "unit": "percent",
@@ -4180,16 +5152,130 @@
       }
     },
     {
+      "id": "sm4-weight-tirz-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "endpointId": "sm4-weight-week88",
+      "armIds": [
+        "sm4-tirz"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-between",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz",
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-6.5",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, tirzepatide minus semaglutide",
+        "confidenceInterval": "95% CI -8.1 to -4.9"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-between-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz",
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.2",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, tirzepatide minus semaglutide",
+        "confidenceInterval": "95% CI -7.8 to -4.6"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "sm5-weight-sema",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
       "endpointId": "sm5-weight-week72",
       "armIds": [
         "sm5-sema"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
-      "estimand": "Treatment-regimen estimand",
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-13.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-sema-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4213,10 +5299,37 @@
       "armIds": [
         "sm5-tirz"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
-      "estimand": "Treatment-regimen estimand",
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-20.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-tirz-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.6",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4240,10 +5353,37 @@
       "armIds": [
         "smcn-placebo"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-2.3",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4267,10 +5407,37 @@
       "armIds": [
         "smcn-tirz10"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-13.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-tirz10-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4294,10 +5461,37 @@
       "armIds": [
         "smcn-tirz15"
       ],
-      "analysisPopulation": "Treatment-regimen estimand population (overall)",
+      "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-17.5",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-tirz15-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-19.9",
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4321,21 +5515,48 @@
       "armIds": [
         "smmaintain-5mg"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-17.0",
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "topline",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-07-13",
         "updatedAt": "2026-07-13",
         "sources": [
           {
-            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-foundayo-and-lower-dose-zepbound-helped-people-maintain",
-            "sourceType": "company topline",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-5mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-5mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-16.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-07-13"
           }
         ]
@@ -4348,21 +5569,102 @@
       "armIds": [
         "smmaintain-mtd"
       ],
-      "analysisPopulation": "Efficacy estimand population (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-22.4",
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "topline",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-07-13",
         "updatedAt": "2026-07-13",
         "sources": [
           {
-            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-foundayo-and-lower-dose-zepbound-helped-people-maintain",
-            "sourceType": "company topline",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-mtd-treatment-regimen",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-mtd"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-21.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-9.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-07-13"
           }
         ]
