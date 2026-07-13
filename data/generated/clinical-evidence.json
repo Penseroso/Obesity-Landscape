@@ -1,6 +1,2625 @@
 {
-  "studies": [],
-  "arms": [],
-  "endpoints": [],
-  "outcomes": []
+  "studies": [
+    {
+      "id": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "companyId": "novo-nordisk",
+      "assetId": "amycretin",
+      "programId": "novo-nordisk-amycretin-oral-tablets",
+      "officialTitle": "A Study of Multiple Doses of NNC0487-0111 in People With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05369390"
+        }
+      ],
+      "phase": "Phase 1",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "First-in-human multiple-ascending-dose study."
+      },
+      "population": "Adults with overweight or obesity without diabetes.",
+      "overallDuration": "Up to 12 weeks",
+      "safetySummary": "All treatment-emergent adverse events were mild or moderate; gastrointestinal symptoms and decreased appetite were most common and dose related.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05369390",
+            "title": "Oral amycretin Phase 1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550229/",
+            "title": "First-in-human oral amycretin trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
+      "companyId": "novo-nordisk",
+      "assetId": "amycretin",
+      "programId": "novo-nordisk-amycretin-subcutaneous-injection",
+      "officialTitle": "A Study of Subcutaneous Amycretin in People With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06064006"
+        }
+      ],
+      "phase": "Phase 1b/2a",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multiple-ascending-dose, dose-response study."
+      },
+      "population": "Adults aged 18-55 years with overweight or obesity.",
+      "overallDuration": "Up to 36 weeks",
+      "safetySummary": "A high frequency of gastrointestinal events was reported, consistent with GLP-1 and amylin agonism; no unexpected safety signal was disclosed.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06064006",
+            "title": "Subcutaneous amycretin Phase 1b/2a study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550231/",
+            "title": "Subcutaneous amycretin Phase 1b/2a results",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrilintide",
+      "programId": "novo-nordisk-cagrilintide-subcutaneous-injection",
+      "officialTitle": "Investigation of Safety and Efficacy of Cagrilintide in Adults With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03856047"
+        }
+      ],
+      "phase": "Phase 2",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind for active treatment versus pooled placebo",
+        "comparator": "Liraglutide and placebo",
+        "description": "Dose-ranging active- and placebo-controlled trial."
+      },
+      "population": "Adults with overweight or obesity.",
+      "overallDuration": "26 weeks",
+      "followUpDuration": "6 weeks",
+      "safetySummary": "Gastrointestinal disorders occurred in 41%-63% across cagrilintide doses versus 32% with placebo; nausea was the most frequent event.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03856047",
+            "title": "Cagrilintide Phase 2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34798060/",
+            "title": "Once-weekly cagrilintide for weight management",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-11-16",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
+      "acronym": "REDEFINE 1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05567796"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Cagrilintide, semaglutide, and placebo",
+        "description": "Four-arm parallel-group trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related complication, without diabetes.",
+      "overallDuration": "68 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most common; treatment discontinuation rates were low across groups.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05567796",
+            "title": "REDEFINE 1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "title": "Cagrilintide-Semaglutide in Adults with Overweight or Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-22",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "A Research Study to See How Well CagriSema Helps People With Type 2 Diabetes and Excess Body Weight Lose Weight",
+      "acronym": "REDEFINE 2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05394519"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 3:1 trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes; body-weight reduction was a primary objective.",
+      "overallDuration": "68 weeks",
+      "safetySummary": "The most common adverse events were gastrointestinal and were mainly mild to moderate.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05394519",
+            "title": "REDEFINE 2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/",
+            "title": "Cagrilintide-Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-22",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "A Research Study Comparing CagriSema With Tirzepatide in People With Obesity",
+      "acronym": "REDEFINE 4",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06131437"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Tirzepatide",
+        "description": "Active-controlled head-to-head parallel-group trial."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "overallDuration": "84 weeks",
+      "safetySummary": "Both treatments had safety profiles consistent with their component classes; full peer-reviewed safety results were not yet available.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06131437",
+            "title": "REDEFINE 4 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501",
+            "title": "Headline results from REDEFINE 4",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-23",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "companyId": "novo-nordisk",
+      "assetId": "liraglutide",
+      "programId": "novo-nordisk-liraglutide-subcutaneous-injection",
+      "officialTitle": "Effect of Liraglutide for Weight Management in Subjects With Type 2 Diabetes",
+      "acronym": "SCALE Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT01272232"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Liraglutide 1.8 mg and placebo",
+        "description": "Parallel-group 2:1:1 weight-management trial."
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes; weight management was the explicit objective.",
+      "overallDuration": "56 weeks",
+      "safetySummary": "Gastrointestinal disorders were more common with liraglutide than placebo; no pancreatitis was reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT01272232",
+            "title": "SCALE Diabetes study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26284720/",
+            "title": "Efficacy of Liraglutide for Weight Loss Among Patients With Type 2 Diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2015-08-18",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-liraglutide-scale-kids-nct04775082",
+      "companyId": "novo-nordisk",
+      "assetId": "liraglutide",
+      "programId": "novo-nordisk-liraglutide-subcutaneous-injection",
+      "officialTitle": "A Research Study on How Well Liraglutide Works in Children Living With Obesity",
+      "acronym": "SCALE Kids",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04775082"
+        }
+      ],
+      "phase": "Phase 3a",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 2:1 trial with lifestyle intervention."
+      },
+      "population": "Children aged 6 to under 12 years with nonmonogenic, nonsyndromic obesity.",
+      "overallDuration": "56 weeks",
+      "followUpDuration": "26 weeks",
+      "safetySummary": "Adverse events occurred in 89% with liraglutide and 88% with placebo; gastrointestinal events occurred in 80% and 54%, respectively.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04775082",
+            "title": "SCALE Kids study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39258838/",
+            "title": "Liraglutide for Children 6 to Under 12 Years of Age with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-09-10",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+      "companyId": "novo-nordisk",
+      "assetId": "liraglutide",
+      "programId": "novo-nordisk-liraglutide-subcutaneous-injection",
+      "officialTitle": "Effect of Liraglutide in the Maintenance of Weight Loss",
+      "acronym": "SCALE Obesity and Prediabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT01272219"
+        }
+      ],
+      "protocolIdentifiers": [
+        "NN8022-1839"
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 2:1 trial with lifestyle modification."
+      },
+      "population": "Adults with obesity, or overweight plus treated or untreated dyslipidemia or hypertension, without type 2 diabetes.",
+      "overallDuration": "56 weeks",
+      "safetySummary": "Mild or moderate nausea and diarrhea were most frequent; serious adverse events occurred in 6.2% with liraglutide and 5.0% with placebo.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT01272219",
+            "title": "SCALE Obesity and Prediabetes study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26132939/",
+            "title": "A Randomized, Controlled Trial of 3.0 mg of Liraglutide in Weight Management",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2015-07-02",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-liraglutide-scale-teens-nct02918279",
+      "companyId": "novo-nordisk",
+      "assetId": "liraglutide",
+      "programId": "novo-nordisk-liraglutide-subcutaneous-injection",
+      "officialTitle": "A Long Term Study of Liraglutide in Adolescents Who Have Obesity",
+      "acronym": "SCALE Teens",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT02918279"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 1:1 trial with lifestyle therapy."
+      },
+      "population": "Adolescents aged 12 to under 18 years with obesity and poor response to lifestyle therapy alone.",
+      "overallDuration": "56 weeks",
+      "followUpDuration": "26 weeks",
+      "safetySummary": "Gastrointestinal adverse events occurred in 64.8% with liraglutide and 36.5% with placebo; discontinuations due to adverse events occurred in 10.4% and 0%.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT02918279",
+            "title": "SCALE Teens study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32233338/",
+            "title": "A Randomized, Controlled Trial of Liraglutide for Adolescents with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2020-03-31",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-oral-tablets",
+      "officialTitle": "A Research Study to See How Well Oral Semaglutide Helps People With Overweight or Obesity Lose Weight",
+      "acronym": "OASIS 4",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05564117"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "64 weeks",
+      "safetySummary": "Gastrointestinal adverse events were more frequent with oral semaglutide and were mostly mild to moderate.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05564117",
+            "title": "OASIS 4 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2500969",
+            "title": "Oral Semaglutide at a Dose of 25 mg in Adults with Overweight or Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-09-17",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-step-1-nct03548935",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-subcutaneous-injection",
+      "officialTitle": "STEP 1: Research Study Investigating How Well Semaglutide Works in People Suffering From Overweight or Obesity",
+      "acronym": "STEP 1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03548935"
+        }
+      ],
+      "protocolIdentifiers": [
+        "NN9536-4373"
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 2:1 trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "68 weeks",
+      "safetySummary": "Gastrointestinal disorders were the most frequent adverse events and were generally mild to moderate; nausea and diarrhea were usually transient.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03548935",
+            "title": "STEP 1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/",
+            "title": "Once-Weekly Semaglutide in Adults with Overweight or Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-02-10",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-subcutaneous-injection",
+      "officialTitle": "Research Study Investigating How Well Semaglutide Works in People With Type 2 Diabetes Suffering From Overweight or Obesity",
+      "acronym": "STEP 2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03552757"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and semaglutide 1.0 mg",
+        "description": "Parallel-group 1:1:1 trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes; weight management was an explicit objective.",
+      "overallDuration": "68 weeks",
+      "safetySummary": "Gastrointestinal adverse events were most frequent and occurred more often with semaglutide 2.4 mg than placebo.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03552757",
+            "title": "STEP 2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33667417/",
+            "title": "Semaglutide 2.4 mg once a week in adults with overweight or obesity, and type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-03-02",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-step-5-nct03693430",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-subcutaneous-injection",
+      "officialTitle": "Two-year Research Study Investigating How Well Semaglutide Works in People Suffering From Overweight or Obesity",
+      "acronym": "STEP 5",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03693430"
+        }
+      ],
+      "protocolIdentifiers": [
+        "NN9536-4378"
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-year parallel-group trial with behavioral intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "104 weeks",
+      "safetySummary": "Gastrointestinal adverse events, mostly mild to moderate, occurred in 82.2% with semaglutide and 53.9% with placebo.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03693430",
+            "title": "STEP 5 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36216945/",
+            "title": "Two-year effects of semaglutide in adults with overweight or obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2022-10-10",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-step-teens-nct04102189",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-subcutaneous-injection",
+      "officialTitle": "A Research Study on How Well Semaglutide Works in Adolescents With Overweight or Obesity",
+      "acronym": "STEP TEENS",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04102189"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 2:1 trial with lifestyle intervention."
+      },
+      "population": "Adolescents aged 12 to under 18 years with obesity, or overweight plus a weight-related condition.",
+      "overallDuration": "68 weeks",
+      "followUpDuration": "7 weeks",
+      "safetySummary": "Gastrointestinal events occurred in 62% with semaglutide and 42% with placebo; cholelithiasis occurred in five semaglutide participants and none receiving placebo.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04102189",
+            "title": "STEP TEENS study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36322838/",
+            "title": "Once-Weekly Semaglutide in Adolescents with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2022-11-02",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-subcutaneous-injection",
+      "officialTitle": "A Research Study to See How Well Semaglutide Helps People With Excess Body Weight Lose Weight",
+      "acronym": "STEP UP",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05646706"
+        }
+      ],
+      "phase": "Phase 3b",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Semaglutide 2.4 mg and placebo",
+        "description": "Parallel-group 5:1:1 trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "overallDuration": "72 weeks",
+      "safetySummary": "Gastrointestinal events occurred in 70.8%, 61.2%, and 42.8% with semaglutide 7.2 mg, 2.4 mg, and placebo; dysaesthesia was more frequent at 7.2 mg.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05646706",
+            "title": "STEP UP study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961952/",
+            "title": "Once-weekly semaglutide 7.2 mg in adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-09-14",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "programId": "novo-nordisk-semaglutide-subcutaneous-injection",
+      "officialTitle": "A Research Study to See How Well Semaglutide Helps People With Type 2 Diabetes and Excess Body Weight Lose Weight",
+      "acronym": "STEP UP T2D",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05649137"
+        }
+      ],
+      "phase": "Phase 3b",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Semaglutide 2.4 mg and placebo",
+        "description": "Parallel-group 3:1:1 trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity and type 2 diabetes; weight management was an explicit objective.",
+      "overallDuration": "72 weeks",
+      "safetySummary": "The safety profile was consistent with the GLP-1 receptor agonist class; gastrointestinal adverse events were the most common.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05649137",
+            "title": "STEP UP T2D study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961953/",
+            "title": "Once-weekly semaglutide 7.2 mg in adults with obesity and type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-09-14",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "companyId": "novo-nordisk",
+      "assetId": "ubt251",
+      "programId": "novo-nordisk-ubt251-subcutaneous-injection",
+      "officialTitle": "A Study to Evaluate UBT251 in Chinese Adults With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07177469"
+        },
+        {
+          "registry": "Chinese Clinical Trial Registry",
+          "id": "ChiCTR2500113817"
+        }
+      ],
+      "phase": "Phase 2",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm dose-ranging trial."
+      },
+      "population": "Chinese adults with overweight or obesity.",
+      "overallDuration": "24 weeks",
+      "safetySummary": "The sponsor reported a safety profile consistent with the mechanism; detailed peer-reviewed safety results were not yet available.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.chictr.org.cn/showproj.html?proj=286437",
+            "title": "UBT251 Phase 2 obesity study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+            "title": "UBT251 Phase 2 obesity headline results",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-24",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "amyoral-100",
+      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "role": "experimental",
+      "label": "Oral amycretin 100 mg",
+      "intervention": "Amycretin dose escalation to two 50 mg tablets",
+      "linkedAsset": {
+        "assetId": "amycretin"
+      },
+      "dose": "100 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "plannedN": 16
+    },
+    {
+      "id": "amyoral-placebo",
+      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "plannedN": 4
+    },
+    {
+      "id": "amysc-60",
+      "studyId": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
+      "role": "experimental",
+      "label": "Subcutaneous amycretin 60 mg",
+      "intervention": "Amycretin dose escalation from 0.3 mg to 60 mg",
+      "linkedAsset": {
+        "assetId": "amycretin"
+      },
+      "dose": "60 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "amysc-placebo",
+      "studyId": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "cagri-p2-45",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "role": "experimental",
+      "label": "Cagrilintide 4.5 mg",
+      "intervention": "Cagrilintide",
+      "linkedAsset": {
+        "assetId": "cagrilintide"
+      },
+      "dose": "4.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks",
+      "plannedN": 102
+    },
+    {
+      "id": "cagri-p2-lira30",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "role": "active comparator",
+      "label": "Liraglutide 3.0 mg",
+      "intervention": "Liraglutide",
+      "linkedAsset": {
+        "assetId": "liraglutide"
+      },
+      "dose": "3.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks",
+      "plannedN": 99
+    },
+    {
+      "id": "cagri-p2-placebo",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "role": "placebo",
+      "label": "Pooled placebo",
+      "intervention": "Volume-matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly or once daily",
+      "treatmentDuration": "26 weeks",
+      "plannedN": 101
+    },
+    {
+      "id": "redefine1-cagrilintide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "active comparator",
+      "label": "Cagrilintide 2.4 mg",
+      "intervention": "Cagrilintide",
+      "linkedAsset": {
+        "assetId": "cagrilintide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 302
+    },
+    {
+      "id": "redefine1-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "experimental",
+      "label": "CagriSema 2.4 mg/2.4 mg",
+      "intervention": "Fixed-dose cagrilintide and semaglutide",
+      "linkedAsset": {
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 2108
+    },
+    {
+      "id": "redefine1-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 705
+    },
+    {
+      "id": "redefine1-semaglutide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "active comparator",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 302
+    },
+    {
+      "id": "redefine2-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "role": "experimental",
+      "label": "CagriSema 2.4 mg/2.4 mg",
+      "intervention": "Fixed-dose cagrilintide and semaglutide",
+      "linkedAsset": {
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 902
+    },
+    {
+      "id": "redefine2-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 302
+    },
+    {
+      "id": "redefine4-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "role": "experimental",
+      "label": "CagriSema 2.4 mg/2.4 mg",
+      "intervention": "Fixed-dose cagrilintide and semaglutide",
+      "linkedAsset": {
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "84 weeks"
+    },
+    {
+      "id": "redefine4-tirzepatide",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "role": "active comparator",
+      "label": "Tirzepatide",
+      "intervention": "Tirzepatide",
+      "dose": "Maximum tolerated dose up to 15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "84 weeks"
+    },
+    {
+      "id": "scalediabetes-lira18",
+      "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "role": "active comparator",
+      "label": "Liraglutide 1.8 mg",
+      "intervention": "Liraglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "liraglutide"
+      },
+      "dose": "1.8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 211
+    },
+    {
+      "id": "scalediabetes-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "role": "experimental",
+      "label": "Liraglutide 3.0 mg",
+      "intervention": "Liraglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "liraglutide"
+      },
+      "dose": "3.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 423
+    },
+    {
+      "id": "scalediabetes-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 212
+    },
+    {
+      "id": "scalekids-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-kids-nct04775082",
+      "role": "experimental",
+      "label": "Liraglutide 3.0 mg",
+      "intervention": "Liraglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "liraglutide"
+      },
+      "dose": "3.0 mg or maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 56
+    },
+    {
+      "id": "scalekids-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-kids-nct04775082",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 26
+    },
+    {
+      "id": "scaleobesity-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+      "role": "experimental",
+      "label": "Liraglutide 3.0 mg",
+      "intervention": "Liraglutide plus lifestyle modification",
+      "linkedAsset": {
+        "assetId": "liraglutide"
+      },
+      "dose": "3.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 2487
+    },
+    {
+      "id": "scaleobesity-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle modification",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 1244
+    },
+    {
+      "id": "scaleteens-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-teens-nct02918279",
+      "role": "experimental",
+      "label": "Liraglutide 3.0 mg",
+      "intervention": "Liraglutide plus lifestyle therapy",
+      "linkedAsset": {
+        "assetId": "liraglutide"
+      },
+      "dose": "3.0 mg or maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 125
+    },
+    {
+      "id": "scaleteens-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-teens-nct02918279",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle therapy",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 weeks",
+      "plannedN": 126
+    },
+    {
+      "id": "oasis4-placebo",
+      "studyId": "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "64 weeks",
+      "plannedN": 102
+    },
+    {
+      "id": "oasis4-sema25",
+      "studyId": "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      "role": "experimental",
+      "label": "Oral semaglutide 25 mg",
+      "intervention": "Oral semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "25 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "64 weeks",
+      "plannedN": 205
+    },
+    {
+      "id": "step1-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-1-nct03548935",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 655
+    },
+    {
+      "id": "step1-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-1-nct03548935",
+      "role": "experimental",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 1306
+    },
+    {
+      "id": "step2-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 403
+    },
+    {
+      "id": "step2-sema10",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "role": "active comparator",
+      "label": "Semaglutide 1.0 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "1.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 403
+    },
+    {
+      "id": "step2-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "role": "experimental",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 404
+    },
+    {
+      "id": "step5-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-5-nct03693430",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus behavioral intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "104 weeks",
+      "plannedN": 152
+    },
+    {
+      "id": "step5-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-5-nct03693430",
+      "role": "experimental",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide plus behavioral intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "104 weeks",
+      "plannedN": 152
+    },
+    {
+      "id": "stepteens-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-teens-nct04102189",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 67
+    },
+    {
+      "id": "stepteens-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-teens-nct04102189",
+      "role": "experimental",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 134
+    },
+    {
+      "id": "stepup-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks",
+      "plannedN": 201
+    },
+    {
+      "id": "stepup-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "role": "active comparator",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks",
+      "plannedN": 201
+    },
+    {
+      "id": "stepup-sema72",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "role": "experimental",
+      "label": "Semaglutide 7.2 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "7.2 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks",
+      "plannedN": 1005
+    },
+    {
+      "id": "stepupt2d-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks",
+      "plannedN": 102
+    },
+    {
+      "id": "stepupt2d-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "role": "active comparator",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks",
+      "plannedN": 103
+    },
+    {
+      "id": "stepupt2d-sema72",
+      "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "role": "experimental",
+      "label": "Semaglutide 7.2 mg",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "assetId": "semaglutide"
+      },
+      "dose": "7.2 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks",
+      "plannedN": 307
+    },
+    {
+      "id": "ubt251-p2-2",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "experimental",
+      "label": "UBT251 2 mg",
+      "intervention": "UBT251",
+      "linkedAsset": {
+        "assetId": "ubt251"
+      },
+      "dose": "2 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "ubt251-p2-4",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "experimental",
+      "label": "UBT251 4 mg",
+      "intervention": "UBT251",
+      "linkedAsset": {
+        "assetId": "ubt251"
+      },
+      "dose": "4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "ubt251-p2-6",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "experimental",
+      "label": "UBT251 6 mg",
+      "intervention": "UBT251",
+      "linkedAsset": {
+        "assetId": "ubt251"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "ubt251-p2-placebo",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "amyoral-weight-week12",
+      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Exploratory pharmacodynamic",
+      "assessmentTimepoint": "Week 12"
+    },
+    {
+      "id": "amysc-weight-week36",
+      "studyId": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Pharmacodynamic efficacy",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "cagri-p2-weight-week26",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "redefine1-weight-week68",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "redefine2-weight-week68",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "redefine4-weight-week84",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 84"
+    },
+    {
+      "id": "scalediabetes-weight-week56",
+      "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 56"
+    },
+    {
+      "id": "scalekids-bmi-week56",
+      "studyId": "novo-nordisk-liraglutide-scale-kids-nct04775082",
+      "name": "Percentage change from baseline in BMI",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 56"
+    },
+    {
+      "id": "scaleobesity-weight-week56",
+      "studyId": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+      "name": "Change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 56"
+    },
+    {
+      "id": "scaleteens-bmisds-week56",
+      "studyId": "novo-nordisk-liraglutide-scale-teens-nct02918279",
+      "name": "Change from baseline in BMI standard-deviation score",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 56"
+    },
+    {
+      "id": "oasis4-weight-week64",
+      "studyId": "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 64"
+    },
+    {
+      "id": "step1-weight-week68",
+      "studyId": "novo-nordisk-semaglutide-step-1-nct03548935",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "step2-weight-week68",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "step5-weight-week104",
+      "studyId": "novo-nordisk-semaglutide-step-5-nct03693430",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 104"
+    },
+    {
+      "id": "stepteens-bmi-week68",
+      "studyId": "novo-nordisk-semaglutide-step-teens-nct04102189",
+      "name": "Percentage change from baseline in BMI",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "stepup-weight-week72",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "stepupt2d-weight-week72",
+      "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "ubt251-p2-weight-week24",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "name": "Percentage change from baseline in body weight",
+      "classification": "Primary efficacy",
+      "assessmentTimepoint": "Week 24"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "amyoral-weight-100",
+      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "endpointId": "amyoral-weight-week12",
+      "armIds": [
+        "amyoral-100"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-13.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550229/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "amyoral-weight-placebo",
+      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "endpointId": "amyoral-weight-week12",
+      "armIds": [
+        "amyoral-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-1.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550229/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "amysc-weight-60",
+      "studyId": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
+      "endpointId": "amysc-weight-week36",
+      "armIds": [
+        "amysc-60"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "-24.3",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550231/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "amysc-weight-placebo",
+      "studyId": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
+      "endpointId": "amysc-weight-week36",
+      "armIds": [
+        "amysc-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "-1.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550231/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cagri-p2-weight-45",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "endpointId": "cagri-p2-weight-week26",
+      "armIds": [
+        "cagri-p2-45"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-10.8",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34798060/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cagri-p2-weight-lira30",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "endpointId": "cagri-p2-weight-week26",
+      "armIds": [
+        "cagri-p2-lira30"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-9.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34798060/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cagri-p2-weight-placebo",
+      "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
+      "endpointId": "cagri-p2-weight-week26",
+      "armIds": [
+        "cagri-p2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-3.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34798060/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-cagrilintide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-cagrilintide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-11.5",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-cagrisema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-20.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-semaglutide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-semaglutide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-14.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine2-weight-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "endpointId": "redefine2-weight-week68",
+      "armIds": [
+        "redefine2-cagrisema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-13.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine2-weight-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "endpointId": "redefine2-weight-week68",
+      "armIds": [
+        "redefine2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine4-weight-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "endpointId": "redefine4-weight-week84",
+      "armIds": [
+        "redefine4-cagrisema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-20.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine4-weight-tirzepatide",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "endpointId": "redefine4-weight-week84",
+      "armIds": [
+        "redefine4-tirzepatide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-23.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scalediabetes-weight-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "endpointId": "scalediabetes-weight-week56",
+      "armIds": [
+        "scalediabetes-lira30"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-5.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26284720/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scalediabetes-weight-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+      "endpointId": "scalediabetes-weight-week56",
+      "armIds": [
+        "scalediabetes-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-2.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26284720/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scalekids-bmi-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-kids-nct04775082",
+      "endpointId": "scalekids-bmi-week56",
+      "armIds": [
+        "scalekids-lira30"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-5.8",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39258838/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scalekids-bmi-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-kids-nct04775082",
+      "endpointId": "scalekids-bmi-week56",
+      "armIds": [
+        "scalekids-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "1.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39258838/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scaleobesity-weight-lira30",
+      "studyId": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+      "endpointId": "scaleobesity-weight-week56",
+      "armIds": [
+        "scaleobesity-lira30"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-8.4",
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26132939/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scaleobesity-weight-placebo",
+      "studyId": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+      "endpointId": "scaleobesity-weight-week56",
+      "armIds": [
+        "scaleobesity-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-2.8",
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26132939/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scaleteens-bmisds-difference",
+      "studyId": "novo-nordisk-liraglutide-scale-teens-nct02918279",
+      "endpointId": "scaleteens-bmisds-week56",
+      "armIds": [
+        "scaleteens-lira30",
+        "scaleteens-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-0.22",
+        "unit": "BMI standard-deviation score",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, liraglutide minus placebo",
+        "confidenceInterval": "95% CI -0.37 to -0.08",
+        "pValue": "0.002"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32233338/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oasis4-weight-placebo",
+      "studyId": "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      "endpointId": "oasis4-weight-week64",
+      "armIds": [
+        "oasis4-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-2.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2500969",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oasis4-weight-sema25",
+      "studyId": "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      "endpointId": "oasis4-weight-week64",
+      "armIds": [
+        "oasis4-sema25"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-13.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2500969",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step1-weight-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-1-nct03548935",
+      "endpointId": "step1-weight-week68",
+      "armIds": [
+        "step1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-2.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step1-weight-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-1-nct03548935",
+      "endpointId": "step1-weight-week68",
+      "armIds": [
+        "step1-sema24"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-14.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33567185/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step2-weight-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "endpointId": "step2-weight-week68",
+      "armIds": [
+        "step2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.4",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33667417/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step2-weight-sema10",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "endpointId": "step2-weight-week68",
+      "armIds": [
+        "step2-sema10"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-7.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33667417/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step2-weight-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
+      "endpointId": "step2-weight-week68",
+      "armIds": [
+        "step2-sema24"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-9.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33667417/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step5-weight-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-5-nct03693430",
+      "endpointId": "step5-weight-week104",
+      "armIds": [
+        "step5-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-2.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36216945/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step5-weight-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-5-nct03693430",
+      "endpointId": "step5-weight-week104",
+      "armIds": [
+        "step5-sema24"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-15.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36216945/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepteens-bmi-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-teens-nct04102189",
+      "endpointId": "stepteens-bmi-week68",
+      "armIds": [
+        "stepteens-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "0.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36322838/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepteens-bmi-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-teens-nct04102189",
+      "endpointId": "stepteens-bmi-week68",
+      "armIds": [
+        "stepteens-sema24"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-16.1",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36322838/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepup-weight-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "endpointId": "stepup-weight-week72",
+      "armIds": [
+        "stepup-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961952/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepup-weight-sema24",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "endpointId": "stepup-weight-week72",
+      "armIds": [
+        "stepup-sema24"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-15.6",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961952/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepup-weight-sema72",
+      "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
+      "endpointId": "stepup-weight-week72",
+      "armIds": [
+        "stepup-sema72"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-18.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961952/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepupt2d-weight-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "endpointId": "stepupt2d-weight-week72",
+      "armIds": [
+        "stepupt2d-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.9",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961953/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stepupt2d-weight-sema72",
+      "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+      "endpointId": "stepupt2d-weight-week72",
+      "armIds": [
+        "stepupt2d-sema72"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-13.2",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40961953/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ubt251-p2-weight-6",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "endpointId": "ubt251-p2-weight-week24",
+      "armIds": [
+        "ubt251-p2-6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-19.7",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ubt251-p2-weight-placebo",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "endpointId": "ubt251-p2-weight-week24",
+      "armIds": [
+        "ubt251-p2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-2.0",
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
+  ]
 }

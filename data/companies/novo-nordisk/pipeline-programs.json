@@ -30,8 +30,7 @@
     },
     "indications": [
       "Obesity",
-      "Overweight",
-      "Type 2 diabetes mellitus"
+      "Overweight"
     ],
     "development": {
       "stage": "Approved",
@@ -68,6 +67,13 @@
           "sourceType": "drug label",
           "publishedAt": "2017-12",
           "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-fourth-product-under-national-priority-voucher-program-higher-dose-semaglutide",
+          "title": "FDA approves higher-dose semaglutide for chronic weight management",
+          "sourceType": "regulatory announcement",
+          "publishedAt": "2026-03-19",
+          "checkedAt": "2026-07-13"
         }
       ]
     }
@@ -103,8 +109,7 @@
     },
     "indications": [
       "Obesity",
-      "Overweight",
-      "Type 2 diabetes mellitus"
+      "Overweight"
     ],
     "development": {
       "stage": "Approved",
@@ -120,6 +125,20 @@
           "sourceType": "company press release",
           "publishedAt": "2025-12-22",
           "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916472",
+          "title": "FDA approves Wegovy pill for chronic weight management",
+          "sourceType": "company press release",
+          "publishedAt": "2025-12-22",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/218316Orig1s000ltr.pdf",
+          "title": "Wegovy tablets FDA approval letter",
+          "sourceType": "regulatory approval letter",
+          "publishedAt": "2025-12-22",
+          "checkedAt": "2026-07-13"
         },
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/213051Orig1s000TOC.cfm",
@@ -304,7 +323,7 @@
         ],
         "effectiveDate": "2025-03-24",
         "sourceUrls": [
-          "https://www.barrons.com/articles/novo-nordisk-stock-price-weight-loss-china-deal-2c2bfcf6"
+          "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=915958"
         ]
       },
       {
@@ -320,14 +339,14 @@
         ],
         "effectiveDate": "2025-03-24",
         "sourceUrls": [
-          "https://www.barrons.com/articles/novo-nordisk-stock-price-weight-loss-china-deal-2c2bfcf6"
+          "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=915958"
         ]
       },
       {
         "externalCompanyName": "United Laboratories International Holdings Limited",
         "role": "co-developer",
         "sourceUrls": [
-          "https://www.wsj.com/health/pharma/novo-nordisk-united-laboratories-say-new-obesity-drug-helps-patients-lose-weight-in-trial-99d136d5"
+          "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503"
         ]
       },
       {
@@ -343,7 +362,7 @@
         ],
         "effectiveDate": "2025-03-24",
         "sourceUrls": [
-          "https://www.barrons.com/articles/novo-nordisk-stock-price-weight-loss-china-deal-2c2bfcf6"
+          "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=915958"
         ]
       }
     ],
@@ -371,6 +390,20 @@
           "sourceType": "joint-announcement coverage",
           "publishedAt": "2026-02-24",
           "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=915958",
+          "title": "Novo Nordisk enters exclusive license agreement for UBT251",
+          "sourceType": "company press release",
+          "publishedAt": "2025-03-24",
+          "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+          "title": "UBT251 Phase 2 obesity headline results",
+          "sourceType": "company press release",
+          "publishedAt": "2026-02-24",
+          "checkedAt": "2026-07-13"
         }
       ]
     }
@@ -382,6 +415,12 @@
     "assetType": "co-formulation",
     "assetName": "IcoSema",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "brand-name",
+        "value": "Kyinsu"
+      }
+    ],
     "components": [
       {
         "assetName": "Insulin icodec",
@@ -405,14 +444,14 @@
       "Type 2 diabetes mellitus"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Approved",
       "status": "Active",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Completed"
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05352815",
@@ -441,6 +480,13 @@
           "sourceType": "trial registry",
           "publishedAt": "2024-02-20",
           "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/innovation-and-therapeutic-focus.html",
+          "title": "Innovation and therapeutic focus - Annual Report 2025",
+          "sourceType": "company annual report",
+          "publishedAt": "2026-02-04",
+          "checkedAt": "2026-07-13"
         }
       ]
     }
@@ -676,14 +722,14 @@
       "Overweight"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Sponsor-declared current pipeline stage",
       "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
@@ -691,8 +737,250 @@
           "sourceType": "company press release",
           "publishedAt": "2025-06-20",
           "checkedAt": "2026-07-10"
+        },
+        {
+          "url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/pdfs/financial-results/2026/Q1-2026-investor-presentation.pdf",
+          "title": "Q1 2026 investor presentation",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2026-05-06",
+          "checkedAt": "2026-07-13"
         }
       ]
+    }
+  },
+  {
+    "id": "novo-nordisk-semaglutide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "semaglutide",
+    "companyId": "novo-nordisk",
+    "assetName": "Semaglutide",
+    "codeName": null,
+    "aliases": [
+      { "type": "brand-name", "value": "Wegovy" },
+      { "type": "brand-name", "value": "Ozempic" },
+      { "type": "brand-name", "value": "Rybelsus" }
+    ],
+    "technical": { "mechanism": "GLP-1 receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": { "stage": "Approved", "status": "Active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209637Orig1s000TOC.cfm",
+        "title": "Drug Approval Package: Ozempic (semaglutide) injection",
+        "sourceType": "regulatory review",
+        "publishedAt": "2017-12-05",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-semaglutide-subcutaneous-injection-mash",
+    "assetId": "semaglutide",
+    "companyId": "novo-nordisk",
+    "assetName": "Semaglutide",
+    "codeName": null,
+    "aliases": [
+      { "type": "brand-name", "value": "Wegovy" },
+      { "type": "brand-name", "value": "Ozempic" },
+      { "type": "brand-name", "value": "Rybelsus" }
+    ],
+    "technical": { "mechanism": "GLP-1 receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Metabolic dysfunction-associated steatohepatitis"],
+    "development": { "stage": "Approved", "status": "Active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-serious-liver-disease-known-mash",
+        "title": "FDA approves treatment for serious liver disease known as MASH",
+        "sourceType": "regulatory announcement",
+        "publishedAt": "2025-08-15",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-semaglutide-oral-tablets-type-2-diabetes",
+    "assetId": "semaglutide",
+    "companyId": "novo-nordisk",
+    "assetName": "Semaglutide",
+    "codeName": null,
+    "aliases": [
+      { "type": "brand-name", "value": "Wegovy" },
+      { "type": "brand-name", "value": "Ozempic" },
+      { "type": "brand-name", "value": "Rybelsus" }
+    ],
+    "technical": { "mechanism": "GLP-1 receptor agonist", "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablets", "dosingInterval": "Once daily" },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": { "stage": "Approved", "status": "Active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/213051Orig1s000TOC.cfm",
+        "title": "Drug Approval Package: Rybelsus (semaglutide) tablets",
+        "sourceType": "regulatory review",
+        "publishedAt": "2019-09-20",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-ubt251-subcutaneous-injection-type-2-diabetes",
+    "assetId": "ubt251",
+    "companyId": "novo-nordisk",
+    "assetName": "UBT251",
+    "codeName": null,
+    "technical": { "mechanism": "GLP-1/GIP/glucagon receptor triple agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Completed" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916519",
+        "title": "UBT251 phase 2 trial in people with type 2 diabetes",
+        "sourceType": "company press release",
+        "publishedAt": "2026-03-25",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-amycretin-oral-tablets-type-2-diabetes",
+    "assetId": "amycretin",
+    "companyId": "novo-nordisk",
+    "assetName": "Zenagamtide",
+    "codeName": null,
+    "aliases": [{ "type": "former-name", "value": "Amycretin" }],
+    "technical": { "mechanism": "Unimolecular GLP-1 and amylin receptor agonist", "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablets", "dosingInterval": "Once daily" },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Completed" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://clinicaltrials.gov/study/NCT06542874",
+        "title": "A study of oral and subcutaneous zenagamtide in adults with type 2 diabetes",
+        "sourceType": "trial registry",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-amylin-355-subcutaneous-injection",
+    "assetId": "nn9638",
+    "companyId": "novo-nordisk",
+    "assetName": "Amylin 355",
+    "codeName": "NN9638",
+    "aliases": [{ "type": "development-code", "value": "NNC0638-0355" }],
+    "technical": { "mechanism": "Amylin receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity", "Overweight"],
+    "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Active not recruiting" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://clinicaltrials.gov/study/NCT06577766",
+        "title": "A first human dose study of NNC0638-0355 in people with overweight or obesity",
+        "sourceType": "trial registry",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-amylin-1213-subcutaneous-injection",
+    "assetId": "nn9839",
+    "companyId": "novo-nordisk",
+    "assetName": "Amylin 1213",
+    "codeName": "NN9839",
+    "aliases": [{ "type": "development-code", "value": "NNC0174-1213" }],
+    "technical": { "mechanism": "Amylin receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity", "Overweight"],
+    "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://clinicaltrials.gov/study/NCT06719011",
+        "title": "A first human dose study of NNC0174-1213 in people with overweight or obesity",
+        "sourceType": "trial registry",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-triple-subcutaneous-injection",
+    "assetId": "nn9662",
+    "companyId": "novo-nordisk",
+    "assetName": "Triple",
+    "codeName": "NN9662",
+    "aliases": [{ "type": "development-code", "value": "NNC0662-0419" }],
+    "technical": { "mechanism": "GLP-1/GIP/amylin receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Obesity", "Overweight"],
+    "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://clinicaltrials.gov/study/NCT07184632",
+        "title": "A study of NNC0662-0419 in adults with overweight or obesity",
+        "sourceType": "trial registry",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-triple-subcutaneous-injection-type-2-diabetes",
+    "assetId": "nn9662",
+    "companyId": "novo-nordisk",
+    "assetName": "Triple",
+    "codeName": "NN9662",
+    "aliases": [{ "type": "development-code", "value": "NNC0662-0419" }],
+    "technical": { "mechanism": "GLP-1/GIP/amylin receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://clinicaltrials.gov/study/NCT07415954",
+        "title": "A study of NNC0662-0419 in adults with type 2 diabetes",
+        "sourceType": "trial registry",
+        "checkedAt": "2026-07-13"
+      }]
+    }
+  },
+  {
+    "id": "novo-nordisk-glp-1-analogue-subcutaneous-injection",
+    "assetId": "nn9695",
+    "companyId": "novo-nordisk",
+    "assetName": "GLP-1 analogue",
+    "codeName": "NN9695",
+    "aliases": [{ "type": "development-code", "value": "NNC0113-5840" }],
+    "technical": { "mechanism": "GLP-1 receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity", "Overweight"],
+    "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-13",
+      "updatedAt": "2026-07-13",
+      "sources": [{
+        "url": "https://clinicaltrials.gov/study/NCT07566390",
+        "title": "A first human dose study of NNC0113-5840 in adults with overweight or obesity",
+        "sourceType": "trial registry",
+        "checkedAt": "2026-07-13"
+      }]
     }
   }
 ]
