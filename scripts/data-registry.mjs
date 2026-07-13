@@ -97,7 +97,8 @@ const clinicalResultMaturities = new Set([
 const clinicalResultTypes = new Set(["arm-level", "between-arm"]);
 // This deliberately checks structure, not terminology. Any source-reported analysis-set
 // vocabulary remains valid, but a value ending in "estimand" or "estimand population" is
-// unambiguously an estimand label in the wrong field.
+// unambiguously an estimand label in the wrong field. A trailing parenthetical subgroup
+// qualifier is removed before applying this anchored check.
 const clinicalAnalysisPopulationEstimandLabelPattern = /\bestimand(?: population)?$/;
 
 function readJson(filePath) {
@@ -1072,8 +1073,12 @@ function validateClinicalOutcome(outcome, context) {
   assert(isNonEmptyString(outcome.endpointId), `${context}: endpointId is required`);
   validateStringArray(outcome.armIds, `${context}: armIds`, true);
   assert(isNonEmptyString(outcome.analysisPopulation), `${context}: analysisPopulation is required`);
+  const analysisPopulationWithoutSubgroup = normalize(outcome.analysisPopulation).replace(
+    /\s*\([^()]*\)$/,
+    "",
+  );
   assert(
-    !clinicalAnalysisPopulationEstimandLabelPattern.test(normalize(outcome.analysisPopulation)),
+    !clinicalAnalysisPopulationEstimandLabelPattern.test(analysisPopulationWithoutSubgroup),
     `${context}: analysisPopulation must identify the actual analysis set, not an estimand label`,
   );
   assertOptionalNonEmptyString(outcome.estimand, `${context}: estimand`);
@@ -1454,6 +1459,13 @@ function validateClinicalEvidenceSyntheticFixtures() {
   );
   assert(validAggregate.studies.length > 0, "clinical evidence valid fixture must contain at least one study");
 
+  const validAnalysisPopulationProbe = cloneJson(validAggregate.outcomes[0]);
+  validAnalysisPopulationProbe.analysisPopulation = "Full analysis set (overall)";
+  validateClinicalOutcome(
+    validAnalysisPopulationProbe,
+    "data/validation-fixtures/clinical-evidence/synthetic-valid/analysis-population-with-subgroup",
+  );
+
   const secondStudy = {
     ...cloneJson(validAggregate.studies[0]),
     id: "fixture-study-2",
@@ -1525,6 +1537,15 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["analysis-population-is-estimand-label", /actual analysis set, not an estimand label/, (fixture) => {
       fixture.outcomes[0].analysisPopulation = "Treatment-regimen estimand population";
+    }],
+    ["analysis-population-is-estimand-population-with-overall", /actual analysis set, not an estimand label/, (fixture) => {
+      fixture.outcomes[0].analysisPopulation = "Treatment-regimen estimand population (overall)";
+    }],
+    ["analysis-population-is-efficacy-estimand-population", /actual analysis set, not an estimand label/, (fixture) => {
+      fixture.outcomes[0].analysisPopulation = "Efficacy estimand population (overall)";
+    }],
+    ["analysis-population-is-estimand-with-subgroup", /actual analysis set, not an estimand label/, (fixture) => {
+      fixture.outcomes[0].analysisPopulation = "Efficacy estimand (baseline type 2 diabetes subgroup)";
     }],
     ["study-without-source", /metadata\.sources must contain at least one source/, (fixture) => {
       fixture.studies[0].metadata.sources = [];
