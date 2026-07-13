@@ -42,6 +42,74 @@
           }
         ]
       }
+    },
+    {
+      "id": "fixture-study-doseranging",
+      "companyId": "fixture-co",
+      "assetId": "fixture-asset",
+      "officialTitle": "Synthetic Dose-Ranging Study of Fixture Asset on Background Therapy",
+      "acronym": "FIX-DR",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT20000002"
+        }
+      ],
+      "phase": "Phase 2",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double blind",
+        "comparator": "Placebo",
+        "description": "Synthetic dose-ranging fixture design exercising arm-distinctness paths"
+      },
+      "population": "Adults with obesity or overweight on stable background metformin, with an explicit weight-management objective",
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-design",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-study-timepoint",
+      "companyId": "fixture-co",
+      "assetId": "fixture-asset",
+      "officialTitle": "Synthetic Multi-Timepoint Study of Fixture Asset for Weight Management",
+      "acronym": "FIX-TP",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT20000001"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double blind",
+        "comparator": "Placebo",
+        "description": "Synthetic fixture design exercising timepoint and analysis-population distinctness"
+      },
+      "population": "Adults with obesity or overweight and explicit weight-management objective",
+      "overallDuration": "72 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-timepoint-design",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     }
   ],
   "arms": [
@@ -75,6 +143,142 @@
       "treatmentDuration": "24 weeks",
       "plannedN": 100,
       "analyzedN": 94
+    },
+    {
+      "id": "fixture-arm-dr-5mg",
+      "studyId": "fixture-study-doseranging",
+      "role": "experimental",
+      "label": "Fixture Asset",
+      "intervention": "Fixture Asset injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "5 mg",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-dr-10mg",
+      "studyId": "fixture-study-doseranging",
+      "role": "experimental",
+      "label": "Fixture Asset",
+      "intervention": "Fixture Asset injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "10 mg",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-dr-10mg-titrated",
+      "studyId": "fixture-study-doseranging",
+      "role": "experimental",
+      "label": "Fixture Asset",
+      "intervention": "Fixture Asset injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "10 mg",
+      "titration": "4-week dose escalation",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-dr-background",
+      "studyId": "fixture-study-doseranging",
+      "role": "experimental",
+      "label": "Fixture Asset on background metformin",
+      "intervention": "Fixture Asset injection added to protocol-required background metformin",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "10 mg",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-dr-comboA",
+      "studyId": "fixture-study-doseranging",
+      "role": "experimental",
+      "label": "Fixture Asset combination",
+      "intervention": "Fixture Asset plus investigational partner",
+      "linkedAsset": {
+        "externalCompanyName": "Alpha Partner Therapeutics",
+        "assetName": "Partner A"
+      },
+      "dose": "10 mg",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-dr-comboB",
+      "studyId": "fixture-study-doseranging",
+      "role": "experimental",
+      "label": "Fixture Asset combination",
+      "intervention": "Fixture Asset plus investigational partner",
+      "linkedAsset": {
+        "externalCompanyName": "Beta Partner Therapeutics",
+        "assetName": "Partner B"
+      },
+      "dose": "10 mg",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-dr-placebo",
+      "studyId": "fixture-study-doseranging",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo injection on protocol-required background metformin",
+      "dose": "Matching placebo",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-tp-active",
+      "studyId": "fixture-study-timepoint",
+      "role": "experimental",
+      "label": "Fixture Asset",
+      "intervention": "Fixture Asset injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "10 mg",
+      "titration": "4-week dose escalation",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "fixture-arm-tp-placebo",
+      "studyId": "fixture-study-timepoint",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo injection",
+      "dose": "Matching placebo",
+      "titration": "None",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
     }
   ],
   "endpoints": [
@@ -84,6 +288,27 @@
       "name": "Percent change in body weight",
       "classification": "primary",
       "assessmentTimepoint": "Week 24"
+    },
+    {
+      "id": "fixture-endpoint-dr-weight",
+      "studyId": "fixture-study-doseranging",
+      "name": "Percent change in body weight",
+      "classification": "primary",
+      "assessmentTimepoint": "Week 24"
+    },
+    {
+      "id": "fixture-endpoint-tp-weight-w24",
+      "studyId": "fixture-study-timepoint",
+      "name": "Percent change in body weight",
+      "classification": "primary",
+      "assessmentTimepoint": "Week 24"
+    },
+    {
+      "id": "fixture-endpoint-tp-weight-w72",
+      "studyId": "fixture-study-timepoint",
+      "name": "Percent change in body weight",
+      "classification": "primary",
+      "assessmentTimepoint": "Week 72"
     }
   ],
   "outcomes": [
@@ -101,7 +326,7 @@
         "value": "-8.0",
         "unit": "percentage points",
         "resultType": "between-arm",
-        "comparisonType": "placebo-adjusted",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
         "confidenceInterval": "synthetic 95% CI",
         "pValue": "synthetic p-value"
       },
@@ -115,6 +340,254 @@
             "title": "Fixture result source",
             "sourceType": "synthetic fixture",
             "checkedAt": "2026-07-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-dr-5mg",
+      "studyId": "fixture-study-doseranging",
+      "endpointId": "fixture-endpoint-dr-weight",
+      "armIds": [
+        "fixture-arm-dr-5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-6.0",
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-dr-10mg",
+      "studyId": "fixture-study-doseranging",
+      "endpointId": "fixture-endpoint-dr-weight",
+      "armIds": [
+        "fixture-arm-dr-10mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-8.0",
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-dr-between",
+      "studyId": "fixture-study-doseranging",
+      "endpointId": "fixture-endpoint-dr-weight",
+      "armIds": [
+        "fixture-arm-dr-10mg",
+        "fixture-arm-dr-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-8.0",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-dr-comboA",
+      "studyId": "fixture-study-doseranging",
+      "endpointId": "fixture-endpoint-dr-weight",
+      "armIds": [
+        "fixture-arm-dr-comboA"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-8.5",
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-dr-comboB",
+      "studyId": "fixture-study-doseranging",
+      "endpointId": "fixture-endpoint-dr-weight",
+      "armIds": [
+        "fixture-arm-dr-comboB"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-8.7",
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-tp-w24-mitt",
+      "studyId": "fixture-study-timepoint",
+      "endpointId": "fixture-endpoint-tp-weight-w24",
+      "armIds": [
+        "fixture-arm-tp-active",
+        "fixture-arm-tp-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment policy",
+      "result": {
+        "value": "-9.0",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-timepoint-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-tp-w24-pp",
+      "studyId": "fixture-study-timepoint",
+      "endpointId": "fixture-endpoint-tp-weight-w24",
+      "armIds": [
+        "fixture-arm-tp-active",
+        "fixture-arm-tp-placebo"
+      ],
+      "analysisPopulation": "Per-protocol (overall)",
+      "estimand": "Treatment policy",
+      "result": {
+        "value": "-9.5",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-timepoint-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-tp-w24-t2d",
+      "studyId": "fixture-study-timepoint",
+      "endpointId": "fixture-endpoint-tp-weight-w24",
+      "armIds": [
+        "fixture-arm-tp-active",
+        "fixture-arm-tp-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (baseline type 2 diabetes subgroup)",
+      "estimand": "Treatment policy",
+      "result": {
+        "value": "-7.5",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-timepoint-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-tp-w72-mitt",
+      "studyId": "fixture-study-timepoint",
+      "endpointId": "fixture-endpoint-tp-weight-w72",
+      "armIds": [
+        "fixture-arm-tp-active",
+        "fixture-arm-tp-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment policy",
+      "result": {
+        "value": "-12.0",
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-timepoint-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
           }
         ]
       }

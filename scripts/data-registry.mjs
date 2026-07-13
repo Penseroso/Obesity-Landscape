@@ -1081,6 +1081,10 @@ function validateClinicalOutcome(outcome, context) {
   }
   if (outcome.result.resultType === "between-arm") {
     assert(outcome.armIds.length >= 2, `${context}: between-arm outcomes require at least two armIds`);
+    assert(
+      isNonEmptyString(outcome.result.comparisonType),
+      `${context}: between-arm outcomes require a comparisonType`,
+    );
   }
   assertOptionalNonEmptyString(outcome.result.comparisonType, `${context}: result.comparisonType`);
   assertOptionalNonEmptyString(outcome.result.confidenceInterval, `${context}: result.confidenceInterval`);
@@ -1103,6 +1107,49 @@ function getClinicalOutcomeSemanticKey(outcome) {
   ].join("|");
 }
 
+// Content identity for an Arm within its study. Two Arm records that share this key describe
+// the same real-world treatment configuration and would silently split the outcome semantic
+// key (getClinicalOutcomeSemanticKey trusts armIds as already-unique). titration and the
+// linkedAsset identity are included so genuinely distinct arms are not false-flagged. This is
+// a minimal defensive line against obvious duplicates, not complete semantic dedup.
+function getClinicalArmSemanticKey(arm) {
+  const linkedAsset = arm.linkedAsset ?? {};
+  const linkedAssetIdentity = [
+    linkedAsset.companyId,
+    linkedAsset.assetId,
+    linkedAsset.assetName,
+    linkedAsset.codeName,
+    linkedAsset.externalCompanyName,
+    linkedAsset.role,
+  ]
+    .map((value) => normalize(value ?? ""))
+    .join("~");
+  return [
+    arm.studyId,
+    normalize(arm.role),
+    normalize(arm.label),
+    normalize(arm.intervention),
+    normalize(arm.dose),
+    normalize(arm.titration ?? ""),
+    normalize(arm.route),
+    normalize(arm.dosingFrequency),
+    normalize(arm.treatmentDuration),
+    linkedAssetIdentity,
+  ].join("|");
+}
+
+// Content identity for an Endpoint within its study. assessmentTimepoint is part of the key,
+// so the same measure at different timepoints stays distinct (the intended FM-1 modeling)
+// while true duplicates under different ids are caught.
+function getClinicalEndpointSemanticKey(endpoint) {
+  return [
+    endpoint.studyId,
+    normalize(endpoint.name),
+    normalize(endpoint.classification),
+    normalize(endpoint.assessmentTimepoint),
+  ].join("|");
+}
+
 function validateClinicalEvidenceAggregate(aggregate, references, context) {
   assert(isObject(aggregate), `${context}: aggregate must be an object`);
   assert(Array.isArray(aggregate.studies), `${context}: studies must be an array`);
@@ -1120,6 +1167,8 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
   const outcomesByStudy = new Map();
   const outcomesByEndpoint = new Map();
   const semanticOutcomeKeys = new Set();
+  const armSemanticKeys = new Set();
+  const endpointSemanticKeys = new Set();
 
   for (const study of aggregate.studies) {
     validateClinicalStudy(study, `${context}: study ${study.id ?? "unknown-study"}`, references);
@@ -1141,6 +1190,9 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
     validateClinicalArm(arm, `${context}: arm ${arm.id ?? "unknown-arm"}`, references);
     assert(!armIds.has(arm.id), `${context}: duplicate arm id ${arm.id}`);
     assert(studyIds.has(arm.studyId), `${context}: arm ${arm.id} references missing study ${arm.studyId}`);
+    const armSemanticKey = getClinicalArmSemanticKey(arm);
+    assert(!armSemanticKeys.has(armSemanticKey), `${context}: duplicate arm semantics ${armSemanticKey}`);
+    armSemanticKeys.add(armSemanticKey);
     armIds.add(arm.id);
     const studyArms = armsByStudy.get(arm.studyId) ?? [];
     studyArms.push(arm);
@@ -1151,6 +1203,12 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
     validateClinicalEndpoint(endpoint, `${context}: endpoint ${endpoint.id ?? "unknown-endpoint"}`);
     assert(!endpointIds.has(endpoint.id), `${context}: duplicate endpoint id ${endpoint.id}`);
     assert(studyIds.has(endpoint.studyId), `${context}: endpoint ${endpoint.id} references missing study ${endpoint.studyId}`);
+    const endpointSemanticKey = getClinicalEndpointSemanticKey(endpoint);
+    assert(
+      !endpointSemanticKeys.has(endpointSemanticKey),
+      `${context}: duplicate endpoint semantics ${endpointSemanticKey}`,
+    );
+    endpointSemanticKeys.add(endpointSemanticKey);
     endpointIds.add(endpoint.id);
     const studyEndpoints = endpointsByStudy.get(endpoint.studyId) ?? [];
     studyEndpoints.push(endpoint);
@@ -1178,7 +1236,10 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
     }
 
     const semanticKey = getClinicalOutcomeSemanticKey(outcome);
-    assert(!semanticOutcomeKeys.has(semanticKey), `${context}: duplicate semantic outcome ${semanticKey}`);
+    assert(
+      !semanticOutcomeKeys.has(semanticKey),
+      `${context}: duplicate semantic outcome ${semanticKey} — if only the timepoint differs, model it as a distinct Endpoint record (assessmentTimepoint and maturity are excluded from the semantic key)`,
+    );
     semanticOutcomeKeys.add(semanticKey);
     outcomeIds.add(outcome.id);
 
@@ -1431,6 +1492,8 @@ function validateClinicalEvidenceSyntheticFixtures() {
       fixture.endpoints.push({
         ...cloneJson(fixture.endpoints[0]),
         id: "fixture-endpoint-without-outcome",
+        name: "Percent change in body weight (secondary timepoint)",
+        assessmentTimepoint: "Week 52",
       });
     }],
     ["missing-arm-route", /route is required/, (fixture) => {
@@ -1456,6 +1519,21 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["between-arm-single-arm", /between-arm outcomes require at least two armIds/, (fixture) => {
       fixture.outcomes[0].armIds = [fixture.outcomes[0].armIds[0]];
+    }],
+    ["between-arm-without-comparison", /between-arm outcomes require a comparisonType/, (fixture) => {
+      delete fixture.outcomes[0].result.comparisonType;
+    }],
+    ["duplicate-arm-semantics", /duplicate arm semantics/, (fixture) => {
+      fixture.arms.push({
+        ...cloneJson(fixture.arms[0]),
+        id: "fixture-arm-semantic-duplicate",
+      });
+    }],
+    ["duplicate-endpoint-semantics", /duplicate endpoint semantics/, (fixture) => {
+      fixture.endpoints.push({
+        ...cloneJson(fixture.endpoints[0]),
+        id: "fixture-endpoint-semantic-duplicate",
+      });
     }],
     ["study-without-arm", /has no arms/, (fixture) => {
       fixture.studies.push(secondStudy);

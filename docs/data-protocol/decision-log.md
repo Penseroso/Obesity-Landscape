@@ -30,6 +30,10 @@ entry.
 - **Study classification, indication scope, and row-merge sufficiency:**
   ADR-0032 (refines ADR-0030's row-splitting rule), corrected by ADR-0033
   (independent classification axes, tightened regimen test).
+- **Clinical Evidence architecture remediation (Preflight B):** ADR-0034
+  (refines ADR-0029; documentation clarifications, minimal Arm/Endpoint
+  semantic-duplicate and between-arm `comparisonType` validator checks, and
+  recorded deferrals).
 
 ---
 
@@ -745,3 +749,71 @@ when decided, recorded as a new appended ADR.
   values. Existing operating data is not retroactively modified by this ADR;
   applying the corrected rules to the Eli Lilly dataset is a data-correction
   follow-up, tracked separately.
+
+## ADR-0034 — Clinical Architecture Preflight B: documentation and validator remediation
+
+- **Date:** 2026-07-13
+- **Status:** Accepted (current)
+- **Refines:** ADR-0029 (the Clinical Evidence obesity-result contract). Does not
+  rewrite it (append-only rule). Adds no new fields to
+  `lib/clinical-evidence/types.ts` and no broad schema redesign; the maturity,
+  result-type, and arm-role enums are unchanged. Actions the documentation and
+  validator vulnerabilities identified by the Preflight A audit
+  (`docs/clinical-evidence/architecture-preflight-a.md`) before Module 5.
+- **Decision:**
+  1. **Documentation clarifications** in `docs/clinical-evidence/README.md`, the
+     workflow, and the research prompt: (a) the same measure at different
+     timepoints requires distinct Endpoint records, and `assessmentTimepoint` and
+     `maturity` are excluded from the outcome semantic key (FM-1); (b) an Arm is a
+     treatment configuration within one study, not a cohort/sub-study, and a
+     distinct sub-study is its own Study (FM-4); (c) `analysisPopulation` encodes
+     analysis set + subgroup in a fixed phrasing order (FM-6); (d) required
+     background/concomitant therapy is free text on `arm.intervention`/`arm.label`
+     and `study.population`, per ADR-0033 (FM-7); (e) a `between-arm` outcome's
+     `comparisonType` must state effect measure and reference direction (invariant
+     6); (f) reuse existing Arm/Endpoint ids rather than authoring semantic
+     duplicates (FM-10); (g) how to choose a single `maturity` value when finality
+     and venue diverge and how a regulatory-sourced result maps (FM-5). The Outcome
+     field list now names `estimand`/`comparisonType`, enumerates the six maturity
+     values, and no longer implies the timepoint is stored on the Outcome.
+  2. **Minimal validator changes** in `scripts/data-registry.mjs`, retaining the
+     existing fail-fast `assert` style and all pinned error substrings: a per-study
+     Arm semantic-duplicate check (key over study, role, label, intervention, dose,
+     titration, route, dosing frequency, treatment duration, and normalized
+     `linkedAsset` identity) and a per-study Endpoint semantic-duplicate check (key
+     over study, name, classification, `assessmentTimepoint`); a required non-empty
+     `comparisonType` on `between-arm` outcomes; and a timepoint hint appended to
+     the duplicate-semantic-outcome error.
+  3. **Synthetic coverage** added to the in-memory fixture harness: valid probes
+     (distinct timepoints as distinct endpoints; arms distinct by dose, by
+     titration, and by `linkedAsset`; three distinct `analysisPopulation` strings;
+     background-therapy free text; directional `comparisonType`) and invalid probes
+     (`duplicate-arm-semantics`, `duplicate-endpoint-semantics`,
+     `between-arm-without-comparison`).
+- **Rationale:** Preflight A found the model "ready with documented limitations."
+  The cheap documentation ambiguities and the two validator gaps are closed here so
+  Module 5 does not begin on top of them. The Arm/Endpoint semantic-duplicate checks
+  are a **minimal defensive line against obvious identical duplicates, not a complete
+  guarantee** — non-identical paraphrases that normalize differently still bypass the
+  outcome semantic key, so the dedupe-before-create documentation rule remains the
+  primary control and FM-10 stays partially open. `titration` and the `linkedAsset`
+  identity are included in the Arm key so genuinely distinct arms are not
+  false-flagged. Requiring `comparisonType` presence on `between-arm` outcomes closes
+  the machine-checkable half of the comparison-direction gap; the direction wording
+  stays a documented convention a validator cannot judge.
+- **Deferred (recorded, not solved):** Four selected limitations are newly
+  registered as rows in `docs/data-protocol/edge-cases.md` — shared registry
+  identifier across master-protocol sub-studies or multiple focal assets (schema
+  limitation; not representable, do not invent surrogate registry ids); cross-study
+  pooled analyses; splitting `maturity` into finality × venue plus a regulatory
+  value; and semantically duplicate Arm/Endpoint records. Field-level source
+  provenance is already logged there (the provenance rows). The remaining deferrals
+  carried forward from Preflight A §6 — structured endpoint hierarchy /
+  measurement-method vocabulary, numeric typing of `result.value`, and
+  unmet/unreported prespecified-endpoint visibility — are tracked in that report
+  rather than re-registered here. None blocks Module 5.
+- **Consequences:** No type/schema change, no enum change, no operating-data change
+  (`data/clinical-evidence/**` stays empty; the generated aggregate stays empty and
+  byte-identical), and no routing/UI change — the clinical route remains reserved and
+  inactive (ADR-0027). The new validator checks and probes are exercised by
+  `npm run data:validate:clinical-evidence:synthetic`.

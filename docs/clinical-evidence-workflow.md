@@ -117,6 +117,26 @@ Populate the implemented `Study`, `Arm`, `Endpoint`, and `Outcome` structures in
 
 - Store experimental, placebo, and active-comparator groups as parallel Arms.
 - Store treatment and comparator arms using the same structure.
+- Treat an Arm as a treatment configuration **within one study**, not a cohort or
+  sub-study. If a platform trial's "cohort" is effectively a distinct sub-study
+  (own population, endpoints, or focal asset), model it as its own Study —
+  **provided that sub-study has its own distinct registry identity**. A master
+  protocol that shares one registry identifier across multiple sub-studies, or
+  covers multiple focal assets under one identifier, is **not representable** and is
+  deferred (do not invent surrogate registry ids); see the README study-grouping
+  note and ADR-0034.
+- Capture required background or concomitant therapy in free text on
+  `arm.intervention` / `arm.label` and `study.population`; it is not a structured
+  field. A protocol-required standard-of-care background is not promoted to a
+  regimen or a separate asset (ADR-0033).
+- Model the same measure at different timepoints as **distinct Endpoint records**,
+  one per timepoint — not one Endpoint with multiple Outcomes (`assessmentTimepoint`
+  is excluded from the outcome semantic key).
+- Author `analysisPopulation` in a consistent order — analysis set first, then
+  subgroup in parentheses (e.g. "Modified intention-to-treat (overall)").
+- For a `between-arm` outcome, populate `comparisonType` with both the effect
+  measure and the reference direction (e.g. "Least-squares mean difference,
+  treatment minus placebo").
 - Store only endpoints with disclosed results.
 - Keep efficacy outcomes source-reported.
 - Store only a concise study-level safety summary covering major adverse-event
@@ -137,6 +157,13 @@ data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
 Use stable IDs. Reuse existing Study, Arm, Endpoint, and Outcome IDs when
 updating a previously entered study or semantic outcome. Do not create parallel
 Outcome records for superseded result versions.
+
+Deduplicate Arms and Endpoints **before** creating them: if an existing Arm already
+describes the same real-world treatment configuration, or an existing Endpoint the
+same measure at the same timepoint, reuse its id rather than minting a second
+surrogate id. Semantically duplicate Arm/Endpoint records under different ids
+silently defeat outcome duplicate detection; the validator blocks only the obvious
+identical case, so reuse is the primary control.
 
 When a value changes:
 

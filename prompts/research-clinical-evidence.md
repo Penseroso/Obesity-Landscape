@@ -72,26 +72,45 @@ Follow these steps:
     efficacy outcomes source-reported. Do not calculate derived efficacy values;
     store adjusted or comparative values only when directly reported.
 
-11. **Handle safety concisely.** Store only a concise study-level safety summary
+11. **Author entities per the contract conventions.** An Arm is a treatment
+    configuration within one study, not a cohort or sub-study — model a distinct
+    sub-study/cohort as its own Study **when it has its own distinct registry
+    identity**; a master protocol sharing one registry identifier across sub-studies
+    or focal assets is not representable and is deferred (do not invent surrogate
+    registry ids). Capture required background or concomitant
+    therapy in free text on `arm.intervention`/`arm.label` and `study.population`,
+    not as a structured field (ADR-0033). Model the same measure at different
+    timepoints as **distinct Endpoint records**, one per timepoint. Author
+    `analysisPopulation` in a consistent order (analysis set first, then subgroup
+    in parentheses). For a `between-arm` outcome, populate `comparisonType` with
+    both the effect measure and the reference direction (e.g. "Least-squares mean
+    difference, treatment minus placebo").
+
+12. **Reuse Arm and Endpoint ids; do not duplicate them.** Before creating an Arm
+    or Endpoint, reuse the id of an existing record that already describes the same
+    real-world configuration or measure. Semantically duplicate Arm/Endpoint
+    records under different ids silently defeat outcome duplicate detection.
+
+13. **Handle safety concisely.** Store only a concise study-level safety summary
     covering major adverse-event patterns, serious adverse events,
     discontinuation, or notable safety signals when reported. Do not reproduce
     exhaustive adverse-event tables.
 
-12. **Replace semantic outcomes in place.** For the same semantic outcome, keep
+14. **Replace semantic outcomes in place.** For the same semantic outcome, keep
     only the latest authoritative value in operating data. Update existing
     Study, Endpoint, and Outcome records rather than creating duplicate
     versions. Preserve useful historical source references for traceability.
 
-13. **Defer unresolved conflicts.** When sources conflict and priority plus
+15. **Defer unresolved conflicts.** When sources conflict and priority plus
     recency do not resolve the discrepancy, defer the affected Outcome and
     report the conflict.
 
-14. **Protect Company/Pipeline data.** If clinical research reveals a material
+16. **Protect Company/Pipeline data.** If clinical research reveals a material
     conflict with an existing asset, program, regimen, stage, or status, do not
     edit Company/Pipeline source data. Record the discrepancy in the final
     report and recommend a separate Company/Pipeline refresh.
 
-15. **Regenerate and validate.** After Clinical Evidence source edits, run:
+17. **Regenerate and validate.** After Clinical Evidence source edits, run:
     `npm run data:generate`,
     `npm run data:validate:clinical-evidence`,
     `npm run data:validate:clinical-evidence:generated`,
@@ -99,7 +118,7 @@ Follow these steps:
     `npm run data:validate:generated`. Also run `npm run lint`,
     `npm run build`, and `git diff --check` before final reporting.
 
-16. **Report completely.** Communicate whether this was an initial Clinical
+18. **Report completely.** Communicate whether this was an initial Clinical
     Evidence investigation or update; the assets traversed; studies entered or
     updated; result-bearing studies not entered because they were not selected
     for the major evidence set; studies excluded for no result; studies excluded
