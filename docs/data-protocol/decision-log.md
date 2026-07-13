@@ -801,14 +801,17 @@ when decided, recorded as a new appended ADR.
   false-flagged. Requiring `comparisonType` presence on `between-arm` outcomes closes
   the machine-checkable half of the comparison-direction gap; the direction wording
   stays a documented convention a validator cannot judge.
-- **Deferred (recorded, not solved):** shared registry identifier across
-  master-protocol sub-studies or multiple focal assets (schema limitation; not
-  representable, do not invent surrogate registry ids); cross-study pooled analyses;
-  splitting `maturity` into finality × venue plus a regulatory value; field-level
-  source provenance (already logged, edge-cases rows for provenance); structured
-  endpoint hierarchy / measurement-method vocabulary; numeric typing of
-  `result.value`; and unmet/unreported prespecified-endpoint visibility. These are
-  logged in `docs/data-protocol/edge-cases.md`; none blocks Module 5.
+- **Deferred (recorded, not solved):** Four selected limitations are newly
+  registered as rows in `docs/data-protocol/edge-cases.md` — shared registry
+  identifier across master-protocol sub-studies or multiple focal assets (schema
+  limitation; not representable, do not invent surrogate registry ids); cross-study
+  pooled analyses; splitting `maturity` into finality × venue plus a regulatory
+  value; and semantically duplicate Arm/Endpoint records. Field-level source
+  provenance is already logged there (the provenance rows). The remaining deferrals
+  carried forward from Preflight A §6 — structured endpoint hierarchy /
+  measurement-method vocabulary, numeric typing of `result.value`, and
+  unmet/unreported prespecified-endpoint visibility — are tracked in that report
+  rather than re-registered here. None blocks Module 5.
 - **Consequences:** No type/schema change, no enum change, no operating-data change
   (`data/clinical-evidence/**` stays empty; the generated aggregate stays empty and
   byte-identical), and no routing/UI change — the clinical route remains reserved and

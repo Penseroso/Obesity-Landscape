@@ -74,7 +74,10 @@ Follow these steps:
 
 11. **Author entities per the contract conventions.** An Arm is a treatment
     configuration within one study, not a cohort or sub-study — model a distinct
-    sub-study/cohort as its own Study. Capture required background or concomitant
+    sub-study/cohort as its own Study **when it has its own distinct registry
+    identity**; a master protocol sharing one registry identifier across sub-studies
+    or focal assets is not representable and is deferred (do not invent surrogate
+    registry ids). Capture required background or concomitant
     therapy in free text on `arm.intervention`/`arm.label` and `study.population`,
     not as a structured field (ADR-0033). Model the same measure at different
     timepoints as **distinct Endpoint records**, one per timepoint. Author

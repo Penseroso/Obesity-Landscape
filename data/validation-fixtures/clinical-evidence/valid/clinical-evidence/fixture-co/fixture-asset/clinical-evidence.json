@@ -326,7 +326,7 @@
         "value": "-8.0",
         "unit": "percentage points",
         "resultType": "between-arm",
-        "comparisonType": "placebo-adjusted",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
         "confidenceInterval": "synthetic 95% CI",
         "pValue": "synthetic p-value"
       },

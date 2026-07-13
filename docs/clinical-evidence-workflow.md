@@ -119,7 +119,12 @@ Populate the implemented `Study`, `Arm`, `Endpoint`, and `Outcome` structures in
 - Store treatment and comparator arms using the same structure.
 - Treat an Arm as a treatment configuration **within one study**, not a cohort or
   sub-study. If a platform trial's "cohort" is effectively a distinct sub-study
-  (own population, endpoints, or focal asset), model it as its own Study.
+  (own population, endpoints, or focal asset), model it as its own Study —
+  **provided that sub-study has its own distinct registry identity**. A master
+  protocol that shares one registry identifier across multiple sub-studies, or
+  covers multiple focal assets under one identifier, is **not representable** and is
+  deferred (do not invent surrogate registry ids); see the README study-grouping
+  note and ADR-0034.
 - Capture required background or concomitant therapy in free text on
   `arm.intervention` / `arm.label` and `study.population`; it is not a structured
   field. A protocol-required standard-of-care background is not promoted to a
