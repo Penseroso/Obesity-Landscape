@@ -13,6 +13,7 @@ import {
   getProgramFilterOptions,
   sortProgramsForRegister,
 } from "@/lib/programs/selectors";
+import type { AssetStudyPreview } from "@/lib/clinical-evidence/selectors";
 import type { PipelineProgram, ProgramFilters } from "@/lib/programs/types";
 import { formatInlineValues, formatNullableValue } from "@/lib/format";
 import { ColumnSettings } from "./ColumnSettings";
@@ -24,6 +25,13 @@ import { useProgramTableColumns } from "./useProgramTableColumns";
 
 type PipelineTableProps = {
   programs: PipelineProgram[];
+  /**
+   * `companyId|assetId` -> asset-scoped clinical preview, for assets that have
+   * Clinical Evidence. Precomputed on the server so this client component never
+   * imports the clinical data layer; used to render the trial preview inside the
+   * detail drawer.
+   */
+  clinicalPreviewByAssetKey?: Record<string, AssetStudyPreview>;
 };
 
 function getAssetLabel(program: PipelineProgram) {
@@ -77,12 +85,22 @@ function getProgramCellValue(
   }
 }
 
-export function PipelineTable({ programs }: PipelineTableProps) {
+export function PipelineTable({
+  programs,
+  clinicalPreviewByAssetKey,
+}: PipelineTableProps) {
   const [filters, setFilters] = useState<ProgramFilters>(emptyProgramFilters);
   const [selectedProgram, setSelectedProgram] = useState<PipelineProgram | null>(
     null,
   );
   const triggerRowRef = useRef<HTMLTableRowElement | null>(null);
+
+  const clinicalPreview =
+    selectedProgram && clinicalPreviewByAssetKey
+      ? clinicalPreviewByAssetKey[
+          `${selectedProgram.companyId}|${selectedProgram.assetId}`
+        ] ?? null
+      : null;
 
   const openProgram = (
     program: PipelineProgram,
@@ -208,7 +226,11 @@ export function PipelineTable({ programs }: PipelineTableProps) {
           </table>
         </div>
       </section>
-      <ProgramDetailDrawer program={selectedProgram} onClose={closeDrawer} />
+      <ProgramDetailDrawer
+        program={selectedProgram}
+        clinicalPreview={clinicalPreview}
+        onClose={closeDrawer}
+      />
     </div>
   );
 }

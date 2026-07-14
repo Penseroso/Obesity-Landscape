@@ -10,6 +10,9 @@ out/
 build/
 dist/
 
+# TypeScript
+*.tsbuildinfo
+
 # local env
 .env
 .env*.local

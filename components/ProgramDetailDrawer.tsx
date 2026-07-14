@@ -1,11 +1,20 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
+import { SourceList } from "@/components/SourceList";
+import { StudyPreviewList } from "@/components/clinical/StudyPreviewList";
+import type { AssetStudyPreview } from "@/lib/clinical-evidence/selectors";
 import { formatInlineValues, formatNullableValue } from "@/lib/format";
 import type { PipelineProgram } from "@/lib/programs/types";
 
 type ProgramDetailDrawerProps = {
   program: PipelineProgram | null;
+  /**
+   * Asset-scoped clinical preview when this asset has Clinical Evidence, else
+   * null. Precomputed server-side so this client component never imports the
+   * clinical data layer.
+   */
+  clinicalPreview?: AssetStudyPreview | null;
   onClose: () => void;
 };
 
@@ -25,6 +34,7 @@ const FOCUSABLE_SELECTOR =
 
 export function ProgramDetailDrawer({
   program,
+  clinicalPreview,
   onClose,
 }: ProgramDetailDrawerProps) {
   const panelRef = useRef<HTMLElement>(null);
@@ -148,6 +158,9 @@ export function ProgramDetailDrawer({
           </div>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">
+          {clinicalPreview ? (
+            <StudyPreviewList preview={clinicalPreview} />
+          ) : null}
           <dl>
             <DetailRow label="Program ID" value={program.id} />
             <DetailRow label="Asset ID" value={program.assetId} />
@@ -187,21 +200,7 @@ export function ProgramDetailDrawer({
                 Sources
               </dt>
               <dd className="space-y-2 text-sm">
-                {program.metadata.sources.length > 0 ? (
-                  program.metadata.sources.map((source) => (
-                    <a
-                      key={`${source.url}-${source.checkedAt}`}
-                      href={source.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="block font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                    >
-                      {source.title ?? source.url}
-                    </a>
-                  ))
-                ) : (
-                  <span className="text-foreground">N/A</span>
-                )}
+                <SourceList sources={program.metadata.sources} emptyLabel="N/A" />
               </dd>
             </div>
           </dl>
