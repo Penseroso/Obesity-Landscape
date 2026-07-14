@@ -24,7 +24,7 @@ type ProgramDetailDrawerProps = {
   onClose: () => void;
 };
 
-const DRAWER_TRANSITION_MS = 200;
+const DRAWER_TRANSITION_MS = 240;
 
 function DetailRow({ label, value }: { label: string; value?: string | null }) {
   return (
@@ -240,7 +240,7 @@ export function ProgramDetailDrawer({
     >
       <button
         aria-label="Close program detail"
-        className={`absolute inset-0 cursor-default bg-foreground/30 transition-opacity duration-200 ease-out motion-reduce:transition-none ${
+        className={`absolute inset-0 cursor-default bg-foreground/30 transition-opacity duration-[240ms] ease-out motion-reduce:transition-none ${
           isOpen ? "opacity-100" : "opacity-0"
         }`}
         onClick={onClose}
@@ -250,8 +250,8 @@ export function ProgramDetailDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={headingId}
-        className={`absolute inset-y-0 right-0 m-0 flex h-dvh w-full max-w-2xl transform flex-col border-l border-border bg-card p-0 shadow-soft transition-transform duration-200 ease-out motion-reduce:transition-none ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`absolute inset-y-0 right-0 m-0 flex h-dvh w-full max-w-2xl flex-col border-l border-border bg-card p-0 shadow-soft transition-opacity duration-[240ms] ease-out motion-reduce:transition-none ${
+          isOpen ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="border-b border-border px-6 py-5">
