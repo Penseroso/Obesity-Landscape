@@ -183,8 +183,11 @@ export function getStudyDetail(studyId: string): StudyDetailView | undefined {
     const endpoint = endpointsById.get(outcome.endpointId);
     if (!endpoint) {
       // The contract guarantees every outcome resolves an endpoint in the same
-      // study; skip defensively rather than render an orphan.
-      continue;
+      // study; a violation means the generated data is corrupt, not something
+      // to silently hide from the UI.
+      throw new Error(
+        `Clinical Evidence outcome "${outcome.id}" references missing endpoint "${outcome.endpointId}" in study "${studyId}"`,
+      );
     }
     const view: OutcomeView = {
       outcome,
