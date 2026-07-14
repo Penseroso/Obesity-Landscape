@@ -1,17 +1,17 @@
 # Clinical Evidence Source Data
 
-Editable Clinical Evidence source files live under company and asset folders:
+Human-edited Clinical Evidence v3 source files live at:
 
 ```text
-data/clinical-evidence/
-└─ <company-id>/
-   └─ <asset-id>/
-      └─ clinical-evidence.json
+data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
 ```
 
-Each `clinical-evidence.json` file contains parallel `studies`, `arms`,
-`endpoints`, and `outcomes` arrays for that company/asset. Source files are
-authoritative. `data/generated/clinical-evidence.json` is generated and must not
-be edited by hand.
+Each file declares `clinicalEvidenceSchemaVersion: "3.0"` and contains
+`studies`, `arms`, `analysisGroups`, `endpoints`, and `outcomes` arrays. An
+inventory Study may have no recorded Outcome.
 
-No real clinical evidence has been collected in this module.
+Source files are authoritative. Generated aggregates and the reciprocal
+asset-study projection under `data/generated/` must not be edited by hand.
+Use the [Clinical Evidence contract](../../docs/clinical-evidence/README.md) for
+semantics and the [research workflow](../../docs/clinical-evidence-workflow.md)
+for execution.

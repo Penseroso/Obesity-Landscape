@@ -1,3 +1,10 @@
+---
+role: historical-diagnostic-report
+status: historical
+authority: non-authoritative
+update-boundary: Frozen initial diagnostic evidence; excluded from active reading and validation paths.
+---
+
 # Ascletis Stress-Test Findings
 
 Ascletis was investigated as an initial company-wide pilot because no existing

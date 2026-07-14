@@ -1,3 +1,10 @@
+---
+role: historical-audit
+status: historical
+authority: non-authoritative
+update-boundary: Frozen point-in-time preflight; do not update for current implementation changes.
+---
+
 # Clinical Architecture Preflight A
 
 Audit-only readiness review of the Clinical Evidence v2 data model, performed before

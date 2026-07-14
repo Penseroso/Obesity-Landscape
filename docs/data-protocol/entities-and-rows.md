@@ -1,11 +1,15 @@
+---
+role: company-pipeline-semantic-contract
+status: active
+authority: authoritative
+update-boundary: Update when identity, entity, row-splitting, combination, regimen, or reference semantics change.
+---
+
 # Entities and Rows
 
-Working rules for companies, assets, program identity, mutable state, row
-splitting, and stable IDs. These rules **refine and supersede** the simplified
-"Program Row Rule" in the root `README.md`; where the two differ, this document
-governs. The most important refinement: the root rule historically implied that
-stage and status help distinguish records — under this protocol **stage and
-status are mutable state and are never part of program identity or stable IDs**.
+Canonical rules for companies, assets, program identity, mutable state, row
+splitting, and stable IDs. Stage and status are mutable state and are never
+part of program identity or stable IDs.
 
 ## Company
 
@@ -257,17 +261,3 @@ evidence. Content rules for what may populate `indications` are defined in
   distinguish route or dosage form).
 - **Do not** prescribe a final suffix algorithm before pilot data exists; the
   exact scheme is deferred (see `decision-log.md`).
-
-## Relationship to the root README rule
-
-The root `README.md` keeps a concise "Program Row Rule" for orientation. This
-document is the authoritative source. Specifically, it:
-
-- **Supersedes** any implication that stage or status contributes to permanent
-  program identity — here they are mutable state that updates existing records.
-- **Refines** "separate records for different routes/dosage forms" by tying row
-  splitting to concurrently active development configurations.
-- **Adds** the indication-scope condition (same company/asset/route/dosage
-  form/stage/status/operational state, the same sponsor-defined development
-  program or trial family, and direct source support for the full merged
-  scope) for when indications may share a row.

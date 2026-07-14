@@ -1,3 +1,10 @@
+---
+role: company-pipeline-entry-contract
+status: active
+authority: authoritative
+update-boundary: Update when source authority, field-entry, status, date, metadata, or registry-promotion semantics change.
+---
+
 # Source and Entry Policy
 
 There is **no single global source hierarchy**. Source authority is evaluated
@@ -433,42 +440,6 @@ as an alias if useful. Do not create a duplicate canonical entry. If officiality
 or meaning is insufficiently supported, do not promote it; report it as a
 deferred finding.
 
-## Research checklist
-
-Before entering or updating a record:
-
-- [ ] Search for an existing **company** (reuse it if found).
-- [ ] Search for an existing **asset** (reuse it if found), including by known
-      **aliases**, former names, and development codes.
-- [ ] **Reuse stable IDs**; do not renumber. On a rename, update `assetName` and
-      add the former name as a `former-name` alias — never a new `assetId`.
-- [ ] Confirm **development intent**.
-- [ ] Confirm **route** and **dosage form**.
-- [ ] Confirm **indication**.
-- [ ] Confirm **stage** and **status**.
-- [ ] Confirm regulatory-development stage and regulatory-state details when
-      present.
-- [ ] Classify each surfaced study on both axes — **intervention model**
-  (monotherapy, combination product, regimen, or add-on/background-therapy
-  program) and **protocol structure** (standalone or platform/master
-  protocol) — before modeling it as a row (see `entities-and-rows.md`).
-- [ ] Confirm each `indications` value is a disease or clinically defined
-  treatment indication, not background therapy, prior-treatment conditions, age
-  cohorts, trial objectives, outcome labels, or other population descriptors.
-- [ ] Confirm component identities and company relationships without inference.
-- [ ] Keep internal references company-folder-local and represent other
-  companies/assets as external references.
-- [ ] Add regimen `configurationKey` only when an official stable configuration
-  discriminator is needed and confirmed.
-- [ ] Check registry labels and aliases before adding new vocabulary.
-- [ ] Retrieve appropriate **primary or direct official sources** for each claim.
-- [ ] Review **each source completely** for every distinct entity and
-  configuration it discloses, not only the record that led to it.
-- [ ] Record **publication and access dates** at the most precise verified
-  precision, and set `sourceType` to describe the artifact at the URL.
-- [ ] Check for **unsupported inference**.
-- [ ] Check for a **duplicate program configuration**.
-- [ ] Confirm every surfaced entity is finally **entered/updated, deferred with
-  a specific reason, or excluded with a scope or evidence reason** — none
-  silently dropped.
-- [ ] Log any **structural ambiguity** as an edge case.
+Research order, coverage checks, validation, and reporting belong to the
+[Company/Pipeline Research Workflow](../research-workflow.md). This document
+defines entry semantics only.

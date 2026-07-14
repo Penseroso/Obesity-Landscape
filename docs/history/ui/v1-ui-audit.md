@@ -1,3 +1,10 @@
+---
+role: historical-audit
+status: historical
+authority: non-authoritative
+update-boundary: Frozen closed audit; current UI behavior belongs in docs/ui/README.md.
+---
+
 # Obesity Landscape — V1 UI Audit
 
 > Diagnostic-only audit of the V1 UI after Modules 1–3.1A. No implementation,

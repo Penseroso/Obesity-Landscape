@@ -1,277 +1,119 @@
+---
+role: company-pipeline-contract-index
+status: active
+authority: authoritative
+update-boundary: Update for Company/Pipeline scope, contract version, canonical document ownership, or dataset-layout changes.
+---
+
 # Data Protocol
 
-Operating rules for competitor pipeline research and pilot data entry.
-
-This protocol (Module 5) defines **how data is researched and entered**. The
-current data contract — the TypeScript types in `lib/programs/types.ts`, the
-`data/registries/` vocabularies, the `scripts/data-registry.mjs` validators, and
-these protocol documents — is **Contract 1.1** (ADR-0030). Contract 1.1 keeps
-the stable, company-local identity model of the earlier baseline and adds typed
-asset `aliases`, sharpened identity, row-splitting, combination/regimen, source,
-and status/operational-state rules (see [Contract 1.1 at a
-glance](#contract-11-at-a-glance)). Remaining structural gaps are logged as edge
-cases and deferred to the [v2 backlog](#v2-backlog) rather than resolved by
-speculative schema changes now. Individual fields still noted as "provisional" or
-"open until pilot" mark where a future change is expected; they do not by
-themselves reopen Contract 1.1.
+Canonical entry point for Company/Pipeline scope and contract ownership. It
+defines what belongs in the dataset and routes each semantic topic to one
+authority. It does not repeat the research procedure.
 
 ## Versioning
 
-Two version numbers apply to this project and change independently:
+Two independent versions apply:
 
-- **Contract 1.1** — the current data contract: the TypeScript types in
-  `lib/programs/types.ts`, the `data/registries/` vocabularies, the
-  `scripts/data-registry.mjs` validators, identity rules (including immutable
-  `assetId`, canonical `assetName`, and typed `aliases`), registry-backed
-  fields, and generated-output behavior (ADR-0030, which supersedes the earlier
-  ADR-0025 baseline). Contract 1.1 is the versioned schema; it is not redesigned
-  by scope or wording changes.
-- **Scope v1.1** — the current operating inclusion scope for the
-  obesity/incretin competitive landscape (ADR-0026): which programs are
-  in or out of the dataset.
+- **Company/Pipeline Contract 1.1**: types, registries, validators, identity,
+  entry semantics, and generated-output behavior.
+- **Scope v1.1**: inclusion boundary for the obesity/incretin competitive
+  landscape.
 
-A scope change (what is included or excluded) does **not** imply a contract
-change. A contract change (schema, validators, identity rules, or
-generated-output behavior) is a new contract version — the move from the earlier
-baseline to Contract 1.1 is exactly such a change (ADR-0030). The project name
-"Obesity Landscape" reflects Scope v1.1 and is not tied to the contract version.
+A scope change does not imply a schema change. Clinical Evidence uses its own
+independently versioned [contract](../clinical-evidence/README.md).
 
-## Start here
+## Canonical ownership
 
-Read this file first, then follow the authoritative document for the topic at
-hand. Each rule has **one** authoritative home; other documents cross-reference
-it instead of restating it at length.
-
-| Topic | Authoritative source |
+| Topic | Authority |
 | --- | --- |
-| Fixed decisions, ADR history, current-decision index | [`decision-log.md`](./decision-log.md) |
-| Identity, mutable state, row splitting, stable IDs, combinations, regimens | [`entities-and-rows.md`](./entities-and-rows.md) |
-| Evidence hierarchy, stage semantics, source rules, field entry, dates, registry promotion | [`source-and-entry-policy.md`](./source-and-entry-policy.md) |
-| Structural cases the v1 contract cannot yet represent (v2 backlog) | [`edge-cases.md`](./edge-cases.md) |
-| What `data/generated/` guarantees to downstream consumers | [`generated-output-contract.md`](./generated-output-contract.md) |
-| Separate Clinical Evidence domain boundary | [`../clinical-evidence/README.md`](../clinical-evidence/README.md) |
-| Clinical Evidence research workflow (active; see [`../research-routing.md`](../research-routing.md)) | [`../clinical-evidence-workflow.md`](../clinical-evidence-workflow.md) |
-| Dataset scope, data layout, operating model, glossary | [`README.md`](./README.md) (this file) |
+| Dataset scope, versions, layout | This file |
+| Identity, mutable state, stable IDs, row splitting, combinations, regimens, references | [Entities and Rows](./entities-and-rows.md) |
+| Evidence, source authority, entry, dates, statuses, registry promotion | [Source and Entry Policy](./source-and-entry-policy.md) |
+| Generated artifacts and consumer guarantees | [Generated Output Contract](./generated-output-contract.md) |
+| Current structural limitations and re-entry triggers | [Edge Cases](./edge-cases.md) |
+| Decision background and current-authority pointers | [Compact Decision Index](./decision-log.md) |
+| Company research execution | [Company/Pipeline Research Workflow](../research-workflow.md) |
 
-The company-research workflow
-([`docs/research-workflow.md`](../research-workflow.md)) and the reusable prompt
-([`prompts/research-company.md`](../../prompts/research-company.md)) apply this
-protocol and point here for scope, evidence, identity, row, and entry rules
-rather than restating them.
-
-A point-in-time check that the registries, TypeScript types, validators,
-operating data, and generated outputs agree is recorded in
-[`consistency-audit.md`](./consistency-audit.md).
-
-## Contract 1.1 at a glance
-
-A compact map of Contract 1.1. Each line links to its authoritative rule; the
-governing ADRs are noted in parentheses.
-
-- **Identity is stable and company-local.** Company, asset, and program IDs are
-  stable and reused; other companies and their assets are represented by name
-  with `externalCompanyName`, with no global entity graph. See
-  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0002, ADR-0022).
-- **`assetId` is immutable; `assetName` is the current official canonical
-  name.** A rename updates `assetName` (and records the former name as an alias)
-  and never creates a new asset or program. Former names, confirmed development
-  codes, brand names, and alternative spellings are stored as typed `aliases`.
-  See [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0030).
-- **Stage and status are mutable, never identity.** They update the existing
-  record and never appear in stable IDs. Split program rows when an
-  indication-specific `development.stage`, `development.status`, or
-  `stageOperationalState` differs for the same asset/route/dosage form. See
-  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0003, ADR-0004, ADR-0030).
-- **`development.stage` is the most advanced official current development
-  stage** for the specific program scope. Clinical phase is one category within
-  it; regulatory-development milestones such as `IND submitted` and
-  `IND cleared` are valid stages when they are the most advanced official
-  current stage, and are never approximated as clinical phases. `stageBasis` and
-  `stageOperationalState` annotate the evidence basis and operational state, and
-  `regulatoryStates` preserves jurisdiction, authority, and date. See
-  [`source-and-entry-policy.md`](./source-and-entry-policy.md) (ADR-0024).
-- **Combinations versus regimens.** Fixed-dose combinations and co-formulations
-  are one combination asset/program with component references; independently
-  administered products are regimens. See
-  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0016, ADR-0017).
-- **Licensed assets can hold a company-local row.** A licensed or in-licensed
-  asset may be tracked as a company-local program row, with company role,
-  rights, territory, and effective date recorded in `relationships`. See
-  [`entities-and-rows.md`](./entities-and-rows.md) (ADR-0018, ADR-0030).
-- **Evidence is source-specific.** Program state prefers trial-registry (and
-  NCT) or official pipeline evidence; relationships require transaction sources;
-  approvals require route-specific regulator evidence. Prefer primary official
-  sources for relationships and allow secondary coverage only as a fallback.
-  Basic company research may cite NCT records to verify a program; detailed
-  trial modeling belongs to Clinical Evidence. See
-  [`source-and-entry-policy.md`](./source-and-entry-policy.md) (ADR-0005, ADR-0030).
-- **Provenance is record-level.** `metadata.sources` collectively cover the key
-  claims; field-level provenance is deferred. See
-  [`source-and-entry-policy.md`](./source-and-entry-policy.md).
-- **Operating data versus generated aggregates.** `data/companies/` folders are
-  the human-edited operating source of truth; `data/generated/*.json` are
-  deterministic aggregates produced by `data:generate` and must not be edited
-  directly (ADR-0011).
-
-## v2 backlog
-
-Deferred to v2; none is implemented in v1. Treatment and status live in
-[`edge-cases.md`](./edge-cases.md) and the deferred-decisions list in
-[`decision-log.md`](./decision-log.md):
-
-- field-level provenance
-- durable adjacent-inclusion rationale field
-- excluded/deferred candidate ledger
-- Clinical Evidence UI and comparison logic (routing activation is done; see
-  ADR-0035)
-- program-ID suffix scheme
-- salts, prodrugs, conjugates, and other open-until-pilot identity cases
-- per-jurisdiction approval modeling
-- cross-company entity resolution
-- relationship / regimen UI
-
-## Purpose
-
-- The application tracks the **current competitive obesity/incretin development
-  landscape** (v1.1, ADR-0026): initially centered on GLP-1, incretin, amylin,
-  and glucagon-axis obesity pharmacotherapy. It is **not** a GLP-1 receptor
-  agonist-only tracker and **not yet** a full obesity-pharmacotherapy landscape.
-- Inclusion does **not** imply that a program is a GLP-1 receptor agonist or
-  GLP-1-containing; tracked counts are obesity/incretin competitive programs,
-  not GLP-1 RA-only counts.
-- The dataset is a **current-state snapshot**, not an event history.
-- Module 5 defines **research and entry rules only**.
-- Historical event tracking, validation, automation, and real data entry are
-  **outside** this module.
+If two active documents appear to define the same rule, keep the rule in the
+authority named above and reduce the other location to a link.
 
 ## Dataset scope
 
-The scope below is the v1.1 clarification recorded in ADR-0026. Every included
-program requires a **named developer** and **confirmed official development
-intent**; any route or formulation of an included class is in scope.
+Scope v1.1 is a competitive **obesity/incretin** landscape. Inclusion does not
+mean an asset is a GLP-1 receptor agonist or contains GLP-1 biology.
 
-Scope qualification is **asset-level**, not limited to obesity-indication rows.
-"Obesity landscape" does not mean "obesity-indication rows only." Once an
-asset qualifies for the core landscape by mechanism or by confirmed obesity or
-weight-management program intent, investigate all current official development
-programs for that asset that are representable under Contract 1.1. Apply the
-existing exclusions below to unrelated non-core assets and programs.
+### Include
 
-### Core inclusion
+- GLP-1 receptor agonists and GLP-1-containing dual or triple agonists;
+- GLP-1-based combination products and regimens;
+- amylin-only and amylin-containing obesity programs;
+- GIP-only, glucagon-only, and other incretin/amylin/glucagon-axis programs
+  when official evidence confirms obesity or weight-management intent.
 
-- GLP-1 receptor agonists.
-- GLP-1-containing dual or triple agonists.
-- GLP-1-based combination products and GLP-1-based regimens.
-- amylin-only obesity programs.
-- amylin-containing obesity combination products or regimens.
-- GIP-only obesity programs, only when official evidence confirms obesity or
-  weight-management development intent.
-- glucagon-only obesity programs, only when official evidence confirms obesity
-  or weight-management development intent.
-- other incretin/amylin/glucagon-axis obesity programs when official evidence
-  supports obesity or weight-management development intent.
+Once an asset qualifies through core mechanism or confirmed obesity/weight-
+management intent, investigate every current official program for that asset
+that Contract 1.1 can represent. Scope is not limited to obesity-indication
+rows for an already-qualified asset.
 
-A GLP-1-based regimen or combination may still be included even if one component
-is outside the core incretin/amylin/glucagon-axis classes.
+### Defer from Scope v1.1
 
-### Deferred to v2 scope expansion
+Unless already GLP-1-based:
 
-Not included in v1.1 unless already GLP-1-based:
+- muscle-preserving or body-composition adjuncts;
+- non-incretin anti-obesity classes such as MC4R, CB1, CNS-appetite, lipase
+  inhibitors, and unrelated small-molecule weight-loss programs;
+- other candidates requiring a future full-obesity-pharmacotherapy boundary.
 
-- muscle-preserving, lean-mass preservation, or body-composition adjunct
-  programs.
-- non-incretin anti-obesity classes such as MC4R, CB1, CNS appetite, lipase
-  inhibitor, or unrelated small-molecule weight-loss programs.
-- MASH-only programs.
-- T2D-only programs.
-- CKD/CV/lipid/metabolic comorbidity-only programs.
-- broad metabolic platforms without official obesity or weight-management
-  development intent.
+### Exclude by default
 
-A standalone non-incretin body-composition or lean-mass program is not included
-in v1.1 merely because it may become relevant to obesity treatment; record that
-as a v2 scope expansion. A durable adjacent-inclusion rationale field remains a
-v2 backlog item — until it exists, record any adjacent-inclusion reason in
-research output or decision documentation (for example `decision-log.md`).
+- MASH-only, T2D-only, or comorbidity-only programs without qualifying core
+  mechanism or confirmed obesity/weight-management intent;
+- preclinical/non-human material that does not establish a tracked program;
+- unsupported, speculative, or unidentifiable candidates.
 
-### Default exclusion
+Detailed Clinical Evidence eligibility is governed by the separate Clinical
+Evidence contract and must not be inferred from Company/Pipeline inclusion.
 
-A program is excluded for **lack of v1.1 obesity/incretin/amylin/glucagon-axis
-relevance, lack of official obesity or weight-management development intent, or
-lack of confirmed development evidence** — not for lack of GLP-1 biology alone.
-This also excludes:
+## Data layout and authority
 
-- Academic-only assets.
-- Patent-only assets.
-- Rumored or unconfirmed programs.
-- Pure generic or biosimilar copies.
+```text
+data/companies/<company-id>/
+  company.json
+  pipeline-programs.json
+  regimens.json
 
-A program must have **confirmed development intent**. If program existence
-itself is unconfirmed, **exclude it** rather than assigning `Unknown`.
-`Unknown` describes an unresolved property of a confirmed program — never an
-unconfirmed program.
+data/registries/
+  development-stages.json
+  regulatory-states.json
+  company-relationship-roles.json
 
-## Data layout
+data/generated/
+  companies.json
+  pipeline-programs.json
+  regimens.json
+  clinical-evidence.json
+  clinical-evidence-asset-studies.json
+```
 
-- `data/companies/<company-id>/company.json`,
-  `data/companies/<company-id>/pipeline-programs.json`, and
-  `data/companies/<company-id>/regimens.json` are the human-edited operating
-  source of truth.
-- `data/generated/companies.json` and
-  `data/generated/pipeline-programs.json` and `data/generated/regimens.json`
-  are deterministic aggregate outputs consumed by loaders.
-  `data/generated/clinical-evidence.json` is the generated aggregate for the
-  separate Clinical Evidence domain. Do not edit generated files directly.
-- `data/stress-tests/<case-id>/` contains isolated diagnostic references from
-  stress-test pilots. Diagnostic archives are excluded from production
-  aggregate generation and are not golden expected output.
-  `data:validate:stress` checks archive presence, JSON shape, minimum references,
-  and diagnostic preservation; it does not certify semantic completeness.
-- `data/registries/development-stages.json` and
-  `data/registries/regulatory-states.json` and
-  `data/registries/company-relationship-roles.json` define the accepted
-  controlled vocabulary for stage, regulatory-state, and relationship-role
-  entry.
+`data/companies/` and `data/clinical-evidence/` are editable operating sources.
+`data/generated/` is deterministic output and is never hand-edited. Historical
+diagnostic material under `docs/history/` is not operating data, a fixture, or
+a validation input.
 
-## Operating model
+## Operating terms
 
-- Existing records are **updated** when mutable facts change.
-- Discontinued programs are **retained** when discontinuation is evidenced.
-- Approved programs **remain** in the dataset.
-- `Unknown` is used **only** when a confirmed program exists but its current
-  stage or status cannot be resolved.
+- **Asset**: stable company-local development identity.
+- **Program**: an asset in a route, dosage form, and supported program scope.
+- **Regimen**: independently administered products developed as a distinct
+  configuration.
+- **Combination asset**: fixed-dose combination or co-formulation represented
+  as one asset.
+- **Current state**: mutable values update existing records; the dataset is not
+  an event log.
+- **Operating source**: human-edited canonical JSON.
+- **Generated aggregate**: deterministic consumer output with no independent
+  canonical fact.
 
-## Glossary
-
-- **Company** — the current principal development entity tracked by a record
-  (see `entities-and-rows.md`). Not necessarily the originator, licensor,
-  licensee, regional rights holder, or every co-development partner.
-- **Asset** — one molecular/biologic identity or official combination product
-  identity, carrying one stable `assetId` across routes, formulations,
-  indications, and development-state changes.
-- **Combination asset** — a fixed-dose combination or co-formulation developed
-  as one product, represented as one pipeline asset/program with component
-  references.
-- **Program** — one development configuration of an asset by a company (company
-  + asset + route + dosage form, and indication scope where needed to
-  distinguish concurrent programs).
-- **Regimen** — a development strategy in which multiple independent products
-  are administered together; distinct from a pipeline program and combination
-  asset.
-- **Company relationship** — a program/regimen-level role, rights, or territory
-  relationship for an internal or external company.
-- **Program identity** — the stable set of properties that defines a program
-  and its stable ID. Excludes mutable development stage and status.
-- **Mutable development state** — the properties that change over a program's
-  life: development stage and development status.
-- **Discovery source** — a source used to *find* a candidate (industry news,
-  databases, articles, search results). Sufficient to surface, not to confirm.
-- **Confirmation source** — a source appropriate to the specific claim being
-  entered (see the field-specific source policy). Required before a fact is
-  stored.
-- **Edge case** — a real situation Contract 1.1 cannot cleanly represent, logged
-  in `edge-cases.md` for later contract review as v2 backlog.
-- **Alias** — a former name, confirmed development code, brand name, or
-  alternative spelling of an asset, stored as a typed `aliases` entry for search
-  and traceability. An alias never changes `assetId` or the canonical
-  `assetName`.
+For execution steps, validation, and reporting, use the research workflow
+rather than expanding this contract index.

@@ -1,101 +1,65 @@
-# Agent Entry Instructions
+---
+role: agent-entrypoint
+status: active
+authority: authoritative
+update-boundary: Update only when task routing, mandatory reading paths, or cross-document update boundaries change.
+---
 
-This file routes natural-language requests to the correct workflow. It is a
-router only - it does not restate the research protocol. The authoritative
-routing boundary is [`docs/research-routing.md`](docs/research-routing.md).
+# Agent Entry Point
 
-## Company research router
+This is the only general documentation entry point for agents. Start here, then
+read only the path for the task. Do not read the full documentation tree.
 
-Any natural-language request whose intent is to **research, investigate,
-review, refresh, or update** a named company must execute the complete
-workflow in [`prompts/research-company.md`](prompts/research-company.md), unless
-the request contains explicit clinical-evidence intent routed by
-[`docs/research-routing.md`](docs/research-routing.md) to the Clinical Evidence
-router below.
+## Task routing and minimum reading paths
 
-This applies to variations such as:
+| Task | Required reading | Read only when needed |
+| --- | --- | --- |
+| Company/Pipeline research | [`docs/research-workflow.md`](docs/research-workflow.md), [`docs/data-protocol/README.md`](docs/data-protocol/README.md), [`entities-and-rows.md`](docs/data-protocol/entities-and-rows.md), [`source-and-entry-policy.md`](docs/data-protocol/source-and-entry-policy.md) | Generated-output changes: [`generated-output-contract.md`](docs/data-protocol/generated-output-contract.md). Unrepresentable case: [`edge-cases.md`](docs/data-protocol/edge-cases.md). |
+| Clinical Evidence research | Run the Company/Pipeline path first, then read [`docs/clinical-evidence-workflow.md`](docs/clinical-evidence-workflow.md) and [`docs/clinical-evidence/README.md`](docs/clinical-evidence/README.md) | Unrepresentable case: [`edge-cases.md`](docs/data-protocol/edge-cases.md). |
+| Schema or validator | Relevant type file, relevant contract, and the relevant section of `scripts/data-registry.mjs` | Aggregate/projection change: generated-output contract. Workflow only if operator behavior changes. |
+| UI | [`docs/ui/README.md`](docs/ui/README.md), then only the relevant route, component, selector, and read-model files | Data contract only when the UI consumes or changes that contract's meaning. |
+| Historical decision review | [`docs/data-protocol/decision-log.md`](docs/data-protocol/decision-log.md), then the linked current authority | Use [`docs/history/README.md`](docs/history/README.md) only when the compact index is insufficient. |
 
-- `Research Zealand Pharma.`
-- `Investigate Zealand Pharma.`
-- `Update Zealand Pharma.`
-- equivalent natural-language requests in other languages.
+The files under `docs/history/` are historical, non-authoritative, and frozen.
+They are never part of an ordinary implementation, research, validation, or
+review reading path.
 
-When such a request is received:
+## Research routing
 
-- The company name is the only required input. Do not ask for or expect any
-  other parameter.
-- The agent decides automatically whether to perform an initial investigation
-  or a refresh, based on the existing data - not on the request wording.
-- Executing the workflow includes external research, operating-record creation
-  or update, aggregate regeneration, the required validation, and final
-  reporting.
-- The detailed rules remain authoritative in
-  [`prompts/research-company.md`](prompts/research-company.md) and its
-  referenced documents ([`docs/data-protocol/README.md`](docs/data-protocol/README.md)
-  and [`docs/research-workflow.md`](docs/research-workflow.md)). Follow those; do
-  not reimplement the workflow from this router.
+A named-company request to research, investigate, review, refresh, or update
+routes to **Company/Pipeline Research** unless it has explicit Clinical
+Evidence intent. The company name is the only required input. The workflow
+decides initial investigation versus refresh from existing data.
 
-## Clinical Evidence research router
+Explicit Clinical Evidence intent uses this two-tier rule:
 
-Any natural-language request whose intent is to **research, investigate,
-review, refresh, or update** a named company's clinical trial evidence must
-execute the complete workflow in
-[`prompts/research-clinical-evidence.md`](prompts/research-clinical-evidence.md).
-This route is active; the readiness gate (Preflight A and Preflight B) is
-satisfied and recorded in ADR-0035.
+- Strong triggers: `임상`, `임상시험`, `clinical`, `clinical trial`, `trial`,
+  `endpoint`, or `NCT`.
+- Contextual triggers: `시험`, `results`, or `결과` only when the same request
+  also contains a strong trigger or `study`, `efficacy`, or `safety`.
 
-The route triggers only on **explicit clinical-evidence intent** accompanying
-a company name: a strong trigger (`임상`, `임상시험`, `clinical`,
-`clinical trial`, `trial`, `endpoint`, `NCT`) alone, or a broad term (`시험`,
-`results`, `결과`) only when it co-occurs with clinical context (a strong
-trigger, or `study`, `efficacy`, `safety`). A broad term with no clinical
-context — an earnings-results review, a manufacturing test-production report —
-does not trigger this route. The exact two-tier rule and worked non-triggering
-examples are authoritative in
-[`docs/research-routing.md`](docs/research-routing.md) (ADR-0027, ADR-0035).
-This applies to variations such as:
+Broad terms without clinical context, such as earnings results or a
+manufacturing test, remain Company/Pipeline requests. Mentioning an asset does
+not replace the required company name.
 
-- `<COMPANY_NAME> clinical trial research.`
-- `<COMPANY_NAME> 임상 조사.`
-- `<COMPANY_NAME> 임상 업데이트.`
-- `<COMPANY_NAME> semaglutide 임상 조사.` — naming an asset alongside the
-  company does not change the required input or introduce asset-to-company
-  resolution.
-- equivalent natural-language requests in other languages.
+For a Clinical Evidence request, Company/Pipeline Research runs first in the
+same execution. If that first step cannot access required sources, stop before
+all operating-data changes. If it completes but Clinical Evidence source access
+later fails, retain the completed Company/Pipeline changes, make no Clinical
+Evidence changes, and report partial completion.
 
-Ambiguous company-research requests with no explicit clinical-evidence intent
-always default to the Company research router above. A generic company
-request never automatically expands into Clinical Evidence Research.
+## Update boundaries
 
-When an explicit clinical-evidence request is received:
+| Change | Update | Do not update by default |
+| --- | --- | --- |
+| Company or Clinical data refresh | Editable source JSON and generated JSON | Documentation, decision index, history |
+| Routing or entry condition | This file | Contracts and history |
+| Research procedure | The relevant workflow | Semantic contracts |
+| Schema or semantic contract | Types, validator, fixtures, relevant contract, compact decision entry | Workflow and UI unless behavior changes |
+| Aggregate or projection | Generator, types, existing generated-output contract, consumers | Research workflows |
+| UI route, read model, or user-facing semantics | UI code and UI reference | Historical UI audit |
+| New durable decision | Current authority plus one compact decision entry | Historical decision log |
 
-- The company name is the only required input. Do not ask for or expect any
-  other parameter.
-- **Company/Pipeline Research runs first, in the same execution**, via
-  [`prompts/research-company.md`](prompts/research-company.md): an initial
-  investigation if the company is absent from `data/companies/`, or a refresh
-  if present. This protocol has no separate staleness flag — Company/Pipeline
-  Research performs a full discovery-and-verify pass on every invocation, so
-  running it first is how both the absent and the stale case are covered.
-  Clinical Evidence Research then proceeds using the resulting Company/Pipeline
-  data as the authoritative asset list.
-- Clinical Evidence Research **never silently edits Company/Pipeline data**. A
-  material conflict discovered during clinical research is reported, not
-  written to Company/Pipeline records.
-- The agent decides automatically whether the Clinical Evidence portion is an
-  initial investigation or an update, based on existing Clinical Evidence
-  source data - not on the request wording.
-- Failure handling is sequential, not a single all-or-nothing gate: if
-  Company/Pipeline Research itself cannot access required sources, the run
-  stops before any operating-data change (neither Company/Pipeline nor
-  Clinical Evidence data is modified). If Company/Pipeline Research completes
-  with valid changes but Clinical Evidence source access then fails, those
-  completed Company/Pipeline changes are **retained** — not rolled back — no
-  Clinical Evidence data is changed, and the run is reported as **partially
-  completed**.
-- Executing the workflow includes external research, operating-record creation
-  or update, aggregate regeneration, the required validation, and final
-  reporting, per
-  [`prompts/research-clinical-evidence.md`](prompts/research-clinical-evidence.md)
-  and [`docs/clinical-evidence-workflow.md`](docs/clinical-evidence-workflow.md).
-  Follow those; do not reimplement the workflow from this router.
+Current rules belong in contracts and references, not in the Decision Log.
+Completed audits, migrations, and module reports are archived once and are not
+maintained as living documents.

@@ -1,3 +1,10 @@
+---
+role: generated-output-contract
+status: active
+authority: authoritative
+update-boundary: Update when generated file inventory, determinism, ordering, consumer guarantees, or validation behavior changes.
+---
+
 # Generated Output Contract
 
 Defines the contract for derived files under `data/generated/`: what they are,
@@ -134,16 +141,15 @@ Downstream UI, report, and tool consumers:
   confirming `git diff` shows no change under `data/generated/`.
 - Generated validation does **not** replace the other validators:
   `data:validate:companies` (operating source), `data:validate:registries`
-  (vocabularies), `data:validate:stress` (diagnostic archives), and
-  `data:validate:synthetic` (fixtures) each cover a different surface.
+  (vocabularies), and `data:validate:synthetic` (fixtures) each cover a
+  different active surface. Historical diagnostic archives are not validated.
 - Clinical Evidence has additional validators:
   `data:validate:clinical-evidence`,
   `data:validate:clinical-evidence:generated`, and
   `data:validate:clinical-evidence:synthetic`.
 - After any operating-data change, the workflow requires running
-  `npm run data:generate` and then the validators before reporting (see
-  [`../research-workflow.md`](../research-workflow.md) and
-  [`../../prompts/research-company.md`](../../prompts/research-company.md)).
+  `npm run data:generate` and then the validators before reporting (see the
+  [`Company/Pipeline Research Workflow`](../research-workflow.md)).
 
 ## 7. Relationship with Contract 1.1 semantics
 
@@ -164,17 +170,15 @@ ADR-0024 / ADR-0030 stage and identity semantics exactly:
   are passed through verbatim; generation does not rename, merge, or resolve
   aliases across companies.
 
-## 8. V2 boundary
+## 8. Deferred consumer boundaries
 
-The following remain v2 backlog and are **not** part of the v1 generated-output
-contract; a downstream need for one of them is recorded as backlog, not
-implemented here:
+The following are not part of the current generated-output contract. A
+downstream need is handled as contract work, not inferred by a consumer:
 
 - field-level provenance
 - durable adjacent-inclusion rationale field
 - excluded/deferred candidate ledger
 - program-ID suffix scheme
-- per-jurisdiction approval modeling
 - cross-company entity resolution
 - relationship / regimen UI-specific output layers (for example joined or
   denormalized views)

@@ -1,3 +1,10 @@
+---
+role: historical-audit
+status: historical
+authority: non-authoritative
+update-boundary: Frozen point-in-time audit; do not update for current implementation changes.
+---
+
 # Registry / Type / Validator Consistency Audit
 
 Point-in-time verification that the Contract 1.1 surfaces agree with each other.

@@ -1,3 +1,10 @@
+---
+role: historical-diagnostic-report
+status: historical
+authority: non-authoritative
+update-boundary: Frozen initial diagnostic evidence; current gaps belong in active contracts or edge cases.
+---
+
 # Ascletis Contract Gaps
 
 - Regulatory progress such as `IND submitted` and `IND cleared` must remain

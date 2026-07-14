@@ -1,3 +1,10 @@
+---
+role: contract-edge-case-reference
+status: active
+authority: authoritative
+update-boundary: Update when a current contract limitation, deferral, or schema re-entry trigger changes.
+---
+
 # Edge Cases
 
 Real situations Contract 1.1 (ADR-0030) cannot yet cleanly represent. Each is

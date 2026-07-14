@@ -1,3 +1,10 @@
+---
+role: historical-migration-report
+status: historical
+authority: non-authoritative
+update-boundary: Frozen migration record; current schema rules belong in the Clinical Evidence contract.
+---
+
 # Clinical Evidence v3 migration audit
 
 Date: 2026-07-14

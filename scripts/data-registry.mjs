@@ -13,7 +13,6 @@ const dataDir = path.join(root, "data");
 const companySourceDir = path.join(dataDir, "companies");
 const generatedDir = path.join(dataDir, "generated");
 const clinicalEvidenceSourceDir = path.join(dataDir, "clinical-evidence");
-const stressTestDir = path.join(dataDir, "stress-tests");
 const registryDir = path.join(dataDir, "registries");
 const syntheticFixtureDir = path.join(dataDir, "validation-fixtures", "synthetic");
 const clinicalEvidenceFixtureDir = path.join(dataDir, "validation-fixtures", "clinical-evidence");
@@ -1803,33 +1802,6 @@ function validateCompanySources() {
   console.log(`Validated ${folders.length} company source folder(s).`);
 }
 
-function validateStressTests() {
-  const folders = getCompanySourceFolders(stressTestDir);
-
-  for (const folder of folders) {
-    const folderPath = path.join(stressTestDir, folder);
-    const company = requireJsonFile(path.join(folderPath, "company.json"), folder);
-    const programs = requireJsonFile(path.join(folderPath, "pipeline-programs.json"), folder);
-
-    validateCompany(company, `data/stress-tests/${folder}`);
-    assert(Array.isArray(programs), `${folder}: pipeline-programs.json must be an array`);
-    for (const program of programs) {
-      assert(isObject(program), `${folder}: archive program must be an object`);
-      assert(isNonEmptyString(program.id), `${folder}: archive program id is required`);
-      assert(
-        program.companyId === company.id,
-        `${folder}: archive program ${program.id} must reference archive company id`,
-      );
-    }
-
-    assert(existsSync(path.join(folderPath, "deferred-items.json")), `${folder}: deferred-items.json is required`);
-    assert(existsSync(path.join(folderPath, "findings.md")), `${folder}: findings.md is required`);
-    assert(existsSync(path.join(folderPath, "contract-gaps.md")), `${folder}: contract-gaps.md is required`);
-  }
-
-  console.log(`Validated ${folders.length} stress-test diagnostic archive(s).`);
-}
-
 function generateAggregates() {
   const registries = loadRegistries();
   const { folders, companies, programs, regimens } = loadCompanySources();
@@ -2568,9 +2540,6 @@ try {
       break;
     case "validate:clinical-evidence:synthetic":
       validateClinicalEvidenceSyntheticFixtures();
-      break;
-    case "validate:stress":
-      validateStressTests();
       break;
     case "validate:synthetic":
       validateSyntheticFixtures();

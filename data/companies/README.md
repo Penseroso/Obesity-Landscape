@@ -1,11 +1,12 @@
 # Company Source Data
 
-Company folders under this directory are the human-edited source of truth for
-operating data. Each company folder must contain:
+Company folders here are the human-edited Company/Pipeline operating source of
+truth. Each folder contains:
 
 - `company.json`
 - `pipeline-programs.json`
 - `regimens.json`
 
-Do not edit `data/generated/*.json` directly. Run the aggregate generation
-script to rebuild generated files from company folders.
+Do not edit `data/generated/*.json` directly. Research and entry rules live in
+[`docs/data-protocol/`](../../docs/data-protocol/README.md); run
+`npm run data:generate` after valid source changes.

@@ -1,3 +1,10 @@
+---
+role: historical-audit
+status: historical
+authority: non-authoritative
+update-boundary: Frozen point-in-time audit; do not update for current implementation changes.
+---
+
 # Clinical Evidence — Evidence-to-Clinical Gap Audit
 
 Date: 2026-07-14. Schema: Clinical Evidence v3.0 (ADR-0039). Contract: Company/Pipeline 1.1

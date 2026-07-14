@@ -1,3 +1,10 @@
+---
+role: clinical-evidence-semantic-contract
+status: active
+authority: authoritative
+update-boundary: Update when Clinical Evidence entities, field semantics, identity, or source-result boundaries change.
+---
+
 # Clinical Evidence Data Contract
 
 **Schema version: 3.0** (ADR-0039; builds on ADR-0037 and ADR-0038). v3.0 is a
@@ -9,15 +16,11 @@ be misread as versioning that whole registry contract instead of just Clinical
 Evidence.
 
 Authoritative semantic and file contract for the Clinical Evidence data layer.
-This module implements source files, TypeScript types, validation, synthetic
-checks, and a deterministic generated aggregate. It does not implement research
-execution, routing activation, UI, ranking, or comparison logic.
-
-For the reusable research workflow and prompt, see
-[`../clinical-evidence-workflow.md`](../clinical-evidence-workflow.md) and
-[`../../prompts/research-clinical-evidence.md`](../../prompts/research-clinical-evidence.md).
-Routing is active (ADR-0035); see
-[`../research-routing.md`](../research-routing.md) for the trigger rules.
+This module defines source files, TypeScript shapes, validation semantics, and
+entity behavior. It does not define research execution, routing, UI, ranking,
+or comparison logic. Use the
+[Clinical Evidence workflow](../clinical-evidence-workflow.md) for execution
+and [`AGENTS.md`](../../AGENTS.md) for routing.
 
 ## Evidence Scope
 
@@ -204,7 +207,7 @@ via `armIds` (`arm-level` = exactly one arm, `between-arm` = two or more) **xor*
 one AnalysisGroup via `analysisGroupId` — never both, and never neither. An
 analysis-group Outcome does not also enumerate `armIds`; it carries a single-unit
 result (`resultType: arm-level`), because a comparison *between* analysis groups is
-not representable in v2.0 (see Deferred limitations).
+not representable by the current contract (see Deferred limitations).
 
 The **result** separates four distinct semantics that v1 collapsed into two free
 strings:
@@ -309,9 +312,9 @@ remains forbidden is unchanged — do not create artificial Arms, do not calcula
 redistribute a pooled value across its members, and do not force a misleading anchor.
 
 When a result still cannot be represented faithfully (a structure listed under
-Deferred limitations), **omit that result and report it** under the case-scoped
-fallback policy in `docs/clinical-evidence-workflow.md` §5.1. The omission is a
-deferred schema case, not an operating-data defect.
+Deferred limitations), **omit that result and report it** under the
+[case-scoped fallback](../clinical-evidence-workflow.md#5-case-scoped-schema-fallback).
+The omission is a deferred schema case, not an operating-data defect.
 
 ### Normative Lilly examples
 
@@ -328,7 +331,7 @@ deferred schema case, not an operating-data defect.
   or 4 mg start) carry the arm identity, while the publication's **combined 4-mg and
   combined 8-mg groups** are `pooled` AnalysisGroups that anchor the reported combined
   results. Under v1 this result was omitted because the starting-dose groups could not
-  map to pooled "Arms"; v2.0 represents it without distortion.
+  map to pooled "Arms"; the current contract represents it without distortion.
 
 Safety stays separate from efficacy outcomes. Store only a concise study-level
 safety summary; do not attempt exhaustive adverse-event capture in this module.
@@ -402,53 +405,18 @@ name, role, domain, timepoint); this blocks the obvious case but is **not** a
 complete guarantee — non-identical paraphrases still slip through, so the reuse rule
 above remains the primary control.
 
-## Source To Aggregate Flow
+## Generated outputs
 
-```text
-data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
--> npm run data:generate
--> data/generated/clinical-evidence.json
--> data/generated/clinical-evidence-asset-studies.json   (derived projection)
-```
-
-Generation validates all Clinical Evidence source files, concatenates the five
-entity arrays, sorts them deterministically, and writes the aggregate. Sort order
-is:
-
-- studies: `companyId`, then `assetId`, then `id`.
-- arms: `studyId`, then `id`.
-- analysisGroups: `studyId`, then `id`.
-- endpoints: `studyId`, then `id`.
-- outcomes: `studyId`, then `endpointId`, then `id`.
-
-## Derived Projection: reciprocal asset → studies
-
-`data/generated/clinical-evidence-asset-studies.json` answers "which studies involve
-this asset?" from **either** side of a head-to-head. For each asset it lists
-`focalStudyIds` (studies anchored to it) and `linkedStudyIds` (studies where it
-appears only as an internally linked Arm asset).
-
-It is a **derived projection, not canonical data**:
-
-- computed only from canonical internal links — `study.{companyId,assetId}` and each
-  internally resolved `arm.linkedAsset.{companyId,assetId}`.
-- **never authored or hand-edited**; it carries no independent identity and takes no
-  part in validation identity, referential integrity, or the semantic key.
-- regenerated deterministically; the validator rejects a file that differs from
-  recomputation.
-- versioned separately: it declares its own `projectionSchemaVersion`, not the
-  canonical `clinicalEvidenceSchemaVersion`. The two numbers are intentionally
-  independent — this file's shape may change without implying a change to the
-  canonical v3.0 contract, and vice versa (ADR-0038, ADR-0039).
-
-It is therefore **outside** the canonical v3.0 contract, and a consumer must
-not treat it as a source of record.
+Generation, ordering, the canonical aggregate, and the independently versioned
+reciprocal asset-study projection are governed by the
+[Generated Output Contract](../data-protocol/generated-output-contract.md).
+Neither generated file is an editable source of record.
 
 ## Deferred limitations
 
 v3.0 is explicit about what it still cannot represent. Each is logged in
-`docs/data-protocol/edge-cases.md`, and a research run that meets one **omits and
-reports** it under the case-scoped fallback policy (workflow §5.1) rather than
+[Edge Cases](../data-protocol/edge-cases.md), and a research run that meets one
+**omits and reports** it under the workflow's case-scoped fallback rather than
 distorting the data:
 
 - **Study grouping / parent-child** — extensions, rollovers, core+OLE have no stored
@@ -464,21 +432,6 @@ distorting the data:
 - **Comparisons between analysis groups** (group vs group, or group vs arm) — an
   analysis-group Outcome carries a single-unit result only.
 - **Structured superseded-value history** and **field-level provenance**.
-
-## Commands
-
-```bash
-npm run data:generate
-npm run data:validate:clinical-evidence
-npm run data:validate:clinical-evidence:generated
-npm run data:validate:clinical-evidence:synthetic
-```
-
-`data:validate:clinical-evidence` validates editable source files.
-`data:validate:clinical-evidence:generated` validates the generated aggregate
-and rejects output that differs from deterministic regeneration.
-`data:validate:clinical-evidence:synthetic` validates focused synthetic valid
-and invalid checks. The synthetic fixtures are not real clinical evidence.
 
 ## Non-Goals
 
