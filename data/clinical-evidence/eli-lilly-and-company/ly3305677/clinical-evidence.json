@@ -1,43 +1,465 @@
 {
+  "schemaVersion": "2.0",
   "companyId": "eli-lilly-and-company",
   "assetId": "ly3305677",
   "studies": [
     {
-      "id": "eli-lilly-and-company-mazdutide-glory-1-nct05607680", "companyId": "eli-lilly-and-company", "assetId": "ly3305677", "programId": "eli-lilly-and-company-ly3305677-subcutaneous-injection",
-      "officialTitle": "A Study of Mazdutide in Chinese Adults With Obesity or Overweight", "acronym": "GLORY-1", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT05607680"}], "phase": "Phase 3", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group dose-ranging trial conducted in China."}, "population": "Chinese adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.", "overallDuration": "48 weeks",
+      "id": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3305677",
+      "programId": "eli-lilly-and-company-ly3305677-subcutaneous-injection",
+      "officialTitle": "A Study of Mazdutide in Chinese Adults With Obesity or Overweight",
+      "acronym": "GLORY-1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05607680"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group dose-ranging trial conducted in China."
+      },
+      "population": "Chinese adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "48 weeks",
       "safetySummary": "Gastrointestinal adverse events were the most common and were generally mild to moderate; the safety profile was consistent with the known pharmacology.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05607680","title":"GLORY-1 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://doi.org/10.1056/NEJMoa2411528","title":"Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight","sourceType":"peer-reviewed publication","publishedAt":"2025-06-22","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05607680",
+            "title": "GLORY-1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "title": "Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-22",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id": "eli-lilly-and-company-mazdutide-glory-2-nct06164873", "companyId": "eli-lilly-and-company", "assetId": "ly3305677", "programId": "eli-lilly-and-company-ly3305677-subcutaneous-injection",
-      "officialTitle": "A Study of Mazdutide in Chinese Adults With Obesity", "acronym": "GLORY-2", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT06164873"}], "phase": "Phase 3", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group trial of high-dose mazdutide conducted in China."}, "population": "Chinese adults with obesity, with or without type 2 diabetes.", "overallDuration": "60 weeks",
+      "id": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3305677",
+      "programId": "eli-lilly-and-company-ly3305677-subcutaneous-injection",
+      "officialTitle": "A Study of Mazdutide in Chinese Adults With Obesity",
+      "acronym": "GLORY-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06164873"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group trial of high-dose mazdutide conducted in China."
+      },
+      "population": "Chinese adults with obesity, with or without type 2 diabetes.",
+      "overallDuration": "60 weeks",
       "safetySummary": "Vomiting, nausea, and diarrhea were the most common adverse events; adverse-event discontinuation was uncommon but higher with mazdutide than placebo.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT06164873","title":"GLORY-2 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/42251595/","title":"Treatment With 9-mg Mazdutide for Weight Reduction in Chinese Adults With Obesity","sourceType":"peer-reviewed publication","publishedAt":"2026-05-21","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06164873",
+            "title": "GLORY-2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "title": "Treatment With 9-mg Mazdutide for Weight Reduction in Chinese Adults With Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-05-21",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     }
   ],
   "arms": [
-    {"id":"glory1-maz4","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","role":"experimental","label":"Mazdutide 4 mg","intervention":"Mazdutide plus lifestyle intervention","linkedAsset":{"assetId":"ly3305677"},"dose":"4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"glory1-maz6","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","role":"experimental","label":"Mazdutide 6 mg","intervention":"Mazdutide plus lifestyle intervention","linkedAsset":{"assetId":"ly3305677"},"dose":"6 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"glory1-placebo","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"glory2-maz9","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","role":"experimental","label":"Mazdutide 9 mg","intervention":"Mazdutide plus lifestyle intervention","linkedAsset":{"assetId":"ly3305677"},"dose":"9 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"60 weeks"},
-    {"id":"glory2-placebo","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"60 weeks"}
+    {
+      "id": "glory1-maz4",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "role": "experimental",
+      "label": "Mazdutide 4 mg",
+      "intervention": "Mazdutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3305677"
+      },
+      "dose": "4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "glory1-maz6",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "role": "experimental",
+      "label": "Mazdutide 6 mg",
+      "intervention": "Mazdutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3305677"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "glory1-placebo",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "glory2-maz9",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "role": "experimental",
+      "label": "Mazdutide 9 mg",
+      "intervention": "Mazdutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3305677"
+      },
+      "dose": "9 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "60 weeks"
+    },
+    {
+      "id": "glory2-placebo",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "60 weeks"
+    }
   ],
+  "analysisGroups": [],
   "endpoints": [
-    {"id":"glory1-weight-week48","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 48"},
-    {"id":"glory2-weight-week60","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 60"}
+    {
+      "id": "glory1-weight-week48",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "name": "Percentage change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48"
+    },
+    {
+      "id": "glory2-weight-week60",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 60"
+    }
   ],
   "outcomes": [
-    {"id":"glory1-weight-maz4","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","endpointId":"glory1-weight-week48","armIds":["glory1-maz4"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-policy estimand","result":{"value":"-11.00","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://doi.org/10.1056/NEJMoa2411528","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory1-weight-maz6","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","endpointId":"glory1-weight-week48","armIds":["glory1-maz6"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-policy estimand","result":{"value":"-14.01","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://doi.org/10.1056/NEJMoa2411528","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory1-weight-placebo","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","endpointId":"glory1-weight-week48","armIds":["glory1-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-policy estimand","result":{"value":"0.30","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://doi.org/10.1056/NEJMoa2411528","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory2-weight-maz9","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","endpointId":"glory2-weight-week60","armIds":["glory2-maz9"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-policy estimand","result":{"value":"-16.65","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42251595/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory2-weight-placebo","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","endpointId":"glory2-weight-week60","armIds":["glory2-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-policy estimand","result":{"value":"-1.50","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42251595/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory1-weight-maz4-efficacy","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","endpointId":"glory1-weight-week48","armIds":["glory1-maz4"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-12.05","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://doi.org/10.1056/NEJMoa2411528","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory1-weight-maz6-efficacy","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","endpointId":"glory1-weight-week48","armIds":["glory1-maz6"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-14.84","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://doi.org/10.1056/NEJMoa2411528","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory1-weight-placebo-efficacy","studyId":"eli-lilly-and-company-mazdutide-glory-1-nct05607680","endpointId":"glory1-weight-week48","armIds":["glory1-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-0.47","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://doi.org/10.1056/NEJMoa2411528","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory2-weight-maz9-efficacy","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","endpointId":"glory2-weight-week60","armIds":["glory2-maz9"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-18.55","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42251595/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"glory2-weight-placebo-efficacy","studyId":"eli-lilly-and-company-mazdutide-glory-2-nct06164873","endpointId":"glory2-weight-week60","armIds":["glory2-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-3.02","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42251595/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}}
+    {
+      "id": "glory1-weight-maz4",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-11.00",
+        "numericValue": -11,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz6",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-14.01",
+        "numericValue": -14.01,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-placebo",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "0.30",
+        "numericValue": 0.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-maz9",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-16.65",
+        "numericValue": -16.65,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-placebo",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-1.50",
+        "numericValue": -1.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz4-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.05",
+        "numericValue": -12.05,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz6-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.84",
+        "numericValue": -14.84,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.47",
+        "numericValue": -0.47,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-maz9-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-18.55",
+        "numericValue": -18.55,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.02",
+        "numericValue": -3.02,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }

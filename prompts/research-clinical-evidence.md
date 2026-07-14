@@ -103,9 +103,10 @@ Follow these steps:
     subgroup result to broader Arms that do not faithfully represent it. Store
     adjusted or comparative values only when directly reported.
 
-11. **Author entities per the contract conventions.** An Arm is a treatment
-    configuration within one study, not a cohort or sub-study — model a distinct
-    sub-study/cohort as its own Study **when it has its own distinct registry
+11. **Author entities per the contract conventions (schema v2.0).** Every source file
+    declares `"schemaVersion": "2.0"`. An Arm is a protocol-defined treatment
+    configuration within one study — not a cohort, sub-study, or pooled group. Model a
+    distinct sub-study/cohort as its own Study **when it has its own distinct registry
     identity**; a master protocol sharing one registry identifier across sub-studies
     or focal assets is not representable and is deferred (do not invent surrogate
     registry ids). Capture required background or concomitant
@@ -126,16 +127,36 @@ Follow these steps:
     confidence intervals or p-values only when directly reported. Arm array order
     does not encode direction or create a distinct semantic Outcome.
 
-    When pooled analysis groups, starting-dose subgroups, substudy/cohort structure,
-    or ambiguous multi-asset anchoring cannot be represented faithfully, omit the
-    result. Do not create artificial Arms, calculate or redistribute values, or
-    force a misleading anchor. Report the limitation as a deferred schema decision,
-    not an operating-data defect (ADR-0036).
+    Also required by v2.0:
 
-12. **Reuse Arm and Endpoint ids; do not duplicate them.** Before creating an Arm
-    or Endpoint, reuse the id of an existing record that already describes the same
-    real-world configuration or measure. Semantically duplicate Arm/Endpoint
-    records under different ids silently defeat outcome duplicate detection.
+    - **Internal linked assets.** When an Arm's comparator or component resolves to a
+      registry asset — **including another company's asset** — link it with `companyId`
+      + `assetId`. Free-text `assetName` / `externalCompanyName` is only for genuinely
+      external or unresolved assets.
+    - **Analysis groups.** A source-reported pooled, derived, or starting-dose group is
+      an `AnalysisGroup` over its member protocol Arms, with the Outcome anchored via
+      `analysisGroupId` (never both `armIds` and `analysisGroupId`). Do not invent Arms
+      for it, do not nest groups, and do not redistribute a pooled value across members.
+    - **Endpoint role and domain.** Confirm `role` from the study's cited sources — the
+      registry outcome designation, protocol, or publication — and **never** from a
+      free-text label. Two or more prespecified primary outcome measures make each
+      `co-primary`. Use `other` when no source confirms it. Add `domain` to separate a
+      weight endpoint from a comorbidity endpoint, or omit it rather than guess.
+    - **Structured results.** Keep the source display text in `value`, the machine-readable
+      number in `numericValue` (`null` when narrative), the actual unit in `unit`, and —
+      only for a between-arm estimate — the `effectMeasure`. A hazard ratio or treatment
+      difference is an effect measure, not a unit.
+
+    When a result still cannot be represented faithfully, apply the **case-scoped
+    deferred-schema fallback** in `docs/clinical-evidence-workflow.md` §5.1: isolate the
+    smallest failing unit, never distort it, keep researching everything else, and record
+    it in the Schema boundary report with its re-entry trigger. Never terminate the whole
+    company/asset run over one unrepresentable result (ADR-0037).
+
+12. **Reuse Arm, AnalysisGroup and Endpoint ids; do not duplicate them.** Before
+    creating one, reuse the id of an existing record that already describes the same
+    real-world configuration, member set, or measure. Semantically duplicate records
+    under different ids silently defeat outcome duplicate detection.
 
 13. **Handle safety concisely.** Store only a concise study-level safety summary
     covering major adverse-event patterns, serious adverse events,
@@ -174,7 +195,9 @@ Follow these steps:
     for the major evidence set; studies excluded for no result; studies excluded
     as outside Scope v1.1; deferred studies with reasons; pipeline
     discrepancies; source-access failures; generated aggregate status;
-    omitted results and deferred schema limitations; validation results; whether
+    the **Schema boundary report** (workflow §5.1) with every deferred schema case and
+    the counts of entered / `DEFERRED_SCHEMA_CASE` / `REVIEW_REQUIRED` /
+    `RESEARCH_BLOCKED`; validation results; whether
     the run is fully completed or partially
     completed (Company/Pipeline portion done, Clinical Evidence portion
     blocked); and the commit SHA when a commit is created.

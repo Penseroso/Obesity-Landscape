@@ -1,54 +1,767 @@
 {
+  "schemaVersion": "2.0",
   "companyId": "eli-lilly-and-company",
   "assetId": "ly3437943",
   "studies": [
     {
-      "id": "eli-lilly-and-company-retatrutide-phase-2-nct04881760", "companyId": "eli-lilly-and-company", "assetId": "ly3437943", "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
-      "officialTitle": "A Study of Retatrutide (LY3437943) in Participants Who Have Obesity or Are Overweight", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT04881760"}], "phase": "Phase 2", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group dose-ranging trial with multiple starting-dose titration schedules."}, "population": "Adults with obesity, or overweight with at least one weight-related condition, without diabetes.", "overallDuration": "48 weeks",
+      "id": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
+      "officialTitle": "A Study of Retatrutide (LY3437943) in Participants Who Have Obesity or Are Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04881760"
+        }
+      ],
+      "phase": "Phase 2",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group dose-ranging trial with multiple starting-dose titration schedules."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related condition, without diabetes.",
+      "overallDuration": "48 weeks",
       "safetySummary": "The most common adverse events were gastrointestinal, were dose related and mostly mild to moderate; heart-rate increases peaked at 24 weeks and then declined.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT04881760","title":"Retatrutide Phase 2 obesity study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/37366315/","title":"Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial","sourceType":"peer-reviewed publication","publishedAt":"2023-06-26","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04881760",
+            "title": "Retatrutide Phase 2 obesity study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367", "companyId": "eli-lilly-and-company", "assetId": "ly3437943", "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection-oa",
-      "officialTitle": "A Study of Retatrutide (LY3437943) in Participants With Obesity or Overweight and Knee Osteoarthritis", "acronym": "TRIUMPH-4", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT05931367"}], "phase": "Phase 3", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group trial evaluating weight and knee-osteoarthritis outcomes."}, "population": "Adults with obesity or overweight and knee osteoarthritis, without type 2 diabetes.", "overallDuration": "68 weeks",
+      "id": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection-oa",
+      "officialTitle": "A Study of Retatrutide (LY3437943) in Participants With Obesity or Overweight and Knee Osteoarthritis",
+      "acronym": "TRIUMPH-4",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05931367"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group trial evaluating weight and knee-osteoarthritis outcomes."
+      },
+      "population": "Adults with obesity or overweight and knee osteoarthritis, without type 2 diabetes.",
+      "overallDuration": "68 weeks",
       "safetySummary": "The most common adverse events were gastrointestinal and were generally mild to moderate; discontinuation because of adverse events increased with dose.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05931367","title":"TRIUMPH-4 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","title":"Lilly TRIUMPH-4 topline results","sourceType":"company topline","publishedAt":"2025-12-11","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05931367",
+            "title": "TRIUMPH-4 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "title": "Lilly TRIUMPH-4 topline results",
+            "sourceType": "company topline",
+            "publishedAt": "2025-12-11",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     }
   ],
   "arms": [
-    {"id":"reta-p2-1mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","role":"experimental","label":"Retatrutide 1 mg","intervention":"Retatrutide","linkedAsset":{"assetId":"ly3437943"},"dose":"1 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"reta-p2-4mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","role":"experimental","label":"Retatrutide 4 mg","intervention":"Retatrutide with assigned starting-dose titration","linkedAsset":{"assetId":"ly3437943"},"dose":"4 mg target dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"reta-p2-8mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","role":"experimental","label":"Retatrutide 8 mg","intervention":"Retatrutide with assigned starting-dose titration","linkedAsset":{"assetId":"ly3437943"},"dose":"8 mg target dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"reta-p2-12mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","role":"experimental","label":"Retatrutide 12 mg","intervention":"Retatrutide with dose escalation","linkedAsset":{"assetId":"ly3437943"},"dose":"12 mg target dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"reta-p2-placebo","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","role":"placebo","label":"Placebo","intervention":"Matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"triumph4-reta9","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","role":"experimental","label":"Retatrutide 9 mg","intervention":"Retatrutide plus standard care","linkedAsset":{"assetId":"ly3437943"},"dose":"9 mg target dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks"},
-    {"id":"triumph4-reta12","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","role":"experimental","label":"Retatrutide 12 mg","intervention":"Retatrutide plus standard care","linkedAsset":{"assetId":"ly3437943"},"dose":"12 mg target dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks"},
-    {"id":"triumph4-placebo","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","role":"placebo","label":"Placebo","intervention":"Matched placebo plus standard care","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks"}
+    {
+      "id": "reta-p2-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 1 mg",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "1 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 4 mg (2 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "4 mg target dose",
+      "titration": "2 mg starting dose followed by 4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 4 mg (4 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "4 mg target dose",
+      "titration": "4 mg starting dose without escalation",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 8 mg (2 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "8 mg target dose",
+      "titration": "2 mg starting dose followed by 4 mg and then 8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 8 mg (4 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "8 mg target dose",
+      "titration": "4 mg starting dose followed by 8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 12 mg (2 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "12 mg target dose",
+      "titration": "2 mg starting dose followed by 4 mg, 8 mg, and then 12 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "triumph4-reta9",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "role": "experimental",
+      "label": "Retatrutide 9 mg",
+      "intervention": "Retatrutide plus standard care",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "9 mg target dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks"
+    },
+    {
+      "id": "triumph4-reta12",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "role": "experimental",
+      "label": "Retatrutide 12 mg",
+      "intervention": "Retatrutide plus standard care",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "12 mg target dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks"
+    },
+    {
+      "id": "triumph4-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus standard care",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks"
+    }
+  ],
+  "analysisGroups": [
+    {
+      "id": "reta-p2-pooled-4mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "kind": "pooled",
+      "label": "Combined 4-mg group",
+      "memberArmIds": [
+        "reta-p2-4mg-start2",
+        "reta-p2-4mg-start4"
+      ],
+      "description": "The publication reports the two 4 mg starting-dose arms as one combined 4-mg group."
+    },
+    {
+      "id": "reta-p2-pooled-8mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "kind": "pooled",
+      "label": "Combined 8-mg group",
+      "memberArmIds": [
+        "reta-p2-8mg-start2",
+        "reta-p2-8mg-start4"
+      ],
+      "description": "The publication reports the two 8 mg starting-dose arms as one combined 8-mg group."
+    }
   ],
   "endpoints": [
-    {"id":"reta-p2-weight-week48","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 48"},
-    {"id":"triumph4-weight-week68","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 68"},
-    {"id":"triumph4-womac-week68","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","name":"Change from baseline in WOMAC pain score","classification":"Primary efficacy","assessmentTimepoint":"Week 68"}
+    {
+      "id": "reta-p2-weight-week48",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "name": "Percentage change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48"
+    },
+    {
+      "id": "triumph4-weight-week68",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "triumph4-womac-week68",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "name": "Change from baseline in WOMAC pain score",
+      "role": "co-primary",
+      "domain": "musculoskeletal",
+      "assessmentTimepoint": "Week 68"
+    }
   ],
   "outcomes": [
-    {"id":"reta-p2-weight-1mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","endpointId":"reta-p2-weight-week48","armIds":["reta-p2-1mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-8.7","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37366315/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"reta-p2-weight-4mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","endpointId":"reta-p2-weight-week48","armIds":["reta-p2-4mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-17.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37366315/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"reta-p2-weight-8mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","endpointId":"reta-p2-weight-week48","armIds":["reta-p2-8mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-22.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37366315/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"reta-p2-weight-12mg","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","endpointId":"reta-p2-weight-week48","armIds":["reta-p2-12mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-24.2","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37366315/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"reta-p2-weight-placebo","studyId":"eli-lilly-and-company-retatrutide-phase-2-nct04881760","endpointId":"reta-p2-weight-week48","armIds":["reta-p2-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-2.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37366315/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-weight-reta9","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-weight-week68","armIds":["triumph4-reta9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-26.4","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-weight-reta12","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-weight-week68","armIds":["triumph4-reta12"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-28.7","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-weight-placebo","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-weight-week68","armIds":["triumph4-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-2.1","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-womac-reta9","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-womac-week68","armIds":["triumph4-reta9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-4.5","unit":"points","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-womac-reta12","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-womac-week68","armIds":["triumph4-reta12"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-4.4","unit":"points","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-womac-placebo","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-womac-week68","armIds":["triumph4-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-2.4","unit":"points","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-weight-reta9-treatment-regimen","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-weight-week68","armIds":["triumph4-reta9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-20.0","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-weight-reta12-treatment-regimen","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-weight-week68","armIds":["triumph4-reta12"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-23.7","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-weight-placebo-treatment-regimen","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-weight-week68","armIds":["triumph4-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-4.6","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-womac-reta9-treatment-regimen","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-womac-week68","armIds":["triumph4-reta9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-4.0","unit":"points","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-womac-reta12-treatment-regimen","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-womac-week68","armIds":["triumph4-reta12"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-3.7","unit":"points","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}},
-    {"id":"triumph4-womac-placebo-treatment-regimen","studyId":"eli-lilly-and-company-retatrutide-triumph-4-nct05931367","endpointId":"triumph4-womac-week68","armIds":["triumph4-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-2.1","unit":"points","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average","sourceType":"company topline","checkedAt":"2026-07-13"}]}}
+    {
+      "id": "reta-p2-weight-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-1mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-8.7",
+        "numericValue": -8.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight-4mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "analysisGroupId": "reta-p2-pooled-4mg",
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-17.1",
+        "numericValue": -17.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight-8mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "analysisGroupId": "reta-p2-pooled-8mg",
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-22.8",
+        "numericValue": -22.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-12mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-24.2",
+        "numericValue": -24.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.1",
+        "numericValue": -2.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-reta9",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-reta9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-26.4",
+        "numericValue": -26.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-reta12",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-reta12"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-28.7",
+        "numericValue": -28.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.1",
+        "numericValue": -2.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-reta9",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-reta9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-4.5",
+        "numericValue": -4.5,
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-reta12",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-reta12"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-4.4",
+        "numericValue": -4.4,
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.4",
+        "numericValue": -2.4,
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-reta9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-reta9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-20.0",
+        "numericValue": -20,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-reta12-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-reta12"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-23.7",
+        "numericValue": -23.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-weight-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-weight-week68",
+      "armIds": [
+        "triumph4-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-4.6",
+        "numericValue": -4.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-reta9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-reta9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-4.0",
+        "numericValue": -4,
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-reta12-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-reta12"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-3.7",
+        "numericValue": -3.7,
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triumph4-womac-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
+      "endpointId": "triumph4-womac-week68",
+      "armIds": [
+        "triumph4-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.1",
+        "numericValue": -2.1,
+        "unit": "points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-weight-loss-average",
+            "sourceType": "company topline",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }

@@ -1,108 +1,1929 @@
 {
+  "schemaVersion": "2.0",
   "companyId": "eli-lilly-and-company",
   "assetId": "ly3298176",
   "studies": [
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight","acronym":"SURMOUNT-1","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT04184622"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group fixed target-dose trial with lifestyle intervention."},"population":"Adults with obesity, or overweight with at least one weight-related complication, without diabetes.","overallDuration":"72 weeks","safetySummary":"Gastrointestinal adverse events were the most common and were mainly mild to moderate; treatment discontinuation increased with dose.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT04184622","title":"SURMOUNT-1 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","title":"Tirzepatide Once Weekly for the Treatment of Obesity","sourceType":"peer-reviewed publication","publishedAt":"2022-06-04","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight",
+      "acronym": "SURMOUNT-1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04184622"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group fixed target-dose trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related complication, without diabetes.",
+      "overallDuration": "72 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most common and were mainly mild to moderate; treatment discontinuation increased with dose.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04184622",
+            "title": "SURMOUNT-1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "title": "Tirzepatide Once Weekly for the Treatment of Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2022-06-04",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight and Type 2 Diabetes","acronym":"SURMOUNT-2","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT04657003"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group target-dose trial with lifestyle intervention."},"population":"Adults with obesity or overweight and type 2 diabetes; weight management was an explicit objective.","overallDuration":"72 weeks","safetySummary":"Gastrointestinal adverse events were most common, were generally mild to moderate, and occurred primarily during dose escalation.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT04657003","title":"SURMOUNT-2 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","title":"Tirzepatide once weekly for the treatment of obesity in people with type 2 diabetes","sourceType":"peer-reviewed publication","publishedAt":"2023-06-26","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight and Type 2 Diabetes",
+      "acronym": "SURMOUNT-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04657003"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group target-dose trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes; weight management was an explicit objective.",
+      "overallDuration": "72 weeks",
+      "safetySummary": "Gastrointestinal adverse events were most common, were generally mild to moderate, and occurred primarily during dose escalation.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04657003",
+            "title": "SURMOUNT-2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "title": "Tirzepatide once weekly for the treatment of obesity in people with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight Following Intensive Lifestyle Intervention","acronym":"SURMOUNT-3","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT04657016"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"A 12-week intensive-lifestyle lead-in preceded the 72-week randomized period."},"population":"Adults with obesity or overweight who achieved at least 5% weight loss during an intensive lifestyle lead-in, without diabetes.","overallDuration":"84 weeks","safetySummary":"Gastrointestinal adverse events were the most common and were primarily mild to moderate.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT04657016","title":"SURMOUNT-3 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/37840095/","title":"Tirzepatide after intensive lifestyle intervention in adults with overweight or obesity","sourceType":"peer-reviewed publication","publishedAt":"2023-10-15","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight Following Intensive Lifestyle Intervention",
+      "acronym": "SURMOUNT-3",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04657016"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "A 12-week intensive-lifestyle lead-in preceded the 72-week randomized period."
+      },
+      "population": "Adults with obesity or overweight who achieved at least 5% weight loss during an intensive lifestyle lead-in, without diabetes.",
+      "overallDuration": "84 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most common and were primarily mild to moderate.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04657016",
+            "title": "SURMOUNT-3 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "title": "Tirzepatide after intensive lifestyle intervention in adults with overweight or obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-10-15",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight for the Maintenance of Weight Loss","acronym":"SURMOUNT-4","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT04660643"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized withdrawal","masking":"Double-blind after open-label lead-in","comparator":"Placebo withdrawal","description":"After a 36-week open-label tirzepatide lead-in, participants were randomized to continue maximum tolerated dose or switch to placebo for 52 weeks."},"population":"Adults with obesity or overweight and a weight-related complication, without diabetes, who completed the tirzepatide lead-in.","overallDuration":"88 weeks","safetySummary":"Gastrointestinal adverse events were most common and were largely mild to moderate.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT04660643","title":"SURMOUNT-4 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/38078870/","title":"Continued Treatment With Tirzepatide for Maintenance of Weight Reduction in Adults With Obesity","sourceType":"peer-reviewed publication","publishedAt":"2023-12-11","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight for the Maintenance of Weight Loss",
+      "acronym": "SURMOUNT-4",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04660643"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized withdrawal",
+        "masking": "Double-blind after open-label lead-in",
+        "comparator": "Placebo withdrawal",
+        "description": "After a 36-week open-label tirzepatide lead-in, participants were randomized to continue maximum tolerated dose or switch to placebo for 52 weeks."
+      },
+      "population": "Adults with obesity or overweight and a weight-related complication, without diabetes, who completed the tirzepatide lead-in.",
+      "overallDuration": "88 weeks",
+      "safetySummary": "Gastrointestinal adverse events were most common and were largely mild to moderate.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04660643",
+            "title": "SURMOUNT-4 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "title": "Continued Treatment With Tirzepatide for Maintenance of Weight Reduction in Adults With Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-12-11",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide Compared With Semaglutide in Participants With Obesity or Overweight","acronym":"SURMOUNT-5","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT05822830"}],"phase":"Phase 3b","status":"Completed","design":{"randomization":"Randomized","masking":"Open-label","comparator":"Semaglutide","description":"Active-comparator parallel-group trial using maximum tolerated doses."},"population":"Adults with obesity, or overweight with at least one weight-related complication, without diabetes.","overallDuration":"72 weeks","safetySummary":"Gastrointestinal adverse events were most common in both groups and were mainly mild to moderate during dose escalation.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05822830","title":"SURMOUNT-5 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","title":"Tirzepatide as Compared with Semaglutide for the Treatment of Obesity","sourceType":"peer-reviewed publication","publishedAt":"2025-05-11","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide Compared With Semaglutide in Participants With Obesity or Overweight",
+      "acronym": "SURMOUNT-5",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05822830"
+        }
+      ],
+      "phase": "Phase 3b",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Semaglutide",
+        "description": "Active-comparator parallel-group trial using maximum tolerated doses."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related complication, without diabetes.",
+      "overallDuration": "72 weeks",
+      "safetySummary": "Gastrointestinal adverse events were most common in both groups and were mainly mild to moderate during dose escalation.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05822830",
+            "title": "SURMOUNT-5 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "title": "Tirzepatide as Compared with Semaglutide for the Treatment of Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-05-11",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide for Maintenance of Body Weight Reduction in Participants With Obesity or Overweight","acronym":"SURMOUNT-MAINTAIN","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT06047548"}],"phase":"Phase 3b","status":"Completed","design":{"randomization":"Randomized withdrawal","masking":"Double-blind after open-label lead-in","comparator":"Placebo withdrawal","description":"After a 60-week maximum-tolerated-dose lead-in, participants were randomized to continue that dose, reduce to 5 mg, or switch to placebo for 52 weeks."},"population":"Adults with obesity or overweight who completed 60 weeks of tirzepatide treatment.","overallDuration":"112 weeks","safetySummary":"The safety profile was consistent with prior tirzepatide studies; gastrointestinal events were the most common adverse events.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT06047548","title":"SURMOUNT-MAINTAIN study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","title":"Tirzepatide for maintenance of bodyweight reduction in adults with obesity","sourceType":"peer-reviewed publication","publishedAt":"2026-05-12","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide for Maintenance of Body Weight Reduction in Participants With Obesity or Overweight",
+      "acronym": "SURMOUNT-MAINTAIN",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06047548"
+        }
+      ],
+      "phase": "Phase 3b",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized withdrawal",
+        "masking": "Double-blind after open-label lead-in",
+        "comparator": "Placebo withdrawal",
+        "description": "After a 60-week maximum-tolerated-dose lead-in, participants were randomized to continue that dose, reduce to 5 mg, or switch to placebo for 52 weeks."
+      },
+      "population": "Adults with obesity or overweight who completed 60 weeks of tirzepatide treatment.",
+      "overallDuration": "112 weeks",
+      "safetySummary": "The safety profile was consistent with prior tirzepatide studies; gastrointestinal events were the most common adverse events.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06047548",
+            "title": "SURMOUNT-MAINTAIN study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "title": "Tirzepatide for maintenance of bodyweight reduction in adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-summit-nct04847557","companyId":"eli-lilly-and-company","assetId":"ly3298176","officialTitle":"A Study of Tirzepatide in Participants With Heart Failure With Preserved Ejection Fraction and Obesity","acronym":"SUMMIT","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT04847557"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Event-driven parallel-group trial with a maximum tolerated tirzepatide dose."},"population":"Adults with heart failure with preserved ejection fraction and obesity.","overallDuration":"At least 52 weeks; median follow-up 104 weeks","safetySummary":"Adverse events leading to treatment discontinuation occurred more frequently with tirzepatide and were mainly gastrointestinal.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT04847557","title":"SUMMIT study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/39555826/","title":"Tirzepatide for Heart Failure with Preserved Ejection Fraction and Obesity","sourceType":"peer-reviewed publication","publishedAt":"2024-11-16","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "officialTitle": "A Study of Tirzepatide in Participants With Heart Failure With Preserved Ejection Fraction and Obesity",
+      "acronym": "SUMMIT",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04847557"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Event-driven parallel-group trial with a maximum tolerated tirzepatide dose."
+      },
+      "population": "Adults with heart failure with preserved ejection fraction and obesity.",
+      "overallDuration": "At least 52 weeks; median follow-up 104 weeks",
+      "safetySummary": "Adverse events leading to treatment discontinuation occurred more frequently with tirzepatide and were mainly gastrointestinal.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04847557",
+            "title": "SUMMIT study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39555826/",
+            "title": "Tirzepatide for Heart Failure with Preserved Ejection Fraction and Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-11-16",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","companyId":"eli-lilly-and-company","assetId":"ly3298176","programId":"eli-lilly-and-company-ly3298176-subcutaneous-injection","officialTitle":"A Study of Tirzepatide in Chinese Participants With Obesity or Overweight","acronym":"SURMOUNT-CN","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT05024032"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group target-dose trial conducted in China."},"population":"Chinese adults with obesity or overweight, without diabetes.","overallDuration":"52 weeks","safetySummary":"The most frequent adverse events were gastrointestinal and were mostly mild to moderate.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05024032","title":"SURMOUNT-CN study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","title":"Tirzepatide for weight reduction in Chinese adults with obesity","sourceType":"peer-reviewed publication","publishedAt":"2024-05-31","checkedAt":"2026-07-13"}]}
+      "id": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
+      "officialTitle": "A Study of Tirzepatide in Chinese Participants With Obesity or Overweight",
+      "acronym": "SURMOUNT-CN",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05024032"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group target-dose trial conducted in China."
+      },
+      "population": "Chinese adults with obesity or overweight, without diabetes.",
+      "overallDuration": "52 weeks",
+      "safetySummary": "The most frequent adverse events were gastrointestinal and were mostly mild to moderate.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05024032",
+            "title": "SURMOUNT-CN study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "title": "Tirzepatide for weight reduction in Chinese adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-05-31",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     }
   ],
   "arms": [
-    {"id":"sm1-tirz5","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","role":"experimental","label":"Tirzepatide 5 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"5 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm1-tirz10","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","role":"experimental","label":"Tirzepatide 10 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm1-tirz15","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","role":"experimental","label":"Tirzepatide 15 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"15 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm1-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm2-tirz10","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","role":"experimental","label":"Tirzepatide 10 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm2-tirz15","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","role":"experimental","label":"Tirzepatide 15 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"15 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm2-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm3-tirz","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","role":"experimental","label":"Tirzepatide maximum tolerated dose","intervention":"Tirzepatide after intensive lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg or 15 mg maximum tolerated dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72-week randomized period"},
-    {"id":"sm3-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","role":"placebo","label":"Placebo","intervention":"Matched placebo after intensive lifestyle intervention","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72-week randomized period"},
-    {"id":"sm4-tirz","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","role":"experimental","label":"Continue tirzepatide","intervention":"Continue tirzepatide maximum tolerated dose","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg or 15 mg maximum tolerated dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52-week randomized maintenance period"},
-    {"id":"sm4-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","role":"placebo","label":"Withdraw to placebo","intervention":"Switch from tirzepatide to matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52-week randomized withdrawal period"},
-    {"id":"sm5-tirz","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","role":"experimental","label":"Tirzepatide maximum tolerated dose","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg or 15 mg maximum tolerated dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"sm5-sema","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","role":"active comparator","label":"Semaglutide maximum tolerated dose","intervention":"Semaglutide plus lifestyle intervention","linkedAsset":{"assetName":"Semaglutide","externalCompanyName":"Novo Nordisk A/S"},"dose":"1.7 mg or 2.4 mg maximum tolerated dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"72 weeks"},
-    {"id":"smmaintain-mtd","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","role":"experimental","label":"Continue maximum tolerated dose","intervention":"Continue tirzepatide maximum tolerated dose","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg or 15 mg maximum tolerated dose","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52-week randomized maintenance period"},
-    {"id":"smmaintain-5mg","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","role":"experimental","label":"Reduce to tirzepatide 5 mg","intervention":"Tirzepatide reduced maintenance dose","linkedAsset":{"assetId":"ly3298176"},"dose":"5 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52-week randomized maintenance period"},
-    {"id":"smmaintain-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","role":"placebo","label":"Withdraw to placebo","intervention":"Switch from tirzepatide to matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52-week randomized withdrawal period"},
-    {"id":"summit-tirz","studyId":"eli-lilly-and-company-tirzepatide-summit-nct04847557","role":"experimental","label":"Tirzepatide maximum tolerated dose","intervention":"Tirzepatide plus usual care","linkedAsset":{"assetId":"ly3298176"},"dose":"Up to 15 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"At least 52 weeks"},
-    {"id":"summit-placebo","studyId":"eli-lilly-and-company-tirzepatide-summit-nct04847557","role":"placebo","label":"Placebo","intervention":"Matched placebo plus usual care","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"At least 52 weeks"},
-    {"id":"smcn-tirz10","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","role":"experimental","label":"Tirzepatide 10 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"10 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52 weeks"},
-    {"id":"smcn-tirz15","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","role":"experimental","label":"Tirzepatide 15 mg","intervention":"Tirzepatide plus lifestyle intervention","linkedAsset":{"assetId":"ly3298176"},"dose":"15 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52 weeks"},
-    {"id":"smcn-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"52 weeks"}
+    {
+      "id": "sm1-tirz5",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "role": "experimental",
+      "label": "Tirzepatide 5 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm1-tirz10",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "role": "experimental",
+      "label": "Tirzepatide 10 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm1-tirz15",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "role": "experimental",
+      "label": "Tirzepatide 15 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm1-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm2-tirz10",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "role": "experimental",
+      "label": "Tirzepatide 10 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm2-tirz15",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "role": "experimental",
+      "label": "Tirzepatide 15 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm2-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm3-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "role": "experimental",
+      "label": "Tirzepatide maximum tolerated dose",
+      "intervention": "Tirzepatide after intensive lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg or 15 mg maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72-week randomized period"
+    },
+    {
+      "id": "sm3-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo after intensive lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72-week randomized period"
+    },
+    {
+      "id": "sm4-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "role": "experimental",
+      "label": "Continue tirzepatide",
+      "intervention": "Continue tirzepatide maximum tolerated dose",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg or 15 mg maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52-week randomized maintenance period"
+    },
+    {
+      "id": "sm4-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "role": "placebo",
+      "label": "Withdraw to placebo",
+      "intervention": "Switch from tirzepatide to matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52-week randomized withdrawal period"
+    },
+    {
+      "id": "sm5-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "role": "experimental",
+      "label": "Tirzepatide maximum tolerated dose",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg or 15 mg maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "sm5-sema",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "role": "active comparator",
+      "label": "Semaglutide maximum tolerated dose",
+      "intervention": "Semaglutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "dose": "1.7 mg or 2.4 mg maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "smmaintain-mtd",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "role": "experimental",
+      "label": "Continue maximum tolerated dose",
+      "intervention": "Continue tirzepatide maximum tolerated dose",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg or 15 mg maximum tolerated dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52-week randomized maintenance period"
+    },
+    {
+      "id": "smmaintain-5mg",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "role": "experimental",
+      "label": "Reduce to tirzepatide 5 mg",
+      "intervention": "Tirzepatide reduced maintenance dose",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52-week randomized maintenance period"
+    },
+    {
+      "id": "smmaintain-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "role": "placebo",
+      "label": "Withdraw to placebo",
+      "intervention": "Switch from tirzepatide to matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52-week randomized withdrawal period"
+    },
+    {
+      "id": "summit-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "role": "experimental",
+      "label": "Tirzepatide maximum tolerated dose",
+      "intervention": "Tirzepatide plus usual care",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "Up to 15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "At least 52 weeks"
+    },
+    {
+      "id": "summit-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus usual care",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "At least 52 weeks"
+    },
+    {
+      "id": "smcn-tirz10",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "role": "experimental",
+      "label": "Tirzepatide 10 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "smcn-tirz15",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "role": "experimental",
+      "label": "Tirzepatide 15 mg",
+      "intervention": "Tirzepatide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "smcn-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "52 weeks"
+    }
   ],
+  "analysisGroups": [],
   "endpoints": [
-    {"id":"sm1-weight-week72","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 72"},
-    {"id":"sm2-weight-week72","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 72"},
-    {"id":"sm3-weight-week72","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","name":"Percentage change in body weight from randomization after intensive lifestyle intervention","classification":"Primary efficacy","assessmentTimepoint":"Week 72 of randomized treatment"},
-    {"id":"sm4-weight-week88","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","name":"Percentage change in body weight during the randomized withdrawal period","classification":"Primary efficacy","assessmentTimepoint":"Week 36 to Week 88"},
-    {"id":"sm5-weight-week72","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 72"},
-    {"id":"smmaintain-weight-week112","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","name":"Percentage change from original baseline in body weight","classification":"Key efficacy","assessmentTimepoint":"Week 112"},
-    {"id":"summit-hf-events","studyId":"eli-lilly-and-company-tirzepatide-summit-nct04847557","name":"Worsening heart-failure event","classification":"Key efficacy","assessmentTimepoint":"Median follow-up 104 weeks"},
-    {"id":"smcn-weight-week52","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 52"}
+    {
+      "id": "sm1-weight-week72",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "sm2-weight-week72",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "sm3-weight-week72",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "name": "Percentage change in body weight from randomization after intensive lifestyle intervention",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72 of randomized treatment"
+    },
+    {
+      "id": "sm4-weight-week88",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "name": "Percentage change in body weight during the randomized withdrawal period",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36 to Week 88"
+    },
+    {
+      "id": "sm5-weight-week72",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "smmaintain-weight-week112",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "name": "Percentage change from original baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 112"
+    },
+    {
+      "id": "summit-hf-events",
+      "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "name": "Worsening heart-failure event",
+      "role": "co-primary",
+      "domain": "cardiovascular",
+      "assessmentTimepoint": "Median follow-up 104 weeks"
+    },
+    {
+      "id": "smcn-weight-week52",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 52"
+    }
   ],
   "outcomes": [
-    {"id":"sm1-weight-tirz5","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-tirz5"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-15.0","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-tirz10","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-tirz10"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-19.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-tirz15","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-tirz15"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-20.9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-3.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-tirz5-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-tirz5"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-16.0","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-tirz10-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-tirz10"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-21.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-tirz15-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-tirz15"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-22.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm1-weight-placebo-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-1-nct04184622","endpointId":"sm1-weight-week72","armIds":["sm1-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-2.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/35658024/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm2-weight-tirz10","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","endpointId":"sm2-weight-week72","armIds":["sm2-tirz10"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-12.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm2-weight-tirz15","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","endpointId":"sm2-weight-week72","armIds":["sm2-tirz15"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-14.7","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm2-weight-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","endpointId":"sm2-weight-week72","armIds":["sm2-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-3.2","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm2-weight-tirz10-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","endpointId":"sm2-weight-week72","armIds":["sm2-tirz10"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-13.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm2-weight-tirz15-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","endpointId":"sm2-weight-week72","armIds":["sm2-tirz15"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-15.7","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm2-weight-placebo-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-2-nct04657003","endpointId":"sm2-weight-week72","armIds":["sm2-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-3.3","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37385275/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm3-weight-tirz","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","endpointId":"sm3-weight-week72","armIds":["sm3-tirz"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-18.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37840095/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm3-weight-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","endpointId":"sm3-weight-week72","armIds":["sm3-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"2.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37840095/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm3-weight-tirz-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","endpointId":"sm3-weight-week72","armIds":["sm3-tirz"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-21.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37840095/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm3-weight-placebo-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-3-nct04657016","endpointId":"sm3-weight-week72","armIds":["sm3-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"3.3","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/37840095/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm4-weight-tirz","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","endpointId":"sm4-weight-week88","armIds":["sm4-tirz"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-5.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38078870/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm4-weight-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","endpointId":"sm4-weight-week88","armIds":["sm4-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"14.0","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38078870/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm4-weight-tirz-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","endpointId":"sm4-weight-week88","armIds":["sm4-tirz"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-6.7","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38078870/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm4-weight-placebo-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-4-nct04660643","endpointId":"sm4-weight-week88","armIds":["sm4-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"14.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38078870/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm5-weight-tirz","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","endpointId":"sm5-weight-week72","armIds":["sm5-tirz"],"analysisPopulation":"Full analysis set (overall)","estimand":"Modified treatment-regimen estimand","result":{"value":"-20.2","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm5-weight-sema","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","endpointId":"sm5-weight-week72","armIds":["sm5-sema"],"analysisPopulation":"Full analysis set (overall)","estimand":"Modified treatment-regimen estimand","result":{"value":"-13.7","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm5-weight-between","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","endpointId":"sm5-weight-week72","armIds":["sm5-tirz","sm5-sema"],"analysisPopulation":"Full analysis set (overall)","estimand":"Modified treatment-regimen estimand","result":{"value":"-6.5","unit":"percentage points","resultType":"between-arm","comparisonType":"Estimated treatment difference, tirzepatide minus semaglutide","confidenceInterval":"95% CI -8.1 to -4.9"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm5-weight-tirz-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","endpointId":"sm5-weight-week72","armIds":["sm5-tirz"],"analysisPopulation":"Efficacy analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-21.6","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm5-weight-sema-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","endpointId":"sm5-weight-week72","armIds":["sm5-sema"],"analysisPopulation":"Efficacy analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-15.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"sm5-weight-between-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-5-nct05822830","endpointId":"sm5-weight-week72","armIds":["sm5-tirz","sm5-sema"],"analysisPopulation":"Efficacy analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-6.2","unit":"percentage points","resultType":"between-arm","comparisonType":"Estimated treatment difference, tirzepatide minus semaglutide","confidenceInterval":"95% CI -7.8 to -4.6"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40353578/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smmaintain-weight-mtd","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","endpointId":"smmaintain-weight-week112","armIds":["smmaintain-mtd"],"analysisPopulation":"Efficacy analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-22.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smmaintain-weight-5mg","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","endpointId":"smmaintain-weight-week112","armIds":["smmaintain-5mg"],"analysisPopulation":"Efficacy analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-17.0","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smmaintain-weight-placebo-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","endpointId":"smmaintain-weight-week112","armIds":["smmaintain-placebo"],"analysisPopulation":"Efficacy analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-10.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smmaintain-weight-mtd-treatment-regimen","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","endpointId":"smmaintain-weight-week112","armIds":["smmaintain-mtd"],"analysisPopulation":"Full analysis set (overall)","estimand":"Modified treatment-regimen estimand","result":{"value":"-21.9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smmaintain-weight-5mg-treatment-regimen","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","endpointId":"smmaintain-weight-week112","armIds":["smmaintain-5mg"],"analysisPopulation":"Full analysis set (overall)","estimand":"Modified treatment-regimen estimand","result":{"value":"-16.6","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smmaintain-weight-placebo-treatment-regimen","studyId":"eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548","endpointId":"smmaintain-weight-week112","armIds":["smmaintain-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Modified treatment-regimen estimand","result":{"value":"-9.9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/42119587/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"summit-hf-tirz","studyId":"eli-lilly-and-company-tirzepatide-summit-nct04847557","endpointId":"summit-hf-events","armIds":["summit-tirz"],"analysisPopulation":"Intention-to-treat (overall)","result":{"value":"8.0","unit":"percent of participants","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/39555826/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"summit-hf-placebo","studyId":"eli-lilly-and-company-tirzepatide-summit-nct04847557","endpointId":"summit-hf-events","armIds":["summit-placebo"],"analysisPopulation":"Intention-to-treat (overall)","result":{"value":"14.2","unit":"percent of participants","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/39555826/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"summit-hf-hazard-ratio","studyId":"eli-lilly-and-company-tirzepatide-summit-nct04847557","endpointId":"summit-hf-events","armIds":["summit-tirz","summit-placebo"],"analysisPopulation":"Intention-to-treat (overall)","result":{"value":"0.54","unit":"hazard ratio","resultType":"between-arm","comparisonType":"Hazard ratio, tirzepatide versus placebo","confidenceInterval":"95% CI 0.34 to 0.85"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/39555826/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smcn-weight-tirz10","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","endpointId":"smcn-weight-week52","armIds":["smcn-tirz10"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-13.6","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smcn-weight-tirz15","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","endpointId":"smcn-weight-week52","armIds":["smcn-tirz15"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-17.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smcn-weight-placebo","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","endpointId":"smcn-weight-week52","armIds":["smcn-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-2.3","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smcn-weight-tirz10-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","endpointId":"smcn-weight-week52","armIds":["smcn-tirz10"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-14.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smcn-weight-tirz15-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","endpointId":"smcn-weight-week52","armIds":["smcn-tirz15"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-19.9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"smcn-weight-placebo-efficacy","studyId":"eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032","endpointId":"smcn-weight-week52","armIds":["smcn-placebo"],"analysisPopulation":"Modified intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-2.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/38819983/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}}
+    {
+      "id": "sm1-weight-tirz5",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz5"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-15.0",
+        "numericValue": -15,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz10",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-19.5",
+        "numericValue": -19.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz15",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-20.9",
+        "numericValue": -20.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-3.1",
+        "numericValue": -3.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz5-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz5"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.0",
+        "numericValue": -16,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz10-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.4",
+        "numericValue": -21.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-tirz15-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-22.5",
+        "numericValue": -22.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm1-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+      "endpointId": "sm1-weight-week72",
+      "armIds": [
+        "sm1-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.4",
+        "numericValue": -2.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35658024/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-tirz10",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-12.8",
+        "numericValue": -12.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-tirz15",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-14.7",
+        "numericValue": -14.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-3.2",
+        "numericValue": -3.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-tirz10-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-13.4",
+        "numericValue": -13.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-tirz15-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.7",
+        "numericValue": -15.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm2-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+      "endpointId": "sm2-weight-week72",
+      "armIds": [
+        "sm2-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.3",
+        "numericValue": -3.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37385275/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm3-weight-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "endpointId": "sm3-weight-week72",
+      "armIds": [
+        "sm3-tirz"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-18.4",
+        "numericValue": -18.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm3-weight-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "endpointId": "sm3-weight-week72",
+      "armIds": [
+        "sm3-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "2.5",
+        "numericValue": 2.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm3-weight-tirz-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "endpointId": "sm3-weight-week72",
+      "armIds": [
+        "sm3-tirz"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.1",
+        "numericValue": -21.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm3-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+      "endpointId": "sm3-weight-week72",
+      "armIds": [
+        "sm3-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "3.3",
+        "numericValue": 3.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37840095/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm4-weight-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "endpointId": "sm4-weight-week88",
+      "armIds": [
+        "sm4-tirz"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-5.5",
+        "numericValue": -5.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm4-weight-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "endpointId": "sm4-weight-week88",
+      "armIds": [
+        "sm4-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "14.0",
+        "numericValue": 14,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm4-weight-tirz-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "endpointId": "sm4-weight-week88",
+      "armIds": [
+        "sm4-tirz"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.7",
+        "numericValue": -6.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm4-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+      "endpointId": "sm4-weight-week88",
+      "armIds": [
+        "sm4-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "14.8",
+        "numericValue": 14.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38078870/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-20.2",
+        "numericValue": -20.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-sema",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-13.7",
+        "numericValue": -13.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-between",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz",
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-6.5",
+        "numericValue": -6.5,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Estimated treatment difference, tirzepatide minus semaglutide",
+        "confidenceInterval": "95% CI -8.1 to -4.9"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-tirz-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.6",
+        "numericValue": -21.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-sema-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.4",
+        "numericValue": -15.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sm5-weight-between-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+      "endpointId": "sm5-weight-week72",
+      "armIds": [
+        "sm5-tirz",
+        "sm5-sema"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.2",
+        "numericValue": -6.2,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Estimated treatment difference, tirzepatide minus semaglutide",
+        "confidenceInterval": "95% CI -7.8 to -4.6"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40353578/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-mtd",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-mtd"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-22.4",
+        "numericValue": -22.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-5mg",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-5mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-17.0",
+        "numericValue": -17,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.1",
+        "numericValue": -10.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-mtd-treatment-regimen",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-mtd"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-21.9",
+        "numericValue": -21.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-5mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-5mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-16.6",
+        "numericValue": -16.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smmaintain-weight-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+      "endpointId": "smmaintain-weight-week112",
+      "armIds": [
+        "smmaintain-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Modified treatment-regimen estimand",
+      "result": {
+        "value": "-9.9",
+        "numericValue": -9.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "summit-hf-tirz",
+      "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "endpointId": "summit-hf-events",
+      "armIds": [
+        "summit-tirz"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "result": {
+        "value": "8.0",
+        "numericValue": 8,
+        "unit": "percent of participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39555826/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "summit-hf-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "endpointId": "summit-hf-events",
+      "armIds": [
+        "summit-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "result": {
+        "value": "14.2",
+        "numericValue": 14.2,
+        "unit": "percent of participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39555826/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "summit-hf-hazard-ratio",
+      "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+      "endpointId": "summit-hf-events",
+      "armIds": [
+        "summit-tirz",
+        "summit-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "result": {
+        "value": "0.54",
+        "numericValue": 0.54,
+        "unit": "ratio",
+        "resultType": "between-arm",
+        "effectMeasure": "Hazard ratio",
+        "comparisonType": "Hazard ratio, tirzepatide versus placebo",
+        "confidenceInterval": "95% CI 0.34 to 0.85"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39555826/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-tirz10",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-13.6",
+        "numericValue": -13.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-tirz15",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-17.5",
+        "numericValue": -17.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.3",
+        "numericValue": -2.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-tirz10-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-tirz10"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.4",
+        "numericValue": -14.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-tirz15-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-tirz15"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-19.9",
+        "numericValue": -19.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smcn-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+      "endpointId": "smcn-weight-week52",
+      "armIds": [
+        "smcn-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.4",
+        "numericValue": -2.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38819983/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }

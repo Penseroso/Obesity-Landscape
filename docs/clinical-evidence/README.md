@@ -1,5 +1,8 @@
 # Clinical Evidence Data Contract
 
+**Schema version: 2.0** (ADR-0037). v2.0 is a distinct version, not a superset of
+v1: every source file declares `"schemaVersion": "2.0"` and a v1 file is rejected.
+
 Authoritative semantic and file contract for the Clinical Evidence data layer.
 This module implements source files, TypeScript types, validation, synthetic
 checks, and a deterministic generated aggregate. It does not implement research
@@ -49,27 +52,31 @@ data/clinical-evidence/
       └─ clinical-evidence.json
 ```
 
-Each asset file contains parallel arrays:
+Each asset file declares its schema version and contains five parallel arrays:
 
 ```json
 {
+  "schemaVersion": "2.0",
   "companyId": "<company-id>",
   "assetId": "<asset-id>",
   "studies": [],
   "arms": [],
+  "analysisGroups": [],
   "endpoints": [],
   "outcomes": []
 }
 ```
 
-Generated output is a deterministic read-only aggregate:
+Generated output is a deterministic read-only aggregate, plus one derived
+projection:
 
 ```text
-data/generated/clinical-evidence.json
+data/generated/clinical-evidence.json               canonical aggregate
+data/generated/clinical-evidence-asset-studies.json derived projection (not canonical)
 ```
 
-It has the same top-level array names. Source files are authoritative; generated
-output must not be edited by hand.
+The aggregate has the same top-level array names and the same `schemaVersion`.
+Source files are authoritative; generated output must not be edited by hand.
 
 ## Entity And Field Rules
 
@@ -96,11 +103,40 @@ single study**. It requires an arm ID, `studyId`, role (`experimental`, `placebo
 frequency, and treatment duration. Planned and analyzed N are optional when
 disclosed. Treatment and comparator arms use the same structure.
 
-An Arm is a treatment configuration inside one study — it is **not** a cohort or a
-sub-study. There is no Cohort entity: when a platform trial's "cohort" is
-effectively a distinct sub-study (its own population, endpoints, or focal asset),
-model it as its **own Study**, not as an Arm. Reserve Arms for the treatment and
-comparator groups compared within one study.
+An Arm is a treatment configuration inside one study — it is **not** a cohort, a
+sub-study, or a pooled/derived analysis group. There is no Cohort entity: when a
+platform trial's "cohort" is effectively a distinct sub-study (its own population,
+endpoints, or focal asset), model it as its **own Study**, not as an Arm. A pooled
+or derived analysis unit is an **AnalysisGroup** (below), never an Arm. Reserve
+Arms for the protocol-defined treatment and comparator groups compared within one
+study.
+
+`linkedAsset` must be an **internal reference** — `companyId` + `assetId`, including
+**across companies** — whenever the comparator or component resolves to an asset in
+the Company/Pipeline registry. Free text (`assetName` / `codeName` with
+`externalCompanyName`) is reserved for genuinely external or unresolved assets. The
+validator rejects a free-text `linkedAsset` whose name matches a registry asset's
+canonical name, development code, or alias, and rejects an `assetId` without its
+owning `companyId`. Internal linkage is what makes reciprocal asset → studies
+discovery possible: SURMOUNT-5's semaglutide comparator arm links to Novo's
+`novo-nordisk/semaglutide`, so the head-to-head is discoverable from the Novo side.
+
+**AnalysisGroup** is a **study-scoped** analysis unit that is not a protocol Arm: a
+source-reported pooled group, starting-dose subgroup, or other derived group. It
+requires an analysis-group ID, `studyId`, `kind` (`pooled`, `derived`,
+`starting-dose-subgroup`, or `other`), a label, and a non-empty `memberArmIds` set.
+
+- membership is a set of protocol **Arms of the same study**; no duplicates, and
+  groups are **flat — they never nest**.
+- `kind` is source-reported and **never inferred**.
+- an AnalysisGroup id must not collide with an Arm id.
+- a group is not stored speculatively: **every AnalysisGroup must be referenced by at
+  least one Outcome**.
+
+An AnalysisGroup exists to preserve group membership that an Arm cannot express. It
+does **not** license redistributing a pooled value across its member Arms, and it is
+**study-scoped**: a pooled unit spanning multiple Studies remains unrepresentable
+(see Deferred limitations).
 
 Required background or concomitant therapy is **not a structured field**. Capture
 it in free text on `arm.intervention` / `arm.label` and on `study.population`
@@ -109,9 +145,26 @@ protocol-required standard-of-care background therapy remains background therapy
 and is not promoted to a regimen or a separate asset.
 
 **Endpoint** is one prespecified outcome definition at one assessment timepoint. It
-requires an endpoint ID, `studyId`, name, classification, and assessment
+requires an endpoint ID, `studyId`, name, structured `role`, and assessment
 timepoint. Only endpoints with at least one actual disclosed result may be
 stored.
+
+`role` is a required enum: `primary`, `co-primary`, `key-secondary`, `secondary`,
+`exploratory`, `safety`, `other`. It must be **confirmed from the study's cited
+sources** (registry outcome designation, protocol, or publication) — it is **not**
+derived from a free-text label. Where two or more primary outcome measures are
+prespecified, each is `co-primary`. Where no cited source confirms a role, use
+`other` rather than guessing.
+
+`domain` is an optional enum (`body weight`, `body composition`, `glycemic`,
+`cardiovascular`, `renal`, `hepatic`, `respiratory`, `musculoskeletal`,
+`patient-reported`, `safety`, `other`) that distinguishes a weight endpoint from a
+comorbidity endpoint — SUMMIT's heart-failure event endpoint is `cardiovascular`,
+TRIUMPH-4's WOMAC pain endpoint is `musculoskeletal`, and both studies' weight
+endpoints are `body weight`. Omit `domain` rather than guess it.
+
+`classification` is a **legacy optional free-text descriptor**. It is superseded by
+`role` + `domain`, carries no authority, and must never be used to infer a role.
 
 The same measure reported at **different timepoints** requires **distinct Endpoint
 records** — one per timepoint, each with its own `assessmentTimepoint`. Do not
@@ -120,12 +173,32 @@ excluded from the outcome semantic key (see the Latest-Result Rule), so the seco
 Outcome would be rejected as a duplicate semantic outcome.
 
 **Outcome** is one reported result for a specific endpoint (which already carries
-the timepoint), arm set, analysis population, estimand, result type, and comparison
-type. It requires an outcome ID, `studyId`, `endpointId`, one or more `armIds`,
-analysis population, source-reported result value and unit, result type
-(`arm-level` or `between-arm`), maturity, and verification metadata. `estimand` and
-`comparisonType` are optional fields but participate in the semantic key; the
-timepoint is **not** carried on the Outcome — it lives on the referenced Endpoint.
+the timepoint), analysis unit, analysis population, estimand, result type, and
+comparison type. It requires an outcome ID, `studyId`, `endpointId`, exactly one
+**anchor** (below), analysis population, a structured result, maturity, and
+verification metadata. `estimand` and `comparisonType` are optional fields but
+participate in the semantic key; the timepoint is **not** carried on the Outcome — it
+lives on the referenced Endpoint.
+
+**Outcome anchoring is exclusive.** An Outcome anchors **either** to protocol Arms
+via `armIds` (`arm-level` = exactly one arm, `between-arm` = two or more) **xor** to
+one AnalysisGroup via `analysisGroupId` — never both, and never neither. An
+analysis-group Outcome does not also enumerate `armIds`; it carries a single-unit
+result (`resultType: arm-level`), because a comparison *between* analysis groups is
+not representable in v2.0 (see Deferred limitations).
+
+The **result** separates four distinct semantics that v1 collapsed into two free
+strings:
+
+- `value` — the source-reported **display text**, preserved verbatim.
+- `numericValue` — the machine-readable number, or `null` when the source value is
+  narrative. Never a re-derived or recalculated figure.
+- `unit` — the **actual unit of measurement** (`percent`, `percentage points`, `kg`,
+  `points`, `ratio`, …). It is **never an effect measure**: the validator rejects
+  `"hazard ratio"`, `"odds ratio"`, `"mean difference"` and similar in this field.
+- `effectMeasure` — what a between-arm number *measures* (`"Hazard ratio"`,
+  `"Estimated treatment difference"`). Required on a `between-arm` Outcome, forbidden
+  elsewhere. Direction stays in `comparisonType`.
 
 `maturity` is a required enum with exactly these values: `interim`, `topline`,
 `final`, `registry result`, `conference result`, `peer-reviewed publication`. It
@@ -162,7 +235,19 @@ population"` and `"Efficacy estimand population"` must not be used as
 strategy, including treatment-policy, treatment-regimen, modified
 treatment-regimen, efficacy, hypothetical, or other directly reported terminology.
 These examples are not a closed vocabulary. Do not infer an estimand that the
-source does not identify. When multiple estimands are directly reported for the
+source does not identify.
+
+**Canonicalization (semantic key only).** `estimand` and `analysisPopulation` are
+canonicalized when the semantic key and grouping are computed — casing, hyphens and
+other punctuation are folded, a trailing `estimand` / `estimand population` suffix is
+dropped, and standard analysis-set abbreviations (`mITT`, `FAS`, `EAS`, `ITT`, `PP`)
+resolve to their expanded form. So `"Treatment-policy estimand"`, `"Treatment policy
+estimand"` and `"Treatment policy"` are **one** estimand, and `"FAS (overall)"` and
+`"Full analysis set (overall)"` are **one** population — while `"Full analysis set
+(Part B)"` stays distinct, because the parenthetical subgroup is canonicalized
+separately. The **stored text is never rewritten**: source-reported wording is
+preserved verbatim on the record, and the vocabulary stays open — an unknown
+source term is canonicalized structurally and remains valid. When multiple estimands are directly reported for the
 same Study, Endpoint, protocol-defined Arm set, and assessment timepoint, store each
 as a separate Outcome. Outcomes separated by a source-supported `estimand` or
 `analysisPopulation` are semantically distinct, not duplicates.
@@ -197,28 +282,33 @@ Do not:
 - map a subgroup result to broader Arms that do not faithfully represent that
   subgroup.
 
-Adjusted effects are allowed only when the source directly reports them. When a
-result depends on pooled analysis groups, starting-dose subgroups, substudy or
-cohort structure, or ambiguous multi-asset anchoring that the current entities
-cannot preserve, omit the result instead of creating artificial Arms, calculating
-or redistributing values, or forcing a misleading anchor. Record the limitation in
-the research report and treat it as a deferred schema decision, not an
-operating-data defect. The unresolved structural candidates are recorded in
-`docs/data-protocol/edge-cases.md` and ADR-0036.
+Adjusted effects are allowed only when the source directly reports them. A
+source-reported **pooled or derived analysis group** is now representable: model it
+as an AnalysisGroup over its member Arms and anchor the Outcome to that group. What
+remains forbidden is unchanged — do not create artificial Arms, do not calculate or
+redistribute a pooled value across its members, and do not force a misleading anchor.
+
+When a result still cannot be represented faithfully (a structure listed under
+Deferred limitations), **omit that result and report it** under the case-scoped
+fallback policy in `docs/clinical-evidence-workflow.md` §5.1. The omission is a
+deferred schema case, not an operating-data defect.
 
 ### Normative Lilly examples
 
-Commit `14c773a` is the normative operating-data reference for these rules; do not
-rewrite those records merely to restate the contract:
-
 - SURMOUNT-1 through SURMOUNT-4 use actual modified-ITT analysis populations and
   separate treatment-regimen and efficacy Outcomes.
-- SURMOUNT-5 separates FAS from EAS, separates the estimands, and stores two
-  directional between-arm estimates.
+- SURMOUNT-5 separates FAS from EAS, separates the estimands, stores two directional
+  between-arm estimates, and links its semaglutide comparator arm to the internal
+  Novo asset.
 - TRIUMPH-4 stores only directly reported topline estimands, without inferred
-  confidence intervals or p-values.
-- the retatrutide Phase 2 hybrid-estimand result is intentionally omitted because
-  its starting-dose groups do not map faithfully to the pooled 4 mg and 8 mg Arms.
+  confidence intervals or p-values, and carries two `co-primary` endpoints in
+  different domains (`body weight`, `musculoskeletal`).
+- the retatrutide Phase 2 study is the worked example of the pooled-group model: its
+  four protocol starting-dose Arms (4 mg from a 2 mg or 4 mg start; 8 mg from a 2 mg
+  or 4 mg start) carry the arm identity, while the publication's **combined 4-mg and
+  combined 8-mg groups** are `pooled` AnalysisGroups that anchor the reported combined
+  results. Under v1 this result was omitted because the starting-dose groups could not
+  map to pooled "Arms"; v2.0 represents it without distortion.
 
 Safety stays separate from efficacy outcomes. Store only a concise study-level
 safety summary; do not attempt exhaustive adverse-event capture in this module.
@@ -237,9 +327,15 @@ Company/Pipeline source data. A `programId`, when present, must belong to the
 same company and asset. A `regimenId`, when present, must belong to the same
 company.
 
-Arms and endpoints must belong to their referenced study. Outcomes must
-reference a study, an endpoint from that same study, and one or more arms from
-that same study.
+Arms, analysis groups and endpoints must belong to their referenced study. An
+analysis group's member arms must belong to that same study. Outcomes must reference
+a study, an endpoint from that same study, and either one or more arms **or** one
+analysis group from that same study.
+
+A `linkedAsset` is the one reference that may cross companies: an internally
+resolvable comparator carries the other company's `companyId` + `assetId`. This is a
+reference only — it never moves storage ownership, which stays with the single
+`companyId`/`assetId` anchor of the Study and its source file.
 
 Existing company-local identity rules remain in force. This module does not
 require cross-company entity resolution and does not redefine company, asset,
@@ -250,10 +346,14 @@ not be stored inside `PipelineProgramRecord`.
 
 Operating data must contain only the latest authoritative result for the same
 semantic outcome. A semantic outcome is the combination of `studyId`,
-`endpointId`, the protocol-defined Arm set, `analysisPopulation`, `estimand`,
-`resultType`, and comparison direction when applicable (carried by
-`comparisonType`). The Arm set is order-insensitive. A source-supported difference
-in analysis population or estimand makes an Outcome semantically distinct.
+`endpointId`, the protocol-defined Arm set, the **analysis group**,
+`analysisPopulation`, `estimand`, `resultType`, and comparison direction when
+applicable (carried by `comparisonType`). The Arm set is order-insensitive;
+`analysisPopulation` and `estimand` enter the key canonicalized (above).
+
+The rule applies **only within one identical semantic result**. A source-supported
+difference in **analysis group**, analysis population, or estimand makes an Outcome
+semantically **distinct** — it is never collapsed or superseded by this rule.
 
 Earlier source references may remain in metadata for traceability, but
 superseded values must not remain as parallel outcomes. Derived values are not
@@ -265,7 +365,7 @@ outcome key. Two results that differ only by timepoint are therefore modeled as 
 Endpoint records (see above), and an interim result is superseded in place by the
 mature result under the same key rather than co-stored.
 
-The semantic key treats `armIds` and `endpointId` as **already-unique** surrogates,
+The semantic key treats `armIds`, `analysisGroupId` and `endpointId` as **already-unique** surrogates,
 so duplicate prevention depends on **not authoring semantically duplicate Arm or
 Endpoint records**. Before creating an Arm or Endpoint, **reuse the existing record's
 id** if one already describes the same real-world configuration or measure — do not
@@ -274,10 +374,11 @@ are semantically identical but carry different ids would produce different outco
 semantic keys for what is really one clinical fact, silently defeating outcome
 duplicate detection. The validator adds a **minimal defensive check** that rejects an
 obvious semantic-duplicate Arm (same study, role, label, intervention, dose,
-titration, route, dosing frequency, treatment duration, and linked asset) or
-Endpoint (same study, name, classification, timepoint); this blocks the obvious case
-but is **not** a complete guarantee — non-identical paraphrases still slip through,
-so the reuse rule above remains the primary control.
+titration, route, dosing frequency, treatment duration, and linked asset),
+AnalysisGroup (same study, kind, member-arm set, label) or Endpoint (same study,
+name, role, domain, timepoint); this blocks the obvious case but is **not** a
+complete guarantee — non-identical paraphrases still slip through, so the reuse rule
+above remains the primary control.
 
 ## Source To Aggregate Flow
 
@@ -285,16 +386,58 @@ so the reuse rule above remains the primary control.
 data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
 -> npm run data:generate
 -> data/generated/clinical-evidence.json
+-> data/generated/clinical-evidence-asset-studies.json   (derived projection)
 ```
 
-Generation validates all Clinical Evidence source files, concatenates the four
+Generation validates all Clinical Evidence source files, concatenates the five
 entity arrays, sorts them deterministically, and writes the aggregate. Sort order
 is:
 
 - studies: `companyId`, then `assetId`, then `id`.
 - arms: `studyId`, then `id`.
+- analysisGroups: `studyId`, then `id`.
 - endpoints: `studyId`, then `id`.
 - outcomes: `studyId`, then `endpointId`, then `id`.
+
+## Derived Projection: reciprocal asset → studies
+
+`data/generated/clinical-evidence-asset-studies.json` answers "which studies involve
+this asset?" from **either** side of a head-to-head. For each asset it lists
+`focalStudyIds` (studies anchored to it) and `linkedStudyIds` (studies where it
+appears only as an internally linked Arm asset).
+
+It is a **derived projection, not canonical data**:
+
+- computed only from canonical internal links — `study.{companyId,assetId}` and each
+  internally resolved `arm.linkedAsset.{companyId,assetId}`.
+- **never authored or hand-edited**; it carries no independent identity and takes no
+  part in validation identity, referential integrity, or the semantic key.
+- regenerated deterministically; the validator rejects a file that differs from
+  recomputation.
+
+It is therefore **outside** the frozen v2.0 canonical contract, and a consumer must
+not treat it as a source of record.
+
+## Deferred limitations
+
+v2.0 is explicit about what it still cannot represent. Each is logged in
+`docs/data-protocol/edge-cases.md`, and a research run that meets one **omits and
+reports** it under the case-scoped fallback policy (workflow §5.1) rather than
+distorting the data:
+
+- **Study grouping / parent-child** — extensions, rollovers, core+OLE have no stored
+  linkage.
+- **Shared registry identity across master-protocol sub-studies**, or multiple focal
+  assets under one registry identifier.
+- **Endpoint testing order / multiplicity / gatekeeping** — `role` states the role,
+  not the prespecified testing sequence.
+- **`maturity` conflates finality with source venue** and has no regulatory value; the
+  enum is kept as-is and this limitation is documented, not fixed.
+- **Cross-study pooled analyses** — AnalysisGroup is study-scoped; there is no
+  evidentiary unit above one Study.
+- **Comparisons between analysis groups** (group vs group, or group vs arm) — an
+  analysis-group Outcome carries a single-unit result only.
+- **Structured superseded-value history** and **field-level provenance**.
 
 ## Commands
 

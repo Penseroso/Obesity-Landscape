@@ -1,4 +1,5 @@
 {
+  "schemaVersion": "2.0",
   "studies": [
     {
       "id": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
@@ -463,8 +464,8 @@
       "overallDuration": "48 weeks",
       "safetySummary": "The most common adverse events were gastrointestinal, were dose related and mostly mild to moderate; heart-rate increases peaked at 24 weeks and then declined.",
       "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT04881760",
@@ -1471,6 +1472,7 @@
       "label": "Eloralintide 1 mg",
       "intervention": "Eloralintide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3841136"
       },
       "dose": "1 mg",
@@ -1485,6 +1487,7 @@
       "label": "Eloralintide 3 mg",
       "intervention": "Eloralintide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3841136"
       },
       "dose": "3 mg",
@@ -1499,6 +1502,7 @@
       "label": "Eloralintide 3 mg to 9 mg",
       "intervention": "Eloralintide dose escalation",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3841136"
       },
       "dose": "3 mg escalating to 9 mg",
@@ -1513,6 +1517,7 @@
       "label": "Eloralintide 6 mg",
       "intervention": "Eloralintide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3841136"
       },
       "dose": "6 mg",
@@ -1527,6 +1532,7 @@
       "label": "Eloralintide 6 mg to 9 mg",
       "intervention": "Eloralintide dose escalation",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3841136"
       },
       "dose": "6 mg escalating to 9 mg",
@@ -1541,6 +1547,7 @@
       "label": "Eloralintide 9 mg",
       "intervention": "Eloralintide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3841136"
       },
       "dose": "9 mg",
@@ -1566,6 +1573,7 @@
       "label": "Mazdutide 4 mg",
       "intervention": "Mazdutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3305677"
       },
       "dose": "4 mg",
@@ -1580,6 +1588,7 @@
       "label": "Mazdutide 6 mg",
       "intervention": "Mazdutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3305677"
       },
       "dose": "6 mg",
@@ -1605,6 +1614,7 @@
       "label": "Mazdutide 9 mg",
       "intervention": "Mazdutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3305677"
       },
       "dose": "9 mg",
@@ -1630,6 +1640,7 @@
       "label": "Orforglipron 12 mg",
       "intervention": "Orforglipron plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3502970"
       },
       "dose": "12 mg",
@@ -1644,6 +1655,7 @@
       "label": "Orforglipron 36 mg",
       "intervention": "Orforglipron plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3502970"
       },
       "dose": "36 mg",
@@ -1658,6 +1670,7 @@
       "label": "Orforglipron 6 mg",
       "intervention": "Orforglipron plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3502970"
       },
       "dose": "6 mg",
@@ -1683,6 +1696,7 @@
       "label": "Orforglipron 12 mg",
       "intervention": "Orforglipron plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3502970"
       },
       "dose": "12 mg",
@@ -1697,6 +1711,7 @@
       "label": "Orforglipron 36 mg",
       "intervention": "Orforglipron plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3502970"
       },
       "dose": "36 mg",
@@ -1711,6 +1726,7 @@
       "label": "Orforglipron 6 mg",
       "intervention": "Orforglipron plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3502970"
       },
       "dose": "6 mg",
@@ -1733,12 +1749,14 @@
       "id": "reta-p2-12mg",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "role": "experimental",
-      "label": "Retatrutide 12 mg",
-      "intervention": "Retatrutide with dose escalation",
+      "label": "Retatrutide 12 mg (2 mg starting dose)",
+      "intervention": "Retatrutide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3437943"
       },
       "dose": "12 mg target dose",
+      "titration": "2 mg starting dose followed by 4 mg, 8 mg, and then 12 mg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "48 weeks"
@@ -1750,6 +1768,7 @@
       "label": "Retatrutide 1 mg",
       "intervention": "Retatrutide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3437943"
       },
       "dose": "1 mg",
@@ -1758,29 +1777,65 @@
       "treatmentDuration": "48 weeks"
     },
     {
-      "id": "reta-p2-4mg",
+      "id": "reta-p2-4mg-start2",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "role": "experimental",
-      "label": "Retatrutide 4 mg",
-      "intervention": "Retatrutide with assigned starting-dose titration",
+      "label": "Retatrutide 4 mg (2 mg starting dose)",
+      "intervention": "Retatrutide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3437943"
       },
       "dose": "4 mg target dose",
+      "titration": "2 mg starting dose followed by 4 mg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "48 weeks"
     },
     {
-      "id": "reta-p2-8mg",
+      "id": "reta-p2-4mg-start4",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "role": "experimental",
-      "label": "Retatrutide 8 mg",
-      "intervention": "Retatrutide with assigned starting-dose titration",
+      "label": "Retatrutide 4 mg (4 mg starting dose)",
+      "intervention": "Retatrutide",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "4 mg target dose",
+      "titration": "4 mg starting dose without escalation",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 8 mg (2 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3437943"
       },
       "dose": "8 mg target dose",
+      "titration": "2 mg starting dose followed by 4 mg and then 8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "reta-p2-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "role": "experimental",
+      "label": "Retatrutide 8 mg (4 mg starting dose)",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "dose": "8 mg target dose",
+      "titration": "4 mg starting dose followed by 8 mg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "48 weeks"
@@ -1814,6 +1869,7 @@
       "label": "Retatrutide 12 mg",
       "intervention": "Retatrutide plus standard care",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3437943"
       },
       "dose": "12 mg target dose",
@@ -1828,6 +1884,7 @@
       "label": "Retatrutide 9 mg",
       "intervention": "Retatrutide plus standard care",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3437943"
       },
       "dose": "9 mg target dose",
@@ -1853,6 +1910,7 @@
       "label": "Tirzepatide maximum tolerated dose",
       "intervention": "Tirzepatide plus usual care",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "Up to 15 mg",
@@ -1878,6 +1936,7 @@
       "label": "Tirzepatide 10 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg",
@@ -1892,6 +1951,7 @@
       "label": "Tirzepatide 15 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "15 mg",
@@ -1906,6 +1966,7 @@
       "label": "Tirzepatide 5 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "5 mg",
@@ -1931,6 +1992,7 @@
       "label": "Tirzepatide 10 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg",
@@ -1945,6 +2007,7 @@
       "label": "Tirzepatide 15 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "15 mg",
@@ -1970,6 +2033,7 @@
       "label": "Tirzepatide maximum tolerated dose",
       "intervention": "Tirzepatide after intensive lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg or 15 mg maximum tolerated dose",
@@ -1995,6 +2059,7 @@
       "label": "Continue tirzepatide",
       "intervention": "Continue tirzepatide maximum tolerated dose",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg or 15 mg maximum tolerated dose",
@@ -2009,8 +2074,8 @@
       "label": "Semaglutide maximum tolerated dose",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
-        "assetName": "Semaglutide",
-        "externalCompanyName": "Novo Nordisk A/S"
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
       },
       "dose": "1.7 mg or 2.4 mg maximum tolerated dose",
       "route": "Subcutaneous",
@@ -2024,6 +2089,7 @@
       "label": "Tirzepatide maximum tolerated dose",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg or 15 mg maximum tolerated dose",
@@ -2049,6 +2115,7 @@
       "label": "Tirzepatide 10 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg",
@@ -2063,6 +2130,7 @@
       "label": "Tirzepatide 15 mg",
       "intervention": "Tirzepatide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "15 mg",
@@ -2077,6 +2145,7 @@
       "label": "Reduce to tirzepatide 5 mg",
       "intervention": "Tirzepatide reduced maintenance dose",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "5 mg",
@@ -2091,6 +2160,7 @@
       "label": "Continue maximum tolerated dose",
       "intervention": "Continue tirzepatide maximum tolerated dose",
       "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
         "assetId": "ly3298176"
       },
       "dose": "10 mg or 15 mg maximum tolerated dose",
@@ -2116,6 +2186,7 @@
       "label": "Oral amycretin 100 mg",
       "intervention": "Amycretin dose escalation to two 50 mg tablets",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "amycretin"
       },
       "dose": "100 mg",
@@ -2143,6 +2214,7 @@
       "label": "Subcutaneous amycretin 60 mg",
       "intervention": "Amycretin dose escalation from 0.3 mg to 60 mg",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "amycretin"
       },
       "dose": "60 mg",
@@ -2168,6 +2240,7 @@
       "label": "Cagrilintide 4.5 mg",
       "intervention": "Cagrilintide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "cagrilintide"
       },
       "dose": "4.5 mg",
@@ -2183,6 +2256,7 @@
       "label": "Liraglutide 3.0 mg",
       "intervention": "Liraglutide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "liraglutide"
       },
       "dose": "3.0 mg",
@@ -2210,6 +2284,7 @@
       "label": "Cagrilintide 2.4 mg",
       "intervention": "Cagrilintide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "cagrilintide"
       },
       "dose": "2.4 mg",
@@ -2225,6 +2300,7 @@
       "label": "CagriSema 2.4 mg/2.4 mg",
       "intervention": "Fixed-dose cagrilintide and semaglutide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "cagrisema"
       },
       "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
@@ -2252,6 +2328,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2267,6 +2344,7 @@
       "label": "CagriSema 2.4 mg/2.4 mg",
       "intervention": "Fixed-dose cagrilintide and semaglutide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "cagrisema"
       },
       "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
@@ -2294,6 +2372,7 @@
       "label": "CagriSema 2.4 mg/2.4 mg",
       "intervention": "Fixed-dose cagrilintide and semaglutide",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "cagrisema"
       },
       "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
@@ -2319,6 +2398,7 @@
       "label": "Liraglutide 1.8 mg",
       "intervention": "Liraglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "liraglutide"
       },
       "dose": "1.8 mg",
@@ -2334,6 +2414,7 @@
       "label": "Liraglutide 3.0 mg",
       "intervention": "Liraglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "liraglutide"
       },
       "dose": "3.0 mg",
@@ -2361,6 +2442,7 @@
       "label": "Liraglutide 3.0 mg",
       "intervention": "Liraglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "liraglutide"
       },
       "dose": "3.0 mg or maximum tolerated dose",
@@ -2388,6 +2470,7 @@
       "label": "Liraglutide 3.0 mg",
       "intervention": "Liraglutide plus lifestyle modification",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "liraglutide"
       },
       "dose": "3.0 mg",
@@ -2415,6 +2498,7 @@
       "label": "Liraglutide 3.0 mg",
       "intervention": "Liraglutide plus lifestyle therapy",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "liraglutide"
       },
       "dose": "3.0 mg or maximum tolerated dose",
@@ -2454,6 +2538,7 @@
       "label": "Oral semaglutide 25 mg",
       "intervention": "Oral semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "25 mg",
@@ -2481,6 +2566,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2508,6 +2594,7 @@
       "label": "Semaglutide 1.0 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "1.0 mg",
@@ -2523,6 +2610,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2550,6 +2638,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide plus behavioral intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2577,6 +2666,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2604,6 +2694,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2619,6 +2710,7 @@
       "label": "Semaglutide 7.2 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "7.2 mg",
@@ -2646,6 +2738,7 @@
       "label": "Semaglutide 2.4 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "2.4 mg",
@@ -2661,6 +2754,7 @@
       "label": "Semaglutide 7.2 mg",
       "intervention": "Semaglutide plus lifestyle intervention",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "semaglutide"
       },
       "dose": "7.2 mg",
@@ -2676,6 +2770,7 @@
       "label": "UBT251 2 mg",
       "intervention": "UBT251",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "ubt251"
       },
       "dose": "2 mg",
@@ -2690,6 +2785,7 @@
       "label": "UBT251 4 mg",
       "intervention": "UBT251",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "ubt251"
       },
       "dose": "4 mg",
@@ -2704,6 +2800,7 @@
       "label": "UBT251 6 mg",
       "intervention": "UBT251",
       "linkedAsset": {
+        "companyId": "novo-nordisk",
         "assetId": "ubt251"
       },
       "dose": "6 mg",
@@ -2723,243 +2820,301 @@
       "treatmentDuration": "24 weeks"
     }
   ],
+  "analysisGroups": [
+    {
+      "id": "reta-p2-pooled-4mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "kind": "pooled",
+      "label": "Combined 4-mg group",
+      "memberArmIds": [
+        "reta-p2-4mg-start2",
+        "reta-p2-4mg-start4"
+      ],
+      "description": "The publication reports the two 4 mg starting-dose arms as one combined 4-mg group."
+    },
+    {
+      "id": "reta-p2-pooled-8mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "kind": "pooled",
+      "label": "Combined 8-mg group",
+      "memberArmIds": [
+        "reta-p2-8mg-start2",
+        "reta-p2-8mg-start4"
+      ],
+      "description": "The publication reports the two 8 mg starting-dose arms as one combined 8-mg group."
+    }
+  ],
   "endpoints": [
     {
       "id": "elora-p2-weight-week48",
       "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 48"
     },
     {
       "id": "glory1-weight-week48",
       "studyId": "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "secondary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 48"
     },
     {
       "id": "glory2-weight-week60",
       "studyId": "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 60"
     },
     {
       "id": "attain1-weight-week72",
       "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "attain2-weight-week72",
       "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "reta-p2-weight-week48",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "secondary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 48"
     },
     {
       "id": "triumph4-weight-week68",
       "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "triumph4-womac-week68",
       "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
       "name": "Change from baseline in WOMAC pain score",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "musculoskeletal",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "summit-hf-events",
       "studyId": "eli-lilly-and-company-tirzepatide-summit-nct04847557",
       "name": "Worsening heart-failure event",
-      "classification": "Key efficacy",
+      "role": "co-primary",
+      "domain": "cardiovascular",
       "assessmentTimepoint": "Median follow-up 104 weeks"
     },
     {
       "id": "sm1-weight-week72",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "sm2-weight-week72",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "sm3-weight-week72",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "name": "Percentage change in body weight from randomization after intensive lifestyle intervention",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72 of randomized treatment"
     },
     {
       "id": "sm4-weight-week88",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
       "name": "Percentage change in body weight during the randomized withdrawal period",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 36 to Week 88"
     },
     {
       "id": "sm5-weight-week72",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "smcn-weight-week52",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 52"
     },
     {
       "id": "smmaintain-weight-week112",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
       "name": "Percentage change from original baseline in body weight",
-      "classification": "Key efficacy",
+      "role": "secondary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 112"
     },
     {
       "id": "amyoral-weight-week12",
       "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Exploratory pharmacodynamic",
+      "role": "other",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 12"
     },
     {
       "id": "amysc-weight-week36",
       "studyId": "novo-nordisk-amycretin-sc-phase1b2a-nct06064006",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Pharmacodynamic efficacy",
+      "role": "secondary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 36"
     },
     {
       "id": "cagri-p2-weight-week26",
       "studyId": "novo-nordisk-cagrilintide-phase2-nct03856047",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 26"
     },
     {
       "id": "redefine1-weight-week68",
       "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "redefine2-weight-week68",
       "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "redefine4-weight-week84",
       "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 84"
     },
     {
       "id": "scalediabetes-weight-week56",
       "studyId": "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 56"
     },
     {
       "id": "scalekids-bmi-week56",
       "studyId": "novo-nordisk-liraglutide-scale-kids-nct04775082",
       "name": "Percentage change from baseline in BMI",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 56"
     },
     {
       "id": "scaleobesity-weight-week56",
       "studyId": "novo-nordisk-liraglutide-scale-obesity-nct01272219",
       "name": "Change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 56"
     },
     {
       "id": "scaleteens-bmisds-week56",
       "studyId": "novo-nordisk-liraglutide-scale-teens-nct02918279",
       "name": "Change from baseline in BMI standard-deviation score",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 56"
     },
     {
       "id": "oasis4-weight-week64",
       "studyId": "novo-nordisk-semaglutide-oasis-4-nct05564117",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 64"
     },
     {
       "id": "step1-weight-week68",
       "studyId": "novo-nordisk-semaglutide-step-1-nct03548935",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "step2-weight-week68",
       "studyId": "novo-nordisk-semaglutide-step-2-nct03552757",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "step5-weight-week104",
       "studyId": "novo-nordisk-semaglutide-step-5-nct03693430",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 104"
     },
     {
       "id": "stepteens-bmi-week68",
       "studyId": "novo-nordisk-semaglutide-step-teens-nct04102189",
       "name": "Percentage change from baseline in BMI",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 68"
     },
     {
       "id": "stepup-weight-week72",
       "studyId": "novo-nordisk-semaglutide-step-up-nct05646706",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "stepupt2d-weight-week72",
       "studyId": "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "co-primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 72"
     },
     {
       "id": "ubt251-p2-weight-week24",
       "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
       "name": "Percentage change from baseline in body weight",
-      "classification": "Primary efficacy",
+      "role": "primary",
+      "domain": "body weight",
       "assessmentTimepoint": "Week 24"
     }
   ],
@@ -2975,6 +3130,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-9",
+        "numericValue": -9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3002,6 +3158,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-7.3",
+        "numericValue": -7.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3029,6 +3186,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12",
+        "numericValue": -12,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3056,6 +3214,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-10.5",
+        "numericValue": -10.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3083,6 +3242,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-16",
+        "numericValue": -16,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3110,6 +3270,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-14.6",
+        "numericValue": -14.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3137,6 +3298,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-18",
+        "numericValue": -18,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3164,6 +3326,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-13.8",
+        "numericValue": -13.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3191,6 +3354,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-20",
+        "numericValue": -20,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3218,6 +3382,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-15.8",
+        "numericValue": -15.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3245,6 +3410,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-20",
+        "numericValue": -20,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3272,6 +3438,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-17.5",
+        "numericValue": -17.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3299,6 +3466,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-0.4",
+        "numericValue": -0.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3326,6 +3494,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-2.3",
+        "numericValue": -2.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3353,6 +3522,7 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-11.00",
+        "numericValue": -11,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3380,6 +3550,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12.05",
+        "numericValue": -12.05,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3407,6 +3578,7 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-14.01",
+        "numericValue": -14.01,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3434,6 +3606,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-14.84",
+        "numericValue": -14.84,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3461,6 +3634,7 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "0.30",
+        "numericValue": 0.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3488,6 +3662,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-0.47",
+        "numericValue": -0.47,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3515,6 +3690,7 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-16.65",
+        "numericValue": -16.65,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3542,6 +3718,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-18.55",
+        "numericValue": -18.55,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3569,6 +3746,7 @@
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-1.50",
+        "numericValue": -1.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3596,6 +3774,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-3.02",
+        "numericValue": -3.02,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3623,6 +3802,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-8.4",
+        "numericValue": -8.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3650,6 +3830,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-9.3",
+        "numericValue": -9.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3677,6 +3858,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-11.2",
+        "numericValue": -11.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3704,6 +3886,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12.4",
+        "numericValue": -12.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3731,6 +3914,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-7.5",
+        "numericValue": -7.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3758,6 +3942,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-7.8",
+        "numericValue": -7.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3785,6 +3970,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-2.1",
+        "numericValue": -2.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3812,6 +3998,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-0.9",
+        "numericValue": -0.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3839,6 +4026,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-7.0",
+        "numericValue": -7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3866,6 +4054,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-7.8",
+        "numericValue": -7.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3893,6 +4082,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-9.6",
+        "numericValue": -9.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3920,6 +4110,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-10.5",
+        "numericValue": -10.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3947,6 +4138,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-5.1",
+        "numericValue": -5.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -3974,6 +4166,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-5.5",
+        "numericValue": -5.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4001,6 +4194,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-2.5",
+        "numericValue": -2.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4028,6 +4222,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.2",
+        "numericValue": -2.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4055,6 +4250,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-24.2",
+        "numericValue": -24.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4082,6 +4278,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-8.7",
+        "numericValue": -8.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4102,13 +4299,12 @@
       "id": "reta-p2-weight-4mg",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week48",
-      "armIds": [
-        "reta-p2-4mg"
-      ],
+      "analysisGroupId": "reta-p2-pooled-4mg",
       "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-17.1",
+        "numericValue": -17.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4129,13 +4325,12 @@
       "id": "reta-p2-weight-8mg",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week48",
-      "armIds": [
-        "reta-p2-8mg"
-      ],
+      "analysisGroupId": "reta-p2-pooled-8mg",
       "analysisPopulation": "Intention-to-treat (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-22.8",
+        "numericValue": -22.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4163,6 +4358,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.1",
+        "numericValue": -2.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4190,6 +4386,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.1",
+        "numericValue": -2.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4217,6 +4414,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-4.6",
+        "numericValue": -4.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4244,6 +4442,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-28.7",
+        "numericValue": -28.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4271,6 +4470,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-23.7",
+        "numericValue": -23.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4298,6 +4498,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-26.4",
+        "numericValue": -26.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4325,6 +4526,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-20.0",
+        "numericValue": -20,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4352,6 +4554,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.4",
+        "numericValue": -2.4,
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -4379,6 +4582,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-2.1",
+        "numericValue": -2.1,
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -4406,6 +4610,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-4.4",
+        "numericValue": -4.4,
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -4433,6 +4638,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-3.7",
+        "numericValue": -3.7,
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -4460,6 +4666,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-4.5",
+        "numericValue": -4.5,
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -4487,6 +4694,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-4.0",
+        "numericValue": -4,
         "unit": "points",
         "resultType": "arm-level"
       },
@@ -4514,8 +4722,10 @@
       "analysisPopulation": "Intention-to-treat (overall)",
       "result": {
         "value": "0.54",
-        "unit": "hazard ratio",
+        "numericValue": 0.54,
+        "unit": "ratio",
         "resultType": "between-arm",
+        "effectMeasure": "Hazard ratio",
         "comparisonType": "Hazard ratio, tirzepatide versus placebo",
         "confidenceInterval": "95% CI 0.34 to 0.85"
       },
@@ -4542,6 +4752,7 @@
       "analysisPopulation": "Intention-to-treat (overall)",
       "result": {
         "value": "14.2",
+        "numericValue": 14.2,
         "unit": "percent of participants",
         "resultType": "arm-level"
       },
@@ -4568,6 +4779,7 @@
       "analysisPopulation": "Intention-to-treat (overall)",
       "result": {
         "value": "8.0",
+        "numericValue": 8,
         "unit": "percent of participants",
         "resultType": "arm-level"
       },
@@ -4595,6 +4807,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-3.1",
+        "numericValue": -3.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4622,6 +4835,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.4",
+        "numericValue": -2.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4649,6 +4863,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-19.5",
+        "numericValue": -19.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4676,6 +4891,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-21.4",
+        "numericValue": -21.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4703,6 +4919,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-20.9",
+        "numericValue": -20.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4730,6 +4947,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-22.5",
+        "numericValue": -22.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4757,6 +4975,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-15.0",
+        "numericValue": -15,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4784,6 +5003,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-16.0",
+        "numericValue": -16,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4811,6 +5031,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-3.2",
+        "numericValue": -3.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4838,6 +5059,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-3.3",
+        "numericValue": -3.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4865,6 +5087,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-12.8",
+        "numericValue": -12.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4892,6 +5115,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-13.4",
+        "numericValue": -13.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4919,6 +5143,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-14.7",
+        "numericValue": -14.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4946,6 +5171,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-15.7",
+        "numericValue": -15.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -4973,6 +5199,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "2.5",
+        "numericValue": 2.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5000,6 +5227,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "3.3",
+        "numericValue": 3.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5027,6 +5255,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-18.4",
+        "numericValue": -18.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5054,6 +5283,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-21.1",
+        "numericValue": -21.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5081,6 +5311,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "14.0",
+        "numericValue": 14,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5108,6 +5339,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "14.8",
+        "numericValue": 14.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5135,6 +5367,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-5.5",
+        "numericValue": -5.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5162,6 +5395,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-6.7",
+        "numericValue": -6.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5190,8 +5424,10 @@
       "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-6.5",
+        "numericValue": -6.5,
         "unit": "percentage points",
         "resultType": "between-arm",
+        "effectMeasure": "Estimated treatment difference",
         "comparisonType": "Estimated treatment difference, tirzepatide minus semaglutide",
         "confidenceInterval": "95% CI -8.1 to -4.9"
       },
@@ -5220,8 +5456,10 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-6.2",
+        "numericValue": -6.2,
         "unit": "percentage points",
         "resultType": "between-arm",
+        "effectMeasure": "Estimated treatment difference",
         "comparisonType": "Estimated treatment difference, tirzepatide minus semaglutide",
         "confidenceInterval": "95% CI -7.8 to -4.6"
       },
@@ -5249,6 +5487,7 @@
       "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-13.7",
+        "numericValue": -13.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5276,6 +5515,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-15.4",
+        "numericValue": -15.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5303,6 +5543,7 @@
       "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-20.2",
+        "numericValue": -20.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5330,6 +5571,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-21.6",
+        "numericValue": -21.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5357,6 +5599,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-2.3",
+        "numericValue": -2.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5384,6 +5627,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.4",
+        "numericValue": -2.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5411,6 +5655,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-13.6",
+        "numericValue": -13.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5438,6 +5683,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-14.4",
+        "numericValue": -14.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5465,6 +5711,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-17.5",
+        "numericValue": -17.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5492,6 +5739,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-19.9",
+        "numericValue": -19.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5519,6 +5767,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-17.0",
+        "numericValue": -17,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5546,6 +5795,7 @@
       "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-16.6",
+        "numericValue": -16.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5573,6 +5823,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-22.4",
+        "numericValue": -22.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5600,6 +5851,7 @@
       "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-21.9",
+        "numericValue": -21.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5627,6 +5879,7 @@
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-10.1",
+        "numericValue": -10.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5654,6 +5907,7 @@
       "estimand": "Modified treatment-regimen estimand",
       "result": {
         "value": "-9.9",
+        "numericValue": -9.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5680,6 +5934,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-13.1",
+        "numericValue": -13.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5706,6 +5961,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-1.2",
+        "numericValue": -1.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5732,6 +5988,7 @@
       "analysisPopulation": "Full analysis set (Part B)",
       "result": {
         "value": "-24.3",
+        "numericValue": -24.3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5758,6 +6015,7 @@
       "analysisPopulation": "Full analysis set (Part B)",
       "result": {
         "value": "-1.1",
+        "numericValue": -1.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5785,6 +6043,7 @@
       "estimand": "Trial product estimand",
       "result": {
         "value": "-10.8",
+        "numericValue": -10.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5812,6 +6071,7 @@
       "estimand": "Trial product estimand",
       "result": {
         "value": "-9.0",
+        "numericValue": -9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5839,6 +6099,7 @@
       "estimand": "Trial product estimand",
       "result": {
         "value": "-3.0",
+        "numericValue": -3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5866,6 +6127,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-11.5",
+        "numericValue": -11.5,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5893,6 +6155,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-20.4",
+        "numericValue": -20.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5920,6 +6183,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-3.0",
+        "numericValue": -3,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5947,6 +6211,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-14.9",
+        "numericValue": -14.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -5974,6 +6239,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-13.7",
+        "numericValue": -13.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6001,6 +6267,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-3.4",
+        "numericValue": -3.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6028,6 +6295,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-20.2",
+        "numericValue": -20.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6055,6 +6323,7 @@
       "estimand": "Treatment-regimen estimand",
       "result": {
         "value": "-23.6",
+        "numericValue": -23.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6081,6 +6350,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-5.9",
+        "numericValue": -5.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6107,6 +6377,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-2.0",
+        "numericValue": -2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6133,6 +6404,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-5.8",
+        "numericValue": -5.8,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6159,6 +6431,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "1.6",
+        "numericValue": 1.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6185,6 +6458,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-8.4",
+        "numericValue": -8.4,
         "unit": "kg",
         "resultType": "arm-level"
       },
@@ -6211,6 +6485,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-2.8",
+        "numericValue": -2.8,
         "unit": "kg",
         "resultType": "arm-level"
       },
@@ -6238,8 +6513,10 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-0.22",
+        "numericValue": -0.22,
         "unit": "BMI standard-deviation score",
         "resultType": "between-arm",
+        "effectMeasure": "Estimated treatment difference",
         "comparisonType": "Estimated treatment difference, liraglutide minus placebo",
         "confidenceInterval": "95% CI -0.37 to -0.08",
         "pValue": "0.002"
@@ -6268,6 +6545,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-2.2",
+        "numericValue": -2.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6295,6 +6573,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-13.6",
+        "numericValue": -13.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6322,6 +6601,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-2.4",
+        "numericValue": -2.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6349,6 +6629,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-14.9",
+        "numericValue": -14.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6376,6 +6657,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-3.4",
+        "numericValue": -3.4,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6403,6 +6685,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-7.0",
+        "numericValue": -7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6430,6 +6713,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-9.6",
+        "numericValue": -9.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6457,6 +6741,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-2.6",
+        "numericValue": -2.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6484,6 +6769,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-15.2",
+        "numericValue": -15.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6511,6 +6797,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "0.6",
+        "numericValue": 0.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6538,6 +6825,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-16.1",
+        "numericValue": -16.1,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6565,6 +6853,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-3.9",
+        "numericValue": -3.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6592,6 +6881,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-15.6",
+        "numericValue": -15.6,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6619,6 +6909,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-18.7",
+        "numericValue": -18.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6646,6 +6937,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-3.9",
+        "numericValue": -3.9,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6673,6 +6965,7 @@
       "estimand": "Treatment policy estimand",
       "result": {
         "value": "-13.2",
+        "numericValue": -13.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6699,6 +6992,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-19.7",
+        "numericValue": -19.7,
         "unit": "percent",
         "resultType": "arm-level"
       },
@@ -6725,6 +7019,7 @@
       "analysisPopulation": "Full analysis set (overall)",
       "result": {
         "value": "-2.0",
+        "numericValue": -2,
         "unit": "percent",
         "resultType": "arm-level"
       },

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "2.0",
+  "assets": [
+    {
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3298176",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+        "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+        "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
+        "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
+        "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
+        "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+        "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
+        "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3305677",
+      "focalStudyIds": [
+        "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
+        "eli-lilly-and-company-mazdutide-glory-2-nct06164873"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "focalStudyIds": [
+        "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+        "eli-lilly-and-company-retatrutide-triumph-4-nct05931367"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3502970",
+      "focalStudyIds": [
+        "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+        "eli-lilly-and-company-orforglipron-attain-2-nct05872620"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3841136",
+      "focalStudyIds": [
+        "eli-lilly-and-company-eloralintide-phase-2-nct06230523"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "novo-nordisk",
+      "assetId": "amycretin",
+      "focalStudyIds": [
+        "novo-nordisk-amycretin-oral-phase1-nct05369390",
+        "novo-nordisk-amycretin-sc-phase1b2a-nct06064006"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "novo-nordisk",
+      "assetId": "cagrilintide",
+      "focalStudyIds": [
+        "novo-nordisk-cagrilintide-phase2-nct03856047"
+      ],
+      "linkedStudyIds": [
+        "novo-nordisk-cagrisema-redefine-1-nct05567796"
+      ]
+    },
+    {
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "focalStudyIds": [
+        "novo-nordisk-cagrisema-redefine-1-nct05567796",
+        "novo-nordisk-cagrisema-redefine-2-nct05394519",
+        "novo-nordisk-cagrisema-redefine-4-nct06131437"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "novo-nordisk",
+      "assetId": "liraglutide",
+      "focalStudyIds": [
+        "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+        "novo-nordisk-liraglutide-scale-kids-nct04775082",
+        "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+        "novo-nordisk-liraglutide-scale-teens-nct02918279"
+      ],
+      "linkedStudyIds": [
+        "novo-nordisk-cagrilintide-phase2-nct03856047"
+      ]
+    },
+    {
+      "companyId": "novo-nordisk",
+      "assetId": "semaglutide",
+      "focalStudyIds": [
+        "novo-nordisk-semaglutide-oasis-4-nct05564117",
+        "novo-nordisk-semaglutide-step-1-nct03548935",
+        "novo-nordisk-semaglutide-step-2-nct03552757",
+        "novo-nordisk-semaglutide-step-5-nct03693430",
+        "novo-nordisk-semaglutide-step-teens-nct04102189",
+        "novo-nordisk-semaglutide-step-up-nct05646706",
+        "novo-nordisk-semaglutide-step-up-t2d-nct05649137"
+      ],
+      "linkedStudyIds": [
+        "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+        "novo-nordisk-cagrisema-redefine-1-nct05567796"
+      ]
+    },
+    {
+      "companyId": "novo-nordisk",
+      "assetId": "ubt251",
+      "focalStudyIds": [
+        "novo-nordisk-ubt251-china-phase2-nct07177469"
+      ],
+      "linkedStudyIds": []
+    }
+  ]
+}

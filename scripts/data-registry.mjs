@@ -80,10 +80,40 @@ const stageOperationalStatesByStatus = {
   Discontinued: new Set(["Paused", "Completed", "Not separately confirmed"]),
   Unknown: new Set(["Not separately confirmed"]),
 };
+// Clinical Evidence canonical schema version (ADR-0037). v1 records do not validate here.
+const clinicalEvidenceSchemaVersion = "2.0";
 const clinicalArmRoles = new Set([
   "experimental",
   "placebo",
   "active comparator",
+  "other",
+]);
+const clinicalAnalysisGroupKinds = new Set([
+  "pooled",
+  "derived",
+  "starting-dose-subgroup",
+  "other",
+]);
+const clinicalEndpointRoles = new Set([
+  "primary",
+  "co-primary",
+  "key-secondary",
+  "secondary",
+  "exploratory",
+  "safety",
+  "other",
+]);
+const clinicalEndpointDomains = new Set([
+  "body weight",
+  "body composition",
+  "glycemic",
+  "cardiovascular",
+  "renal",
+  "hepatic",
+  "respiratory",
+  "musculoskeletal",
+  "patient-reported",
+  "safety",
   "other",
 ]);
 const clinicalResultMaturities = new Set([
@@ -100,6 +130,23 @@ const clinicalResultTypes = new Set(["arm-level", "between-arm"]);
 // unambiguously an estimand label in the wrong field. A trailing parenthetical subgroup
 // qualifier is removed before applying this anchored check.
 const clinicalAnalysisPopulationEstimandLabelPattern = /\bestimand(?: population)?$/;
+// An effect measure is not a unit (ADR-0037). "hazard ratio" describes what the number
+// means, not what it is measured in; it belongs in result.effectMeasure.
+const clinicalEffectMeasureUnitPattern =
+  /\b(hazard ratio|odds ratio|risk ratio|rate ratio|relative risk|mean difference|treatment difference|difference)\b/;
+// Standard analysis-set abbreviations. The vocabulary stays open: an unknown source term is
+// canonicalized structurally (casing/punctuation) and passes through unchanged.
+const clinicalAnalysisSetAliases = new Map([
+  ["itt", "intention to treat"],
+  ["intent to treat", "intention to treat"],
+  ["mitt", "modified intention to treat"],
+  ["modified itt", "modified intention to treat"],
+  ["modified intent to treat", "modified intention to treat"],
+  ["fas", "full analysis set"],
+  ["eas", "efficacy analysis set"],
+  ["pp", "per protocol"],
+  ["safety set", "safety analysis set"],
+]);
 
 function readJson(filePath) {
   return JSON.parse(readFileSync(filePath, "utf8"));
@@ -119,6 +166,42 @@ function normalize(value) {
 
 function sortedStrings(values) {
   return [...values].sort((a, b) => a.localeCompare(b));
+}
+
+// Field-specific canonicalization (ADR-0037). Used ONLY to compute semantic keys and
+// grouping; the source-reported text stays on the record verbatim. normalize() itself is
+// left punctuation-sensitive because other domains rely on its exact behaviour.
+function canonicalizeClinicalTermText(value) {
+  return normalize(value)
+    .replace(/[‐-―]/g, "-")
+    .replace(/[-_/]+/g, " ")
+    .replace(/[.,;:'"()[\]]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// "Treatment-policy estimand" and "Treatment policy estimand" are one estimand. The
+// trailing "estimand" / "estimand population" wording is a suffix, not part of the
+// strategy name. Unknown strategies remain valid and are canonicalized structurally.
+function canonicalizeClinicalEstimand(value) {
+  if (value === undefined) {
+    return "";
+  }
+
+  return canonicalizeClinicalTermText(value).replace(/\s*estimand(?: population)?$/, "");
+}
+
+// The analysis set and any trailing parenthetical subgroup are canonicalized separately, so
+// "Full analysis set (overall)" and "Full analysis set (Part B)" stay distinct while "FAS"
+// and "Full analysis set" collapse.
+function canonicalizeClinicalAnalysisPopulation(value) {
+  const trimmed = value.trim();
+  const subgroupMatch = /^(.*?)\s*\(([^()]*)\)$/.exec(trimmed);
+  const setText = canonicalizeClinicalTermText(subgroupMatch ? subgroupMatch[1] : trimmed);
+  const subgroupText = subgroupMatch ? canonicalizeClinicalTermText(subgroupMatch[2]) : "";
+  const canonicalSet = clinicalAnalysisSetAliases.get(setText) ?? setText;
+
+  return subgroupText ? `${canonicalSet}(${subgroupText})` : canonicalSet;
 }
 
 function assert(condition, message) {
@@ -842,6 +925,35 @@ function loadCompanySources() {
   return { folders, companies, programs, regimens };
 }
 
+// Index of every name a registry asset is known by (canonical name, development code, and
+// typed aliases). A linkedAsset naming one of these resolves internally and must therefore
+// carry companyId + assetId rather than free text (ADR-0037).
+function createInternalAssetNameIndex(programs) {
+  const index = new Map();
+
+  for (const program of programs) {
+    const assetKey = `${program.companyId}|${program.assetId}`;
+    const names = [
+      program.assetName,
+      program.codeName,
+      ...(program.aliases ?? []).map((alias) => alias.value),
+    ];
+
+    for (const name of names) {
+      if (!isNonEmptyString(name)) {
+        continue;
+      }
+
+      const key = normalize(name);
+      const assetKeys = index.get(key) ?? new Set();
+      assetKeys.add(assetKey);
+      index.set(key, assetKeys);
+    }
+  }
+
+  return index;
+}
+
 function createClinicalReferenceContext(companies, programs, regimens) {
   return {
     companyIds: new Set(companies.map((company) => company.id)),
@@ -850,6 +962,7 @@ function createClinicalReferenceContext(companies, programs, regimens) {
     ),
     programById: new Map(programs.map((program) => [program.id, program])),
     regimenById: new Map(regimens.map((regimen) => [regimen.id, regimen])),
+    internalAssetNames: createInternalAssetNameIndex(programs),
   };
 }
 
@@ -881,8 +994,10 @@ function getClinicalEvidenceSourceFiles(baseDir) {
 
 function emptyClinicalEvidenceAggregate() {
   return {
+    schemaVersion: clinicalEvidenceSchemaVersion,
     studies: [],
     arms: [],
+    analysisGroups: [],
     endpoints: [],
     outcomes: [],
   };
@@ -896,6 +1011,9 @@ function sortClinicalEvidenceAggregate(aggregate) {
       a.id.localeCompare(b.id),
   );
   aggregate.arms.sort(
+    (a, b) => a.studyId.localeCompare(b.studyId) || a.id.localeCompare(b.id),
+  );
+  aggregate.analysisGroups.sort(
     (a, b) => a.studyId.localeCompare(b.studyId) || a.id.localeCompare(b.id),
   );
   aggregate.endpoints.sort(
@@ -917,10 +1035,15 @@ function readClinicalEvidenceSourceTree(baseDir, context) {
     const fileContext = `${context}/${file.companyFolder}/${file.assetFolder}/clinical-evidence.json`;
     const data = file.data;
     assert(isObject(data), `${fileContext}: root must be an object`);
+    assert(
+      data.schemaVersion === clinicalEvidenceSchemaVersion,
+      `${fileContext}: schemaVersion must be "${clinicalEvidenceSchemaVersion}"; this file is not migrated to the v2.0 Clinical Evidence schema`,
+    );
     assert(data.companyId === file.companyFolder, `${fileContext}: companyId must match folder name`);
     assert(data.assetId === file.assetFolder, `${fileContext}: assetId must match folder name`);
     assert(Array.isArray(data.studies), `${fileContext}: studies must be an array`);
     assert(Array.isArray(data.arms), `${fileContext}: arms must be an array`);
+    assert(Array.isArray(data.analysisGroups), `${fileContext}: analysisGroups must be an array`);
     assert(Array.isArray(data.endpoints), `${fileContext}: endpoints must be an array`);
     assert(Array.isArray(data.outcomes), `${fileContext}: outcomes must be an array`);
 
@@ -931,12 +1054,76 @@ function readClinicalEvidenceSourceTree(baseDir, context) {
 
     aggregate.studies.push(...data.studies);
     aggregate.arms.push(...data.arms);
+    aggregate.analysisGroups.push(...data.analysisGroups);
     aggregate.endpoints.push(...data.endpoints);
     aggregate.outcomes.push(...data.outcomes);
   }
 
   sortClinicalEvidenceAggregate(aggregate);
   return aggregate;
+}
+
+// Derived projection (ADR-0037): reciprocal asset -> studies discovery computed from the
+// canonical internal links only. Never authored, no independent identity, and outside the
+// canonical v2.0 contract — it is regenerated deterministically from the aggregate.
+function buildClinicalAssetStudyIndex(aggregate) {
+  const entries = new Map();
+
+  const entryFor = (companyId, assetId) => {
+    const key = `${companyId}|${assetId}`;
+    const existing = entries.get(key);
+    if (existing) {
+      return existing;
+    }
+
+    const created = {
+      companyId,
+      assetId,
+      focalStudyIds: new Set(),
+      linkedStudyIds: new Set(),
+    };
+    entries.set(key, created);
+    return created;
+  };
+
+  for (const study of aggregate.studies) {
+    entryFor(study.companyId, study.assetId).focalStudyIds.add(study.id);
+  }
+
+  const studyById = new Map(aggregate.studies.map((study) => [study.id, study]));
+
+  for (const arm of aggregate.arms) {
+    const linkedAsset = arm.linkedAsset;
+    if (!linkedAsset?.assetId || !linkedAsset.companyId) {
+      continue;
+    }
+
+    const study = studyById.get(arm.studyId);
+    if (!study) {
+      continue;
+    }
+
+    entryFor(linkedAsset.companyId, linkedAsset.assetId).linkedStudyIds.add(study.id);
+  }
+
+  return {
+    schemaVersion: clinicalEvidenceSchemaVersion,
+    assets: [...entries.values()]
+      .map((entry) => ({
+        companyId: entry.companyId,
+        assetId: entry.assetId,
+        focalStudyIds: sortedStrings(entry.focalStudyIds),
+        // A study already anchored to the asset is not re-reported as a linked study; this
+        // array is what reciprocal discovery adds beyond the canonical anchor.
+        linkedStudyIds: sortedStrings(
+          [...entry.linkedStudyIds].filter((studyId) => !entry.focalStudyIds.has(studyId)),
+        ),
+      }))
+      .sort(
+        (a, b) =>
+          a.companyId.localeCompare(b.companyId) || a.assetId.localeCompare(b.assetId),
+      ),
+  };
 }
 
 function assertOptionalNonEmptyString(value, context) {
@@ -1019,6 +1206,10 @@ function validateClinicalStudy(study, context, references) {
   assert(study.metadata.sources.length > 0, `${context}: metadata.sources must contain at least one source`);
 }
 
+// A comparator or component that resolves to a registry asset must be stored as an internal
+// reference (companyId + assetId), including across companies — this is what makes reciprocal
+// asset -> studies discovery possible. Free text is reserved for genuinely external or
+// unresolved assets (ADR-0037).
 function validateClinicalLinkedAsset(linkedAsset, context, references) {
   if (linkedAsset === undefined) {
     return;
@@ -1031,11 +1222,48 @@ function validateClinicalLinkedAsset(linkedAsset, context, references) {
   assertOptionalNonEmptyString(linkedAsset.companyId, `${context}: linkedAsset.companyId`);
   assertOptionalNonEmptyString(linkedAsset.externalCompanyName, `${context}: linkedAsset.externalCompanyName`);
   assertOptionalNonEmptyString(linkedAsset.role, `${context}: linkedAsset.role`);
+  assert(
+    !(linkedAsset.companyId && linkedAsset.externalCompanyName),
+    `${context}: linkedAsset companyId and externalCompanyName cannot both be used`,
+  );
 
-  if (linkedAsset.assetId !== undefined && linkedAsset.companyId !== undefined) {
+  if (linkedAsset.companyId !== undefined) {
+    assert(
+      references.companyIds.has(linkedAsset.companyId),
+      `${context}: linkedAsset companyId "${linkedAsset.companyId}" is not a known company`,
+    );
+  }
+
+  if (linkedAsset.assetId !== undefined) {
+    assert(
+      isNonEmptyString(linkedAsset.companyId),
+      `${context}: linkedAsset assetId requires companyId; an internal asset reference must identify its owning company`,
+    );
     assert(
       references.assetKeys.has(`${linkedAsset.companyId}|${linkedAsset.assetId}`),
       `${context}: linkedAsset ${linkedAsset.companyId}/${linkedAsset.assetId} is missing`,
+    );
+    assert(
+      linkedAsset.assetName === undefined && linkedAsset.codeName === undefined,
+      `${context}: internal linkedAsset reference must not also provide assetName or codeName`,
+    );
+    return;
+  }
+
+  assert(
+    isNonEmptyString(linkedAsset.assetName) || isNonEmptyString(linkedAsset.codeName),
+    `${context}: linkedAsset needs assetId or a source-reported assetName or codeName`,
+  );
+
+  for (const name of [linkedAsset.assetName, linkedAsset.codeName]) {
+    if (!isNonEmptyString(name)) {
+      continue;
+    }
+
+    const resolved = references.internalAssetNames.get(normalize(name));
+    assert(
+      resolved === undefined,
+      `${context}: linkedAsset "${name}" resolves to the internal registry asset ${sortedStrings(resolved ?? []).join(", ")}; an internally resolvable asset must be linked with companyId + assetId, not free text`,
     );
   }
 }
@@ -1057,13 +1285,89 @@ function validateClinicalArm(arm, context, references) {
   assertOptionalPositiveInteger(arm.analyzedN, `${context}: analyzedN`);
 }
 
+// A study-scoped analysis unit that is not a protocol Arm (ADR-0037). Membership is a flat,
+// non-empty set of Arms of the same study; groups never nest and are never inferred.
+function validateClinicalAnalysisGroup(analysisGroup, context) {
+  assert(isObject(analysisGroup), `${context}: analysisGroup must be an object`);
+  assert(isNonEmptyString(analysisGroup.id), `${context}: id is required`);
+  assert(isNonEmptyString(analysisGroup.studyId), `${context}: studyId is required`);
+  assert(
+    clinicalAnalysisGroupKinds.has(analysisGroup.kind),
+    `${context}: analysisGroup kind "${analysisGroup.kind}" is not allowed`,
+  );
+  assert(isNonEmptyString(analysisGroup.label), `${context}: label is required`);
+  validateStringArray(analysisGroup.memberArmIds, `${context}: memberArmIds`, true);
+  assertOptionalNonEmptyString(analysisGroup.description, `${context}: description`);
+  assertOptionalPositiveInteger(analysisGroup.analyzedN, `${context}: analyzedN`);
+}
+
 function validateClinicalEndpoint(endpoint, context) {
   assert(isObject(endpoint), `${context}: endpoint must be an object`);
   assert(isNonEmptyString(endpoint.id), `${context}: id is required`);
   assert(isNonEmptyString(endpoint.studyId), `${context}: studyId is required`);
   assert(isNonEmptyString(endpoint.name), `${context}: name is required`);
-  assert(isNonEmptyString(endpoint.classification), `${context}: classification is required`);
+  assert(
+    clinicalEndpointRoles.has(endpoint.role),
+    `${context}: endpoint role "${endpoint.role}" is not allowed; confirm the prespecified role from the study's cited sources and use "other" when no source confirms it`,
+  );
+  if (endpoint.domain !== undefined) {
+    assert(
+      clinicalEndpointDomains.has(endpoint.domain),
+      `${context}: endpoint domain "${endpoint.domain}" is not allowed`,
+    );
+  }
+  assertOptionalNonEmptyString(endpoint.classification, `${context}: classification`);
   assert(isNonEmptyString(endpoint.assessmentTimepoint), `${context}: assessmentTimepoint is required`);
+}
+
+function validateClinicalOutcomeResult(result, context, isAnalysisGroupAnchored) {
+  assert(isObject(result), `${context}: result is required`);
+  assert(isNonEmptyString(result.value), `${context}: source-reported result value is required`);
+  assert(isNonEmptyString(result.unit), `${context}: source-reported result unit is required`);
+  assert(
+    !clinicalEffectMeasureUnitPattern.test(normalize(result.unit)),
+    `${context}: result.unit "${result.unit}" is an effect measure, not a unit; record it in result.effectMeasure`,
+  );
+  if (result.numericValue !== undefined && result.numericValue !== null) {
+    assert(
+      typeof result.numericValue === "number" && Number.isFinite(result.numericValue),
+      `${context}: result.numericValue must be a finite number or null when the source value is narrative`,
+    );
+  }
+  assertOptionalNonEmptyString(result.effectMeasure, `${context}: result.effectMeasure`);
+  assert(
+    clinicalResultTypes.has(result.resultType),
+    `${context}: result.resultType "${result.resultType}" is not allowed`,
+  );
+
+  if (result.resultType === "between-arm") {
+    assert(
+      !isAnalysisGroupAnchored,
+      `${context}: an analysis-group outcome carries a single-unit result; a comparison between analysis groups is not representable`,
+    );
+    assert(
+      isNonEmptyString(result.comparisonType),
+      `${context}: between-arm outcomes require a comparisonType`,
+    );
+    assert(
+      isNonEmptyString(result.effectMeasure),
+      `${context}: between-arm outcomes require a result.effectMeasure stating what the number measures`,
+    );
+  } else {
+    assert(
+      result.effectMeasure === undefined,
+      `${context}: result.effectMeasure applies only to a between-arm comparison`,
+    );
+    assert(
+      result.comparisonType === undefined,
+      `${context}: result.comparisonType applies only to a between-arm comparison`,
+    );
+  }
+
+  assertOptionalNonEmptyString(result.comparisonType, `${context}: result.comparisonType`);
+  assertOptionalNonEmptyString(result.confidenceInterval, `${context}: result.confidenceInterval`);
+  assertOptionalNonEmptyString(result.pValue, `${context}: result.pValue`);
+  assertOptionalNonEmptyString(result.responderThreshold, `${context}: result.responderThreshold`);
 }
 
 function validateClinicalOutcome(outcome, context) {
@@ -1071,7 +1375,17 @@ function validateClinicalOutcome(outcome, context) {
   assert(isNonEmptyString(outcome.id), `${context}: id is required`);
   assert(isNonEmptyString(outcome.studyId), `${context}: studyId is required`);
   assert(isNonEmptyString(outcome.endpointId), `${context}: endpointId is required`);
-  validateStringArray(outcome.armIds, `${context}: armIds`, true);
+
+  const isAnalysisGroupAnchored = outcome.analysisGroupId !== undefined;
+  assertOptionalNonEmptyString(outcome.analysisGroupId, `${context}: analysisGroupId`);
+  assert(
+    isAnalysisGroupAnchored !== (outcome.armIds !== undefined),
+    `${context}: an outcome anchors either to armIds or to one analysisGroupId, never both and never neither`,
+  );
+  if (!isAnalysisGroupAnchored) {
+    validateStringArray(outcome.armIds, `${context}: armIds`, true);
+  }
+
   assert(isNonEmptyString(outcome.analysisPopulation), `${context}: analysisPopulation is required`);
   const analysisPopulationWithoutSubgroup = normalize(outcome.analysisPopulation).replace(
     /\s*\([^()]*\)$/,
@@ -1082,41 +1396,46 @@ function validateClinicalOutcome(outcome, context) {
     `${context}: analysisPopulation must identify the actual analysis set, not an estimand label`,
   );
   assertOptionalNonEmptyString(outcome.estimand, `${context}: estimand`);
-  assert(isObject(outcome.result), `${context}: result is required`);
-  assert(isNonEmptyString(outcome.result.value), `${context}: source-reported result value is required`);
-  assert(isNonEmptyString(outcome.result.unit), `${context}: source-reported result unit is required`);
-  assert(
-    clinicalResultTypes.has(outcome.result.resultType),
-    `${context}: result.resultType "${outcome.result.resultType}" is not allowed`,
-  );
-  if (outcome.result.resultType === "arm-level") {
+
+  validateClinicalOutcomeResult(outcome.result, context, isAnalysisGroupAnchored);
+
+  if (!isAnalysisGroupAnchored && outcome.result.resultType === "arm-level") {
     assert(outcome.armIds.length === 1, `${context}: arm-level outcomes require exactly one armId`);
   }
   if (outcome.result.resultType === "between-arm") {
     assert(outcome.armIds.length >= 2, `${context}: between-arm outcomes require at least two armIds`);
-    assert(
-      isNonEmptyString(outcome.result.comparisonType),
-      `${context}: between-arm outcomes require a comparisonType`,
-    );
   }
-  assertOptionalNonEmptyString(outcome.result.comparisonType, `${context}: result.comparisonType`);
-  assertOptionalNonEmptyString(outcome.result.confidenceInterval, `${context}: result.confidenceInterval`);
-  assertOptionalNonEmptyString(outcome.result.pValue, `${context}: result.pValue`);
-  assertOptionalNonEmptyString(outcome.result.responderThreshold, `${context}: result.responderThreshold`);
+
   assert(clinicalResultMaturities.has(outcome.maturity), `${context}: maturity "${outcome.maturity}" is not allowed`);
   validateMetadata(outcome.metadata, context);
   assert(outcome.metadata.sources.length > 0, `${context}: metadata.sources must contain at least one source`);
 }
 
+// Two outcomes differing only by analysis group, estimand, or analysis population are
+// distinct and must never collapse under the Latest-Result Rule. estimand and
+// analysisPopulation enter the key canonicalized, so "Treatment-policy estimand" and
+// "Treatment policy estimand" are one key rather than two.
 function getClinicalOutcomeSemanticKey(outcome) {
   return [
     outcome.studyId,
     outcome.endpointId,
-    sortedStrings(outcome.armIds.map(normalize)).join(","),
-    normalize(outcome.analysisPopulation),
-    normalize(outcome.estimand ?? ""),
+    sortedStrings((outcome.armIds ?? []).map(normalize)).join(","),
+    normalize(outcome.analysisGroupId ?? ""),
+    canonicalizeClinicalAnalysisPopulation(outcome.analysisPopulation),
+    canonicalizeClinicalEstimand(outcome.estimand),
     outcome.result.resultType,
     normalize(outcome.result.comparisonType ?? ""),
+  ].join("|");
+}
+
+// Content identity for an AnalysisGroup within its study; blocks an obvious duplicate group
+// record, mirroring the Arm/Endpoint defensive checks.
+function getClinicalAnalysisGroupSemanticKey(analysisGroup) {
+  return [
+    analysisGroup.studyId,
+    normalize(analysisGroup.kind),
+    sortedStrings(analysisGroup.memberArmIds.map(normalize)).join(","),
+    normalize(analysisGroup.label),
   ].join("|");
 }
 
@@ -1153,25 +1472,33 @@ function getClinicalArmSemanticKey(arm) {
 
 // Content identity for an Endpoint within its study. assessmentTimepoint is part of the key,
 // so the same measure at different timepoints stays distinct (the intended FM-1 modeling)
-// while true duplicates under different ids are caught.
+// while true duplicates under different ids are caught. The key uses the structured role and
+// domain, not the legacy free-text classification.
 function getClinicalEndpointSemanticKey(endpoint) {
   return [
     endpoint.studyId,
     normalize(endpoint.name),
-    normalize(endpoint.classification),
+    normalize(endpoint.role),
+    normalize(endpoint.domain ?? ""),
     normalize(endpoint.assessmentTimepoint),
   ].join("|");
 }
 
 function validateClinicalEvidenceAggregate(aggregate, references, context) {
   assert(isObject(aggregate), `${context}: aggregate must be an object`);
+  assert(
+    aggregate.schemaVersion === clinicalEvidenceSchemaVersion,
+    `${context}: schemaVersion must be "${clinicalEvidenceSchemaVersion}"`,
+  );
   assert(Array.isArray(aggregate.studies), `${context}: studies must be an array`);
   assert(Array.isArray(aggregate.arms), `${context}: arms must be an array`);
+  assert(Array.isArray(aggregate.analysisGroups), `${context}: analysisGroups must be an array`);
   assert(Array.isArray(aggregate.endpoints), `${context}: endpoints must be an array`);
   assert(Array.isArray(aggregate.outcomes), `${context}: outcomes must be an array`);
 
   const studyIds = new Set();
   const armIds = new Set();
+  const analysisGroupIds = new Set();
   const endpointIds = new Set();
   const outcomeIds = new Set();
   const registryIdentities = new Map();
@@ -1179,8 +1506,10 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
   const endpointsByStudy = new Map();
   const outcomesByStudy = new Map();
   const outcomesByEndpoint = new Map();
+  const outcomesByAnalysisGroup = new Map();
   const semanticOutcomeKeys = new Set();
   const armSemanticKeys = new Set();
+  const analysisGroupSemanticKeys = new Set();
   const endpointSemanticKeys = new Set();
 
   for (const study of aggregate.studies) {
@@ -1212,6 +1541,53 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
     armsByStudy.set(arm.studyId, studyArms);
   }
 
+  const armById = new Map(aggregate.arms.map((arm) => [arm.id, arm]));
+
+  for (const analysisGroup of aggregate.analysisGroups) {
+    const groupContext = `${context}: analysisGroup ${analysisGroup.id ?? "unknown-analysis-group"}`;
+    validateClinicalAnalysisGroup(analysisGroup, groupContext);
+    assert(
+      !analysisGroupIds.has(analysisGroup.id),
+      `${context}: duplicate analysis group id ${analysisGroup.id}`,
+    );
+    assert(
+      !armIds.has(analysisGroup.id),
+      `${context}: analysis group id ${analysisGroup.id} collides with an arm id`,
+    );
+    assert(
+      studyIds.has(analysisGroup.studyId),
+      `${context}: analysis group ${analysisGroup.id} references missing study ${analysisGroup.studyId}`,
+    );
+
+    const seenMemberArmIds = new Set();
+    for (const memberArmId of analysisGroup.memberArmIds) {
+      assert(
+        !seenMemberArmIds.has(memberArmId),
+        `${context}: analysis group ${analysisGroup.id} repeats member arm ${memberArmId}`,
+      );
+      seenMemberArmIds.add(memberArmId);
+      // Membership is flat: a member must resolve to a protocol Arm, and arm ids and group
+      // ids are disjoint, so a group can never contain another group.
+      const memberArm = armById.get(memberArmId);
+      assert(
+        memberArm,
+        `${context}: analysis group ${analysisGroup.id} references missing arm ${memberArmId}`,
+      );
+      assert(
+        memberArm.studyId === analysisGroup.studyId,
+        `${context}: analysis group ${analysisGroup.id} member arm ${memberArmId} belongs to another study`,
+      );
+    }
+
+    const analysisGroupSemanticKey = getClinicalAnalysisGroupSemanticKey(analysisGroup);
+    assert(
+      !analysisGroupSemanticKeys.has(analysisGroupSemanticKey),
+      `${context}: duplicate analysis group semantics ${analysisGroupSemanticKey}`,
+    );
+    analysisGroupSemanticKeys.add(analysisGroupSemanticKey);
+    analysisGroupIds.add(analysisGroup.id);
+  }
+
   for (const endpoint of aggregate.endpoints) {
     validateClinicalEndpoint(endpoint, `${context}: endpoint ${endpoint.id ?? "unknown-endpoint"}`);
     assert(!endpointIds.has(endpoint.id), `${context}: duplicate endpoint id ${endpoint.id}`);
@@ -1229,7 +1605,9 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
   }
 
   const endpointById = new Map(aggregate.endpoints.map((endpoint) => [endpoint.id, endpoint]));
-  const armById = new Map(aggregate.arms.map((arm) => [arm.id, arm]));
+  const analysisGroupById = new Map(
+    aggregate.analysisGroups.map((analysisGroup) => [analysisGroup.id, analysisGroup]),
+  );
 
   for (const outcome of aggregate.outcomes) {
     validateClinicalOutcome(outcome, `${context}: outcome ${outcome.id ?? "unknown-outcome"}`);
@@ -1240,12 +1618,27 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
     assert(endpoint.studyId === outcome.studyId, `${context}: outcome ${outcome.id} endpoint belongs to another study`);
 
     const seenArmIds = new Set();
-    for (const armId of outcome.armIds) {
+    for (const armId of outcome.armIds ?? []) {
       assert(!seenArmIds.has(armId), `${context}: outcome ${outcome.id} repeats arm ${armId}`);
       seenArmIds.add(armId);
       const arm = armById.get(armId);
       assert(arm, `${context}: outcome ${outcome.id} references missing arm ${armId}`);
       assert(arm.studyId === outcome.studyId, `${context}: outcome ${outcome.id} arm ${armId} belongs to another study`);
+    }
+
+    if (outcome.analysisGroupId !== undefined) {
+      const analysisGroup = analysisGroupById.get(outcome.analysisGroupId);
+      assert(
+        analysisGroup,
+        `${context}: outcome ${outcome.id} references missing analysis group ${outcome.analysisGroupId}`,
+      );
+      assert(
+        analysisGroup.studyId === outcome.studyId,
+        `${context}: outcome ${outcome.id} analysis group ${outcome.analysisGroupId} belongs to another study`,
+      );
+      const groupOutcomes = outcomesByAnalysisGroup.get(outcome.analysisGroupId) ?? [];
+      groupOutcomes.push(outcome);
+      outcomesByAnalysisGroup.set(outcome.analysisGroupId, groupOutcomes);
     }
 
     const semanticKey = getClinicalOutcomeSemanticKey(outcome);
@@ -1272,6 +1665,15 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
 
   for (const endpointId of endpointIds) {
     assert((outcomesByEndpoint.get(endpointId) ?? []).length > 0, `${context}: endpoint ${endpointId} has no outcome`);
+  }
+
+  // Analysis groups are not stored speculatively: a group exists because a source reports a
+  // result for it.
+  for (const analysisGroupId of analysisGroupIds) {
+    assert(
+      (outcomesByAnalysisGroup.get(analysisGroupId) ?? []).length > 0,
+      `${context}: analysis group ${analysisGroupId} has no outcome`,
+    );
   }
 }
 
@@ -1346,13 +1748,19 @@ function generateAggregates() {
   programs.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
   regimens.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
 
+  const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence);
+
   mkdirSync(generatedDir, { recursive: true });
   writeJson(path.join(generatedDir, "companies.json"), companies);
   writeJson(path.join(generatedDir, "pipeline-programs.json"), programs);
   writeJson(path.join(generatedDir, "regimens.json"), regimens);
   writeJson(path.join(generatedDir, "clinical-evidence.json"), clinicalEvidence);
+  writeJson(
+    path.join(generatedDir, "clinical-evidence-asset-studies.json"),
+    clinicalAssetStudyIndex,
+  );
   console.log(
-    `Generated ${companies.length} company record(s), ${programs.length} program record(s), ${regimens.length} regimen record(s), and ${clinicalEvidence.studies.length} clinical study record(s).`,
+    `Generated ${companies.length} company record(s), ${programs.length} program record(s), ${regimens.length} regimen record(s), ${clinicalEvidence.studies.length} clinical study record(s), ${clinicalEvidence.analysisGroups.length} clinical analysis group(s), and a reciprocal asset index over ${clinicalAssetStudyIndex.assets.length} asset(s).`,
   );
 }
 
@@ -1371,8 +1779,24 @@ function validateGenerated() {
     createClinicalReferenceContext(companies, programs, regimens),
     "data/generated/clinical-evidence.json",
   );
+  assertClinicalAssetStudyIndexMatches(clinicalEvidence);
   console.log(
     `Validated generated aggregate with ${companies.length} company record(s), ${programs.length} program record(s), ${regimens.length} regimen record(s), and ${clinicalEvidence.studies.length} clinical study record(s).`,
+  );
+}
+
+// The reciprocal asset index is a derived projection: it must always equal a deterministic
+// recomputation from the canonical aggregate, never a hand-edited artifact.
+function assertClinicalAssetStudyIndexMatches(clinicalEvidence) {
+  const indexPath = path.join(generatedDir, "clinical-evidence-asset-studies.json");
+  assert(
+    existsSync(indexPath),
+    "data/generated/clinical-evidence-asset-studies.json is missing; run npm run data:generate",
+  );
+  assert(
+    JSON.stringify(readJson(indexPath)) ===
+      JSON.stringify(buildClinicalAssetStudyIndex(clinicalEvidence)),
+    "data/generated/clinical-evidence-asset-studies.json differs from deterministic regeneration",
   );
 }
 
@@ -1410,8 +1834,9 @@ function validateClinicalEvidenceGenerated() {
     JSON.stringify(actual) === JSON.stringify(expected),
     "data/generated/clinical-evidence.json differs from deterministic regeneration",
   );
+  assertClinicalAssetStudyIndexMatches(actual);
   console.log(
-    `Validated generated Clinical Evidence aggregate with ${actual.studies.length} study record(s).`,
+    `Validated generated Clinical Evidence aggregate with ${actual.studies.length} study record(s), ${actual.analysisGroups.length} analysis group(s), and the derived reciprocal asset index.`,
   );
 }
 
@@ -1459,12 +1884,60 @@ function validateClinicalEvidenceSyntheticFixtures() {
   );
   assert(validAggregate.studies.length > 0, "clinical evidence valid fixture must contain at least one study");
 
+  assert(
+    validAggregate.analysisGroups.length > 0,
+    "clinical evidence valid fixture must contain at least one analysis group",
+  );
+
   const validAnalysisPopulationProbe = cloneJson(validAggregate.outcomes[0]);
   validAnalysisPopulationProbe.analysisPopulation = "Full analysis set (overall)";
   validateClinicalOutcome(
     validAnalysisPopulationProbe,
     "data/validation-fixtures/clinical-evidence/synthetic-valid/analysis-population-with-subgroup",
   );
+
+  const analysisGroupOutcome = validAggregate.outcomes.find(
+    (outcome) => outcome.analysisGroupId !== undefined,
+  );
+  assert(
+    analysisGroupOutcome !== undefined,
+    "clinical evidence valid fixture must contain an analysis-group-anchored outcome",
+  );
+
+  // Mutations that must still validate: a distinct analysis unit or a source-supported
+  // subgroup is a distinct outcome, not a duplicate.
+  const validExpectations = [
+    // Two outcomes that differ only by analysis group are distinct results, never one
+    // semantic outcome that the Latest-Result Rule may collapse.
+    ["distinct-analysis-groups-stay-distinct", (fixture) => {
+      fixture.analysisGroups.push({
+        ...cloneJson(fixture.analysisGroups[0]),
+        id: "fixture-group-pooled-titration",
+        label: "Pooled fixture asset titrated group",
+        memberArmIds: ["fixture-arm-dr-10mg-titrated", "fixture-arm-dr-background"],
+      });
+      const twin = cloneJson(analysisGroupOutcome);
+      twin.id = "fixture-outcome-dr-pooled-titration";
+      twin.analysisGroupId = "fixture-group-pooled-titration";
+      fixture.outcomes.push(twin);
+    }],
+    ["analysis-population-subgroup-stays-distinct", (fixture) => {
+      const subgroup = cloneJson(analysisGroupOutcome);
+      subgroup.id = "fixture-outcome-analysis-group-subgroup";
+      subgroup.analysisPopulation = "Modified intention-to-treat (baseline type 2 diabetes subgroup)";
+      fixture.outcomes.push(subgroup);
+    }],
+  ];
+
+  for (const [name, mutate] of validExpectations) {
+    const fixture = cloneJson(validAggregate);
+    mutate(fixture);
+    validateClinicalEvidenceAggregate(
+      fixture,
+      validReferences,
+      `data/validation-fixtures/clinical-evidence/synthetic-valid/${name}`,
+    );
+  }
 
   const secondStudy = {
     ...cloneJson(validAggregate.studies[0]),
@@ -1555,6 +2028,8 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["arm-level-multiple-arms", /arm-level outcomes require exactly one armId/, (fixture) => {
       fixture.outcomes[0].result.resultType = "arm-level";
+      delete fixture.outcomes[0].result.effectMeasure;
+      delete fixture.outcomes[0].result.comparisonType;
     }],
     ["between-arm-single-arm", /between-arm outcomes require at least two armIds/, (fixture) => {
       fixture.outcomes[0].armIds = [fixture.outcomes[0].armIds[0]];
@@ -1576,6 +2051,136 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["study-without-arm", /has no arms/, (fixture) => {
       fixture.studies.push(secondStudy);
+    }],
+    ["stale-schema-version", /schemaVersion must be "2\.0"/, (fixture) => {
+      fixture.schemaVersion = "1.0";
+    }],
+    // Estimand and analysis-population canonicalization (G12/G26): a casing/hyphen variant of
+    // the same term is the same semantic outcome, not a second one.
+    ["estimand-hyphen-variant-duplicate", /duplicate semantic outcome/, (fixture) => {
+      fixture.outcomes.push({
+        ...cloneJson(fixture.outcomes[0]),
+        id: "fixture-outcome-estimand-hyphen-variant",
+        estimand: "Treatment-policy estimand",
+      });
+      fixture.outcomes[0].estimand = "Treatment policy";
+    }],
+    ["analysis-set-alias-duplicate", /duplicate semantic outcome/, (fixture) => {
+      fixture.outcomes.push({
+        ...cloneJson(fixture.outcomes[0]),
+        id: "fixture-outcome-analysis-set-alias",
+        analysisPopulation: "mITT (overall)",
+      });
+      fixture.outcomes[0].analysisPopulation = "Modified intention-to-treat (overall)";
+    }],
+    // Internal linked-asset resolution (G8).
+    ["linked-asset-internal-name-as-free-text", /resolves to the internal registry asset/, (fixture) => {
+      fixture.arms[0].linkedAsset = {
+        assetName: "Fixture Asset",
+        externalCompanyName: "Fixture Co",
+      };
+    }],
+    ["linked-asset-id-without-company", /linkedAsset assetId requires companyId/, (fixture) => {
+      fixture.arms[0].linkedAsset = { assetId: "fixture-asset" };
+    }],
+    ["linked-asset-mixed-company-identity", /companyId and externalCompanyName cannot both be used/, (fixture) => {
+      fixture.arms[0].linkedAsset = {
+        companyId: "fixture-co",
+        externalCompanyName: "Other Company",
+        assetName: "Partner X",
+      };
+    }],
+    // Structured result semantics (G19).
+    ["effect-measure-as-unit", /is an effect measure, not a unit/, (fixture) => {
+      fixture.outcomes[0].result.unit = "hazard ratio";
+    }],
+    ["between-arm-without-effect-measure", /require a result\.effectMeasure/, (fixture) => {
+      delete fixture.outcomes[0].result.effectMeasure;
+    }],
+    ["arm-level-with-effect-measure", /effectMeasure applies only to a between-arm comparison/, (fixture) => {
+      const armLevel = fixture.outcomes.find((outcome) => outcome.result.resultType === "arm-level");
+      armLevel.result.effectMeasure = "Hazard ratio";
+    }],
+    ["non-numeric-numeric-value", /numericValue must be a finite number or null/, (fixture) => {
+      fixture.outcomes[0].result.numericValue = "-8.0";
+    }],
+    // Endpoint role and domain (G14a/G17).
+    ["unknown-endpoint-role", /endpoint role "Primary efficacy" is not allowed/, (fixture) => {
+      fixture.endpoints[0].role = "Primary efficacy";
+    }],
+    ["unknown-endpoint-domain", /endpoint domain "weight" is not allowed/, (fixture) => {
+      fixture.endpoints[0].domain = "weight";
+    }],
+    // AnalysisGroup invariants (R2a).
+    ["analysis-group-empty-members", /memberArmIds must not be empty/, (fixture) => {
+      fixture.analysisGroups[0].memberArmIds = [];
+    }],
+    ["analysis-group-repeated-member", /repeats member arm/, (fixture) => {
+      fixture.analysisGroups[0].memberArmIds = [
+        fixture.analysisGroups[0].memberArmIds[0],
+        fixture.analysisGroups[0].memberArmIds[0],
+      ];
+    }],
+    ["analysis-group-missing-member-arm", /references missing arm/, (fixture) => {
+      fixture.analysisGroups[0].memberArmIds = ["fixture-arm-does-not-exist"];
+    }],
+    ["analysis-group-cross-study-member", /member arm .* belongs to another study/, (fixture) => {
+      fixture.studies.push(secondStudy);
+      fixture.arms.push(secondArm);
+      fixture.analysisGroups[0].memberArmIds = [secondArm.id];
+    }],
+    ["analysis-group-unknown-kind", /analysisGroup kind "subgroup" is not allowed/, (fixture) => {
+      fixture.analysisGroups[0].kind = "subgroup";
+    }],
+    ["analysis-group-id-collides-with-arm", /collides with an arm id/, (fixture) => {
+      const armId = fixture.arms[0].id;
+      fixture.analysisGroups.push({
+        ...cloneJson(fixture.analysisGroups[0]),
+        id: armId,
+      });
+    }],
+    ["duplicate-analysis-group-semantics", /duplicate analysis group semantics/, (fixture) => {
+      fixture.analysisGroups.push({
+        ...cloneJson(fixture.analysisGroups[0]),
+        id: "fixture-group-semantic-duplicate",
+      });
+    }],
+    ["analysis-group-without-outcome", /analysis group .* has no outcome/, (fixture) => {
+      fixture.analysisGroups.push({
+        ...cloneJson(fixture.analysisGroups[0]),
+        id: "fixture-group-orphan",
+        label: "Orphan pooled group",
+      });
+    }],
+    ["analysis-group-cross-study-outcome", /analysis group .* belongs to another study/, (fixture) => {
+      const groupOutcome = fixture.outcomes.find(
+        (outcome) => outcome.analysisGroupId !== undefined,
+      );
+      groupOutcome.studyId = "fixture-study-1";
+      groupOutcome.endpointId = "fixture-endpoint-weight-change";
+    }],
+    ["outcome-with-both-anchors", /anchors either to armIds or to one analysisGroupId/, (fixture) => {
+      const groupOutcome = fixture.outcomes.find(
+        (outcome) => outcome.analysisGroupId !== undefined,
+      );
+      groupOutcome.armIds = ["fixture-arm-dr-5mg"];
+    }],
+    ["outcome-without-any-anchor", /anchors either to armIds or to one analysisGroupId/, (fixture) => {
+      delete fixture.outcomes[0].armIds;
+    }],
+    ["analysis-group-between-arm-result", /comparison between analysis groups is not representable/, (fixture) => {
+      const groupOutcome = fixture.outcomes.find(
+        (outcome) => outcome.analysisGroupId !== undefined,
+      );
+      groupOutcome.result.resultType = "between-arm";
+      groupOutcome.result.comparisonType = "Least-squares mean difference, pooled minus placebo";
+      groupOutcome.result.effectMeasure = "Least-squares mean difference";
+    }],
+    ["missing-analysis-group-reference", /references missing analysis group/, (fixture) => {
+      const groupOutcome = fixture.outcomes.find(
+        (outcome) => outcome.analysisGroupId !== undefined,
+      );
+      groupOutcome.analysisGroupId = "fixture-group-does-not-exist";
     }],
   ];
 

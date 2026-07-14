@@ -1,41 +1,558 @@
 {
+  "schemaVersion": "2.0",
   "companyId": "eli-lilly-and-company",
   "assetId": "ly3841136",
   "studies": [
     {
-      "id": "eli-lilly-and-company-eloralintide-phase-2-nct06230523", "companyId": "eli-lilly-and-company", "assetId": "ly3841136", "programId": "eli-lilly-and-company-ly3841136-subcutaneous-injection",
-      "officialTitle": "A Study of Eloralintide (LY3841136) in Participants With Obesity or Overweight", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT06230523"}], "phase": "Phase 2", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group dose-ranging trial including fixed-dose and dose-escalation regimens."}, "population": "Adults with obesity, or overweight with at least one weight-related condition, without diabetes.", "overallDuration": "48 weeks",
+      "id": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3841136",
+      "programId": "eli-lilly-and-company-ly3841136-subcutaneous-injection",
+      "officialTitle": "A Study of Eloralintide (LY3841136) in Participants With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06230523"
+        }
+      ],
+      "phase": "Phase 2",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group dose-ranging trial including fixed-dose and dose-escalation regimens."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related condition, without diabetes.",
+      "overallDuration": "48 weeks",
       "safetySummary": "Nausea and fatigue were the most common adverse events; the study reported no new safety signal that changed the overall benefit-risk interpretation.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT06230523","title":"Eloralintide Phase 2 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","title":"Eloralintide, a Selective Amylin Receptor Agonist, for Obesity","sourceType":"peer-reviewed publication","publishedAt":"2025-11-07","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06230523",
+            "title": "Eloralintide Phase 2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "title": "Eloralintide, a Selective Amylin Receptor Agonist, for Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-11-07",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     }
   ],
   "arms": [
-    {"id":"elora-p2-1mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"experimental","label":"Eloralintide 1 mg","intervention":"Eloralintide","linkedAsset":{"assetId":"ly3841136"},"dose":"1 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"elora-p2-3mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"experimental","label":"Eloralintide 3 mg","intervention":"Eloralintide","linkedAsset":{"assetId":"ly3841136"},"dose":"3 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"elora-p2-6mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"experimental","label":"Eloralintide 6 mg","intervention":"Eloralintide","linkedAsset":{"assetId":"ly3841136"},"dose":"6 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"elora-p2-9mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"experimental","label":"Eloralintide 9 mg","intervention":"Eloralintide","linkedAsset":{"assetId":"ly3841136"},"dose":"9 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"elora-p2-6to9","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"experimental","label":"Eloralintide 6 mg to 9 mg","intervention":"Eloralintide dose escalation","linkedAsset":{"assetId":"ly3841136"},"dose":"6 mg escalating to 9 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"elora-p2-3to9","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"experimental","label":"Eloralintide 3 mg to 9 mg","intervention":"Eloralintide dose escalation","linkedAsset":{"assetId":"ly3841136"},"dose":"3 mg escalating to 9 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"},
-    {"id":"elora-p2-placebo","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","role":"placebo","label":"Placebo","intervention":"Matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"48 weeks"}
+    {
+      "id": "elora-p2-1mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "experimental",
+      "label": "Eloralintide 1 mg",
+      "intervention": "Eloralintide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3841136"
+      },
+      "dose": "1 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "elora-p2-3mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "experimental",
+      "label": "Eloralintide 3 mg",
+      "intervention": "Eloralintide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3841136"
+      },
+      "dose": "3 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "elora-p2-6mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "experimental",
+      "label": "Eloralintide 6 mg",
+      "intervention": "Eloralintide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3841136"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "elora-p2-9mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "experimental",
+      "label": "Eloralintide 9 mg",
+      "intervention": "Eloralintide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3841136"
+      },
+      "dose": "9 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "elora-p2-6to9",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "experimental",
+      "label": "Eloralintide 6 mg to 9 mg",
+      "intervention": "Eloralintide dose escalation",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3841136"
+      },
+      "dose": "6 mg escalating to 9 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "elora-p2-3to9",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "experimental",
+      "label": "Eloralintide 3 mg to 9 mg",
+      "intervention": "Eloralintide dose escalation",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3841136"
+      },
+      "dose": "3 mg escalating to 9 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "elora-p2-placebo",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    }
   ],
+  "analysisGroups": [],
   "endpoints": [
-    {"id":"elora-p2-weight-week48","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 48"}
+    {
+      "id": "elora-p2-weight-week48",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48"
+    }
   ],
   "outcomes": [
-    {"id":"elora-p2-weight-1mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-1mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-3mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-3mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-12","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-6mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-6mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-18","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-9mg","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-9mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-20","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-6to9","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-6to9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-20","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-3to9","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-3to9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-16","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-placebo","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Efficacy estimand","result":{"value":"-0.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-1mg-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-1mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-7.3","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-3mg-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-3mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-10.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-6mg-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-6mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-13.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-9mg-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-9mg"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-17.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-6to9-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-6to9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-15.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-3to9-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-3to9"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-14.6","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"elora-p2-weight-placebo-treatment-regimen","studyId":"eli-lilly-and-company-eloralintide-phase-2-nct06230523","endpointId":"elora-p2-weight-week48","armIds":["elora-p2-placebo"],"analysisPopulation":"Intention-to-treat (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-2.3","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41207310/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}}
+    {
+      "id": "elora-p2-weight-1mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-1mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9",
+        "numericValue": -9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-3mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-3mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12",
+        "numericValue": -12,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-6mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-6mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-18",
+        "numericValue": -18,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-9mg",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-9mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-20",
+        "numericValue": -20,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-6to9",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-6to9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-20",
+        "numericValue": -20,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-3to9",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-3to9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16",
+        "numericValue": -16,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-placebo",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.4",
+        "numericValue": -0.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-1mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-1mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-7.3",
+        "numericValue": -7.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-3mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-3mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-10.5",
+        "numericValue": -10.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-6mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-6mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-13.8",
+        "numericValue": -13.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-9mg-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-9mg"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-17.5",
+        "numericValue": -17.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-6to9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-6to9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-15.8",
+        "numericValue": -15.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-3to9-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-3to9"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-14.6",
+        "numericValue": -14.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "elora-p2-weight-placebo-treatment-regimen",
+      "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
+      "endpointId": "elora-p2-weight-week48",
+      "armIds": [
+        "elora-p2-placebo"
+      ],
+      "analysisPopulation": "Intention-to-treat (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.3",
+        "numericValue": -2.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41207310/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }

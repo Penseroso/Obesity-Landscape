@@ -39,6 +39,11 @@ entry.
 - **Clinical Evidence estimand and source-reported-result handling:** ADR-0036
   (refines ADR-0029 / ADR-0034; formalizes the Lilly `14c773a` rules and records
   structural deferrals).
+- **Clinical Evidence schema version:** ADR-0037 (**v2.0**; supersedes the v1 shape
+  established by ADR-0029/0034/0036 — `AnalysisGroup`, endpoint `role`/`domain`,
+  structured Outcome result, internal linked-asset resolution, estimand/population
+  canonicalization, derived reciprocal asset index, and the case-scoped
+  deferred-schema fallback).
 
 ---
 
@@ -1015,3 +1020,84 @@ when decided, recorded as a new appended ADR.
   semantic key. No source record is edited. Deterministic regeneration must remain
   byte-identical. The unresolved candidates remain schema-review work, not Clinical
   Evidence completeness defects.
+
+## ADR-0037 — Clinical Evidence schema v2.0
+
+- **Date:** 2026-07-14
+- **Status:** Accepted
+- **Supersedes:** the v1 Clinical Evidence schema shape (ADR-0029, hardened by
+  ADR-0034, formalized by ADR-0036). Those ADRs' semantic rules remain in force
+  except where restated here.
+- **Context:** A schema audit on real pilot data (Novo + Lilly, 33 studies / 140
+  outcomes) separated *demonstrated* gaps from *derived* ones. The failure modes
+  Preflight A weighted most heavily (maturity conflation, Arm/Endpoint dedup) never
+  materialized; the ones that did were free-text vocabulary drift in the semantic key,
+  pooled analysis groups modeled as Arms, an effect measure stored as a unit, an
+  endpoint role that could not be expressed, and a head-to-head comparator that was
+  invisible from the comparator's own side.
+- **Decision:** Land one **atomic, versioned migration** from schema v1 to **v2.0**.
+  v2.0 is a distinct version, not a silent superset: every source file and the
+  generated aggregate declare `"schemaVersion": "2.0"`, and a v1 file is rejected.
+  The migration is indivisible — there is no valid partially-migrated state.
+  1. **`AnalysisGroup`** — a study-scoped, first-class entity distinct from `Arm`,
+     with a source-reported `kind` and a non-empty, flat, same-study `memberArmIds`
+     set. An Outcome anchors **either** to `armIds` **xor** to one `analysisGroupId`.
+     Every group must be referenced by at least one Outcome; group ids may not collide
+     with arm ids. The outcome semantic key gains an analysis-group dimension, so two
+     outcomes differing only by analysis unit are distinct and are never collapsed by
+     the Latest-Result Rule.
+  2. **Endpoint `role` + `domain`** — `role` is a required enum confirmed from the
+     study's cited sources (registry outcome designation, protocol, publication) and
+     **never** inferred from the legacy free-text `classification`, which is demoted to
+     an optional legacy descriptor. Two or more prespecified primary outcome measures
+     make each `co-primary`; an unconfirmed role is `other`. Optional `domain`
+     distinguishes a weight endpoint from a comorbidity endpoint.
+  3. **Structured Outcome result** — four separated semantics: source display `value`,
+     machine-readable `numericValue` (`null` when narrative), the **actual** `unit`, and
+     `effectMeasure` for a between-arm estimate. `unit` may no longer carry an effect
+     measure; direction stays in `comparisonType`.
+  4. **Internal linked-asset resolution** — a comparator or component that resolves to a
+     registry asset must carry `companyId` + `assetId`, **including across companies**;
+     free text is reserved for genuinely external or unresolved assets.
+  5. **Field-specific canonicalization** — `estimand` and `analysisPopulation` are
+     canonicalized (casing, punctuation, `estimand` suffix, standard analysis-set
+     abbreviations) for the **semantic key and grouping only**. Source text is preserved
+     verbatim and the vocabulary stays open. `normalize()` is **not** globally changed.
+  6. **Derived reciprocal asset index** — `data/generated/clinical-evidence-asset-studies.json`
+     is a **derived projection**, not canonical schema: computed from canonical internal
+     links, never authored, absent from validation identity, and deterministically
+     regenerated.
+  7. **Case-scoped deferred-schema fallback** — a research run that meets an
+     unrepresentable structure isolates the smallest failing unit, never distorts it,
+     continues the rest of the run, and records it in a mandatory Schema boundary report
+     with a re-entry trigger (`DEFERRED_SCHEMA_CASE` / `REVIEW_REQUIRED` /
+     `RESEARCH_BLOCKED`). A later schema extension replays **only** the cases it unblocks.
+- **Deliberately retained:** the **single canonical storage anchor** per Study
+  (`companyId`/`assetId`). It denotes storage ownership, not scientific primacy;
+  reciprocal discovery is served by the derived projection, not by multi-anchor storage.
+  The `maturity` enum is also retained as-is, with its finality-versus-venue conflation
+  documented rather than fixed.
+- **Explicitly deferred (unchanged by this ADR):** study grouping / parent-child;
+  shared registry identity across master-protocol sub-studies; endpoint testing-order and
+  multiplicity; splitting `maturity` into finality × venue plus a regulatory value;
+  cross-study pooled evidentiary units; comparisons *between* analysis groups; structured
+  superseded-value history; field-level provenance. Each is logged in
+  `docs/data-protocol/edge-cases.md`.
+- **Rationale:** Each landed change is forced by demonstrated pilot evidence, and the
+  set has no backward-compatible intermediate state — a new required endpoint `role`, the
+  result restructure, the semantic-key redefinition, and the tightened linked-asset
+  constraint invalidate v1 records the moment the validator changes. Bundling them as one
+  versioned migration is therefore the honest classification, not "additive". The
+  speculative backlog stays deferred so v2.0 does not bake in shapes the pilot has never
+  produced.
+- **Consequences:** All 11 source files are migrated. The SURMOUNT-5 semaglutide arm now
+  links to `novo-nordisk/semaglutide`, so the head-to-head is discoverable from the Novo
+  side. The retatrutide Phase 2 study is re-modeled on its four real protocol starting-dose
+  Arms with the publication's combined 4-mg and 8-mg groups as `pooled` AnalysisGroups —
+  the result omitted under v1 is now represented without distortion, and is the worked
+  example of the defer → extend → targeted-replay loop. Endpoint roles were confirmed
+  against each study's ClinicalTrials.gov record, which reclassified three endpoints the
+  legacy `classification` string had mislabeled (GLORY-1 Week 48, SURMOUNT-MAINTAIN Week
+  112, retatrutide Phase 2 Week 48 are registry **secondary** outcome measures). Existing
+  arm-anchored outcome keys stay value-stable, so the migration introduces no silent key
+  collisions. The entity model is **frozen at v2.0** once this migration lands.

@@ -1,15 +1,179 @@
 {
-  "companyId":"novo-nordisk","assetId":"ubt251",
-  "studies":[{"id":"novo-nordisk-ubt251-china-phase2-nct07177469","companyId":"novo-nordisk","assetId":"ubt251","programId":"novo-nordisk-ubt251-subcutaneous-injection","officialTitle":"A Study to Evaluate UBT251 in Chinese Adults With Overweight or Obesity","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT07177469"},{"registry":"Chinese Clinical Trial Registry","id":"ChiCTR2500113817"}],"phase":"Phase 2","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Four-arm dose-ranging trial."},"population":"Chinese adults with overweight or obesity.","overallDuration":"24 weeks","safetySummary":"The sponsor reported a safety profile consistent with the mechanism; detailed peer-reviewed safety results were not yet available.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.chictr.org.cn/showproj.html?proj=286437","title":"UBT251 Phase 2 obesity study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503","title":"UBT251 Phase 2 obesity headline results","sourceType":"company topline announcement","publishedAt":"2026-02-24","checkedAt":"2026-07-13"}]}}],
-  "arms":[
-    {"id":"ubt251-p2-2","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","role":"experimental","label":"UBT251 2 mg","intervention":"UBT251","linkedAsset":{"assetId":"ubt251"},"dose":"2 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"24 weeks"},
-    {"id":"ubt251-p2-4","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","role":"experimental","label":"UBT251 4 mg","intervention":"UBT251","linkedAsset":{"assetId":"ubt251"},"dose":"4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"24 weeks"},
-    {"id":"ubt251-p2-6","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","role":"experimental","label":"UBT251 6 mg","intervention":"UBT251","linkedAsset":{"assetId":"ubt251"},"dose":"6 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"24 weeks"},
-    {"id":"ubt251-p2-placebo","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","role":"placebo","label":"Placebo","intervention":"Matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"24 weeks"}
+  "schemaVersion": "2.0",
+  "companyId": "novo-nordisk",
+  "assetId": "ubt251",
+  "studies": [
+    {
+      "id": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "companyId": "novo-nordisk",
+      "assetId": "ubt251",
+      "programId": "novo-nordisk-ubt251-subcutaneous-injection",
+      "officialTitle": "A Study to Evaluate UBT251 in Chinese Adults With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07177469"
+        },
+        {
+          "registry": "Chinese Clinical Trial Registry",
+          "id": "ChiCTR2500113817"
+        }
+      ],
+      "phase": "Phase 2",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm dose-ranging trial."
+      },
+      "population": "Chinese adults with overweight or obesity.",
+      "overallDuration": "24 weeks",
+      "safetySummary": "The sponsor reported a safety profile consistent with the mechanism; detailed peer-reviewed safety results were not yet available.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.chictr.org.cn/showproj.html?proj=286437",
+            "title": "UBT251 Phase 2 obesity study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+            "title": "UBT251 Phase 2 obesity headline results",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-24",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ],
-  "endpoints":[{"id":"ubt251-p2-weight-week24","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 24"}],
-  "outcomes":[
-    {"id":"ubt251-p2-weight-6","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","endpointId":"ubt251-p2-weight-week24","armIds":["ubt251-p2-6"],"analysisPopulation":"Full analysis set (overall)","result":{"value":"-19.7","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503","sourceType":"company topline announcement","checkedAt":"2026-07-13"}]}},
-    {"id":"ubt251-p2-weight-placebo","studyId":"novo-nordisk-ubt251-china-phase2-nct07177469","endpointId":"ubt251-p2-weight-week24","armIds":["ubt251-p2-placebo"],"analysisPopulation":"Full analysis set (overall)","result":{"value":"-2.0","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503","sourceType":"company topline announcement","checkedAt":"2026-07-13"}]}}
+  "arms": [
+    {
+      "id": "ubt251-p2-2",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "experimental",
+      "label": "UBT251 2 mg",
+      "intervention": "UBT251",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "ubt251"
+      },
+      "dose": "2 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "ubt251-p2-4",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "experimental",
+      "label": "UBT251 4 mg",
+      "intervention": "UBT251",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "ubt251"
+      },
+      "dose": "4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "ubt251-p2-6",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "experimental",
+      "label": "UBT251 6 mg",
+      "intervention": "UBT251",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "ubt251"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "ubt251-p2-placebo",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "ubt251-p2-weight-week24",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "ubt251-p2-weight-6",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "endpointId": "ubt251-p2-weight-week24",
+      "armIds": [
+        "ubt251-p2-6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-19.7",
+        "numericValue": -19.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ubt251-p2-weight-placebo",
+      "studyId": "novo-nordisk-ubt251-china-phase2-nct07177469",
+      "endpointId": "ubt251-p2-weight-week24",
+      "armIds": [
+        "ubt251-p2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-2.0",
+        "numericValue": -2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }

@@ -1,52 +1,678 @@
 {
+  "schemaVersion": "2.0",
   "companyId": "eli-lilly-and-company",
   "assetId": "ly3502970",
   "studies": [
     {
-      "id": "eli-lilly-and-company-orforglipron-attain-1-nct05869903", "companyId": "eli-lilly-and-company", "assetId": "ly3502970", "programId": "eli-lilly-and-company-ly3502970-oral-tablets",
-      "officialTitle": "A Study of Orforglipron (LY3502970) in Participants With Obesity or Overweight With Weight-Related Comorbidities", "acronym": "ATTAIN-1", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT05869903"}], "phase": "Phase 3", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group oral-dose trial with lifestyle intervention."}, "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.", "overallDuration": "72 weeks",
+      "id": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3502970",
+      "programId": "eli-lilly-and-company-ly3502970-oral-tablets",
+      "officialTitle": "A Study of Orforglipron (LY3502970) in Participants With Obesity or Overweight With Weight-Related Comorbidities",
+      "acronym": "ATTAIN-1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05869903"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group oral-dose trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "72 weeks",
       "safetySummary": "Gastrointestinal adverse events were the most common, were mainly mild to moderate, and treatment discontinuation increased with dose.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05869903","title":"ATTAIN-1 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","title":"Orforglipron for the Treatment of Obesity","sourceType":"peer-reviewed publication","publishedAt":"2025-09-16","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05869903",
+            "title": "ATTAIN-1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "title": "Orforglipron for the Treatment of Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-09-16",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     },
     {
-      "id": "eli-lilly-and-company-orforglipron-attain-2-nct05872620", "companyId": "eli-lilly-and-company", "assetId": "ly3502970", "programId": "eli-lilly-and-company-ly3502970-oral-tablets",
-      "officialTitle": "A Study of Orforglipron in Participants With Obesity or Overweight and Type 2 Diabetes", "acronym": "ATTAIN-2", "registryIdentifiers": [{"registry":"ClinicalTrials.gov","id":"NCT05872620"}], "phase": "Phase 3", "status": "Completed",
-      "design": {"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group oral-dose trial with lifestyle intervention."}, "population": "Adults with obesity or overweight and type 2 diabetes; weight management was an explicit objective.", "overallDuration": "72 weeks",
+      "id": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3502970",
+      "programId": "eli-lilly-and-company-ly3502970-oral-tablets",
+      "officialTitle": "A Study of Orforglipron in Participants With Obesity or Overweight and Type 2 Diabetes",
+      "acronym": "ATTAIN-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05872620"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group oral-dose trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes; weight management was an explicit objective.",
+      "overallDuration": "72 weeks",
       "safetySummary": "The safety profile was consistent with the GLP-1 receptor agonist class, with gastrointestinal adverse events most frequent.",
-      "metadata": {"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05872620","title":"ATTAIN-2 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","title":"Orforglipron in Adults with Obesity and Type 2 Diabetes","sourceType":"peer-reviewed publication","publishedAt":"2025-11-21","checkedAt":"2026-07-13"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05872620",
+            "title": "ATTAIN-2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "title": "Orforglipron in Adults with Obesity and Type 2 Diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-11-21",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
     }
   ],
   "arms": [
-    {"id":"attain1-orfor6","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","role":"experimental","label":"Orforglipron 6 mg","intervention":"Orforglipron plus lifestyle intervention","linkedAsset":{"assetId":"ly3502970"},"dose":"6 mg","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain1-orfor12","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","role":"experimental","label":"Orforglipron 12 mg","intervention":"Orforglipron plus lifestyle intervention","linkedAsset":{"assetId":"ly3502970"},"dose":"12 mg","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain1-orfor36","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","role":"experimental","label":"Orforglipron 36 mg","intervention":"Orforglipron plus lifestyle intervention","linkedAsset":{"assetId":"ly3502970"},"dose":"36 mg","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain1-placebo","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain2-orfor6","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","role":"experimental","label":"Orforglipron 6 mg","intervention":"Orforglipron plus lifestyle intervention","linkedAsset":{"assetId":"ly3502970"},"dose":"6 mg","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain2-orfor12","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","role":"experimental","label":"Orforglipron 12 mg","intervention":"Orforglipron plus lifestyle intervention","linkedAsset":{"assetId":"ly3502970"},"dose":"12 mg","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain2-orfor36","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","role":"experimental","label":"Orforglipron 36 mg","intervention":"Orforglipron plus lifestyle intervention","linkedAsset":{"assetId":"ly3502970"},"dose":"36 mg","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"},
-    {"id":"attain2-placebo","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","role":"placebo","label":"Placebo","intervention":"Matched placebo plus lifestyle intervention","dose":"Matched placebo","route":"Oral","dosingFrequency":"Once daily","treatmentDuration":"72 weeks"}
+    {
+      "id": "attain1-orfor6",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "role": "experimental",
+      "label": "Orforglipron 6 mg",
+      "intervention": "Orforglipron plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3502970"
+      },
+      "dose": "6 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain1-orfor12",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "role": "experimental",
+      "label": "Orforglipron 12 mg",
+      "intervention": "Orforglipron plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3502970"
+      },
+      "dose": "12 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain1-orfor36",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "role": "experimental",
+      "label": "Orforglipron 36 mg",
+      "intervention": "Orforglipron plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3502970"
+      },
+      "dose": "36 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain1-placebo",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain2-orfor6",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "role": "experimental",
+      "label": "Orforglipron 6 mg",
+      "intervention": "Orforglipron plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3502970"
+      },
+      "dose": "6 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain2-orfor12",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "role": "experimental",
+      "label": "Orforglipron 12 mg",
+      "intervention": "Orforglipron plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3502970"
+      },
+      "dose": "12 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain2-orfor36",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "role": "experimental",
+      "label": "Orforglipron 36 mg",
+      "intervention": "Orforglipron plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3502970"
+      },
+      "dose": "36 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    },
+    {
+      "id": "attain2-placebo",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "72 weeks"
+    }
   ],
+  "analysisGroups": [],
   "endpoints": [
-    {"id":"attain1-weight-week72","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 72"},
-    {"id":"attain2-weight-week72","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 72"}
+    {
+      "id": "attain1-weight-week72",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "attain2-weight-week72",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72"
+    }
   ],
   "outcomes": [
-    {"id":"attain1-weight-orfor6","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-orfor6"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-7.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-orfor12","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-orfor12"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-8.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-orfor36","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-orfor36"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-11.2","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-placebo","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-2.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-orfor6","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-orfor6"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-5.1","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-orfor12","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-orfor12"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-7.0","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-orfor36","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-orfor36"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-9.6","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-placebo","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-2.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-orfor6-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-orfor6"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-7.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-orfor12-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-orfor12"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-9.3","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-orfor36-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-orfor36"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-12.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain1-weight-placebo-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-1-nct05869903","endpointId":"attain1-weight-week72","armIds":["attain1-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-0.9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40960239/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-orfor6-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-orfor6"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-5.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-orfor12-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-orfor12"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-7.8","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-orfor36-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-orfor36"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-10.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"attain2-weight-placebo-efficacy","studyId":"eli-lilly-and-company-orforglipron-attain-2-nct05872620","endpointId":"attain2-weight-week72","armIds":["attain2-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Efficacy estimand","result":{"value":"-2.2","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/41275875/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}}
+    {
+      "id": "attain1-weight-orfor6",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-7.5",
+        "numericValue": -7.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor12",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor12"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-8.4",
+        "numericValue": -8.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor36",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor36"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-11.2",
+        "numericValue": -11.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-placebo",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.1",
+        "numericValue": -2.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor6",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-5.1",
+        "numericValue": -5.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor12",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor12"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-7.0",
+        "numericValue": -7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor36",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor36"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-9.6",
+        "numericValue": -9.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-placebo",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-2.5",
+        "numericValue": -2.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor6-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-7.8",
+        "numericValue": -7.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor12-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor12"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.3",
+        "numericValue": -9.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-orfor36-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-orfor36"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.4",
+        "numericValue": -12.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain1-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
+      "endpointId": "attain1-weight-week72",
+      "armIds": [
+        "attain1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.9",
+        "numericValue": -0.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40960239/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor6-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-5.5",
+        "numericValue": -5.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor12-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor12"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-7.8",
+        "numericValue": -7.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-orfor36-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-orfor36"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.5",
+        "numericValue": -10.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attain2-weight-placebo-efficacy",
+      "studyId": "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
+      "endpointId": "attain2-weight-week72",
+      "armIds": [
+        "attain2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.2",
+        "numericValue": -2.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41275875/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }

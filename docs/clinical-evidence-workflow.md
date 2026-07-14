@@ -156,8 +156,9 @@ the affected Outcome and report the conflict.
 
 ## 5. Extraction Rules
 
-Populate the implemented `Study`, `Arm`, `Endpoint`, and `Outcome` structures in
-`data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json`.
+Populate the implemented `Study`, `Arm`, `AnalysisGroup`, `Endpoint`, and `Outcome`
+structures in `data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json`.
+Every source file declares `"schemaVersion": "2.0"`.
 
 - Store experimental, placebo, and active-comparator groups as parallel Arms.
 - Store treatment and comparator arms using the same structure.
@@ -169,6 +170,25 @@ Populate the implemented `Study`, `Arm`, `Endpoint`, and `Outcome` structures in
   covers multiple focal assets under one identifier, is **not representable** and is
   deferred (do not invent surrogate registry ids); see the README study-grouping
   note and ADR-0034.
+- Link an Arm's comparator or component to the **internal registry asset** with
+  `companyId` + `assetId` whenever it resolves to one, **including another company's
+  asset**. Use free-text `assetName` / `externalCompanyName` only for a genuinely
+  external or unresolved asset. This is a reference, not a change of ownership.
+- Model a source-reported **pooled, derived, or starting-dose group** as an
+  `AnalysisGroup` over its member protocol Arms, and anchor its Outcome to the group
+  via `analysisGroupId`. Never invent an Arm for it, never nest groups, and never
+  redistribute a pooled value across member Arms. `kind` is source-reported.
+- Anchor every Outcome **either** to `armIds` **or** to one `analysisGroupId`, never
+  both. An analysis-group Outcome carries a single-unit (`arm-level`) result.
+- Set the Endpoint `role` from the study's **cited sources** (registry outcome
+  designation, protocol, or publication) — never from a free-text label. Two or more
+  prespecified primary outcome measures make each one `co-primary`. Use `other` when
+  no source confirms the role. Add the optional `domain` to separate a weight endpoint
+  from a comorbidity endpoint, or omit it rather than guess.
+- Record the result as four separate facts: the source's **display text** (`value`),
+  the machine-readable `numericValue` (or `null` when narrative), the **actual unit**
+  (`unit`), and — for a between-arm estimate only — the `effectMeasure`. A hazard
+  ratio, odds ratio, or treatment difference is an **effect measure, not a unit**.
 - Capture required background or concomitant therapy in free text on
   `arm.intervention` / `arm.label` and `study.population`; it is not a structured
   field. A protocol-required standard-of-care background is not promoted to a
@@ -211,24 +231,65 @@ Populate the implemented `Study`, `Arm`, `Endpoint`, and `Outcome` structures in
 - Do not enter a Study unless it has at least one Arm, Endpoint, and Outcome.
 - Do not enter an Endpoint unless at least one Outcome is available.
 
-### 5.1 Unrepresentable results and deferred structure
+### 5.1 Case-scoped deferred-schema fallback
 
-If pooled analysis groups, starting-dose subgroups, substudy/cohort structure, or
-ambiguous multi-asset anchoring cannot be represented without changing the meaning,
-omit the result. Do not create artificial Arms, calculate or redistribute values,
-or force a subgroup or focal-asset mapping. Record the limitation in the execution
-report and classify it as a deferred schema decision rather than an operating-data
-defect.
+**Core principle: never terminate the whole company/asset run because one result does
+not fit the schema.** Isolate the affected unit and keep going.
 
-The unresolved candidates are documented separately in
-`docs/data-protocol/edge-cases.md` and ADR-0036:
+This governs research-run behaviour, not the schema shape, so it applies to anything
+v2.0 still cannot represent — the limitations listed in
+[`docs/clinical-evidence/README.md`](./clinical-evidence/README.md#deferred-limitations)
+and `docs/data-protocol/edge-cases.md`.
 
-- substudy and cohort representation.
-- protocol-defined Arm versus pooled or derived analysis group.
-- multi-focal or external-asset study anchoring.
+**Per-case procedure**
 
-These candidates require a future contract decision; this workflow does not
-prescribe or implement a schema shape.
+1. **Isolate** the smallest failing unit — the affected `Study`, `Endpoint`,
+   `Outcome`, or single source-reported result — not its parent scope.
+2. **Classify** it as a deferred schema case.
+3. **Do not distort.** No approximation, no redistribution across Arms, no pooled-value
+   splitting, no forced anchoring, no surrogate ids.
+4. **Continue** researching and entering every other representable case for that asset
+   and company.
+5. **Record** it in the mandatory end-of-run Schema boundary report.
+
+**Each deferred-case entry must contain**
+
+- the deferred-case **type**;
+- the affected **company, asset, Study, registry identifier, Endpoint, and result**;
+- **source evidence** demonstrating the unsupported structure;
+- the **exact reason** the current schema cannot represent it;
+- the **information that would be lost or distorted** if it were forced;
+- **whether any partial canonical record was entered**, and what;
+- the relevant **ADR / edge-case reference**;
+- a **recommended schema-reentry trigger** — which deferred item would unblock it.
+
+**Statuses**
+
+- **`DEFERRED_SCHEMA_CASE`** — the normal path. Only the affected case is omitted; the
+  rest of the run proceeds.
+- **`REVIEW_REQUIRED`** — the case *can* be entered as a canonical record, but a
+  documented semantic limitation remains (an approximation the source itself makes, or
+  a residual ambiguity). The record is entered **and** flagged.
+- **`RESEARCH_BLOCKED`** — **exceptional**: only when the unsupported structure prevents
+  reliable classification of the broader Study or would contaminate multiple dependent
+  records. It blocks that Study's entry, not the whole company/asset run.
+
+**Mandatory end-of-run summary** — number of representable cases entered, number of
+`DEFERRED_SCHEMA_CASE`, number of `REVIEW_REQUIRED`, and whether any
+`RESEARCH_BLOCKED` condition occurred, with detail.
+
+**Deterministic re-entry.** Each entry must retain enough source evidence and
+proposed-record context (the intended Study/Arm/AnalysisGroup/Endpoint/Outcome shape,
+cited sources, extracted values) that a later replay is **mechanical, not exploratory**.
+
+**Targeted replay after a schema extension.** When a schema extension lands, replay
+**only** the deferred cases that extension actually unblocks — matched by their recorded
+re-entry trigger. Do **not** re-run full company/asset discovery unless source freshness
+or a dependency independently warrants it.
+
+The retatrutide Phase 2 combined-dose result is the worked example of the whole loop:
+omitted under v1 because its starting-dose groups could not map to pooled "Arms",
+re-entered under v2.0 as `pooled` AnalysisGroups over the real protocol Arms (ADR-0037).
 
 ## 6. Record Creation And Replacement
 
@@ -238,22 +299,25 @@ Create asset-level source files only under:
 data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
 ```
 
-Use stable IDs. Reuse existing Study, Arm, Endpoint, and Outcome IDs when
-updating a previously entered study or semantic outcome. Do not create parallel
+Use stable IDs. Reuse existing Study, Arm, AnalysisGroup, Endpoint, and Outcome IDs
+when updating a previously entered study or semantic outcome. Do not create parallel
 Outcome records for superseded result versions.
 
-Deduplicate Arms and Endpoints **before** creating them: if an existing Arm already
-describes the same real-world treatment configuration, or an existing Endpoint the
-same measure at the same timepoint, reuse its id rather than minting a second
-surrogate id. Semantically duplicate Arm/Endpoint records under different ids
-silently defeat outcome duplicate detection; the validator blocks only the obvious
-identical case, so reuse is the primary control.
+Deduplicate Arms, AnalysisGroups and Endpoints **before** creating them: if an
+existing Arm already describes the same real-world treatment configuration, an
+existing AnalysisGroup the same member set, or an existing Endpoint the same measure
+at the same timepoint, reuse its id rather than minting a second surrogate id.
+Semantically duplicate records under different ids silently defeat outcome duplicate
+detection; the validator blocks only the obvious identical case, so reuse is the
+primary control.
 
 Outcome semantic identity comprises `studyId`, `endpointId`, the order-insensitive
-protocol-defined Arm set, `analysisPopulation`, `estimand`, `resultType`, and
-comparison direction when applicable via `comparisonType`. Do not use Arm array
-ordering as direction. Replace a result in place only when this full semantic
-identity is unchanged and the newer source supersedes the recorded value.
+protocol-defined Arm set **or** the analysis group, `analysisPopulation`, `estimand`,
+`resultType`, and comparison direction when applicable via `comparisonType`. Do not
+use Arm array ordering as direction. Replace a result in place only when this full
+semantic identity is unchanged and the newer source supersedes the recorded value —
+outcomes that differ by analysis group, analysis population, or estimand are distinct
+results and are never collapsed.
 
 When a value changes:
 
@@ -281,7 +345,7 @@ Each execution must:
    - `npm run data:validate:clinical-evidence:synthetic`
    - `npm run data:validate:generated`
 6. report entered, updated, not-entered result-bearing, excluded, deferred, and
-   conflicting studies.
+   conflicting studies, including the **Schema boundary report** required by §5.1.
 
 If current external sources cannot be accessed, do not claim Clinical Evidence
 Research was completed and do not modify Clinical Evidence source data. If
@@ -304,8 +368,10 @@ The final response must communicate:
 - studies excluded for no result.
 - studies excluded as outside Scope v1.1.
 - studies deferred, with reasons.
-- omitted results and deferred schema limitations, distinguished from operating-data
-  defects.
+- the **Schema boundary report** (§5.1): every deferred schema case with its required
+  fields, plus the counts of representable cases entered, `DEFERRED_SCHEMA_CASE`,
+  `REVIEW_REQUIRED`, and any `RESEARCH_BLOCKED` condition. Omitted results are
+  reported as deferred schema cases, never as operating-data defects.
 - pipeline discrepancies or conflicts requiring Company/Pipeline refresh.
 - generated aggregate and validation results.
 - blockers or evidence-access failures.

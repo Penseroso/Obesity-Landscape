@@ -6,7 +6,14 @@
       "WebFetch(domain:www.novonordisk.com)",
       "WebFetch(domain:www.sec.gov)",
       "WebFetch(domain:www.globenewswire.com)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -e ' *)",
+      "WebFetch(domain:clinicaltrials.gov)",
+      "Bash(curl -s --max-time 25 \"https://clinicaltrials.gov/api/v2/studies/NCT04184622?fields=protocolSection.outcomesModule.primaryOutcomes\")",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(curl -sS --max-time 25 \"https://clinicaltrials.gov/api/v2/studies/NCT04184622?fields=protocolSection.outcomesModule.primaryOutcomes\")",
+      "Bash(curl -sS --ssl-no-revoke --max-time 30 \"https://clinicaltrials.gov/api/v2/studies/NCT04184622?fields=protocolSection.outcomesModule.primaryOutcomes\")",
+      "Bash(node \"C:/Users/User/AppData/Local/Temp/claude/C--Users-User-Desktop-FILE-AI-Obesity-Landscape/1ba278c6-c709-4411-91e0-7fff5cefcfe0/scratchpad/migrate-v2.mjs\")"
     ]
   }
 }

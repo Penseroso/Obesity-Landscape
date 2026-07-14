@@ -1,33 +1,508 @@
 {
-  "companyId":"novo-nordisk","assetId":"cagrisema",
-  "studies":[
-    {"id":"novo-nordisk-cagrisema-redefine-1-nct05567796","companyId":"novo-nordisk","assetId":"cagrisema","programId":"novo-nordisk-cagrisema-subcutaneous-injection","officialTitle":"A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight","acronym":"REDEFINE 1","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT05567796"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Cagrilintide, semaglutide, and placebo","description":"Four-arm parallel-group trial with lifestyle intervention."},"population":"Adults with obesity, or overweight with at least one weight-related complication, without diabetes.","overallDuration":"68 weeks","safetySummary":"Gastrointestinal adverse events were the most common; treatment discontinuation rates were low across groups.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05567796","title":"REDEFINE 1 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://www.nejm.org/doi/10.1056/NEJMoa2502081","title":"Cagrilintide-Semaglutide in Adults with Overweight or Obesity","sourceType":"peer-reviewed publication","publishedAt":"2025-06-22","checkedAt":"2026-07-13"}]}},
-    {"id":"novo-nordisk-cagrisema-redefine-2-nct05394519","companyId":"novo-nordisk","assetId":"cagrisema","programId":"novo-nordisk-cagrisema-subcutaneous-injection","officialTitle":"A Research Study to See How Well CagriSema Helps People With Type 2 Diabetes and Excess Body Weight Lose Weight","acronym":"REDEFINE 2","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT05394519"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Double-blind","comparator":"Placebo","description":"Parallel-group 3:1 trial with lifestyle intervention."},"population":"Adults with obesity or overweight and type 2 diabetes; body-weight reduction was a primary objective.","overallDuration":"68 weeks","safetySummary":"The most common adverse events were gastrointestinal and were mainly mild to moderate.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT05394519","title":"REDEFINE 2 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://pubmed.ncbi.nlm.nih.gov/40544432/","title":"Cagrilintide-Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes","sourceType":"peer-reviewed publication","publishedAt":"2025-06-22","checkedAt":"2026-07-13"}]}},
-    {"id":"novo-nordisk-cagrisema-redefine-4-nct06131437","companyId":"novo-nordisk","assetId":"cagrisema","programId":"novo-nordisk-cagrisema-subcutaneous-injection","officialTitle":"A Research Study Comparing CagriSema With Tirzepatide in People With Obesity","acronym":"REDEFINE 4","registryIdentifiers":[{"registry":"ClinicalTrials.gov","id":"NCT06131437"}],"phase":"Phase 3","status":"Completed","design":{"randomization":"Randomized","masking":"Open-label","comparator":"Tirzepatide","description":"Active-controlled head-to-head parallel-group trial."},"population":"Adults with obesity without diabetes.","overallDuration":"84 weeks","safetySummary":"Both treatments had safety profiles consistent with their component classes; full peer-reviewed safety results were not yet available.","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://clinicaltrials.gov/study/NCT06131437","title":"REDEFINE 4 study record","sourceType":"trial registry","checkedAt":"2026-07-13"},{"url":"https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501","title":"Headline results from REDEFINE 4","sourceType":"company topline announcement","publishedAt":"2026-02-23","checkedAt":"2026-07-13"}]}}
+  "schemaVersion": "2.0",
+  "companyId": "novo-nordisk",
+  "assetId": "cagrisema",
+  "studies": [
+    {
+      "id": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "A Research Study to See How Well CagriSema Helps People With Excess Body Weight Lose Weight",
+      "acronym": "REDEFINE 1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05567796"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Cagrilintide, semaglutide, and placebo",
+        "description": "Four-arm parallel-group trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related complication, without diabetes.",
+      "overallDuration": "68 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most common; treatment discontinuation rates were low across groups.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05567796",
+            "title": "REDEFINE 1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "title": "Cagrilintide-Semaglutide in Adults with Overweight or Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-22",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "A Research Study to See How Well CagriSema Helps People With Type 2 Diabetes and Excess Body Weight Lose Weight",
+      "acronym": "REDEFINE 2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05394519"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group 3:1 trial with lifestyle intervention."
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes; body-weight reduction was a primary objective.",
+      "overallDuration": "68 weeks",
+      "safetySummary": "The most common adverse events were gastrointestinal and were mainly mild to moderate.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05394519",
+            "title": "REDEFINE 2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/",
+            "title": "Cagrilintide-Semaglutide in Adults with Overweight or Obesity and Type 2 Diabetes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-22",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "A Research Study Comparing CagriSema With Tirzepatide in People With Obesity",
+      "acronym": "REDEFINE 4",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06131437"
+        }
+      ],
+      "phase": "Phase 3",
+      "status": "Completed",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Tirzepatide",
+        "description": "Active-controlled head-to-head parallel-group trial."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "overallDuration": "84 weeks",
+      "safetySummary": "Both treatments had safety profiles consistent with their component classes; full peer-reviewed safety results were not yet available.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06131437",
+            "title": "REDEFINE 4 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501",
+            "title": "Headline results from REDEFINE 4",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-23",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ],
-  "arms":[
-    {"id":"redefine1-cagrisema","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","role":"experimental","label":"CagriSema 2.4 mg/2.4 mg","intervention":"Fixed-dose cagrilintide and semaglutide","linkedAsset":{"assetId":"cagrisema"},"dose":"Cagrilintide 2.4 mg plus semaglutide 2.4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks","plannedN":2108},
-    {"id":"redefine1-cagrilintide","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","role":"active comparator","label":"Cagrilintide 2.4 mg","intervention":"Cagrilintide","linkedAsset":{"assetId":"cagrilintide"},"dose":"2.4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks","plannedN":302},
-    {"id":"redefine1-semaglutide","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","role":"active comparator","label":"Semaglutide 2.4 mg","intervention":"Semaglutide","linkedAsset":{"assetId":"semaglutide"},"dose":"2.4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks","plannedN":302},
-    {"id":"redefine1-placebo","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","role":"placebo","label":"Placebo","intervention":"Matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks","plannedN":705},
-    {"id":"redefine2-cagrisema","studyId":"novo-nordisk-cagrisema-redefine-2-nct05394519","role":"experimental","label":"CagriSema 2.4 mg/2.4 mg","intervention":"Fixed-dose cagrilintide and semaglutide","linkedAsset":{"assetId":"cagrisema"},"dose":"Cagrilintide 2.4 mg plus semaglutide 2.4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks","plannedN":902},
-    {"id":"redefine2-placebo","studyId":"novo-nordisk-cagrisema-redefine-2-nct05394519","role":"placebo","label":"Placebo","intervention":"Matched placebo","dose":"Matched placebo","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"68 weeks","plannedN":302},
-    {"id":"redefine4-cagrisema","studyId":"novo-nordisk-cagrisema-redefine-4-nct06131437","role":"experimental","label":"CagriSema 2.4 mg/2.4 mg","intervention":"Fixed-dose cagrilintide and semaglutide","linkedAsset":{"assetId":"cagrisema"},"dose":"Cagrilintide 2.4 mg plus semaglutide 2.4 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"84 weeks"},
-    {"id":"redefine4-tirzepatide","studyId":"novo-nordisk-cagrisema-redefine-4-nct06131437","role":"active comparator","label":"Tirzepatide","intervention":"Tirzepatide","dose":"Maximum tolerated dose up to 15 mg","route":"Subcutaneous","dosingFrequency":"Once weekly","treatmentDuration":"84 weeks"}
+  "arms": [
+    {
+      "id": "redefine1-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "experimental",
+      "label": "CagriSema 2.4 mg/2.4 mg",
+      "intervention": "Fixed-dose cagrilintide and semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 2108
+    },
+    {
+      "id": "redefine1-cagrilintide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "active comparator",
+      "label": "Cagrilintide 2.4 mg",
+      "intervention": "Cagrilintide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "cagrilintide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 302
+    },
+    {
+      "id": "redefine1-semaglutide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "active comparator",
+      "label": "Semaglutide 2.4 mg",
+      "intervention": "Semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "dose": "2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 302
+    },
+    {
+      "id": "redefine1-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 705
+    },
+    {
+      "id": "redefine2-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "role": "experimental",
+      "label": "CagriSema 2.4 mg/2.4 mg",
+      "intervention": "Fixed-dose cagrilintide and semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 902
+    },
+    {
+      "id": "redefine2-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "68 weeks",
+      "plannedN": 302
+    },
+    {
+      "id": "redefine4-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "role": "experimental",
+      "label": "CagriSema 2.4 mg/2.4 mg",
+      "intervention": "Fixed-dose cagrilintide and semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "84 weeks"
+    },
+    {
+      "id": "redefine4-tirzepatide",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "role": "active comparator",
+      "label": "Tirzepatide",
+      "intervention": "Tirzepatide",
+      "dose": "Maximum tolerated dose up to 15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "84 weeks"
+    }
   ],
-  "endpoints":[
-    {"id":"redefine1-weight-week68","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 68"},
-    {"id":"redefine2-weight-week68","studyId":"novo-nordisk-cagrisema-redefine-2-nct05394519","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 68"},
-    {"id":"redefine4-weight-week84","studyId":"novo-nordisk-cagrisema-redefine-4-nct06131437","name":"Percentage change from baseline in body weight","classification":"Primary efficacy","assessmentTimepoint":"Week 84"}
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "redefine1-weight-week68",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "redefine2-weight-week68",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 68"
+    },
+    {
+      "id": "redefine4-weight-week84",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 84"
+    }
   ],
-  "outcomes":[
-    {"id":"redefine1-weight-cagrisema","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","endpointId":"redefine1-weight-week68","armIds":["redefine1-cagrisema"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment policy estimand","result":{"value":"-20.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.nejm.org/doi/10.1056/NEJMoa2502081","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine1-weight-cagrilintide","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","endpointId":"redefine1-weight-week68","armIds":["redefine1-cagrilintide"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment policy estimand","result":{"value":"-11.5","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.nejm.org/doi/10.1056/NEJMoa2502081","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine1-weight-semaglutide","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","endpointId":"redefine1-weight-week68","armIds":["redefine1-semaglutide"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment policy estimand","result":{"value":"-14.9","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.nejm.org/doi/10.1056/NEJMoa2502081","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine1-weight-placebo","studyId":"novo-nordisk-cagrisema-redefine-1-nct05567796","endpointId":"redefine1-weight-week68","armIds":["redefine1-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment policy estimand","result":{"value":"-3.0","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.nejm.org/doi/10.1056/NEJMoa2502081","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine2-weight-cagrisema","studyId":"novo-nordisk-cagrisema-redefine-2-nct05394519","endpointId":"redefine2-weight-week68","armIds":["redefine2-cagrisema"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment policy estimand","result":{"value":"-13.7","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40544432/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine2-weight-placebo","studyId":"novo-nordisk-cagrisema-redefine-2-nct05394519","endpointId":"redefine2-weight-week68","armIds":["redefine2-placebo"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment policy estimand","result":{"value":"-3.4","unit":"percent","resultType":"arm-level"},"maturity":"peer-reviewed publication","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://pubmed.ncbi.nlm.nih.gov/40544432/","sourceType":"peer-reviewed publication","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine4-weight-cagrisema","studyId":"novo-nordisk-cagrisema-redefine-4-nct06131437","endpointId":"redefine4-weight-week84","armIds":["redefine4-cagrisema"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-20.2","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501","sourceType":"company topline announcement","checkedAt":"2026-07-13"}]}},
-    {"id":"redefine4-weight-tirzepatide","studyId":"novo-nordisk-cagrisema-redefine-4-nct06131437","endpointId":"redefine4-weight-week84","armIds":["redefine4-tirzepatide"],"analysisPopulation":"Full analysis set (overall)","estimand":"Treatment-regimen estimand","result":{"value":"-23.6","unit":"percent","resultType":"arm-level"},"maturity":"topline","metadata":{"lastVerifiedAt":"2026-07-13","updatedAt":"2026-07-13","sources":[{"url":"https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501","sourceType":"company topline announcement","checkedAt":"2026-07-13"}]}}
+  "outcomes": [
+    {
+      "id": "redefine1-weight-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-cagrisema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-20.4",
+        "numericValue": -20.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-cagrilintide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-cagrilintide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-11.5",
+        "numericValue": -11.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-semaglutide",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-semaglutide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-14.9",
+        "numericValue": -14.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine1-weight-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-1-nct05567796",
+      "endpointId": "redefine1-weight-week68",
+      "armIds": [
+        "redefine1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.0",
+        "numericValue": -3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502081",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine2-weight-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "endpointId": "redefine2-weight-week68",
+      "armIds": [
+        "redefine2-cagrisema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-13.7",
+        "numericValue": -13.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine2-weight-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-2-nct05394519",
+      "endpointId": "redefine2-weight-week68",
+      "armIds": [
+        "redefine2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-3.4",
+        "numericValue": -3.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40544432/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine4-weight-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "endpointId": "redefine4-weight-week84",
+      "armIds": [
+        "redefine4-cagrisema"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-20.2",
+        "numericValue": -20.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "redefine4-weight-tirzepatide",
+      "studyId": "novo-nordisk-cagrisema-redefine-4-nct06131437",
+      "endpointId": "redefine4-weight-week84",
+      "armIds": [
+        "redefine4-tirzepatide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-23.6",
+        "numericValue": -23.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://www.novonordisk.com/content/nncorp/global/en/news-and-media/news-and-ir-materials/news-details.html?id=916501",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    }
   ]
 }
