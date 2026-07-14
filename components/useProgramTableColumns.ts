@@ -19,6 +19,24 @@ export const COLUMN_PREFS_STORAGE_KEY =
 
 const LOCKED_COUNT = lockedColumnIds.length;
 
+// Module 3's initial Register widths totaled 1,275px, which pushed the last
+// default-visible column beyond the content area on common desktop screens.
+// Recognize that exact default set so stored, uncustomized widths migrate to
+// the compact defaults without discarding a user's column choices.
+const previousDefaultColumnWidths: Record<ProgramTableColumnId, number> = {
+  company: 180,
+  asset: 210,
+  mechanism: 200,
+  indications: 220,
+  route: 130,
+  dosingInterval: 155,
+  development: 180,
+  status: 130,
+  dosageForm: 140,
+  platform: 180,
+  companyCountry: 165,
+};
+
 type ColumnPreferences = {
   order: ProgramTableColumnId[];
   visible: Record<ProgramTableColumnId, boolean>;
@@ -37,6 +55,12 @@ function countVisibleAdditional(prefs: ColumnPreferences): number {
   return prefs.order.filter(
     (id) => !isLockedColumn(id) && prefs.visible[id],
   ).length;
+}
+
+function hasPreviousDefaultWidths(rawWidths: Record<string, unknown>) {
+  return defaultColumnOrder.every(
+    (id) => rawWidths[id] === previousDefaultColumnWidths[id],
+  );
 }
 
 /**
@@ -63,6 +87,9 @@ function normalizePreferences(raw: unknown): ColumnPreferences {
     raw && typeof (raw as ColumnPreferences).widths === "object"
       ? (raw as ColumnPreferences).widths
       : {};
+  const shouldMigrateDefaultWidths = hasPreviousDefaultWidths(
+    rawWidths as Record<string, unknown>,
+  );
 
   const seen = new Set<ProgramTableColumnId>();
   const storedOrder: ProgramTableColumnId[] = [];
@@ -95,7 +122,9 @@ function normalizePreferences(raw: unknown): ColumnPreferences {
           ? storedValue
           : defaultColumnVisibility[id];
     }
-    const storedWidth = (rawWidths as Record<string, unknown>)[id];
+    const storedWidth = shouldMigrateDefaultWidths
+      ? undefined
+      : (rawWidths as Record<string, unknown>)[id];
     widths[id] = clampProgramTableColumnWidth(
       id,
       typeof storedWidth === "number" && Number.isFinite(storedWidth)
