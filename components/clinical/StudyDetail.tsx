@@ -43,6 +43,13 @@ function ArmsTable({ arms }: { arms: ArmView[] }) {
     return <p className="text-sm text-muted-foreground">No arms recorded.</p>;
   }
 
+  // These three fields are optional on ClinicalArmRecord; only add the column
+  // when at least one arm in this study actually reports it. Required fields
+  // (arm, role, intervention, dose, route, frequency, duration) always show.
+  const showTitration = arms.some((arm) => Boolean(arm.titration));
+  const showPlannedN = arms.some((arm) => typeof arm.plannedN === "number");
+  const showAnalyzedN = arms.some((arm) => typeof arm.analyzedN === "number");
+
   return (
     <div className="overflow-x-auto rounded-md border border-border bg-card shadow-soft">
       <table className="w-full min-w-[1040px] border-collapse text-left text-sm">
@@ -52,12 +59,18 @@ function ArmsTable({ arms }: { arms: ArmView[] }) {
             <th className="px-3 py-2.5 font-semibold">Role</th>
             <th className="px-3 py-2.5 font-semibold">Intervention</th>
             <th className="px-3 py-2.5 font-semibold">Dose</th>
-            <th className="px-3 py-2.5 font-semibold">Titration</th>
+            {showTitration ? (
+              <th className="px-3 py-2.5 font-semibold">Titration</th>
+            ) : null}
             <th className="px-3 py-2.5 font-semibold">Route</th>
             <th className="px-3 py-2.5 font-semibold">Frequency</th>
             <th className="px-3 py-2.5 font-semibold">Duration</th>
-            <th className="px-3 py-2.5 font-semibold">Planned N</th>
-            <th className="px-3 py-2.5 font-semibold">Analyzed N</th>
+            {showPlannedN ? (
+              <th className="px-3 py-2.5 font-semibold">Planned N</th>
+            ) : null}
+            {showAnalyzedN ? (
+              <th className="px-3 py-2.5 font-semibold">Analyzed N</th>
+            ) : null}
           </tr>
         </thead>
         <tbody className="divide-y divide-border">
@@ -71,9 +84,11 @@ function ArmsTable({ arms }: { arms: ArmView[] }) {
                 <ArmInterventionCell arm={arm} />
               </td>
               <td className="px-3 py-2.5">{formatNullableValue(arm.dose)}</td>
-              <td className="px-3 py-2.5">
-                {formatNullableValue(arm.titration)}
-              </td>
+              {showTitration ? (
+                <td className="px-3 py-2.5">
+                  {formatNullableValue(arm.titration)}
+                </td>
+              ) : null}
               <td className="px-3 py-2.5">{formatNullableValue(arm.route)}</td>
               <td className="px-3 py-2.5">
                 {formatNullableValue(arm.dosingFrequency)}
@@ -81,12 +96,16 @@ function ArmsTable({ arms }: { arms: ArmView[] }) {
               <td className="px-3 py-2.5">
                 {formatNullableValue(arm.treatmentDuration)}
               </td>
-              <td className="px-3 py-2.5 tabular-nums">
-                {formatCount(arm.plannedN)}
-              </td>
-              <td className="px-3 py-2.5 tabular-nums">
-                {formatCount(arm.analyzedN)}
-              </td>
+              {showPlannedN ? (
+                <td className="px-3 py-2.5 tabular-nums">
+                  {formatCount(arm.plannedN)}
+                </td>
+              ) : null}
+              {showAnalyzedN ? (
+                <td className="px-3 py-2.5 tabular-nums">
+                  {formatCount(arm.analyzedN)}
+                </td>
+              ) : null}
             </tr>
           ))}
         </tbody>
