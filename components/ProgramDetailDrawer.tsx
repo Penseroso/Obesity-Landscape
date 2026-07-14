@@ -1,11 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useId, useRef } from "react";
 import { formatInlineValues, formatNullableValue } from "@/lib/format";
 import type { PipelineProgram } from "@/lib/programs/types";
 
 type ProgramDetailDrawerProps = {
   program: PipelineProgram | null;
+  /** Asset route href when this asset has Clinical Evidence, else null. */
+  clinicalEvidenceHref?: string | null;
   onClose: () => void;
 };
 
@@ -25,6 +28,7 @@ const FOCUSABLE_SELECTOR =
 
 export function ProgramDetailDrawer({
   program,
+  clinicalEvidenceHref,
   onClose,
 }: ProgramDetailDrawerProps) {
   const panelRef = useRef<HTMLElement>(null);
@@ -148,6 +152,14 @@ export function ProgramDetailDrawer({
           </div>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">
+          {clinicalEvidenceHref ? (
+            <Link
+              href={clinicalEvidenceHref}
+              className="mb-4 inline-flex items-center gap-1 rounded-md border border-border bg-accent px-3 py-2 text-sm font-semibold text-accent-foreground transition hover:bg-accent/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              View clinical evidence →
+            </Link>
+          ) : null}
           <dl>
             <DetailRow label="Program ID" value={program.id} />
             <DetailRow label="Asset ID" value={program.assetId} />

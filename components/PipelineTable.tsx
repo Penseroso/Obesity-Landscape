@@ -24,6 +24,12 @@ import { useProgramTableColumns } from "./useProgramTableColumns";
 
 type PipelineTableProps = {
   programs: PipelineProgram[];
+  /**
+   * `companyId|assetId` keys of assets that have Clinical Evidence. Precomputed
+   * on the server so this client component never imports the clinical data
+   * layer; used to offer a link from the detail drawer into the asset route.
+   */
+  clinicalAssetKeys?: string[];
 };
 
 function getAssetLabel(program: PipelineProgram) {
@@ -77,12 +83,28 @@ function getProgramCellValue(
   }
 }
 
-export function PipelineTable({ programs }: PipelineTableProps) {
+export function PipelineTable({
+  programs,
+  clinicalAssetKeys,
+}: PipelineTableProps) {
   const [filters, setFilters] = useState<ProgramFilters>(emptyProgramFilters);
   const [selectedProgram, setSelectedProgram] = useState<PipelineProgram | null>(
     null,
   );
   const triggerRowRef = useRef<HTMLTableRowElement | null>(null);
+
+  const clinicalAssetKeySet = useMemo(
+    () => new Set(clinicalAssetKeys ?? []),
+    [clinicalAssetKeys],
+  );
+
+  const clinicalEvidenceHref =
+    selectedProgram &&
+    clinicalAssetKeySet.has(
+      `${selectedProgram.companyId}|${selectedProgram.assetId}`,
+    )
+      ? `/assets/${selectedProgram.companyId}/${selectedProgram.assetId}`
+      : null;
 
   const openProgram = (
     program: PipelineProgram,
@@ -208,7 +230,11 @@ export function PipelineTable({ programs }: PipelineTableProps) {
           </table>
         </div>
       </section>
-      <ProgramDetailDrawer program={selectedProgram} onClose={closeDrawer} />
+      <ProgramDetailDrawer
+        program={selectedProgram}
+        clinicalEvidenceHref={clinicalEvidenceHref}
+        onClose={closeDrawer}
+      />
     </div>
   );
 }

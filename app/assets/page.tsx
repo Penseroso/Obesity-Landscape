@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { PipelineTable } from "@/components/PipelineTable";
+import { listClinicalAssetKeys } from "@/lib/clinical-evidence/selectors";
 import { pipelinePrograms } from "@/lib/programs/data";
 
 export const metadata: Metadata = {
   title: "Program Register",
 };
+
+// Keys of assets that have clinical evidence, so the Program Register can offer
+// a link into the Clinical Evidence route only where there is content to show.
+const clinicalAssetKeys = listClinicalAssetKeys().map(
+  ({ companyId, assetId }) => `${companyId}|${assetId}`,
+);
 
 export default function AssetsPage() {
   return (
@@ -22,7 +29,10 @@ export default function AssetsPage() {
           development status.
         </p>
       </section>
-      <PipelineTable programs={pipelinePrograms} />
+      <PipelineTable
+        programs={pipelinePrograms}
+        clinicalAssetKeys={clinicalAssetKeys}
+      />
     </div>
   );
 }
