@@ -14,11 +14,11 @@ read only the path for the task. Do not read the full documentation tree.
 
 | Task | Required reading | Read only when needed |
 | --- | --- | --- |
-| Company/Pipeline research | [`docs/research-workflow.md`](docs/research-workflow.md), [`docs/data-protocol/README.md`](docs/data-protocol/README.md), [`entities-and-rows.md`](docs/data-protocol/entities-and-rows.md), [`source-and-entry-policy.md`](docs/data-protocol/source-and-entry-policy.md) | Generated-output changes: [`generated-output-contract.md`](docs/data-protocol/generated-output-contract.md). Unrepresentable case: [`edge-cases.md`](docs/data-protocol/edge-cases.md). |
-| Clinical Evidence research | Run the Company/Pipeline path first, then read [`docs/clinical-evidence-workflow.md`](docs/clinical-evidence-workflow.md) and [`docs/clinical-evidence/README.md`](docs/clinical-evidence/README.md) | Unrepresentable case: [`edge-cases.md`](docs/data-protocol/edge-cases.md). |
+| Company/Pipeline research | [`research-workflow.md`](domains/company-pipeline/docs/research-workflow.md), [`Data Protocol`](domains/company-pipeline/docs/README.md), [`entities-and-rows.md`](domains/company-pipeline/docs/entities-and-rows.md), [`source-and-entry-policy.md`](domains/company-pipeline/docs/source-and-entry-policy.md) | Generated-output changes: [`generated-output-contract.md`](domains/company-pipeline/docs/generated-output-contract.md). Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
+| Clinical Evidence research | Run the Company/Pipeline path first, then read [`docs/clinical-evidence-workflow.md`](docs/clinical-evidence-workflow.md) and [`docs/clinical-evidence/README.md`](docs/clinical-evidence/README.md) | Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
 | Schema or validator | Relevant type file, relevant contract, and the relevant section of `scripts/data-registry.mjs` | Aggregate/projection change: generated-output contract. Workflow only if operator behavior changes. |
 | UI | [`docs/ui/README.md`](docs/ui/README.md), then only the relevant route, component, selector, and read-model files | Data contract only when the UI consumes or changes that contract's meaning. |
-| Historical decision review | [`docs/data-protocol/decision-log.md`](docs/data-protocol/decision-log.md), then the linked current authority | Use [`docs/history/README.md`](docs/history/README.md) only when the compact index is insufficient. |
+| Historical decision review | [`decision-log.md`](domains/company-pipeline/docs/decision-log.md), then the linked current authority | Use [`docs/history/README.md`](docs/history/README.md) only when the compact index is insufficient. |
 
 The files under `docs/history/` are historical, non-authoritative, and frozen.
 They are never part of an ordinary implementation, research, validation, or

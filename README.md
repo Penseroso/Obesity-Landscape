@@ -5,7 +5,7 @@ obesity/incretin development landscape. The repository tracks Company/Pipeline
 records and a separate Clinical Evidence v3 domain.
 
 Agents start at [`AGENTS.md`](AGENTS.md). Current rules live in the
-[Data Protocol](docs/data-protocol/README.md), the
+[Data Protocol](domains/company-pipeline/docs/README.md), the
 [Clinical Evidence contract](docs/clinical-evidence/README.md), and the
 [UI reference](docs/ui/README.md). Historical reports are not implementation
 instructions.
@@ -17,7 +17,8 @@ Company/Pipeline source
 data/companies/<company-id>/*
   -> npm run data:generate
   -> data/generated/{companies,pipeline-programs,regimens}.json
-  -> lib/programs + lib/company-detail
+  -> domains/company-pipeline/lib
+     + lib/programs/selectors + lib/company-detail
   -> pages and components
 
 Clinical Evidence source
@@ -32,7 +33,7 @@ data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
 Editable source data is authoritative. Files under `data/generated/` are
 deterministic outputs and must not be edited by hand. The full consumer
 boundary is defined in the
-[Generated Output Contract](docs/data-protocol/generated-output-contract.md).
+[Generated Output Contract](domains/company-pipeline/docs/generated-output-contract.md).
 
 ## Current UI
 
@@ -47,7 +48,10 @@ boundary is defined in the
 
 - `app/`: routes and page composition;
 - `components/`: presentation and interaction;
-- `lib/programs/`: Company/Pipeline types, loaders, filters, and selectors;
+- `domains/company-pipeline/`: authoritative Company/Pipeline documentation and
+  settled types, loaders, filters, constants, and portfolio logic;
+- `lib/programs/`: compatibility shims, selectors pending D5, and the
+  validator-consumed asset-alias type list pending D3;
 - `lib/clinical-evidence/`: Clinical Evidence v3 types, loaders, and selectors;
 - `lib/company-detail/`: company detail read model;
 - `data/companies/`: editable Company/Pipeline source records;
