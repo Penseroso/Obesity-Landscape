@@ -12,7 +12,7 @@ Date: 2026-07-14. Schema: Clinical Evidence v3.0 (ADR-0039). Contract: Company/P
 
 This is a **verification-and-entry record**, not a contract change and not an ADR. It resolves
 the candidate set left open by
-[`clinical-evidence-v3-migration-audit.md`](clinical-evidence-v3-migration-audit.md).
+[`clinical-evidence-v3-migration-audit.md`](./v3-migration-audit.md).
 
 ## Boundary
 
@@ -49,7 +49,7 @@ discovery pass:
 
 ### Scope gate
 
-The Evidence-scope test in [`clinical-evidence/README.md`](clinical-evidence/README.md) was
+The Evidence-scope test in [`clinical-evidence/README.md`](../../clinical-evidence/README.md) was
 applied **per study, against the registry record** — not against the anchoring Program's
 `indications`. A Study is entered only where its own enrolled population or explicit objective
 includes obesity, overweight, or weight management. Comorbidity-only, T2D-only, MASH-only and

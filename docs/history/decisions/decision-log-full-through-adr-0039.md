@@ -519,7 +519,7 @@ when decided, recorded as a new appended ADR.
 - **Status:** Accepted
 - **Decision:** Clinical Evidence is a separate future domain from the
   Company/Pipeline Contract (Contract 1.1). Its minimum semantic contract is documented in
-  [`docs/clinical-evidence/README.md`](../clinical-evidence/README.md). The
+  [`docs/clinical-evidence/README.md`](../../clinical-evidence/README.md). The
   domain follows Scope v1.1 by reference and stores only human interventional
   clinical studies with publicly disclosed study-specific results.
 - **Rationale:** Clinical result interpretation requires entity boundaries and
@@ -547,7 +547,7 @@ when decided, recorded as a new appended ADR.
 - **Date:** 2026-07-10
 - **Status:** Accepted
 - **Decision:** ADR-0028 is refined by the fuller Clinical Evidence contract in
-  [`docs/clinical-evidence/README.md`](../clinical-evidence/README.md).
+  [`docs/clinical-evidence/README.md`](../../clinical-evidence/README.md).
   Clinical Evidence remains a separate future domain from the
   Company/Pipeline Contract (Contract 1.1) and initially covers only human interventional
   clinical studies relevant to obesity or weight management that have publicly

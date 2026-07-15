@@ -1,15 +1,21 @@
 ---
 role: historical-index
-status: historical
+status: active
 authority: non-authoritative
-update-boundary: Add an entry only when a completed report or frozen decision record is archived; do not rewrite archived findings.
+update-boundary: Update this catalog only when a completed artifact is added to or removed from the archive. The archived reports it indexes remain historical and frozen; do not rewrite archived findings.
 ---
 
 # Historical Documentation
 
-These files preserve point-in-time evidence and decisions. They are excluded
-from ordinary reading paths, active validation, and current-rule maintenance.
-Audit-time statements may be stale; use the listed current authority for rules.
+This catalog is an **active, maintained index** of archived documentation: it
+stays current as artifacts enter or leave the archive, and may be updated **only
+when a completed artifact is added to or removed from the archive**.
+
+The **artifacts it indexes remain historical and frozen**. They preserve
+point-in-time evidence and decisions, are excluded from ordinary reading paths,
+active validation, and current-rule maintenance, and are never rewritten.
+Audit-time statements in those artifacts may be stale; use the listed current
+authority for rules.
 
 | Artifact | Purpose at the time | Current authority |
 | --- | --- | --- |

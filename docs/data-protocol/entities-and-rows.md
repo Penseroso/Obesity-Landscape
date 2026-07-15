@@ -261,3 +261,24 @@ evidence. Content rules for what may populate `indications` are defined in
   distinguish route or dosage form).
 - **Do not** prescribe a final suffix algorithm before pilot data exists; the
   exact scheme is deferred (see `decision-log.md`).
+
+### Deterministic IDs for new records
+
+When a record needs an ID, follow these deterministic rules:
+
+- Search existing identities and **reuse an existing ID first**; only mint a new
+  ID when no existing identity matches.
+- **`companyId`** — lowercase kebab-case slug of the canonical official company
+  name.
+- **`assetId`** — lowercase kebab-case slug of the official development code when
+  available; otherwise of the canonical asset name.
+- **`programId`** — stable combination of `companyId`, `assetId`, route, and
+  dosage form. Add an indication-scope suffix **only when needed** to distinguish
+  concurrent programs.
+- **Never** include mutable stage or status in an ID.
+- Normalize whitespace and punctuation consistently.
+- IDs remain unchanged after renaming, licensing, stage progression, or status
+  changes.
+- Check for **collisions** before creating an ID. When a collision cannot be
+  resolved from verified identity information, **defer** rather than invent an
+  arbitrary ID.

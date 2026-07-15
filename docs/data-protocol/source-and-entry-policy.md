@@ -235,6 +235,13 @@ clinical-stage evidence supports Phase 1.
 - Use `null` or `Unknown` where the current contract permits.
 - Record unresolved **structural** cases in `edge-cases.md`.
 
+## Company record creation
+
+- Create a new Company record **only when both** the canonical official company
+  name **and** `headquartersCountry` are confirmed from reliable current sources.
+- Do **not** guess or create a partial Company record when the headquarters
+  country is unresolved. **Defer** and report the finding instead.
+
 ## Field-entry rules
 
 Rules by field.
