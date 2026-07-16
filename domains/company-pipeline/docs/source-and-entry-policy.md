@@ -51,7 +51,7 @@ trial status) is best evidenced by the applicable **trial registry**; basic
 company research **may cite NCT registry records** to verify that a program
 exists and its current phase/status. Detailed trial design, arm, endpoint, and
 result modeling is **owned by the separate Clinical Evidence domain** (see
-[`docs/clinical-evidence/README.md`](../../../docs/clinical-evidence/README.md)) and is not
+[`domains/clinical-evidence/docs/README.md`](../../clinical-evidence/docs/README.md)) and is not
 entered into `PipelineProgramRecord`.
 
 Phase sub-stages and combined stages must preserve their official semantic

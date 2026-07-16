@@ -6,7 +6,7 @@ records and a separate Clinical Evidence v3 domain.
 
 Agents start at [`AGENTS.md`](AGENTS.md). Current rules live in the
 [Data Protocol](domains/company-pipeline/docs/README.md), the
-[Clinical Evidence contract](docs/clinical-evidence/README.md), and the
+[Clinical Evidence contract](domains/clinical-evidence/docs/README.md), and the
 [UI reference](docs/ui/README.md). Historical reports are not implementation
 instructions.
 
@@ -26,7 +26,8 @@ data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
   -> npm run data:generate
   -> data/generated/clinical-evidence.json
      + clinical-evidence-asset-studies.json
-  -> lib/clinical-evidence
+  -> domains/clinical-evidence/lib
+     + lib/clinical-evidence/selectors
   -> company, asset, program, and study UI
 ```
 
@@ -52,7 +53,9 @@ boundary is defined in the
   settled types, loaders, filters, constants, and portfolio logic;
 - `lib/programs/`: compatibility shims, selectors pending D5, and the
   validator-consumed asset-alias type list pending D3;
-- `lib/clinical-evidence/`: Clinical Evidence v3 types, loaders, and selectors;
+- `domains/clinical-evidence/`: authoritative Clinical Evidence documentation,
+  types, and loading;
+- `lib/clinical-evidence/`: compatibility shims and selectors pending D5;
 - `lib/company-detail/`: company detail read model;
 - `data/companies/`: editable Company/Pipeline source records;
 - `data/clinical-evidence/`: editable Clinical Evidence source records;

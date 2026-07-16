@@ -22,7 +22,9 @@ boundaries. Historical UI audits are not part of the implementation path.
 
 `app/` owns routing and page composition. `components/` owns presentation and
 interaction. `lib/programs/` and `lib/company-detail/` own Company/Pipeline read
-models; `lib/clinical-evidence/` owns Clinical Evidence loading and selectors.
+models; `domains/clinical-evidence/lib/` owns Clinical Evidence types and
+loading, while `lib/clinical-evidence/selectors.ts` remains the read model
+pending D5.
 Components must not read editable source JSON directly.
 
 ## Data boundaries

@@ -8,16 +8,19 @@ update-boundary: Update only when Clinical Evidence migration ownership or statu
 # Clinical Evidence Domain
 
 This README is a **non-authoritative migration entrypoint**. Current authority
-remains at the existing repository paths linked below until a later migration
-module completes.
+remains at the canonical repository paths linked below; temporary compatibility
+entrypoints remain at the legacy paths until a later migration module removes
+them.
 
 ## Current ownership
 
-- Clinical Evidence semantics and file rules remain in the
-  [Clinical Evidence Data Contract](../../docs/clinical-evidence/README.md).
-- Research execution remains in the
-  [Clinical Evidence Workflow](../../docs/clinical-evidence-workflow.md).
-- Types, loading, and selectors remain in `lib/clinical-evidence/`.
+- Clinical Evidence semantics and file rules are canonical in the
+  [Clinical Evidence Data Contract](./docs/README.md).
+- Research execution is canonical in the
+  [Clinical Evidence Workflow](./docs/workflow.md).
+- Types and loading are canonical under `domains/clinical-evidence/lib/`.
+  Their legacy `lib/clinical-evidence/` paths are temporary compatibility
+  shims; selectors remain there pending D5.
 - Clinical Evidence imports shared `RecordMetadata` from
   `domains/shared/lib/record-metadata.ts` and Company/Pipeline-owned
   `ComponentReference` from `domains/company-pipeline/lib/types.ts`.
@@ -34,11 +37,12 @@ domain.
 
 ## Migration status
 
-Module 1 created this entrypoint. Module 2 resolves D2 while preserving the
-one-way Clinical Evidence to Company/Pipeline identity dependency. No Clinical
-Evidence file has moved, and no loader, validator, generator, selector, data
-path, fixture, or generated output has changed. Data relocation (D4) and
-selector/read-model ownership (D5) remain unresolved.
+Module 1 created this entrypoint. Module 2 resolved D2 while preserving the
+one-way Clinical Evidence to Company/Pipeline identity dependency. Module 4
+moved the settled authoritative documentation, types, and loader while
+preserving legacy documentation and import entrypoints. No validator,
+generator, selector, data path, fixture, or generated output changed. Data
+relocation (D4) and selector/read-model ownership (D5) remain unresolved.
 
 ## Authority boundaries
 

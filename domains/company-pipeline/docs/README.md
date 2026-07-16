@@ -21,7 +21,7 @@ Two independent versions apply:
   landscape.
 
 A scope change does not imply a schema change. Clinical Evidence uses its own
-independently versioned [contract](../../../docs/clinical-evidence/README.md).
+independently versioned [contract](../../clinical-evidence/docs/README.md).
 
 ## Canonical ownership
 
