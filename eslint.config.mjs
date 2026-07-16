@@ -87,8 +87,10 @@ const eslintConfig = [
     },
   },
   {
-    // selectors.ts alone consumes the legacy data compatibility entrypoint.
-    files: ["lib/clinical-evidence/selectors.ts"],
+    // domains/app/lib/clinical-evidence/selectors.ts alone consumes the
+    // legacy data compatibility entrypoint (Module 6 relocated selectors.ts
+    // out of lib/clinical-evidence/; this carve-out moved with it).
+    files: ["domains/app/lib/clinical-evidence/selectors.ts"],
     rules: {
       "no-restricted-imports": [
         "error",
@@ -104,10 +106,7 @@ const eslintConfig = [
   {
     // All other legacy Clinical Evidence files get the full boundary.
     files: ["lib/clinical-evidence/**"],
-    ignores: [
-      "lib/clinical-evidence/data.ts",
-      "lib/clinical-evidence/selectors.ts",
-    ],
+    ignores: ["lib/clinical-evidence/data.ts"],
     rules: {
       "no-restricted-imports": [
         "error",
