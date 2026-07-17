@@ -10,10 +10,11 @@ import process from "node:process";
 
 const root = process.cwd();
 const dataDir = path.join(root, "data");
+const companyPipelineDataDir = path.join(root, "domains", "company-pipeline", "data");
 const companySourceDir = path.join(dataDir, "companies");
 const generatedDir = path.join(dataDir, "generated");
 const clinicalEvidenceSourceDir = path.join(dataDir, "clinical-evidence");
-const registryDir = path.join(dataDir, "registries");
+const registryDir = path.join(companyPipelineDataDir, "registries");
 const syntheticFixtureDir = path.join(dataDir, "validation-fixtures", "synthetic");
 const clinicalEvidenceFixtureDir = path.join(dataDir, "validation-fixtures", "clinical-evidence");
 
