@@ -56,10 +56,10 @@ boundary is defined in the
   (`lib/format.ts`), and the cross-domain read-model tier
   (`lib/company-detail/`, `lib/clinical-evidence/selectors.ts`);
 - `domains/company-pipeline/`: authoritative Company/Pipeline documentation and
-  settled types, loaders, filters, constants, portfolio logic, and the selector
-  read model;
-- `lib/programs/`: compatibility shims and the validator-consumed asset-alias
-  type list pending D3;
+  settled types, loaders, filters, constants, portfolio logic, the selector
+  read model, and the `asset-alias-types.json` contract vocabulary (moved here
+  in Module 8, D3);
+- `lib/programs/`: compatibility shims only (pending Module 9);
 - `domains/clinical-evidence/`: authoritative Clinical Evidence documentation,
   types, and loading;
 - `lib/clinical-evidence/`: compatibility shims only (`selectors.ts` moved to
