@@ -1,4 +1,4 @@
-import developmentStageRegistry from "@/data/registries/development-stages.json";
+import developmentStageRegistry from "@/domains/company-pipeline/data/registries/development-stages.json";
 import assetAliasTypeSource from "./asset-alias-types.json";
 import type { AssetAliasType } from "./types";
 

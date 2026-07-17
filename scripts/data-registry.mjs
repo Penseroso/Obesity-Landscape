@@ -10,12 +10,14 @@ import process from "node:process";
 
 const root = process.cwd();
 const dataDir = path.join(root, "data");
-const companySourceDir = path.join(dataDir, "companies");
+const companyPipelineDataDir = path.join(root, "domains", "company-pipeline", "data");
+const clinicalEvidenceDataDir = path.join(root, "domains", "clinical-evidence", "data");
+const companySourceDir = path.join(companyPipelineDataDir, "companies");
 const generatedDir = path.join(dataDir, "generated");
-const clinicalEvidenceSourceDir = path.join(dataDir, "clinical-evidence");
-const registryDir = path.join(dataDir, "registries");
-const syntheticFixtureDir = path.join(dataDir, "validation-fixtures", "synthetic");
-const clinicalEvidenceFixtureDir = path.join(dataDir, "validation-fixtures", "clinical-evidence");
+const clinicalEvidenceSourceDir = path.join(clinicalEvidenceDataDir, "clinical-evidence");
+const registryDir = path.join(companyPipelineDataDir, "registries");
+const syntheticFixtureDir = path.join(companyPipelineDataDir, "validation-fixtures", "synthetic");
+const clinicalEvidenceFixtureDir = path.join(clinicalEvidenceDataDir, "validation-fixtures", "clinical-evidence");
 
 const fullDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 const partialDatePattern = /^\d{4}(-\d{2}(-\d{2})?)?$/;

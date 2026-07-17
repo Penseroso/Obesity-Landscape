@@ -14,7 +14,7 @@ implementation instructions.
 
 ```text
 Company/Pipeline source
-data/companies/<company-id>/*
+domains/company-pipeline/data/companies/<company-id>/*
   -> npm run data:generate
   -> data/generated/{companies,pipeline-programs,regimens}.json
   -> domains/company-pipeline/lib (types, loaders, selectors)
@@ -22,7 +22,7 @@ data/companies/<company-id>/*
   -> pages and components
 
 Clinical Evidence source
-data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
+domains/clinical-evidence/data/clinical-evidence/<company-id>/<asset-id>/clinical-evidence.json
   -> npm run data:generate
   -> data/generated/clinical-evidence.json
      + clinical-evidence-asset-studies.json
@@ -57,24 +57,31 @@ boundary is defined in the
   (`lib/company-detail/`, `lib/clinical-evidence/selectors.ts`);
 - `domains/company-pipeline/`: authoritative Company/Pipeline documentation and
   settled types, loaders, filters, constants, portfolio logic, the selector
-  read model, and the `asset-alias-types.json` contract vocabulary (moved here
-  in Module 8, D3);
+  read model, the `asset-alias-types.json` contract vocabulary (moved here in
+  Module 8, D3), and Company/Pipeline-owned editable data under
+  `domains/company-pipeline/data/` (source records, registries, and synthetic
+  fixtures, relocated in the post-Module-8 D4 execution module);
 - `lib/programs/`: compatibility shims only (pending Module 9);
 - `domains/clinical-evidence/`: authoritative Clinical Evidence documentation,
-  types, and loading;
+  types, loading, and Clinical Evidence-owned editable data under
+  `domains/clinical-evidence/data/` (source records and fixtures, relocated in
+  the post-Module-8 D4 execution module);
 - `lib/clinical-evidence/`: compatibility shims only (`selectors.ts` moved to
   `domains/app/lib/clinical-evidence/` in Module 6);
 - `lib/company-detail/`: compatibility shim only (read model moved to
   `domains/app/lib/company-detail/` in Module 6);
-- `data/**`: source records, registries, fixtures, and generated artifacts.
-  Domain ownership is decided (Module 7, D4), but these paths are temporarily
-  retained; physical relocation depends on the D3 generator/validator
-  restructure and is deferred to a post-Module-8 execution module:
-  - `data/companies/`: editable Company/Pipeline source records;
-  - `data/clinical-evidence/`: editable Clinical Evidence source records;
-  - `data/registries/`: controlled Company/Pipeline vocabularies;
-  - `data/generated/`: generated consumer artifacts (shared multi-domain sink);
-  - `data/validation-fixtures/`: active synthetic validation fixtures;
+- domain-owned editable data, relocated in the post-Module-8 D4 execution
+  module (semantic ownership was decided in Module 7, D4; D3 was resolved by
+  retention in Module 8, which removed the earlier relocation precondition):
+  - `domains/company-pipeline/data/companies/`: editable Company/Pipeline source records;
+  - `domains/clinical-evidence/data/clinical-evidence/`: editable Clinical Evidence source records;
+  - `domains/company-pipeline/data/registries/`: controlled Company/Pipeline vocabularies;
+  - `domains/company-pipeline/data/validation-fixtures/synthetic/` and
+    `domains/clinical-evidence/data/validation-fixtures/clinical-evidence/`: active validation fixtures;
+- `data/generated/`: generated consumer artifacts, **retained** at the root as a
+  shared multi-domain sink (the D4 execution kept this sink in place, mirroring
+  the Module 8 retention of `scripts/data-registry.mjs`; splitting it was not
+  part of D4);
 - `docs/history/`: frozen non-authoritative audits, migrations, and diagnostic
   evidence.
 
