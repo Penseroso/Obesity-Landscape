@@ -34,9 +34,9 @@ them.
   (`data/generated/clinical-evidence.json`), and the derived projection
   (`data/generated/clinical-evidence-asset-studies.json`) are Clinical
   Evidence-owned (Module 7, D4). They are **temporarily retained** at their
-  existing `data/` paths: physical relocation depends on the D3
-  generator/validator restructure and on the shared multi-domain
-  `data/generated/` sink, and is deferred to a post-Module-8 execution module.
+  existing `data/` paths; their physical relocation, and any related data-path
+  or generated-sink reconfiguration, belong to the post-Module-8 D4 execution
+  module.
 - Clinical routes and components remain owned by Application/UI.
 
 ## Intended future ownership
@@ -60,9 +60,14 @@ Evidence-owned file, validator, generator, data path, fixture, or generated
 output changed. Module 7 decision-resolved D4: it assigned semantic domain
 ownership of Clinical Evidence source, fixtures, and generated outputs (see
 Current ownership) but moved no file, and changed no validator, generator, data
-path, fixture, or generated output. Physical relocation is deferred to a
-post-Module-8 execution module because it depends on the D3 generator/validator
-restructure and the split of the shared `data/generated/` sink.
+path, fixture, or generated output; physical relocation is deferred to a
+post-Module-8 D4 execution module. Module 8 resolved D3 by retaining
+`scripts/data-registry.mjs` as shared root infrastructure (the single
+generator/validator entrypoint, not split), which preserves the one-way Clinical
+Evidence to Company/Pipeline reference dependency; no Clinical Evidence file,
+validator, generator, data path, fixture, or generated output changed. Any later
+data-path or generated-sink reconfiguration belongs to the post-Module-8 D4
+execution module.
 
 ## Authority boundaries
 

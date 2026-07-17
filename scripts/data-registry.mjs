@@ -29,9 +29,9 @@ const combinationAssetTypes = new Set([
   "fixed-dose-combination",
   "co-formulation",
 ]);
-// Single source of truth shared with the TypeScript app (lib/programs).
+// Single source of truth shared with the Company/Pipeline TypeScript library.
 const assetAliasTypes = new Set(
-  readJson(path.join(root, "lib", "programs", "asset-alias-types.json")),
+  readJson(path.join(root, "domains", "company-pipeline", "lib", "asset-alias-types.json")),
 );
 const developmentStatuses = new Set([
   "Planned",

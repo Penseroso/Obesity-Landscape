@@ -1,5 +1,5 @@
 import developmentStageRegistry from "@/data/registries/development-stages.json";
-import assetAliasTypeSource from "@/lib/programs/asset-alias-types.json";
+import assetAliasTypeSource from "./asset-alias-types.json";
 import type { AssetAliasType } from "./types";
 
 export type DevelopmentStageRegistryEntry = {
