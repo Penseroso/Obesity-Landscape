@@ -6,8 +6,8 @@ import {
   getCompanyPortfolio,
   listCompanyIds,
   type CompanyPortfolioAsset,
-} from "@/lib/programs/portfolio";
-import type { Company } from "@/lib/programs/types";
+} from "@/domains/company-pipeline/lib/portfolio";
+import type { Company } from "@/domains/company-pipeline/lib/types";
 
 export type CompanyDetailAssetView = CompanyPortfolioAsset & {
   clinical: Pick<

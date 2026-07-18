@@ -1,5 +1,5 @@
 import { DistributionBar } from "./DistributionBar";
-import type { RouteDistributionEntry } from "@/lib/programs/selectors";
+import type { RouteDistributionEntry } from "@/domains/company-pipeline/lib/selectors";
 
 type RouteMixPanelProps = {
   entries: RouteDistributionEntry[];

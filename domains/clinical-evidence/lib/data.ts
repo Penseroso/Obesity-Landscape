@@ -1,6 +1,6 @@
 import clinicalEvidenceData from "@/data/generated/clinical-evidence.json";
 import clinicalAssetStudyIndexData from "@/data/generated/clinical-evidence-asset-studies.json";
-import { companies, pipelinePrograms } from "@/lib/programs/data";
+import { companies, pipelinePrograms } from "@/domains/company-pipeline/lib/data";
 import type {
   ClinicalAnalysisGroupRecord,
   ClinicalArmRecord,

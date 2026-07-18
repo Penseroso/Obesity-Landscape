@@ -1,4 +1,4 @@
-import type { SourceReference } from "@/lib/programs/types";
+import type { SourceReference } from "@/domains/company-pipeline/lib/types";
 
 type SourceListProps = {
   sources: SourceReference[];

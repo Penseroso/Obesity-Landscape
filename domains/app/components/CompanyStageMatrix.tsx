@@ -1,5 +1,5 @@
-import type { StageBucketId } from "@/lib/programs/constants";
-import type { CompanyStageMatrix as CompanyStageMatrixData } from "@/lib/programs/selectors";
+import type { StageBucketId } from "@/domains/company-pipeline/lib/constants";
+import type { CompanyStageMatrix as CompanyStageMatrixData } from "@/domains/company-pipeline/lib/selectors";
 
 type CompanyStageMatrixProps = {
   matrix: CompanyStageMatrixData;

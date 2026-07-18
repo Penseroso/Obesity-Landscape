@@ -10,16 +10,16 @@ import {
 import {
   emptyProgramFilters,
   filterPrograms,
-} from "@/lib/programs/filters";
+} from "@/domains/company-pipeline/lib/filters";
 import {
   getProgramFilterOptions,
   sortProgramsForRegister,
-} from "@/lib/programs/selectors";
+} from "@/domains/company-pipeline/lib/selectors";
 import type {
   AssetClinicalRollup,
   ProgramStudyPreview,
 } from "@/domains/app/lib/clinical-evidence/selectors";
-import type { PipelineProgram, ProgramFilters } from "@/lib/programs/types";
+import type { PipelineProgram, ProgramFilters } from "@/domains/company-pipeline/lib/types";
 import { formatInlineValues, formatNullableValue } from "@/domains/app/lib/format";
 import { ColumnSettings } from "./ColumnSettings";
 import { EmptyState } from "./EmptyState";

@@ -1,4 +1,4 @@
-import { isRegulatoryMilestoneStage } from "@/lib/programs/constants";
+import { isRegulatoryMilestoneStage } from "@/domains/company-pipeline/lib/constants";
 
 type StageBadgeProps = {
   stage: string;

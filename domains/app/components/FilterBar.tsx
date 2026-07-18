@@ -1,6 +1,6 @@
 "use client";
 
-import type { ProgramFilterOptions, ProgramFilters } from "@/lib/programs/types";
+import type { ProgramFilterOptions, ProgramFilters } from "@/domains/company-pipeline/lib/types";
 
 type FilterBarProps = {
   filters: ProgramFilters;

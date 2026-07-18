@@ -10,7 +10,7 @@ import type {
   ProgramStudyPreview,
 } from "@/domains/app/lib/clinical-evidence/selectors";
 import { formatInlineValues, formatNullableValue } from "@/domains/app/lib/format";
-import type { PipelineProgram } from "@/lib/programs/types";
+import type { PipelineProgram } from "@/domains/company-pipeline/lib/types";
 
 type ProgramDetailDrawerProps = {
   program: PipelineProgram | null;

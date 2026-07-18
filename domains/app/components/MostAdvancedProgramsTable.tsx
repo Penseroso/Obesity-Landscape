@@ -1,5 +1,5 @@
 import { formatNullableValue } from "@/domains/app/lib/format";
-import type { PipelineProgram } from "@/lib/programs/types";
+import type { PipelineProgram } from "@/domains/company-pipeline/lib/types";
 
 type MostAdvancedProgramsTableProps = {
   programs: PipelineProgram[];
