@@ -225,38 +225,43 @@ export function PipelineTable({
     return map;
   }, [programs]);
 
-  // URL-driven initialization for the Company × Development Stage Matrix
-  // drill-down. Only `company` (by companyId) and `stage` (a bucket id) are
-  // read; unknown/invalid values fall back to "All". This seeds the existing
-  // ProgramFilters — not a second model — and leaves all other filters at their
-  // defaults, so a plain /assets visit is unchanged.
-  const seededFilters = useMemo<ProgramFilters>(() => {
+  // URL-driven filters for the Company × Development Stage Matrix drill-down.
+  // Only `company` (by companyId) and `stage` (a bucket id) are read; unknown or
+  // invalid values fall back to "All". Every other filter stays at its default,
+  // so a plain /assets visit is unchanged.
+  const seededCompany = useMemo(() => {
     const companyId = searchParams.get("company");
-    const companyName = companyId ? companyNameById.get(companyId) : undefined;
+    return (companyId ? companyNameById.get(companyId) : undefined) ?? "All";
+  }, [searchParams, companyNameById]);
+  const seededStageBucket = useMemo<ProgramFilters["stageBucket"]>(() => {
     const stageParam = searchParams.get("stage");
-    const stageBucket = stageBuckets.some((bucket) => bucket.id === stageParam)
+    return stageBuckets.some((bucket) => bucket.id === stageParam)
       ? (stageParam as StageBucketId)
       : "All";
-    return {
-      ...emptyProgramFilters,
-      company: companyName ?? "All",
-      stageBucket,
-    };
-  }, [searchParams, companyNameById]);
+  }, [searchParams]);
 
-  const [filters, setFilters] = useState<ProgramFilters>(seededFilters);
+  const [filters, setFilters] = useState<ProgramFilters>(() => ({
+    ...emptyProgramFilters,
+    company: seededCompany,
+    stageBucket: seededStageBucket,
+  }));
 
-  // Re-apply the seed only when the URL's seed actually changes (deep link or
-  // browser back/forward). Manual FilterBar edits don't touch the URL, so the
-  // guard leaves them intact.
-  const seedKey = `${seededFilters.company}|${seededFilters.stageBucket}`;
+  // Re-apply the seed when the URL's seed actually changes (deep link,
+  // browser back/forward, chip removal, reset). This overrides ONLY the two
+  // URL-driven dimensions and merges into the current filters, so manual
+  // FilterBar edits (indication/route/exact stage/status/keyword) are never
+  // reset. The ref guard skips the no-op case where the seed is unchanged.
+  const seedKey = `${seededCompany}|${seededStageBucket}`;
   const lastSeedKeyRef = useRef(seedKey);
   useEffect(() => {
-    if (lastSeedKeyRef.current !== seedKey) {
-      lastSeedKeyRef.current = seedKey;
-      setFilters(seededFilters);
-    }
-  }, [seedKey, seededFilters]);
+    if (lastSeedKeyRef.current === seedKey) return;
+    lastSeedKeyRef.current = seedKey;
+    setFilters((prev) => ({
+      ...prev,
+      company: seededCompany,
+      stageBucket: seededStageBucket,
+    }));
+  }, [seedKey, seededCompany, seededStageBucket]);
 
   const [sort, setSort] = useState<ProgramSort | null>(null);
   const [selectedProgram, setSelectedProgram] = useState<PipelineProgram | null>(
@@ -345,8 +350,23 @@ export function PipelineTable({
     filters.stageBucket !== "All"
       ? stageBuckets.find((bucket) => bucket.id === filters.stageBucket)?.label
       : undefined;
-  const clearStageBucket = () =>
+  const clearStageBucket = () => {
     setFilters((prev) => ({ ...prev, stageBucket: "All" }));
+    // Drop the stage query but keep company (and any other param) so the URL
+    // matches the screen and a refresh does not re-apply the bucket. The
+    // re-seed effect then merges stageBucket:"All" without touching manual
+    // filters.
+    if (typeof window === "undefined" || !window.location.search) return;
+    const params = new URLSearchParams(window.location.search);
+    if (!params.has("stage")) return;
+    params.delete("stage");
+    const query = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      query ? `${window.location.pathname}?${query}` : window.location.pathname,
+    );
+  };
 
   const toggleSort = (columnId: ProgramTableColumnId) => {
     setSort((current) => ({
