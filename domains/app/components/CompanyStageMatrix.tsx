@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { StageBucketId } from "@/domains/company-pipeline/lib/constants";
 import type { CompanyStageMatrix as CompanyStageMatrixData } from "@/domains/company-pipeline/lib/selectors";
 
@@ -93,7 +94,12 @@ export function CompanyStageMatrix({ matrix }: CompanyStageMatrixProps) {
             {rows.map((row) => (
               <tr key={row.companyId}>
                 <td className="whitespace-nowrap px-4 py-2.5 font-medium text-foreground">
-                  {row.companyName}
+                  <Link
+                    href={`/companies/${row.companyId}`}
+                    className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    {row.companyName}
+                  </Link>
                 </td>
                 {columns.map((column) => {
                   const count = row.counts[column.id];
