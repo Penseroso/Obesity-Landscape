@@ -5,25 +5,25 @@
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
       "focalStudyIds": [
-        "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
-        "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
-        "eli-lilly-and-company-tirzepatide-nct06037252",
-        "eli-lilly-and-company-tirzepatide-nct06373146",
-        "eli-lilly-and-company-tirzepatide-nct06643728",
-        "eli-lilly-and-company-tirzepatide-summit-nct04847557",
         "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
         "eli-lilly-and-company-tirzepatide-surmount-2-nct04657003",
         "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
         "eli-lilly-and-company-tirzepatide-surmount-4-nct04660643",
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
-        "eli-lilly-and-company-tirzepatide-surmount-adolescents-2-nct06439277",
-        "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
         "eli-lilly-and-company-tirzepatide-surmount-maintain-nct06047548",
+        "eli-lilly-and-company-tirzepatide-summit-nct04847557",
+        "eli-lilly-and-company-tirzepatide-surmount-cn-nct05024032",
         "eli-lilly-and-company-tirzepatide-surmount-mmo-nct05556512",
+        "eli-lilly-and-company-tirzepatide-nct06037252",
+        "eli-lilly-and-company-tirzepatide-treasure-ckd-nct05536804",
+        "eli-lilly-and-company-tirzepatide-surmount-adolescents-2-nct06439277",
         "eli-lilly-and-company-tirzepatide-surpass-t1d-1-nct06914895",
-        "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+        "eli-lilly-and-company-tirzepatide-nct06643728",
+        "eli-lilly-and-company-tirzepatide-nct06373146",
         "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
-        "eli-lilly-and-company-tirzepatide-treasure-ckd-nct05536804"
+        "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+        "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
+        "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099"
       ],
       "linkedStudyIds": [
         "eli-lilly-and-company-eloralintide-nct06345066",
@@ -45,11 +45,11 @@
       "assetId": "ly3437943",
       "focalStudyIds": [
         "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
-        "eli-lilly-and-company-retatrutide-triumph-1-nct05929066",
         "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
-        "eli-lilly-and-company-retatrutide-triumph-7-nct07035093",
         "eli-lilly-and-company-retatrutide-triumph-8-nct07232719",
-        "eli-lilly-and-company-retatrutide-triumph-outcomes-nct06383390"
+        "eli-lilly-and-company-retatrutide-triumph-1-nct05929066",
+        "eli-lilly-and-company-retatrutide-triumph-outcomes-nct06383390",
+        "eli-lilly-and-company-retatrutide-triumph-7-nct07035093"
       ],
       "linkedStudyIds": []
     },
@@ -59,12 +59,12 @@
       "focalStudyIds": [
         "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
         "eli-lilly-and-company-orforglipron-attain-2-nct05872620",
-        "eli-lilly-and-company-orforglipron-attain-hypertension-nct06948435",
-        "eli-lilly-and-company-orforglipron-attain-oa-pain-nct07153471",
-        "eli-lilly-and-company-orforglipron-attain-osa-nct06649045",
         "eli-lilly-and-company-orforglipron-attain-pad-nct07223593",
+        "eli-lilly-and-company-orforglipron-attain-oa-pain-nct07153471",
+        "eli-lilly-and-company-orforglipron-restrain-sui-nct07202884",
         "eli-lilly-and-company-orforglipron-nct06972472",
-        "eli-lilly-and-company-orforglipron-restrain-sui-nct07202884"
+        "eli-lilly-and-company-orforglipron-attain-hypertension-nct06948435",
+        "eli-lilly-and-company-orforglipron-attain-osa-nct06649045"
       ],
       "linkedStudyIds": []
     },
@@ -105,13 +105,13 @@
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3841136",
       "focalStudyIds": [
+        "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
         "eli-lilly-and-company-eloralintide-enlighten-1-nct07321886",
         "eli-lilly-and-company-eloralintide-enlighten-2-nct07282600",
-        "eli-lilly-and-company-eloralintide-enlighten-3-nct07369011",
-        "eli-lilly-and-company-eloralintide-enlighten-4-nct07353931",
         "eli-lilly-and-company-eloralintide-nct06345066",
-        "eli-lilly-and-company-eloralintide-nct06603571",
-        "eli-lilly-and-company-eloralintide-phase-2-nct06230523"
+        "eli-lilly-and-company-eloralintide-enlighten-4-nct07353931",
+        "eli-lilly-and-company-eloralintide-enlighten-3-nct07369011",
+        "eli-lilly-and-company-eloralintide-nct06603571"
       ],
       "linkedStudyIds": [
         "eli-lilly-and-company-macupatide-nct07215559",
@@ -136,8 +136,8 @@
         "novo-nordisk-cagrilintide-renew-1-nct07220642"
       ],
       "linkedStudyIds": [
-        "novo-nordisk-amylin-1213-nct06719011",
-        "novo-nordisk-cagrisema-redefine-1-nct05567796"
+        "novo-nordisk-cagrisema-redefine-1-nct05567796",
+        "novo-nordisk-amylin-1213-nct06719011"
       ]
     },
     {
@@ -154,10 +154,10 @@
       "companyId": "novo-nordisk",
       "assetId": "liraglutide",
       "focalStudyIds": [
-        "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
-        "novo-nordisk-liraglutide-scale-kids-nct04775082",
         "novo-nordisk-liraglutide-scale-obesity-nct01272219",
-        "novo-nordisk-liraglutide-scale-teens-nct02918279"
+        "novo-nordisk-liraglutide-scale-diabetes-nct01272232",
+        "novo-nordisk-liraglutide-scale-teens-nct02918279",
+        "novo-nordisk-liraglutide-scale-kids-nct04775082"
       ],
       "linkedStudyIds": [
         "novo-nordisk-cagrilintide-phase2-nct03856047"
@@ -199,13 +199,13 @@
       "companyId": "novo-nordisk",
       "assetId": "semaglutide",
       "focalStudyIds": [
-        "novo-nordisk-semaglutide-oasis-4-nct05564117",
         "novo-nordisk-semaglutide-step-1-nct03548935",
         "novo-nordisk-semaglutide-step-2-nct03552757",
         "novo-nordisk-semaglutide-step-5-nct03693430",
         "novo-nordisk-semaglutide-step-teens-nct04102189",
         "novo-nordisk-semaglutide-step-up-nct05646706",
-        "novo-nordisk-semaglutide-step-up-t2d-nct05649137"
+        "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
+        "novo-nordisk-semaglutide-oasis-4-nct05564117"
       ],
       "linkedStudyIds": [
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
@@ -233,8 +233,8 @@
       "companyId": "zealand-pharma",
       "assetId": "petrelintide",
       "focalStudyIds": [
-        "zealand-pharma-petrelintide-zupreme-2-nct06926842",
-        "zealand-pharma-petrelintide-zupreme-nct06662539"
+        "zealand-pharma-petrelintide-zupreme-nct06662539",
+        "zealand-pharma-petrelintide-zupreme-2-nct06926842"
       ],
       "linkedStudyIds": [
         "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686"

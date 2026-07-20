@@ -1025,28 +1025,39 @@ function emptyClinicalEvidenceAggregate() {
   };
 }
 
+/**
+ * Group records by a canonical key while preserving the curated order authors
+ * wrote them in. `by` establishes the grouping boundary; the source encounter
+ * ordinal breaks ties, so ordering stays total and never depends on
+ * Array.prototype.sort stability. The ordinal map is keyed by object identity,
+ * so no record is mutated and no scratch field can leak into generated output.
+ */
+function sortPreservingSourceOrder(records, by) {
+  const ordinal = new Map(records.map((record, index) => [record, index]));
+  records.sort((a, b) => by(a, b) || ordinal.get(a) - ordinal.get(b));
+}
+
+/**
+ * Source encounter order is the curated authoring order: the order records
+ * appear in their source file, with files traversed by company folder then
+ * asset folder ascending. It carries clinical curation an id sort destroys —
+ * dose-ascending arms, placebo last, numbered trial sequences — so it is
+ * authoritative within each grouping boundary. Outcomes group by study only:
+ * endpoint grouping is a read-model concern, and outcomes are deliberately not
+ * required to be endpoint-contiguous here.
+ */
 function sortClinicalEvidenceAggregate(aggregate) {
-  aggregate.studies.sort(
+  sortPreservingSourceOrder(
+    aggregate.studies,
     (a, b) =>
       a.companyId.localeCompare(b.companyId) ||
-      a.assetId.localeCompare(b.assetId) ||
-      a.id.localeCompare(b.id),
+      a.assetId.localeCompare(b.assetId),
   );
-  aggregate.arms.sort(
-    (a, b) => a.studyId.localeCompare(b.studyId) || a.id.localeCompare(b.id),
-  );
-  aggregate.analysisGroups.sort(
-    (a, b) => a.studyId.localeCompare(b.studyId) || a.id.localeCompare(b.id),
-  );
-  aggregate.endpoints.sort(
-    (a, b) => a.studyId.localeCompare(b.studyId) || a.id.localeCompare(b.id),
-  );
-  aggregate.outcomes.sort(
-    (a, b) =>
-      a.studyId.localeCompare(b.studyId) ||
-      a.endpointId.localeCompare(b.endpointId) ||
-      a.id.localeCompare(b.id),
-  );
+  for (const key of ["arms", "analysisGroups", "endpoints", "outcomes"]) {
+    sortPreservingSourceOrder(aggregate[key], (a, b) =>
+      a.studyId.localeCompare(b.studyId),
+    );
+  }
 }
 
 function readClinicalEvidenceSourceTree(baseDir, context) {
@@ -1128,6 +1139,16 @@ function buildClinicalAssetStudyIndex(aggregate) {
     entryFor(linkedAsset.companyId, linkedAsset.assetId).linkedStudyIds.add(study.id);
   }
 
+  // Both id arrays are ordered by each study's position in the canonical studies array,
+  // which projects the curated source order onto a subset rather than inventing one. An
+  // alphabetical sort here would discard that curation exactly as an id sort does in the
+  // aggregate. linkedStudyIds is reciprocal discovery accumulated by scanning arms, so its
+  // membership has no authored order of its own and may span several owner assets; the
+  // studies-array position is what gives it a defined, deterministic order.
+  const studyPosition = new Map(aggregate.studies.map((study, index) => [study.id, index]));
+  const byStudyOrder = (studyIds) =>
+    [...studyIds].sort((a, b) => studyPosition.get(a) - studyPosition.get(b));
+
   return {
     // Independent of clinicalEvidenceSchemaVersion by design: this is a derived
     // projection's own format version, not the canonical contract version (R2b).
@@ -1136,10 +1157,10 @@ function buildClinicalAssetStudyIndex(aggregate) {
       .map((entry) => ({
         companyId: entry.companyId,
         assetId: entry.assetId,
-        focalStudyIds: sortedStrings(entry.focalStudyIds),
+        focalStudyIds: byStudyOrder(entry.focalStudyIds),
         // A study already anchored to the asset is not re-reported as a linked study; this
         // array is what reciprocal discovery adds beyond the canonical anchor.
-        linkedStudyIds: sortedStrings(
+        linkedStudyIds: byStudyOrder(
           [...entry.linkedStudyIds].filter((studyId) => !entry.focalStudyIds.has(studyId)),
         ),
       }))
@@ -1949,6 +1970,97 @@ function readFixtureReferenceDataset(baseDir, context) {
   return { companies, programs, regimens };
 }
 
+/**
+ * Regression guard for curated source-record order. The valid fixture is authored in
+ * deliberately non-lexicographic order — dose-ascending arms (`dr-5mg` before `dr-10mg`),
+ * a study authored out of id order, an outcome (`dr-pooled`) authored after a different
+ * study's outcomes, and a second asset whose studies are authored `linked-b` then
+ * `linked-a`. Every sequence below therefore fails if an id sort is reintroduced anywhere
+ * in generation or in the derived projection.
+ *
+ * This asserts the real path: `aggregate` comes from `buildClinicalEvidenceAggregate()`,
+ * not from a re-sorted copy, so it proves source-to-generated preservation rather than
+ * merely re-validating an already-sorted array.
+ */
+function assertClinicalEvidenceSourceOrderPreserved(aggregate) {
+  const context = "clinical evidence source order";
+  const assertSequence = (label, actual, expected) =>
+    assert(
+      JSON.stringify(actual) === JSON.stringify(expected),
+      `${context}: ${label} must preserve curated source order; expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`,
+    );
+
+  const idsFor = (key, studyId) =>
+    aggregate[key].filter((record) => record.studyId === studyId).map((record) => record.id);
+
+  // Studies within an asset: authored timepoint-before-doseranging, which an id sort inverts.
+  assertSequence(
+    "studies within fixture-asset",
+    aggregate.studies
+      .filter((study) => study.assetId === "fixture-asset")
+      .map((study) => study.id),
+    ["fixture-study-1", "fixture-study-timepoint", "fixture-study-doseranging"],
+  );
+  assertSequence(
+    "studies within fixture-asset-2",
+    aggregate.studies
+      .filter((study) => study.assetId === "fixture-asset-2")
+      .map((study) => study.id),
+    ["fixture-study-linked-b", "fixture-study-linked-a"],
+  );
+
+  // Arms within a study: dose-ascending, placebo last.
+  assertSequence("arms within fixture-study-doseranging", idsFor("arms", "fixture-study-doseranging"), [
+    "fixture-arm-dr-5mg",
+    "fixture-arm-dr-10mg",
+    "fixture-arm-dr-10mg-titrated",
+    "fixture-arm-dr-background",
+    "fixture-arm-dr-comboA",
+    "fixture-arm-dr-comboB",
+    "fixture-arm-dr-placebo",
+  ]);
+
+  assertSequence("analysis groups within fixture-study-doseranging", idsFor("analysisGroups", "fixture-study-doseranging"), [
+    "fixture-group-pooled-dose",
+  ]);
+
+  assertSequence("endpoints within fixture-study-timepoint", idsFor("endpoints", "fixture-study-timepoint"), [
+    "fixture-endpoint-tp-weight-w24",
+    "fixture-endpoint-tp-weight-w72",
+  ]);
+
+  // Outcomes group by study only. `dr-pooled` is authored last in the file, after the
+  // timepoint study's outcomes, so it must be pulled back into its own study's run while
+  // keeping its relative position last within that run.
+  assertSequence("outcomes within fixture-study-doseranging", idsFor("outcomes", "fixture-study-doseranging"), [
+    "fixture-outcome-dr-5mg",
+    "fixture-outcome-dr-10mg",
+    "fixture-outcome-dr-between",
+    "fixture-outcome-dr-comboA",
+    "fixture-outcome-dr-comboB",
+    "fixture-outcome-dr-pooled",
+  ]);
+
+  const projection = buildClinicalAssetStudyIndex(aggregate);
+  const entryFor = (assetId) => projection.assets.find((asset) => asset.assetId === assetId);
+
+  assertSequence("projection focalStudyIds for fixture-asset", entryFor("fixture-asset").focalStudyIds, [
+    "fixture-study-1",
+    "fixture-study-timepoint",
+    "fixture-study-doseranging",
+  ]);
+  assertSequence("projection focalStudyIds for fixture-asset-2", entryFor("fixture-asset-2").focalStudyIds, [
+    "fixture-study-linked-b",
+    "fixture-study-linked-a",
+  ]);
+  // Reciprocal discovery: fixture-asset-2's studies both carry a fixture-asset comparator
+  // arm, so they surface here ordered by their position in the canonical studies array.
+  assertSequence("projection linkedStudyIds for fixture-asset", entryFor("fixture-asset").linkedStudyIds, [
+    "fixture-study-linked-b",
+    "fixture-study-linked-a",
+  ]);
+}
+
 function validateClinicalEvidenceSyntheticFixtures() {
   const validDir = path.join(clinicalEvidenceFixtureDir, "valid");
   const validRefs = readFixtureReferenceDataset(validDir, "data/validation-fixtures/clinical-evidence/valid");
@@ -1968,6 +2080,8 @@ function validateClinicalEvidenceSyntheticFixtures() {
     validAggregate.analysisGroups.length > 0,
     "clinical evidence valid fixture must contain at least one analysis group",
   );
+
+  assertClinicalEvidenceSourceOrderPreserved(validAggregate);
 
   const validAnalysisPopulationProbe = cloneJson(validAggregate.outcomes[0]);
   validAnalysisPopulationProbe.analysisPopulation = "Full analysis set (overall)";

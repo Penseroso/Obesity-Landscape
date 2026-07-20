@@ -42,11 +42,24 @@ always produce byte-identical output. Ordering is guaranteed by code in
 - **Company order:** by `id` ascending (`localeCompare`).
 - **Program order:** by `companyId`, then program `id` (`localeCompare`).
 - **Regimen order:** by `companyId`, then regimen `id` (`localeCompare`).
-- **Clinical Evidence order:** studies by `companyId`, `assetId`, then `id`;
-  arms, analysis groups, and endpoints by `studyId`, then `id`; outcomes by
-  `studyId`, `endpointId`, then `id` (`localeCompare`).
-- Sort keys (`id`, `companyId`) are unique within the dataset, so ordering is
-  total and independent of sort stability.
+- **Clinical Evidence order:** studies by `companyId`, `assetId`, then source
+  encounter order; arms, analysis groups, endpoints, and outcomes by `studyId`,
+  then source encounter order (`localeCompare` for the grouping keys).
+- **Source encounter order** is the order records appear in their source file,
+  with files traversed by company folder then asset folder ascending. It is the
+  curated authoring order — dose-ascending arms, placebo last, numbered trial
+  sequences — and is authoritative within each grouping boundary. An `id` sort
+  destroys it and must not be reintroduced.
+- Outcomes group by study only and are **not** endpoint-contiguous. Grouping
+  outcomes under an endpoint is a read-model concern that preserves their
+  relative source order.
+- **Asset-study projection:** `focalStudyIds` and `linkedStudyIds` are ordered
+  by each study's position in the canonical `studies` array. `linkedStudyIds`
+  is derived reciprocal discovery, accumulated by scanning arms; its membership
+  has no authored order of its own and may span several owner assets.
+- Sort keys are unique within their array — `companyId`/`assetId`/`studyId`
+  group records, and the source encounter ordinal breaks every tie — so
+  ordering is total and independent of sort stability.
 - Records are serialized with two-space indentation and a trailing newline;
   object key order within each record is the key order of the source record.
 

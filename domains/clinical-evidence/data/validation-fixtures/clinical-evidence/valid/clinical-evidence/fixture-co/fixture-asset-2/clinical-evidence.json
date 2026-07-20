@@ -1,0 +1,152 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.0",
+  "companyId": "fixture-co",
+  "assetId": "fixture-asset-2",
+  "studies": [
+    {
+      "id": "fixture-study-linked-b",
+      "companyId": "fixture-co",
+      "assetId": "fixture-asset-2",
+      "officialTitle": "Synthetic Head-to-Head Study of Fixture Asset 2 Versus Fixture Asset",
+      "acronym": "FIX2-H2H-B",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT40000002"
+        }
+      ],
+      "phase": "Phase 2",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open label",
+        "comparator": "Active",
+        "description": "Synthetic fixture design exercising reciprocal asset-study discovery"
+      },
+      "population": "Adults with obesity or overweight and explicit weight-management objective",
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-linked-b-design",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT40000002",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "programId": "fixture-co-fixture-asset-2-subcutaneous-injection"
+    },
+    {
+      "id": "fixture-study-linked-a",
+      "companyId": "fixture-co",
+      "assetId": "fixture-asset-2",
+      "officialTitle": "Synthetic Extension Study of Fixture Asset 2 With Fixture Asset Comparator",
+      "acronym": "FIX2-H2H-A",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT40000001"
+        }
+      ],
+      "phase": "Phase 2",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open label",
+        "comparator": "Active",
+        "description": "Synthetic fixture design authored after its sibling to exercise source ordering"
+      },
+      "population": "Adults with obesity or overweight and explicit weight-management objective",
+      "overallDuration": "36 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-linked-a-design",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT40000001",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "programId": "fixture-co-fixture-asset-2-subcutaneous-injection"
+    }
+  ],
+  "arms": [
+    {
+      "id": "fixture-arm-linked-b-active",
+      "studyId": "fixture-study-linked-b",
+      "role": "experimental",
+      "label": "Fixture Asset 2",
+      "intervention": "Fixture Asset 2 injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset-2"
+      },
+      "dose": "5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-linked-b-comparator",
+      "studyId": "fixture-study-linked-b",
+      "role": "active comparator",
+      "label": "Fixture Asset",
+      "intervention": "Fixture Asset injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "fixture-arm-linked-a-active",
+      "studyId": "fixture-study-linked-a",
+      "role": "experimental",
+      "label": "Fixture Asset 2",
+      "intervention": "Fixture Asset 2 injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset-2"
+      },
+      "dose": "5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "fixture-arm-linked-a-comparator",
+      "studyId": "fixture-study-linked-a",
+      "role": "active comparator",
+      "label": "Fixture Asset",
+      "intervention": "Fixture Asset injection",
+      "linkedAsset": {
+        "companyId": "fixture-co",
+        "assetId": "fixture-asset"
+      },
+      "dose": "10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

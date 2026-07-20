@@ -50,46 +50,6 @@
       }
     },
     {
-      "id": "fixture-study-doseranging",
-      "companyId": "fixture-co",
-      "assetId": "fixture-asset",
-      "officialTitle": "Synthetic Dose-Ranging Study of Fixture Asset on Background Therapy",
-      "acronym": "FIX-DR",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT20000002"
-        }
-      ],
-      "phase": "Phase 2",
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double blind",
-        "comparator": "Placebo",
-        "description": "Synthetic dose-ranging fixture design exercising arm-distinctness paths"
-      },
-      "population": "Adults with obesity or overweight on stable background metformin, with an explicit weight-management objective",
-      "overallDuration": "24 weeks",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
-        "sources": [
-          {
-            "url": "https://example.com/fixture-doseranging-design",
-            "sourceType": "synthetic fixture",
-            "checkedAt": "2026-07-13"
-          }
-        ]
-      },
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT20000002",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed"
-      },
-      "programId": "fixture-co-fixture-asset-subcutaneous-injection"
-    },
-    {
       "id": "fixture-study-timepoint",
       "companyId": "fixture-co",
       "assetId": "fixture-asset",
@@ -124,6 +84,46 @@
       "registryStatus": {
         "registry": "ClinicalTrials.gov",
         "registryId": "NCT20000001",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "programId": "fixture-co-fixture-asset-subcutaneous-injection"
+    },
+    {
+      "id": "fixture-study-doseranging",
+      "companyId": "fixture-co",
+      "assetId": "fixture-asset",
+      "officialTitle": "Synthetic Dose-Ranging Study of Fixture Asset on Background Therapy",
+      "acronym": "FIX-DR",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT20000002"
+        }
+      ],
+      "phase": "Phase 2",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double blind",
+        "comparator": "Placebo",
+        "description": "Synthetic dose-ranging fixture design exercising arm-distinctness paths"
+      },
+      "population": "Adults with obesity or overweight on stable background metformin, with an explicit weight-management objective",
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-design",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT20000002",
         "overallStatus": "completed",
         "sourceStatus": "Completed"
       },

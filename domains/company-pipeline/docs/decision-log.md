@@ -46,6 +46,7 @@ through ADR-0039 is available only through the
 | ADR-0037 | Migrate Clinical Evidence to v2 with analysis groups and structured results. | Demonstrated pilot gaps required an atomic schema migration. | Superseded in version by ADR-0039; semantics retained | [Clinical Evidence contract](../../clinical-evidence/docs/README.md) |
 | ADR-0038 | Harden Clinical v2 version fields and numeric results. | Canonical and projection versions needed explicit separation. | Refined by ADR-0039 | [Clinical Evidence contract](../../clinical-evidence/docs/README.md), [Generated Output Contract](./generated-output-contract.md) |
 | ADR-0039 | Adopt Clinical Evidence v3 Study inventory. | Verified studies must be representable before outcomes exist. | Active | [Clinical Evidence contract](../../clinical-evidence/docs/README.md) |
+| ADR-0040 | Preserve curated source-record order in generated Clinical Evidence output. | An `id` tie-breaker discarded authored clinical curation such as dose-ascending arms. | Active | [Generated Output Contract](./generated-output-contract.md) |
 
 New entries stay one row. Put the enforceable rule in its current authority and
 use this index only to preserve the decision, short reason, status, and pointer.
