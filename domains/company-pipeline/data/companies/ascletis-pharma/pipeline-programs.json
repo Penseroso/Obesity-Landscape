@@ -15,30 +15,76 @@
       "dosingInterval": "Once daily"
     },
     "indications": [
-      "Chronic weight management",
-      "Type 2 diabetes mellitus"
+      "Chronic weight management"
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Active"
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
-      "updatedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-reinforces-its-differentiated-obesity-portfolio-at-american-diabetes-association-ada-2026-scientific-sessions-showcasing-asc30-clinical-data-and-exciting-preclinical-findings-from-asc37-and-asc39-302793255.html",
           "title": "Ascletis Reinforces Its Differentiated Obesity Portfolio at American Diabetes Association (ADA) 2026 Scientific Sessions, Showcasing ASC30 Clinical Data and Exciting Preclinical Findings from ASC37 and ASC39",
           "sourceType": "company press release",
           "publishedAt": "2026-06-08",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07002905",
+          "title": "A Study to Evaluate the Efficacy, Safety, and Tolerability in Participants With Obesity or Overweight With Weight-Related Comorbidities",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-06-04",
+          "checkedAt": "2026-07-20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc30-oral-tablets-type-2-diabetes",
+    "assetId": "asc30",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC30",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": "AISBDD"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07321678",
+          "title": "A Study to Evaluate the Efficacy, Safety, and Tolerability of ASC30 Tablets in Participants With Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-01-07",
+          "checkedAt": "2026-07-20"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-completes-enrollment-in-us-phase-ii-study-of-asc30-an-oral-small-molecule-glp-1r-agonist-for-the-treatment-of-diabetes-302753633.html",
           "title": "Ascletis Completes Enrollment in U.S. Phase II Study of ASC30, an Oral Small Molecule GLP-1R Agonist, for the Treatment of Diabetes",
           "sourceType": "company press release",
           "publishedAt": "2026-04-26",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -63,18 +109,20 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Active"
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
-      "updatedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-positive-topline-results-from-us-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity-302709245.html",
           "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
           "sourceType": "company press release",
           "publishedAt": "2026-03-10",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -102,7 +150,7 @@
       "status": "Active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-07",
       "sources": [
         {
@@ -110,14 +158,14 @@
           "title": "Ascletis Announces the Combination of ASC47 and ASC31, its Dual GLP-1R/GIPR Peptide Agonist, Demonstrated Significantly Greater Weight Loss Compared to the Combination of ASC47 and Tirzepatide in an Animal Model of Obesity",
           "sourceType": "company press release",
           "publishedAt": "2025-08-17",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-presents-full-analysis-of-phase-ib-study-of-asc30-oral-tablet-phase-ib-study-of-asc30-injection-and-preclinical-study-of-combination-of-asc31-and-asc47-at-obesityweek-2025-302603810.html",
           "title": "Ascletis Presents Full Analysis of Phase Ib Study of ASC30 Oral Tablet, Phase Ib Study of ASC30 Injection, and Preclinical Study of Combination of ASC31 and ASC47 at ObesityWeek 2025",
           "sourceType": "company press release",
           "publishedAt": "2025-11-04",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -155,7 +203,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-07",
       "sources": [
         {
@@ -163,7 +211,7 @@
           "title": "Ascletis Announces U.S. FDA IND Clearance for Phase I Study of Once-Monthly Subcutaneously Administered GLP-1R/GIPR Dual Peptide Agonist, ASC35, for the Treatment of Obesity",
           "sourceType": "company press release",
           "publishedAt": "2026-06-23",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -201,7 +249,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-08",
       "sources": [
         {
@@ -209,7 +257,7 @@
           "title": "Ascletis Submits Two IND Applications to the U.S. FDA for the Treatment of Obesity: ASC36 Once-Monthly Injection, a Peptide Amylin Receptor Agonist, and ASC36_35 FDC Once-Monthly Injection, a Co-Formulation of ASC36 Plus Peptide GLP-1R/GIPR Agonist ASC35",
           "sourceType": "company press release",
           "publishedAt": "2026-07-06",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -258,7 +306,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-07",
       "sources": [
         {
@@ -266,7 +314,97 @@
           "title": "Ascletis Submits Two IND Applications to the U.S. FDA for the Treatment of Obesity: ASC36 Once-Monthly Injection, a Peptide Amylin Receptor Agonist, and ASC36_35 FDC Once-Monthly Injection, a Co-Formulation of ASC36 Plus Peptide GLP-1R/GIPR Agonist ASC35",
           "sourceType": "company press release",
           "publishedAt": "2026-07-06",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc36-oral-tablets",
+    "assetId": "asc36",
+    "companyId": "ascletis-pharma",
+    "assetName": "ASC36",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Amylin receptor agonist",
+      "platform": "POTENT"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily or less frequent"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/apac/news-releases/ascletis-selects-oral-amylin-receptor-peptide-agonist-asc36-for-clinical-development-302683760.html",
+          "title": "Ascletis Selects Oral Amylin Receptor Peptide Agonist, ASC36, for Clinical Development",
+          "sourceType": "company press release",
+          "publishedAt": "2026-02-11",
+          "checkedAt": "2026-07-20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc36-37-fdc-subcutaneous-injection",
+    "assetId": "asc36-37-fdc",
+    "companyId": "ascletis-pharma",
+    "assetType": "co-formulation",
+    "assetName": "ASC36_37 FDC",
+    "codeName": null,
+    "components": [
+      {
+        "assetId": "asc36",
+        "role": "amylin receptor agonist"
+      },
+      {
+        "assetId": "asc37",
+        "role": "GLP-1R/GIPR/GCGR triple agonist"
+      }
+    ],
+    "technical": {
+      "mechanism": "Amylin receptor agonist plus GLP-1R/GIPR/GCGR triple agonist",
+      "platform": "ULAP"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once monthly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
+      "sources": [
+        {
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042905416.pdf",
+          "title": "Ascletis Pharma Inc. 2025 Annual Report",
+          "sourceType": "annual report",
+          "publishedAt": "2026-04-29",
+          "checkedAt": "2026-07-20"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/ascletis-selects-a-next-generation-once-monthly-subcutaneously-administered-glp-1rgiprgcgr-triple-peptide-agonist-asc37-for-clinical-development-302665194.html",
+          "title": "Ascletis Selects a Next-Generation Once-Monthly Subcutaneously Administered GLP-1R/GIPR/GCGR Triple Peptide Agonist, ASC37, for Clinical Development",
+          "sourceType": "company press release",
+          "publishedAt": "2026-01-20",
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -294,7 +432,7 @@
       "status": "Active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-07",
       "sources": [
         {
@@ -302,14 +440,14 @@
           "title": "Ascletis Selects Its First Oral GLP-1R/GIPR/GCGR Triple Peptide Agonist, ASC37, for Clinical Development",
           "sourceType": "company press release",
           "publishedAt": "2025-11-30",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-reinforces-its-differentiated-obesity-portfolio-at-american-diabetes-association-ada-2026-scientific-sessions-showcasing-asc30-clinical-data-and-exciting-preclinical-findings-from-asc37-and-asc39-302793255.html",
           "title": "Ascletis Reinforces Its Differentiated Obesity Portfolio at American Diabetes Association (ADA) 2026 Scientific Sessions, Showcasing ASC30 Clinical Data and Exciting Preclinical Findings from ASC37 and ASC39",
           "sourceType": "company press release",
           "publishedAt": "2026-06-08",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -337,7 +475,7 @@
       "status": "Active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-07",
       "sources": [
         {
@@ -345,7 +483,7 @@
           "title": "Ascletis Selects a Next-Generation Once-Monthly Subcutaneously Administered GLP-1R/GIPR/GCGR Triple Peptide Agonist, ASC37, for Clinical Development",
           "sourceType": "company press release",
           "publishedAt": "2026-01-20",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -373,21 +511,22 @@
       "status": "Active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-08",
       "sources": [
         {
-          "url": "https://www.ascletis.com/",
-          "title": "Ascletis Pharma Inc.",
-          "sourceType": "company website",
-          "checkedAt": "2026-07-08"
+          "url": "https://www.prnewswire.com/apac/news-releases/oral-small-molecule-amylin-receptor-agonist-asc39-demonstrated-eloralintide-like-amylin-selectivity-and-efficacy-in-preclinical-models-302715856.html",
+          "title": "Oral Small Molecule Amylin Receptor Agonist ASC39 Demonstrated Eloralintide-like Amylin Selectivity and Efficacy in Preclinical Models",
+          "sourceType": "company press release",
+          "publishedAt": "2026-03-17",
+          "checkedAt": "2026-07-20"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-fixed-dose-combination-of-asc30-once-daily-oral-small-molecule-glp-1r-agonist-and-asc39-once-daily-oral-small-molecule-amylin-selective-amylin-receptor-agonist-for-clinical-development-302735615.html",
           "title": "Ascletis Announces Fixed-Dose Combination of ASC30, Once-Daily Oral Small Molecule GLP-1R Agonist, and ASC39, Once-Daily Oral Small Molecule Amylin-Selective Amylin Receptor Agonist, for Clinical Development",
           "sourceType": "company press release",
           "publishedAt": "2026-04-07",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -426,7 +565,7 @@
       "status": "Active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-07",
       "sources": [
         {
@@ -434,7 +573,55 @@
           "title": "Ascletis Announces Fixed-Dose Combination of ASC30, Once-Daily Oral Small Molecule GLP-1R Agonist, and ASC39, Once-Daily Oral Small Molecule Amylin-Selective Amylin Receptor Agonist, for Clinical Development",
           "sourceType": "company press release",
           "publishedAt": "2026-04-07",
-          "checkedAt": "2026-07-07"
+          "checkedAt": "2026-07-20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ascletis-pharma-asc30-48-fdc-oral-tablets",
+    "assetId": "asc30-48-fdc",
+    "companyId": "ascletis-pharma",
+    "assetType": "fixed-dose-combination",
+    "assetName": "ASC30_48 FDC",
+    "codeName": null,
+    "components": [
+      {
+        "assetId": "asc30",
+        "role": "GLP-1R agonist"
+      },
+      {
+        "codeName": "ASC48",
+        "companyId": "ascletis-pharma",
+        "role": "GIPR agonist"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1R agonist plus GIPR agonist",
+      "platform": "AISBDD"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ascletis-selects-for-clinical-development-a-fixed-dose-combination-of-first-in-class-oral-small-molecule-gipr-agonist-asc48-and-oral-small-molecule-glp-1r-agonist-asc30-302826283.html",
+          "title": "Ascletis Selects for Clinical Development a Fixed-Dose Combination of First-in-Class Oral Small Molecule GIPR Agonist, ASC48, and Oral Small Molecule GLP-1R Agonist, ASC30",
+          "sourceType": "company press release",
+          "publishedAt": "2026-07-15",
+          "checkedAt": "2026-07-20"
         }
       ]
     }

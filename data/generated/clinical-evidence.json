@@ -2,6 +2,184 @@
   "clinicalEvidenceSchemaVersion": "3.0",
   "studies": [
     {
+      "id": "ascletis-pharma-asc30-nct07002905",
+      "companyId": "ascletis-pharma",
+      "assetId": "asc30",
+      "programId": "ascletis-pharma-asc30-oral-tablets",
+      "officialTitle": "A Phase IIa, Randomized, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety, and Tolerability of ASC30 Tablets and ASC30 Tablets A1 in Participants With Obesity or Overweight With Weight-Related Comorbidities",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07002905"
+        }
+      ],
+      "protocolIdentifiers": [
+        "ASC30-202"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07002905",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-12-15"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Seven-cohort parallel-group study evaluating two ASC30 tablet formulations and matching placebo."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "13 weeks",
+      "safetySummary": "All gastrointestinal adverse events were mild or moderate, with no grade 3 or higher drug-related adverse events, no drug-related serious adverse events, and no hepatic safety signal reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07002905",
+            "title": "ASC30-202 study record (NCT07002905)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/data/upload/admin/20251209/6937c422c3795.pdf",
+            "title": "Ascletis' Oral Small Molecule GLP-1, ASC30, Demonstrated Placebo-Adjusted Weight Loss of 7.7% in Its 13-Week U.S. Phase II Study",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/data/upload/pdf/ASC30%20Phase%202%20%40%20ADA%202026%20-%2020250518%20-%20final.pdf",
+            "title": "Oral Small Molecule GLP-1, ASC30, Demonstrated Placebo-Adjusted Weight Loss of 7.7% with Better Gastrointestinal Tolerability in Its 13-Week U.S. Phase II Study",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ascletis-pharma-asc30-nct06679959",
+      "companyId": "ascletis-pharma",
+      "assetId": "asc30",
+      "programId": "ascletis-pharma-asc30-subcutaneous-depot-injection",
+      "officialTitle": "A Phase I/IIa, Randomized, Double-blind, Placebo-controlled, Single and Multiple Ascending Dose Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of ASC30 Injection, for Subcutaneous Use in Participants With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06679959"
+        }
+      ],
+      "protocolIdentifiers": [
+        "ASC30-101"
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06679959",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06-26"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Sequential single- and multiple-ascending-dose study of ASC30 subcutaneous formulations."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "overallDuration": "Up to 24 weeks",
+      "safetySummary": "In the latest 24-week phase 2 portion, there were no discontinuations due to adverse events; adverse events were mild to moderate, gastrointestinal adverse events were mild, and no hepatic safety signal was reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06679959",
+            "title": "ASC30-101 study record (NCT06679959)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/ascletis-announces-positive-topline-results-from-us-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity-302709245.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_SQ_obesity_week_Obesity_week.pdf",
+            "title": "ASC30, a Once-Monthly SQ Injected Small Molecule GLP-1RA in Participants with Obesity: A Phase Ib Study",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025-11",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ascletis-pharma-asc30-nct06680440",
+      "companyId": "ascletis-pharma",
+      "assetId": "asc30",
+      "programId": "ascletis-pharma-asc30-oral-tablets",
+      "officialTitle": "A Phase I Randomized, Double-blind, Placebo-controlled, Single and Multiple Ascending Dose Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of ASC30 Tablets in Participants With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06680440"
+        }
+      ],
+      "protocolIdentifiers": [
+        "ASC30-102"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06680440",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-05-20"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Sequential single- and multiple-ascending-dose study with five single-dose levels and three 28-day titration regimens."
+      },
+      "population": "Adults aged 18 to 65 years with obesity and body mass index 30 to 40 kg/m2, without diabetes or other clinically significant disease.",
+      "overallDuration": "Up to 35 days",
+      "followUpDuration": "7 days after the 28-day multiple-dose treatment period",
+      "safetySummary": "No serious adverse events or grade 3 or higher adverse events were reported in the multiple-ascending-dose cohorts; gastrointestinal events were mild to moderate and no hepatic safety signal was detected.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06680440",
+            "title": "ASC30-102 study record (NCT06680440)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_tablets_obesity_week.pdf",
+            "title": "A Full Analysis of 28-Day MAD Study of Oral GLP-1R Biased Small Molecule Agonist ASC30 for Obesity",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025-11",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/news_detail/192/id/1171/l/en-us",
+            "title": "Ascletis Announces Positive Topline Results of U.S. Phase Ib Multiple Ascending Dose Study of Small Molecule Oral GLP-1R Agonist ASC30",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2025-04-23",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
       "id": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
@@ -4462,6 +4640,610 @@
   ],
   "arms": [
     {
+      "id": "asc30-101-sad-cohort-1",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 1: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 1",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-2",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 2: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 2",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-3",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 3: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 3",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-4",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 4: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 4",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-5",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 5: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 5",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-6",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 6: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 6",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-7",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 7: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 7",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-8",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "SAD Cohort 8: ASC30",
+      "intervention": "Single dose of ASC30 subcutaneous injection in SAD dose cohort 8",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-1-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 1: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 1",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-2-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 2: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 2",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-3-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 3: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 3",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-4-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 4: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 4",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-5-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 5: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 5",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-6-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 6: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 6",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-7-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 7: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 7",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-sad-cohort-8-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "SAD Cohort 8: matching placebo",
+      "intervention": "Single dose of matching placebo subcutaneous injection in SAD dose cohort 8",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-101-mad-cohort-1",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "MAD Cohort 1: ASC30 depot formulation A1",
+      "intervention": "ASC30 subcutaneous depot formulation A1, administered on days 1, 29, and 57",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "400 mg at each administration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Every 4 weeks",
+      "treatmentDuration": "Three administrations through Week 8",
+      "plannedN": 10
+    },
+    {
+      "id": "asc30-101-mad-cohort-2",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "MAD Cohort 2: ASC30 depot formulation A2",
+      "intervention": "ASC30 subcutaneous depot formulation A2, administered on days 1, 29, and 57",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "300 mg, 450 mg, and 600 mg",
+      "titration": "Dose increased at each 4-week administration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Every 4 weeks",
+      "treatmentDuration": "Three administrations through Week 8",
+      "plannedN": 20
+    },
+    {
+      "id": "asc30-101-mad-cohort-3",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "experimental",
+      "label": "MAD Cohort 3: ASC30 depot formulation A2",
+      "intervention": "ASC30 subcutaneous depot formulation A2, administered on days 1, 29, and 57",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "300 mg, 600 mg, and 900 mg",
+      "titration": "Dose increased at each 4-week administration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Every 4 weeks",
+      "treatmentDuration": "Three administrations through Week 8",
+      "plannedN": 20
+    },
+    {
+      "id": "asc30-101-mad-cohort-1-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "MAD Cohort 1: matching placebo",
+      "intervention": "Matching placebo subcutaneous depot injections on days 1, 29, and 57",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Every 4 weeks",
+      "treatmentDuration": "Three administrations through Week 8",
+      "plannedN": 3
+    },
+    {
+      "id": "asc30-101-mad-cohort-2-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "MAD Cohort 2: matching placebo",
+      "intervention": "Matching placebo subcutaneous depot injections on days 1, 29, and 57",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Every 4 weeks",
+      "treatmentDuration": "Three administrations through Week 8",
+      "plannedN": 6
+    },
+    {
+      "id": "asc30-101-mad-cohort-3-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "role": "placebo",
+      "label": "MAD Cohort 3: matching placebo",
+      "intervention": "Matching placebo subcutaneous depot injections on days 1, 29, and 57",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Every 4 weeks",
+      "treatmentDuration": "Three administrations through Week 8",
+      "plannedN": 6
+    },
+    {
+      "id": "asc30-102-sad-2mg",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "SAD Cohort 1: ASC30 2 mg",
+      "intervention": "Single dose of ASC30 oral tablet",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "2 mg",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-5mg",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "SAD Cohort 2: ASC30 5 mg",
+      "intervention": "Single dose of ASC30 oral tablet",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "5 mg",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-10mg",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "SAD Cohort 3: ASC30 10 mg",
+      "intervention": "Single dose of ASC30 oral tablet",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "10 mg",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-20mg",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "SAD Cohort 4: ASC30 20 mg",
+      "intervention": "Single dose of ASC30 oral tablet",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "20 mg",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-40mg",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "SAD Cohort 5: ASC30 40 mg",
+      "intervention": "Single dose of ASC30 oral tablet",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "40 mg",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-1-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "SAD Cohort 1: matching placebo",
+      "intervention": "Single dose of matching placebo tablet in SAD Cohort 1",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-2-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "SAD Cohort 2: matching placebo",
+      "intervention": "Single dose of matching placebo tablet in SAD Cohort 2",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-3-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "SAD Cohort 3: matching placebo",
+      "intervention": "Single dose of matching placebo tablet in SAD Cohort 3",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-4-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "SAD Cohort 4: matching placebo",
+      "intervention": "Single dose of matching placebo tablet in SAD Cohort 4",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-sad-5-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "SAD Cohort 5: matching placebo",
+      "intervention": "Single dose of matching placebo tablet in SAD Cohort 5",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single administration"
+    },
+    {
+      "id": "asc30-102-mad-1",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "MAD Cohort 1: 2/5/10/20 mg",
+      "intervention": "ASC30 oral tablet with weekly dose escalation",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "2 mg, 5 mg, 10 mg, and 20 mg",
+      "titration": "Weekly escalation through 2 mg, 5 mg, 10 mg, and 20 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "plannedN": 8
+    },
+    {
+      "id": "asc30-102-mad-2",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "MAD Cohort 2: 2/10/20/40 mg",
+      "intervention": "ASC30 oral tablet with weekly dose escalation",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "2 mg, 10 mg, 20 mg, and 40 mg",
+      "titration": "Weekly escalation through 2 mg, 10 mg, 20 mg, and 40 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "plannedN": 8
+    },
+    {
+      "id": "asc30-102-mad-3",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "experimental",
+      "label": "MAD Cohort 3: 5/15/30/60 mg",
+      "intervention": "ASC30 oral tablet with weekly dose escalation",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "5 mg, 15 mg, 30 mg, and 60 mg",
+      "titration": "Weekly escalation through 5 mg, 15 mg, 30 mg, and 60 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "plannedN": 10
+    },
+    {
+      "id": "asc30-102-mad-1-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "MAD Cohort 1: matching placebo",
+      "intervention": "Matching placebo tablets in MAD Cohort 1",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "plannedN": 2
+    },
+    {
+      "id": "asc30-102-mad-2-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "MAD Cohort 2: matching placebo",
+      "intervention": "Matching placebo tablets in MAD Cohort 2",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "plannedN": 2
+    },
+    {
+      "id": "asc30-102-mad-3-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "role": "placebo",
+      "label": "MAD Cohort 3: matching placebo",
+      "intervention": "Matching placebo tablets in MAD Cohort 3",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "plannedN": 2
+    },
+    {
+      "id": "asc30-202-cohort-1-tablets-20mg",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "experimental",
+      "label": "Cohort 1: ASC30 tablets 20 mg",
+      "intervention": "ASC30 tablet formulation 1, titrated to 20 mg once daily",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "20 mg maintenance dose",
+      "titration": "1 mg, 2 mg, 5 mg, 10 mg, 15 mg, then 20 mg at weekly intervals",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 20
+    },
+    {
+      "id": "asc30-202-cohort-2-tablets-40mg",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "experimental",
+      "label": "Cohort 2: ASC30 tablets 40 mg",
+      "intervention": "ASC30 tablet formulation 1, titrated to 40 mg once daily",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "40 mg maintenance dose",
+      "titration": "1 mg, 2 mg, 5 mg, 10 mg, 20 mg, then 40 mg at weekly intervals",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 20
+    },
+    {
+      "id": "asc30-202-cohort-3-placebo",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "placebo",
+      "label": "Cohort 3: matching placebo tablets",
+      "intervention": "Matching placebo for ASC30 tablet formulation 1",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 9
+    },
+    {
+      "id": "asc30-202-cohort-4-tablets-a1-20mg",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "experimental",
+      "label": "Cohort 4: ASC30 tablets A1 20 mg",
+      "intervention": "ASC30 tablet formulation A1, titrated to 20 mg once daily",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "20 mg maintenance dose",
+      "titration": "1 mg, 2 mg, 5 mg, 10 mg, 15 mg, then 20 mg at weekly intervals",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 21
+    },
+    {
+      "id": "asc30-202-cohort-5-tablets-a1-40mg",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "experimental",
+      "label": "Cohort 5: ASC30 tablets A1 40 mg",
+      "intervention": "ASC30 tablet formulation A1, titrated to 40 mg once daily",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "40 mg maintenance dose",
+      "titration": "1 mg, 2 mg, 5 mg, 10 mg, 20 mg, then 40 mg at weekly intervals",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 20
+    },
+    {
+      "id": "asc30-202-cohort-6-tablets-a1-60mg",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "experimental",
+      "label": "Cohort 6: ASC30 tablets A1 60 mg",
+      "intervention": "ASC30 tablet formulation A1, titrated to 60 mg once daily",
+      "linkedAsset": {
+        "companyId": "ascletis-pharma",
+        "assetId": "asc30"
+      },
+      "dose": "60 mg maintenance dose",
+      "titration": "1 mg, 2 mg, 5 mg, 10 mg, 20 mg, 40 mg, then 60 mg at weekly intervals",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 20
+    },
+    {
+      "id": "asc30-202-cohort-7-placebo",
+      "studyId": "ascletis-pharma-asc30-nct07002905",
+      "role": "placebo",
+      "label": "Cohort 7: matching placebo tablets",
+      "intervention": "Matching placebo for ASC30 tablet formulation A1",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 15
+    },
+    {
       "id": "nct07476118-brenipatide",
       "studyId": "eli-lilly-and-company-brenipatide-nct07476118",
       "role": "experimental",
@@ -8483,6 +9265,19 @@
   ],
   "analysisGroups": [
     {
+      "id": "asc30-102-mad-pooled-placebo",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "kind": "pooled",
+      "label": "Pooled MAD placebo",
+      "memberArmIds": [
+        "asc30-102-mad-1-placebo",
+        "asc30-102-mad-2-placebo",
+        "asc30-102-mad-3-placebo"
+      ],
+      "description": "Source-reported pooled placebo group across the three MAD cohorts.",
+      "analyzedN": 6
+    },
+    {
       "id": "reta-p2-pooled-4mg",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "kind": "pooled",
@@ -8516,6 +9311,14 @@
     }
   ],
   "endpoints": [
+    {
+      "id": "asc30-102-body-weight-percent-change-day-29",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 29"
+    },
     {
       "id": "elora-p2-weight-week48",
       "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
@@ -8926,6 +9729,120 @@
     }
   ],
   "outcomes": [
+    {
+      "id": "asc30-102-mad-1-body-weight-day-29",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "endpointId": "asc30-102-body-weight-percent-change-day-29",
+      "armIds": [
+        "asc30-102-mad-1"
+      ],
+      "analysisPopulation": "Participants with reported Day 29 body-weight data (MAD Cohort 1, n=7)",
+      "result": {
+        "value": "-4.3%",
+        "numericValue": -4.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_tablets_obesity_week.pdf",
+            "title": "A Full Analysis of 28-Day MAD Study of Oral GLP-1R Biased Small Molecule Agonist ASC30 for Obesity",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025-11",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "asc30-102-mad-2-body-weight-day-29",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "endpointId": "asc30-102-body-weight-percent-change-day-29",
+      "armIds": [
+        "asc30-102-mad-2"
+      ],
+      "analysisPopulation": "Participants with reported Day 29 body-weight data (MAD Cohort 2, n=8)",
+      "result": {
+        "value": "-6.3%",
+        "numericValue": -6.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_tablets_obesity_week.pdf",
+            "title": "A Full Analysis of 28-Day MAD Study of Oral GLP-1R Biased Small Molecule Agonist ASC30 for Obesity",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025-11",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "asc30-102-mad-3-body-weight-day-29",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "endpointId": "asc30-102-body-weight-percent-change-day-29",
+      "armIds": [
+        "asc30-102-mad-3"
+      ],
+      "analysisPopulation": "Participants with reported Day 29 body-weight data (MAD Cohort 3, n=7)",
+      "result": {
+        "value": "-4.8%",
+        "numericValue": -4.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_tablets_obesity_week.pdf",
+            "title": "A Full Analysis of 28-Day MAD Study of Oral GLP-1R Biased Small Molecule Agonist ASC30 for Obesity",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025-11",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "asc30-102-mad-placebo-body-weight-day-29",
+      "studyId": "ascletis-pharma-asc30-nct06680440",
+      "endpointId": "asc30-102-body-weight-percent-change-day-29",
+      "analysisGroupId": "asc30-102-mad-pooled-placebo",
+      "analysisPopulation": "Participants with reported Day 29 body-weight data (pooled MAD placebo, n=6)",
+      "result": {
+        "value": "+0.2%",
+        "numericValue": 0.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_tablets_obesity_week.pdf",
+            "title": "A Full Analysis of 28-Day MAD Study of Oral GLP-1R Biased Small Molecule Agonist ASC30 for Obesity",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025-11",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
     {
       "id": "elora-p2-weight-1mg",
       "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",

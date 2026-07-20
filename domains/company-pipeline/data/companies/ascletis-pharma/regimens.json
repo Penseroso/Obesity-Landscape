@@ -1,36 +1,37 @@
 [
   {
-    "id": "ascletis-pharma-asc37-asc36-combination",
+    "id": "ascletis-pharma-asc47-asc35-combination",
     "companyId": "ascletis-pharma",
-    "name": "ASC37 plus ASC36 combination",
+    "name": "ASC47 plus ASC35 combination",
     "components": [
       {
-        "assetId": "asc37",
-        "role": "GLP-1R/GIPR/GCGR triple agonist"
+        "codeName": "ASC47",
+        "companyId": "ascletis-pharma",
+        "role": "THR-beta agonist"
       },
       {
-        "assetId": "asc36",
-        "role": "amylin receptor agonist"
+        "assetId": "asc35",
+        "role": "GLP-1R/GIPR dual agonist"
       }
     ],
     "indications": [
-      "Obesity",
-      "Diabetes"
+      "Obesity"
     ],
     "development": {
       "stage": "Unknown",
-      "status": "Planned"
+      "status": "Planned",
+      "stageOperationalState": "Planned, not yet initiated"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-07",
-      "updatedAt": "2026-07-07",
+      "lastVerifiedAt": "2026-07-20",
+      "updatedAt": "2026-07-20",
       "sources": [
         {
-          "url": "https://www.prnewswire.com/news-releases/ascletis-selects-a-next-generation-once-monthly-subcutaneously-administered-glp-1rgiprgcgr-triple-peptide-agonist-asc37-for-clinical-development-302665194.html",
-          "title": "Ascletis Selects a Next-Generation Once-Monthly Subcutaneously Administered GLP-1R/GIPR/GCGR Triple Peptide Agonist, ASC37, for Clinical Development",
-          "sourceType": "company press release",
-          "publishedAt": "2026-01-20",
-          "checkedAt": "2026-07-07"
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042905416.pdf",
+          "title": "Ascletis Pharma Inc. 2025 Annual Report",
+          "sourceType": "annual report",
+          "publishedAt": "2026-04-29",
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -58,7 +59,7 @@
       "status": "Active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-08",
       "sources": [
         {
@@ -66,14 +67,14 @@
           "title": "GLP-1R/GIPR Peptide Agonist ASC31 + ASC47 Shows 119.6% More Weight Loss than Tirzepatide in DIO Mice",
           "sourceType": "scientific presentation",
           "publishedAt": "2025-11",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-20"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-the-combination-of-asc47-and-asc31-its-dual-glp-1rgipr-peptide-agonist-demonstrated-significantly-greater-weight-loss-compared-to-the-combination-of-asc47-and-tirzepatide-in-an-animal-model-of-obesity-302531465.html",
           "title": "Ascletis Announces the Combination of ASC47 and ASC31, its Dual GLP-1R/GIPR Peptide Agonist, Demonstrated Significantly Greater Weight Loss Compared to the Combination of ASC47 and Tirzepatide in an Animal Model of Obesity",
           "sourceType": "company press release",
           "publishedAt": "2025-08-17",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-20"
         }
       ]
     }
@@ -103,7 +104,7 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
+      "lastVerifiedAt": "2026-07-20",
       "updatedAt": "2026-07-08",
       "sources": [
         {
@@ -111,14 +112,14 @@
           "title": "A Study to Evaluate Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of ASC47 in Combination With Semaglutide",
           "sourceType": "trial registry",
           "publishedAt": "2025-05-15",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-20"
         },
         {
           "url": "https://www.ascletis.com/data/upload/pdf/EASO-ASC47-103.pdf",
           "title": "ASC47 in Combination with Semaglutide Demonstrated Up to 111.8% Greater Relative Weight Loss in Participants with Obesity Compared to Semaglutide Monotherapy",
           "sourceType": "scientific presentation",
           "publishedAt": "2026-05",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-20"
         }
       ]
     }

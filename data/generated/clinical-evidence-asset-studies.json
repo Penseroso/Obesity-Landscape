@@ -2,6 +2,16 @@
   "projectionSchemaVersion": "2.0",
   "assets": [
     {
+      "companyId": "ascletis-pharma",
+      "assetId": "asc30",
+      "focalStudyIds": [
+        "ascletis-pharma-asc30-nct07002905",
+        "ascletis-pharma-asc30-nct06679959",
+        "ascletis-pharma-asc30-nct06680440"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
       "focalStudyIds": [
