@@ -36,13 +36,32 @@ asset:
 2. Discover relevant human interventional studies broadly.
 3. Store every verified in-scope Study, including planned, recruiting, active,
    completed, terminated, suspended, or withdrawn Studies without an Outcome.
-4. Prioritize pivotal, confirmatory, latest result-bearing, and otherwise
-   distinctive Studies for Endpoint and Outcome enrichment.
-5. Classify every discovered study as inventory entered, result-bearing
+4. For every Study in the run, record one in-session result-availability state:
+   `RESULT_SOURCE_FOUND`, `NO_PUBLIC_RESULTS`, or
+   `RESULT_AVAILABILITY_UNRESOLVED`, with the sources and check date. For
+   `RESULT_SOURCE_FOUND`, review every confirmed result-bearing source that is
+   discovered or cited in Study metadata. Record an in-session disposition for
+   each distinct directly disclosed result, identified at least by source,
+   endpoint/measure, timepoint, analysis unit or comparison, and the reported
+   analysis population, subgroup, and estimand. Record "not reported" rather
+   than inferring a missing analysis detail.
+5. Give each disclosed result exactly one disposition:
+   - **entered**: represented by an Endpoint and Outcome whose metadata cites
+     the source that directly supports the stored value;
+   - **excluded**: outside the Clinical Evidence scope or an explicit contract
+     non-goal, with the result and reason reported;
+   - **deferred**: direct disclosure exists but evidence, identity, or reliable
+     Arm/AnalysisGroup/Endpoint mapping is insufficient, with the missing
+     evidence and re-entry condition reported;
+   - **schema boundary**: the source-supported result cannot be represented by
+     the current contract and is handled under the case-scoped fallback.
+6. Classify every discovered study as inventory entered, result-bearing
    entered, excluded outside scope, or deferred with a reason.
 
 Do not stop at one asset or the chronologically latest trial. Deduplicate
-publications to stable registry/Study identity.
+publications to stable registry/Study identity. The result-review manifest is
+in-session only and is not operating data. A result-bearing source cited only
+in Study metadata has not satisfied result review or result disposition.
 
 ## 3. Sources and updates
 
@@ -57,6 +76,13 @@ Apply authority and recency together. Outcome maturity comes from the strongest
 source that directly supports that exact value. Preserve only directly
 reported results; do not calculate, infer, visually transcribe, redistribute,
 or broaden a result beyond its supported analysis unit.
+
+A result-bearing source may disclose several distinct results. Review each one
+rather than assigning one disposition to the source as a whole. If the source
+publishes only an adjusted or between-unit effect, enter only that directly
+reported effect when its anchors are reliable; do not reconstruct undisclosed
+arm-level values. Study-level citation and Outcome-level result provenance are
+separate obligations under the contract.
 
 For an unchanged semantic outcome, replace a superseded value in place and
 preserve useful prior source references. If authority and recency cannot
@@ -101,6 +127,11 @@ unsupported structure, information that would be lost, any partial canonical
 record, relevant edge case, and the schema re-entry trigger. A later extension
 replays only cases it actually unblocks.
 
+When the current schema could represent the result but the available source
+does not support a reliable Arm, AnalysisGroup, Endpoint, population, estimand,
+or timepoint mapping, use the ordinary **deferred** result disposition instead
+of forcing an entry or misclassifying an evidence gap as a schema limitation.
+
 ## 6. Generate and validate
 
 After valid Clinical Evidence changes:
@@ -116,6 +147,21 @@ npm run build
 git diff --check
 ```
 
+Before claiming completion, reconcile the in-session result-review manifest:
+
+1. every Study has a recorded result-availability check;
+2. every confirmed result-bearing source has been reviewed;
+3. every directly disclosed result is entered, excluded, deferred, or recorded
+   in the Schema boundary report;
+4. every entered result has direct supporting source metadata on its Outcome;
+5. every omitted public result appears individually in the final report with
+   its source, disposition, reason, and re-entry condition where applicable;
+6. the count of undispositioned disclosed results is zero.
+
+The JSON validators enforce only facts represented in canonical data. They
+cannot inspect external source contents or infer that a Study-level citation is
+result-bearing, so validator success does not replace this reconciliation gate.
+
 If Clinical Evidence sources become inaccessible after Company/Pipeline
 Research completed, retain those Company/Pipeline changes, make no Clinical
 Evidence change, and report partial completion.
@@ -127,11 +173,18 @@ Report:
 - initial Clinical Evidence investigation or update;
 - assets traversed;
 - Studies entered or updated, including inventory-only Studies;
+- result-availability state, checked sources, and check date for every Study,
+  plus the result-bearing sources reviewed;
+- entered results and every omitted public result, each with its source,
+  disposition, reason, and re-entry condition where applicable;
+- result-disposition counts, including an explicit zero count for
+  undispositioned disclosed results;
 - exclusions, deferrals, conflicts, and pipeline discrepancies;
 - Schema boundary report and status counts;
 - generated output and validation results;
 - source-access blockers;
 - full or partial completion.
 
-Do not claim Clinical Evidence completion unless traversal, valid updates,
-generation, validation, and reporting all completed.
+Do not claim Clinical Evidence completion unless traversal, result-source
+review and disposition reconciliation, valid updates, generation, validation,
+and reporting all completed.

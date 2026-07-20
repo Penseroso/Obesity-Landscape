@@ -296,6 +296,21 @@ because they cannot be checked conservatively from free text.
 ### Source-reported result boundary
 
 Capture only values directly reported by a source at the arm level or between arms.
+Study provenance and result provenance are separate: citing a result-bearing
+publication, presentation, registry record, or sponsor release in
+`Study.metadata.sources` may support Study-level facts, but it neither records
+the disclosed results nor proves that they were reviewed. Every stored Outcome
+must cite in `Outcome.metadata.sources` a source that directly supports that
+exact value and analysis context.
+
+For every confirmed result-bearing source reviewed during research, each
+distinct directly disclosed result must either be represented when the current
+contract can do so faithfully or receive an explicit excluded, deferred, or
+schema-boundary disposition in the final research report. These dispositions
+are execution/reporting state, not canonical fields: result availability is not
+persisted, and validator success cannot establish that an external source was
+fully reviewed. See the workflow's result-review completion gate.
+
 Do not:
 
 - calculate a treatment difference from arm-level values.
