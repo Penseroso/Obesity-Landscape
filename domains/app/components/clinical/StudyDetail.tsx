@@ -43,9 +43,10 @@ function ArmInterventionCell({ arm }: { arm: ArmView }) {
  * must be fully opaque (not the header's translucent `bg-muted/70`) so
  * content scrolling underneath the pinned columns cannot bleed through.
  */
-const stickyArmCellPosition = "sticky left-0 z-10 w-36 min-w-[9rem] max-w-[9rem] px-3 py-2.5";
+const stickyArmCellPosition =
+  "sticky left-0 z-10 w-48 min-w-[12rem] max-w-[12rem] px-3 py-2.5 align-middle";
 const stickyInterventionCellPosition =
-  "sticky left-36 z-10 min-w-[12rem] border-r border-border px-3 py-2.5";
+  "sticky left-48 z-10 min-w-[9rem] border-r border-border px-3 py-2.5 align-middle";
 
 function ArmsTable({ arms }: { arms: ArmView[] }) {
   if (arms.length === 0) {

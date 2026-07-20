@@ -94,7 +94,7 @@ export function OutcomeResult({
   }
 
   return (
-    <li className="grid grid-cols-1 gap-x-5 gap-y-2 py-3 first:pt-0 last:pb-0 sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] sm:items-start">
+    <li className="grid grid-cols-1 gap-x-5 gap-y-2 py-4 sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)] sm:items-center">
       {/* Column 1: treatment-regimen subject (arm/dose or analysis-group). */}
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-1.5">
