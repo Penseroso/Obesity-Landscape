@@ -110,6 +110,13 @@
             "checkedAt": "2026-07-20"
           },
           {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          },
+          {
             "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC30_SQ_obesity_week_Obesity_week.pdf",
             "title": "ASC30, a Once-Monthly SQ Injected Small Molecule GLP-1RA in Participants with Obesity: A Phase Ib Study",
             "sourceType": "official scientific presentation",
@@ -9328,6 +9335,22 @@
   ],
   "endpoints": [
     {
+      "id": "asc30-101-body-weight-percent-change-week-4",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 4"
+    },
+    {
+      "id": "asc30-101-body-weight-percent-change-week-8",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 8"
+    },
+    {
       "id": "asc30-101-body-weight-percent-change-week-12",
       "studyId": "ascletis-pharma-asc30-nct06679959",
       "name": "Percent change from baseline in body weight",
@@ -9339,9 +9362,25 @@
       "id": "asc30-101-body-weight-percent-change-week-16",
       "studyId": "ascletis-pharma-asc30-nct06679959",
       "name": "Percent change from baseline in body weight",
-      "role": "other",
+      "role": "secondary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 16"
+    },
+    {
+      "id": "asc30-101-body-weight-percent-change-week-20",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 20"
+    },
+    {
+      "id": "asc30-101-body-weight-percent-change-week-24",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
     },
     {
       "id": "asc30-102-body-weight-percent-change-day-29",
@@ -9770,6 +9809,70 @@
   ],
   "outcomes": [
     {
+      "id": "asc30-101-a1-body-weight-week-4-between",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "endpointId": "asc30-101-body-weight-percent-change-week-4",
+      "armIds": [
+        "asc30-101-mad-cohort-1",
+        "asc30-101-mad-cohort-1-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "2.7%",
+        "numericValue": -2.7,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "comparisonType": "Placebo-adjusted mean difference, ASC30 depot formulation A1 minus matching placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "asc30-101-a1-body-weight-week-8-between",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "endpointId": "asc30-101-body-weight-percent-change-week-8",
+      "armIds": [
+        "asc30-101-mad-cohort-1",
+        "asc30-101-mad-cohort-1-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "5.5%",
+        "numericValue": -5.5,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "comparisonType": "Placebo-adjusted mean difference, ASC30 depot formulation A1 minus matching placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
       "id": "asc30-101-a1-body-weight-week-12-between",
       "studyId": "ascletis-pharma-asc30-nct06679959",
       "endpointId": "asc30-101-body-weight-percent-change-week-12",
@@ -9777,7 +9880,7 @@
         "asc30-101-mad-cohort-1",
         "asc30-101-mad-cohort-1-placebo"
       ],
-      "analysisPopulation": "Topline efficacy analysis population (not further specified)",
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
       "result": {
         "value": "6.3%",
         "numericValue": -6.3,
@@ -9798,6 +9901,13 @@
             "sourceType": "company topline announcement",
             "publishedAt": "2026-03-10",
             "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
           }
         ]
       }
@@ -9810,7 +9920,7 @@
         "asc30-101-mad-cohort-1",
         "asc30-101-mad-cohort-1-placebo"
       ],
-      "analysisPopulation": "Topline efficacy analysis population (not further specified)",
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
       "result": {
         "value": "7.5%",
         "numericValue": -7.5,
@@ -9828,6 +9938,77 @@
           {
             "url": "https://www.prnewswire.com/news-releases/ascletis-announces-positive-topline-results-from-us-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity-302709245.html",
             "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "asc30-101-a1-body-weight-week-20-between",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "endpointId": "asc30-101-body-weight-percent-change-week-20",
+      "armIds": [
+        "asc30-101-mad-cohort-1",
+        "asc30-101-mad-cohort-1-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "6.4%",
+        "numericValue": -6.4,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "comparisonType": "Placebo-adjusted mean difference, ASC30 depot formulation A1 minus matching placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-10",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      }
+    },
+    {
+      "id": "asc30-101-a1-body-weight-week-24-between",
+      "studyId": "ascletis-pharma-asc30-nct06679959",
+      "endpointId": "asc30-101-body-weight-percent-change-week-24",
+      "armIds": [
+        "asc30-101-mad-cohort-1",
+        "asc30-101-mad-cohort-1-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "5.8%",
+        "numericValue": -5.8,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "comparisonType": "Placebo-adjusted mean difference, ASC30 depot formulation A1 minus matching placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://www.ascletis.com/news_detail/200/id/1352.html",
+            "title": "Ascletis Announces Positive Topline Results from U.S. Phase II, 24-Week Study for Its Ultra-Long-Acting Subcutaneous Depot Formulations of Small Molecule GLP-1R Agonist ASC30 for Obesity",
             "sourceType": "company topline announcement",
             "publishedAt": "2026-03-10",
             "checkedAt": "2026-07-20"
