@@ -26,6 +26,7 @@
         "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099"
       ],
       "linkedStudyIds": [
+        "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
         "eli-lilly-and-company-eloralintide-nct06345066",
         "eli-lilly-and-company-eloralintide-nct06603571"
       ]
@@ -49,7 +50,11 @@
         "eli-lilly-and-company-retatrutide-triumph-8-nct07232719",
         "eli-lilly-and-company-retatrutide-triumph-1-nct05929066",
         "eli-lilly-and-company-retatrutide-triumph-outcomes-nct06383390",
-        "eli-lilly-and-company-retatrutide-triumph-7-nct07035093"
+        "eli-lilly-and-company-retatrutide-triumph-7-nct07035093",
+        "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+        "eli-lilly-and-company-retatrutide-triumph-3-nct05882045",
+        "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
+        "eli-lilly-and-company-retatrutide-triumph-6-nct06859268"
       ],
       "linkedStudyIds": []
     },
@@ -146,7 +151,8 @@
       "focalStudyIds": [
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
         "novo-nordisk-cagrisema-redefine-2-nct05394519",
-        "novo-nordisk-cagrisema-redefine-4-nct06131437"
+        "novo-nordisk-cagrisema-redefine-4-nct06131437",
+        "novo-nordisk-cagrisema-redefine-3-nct05669755"
       ],
       "linkedStudyIds": []
     },
@@ -160,7 +166,8 @@
         "novo-nordisk-liraglutide-scale-kids-nct04775082"
       ],
       "linkedStudyIds": [
-        "novo-nordisk-cagrilintide-phase2-nct03856047"
+        "novo-nordisk-cagrilintide-phase2-nct03856047",
+        "novo-nordisk-semaglutide-step-8-nct04074161"
       ]
     },
     {
@@ -205,7 +212,22 @@
         "novo-nordisk-semaglutide-step-teens-nct04102189",
         "novo-nordisk-semaglutide-step-up-nct05646706",
         "novo-nordisk-semaglutide-step-up-t2d-nct05649137",
-        "novo-nordisk-semaglutide-oasis-4-nct05564117"
+        "novo-nordisk-semaglutide-oasis-4-nct05564117",
+        "novo-nordisk-semaglutide-step-3-nct03611582",
+        "novo-nordisk-semaglutide-step-4-nct03548987",
+        "novo-nordisk-semaglutide-step-6-nct03811574",
+        "novo-nordisk-semaglutide-step-7-nct04251156",
+        "novo-nordisk-semaglutide-step-8-nct04074161",
+        "novo-nordisk-semaglutide-step-9-nct05064735",
+        "novo-nordisk-semaglutide-step-10-nct05040971",
+        "novo-nordisk-semaglutide-step-12-nct06041217",
+        "novo-nordisk-semaglutide-step-hfpef-nct04788511",
+        "novo-nordisk-semaglutide-step-hfpef-dm-nct04916470",
+        "novo-nordisk-semaglutide-step-teens-weight-maintenance-nct06571383",
+        "novo-nordisk-semaglutide-oasis-1-nct05035095",
+        "novo-nordisk-semaglutide-oasis-2-nct05132088",
+        "novo-nordisk-semaglutide-oasis-3-nct05890976",
+        "novo-nordisk-semaglutide-select-nct03574597"
       ],
       "linkedStudyIds": [
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",

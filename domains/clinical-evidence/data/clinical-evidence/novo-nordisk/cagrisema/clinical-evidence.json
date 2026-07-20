@@ -149,6 +149,60 @@
         "overallStatus": "completed",
         "sourceStatus": "Completed"
       }
+    },
+    {
+      "id": "novo-nordisk-cagrisema-redefine-3-nct05669755",
+      "companyId": "novo-nordisk",
+      "assetId": "cagrisema",
+      "programId": "novo-nordisk-cagrisema-subcutaneous-injection",
+      "officialTitle": "The Cardiovascular Safety and Efficacy of Cagrilintide 2.4 mg s.c. in Combination With Semaglutide 2.4 mg s.c. (CagriSema 2.4 mg/2.4 mg s.c.) Once-weekly in Participants With Established Cardiovascular Disease",
+      "acronym": "REDEFINE 3",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05669755"
+        }
+      ],
+      "protocolIdentifiers": [
+        "NN9838-4942",
+        "U1111-1270-0943",
+        "2021-005855-35",
+        "jRCT2031220672"
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group, event-driven cardiovascular outcomes trial."
+      },
+      "population": "Adults aged 55 years or older with established cardiovascular disease and obesity or overweight, with or without type 2 diabetes.",
+      "overallDuration": "Up to approximately 4.5 years",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05669755",
+            "title": "REDEFINE 3 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          },
+          {
+            "url": "https://sciencehub.novonordisk.com/content/dam/sciencehub/global/en/congresses-and-scientific-publications/congresses/easd2025/revolutionising-cardiometabolic-health-innovating-transforming-and-progressing-care/documents/EASD_Monday_symposium_2025_Part_4.pdf",
+            "title": "The REDEFINE program explores the full metabolic potential of CagriSema in obesity",
+            "sourceType": "official scientific presentation",
+            "publishedAt": "2025",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05669755",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting"
+      }
     }
   ],
   "arms": [
@@ -265,6 +319,33 @@
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "84 weeks"
+    },
+    {
+      "id": "redefine3-cagrisema",
+      "studyId": "novo-nordisk-cagrisema-redefine-3-nct05669755",
+      "role": "experimental",
+      "label": "CagriSema",
+      "intervention": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg (CagriSema)",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "cagrisema"
+      },
+      "dose": "Cagrilintide 2.4 mg plus semaglutide 2.4 mg",
+      "titration": "16-week dose-escalation period",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "235 weeks"
+    },
+    {
+      "id": "redefine3-placebo",
+      "studyId": "novo-nordisk-cagrisema-redefine-3-nct05669755",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matched to cagrilintide plus placebo matched to semaglutide",
+      "dose": "Matched placebos",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "235 weeks"
     }
   ],
   "analysisGroups": [],

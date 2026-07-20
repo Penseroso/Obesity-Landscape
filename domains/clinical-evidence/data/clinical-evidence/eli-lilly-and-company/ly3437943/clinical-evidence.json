@@ -276,6 +276,186 @@
           }
         ]
       }
+    },
+    {
+      "id": "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
+      "officialTitle": "A Master Protocol to Investigate the Efficacy and Safety of LY3437943 Once Weekly in Participants With Type 2 Diabetes Mellitus Who Have Obesity or Overweight: A Randomized Double-Blind, Placebo-Controlled Trial",
+      "acronym": "TRIUMPH-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05929079"
+        }
+      ],
+      "protocolIdentifiers": [
+        "J1I-MC-GZBK",
+        "J1I-MC-GSA2",
+        "2023-503658-11-00"
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group master protocol with three retatrutide dose groups and placebo, including an obstructive-sleep-apnea subset."
+      },
+      "population": "Adults with type 2 diabetes and obesity or overweight, including a subset with obstructive sleep apnea.",
+      "overallDuration": "Approximately 89 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05929079",
+            "title": "TRIUMPH-2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05929079",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting"
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-retatrutide-triumph-3-nct05882045",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
+      "officialTitle": "A Randomized, Double-Blind, Phase 3 Study to Investigate the Efficacy and Safety of LY3437943 Once Weekly Compared to Placebo in Participants With Severe Obesity and Established Cardiovascular Disease",
+      "acronym": "TRIUMPH-3",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05882045"
+        }
+      ],
+      "protocolIdentifiers": [
+        "J1I-MC-GZBM",
+        "2023-503659-88-00"
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group trial with two retatrutide dose groups and placebo."
+      },
+      "population": "Adults with severe obesity and established cardiovascular disease.",
+      "overallDuration": "Approximately 113 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05882045",
+            "title": "TRIUMPH-3 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05882045",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting"
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Double-Blind Study to Evaluate the Efficacy and Safety of Retatrutide Compared to Tirzepatide in Adults Who Have Obesity",
+      "acronym": "TRIUMPH-5",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06662383"
+        }
+      ],
+      "protocolIdentifiers": [
+        "J1I-MC-GZBP",
+        "2024-511450-49-00"
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Tirzepatide",
+        "description": "Parallel-group active-comparator trial."
+      },
+      "population": "Adults with obesity.",
+      "overallDuration": "Approximately 89 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06662383",
+            "title": "TRIUMPH-5 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06662383",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting"
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-retatrutide-triumph-6-nct06859268",
+      "companyId": "eli-lilly-and-company",
+      "assetId": "ly3437943",
+      "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
+      "officialTitle": "A Phase 3b, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate Retatrutide Treatment in the Maintenance of Weight Reduction in Individuals With Obesity",
+      "acronym": "TRIUMPH-6",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06859268"
+        }
+      ],
+      "protocolIdentifiers": [
+        "J1I-MC-GZQB"
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized withdrawal",
+        "masking": "Double-blind after retatrutide lead-in",
+        "comparator": "Placebo withdrawal",
+        "description": "After an 80-week retatrutide lead-in, participants continue dose 1, escalate to dose 2, or switch to placebo for 36 weeks."
+      },
+      "population": "Adults with obesity, without diabetes, who enter an 80-week retatrutide lead-in before randomized maintenance treatment.",
+      "overallDuration": "Approximately 125 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-20",
+        "updatedAt": "2026-07-20",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06859268",
+            "title": "TRIUMPH-6 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-20"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06859268",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting"
+      }
     }
   ],
   "arms": [
@@ -565,6 +745,154 @@
       "intervention": "Placebo",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-2-retatrutide-dose-1",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+      "role": "experimental",
+      "label": "Retatrutide Dose 1",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-2-retatrutide-dose-2",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+      "role": "experimental",
+      "label": "Retatrutide Dose 2",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-2-retatrutide-dose-3",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+      "role": "experimental",
+      "label": "Retatrutide Dose 3",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-2-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-3-retatrutide-dose-1",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-3-nct05882045",
+      "role": "experimental",
+      "label": "Retatrutide Dose 1",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-3-retatrutide-dose-2",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-3-nct05882045",
+      "role": "experimental",
+      "label": "Retatrutide Dose 2",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-3-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-3-nct05882045",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-5-retatrutide",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
+      "role": "experimental",
+      "label": "Retatrutide",
+      "intervention": "Retatrutide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-5-tirzepatide",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
+      "role": "active comparator",
+      "label": "Tirzepatide",
+      "intervention": "Tirzepatide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "triumph-6-retatrutide-dose-1",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-6-nct06859268",
+      "role": "experimental",
+      "label": "Retatrutide Dose 1",
+      "intervention": "Retatrutide dose 1 for 116 weeks",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "116 weeks"
+    },
+    {
+      "id": "triumph-6-retatrutide-dose-1-to-dose-2",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-6-nct06859268",
+      "role": "experimental",
+      "label": "Retatrutide Dose 1 to Retatrutide Dose 2",
+      "intervention": "Retatrutide dose 1 for 80 weeks followed by retatrutide dose 2 for 36 weeks",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3437943"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "116 weeks"
+    },
+    {
+      "id": "triumph-6-retatrutide-dose-1-to-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-triumph-6-nct06859268",
+      "role": "placebo",
+      "label": "Retatrutide Dose 1 to Placebo",
+      "intervention": "Retatrutide dose 1 for 80 weeks followed by matched placebo for 36 weeks",
+      "dose": "Matched placebo during randomized maintenance period",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36-week randomized withdrawal period after 80-week retatrutide lead-in"
     }
   ],
   "analysisGroups": [
