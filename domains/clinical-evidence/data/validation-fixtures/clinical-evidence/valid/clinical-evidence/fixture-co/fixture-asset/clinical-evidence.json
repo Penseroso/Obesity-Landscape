@@ -311,6 +311,18 @@
       ],
       "description": "Synthetic pooled analysis group reported across two protocol dose arms.",
       "analyzedN": 60
+    },
+    {
+      "id": "fixture-group-combo-pooled",
+      "studyId": "fixture-study-doseranging",
+      "kind": "pooled",
+      "label": "Pooled fixture asset combination group",
+      "memberArmIds": [
+        "fixture-arm-dr-comboA",
+        "fixture-arm-dr-comboB"
+      ],
+      "description": "Synthetic pooled analysis group reported across two combination arms. Authored after fixture-group-pooled-dose although its id sorts before it, so an id sort is detectable.",
+      "analyzedN": 40
     }
   ],
   "endpoints": [
@@ -331,20 +343,20 @@
       "assessmentTimepoint": "Week 24"
     },
     {
-      "id": "fixture-endpoint-tp-weight-w24",
-      "studyId": "fixture-study-timepoint",
-      "name": "Percent change in body weight",
-      "role": "co-primary",
-      "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
-    },
-    {
       "id": "fixture-endpoint-tp-weight-w72",
       "studyId": "fixture-study-timepoint",
       "name": "Percent change in body weight",
       "role": "co-primary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 72"
+    },
+    {
+      "id": "fixture-endpoint-tp-weight-w24",
+      "studyId": "fixture-study-timepoint",
+      "name": "Percent change in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
     }
   ],
   "outcomes": [
@@ -552,6 +564,37 @@
       }
     },
     {
+      "id": "fixture-outcome-tp-w72-mitt",
+      "studyId": "fixture-study-timepoint",
+      "endpointId": "fixture-endpoint-tp-weight-w72",
+      "armIds": [
+        "fixture-arm-tp-active",
+        "fixture-arm-tp-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "estimand": "Treatment policy",
+      "result": {
+        "value": "-12.0",
+        "numericValue": -12,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-timepoint-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
       "id": "fixture-outcome-tp-w24-pp",
       "studyId": "fixture-study-timepoint",
       "endpointId": "fixture-endpoint-tp-weight-w24",
@@ -614,37 +657,6 @@
       }
     },
     {
-      "id": "fixture-outcome-tp-w72-mitt",
-      "studyId": "fixture-study-timepoint",
-      "endpointId": "fixture-endpoint-tp-weight-w72",
-      "armIds": [
-        "fixture-arm-tp-active",
-        "fixture-arm-tp-placebo"
-      ],
-      "analysisPopulation": "Modified intention-to-treat (overall)",
-      "estimand": "Treatment policy",
-      "result": {
-        "value": "-12.0",
-        "numericValue": -12,
-        "unit": "percentage points",
-        "resultType": "between-arm",
-        "effectMeasure": "Least-squares mean difference",
-        "comparisonType": "Least-squares mean difference, treatment minus placebo"
-      },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
-        "sources": [
-          {
-            "url": "https://example.com/fixture-timepoint-results",
-            "sourceType": "synthetic fixture",
-            "checkedAt": "2026-07-13"
-          }
-        ]
-      }
-    },
-    {
       "id": "fixture-outcome-dr-pooled",
       "studyId": "fixture-study-doseranging",
       "endpointId": "fixture-endpoint-dr-weight",
@@ -653,6 +665,31 @@
       "result": {
         "value": "-7.0",
         "numericValue": -7,
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://example.com/fixture-doseranging-results",
+            "sourceType": "synthetic fixture",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture-outcome-dr-combo-pooled",
+      "studyId": "fixture-study-doseranging",
+      "endpointId": "fixture-endpoint-dr-weight",
+      "analysisGroupId": "fixture-group-combo-pooled",
+      "analysisPopulation": "Per-protocol (overall)",
+      "result": {
+        "value": "-6.0",
+        "numericValue": -6,
         "unit": "percentage points",
         "resultType": "arm-level"
       },

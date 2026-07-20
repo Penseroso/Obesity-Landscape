@@ -89,8 +89,9 @@ function clusterKey(outcome: EndpointGroupView["outcomes"][number]): string {
 /**
  * Groups outcomes sharing an exact Population/Estimand/result-shape key,
  * wherever they fall in the endpoint's outcome list — the generated outcome
- * order is not itself grouped by estimand (it sorts by outcome id), so
- * requiring adjacency would leave almost every endpoint ungrouped.
+ * order is curated source order grouped by study only, never by estimand, so
+ * matching outcomes are not guaranteed to be adjacent and requiring adjacency
+ * would leave endpoints under-grouped.
  *
  * This is a stable group-by, not a re-sort: it keys only on the two fields
  * the grouping is defined by (population, estimand), never on id, arm label,

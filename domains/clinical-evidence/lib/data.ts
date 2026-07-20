@@ -41,6 +41,12 @@ export function assetKeyOf(companyId: string, assetId: string) {
   return `${companyId}|${assetId}`;
 }
 
+/**
+ * Append-only accumulator: each bucket keeps records in the exact order they appear
+ * in the generated array, which is how curated source order reaches the read model
+ * and the UI. Never sort here — that would discard the authored ordering the
+ * generator preserves.
+ */
 function groupByStudyId<T extends { studyId: string }>(records: T[]) {
   const map = new Map<string, T[]>();
   for (const record of records) {

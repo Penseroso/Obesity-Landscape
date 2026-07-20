@@ -1972,26 +1972,62 @@ function readFixtureReferenceDataset(baseDir, context) {
 
 /**
  * Regression guard for curated source-record order. The valid fixture is authored in
- * deliberately non-lexicographic order — dose-ascending arms (`dr-5mg` before `dr-10mg`),
- * a study authored out of id order, an outcome (`dr-pooled`) authored after a different
- * study's outcomes, and a second asset whose studies are authored `linked-b` then
- * `linked-a`. Every sequence below therefore fails if an id sort is reintroduced anywhere
- * in generation or in the derived projection.
+ * deliberately non-lexicographic order so that every entity has an independently
+ * falsifiable signal: dose-ascending arms (`dr-5mg` before `dr-10mg`), studies authored
+ * out of id order in both assets, two analysis groups whose authored order inverts their
+ * ids, endpoints authored `w72` before `w24`, an outcome (`dr-pooled`) authored after a
+ * different study's outcomes, and a timepoint outcome run that interleaves two endpoints.
+ * Each sequence below therefore fails if an id sort — or the old `endpointId` key — is
+ * reintroduced anywhere in generation or in the derived projection.
+ *
+ * `assertSequence` additionally rejects any expected sequence that is already in ascending
+ * id order, since such an assertion could never fail. Do not "simplify" a fixture in a way
+ * that trips that check: it means the guard has gone blind, not that the check is wrong.
  *
  * This asserts the real path: `aggregate` comes from `buildClinicalEvidenceAggregate()`,
  * not from a re-sorted copy, so it proves source-to-generated preservation rather than
  * merely re-validating an already-sorted array.
+ *
+ * Known limit: `linkedStudyIds` is exercised only where one owner asset contributes.
+ * Real data has linked lists spanning two owner assets, but the ordering mechanism is the
+ * same single sort by canonical `studies`-array position, which is already globally
+ * companyId -> assetId -> curated, so a third fixture asset would add no coverage.
  */
 function assertClinicalEvidenceSourceOrderPreserved(aggregate) {
   const context = "clinical evidence source order";
-  const assertSequence = (label, actual, expected) =>
+  const assertSequence = (label, actual, expected) => {
+    // A sequence that already reads in ascending id order cannot distinguish curated
+    // order from an id sort, so asserting it proves nothing. Fail loudly rather than let
+    // a fixture edit quietly turn a guard into a no-op — that is exactly how the
+    // analysis-group and endpoint guards were vacuous when this check was added.
+    assert(
+      expected.length > 1 &&
+        JSON.stringify(expected) !==
+          JSON.stringify([...expected].sort((a, b) => a.localeCompare(b))),
+      `${context}: ${label} has no ordering signal — the expected sequence is already in ascending id order, so it cannot detect a regression`,
+    );
     assert(
       JSON.stringify(actual) === JSON.stringify(expected),
       `${context}: ${label} must preserve curated source order; expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`,
     );
+  };
 
   const idsFor = (key, studyId) =>
     aggregate[key].filter((record) => record.studyId === studyId).map((record) => record.id);
+
+  // Whole array: proves the companyId/assetId grouping boundary still holds. The
+  // per-asset views below cannot detect a regression that interleaves the two assets.
+  assertSequence(
+    "studies across all assets",
+    aggregate.studies.map((study) => study.id),
+    [
+      "fixture-study-1",
+      "fixture-study-timepoint",
+      "fixture-study-doseranging",
+      "fixture-study-linked-b",
+      "fixture-study-linked-a",
+    ],
+  );
 
   // Studies within an asset: authored timepoint-before-doseranging, which an id sort inverts.
   assertSequence(
@@ -2020,13 +2056,16 @@ function assertClinicalEvidenceSourceOrderPreserved(aggregate) {
     "fixture-arm-dr-placebo",
   ]);
 
+  // The combo group is authored second even though its id sorts first.
   assertSequence("analysis groups within fixture-study-doseranging", idsFor("analysisGroups", "fixture-study-doseranging"), [
     "fixture-group-pooled-dose",
+    "fixture-group-combo-pooled",
   ]);
 
+  // Authored w72 before w24, which an id sort inverts.
   assertSequence("endpoints within fixture-study-timepoint", idsFor("endpoints", "fixture-study-timepoint"), [
-    "fixture-endpoint-tp-weight-w24",
     "fixture-endpoint-tp-weight-w72",
+    "fixture-endpoint-tp-weight-w24",
   ]);
 
   // Outcomes group by study only. `dr-pooled` is authored last in the file, after the
@@ -2039,6 +2078,17 @@ function assertClinicalEvidenceSourceOrderPreserved(aggregate) {
     "fixture-outcome-dr-comboA",
     "fixture-outcome-dr-comboB",
     "fixture-outcome-dr-pooled",
+    "fixture-outcome-dr-combo-pooled",
+  ]);
+
+  // Outcomes group by study only, never by endpoint. This run interleaves the study's
+  // two endpoints (w24, w72, w24, w24), so reintroducing an endpointId sort key would
+  // regroup it into w24, w24, w24, w72 and fail here.
+  assertSequence("outcomes within fixture-study-timepoint", idsFor("outcomes", "fixture-study-timepoint"), [
+    "fixture-outcome-tp-w24-mitt",
+    "fixture-outcome-tp-w72-mitt",
+    "fixture-outcome-tp-w24-pp",
+    "fixture-outcome-tp-w24-t2d",
   ]);
 
   const projection = buildClinicalAssetStudyIndex(aggregate);

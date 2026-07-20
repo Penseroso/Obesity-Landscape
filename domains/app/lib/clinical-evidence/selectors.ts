@@ -138,6 +138,12 @@ export type AssetClinicalRollup = {
 /** Max explicitly linked studies shown in the drawer preview. */
 const PREVIEW_LIMIT = 5;
 
+/**
+ * Presentation ranking for endpoint groups. Deliberately role-only, with no
+ * tie-breaker: `Array.prototype.sort` is stable, so endpoints sharing a role keep
+ * the curated source order they arrive in. Adding a tie-breaker here would
+ * override that curation.
+ */
 const endpointRoleRank: Record<ClinicalEndpointRole, number> = {
   primary: 0,
   "co-primary": 1,
@@ -334,6 +340,11 @@ export function getAssetStudies(
 /**
  * Compact clinical preview for the Program Drawer. Uses only explicit programId
  * mappings and intentionally excludes regimen-linked and asset-linked studies.
+ *
+ * `records` arrives in curated source order, so the preview shows the first
+ * PREVIEW_LIMIT studies as authored, and `records[0]` supplies the companyId /
+ * assetId / href. This is positional truncation, not a clinical ranking: which
+ * studies are dropped follows authoring order, not relevance.
  */
 export function getProgramStudyPreview(
   programId: string,

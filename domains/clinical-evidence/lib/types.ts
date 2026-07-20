@@ -211,9 +211,16 @@ export type ClinicalOutcomeRecord = {
 export type ClinicalAssetStudyIndexEntry = {
   companyId: string;
   assetId: string;
-  /** Studies whose canonical anchor is this asset. */
+  /**
+   * Studies whose canonical anchor is this asset. Order is meaningful: each id is
+   * ordered by its position in the canonical `studies` array, i.e. curated source order.
+   */
   focalStudyIds: string[];
-  /** Studies where this asset appears only as an internally linked Arm asset. */
+  /**
+   * Studies where this asset appears only as an internally linked Arm asset. Membership
+   * is reciprocal discovery with no authored order of its own; ordering follows the same
+   * canonical `studies`-array position as `focalStudyIds`.
+   */
   linkedStudyIds: string[];
 };
 
