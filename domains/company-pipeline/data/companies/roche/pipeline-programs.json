@@ -1,0 +1,177 @@
+[
+  {
+    "id": "roche-enicepatide-subcutaneous-injection",
+    "assetId": "enicepatide",
+    "companyId": "roche",
+    "assetName": "Enicepatide",
+    "codeName": "RO7795068",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "CT-388"
+      },
+      {
+        "type": "development-code",
+        "value": "RG6640"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1R/GIPR dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-21",
+      "updatedAt": "2026-07-21",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07351045",
+          "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight Without Type 2 Diabetes (Enith1)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-03-16",
+          "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06525935",
+          "title": "A Study of Enicepatide (CT-388) in Participants With Obesity or Overweight With at Least One Weight-Related Comorbidity",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-08-16",
+          "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2026-01-27",
+          "title": "Roche announces positive Phase II results for its dual GLP-1/GIP receptor agonist CT-388 in people living with obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2026-01-27",
+          "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.genentech-medinfo.com/pipeline-and-clinical-trials/cvrm/enicepatide.html",
+          "title": "Enicepatide | CVRM | Genentech Pipeline and Clinical Trials",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-21"
+        }
+      ]
+    }
+  },
+  {
+    "id": "roche-enicepatide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "enicepatide",
+    "companyId": "roche",
+    "assetName": "Enicepatide",
+    "codeName": "RO7795068",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "CT-388"
+      },
+      {
+        "type": "development-code",
+        "value": "RG6640"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1R/GIPR dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-21",
+      "updatedAt": "2026-07-21",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07351058",
+          "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight and Type 2 Diabetes (Enith2)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-03-23",
+          "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06628362",
+          "title": "A Study of Enicepatide (CT-388) in Participants Who Are Overweight or Obese With Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-11-21",
+          "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.genentech-medinfo.com/pipeline-and-clinical-trials/cvrm/enicepatide.html",
+          "title": "Enicepatide | CVRM | Genentech Pipeline and Clinical Trials",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-21"
+        }
+      ]
+    }
+  },
+  {
+    "id": "roche-ct-868-subcutaneous-injection",
+    "assetId": "ct-868",
+    "companyId": "roche",
+    "assetName": "CT-868",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1R/GIPR dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Type 1 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-21",
+      "updatedAt": "2026-07-21",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06062069",
+          "title": "A Study of CT-868 in Overweight and Obese Adult Participants With Type 1 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "publishedAt": "2023-10-19",
+          "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.biospace.com/article/releases/carmot-therapeutics-commenced-phase-2-clinical-trial-of-novel-dual-glp-1-gip-receptor-agonist-ct-868-for-the-treatment-of-type-1-diabetes/",
+          "title": "Carmot Therapeutics Commenced Phase 2 Clinical Trial of Novel Dual GLP-1/GIP Receptor Agonist CT-868 for the Treatment of Type 1 Diabetes",
+          "sourceType": "company press release",
+          "publishedAt": "2023-09-19",
+          "checkedAt": "2026-07-21"
+        }
+      ]
+    }
+  }
+]
