@@ -40,12 +40,16 @@ asset:
    `RESULT_SOURCE_FOUND`, `NO_PUBLIC_RESULTS`, or
    `RESULT_AVAILABILITY_UNRESOLVED`, with the sources and check date.
 
-   `NO_PUBLIC_RESULTS` is a finding about the world, not about the search. Record it
+   `NO_PUBLIC_RESULTS` is an operational conclusion of this workflow, reached after
+   the required source surfaces and every applicable identifier have been
+   exhausted. It is not proof that no result exists publicly anywhere. Record it
    only after exhausting every one of these surfaces: the registry's own results
    section, the sponsor's newsroom and investor materials, the relevant congress
    abstract archives, and a literature-index lookup by each of the registry
-   identifier, the asset name and development code, and the study acronym. If any
-   surface was not attempted, the state is not `NO_PUBLIC_RESULTS`.
+   identifier, the asset name and development code, and the study acronym. Search
+   only the identifiers that exist — an asset with no development code, or a study
+   with no acronym, does not owe that lookup. If any surface, or any identifier
+   that does exist, was not attempted, the state is not `NO_PUBLIC_RESULTS`.
 
    A blocked source is not a missing result. **Neither a search that returned
    nothing nor a failure to reach a source is by itself grounds for
@@ -188,7 +192,13 @@ Before claiming completion, reconcile the in-session result-review manifest:
 8. every `NO_PUBLIC_RESULTS` names the surfaces exhausted and the check date, and
    the count of `NO_PUBLIC_RESULTS` recorded without an exhausted search is zero;
 9. every `RESULT_AVAILABILITY_UNRESOLVED` names the blocked surface and the
-   alternative primary sources attempted.
+   alternative primary sources attempted;
+10. every previously unresolved or deferred result — whether known from an
+    earlier run's report or evident from an existing record that omits a
+    disclosed result — was re-searched in this run, and each is reported as
+    newly resolved, still blocked by the same obstacle, or moved to a different
+    disposition. A prior `RESULT_AVAILABILITY_UNRESOLVED` or deferral is never
+    carried forward untested.
 
 The JSON validators enforce only facts represented in canonical data. They
 cannot inspect external source contents or infer that a Study-level citation is

@@ -85,9 +85,13 @@ Before generation and reporting:
 3. Classify every newly surfaced candidate.
 4. Repeat company-centred discovery independently, without using the first
    pass's source list or inventory as the starting point.
-5. If the independent pass finds an unclassified candidate, research and
+5. The independent pass covers previously `deferred` and unresolved candidates
+   and claims as well as new ones. Re-search each of them and record which
+   applies: new evidence now resolves it, the same blocker still stands, or its
+   disposition has changed. A prior deferral is not carried forward untested.
+6. If the independent pass finds an unclassified candidate, research and
    classify it, then repeat the independent pass. Completion requires a final
-   pass with no unclassified candidate.
+   pass with no unclassified candidate and no unre-searched prior deferral.
 
 This audit is in-session only. Do not create a per-run ledger or report file.
 
