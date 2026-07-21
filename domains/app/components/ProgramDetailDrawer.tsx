@@ -257,9 +257,12 @@ export function ProgramDetailDrawer({
         <div className="border-b border-border px-6 py-5">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-sm font-medium text-primary">
+              <Link
+                href={`/companies/${renderedProgram.companyId}`}
+                className="rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
                 {formatNullableValue(renderedProgram.company?.name)}
-              </p>
+              </Link>
               <h2
                 id={headingId}
                 className="mt-1 text-2xl font-semibold tracking-tight text-card-foreground"
@@ -289,7 +292,19 @@ export function ProgramDetailDrawer({
             clinicalContext={renderedClinicalContext}
           />
           <dl>
-            <DetailRow label="Company" value={renderedProgram.company?.name} />
+            <div className="grid gap-1 border-b border-border py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
+              <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                Company
+              </dt>
+              <dd className="text-sm text-foreground">
+                <Link
+                  href={`/companies/${renderedProgram.companyId}`}
+                  className="rounded-sm text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                >
+                  {formatNullableValue(renderedProgram.company?.name)}
+                </Link>
+              </dd>
+            </div>
             <DetailRow
               label="Company country"
               value={renderedProgram.company?.headquartersCountry}

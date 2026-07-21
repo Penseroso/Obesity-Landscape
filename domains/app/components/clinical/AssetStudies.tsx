@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StudyTable } from "@/domains/app/components/clinical/StudyTable";
 import type {
@@ -67,7 +68,12 @@ export function AssetStudies({ view }: { view: AssetStudiesView }) {
           {view.assetName}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          {view.companyName ?? view.companyId}
+          <Link
+            href={`/companies/${view.companyId}`}
+            className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            {view.companyName ?? view.companyId}
+          </Link>
           {hasStudies ? (
             <>
               {" · "}

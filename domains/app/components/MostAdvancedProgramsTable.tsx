@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { formatNullableValue } from "@/domains/app/lib/format";
 import type { PipelineProgram } from "@/domains/company-pipeline/lib/types";
 
@@ -42,13 +43,23 @@ export function MostAdvancedProgramsTable({
                   className="max-w-[150px] truncate px-4 py-2 text-muted-foreground"
                   title={program.company?.name ?? undefined}
                 >
-                  {formatNullableValue(program.company?.name)}
+                  <Link
+                    href={`/companies/${program.companyId}`}
+                    className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    {formatNullableValue(program.company?.name)}
+                  </Link>
                 </td>
                 <td
                   className="max-w-[220px] truncate px-4 py-2 text-foreground"
                   title={getAssetLabel(program)}
                 >
-                  {getAssetLabel(program)}
+                  <Link
+                    href={`/assets/${program.companyId}/${program.assetId}`}
+                    className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    {getAssetLabel(program)}
+                  </Link>
                 </td>
                 <td className="whitespace-nowrap px-4 py-2">
                   <span className="inline-flex items-center rounded-sm border border-border bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground">
