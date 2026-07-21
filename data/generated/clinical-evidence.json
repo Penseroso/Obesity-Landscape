@@ -269,9 +269,9 @@
       "phase": "Phase 3",
       "design": {
         "randomization": "Randomized",
-        "masking": "Open-label",
+        "masking": "Double-blind",
         "comparator": "Two maridebart cafraglutide dosing schedules",
-        "description": "Parallel-group switching trial evaluating two maridebart cafraglutide dosing schedules after prior weekly GLP-1 receptor agonist treatment."
+        "description": "Parallel-group switching trial evaluating two maridebart cafraglutide dosing schedules after prior weekly GLP-1 receptor agonist treatment. The registry structured design reports double masking (participant and investigator), while the official title describes the trial as open-label; the structured registry value is used here."
       },
       "population": "Adults with obesity or overweight switching from a weekly GLP-1 receptor agonist; weight management is the explicit objective.",
       "overallDuration": "Up to 84 weeks",
