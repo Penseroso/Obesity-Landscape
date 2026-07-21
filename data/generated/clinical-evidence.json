@@ -17710,7 +17710,8 @@
         "unit": "percentage points",
         "resultType": "between-arm",
         "effectMeasure": "Placebo-adjusted least-squares mean change in body weight",
-        "comparisonType": "Placebo-adjusted least-squares mean difference, CT-388 7.5 mg minus pooled placebo"
+        "comparisonType": "Placebo-adjusted least-squares mean difference, CT-388 7.5 mg minus pooled placebo",
+        "confidenceInterval": "95% CI -3.92 to -2.37"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
@@ -17742,7 +17743,8 @@
         "unit": "percentage points",
         "resultType": "between-arm",
         "effectMeasure": "Placebo-adjusted least-squares mean change in body weight",
-        "comparisonType": "Placebo-adjusted least-squares mean difference, MAD cohort 6 minus pooled placebo"
+        "comparisonType": "Placebo-adjusted least-squares mean difference, MAD cohort 6 minus pooled placebo",
+        "confidenceInterval": "95% CI -6.37 to -1.80"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
@@ -17774,7 +17776,8 @@
         "unit": "percentage points",
         "resultType": "between-arm",
         "effectMeasure": "Placebo-adjusted least-squares mean change in body weight",
-        "comparisonType": "Placebo-adjusted least-squares mean difference, MAD cohort 7 minus pooled placebo"
+        "comparisonType": "Placebo-adjusted least-squares mean difference, MAD cohort 7 minus pooled placebo",
+        "confidenceInterval": "95% CI -7.93 to -3.28"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
@@ -17806,7 +17809,8 @@
         "unit": "percentage points",
         "resultType": "between-arm",
         "effectMeasure": "Placebo-adjusted least-squares mean change in body weight",
-        "comparisonType": "Placebo-adjusted least-squares mean difference, MAD cohort 8 minus pooled placebo"
+        "comparisonType": "Placebo-adjusted least-squares mean difference, MAD cohort 8 minus pooled placebo",
+        "confidenceInterval": "95% CI -9.81 to -5.25"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
