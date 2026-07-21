@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { formatNullableValue } from "@/domains/app/lib/format";
 import type {
+  PrimaryFindingGroupView,
   PrimaryFindingView,
   StudySummaryView,
   StudyTreatmentView,
@@ -8,6 +9,13 @@ import type {
 
 /** Roles that need no annotation: the value already is the study's primary result. */
 const implicitPrimaryRoles = new Set(["primary", "co-primary"]);
+
+/**
+ * Comparison groups shown per row before the cell collapses the remainder. This is a
+ * presentation policy of this list screen alone — the read model returns every group,
+ * and neither the Clinical Evidence contract nor the validator knows this number.
+ */
+const PRIMARY_FINDING_GROUP_DISPLAY_LIMIT = 3;
 
 function StudyMapping({ study }: { study: StudySummaryView }) {
   if (study.programContext) {
@@ -48,25 +56,13 @@ function Treatment({ treatment }: { treatment: StudyTreatmentView }) {
   );
 }
 
-function PrimaryFinding({ finding }: { finding: PrimaryFindingView | null }) {
-  if (!finding) {
-    // Outcome existence is the only authority here: this says nothing about whether
-    // a result has been publicly disclosed.
-    return <em className="italic text-muted-foreground">Not reported</em>;
-  }
-
+function FindingGroup({ group }: { group: PrimaryFindingGroupView }) {
   return (
-    <>
-      <span className="block text-xs text-muted-foreground">
-        {finding.endpointName} · {finding.assessmentTimepoint}
-        {implicitPrimaryRoles.has(finding.endpointRole)
-          ? ""
-          : ` (${finding.endpointRole})`}
-      </span>
-      {finding.values.map((value, index) => (
+    <div className="mt-2 first:mt-1">
+      {group.values.map((value, index) => (
         <span
           key={`${value.label}-${value.value}-${index}`}
-          className="mt-1 block text-foreground"
+          className="block text-foreground"
         >
           <span className="font-semibold tabular-nums">
             {value.value} {value.unit}
@@ -76,19 +72,53 @@ function PrimaryFinding({ finding }: { finding: PrimaryFindingView | null }) {
           ) : null}
         </span>
       ))}
-      {finding.comparatorLabel ? (
-        <span className="mt-1 block text-xs text-muted-foreground">
-          vs {finding.comparatorLabel}
-          {finding.effectMeasure ? ` · ${finding.effectMeasure}` : ""}
+      {group.comparatorLabel ? (
+        <span className="block text-xs text-muted-foreground">
+          vs {group.comparatorLabel}
+          {group.effectMeasure ? ` · ${group.effectMeasure}` : ""}
         </span>
       ) : null}
       {/* Which analysis these values come from: a Study may report the same endpoint
-          under several estimands, and none is stored as the primary one. */}
-      <span className="mt-1 block text-xs text-muted-foreground">
-        {finding.estimand
-          ? `${finding.estimand} · ${finding.analysisPopulation}`
-          : finding.analysisPopulation}
+          under several estimands, populations, or cohorts, and none is stored as the
+          primary one. */}
+      <span className="block text-xs text-muted-foreground">
+        {group.estimand
+          ? `${group.estimand} · ${group.analysisPopulation}`
+          : group.analysisPopulation}
       </span>
+    </div>
+  );
+}
+
+function PrimaryFinding({ finding }: { finding: PrimaryFindingView | null }) {
+  if (!finding) {
+    // Outcome existence is the only authority here: this says nothing about whether
+    // a result has been publicly disclosed.
+    return <em className="italic text-muted-foreground">Not reported</em>;
+  }
+
+  const shown = finding.groups.slice(0, PRIMARY_FINDING_GROUP_DISPLAY_LIMIT);
+  const hiddenGroupCount = finding.groups.length - shown.length;
+
+  return (
+    <>
+      <span className="block text-xs text-muted-foreground">
+        {finding.endpointName} · {finding.assessmentTimepoint}
+        {implicitPrimaryRoles.has(finding.endpointRole)
+          ? ""
+          : ` (${finding.endpointRole})`}
+      </span>
+      {shown.map((group, index) => (
+        <FindingGroup
+          key={`${group.estimand ?? ""}-${group.analysisPopulation}-${index}`}
+          group={group}
+        />
+      ))}
+      {hiddenGroupCount > 0 ? (
+        <span className="mt-1 block text-xs text-muted-foreground">
+          +{hiddenGroupCount} {hiddenGroupCount === 1 ? "group" : "groups"}
+        </span>
+      ) : null}
     </>
   );
 }

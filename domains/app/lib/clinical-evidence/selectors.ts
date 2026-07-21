@@ -108,25 +108,36 @@ export type PrimaryFindingValueView = {
   label: string;
 };
 
-export type PrimaryFindingView = {
-  endpointName: string;
-  assessmentTimepoint: string;
-  endpointRole: ClinicalEndpointRole;
+/** One comparison group of the selected endpoint. */
+export type PrimaryFindingGroupView = {
   /**
-   * Every value of one comparison family, in curated source order. All are stored
-   * values for stored anchors: this is selection, never calculation.
+   * Every value of this group's comparison family, in curated source order. All are
+   * stored values for stored anchors: this is selection, never calculation.
    */
   values: PrimaryFindingValueView[];
   effectMeasure?: string;
   /** The shared comparator/anchor arm, when the values are between-arm estimates. */
   comparatorLabel?: string;
   /**
-   * The analysis axes the shown family belongs to. Surfaced because a Study may
-   * report the same endpoint under several estimands with no stored designation of
-   * which one is primary — the reader must be able to see which vintage this is.
+   * The analysis axes this group belongs to. Surfaced because a Study may report the
+   * same endpoint under several estimands, populations, or cohorts with no stored
+   * designation of which one is primary — the reader must be able to tell them apart.
    */
   estimand?: string;
   analysisPopulation: string;
+};
+
+export type PrimaryFindingView = {
+  endpointName: string;
+  assessmentTimepoint: string;
+  endpointRole: ClinicalEndpointRole;
+  /**
+   * Every comparison group of the selected endpoint, in curated source order and never
+   * merged across analysis population, estimand, or cohort. The read model does not drop
+   * a group for being one too many to show: truncation is a per-screen presentation
+   * policy, owned by the consuming view.
+   */
+  groups: PrimaryFindingGroupView[];
 };
 
 export type StudyFamilyGroupView = {
@@ -273,32 +284,6 @@ function toTreatmentView(study: ClinicalStudyRecord): StudyTreatmentView {
 }
 
 /**
- * Estimand strategies that count participants as randomised regardless of what they
- * actually took. These are the analyses trials of this dataset register as their main
- * one, so a Study reporting one endpoint under several estimands shows this camp.
- *
- * The estimand vocabulary is deliberately open (see the Clinical Evidence contract), so
- * an unrecognised term is NOT demoted — it ranks with the alternatives and the existing
- * size / source-order rules settle it. Membership is tested on the shared canonical
- * form, so "Treatment-regimen estimand" and "treatment regimen" are one strategy.
- */
-const treatmentPolicyEstimands = new Set([
-  "treatment policy",
-  "treatment regimen",
-  "modified treatment regimen",
-  "treatment",
-]);
-
-/** 0 = treatment-policy camp, 1 = everything else (efficacy, hypothetical, unlabelled). */
-function estimandRankOf(outcome: ClinicalOutcomeRecord): number {
-  return treatmentPolicyEstimands.has(
-    canonicalizeClinicalEstimand(outcome.estimand),
-  )
-    ? 0
-    : 1;
-}
-
-/**
  * Grouping key for Outcomes a single source would report together, mirroring the
  * validator's `getClinicalComparisonGroupKey`. The endpoint is fixed by the caller, so
  * only the analysis axes remain, and they enter the key through the **same shared
@@ -367,90 +352,80 @@ function toPrimaryFinding(study: ClinicalStudyRecord): PrimaryFindingView | null
     else comparisonGroups.set(key, [outcome]);
   }
 
-  // A between-arm group states its comparator and effect measure explicitly, so it is
-  // preferred; otherwise the largest group wins, and insertion order (curated source
-  // order) breaks ties because `>` keeps the incumbent.
-  const allGroups = Array.from(comparisonGroups.values());
-  const betweenArmGroups = allGroups.filter(
-    (group) => group[0].result.resultType === "between-arm",
-  );
-  const structuralPool =
-    betweenArmGroups.length > 0 ? betweenArmGroups : allGroups;
-  // Then the estimand camp: the same endpoint is often reported under both a
-  // treatment-policy/regimen analysis and an efficacy/hypothetical one, and nothing in
-  // the schema marks which is the Study's headline result. Preferring the
-  // treatment-policy camp makes that choice explicit instead of incidental; the cell
-  // always names the estimand it ended up showing.
-  const bestEstimandRank = Math.min(
-    ...structuralPool.map((group) => estimandRankOf(group[0])),
-  );
-  const pool = structuralPool.filter(
-    (group) => estimandRankOf(group[0]) === bestEstimandRank,
-  );
-  const group = pool.reduce(
-    (best, candidate) => (candidate.length > best.length ? candidate : best),
-    pool[0],
-  );
-
-  // Comparison family, defined as the validator defines it: the subset sharing an
-  // anchor arm (typically the pooled placebo). Reporting across a family keeps the
-  // comparison context that a bare value range would lose.
-  let family = group;
-  let anchorArmId: string | undefined;
-  if (group[0].result.resultType === "arm-level") {
-    // An arm-level group also carries the comparator's own value. Spanning treatment
-    // and placebo would read as a dose range, so keep the experimental arms only and
-    // let the Treatment column carry the comparator.
-    const experimentalOnly = group.filter((outcome) =>
-      (outcome.armIds ?? []).every((armId) => experimentalArmIds.has(armId)),
-    );
-    if (experimentalOnly.length > 0) {
-      family = experimentalOnly;
-    }
-  } else if (group[0].result.resultType === "between-arm" && group.length > 1) {
-    const occurrences = new Map<string, number>();
-    for (const outcome of group) {
-      for (const armId of outcome.armIds ?? []) {
-        occurrences.set(armId, (occurrences.get(armId) ?? 0) + 1);
+  // Every comparison group of the endpoint is returned, in curated source order. Groups
+  // separated by analysis population, estimand, or cohort are distinct results by
+  // contract, so the read model neither merges nor discards them; how many a given
+  // screen shows is that screen's presentation policy, not a data decision.
+  const toGroupView = (
+    group: ClinicalOutcomeRecord[],
+  ): PrimaryFindingGroupView => {
+    // Comparison family, defined as the validator defines it: the subset sharing an
+    // anchor arm (typically the pooled placebo). Reporting across a family keeps the
+    // comparison context that a bare value range would lose.
+    let family = group;
+    let anchorArmId: string | undefined;
+    if (group[0].result.resultType === "arm-level") {
+      // An arm-level group also carries the comparator's own value. Spanning treatment
+      // and placebo would read as a dose range, so keep the experimental arms only and
+      // let the Treatment column carry the comparator. A group with no experimental arm
+      // at all — a cohort-scoped placebo group, say — keeps its outcomes as authored.
+      const experimentalOnly = group.filter((outcome) =>
+        (outcome.armIds ?? []).every((armId) => experimentalArmIds.has(armId)),
+      );
+      if (experimentalOnly.length > 0) {
+        family = experimentalOnly;
+      }
+    } else if (group[0].result.resultType === "between-arm" && group.length > 1) {
+      const occurrences = new Map<string, number>();
+      for (const outcome of group) {
+        for (const armId of outcome.armIds ?? []) {
+          occurrences.set(armId, (occurrences.get(armId) ?? 0) + 1);
+        }
+      }
+      anchorArmId = Array.from(occurrences.entries()).find(
+        ([, count]) => count > 1,
+      )?.[0];
+      if (anchorArmId) {
+        family = group.filter((outcome) =>
+          (outcome.armIds ?? []).includes(anchorArmId as string),
+        );
       }
     }
-    anchorArmId = Array.from(occurrences.entries()).find(
-      ([, count]) => count > 1,
-    )?.[0];
-    if (anchorArmId) {
-      family = group.filter((outcome) =>
-        (outcome.armIds ?? []).includes(anchorArmId as string),
-      );
-    }
-  }
 
-  const labelOf = (outcome: ClinicalOutcomeRecord): string => {
-    if (outcome.analysisGroupId) {
-      return groupLabelById.get(outcome.analysisGroupId) ?? outcome.analysisGroupId;
-    }
-    const armIds = (outcome.armIds ?? []).filter((armId) => armId !== anchorArmId);
-    return armIds.map((armId) => armLabelById.get(armId) ?? armId).join(" vs ");
+    const labelOf = (outcome: ClinicalOutcomeRecord): string => {
+      if (outcome.analysisGroupId) {
+        return (
+          groupLabelById.get(outcome.analysisGroupId) ?? outcome.analysisGroupId
+        );
+      }
+      const armIds = (outcome.armIds ?? []).filter(
+        (armId) => armId !== anchorArmId,
+      );
+      return armIds.map((armId) => armLabelById.get(armId) ?? armId).join(" vs ");
+    };
+
+    // Every Outcome of the family, in curated source order (dose-ascending, ADR-0040).
+    // Showing only the extremes would silently drop middle doses, leaving the cell
+    // disagreeing with the dose list in the Treatment column; each value carries its
+    // own unit and anchor, so no ordering or comparability is derived here.
+    return {
+      effectMeasure: family[0].result.effectMeasure,
+      comparatorLabel: anchorArmId ? armLabelById.get(anchorArmId) : undefined,
+      estimand: family[0].estimand,
+      analysisPopulation: family[0].analysisPopulation,
+      values: family.map((outcome) => ({
+        value: outcome.result.value,
+        unit: outcome.result.unit,
+        label: labelOf(outcome),
+      })),
+    };
   };
 
-  const toValue = (outcome: ClinicalOutcomeRecord): PrimaryFindingValueView => ({
-    value: outcome.result.value,
-    unit: outcome.result.unit,
-    label: labelOf(outcome),
-  });
-
-  // Every Outcome of the family, in curated source order (dose-ascending, ADR-0040).
-  // Showing only the extremes would silently drop middle doses, leaving the cell
-  // disagreeing with the dose list in the Treatment column; each value carries its own
-  // unit and anchor, so no ordering or comparability is derived here.
   return {
     endpointName: endpoint.name,
     assessmentTimepoint: endpoint.assessmentTimepoint,
     endpointRole: endpoint.role,
-    effectMeasure: family[0].result.effectMeasure,
-    comparatorLabel: anchorArmId ? armLabelById.get(anchorArmId) : undefined,
-    estimand: family[0].estimand,
-    analysisPopulation: family[0].analysisPopulation,
-    values: family.map(toValue),
+    groups: Array.from(comparisonGroups.values()).map(toGroupView),
   };
 }
 

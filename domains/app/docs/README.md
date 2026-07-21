@@ -68,13 +68,17 @@ JSON, and only these canonical selectors import that loader.
   that carries a recorded Outcome, then one comparison group and family within it,
   rendered as stored `result.value` text for stored anchors. A Study with no recorded
   Outcome renders an italic "Not reported".
-- When one endpoint is reported under several estimands and none is stored as the
-  Study's headline analysis, the view prefers the **treatment-policy camp** — treatment
-  policy, treatment-regimen, modified treatment-regimen, treatment — over efficacy,
-  hypothetical, and trial-product analyses. The estimand vocabulary is open, so an
-  unrecognised term is not demoted; it ranks with the alternatives and the group's size
-  then source order settle the choice. The cell always names the estimand and analysis
-  population it ended up showing, so the selection stays visible to the reader.
+- The read model returns **every comparison group** of the selected endpoint, in curated
+  source order, never merging groups that differ by analysis population, estimand, or
+  cohort, and never dropping one for being one too many to show. Comparison-group
+  boundaries come from the canonicalization shared with the validator
+  (`domains/clinical-evidence/lib/clinical-term-canonicalization.mjs`), so both sides
+  draw the same boundary.
+- **Showing at most three groups per row is a presentation policy of the Asset Clinical
+  Detail list alone**, not a data rule: the list renders the first three and reports the
+  remainder as `+N groups`. The Clinical Evidence contract and the validator do not know
+  this number, and another screen may show a different count. Each shown group names its
+  estimand and analysis population, so a reader can tell the analyses apart.
 - Missing optional values render through shared formatting; `N/A` is never
   stored in source data.
 - Outcome existence alone determines whether a Study has recorded results.
