@@ -126,7 +126,22 @@ function PrimaryFinding({ finding }: { finding: PrimaryFindingView | null }) {
 export function StudyTable({ studies }: { studies: StudySummaryView[] }) {
   return (
     <div className="overflow-x-auto rounded-md border border-border bg-card shadow-soft">
-      <table className="w-full min-w-[880px] border-collapse text-left text-sm">
+      {/*
+        Fixed layout, not auto: a Study with no acronym falls back to its full official
+        title, and under auto layout that one cell would take the width from every other
+        column — ASC30's Phase 1 title is ~200 characters. Fixed widths let long text
+        wrap inside its own cell instead, and give Primary finding, the column the reader
+        is actually here for, the largest share.
+      */}
+      <table className="w-full min-w-[1024px] table-fixed border-collapse text-left text-sm">
+        <colgroup>
+          <col className="w-[19%]" />
+          <col className="w-[7%]" />
+          <col className="w-[17%]" />
+          <col className="w-[14%]" />
+          <col className="w-[9%]" />
+          <col className="w-[34%]" />
+        </colgroup>
         <thead className="bg-muted/70 text-xs uppercase tracking-[0.12em] text-muted-foreground">
           <tr>
             <th className="px-4 py-2 font-semibold">Study</th>
@@ -137,35 +152,34 @@ export function StudyTable({ studies }: { studies: StudySummaryView[] }) {
             <th className="px-4 py-2 font-semibold">Primary finding</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-border align-top">
+        {/* Fixed widths mean a long unbroken token (a slash-joined titration schedule,
+            say) would otherwise overflow its column rather than wrap. */}
+        <tbody className="divide-y divide-border align-top [&_td]:break-words">
           {studies.map((study) => (
             <tr key={study.id}>
               <td className="px-4 py-3">
                 <Link
                   href={`/studies/${study.id}`}
                   className="font-semibold text-card-foreground hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                  title={study.acronym ? study.officialTitle : undefined}
+                  title={study.officialTitle}
                 >
-                  {study.title}
+                  {/* An unacronymed study shows its official title here, so clamp it:
+                      the full text stays available through the title attribute. */}
+                  <span className="line-clamp-3">{study.title}</span>
                 </Link>
                 <StudyMapping study={study} />
               </td>
-              <td className="whitespace-nowrap px-4 py-3 text-muted-foreground">
-                {study.phase}
-              </td>
-              <td
-                className="max-w-[260px] px-4 py-3 text-muted-foreground"
-                title={study.population}
-              >
+              <td className="px-4 py-3 text-muted-foreground">{study.phase}</td>
+              <td className="px-4 py-3 text-muted-foreground" title={study.population}>
                 <span className="line-clamp-3">{study.population}</span>
               </td>
-              <td className="max-w-[220px] px-4 py-3 text-muted-foreground">
+              <td className="px-4 py-3 text-muted-foreground">
                 <Treatment treatment={study.treatment} />
               </td>
               <td className="px-4 py-3 text-muted-foreground">
                 {formatNullableValue(study.duration)}
               </td>
-              <td className="max-w-[280px] px-4 py-3 text-muted-foreground">
+              <td className="px-4 py-3 text-muted-foreground">
                 <PrimaryFinding finding={study.primaryFinding} />
               </td>
             </tr>
