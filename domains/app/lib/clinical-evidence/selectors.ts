@@ -281,6 +281,37 @@ function toTreatmentView(study: ClinicalStudyRecord): StudyTreatmentView {
  * canonicalized forms — a casing variant merely splits a group, which the "largest
  * group" rule below absorbs deterministically.
  */
+/**
+ * Estimand strategies that count participants as randomised regardless of what they
+ * actually took. These are the analyses trials of this dataset register as their main
+ * one, so a Study reporting one endpoint under several estimands shows this camp.
+ *
+ * The estimand vocabulary is deliberately open (see the Clinical Evidence contract), so
+ * an unrecognised term is NOT demoted — it ranks with the alternatives and the existing
+ * size / source-order rules settle it. Matching is on the validator's canonical form:
+ * casing and punctuation folded, trailing "estimand" dropped.
+ */
+const treatmentPolicyEstimands = new Set([
+  "treatment policy",
+  "treatment regimen",
+  "modified treatment regimen",
+  "treatment",
+]);
+
+function canonicalEstimandOf(outcome: ClinicalOutcomeRecord): string {
+  return (outcome.estimand ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\s*estimand( population)?$/, "");
+}
+
+/** 0 = treatment-policy camp, 1 = everything else (efficacy, hypothetical, unlabelled). */
+function estimandRankOf(outcome: ClinicalOutcomeRecord): number {
+  return treatmentPolicyEstimands.has(canonicalEstimandOf(outcome)) ? 0 : 1;
+}
+
 function comparisonGroupKeyOf(outcome: ClinicalOutcomeRecord): string {
   return [
     outcome.result.resultType,
@@ -350,7 +381,19 @@ function toPrimaryFinding(study: ClinicalStudyRecord): PrimaryFindingView | null
   const betweenArmGroups = allGroups.filter(
     (group) => group[0].result.resultType === "between-arm",
   );
-  const pool = betweenArmGroups.length > 0 ? betweenArmGroups : allGroups;
+  const structuralPool =
+    betweenArmGroups.length > 0 ? betweenArmGroups : allGroups;
+  // Then the estimand camp: the same endpoint is often reported under both a
+  // treatment-policy/regimen analysis and an efficacy/hypothetical one, and nothing in
+  // the schema marks which is the Study's headline result. Preferring the
+  // treatment-policy camp makes that choice explicit instead of incidental; the cell
+  // always names the estimand it ended up showing.
+  const bestEstimandRank = Math.min(
+    ...structuralPool.map((group) => estimandRankOf(group[0])),
+  );
+  const pool = structuralPool.filter(
+    (group) => estimandRankOf(group[0]) === bestEstimandRank,
+  );
   const group = pool.reduce(
     (best, candidate) => (candidate.length > best.length ? candidate : best),
     pool[0],

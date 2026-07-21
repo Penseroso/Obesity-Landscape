@@ -68,6 +68,13 @@ JSON, and only these canonical selectors import that loader.
   that carries a recorded Outcome, then one comparison group and family within it,
   rendered as stored `result.value` text for stored anchors. A Study with no recorded
   Outcome renders an italic "Not reported".
+- When one endpoint is reported under several estimands and none is stored as the
+  Study's headline analysis, the view prefers the **treatment-policy camp** — treatment
+  policy, treatment-regimen, modified treatment-regimen, treatment — over efficacy,
+  hypothetical, and trial-product analyses. The estimand vocabulary is open, so an
+  unrecognised term is not demoted; it ranks with the alternatives and the group's size
+  then source order settle the choice. The cell always names the estimand and analysis
+  population it ended up showing, so the selection stays visible to the reader.
 - Missing optional values render through shared formatting; `N/A` is never
   stored in source data.
 - Outcome existence alone determines whether a Study has recorded results.
