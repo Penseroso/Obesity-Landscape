@@ -271,8 +271,22 @@ Rules by field.
   codes here — use `aliases`. `codeName` must **not equal** the canonical
   `assetName`; when the development code is itself the canonical name, leave
   `codeName` `null`.
-- **Mechanism** — only as published; `null` if not disclosed.
-- **Platform** — only as published; `null` if not disclosed.
+- **Mechanism** — only as published; `null` if not disclosed. The published
+  wording is stored verbatim and is never rewritten to a canonical form. Every
+  non-null value must additionally appear, character for character, in exactly
+  one `mechanisms` list in
+  [`mechanism-families.json`](../data/registries/mechanism-families.json); the
+  validator rejects an unmapped mechanism. Adding a new asset whose published
+  wording is new therefore means adding that wording to the family it belongs
+  to, or adding a family — never editing the asset's wording to fit.
+- **Mechanism family** — never authored on a program row. It is resolved from
+  the stored mechanism through the registry, so the family is a property of the
+  vocabulary, not of the row. A **regimen** is the one exception: it has no
+  `technical` block, so it carries an authored `mechanismFamilyId`, which must
+  name a `multi-component` family.
+- **Platform** — only as published; `null` if not disclosed. Platform and
+  modality (peptide, non-peptide, small molecule, antibody conjugate) are
+  auxiliary metadata and are **not** mechanism-family boundaries.
 - **Route** — only as published; do not infer.
 - **Dosage form** — only as published; do not infer.
 - **Dosing interval** — only as published; `null` if not disclosed.

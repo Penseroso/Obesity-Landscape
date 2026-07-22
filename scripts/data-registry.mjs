@@ -285,19 +285,98 @@ function validateRegistryEntries(entries, label, requireFamily) {
   validateUniqueRegistryText(entries, label);
 }
 
+const mechanismFamilyCompositions = new Set(["single-molecule", "multi-component"]);
+
+/**
+ * Mechanism-family registry. Its shape differs from the label/alias registries:
+ * a family is keyed by a normalized target + action set, and carries the exact
+ * `technical.mechanism` strings that resolve to it.
+ *
+ * Two properties matter downstream and are asserted here rather than left to a
+ * consumer: family ids are unique, and no mechanism string appears in two
+ * families. Without the second, a single asset could resolve to two families
+ * and appear twice on a comparison surface.
+ */
+function validateMechanismFamilyRegistry(entries, label) {
+  assert(Array.isArray(entries), `${label} registry must be an array`);
+
+  const ids = new Set();
+  const ranks = new Set();
+  const mechanismOwner = new Map();
+
+  for (const entry of entries) {
+    assert(isObject(entry), `${label} entries must be objects`);
+    assert(isNonEmptyString(entry.id), `${label} entry id is required`);
+    assert(isNonEmptyString(entry.label), `${label} entry ${entry.id} label is required`);
+    assert(!ids.has(entry.id), `${label} entry id ${entry.id} is duplicated`);
+    ids.add(entry.id);
+
+    assert(
+      mechanismFamilyCompositions.has(entry.composition),
+      `${label} entry ${entry.id} composition must be single-molecule or multi-component`,
+    );
+    assert(
+      Number.isFinite(entry.sortRank),
+      `${label} entry ${entry.id} sortRank is required`,
+    );
+    assert(!ranks.has(entry.sortRank), `${label} sortRank ${entry.sortRank} is duplicated`);
+    ranks.add(entry.sortRank);
+
+    assert(
+      Array.isArray(entry.targets) && entry.targets.length > 0,
+      `${label} entry ${entry.id} must list at least one target`,
+    );
+    for (const target of entry.targets) {
+      assert(
+        isObject(target) && isNonEmptyString(target.target) && isNonEmptyString(target.action),
+        `${label} entry ${entry.id} target entries require target and action`,
+      );
+    }
+
+    assert(
+      Array.isArray(entry.mechanisms),
+      `${label} entry ${entry.id} mechanisms must be an array`,
+    );
+    for (const mechanism of entry.mechanisms) {
+      assert(
+        isNonEmptyString(mechanism),
+        `${label} entry ${entry.id} has an empty mechanism string`,
+      );
+      const owner = mechanismOwner.get(mechanism);
+      assert(
+        !owner,
+        `${label} mechanism "${mechanism}" is claimed by both ${owner} and ${entry.id}`,
+      );
+      mechanismOwner.set(mechanism, entry.id);
+    }
+  }
+
+  return {
+    familyById: new Map(entries.map((entry) => [entry.id, entry])),
+    familyIdByMechanism: mechanismOwner,
+  };
+}
+
 function loadRegistries() {
   const stages = readJson(path.join(registryDir, "development-stages.json"));
   const regulatoryStates = readJson(path.join(registryDir, "regulatory-states.json"));
   const relationshipRoles = readJson(path.join(registryDir, "company-relationship-roles.json"));
+  const mechanismFamilies = readJson(path.join(registryDir, "mechanism-families.json"));
 
   validateRegistryEntries(stages, "development-stages", true);
   validateRegistryEntries(regulatoryStates, "regulatory-states", false);
   validateRegistryEntries(relationshipRoles, "company-relationship-roles", false);
+  const mechanismFamilyIndex = validateMechanismFamilyRegistry(
+    mechanismFamilies,
+    "mechanism-families",
+  );
 
   return {
     stageLabels: new Set(stages.map((stage) => stage.label)),
     regulatoryStateLabels: new Set(regulatoryStates.map((state) => state.label)),
     relationshipRoleLabels: new Set(relationshipRoles.map((role) => role.label)),
+    mechanismFamilyById: mechanismFamilyIndex.familyById,
+    mechanismFamilyIdByMechanism: mechanismFamilyIndex.familyIdByMechanism,
   };
 }
 
@@ -683,6 +762,15 @@ function validateProgram(program, context, registries, dataset) {
     program.technical.mechanism === null || isNonEmptyString(program.technical.mechanism),
     `${context}: invalid mechanism`,
   );
+  // Exhaustiveness: every disclosed mechanism must resolve to exactly one family
+  // in mechanism-families.json. Catching this here, rather than at render time,
+  // keeps an unmapped mechanism from silently changing how an asset is grouped
+  // on a comparison surface. A null mechanism is undisclosed, not unmapped.
+  assert(
+    program.technical.mechanism === null ||
+      registries.mechanismFamilyIdByMechanism.has(program.technical.mechanism),
+    `${context}: mechanism "${program.technical.mechanism}" is not mapped in mechanism-families.json`,
+  );
   assert(
     program.technical.platform === null || isNonEmptyString(program.technical.platform),
     `${context}: invalid platform`,
@@ -701,6 +789,19 @@ function validateRegimen(regimen, context, registries, dataset) {
   assert(isNonEmptyString(regimen.id), `${context}: regimen.id is required`);
   assert(isNonEmptyString(regimen.companyId), `${context}: regimen.companyId is required`);
   assert(isNonEmptyString(regimen.name), `${context}: regimen.name is required`);
+  if (regimen.mechanismFamilyId !== undefined) {
+    const family = registries.mechanismFamilyById.get(regimen.mechanismFamilyId);
+    assert(
+      family,
+      `${context}: mechanismFamilyId "${regimen.mechanismFamilyId}" is not in mechanism-families.json`,
+    );
+    // A regimen is two or more independently administered products by
+    // definition, so a single-molecule family would misdescribe it.
+    assert(
+      family.composition === "multi-component",
+      `${context}: mechanismFamilyId "${regimen.mechanismFamilyId}" is a ${family.composition} family; a regimen requires a multi-component family`,
+    );
+  }
   if (regimen.configurationKey !== undefined) {
     assert(
       isNonEmptyString(regimen.configurationKey),
@@ -2792,6 +2893,8 @@ function validateSyntheticFixtures() {
     ["duplicate-alias-value", /duplicates alias value/],
     ["invalid-status-operational-state", /is not allowed with status/],
     ["bad-internal-reference", /Use assetName or codeName with externalCompanyName/],
+    ["unmapped-mechanism", /is not mapped in mechanism-families\.json/],
+    ["single-molecule-regimen-family", /a regimen requires a multi-component family/],
     ["foreign-company-id", /Use externalCompanyName for another company/],
     ["mixed-company-identity", /companyId and externalCompanyName cannot both be used/],
   ];

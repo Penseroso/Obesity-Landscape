@@ -1,0 +1,291 @@
+[
+  {
+    "id": "glp1-agonist",
+    "label": "GLP-1 receptor agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "GLP-1R", "action": "agonist" }],
+    "sortRank": 10,
+    "mechanisms": [
+      "GLP-1 receptor agonist",
+      "GLP-1R agonist",
+      "Non-peptide GLP-1 receptor agonist"
+    ]
+  },
+  {
+    "id": "glp1-gip-agonist",
+    "label": "GLP-1 / GIP receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" }
+    ],
+    "sortRank": 20,
+    "mechanisms": [
+      "GIP and GLP-1 receptor agonist",
+      "GLP-1R/GIPR dual agonist"
+    ]
+  },
+  {
+    "id": "glp1-agonist-gip-antagonist",
+    "label": "GLP-1 receptor agonist / GIP receptor antagonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "antagonist" }
+    ],
+    "sortRank": 30,
+    "mechanisms": ["GLP-1R agonist/GIPR antagonist"]
+  },
+  {
+    "id": "glp1-glucagon-agonist",
+    "label": "GLP-1 / glucagon receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" }
+    ],
+    "sortRank": 40,
+    "mechanisms": ["GLP-1 and glucagon receptor agonist"]
+  },
+  {
+    "id": "glp1-gip-glucagon-agonist",
+    "label": "GLP-1 / GIP / glucagon receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" }
+    ],
+    "sortRank": 50,
+    "mechanisms": [
+      "GIP, GLP-1, and glucagon receptor agonist",
+      "GLP-1/GIP/glucagon receptor triple agonist",
+      "GLP-1R/GIPR/GCGR triple agonist"
+    ]
+  },
+  {
+    "id": "glp1-glp2-agonist",
+    "label": "GLP-1 / GLP-2 receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GLP-2R", "action": "agonist" }
+    ],
+    "sortRank": 60,
+    "mechanisms": ["GLP-1R/GLP-2R dual agonist"]
+  },
+  {
+    "id": "gip-agonist",
+    "label": "GIP receptor agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "GIPR", "action": "agonist" }],
+    "sortRank": 70,
+    "mechanisms": ["GIP receptor agonist", "Long-acting GIP receptor agonist"]
+  },
+  {
+    "id": "amylin-agonist",
+    "label": "Amylin receptor agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "Amylin receptor", "action": "agonist" }],
+    "sortRank": 80,
+    "mechanisms": [
+      "Amylin receptor agonist",
+      "Amylin-selective amylin receptor agonist",
+      "Long-acting amylin analog",
+      "Selective, long-acting amylin receptor agonist"
+    ]
+  },
+  {
+    "id": "amylin-calcitonin-agonist",
+    "label": "Amylin / calcitonin receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "Amylin receptor", "action": "agonist" },
+      { "target": "Calcitonin receptor", "action": "agonist" }
+    ],
+    "sortRank": 90,
+    "mechanisms": ["Dual amylin and calcitonin receptor agonist"]
+  },
+  {
+    "id": "glp1-amylin-agonist",
+    "label": "GLP-1 / amylin receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "Amylin receptor", "action": "agonist" }
+    ],
+    "sortRank": 100,
+    "mechanisms": ["Unimolecular GLP-1 and amylin receptor agonist"]
+  },
+  {
+    "id": "glp1-gip-amylin-agonist",
+    "label": "GLP-1 / GIP / amylin receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "Amylin receptor", "action": "agonist" }
+    ],
+    "sortRank": 110,
+    "mechanisms": ["GLP-1/GIP/amylin receptor agonist"]
+  },
+  {
+    "id": "amylin-plus-glp1-combination",
+    "label": "Amylin receptor agonist plus GLP-1 receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "Amylin receptor", "action": "agonist" },
+      { "target": "GLP-1R", "action": "agonist" }
+    ],
+    "sortRank": 200,
+    "mechanisms": [
+      "Long-acting amylin analog plus GLP-1 receptor agonist",
+      "GLP-1R agonist plus amylin receptor agonist"
+    ]
+  },
+  {
+    "id": "amylin-plus-glp1-gip-combination",
+    "label": "Amylin receptor agonist plus GLP-1 / GIP receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "Amylin receptor", "action": "agonist" },
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" }
+    ],
+    "sortRank": 210,
+    "mechanisms": [
+      "Amylin analog plus GLP-1/GIP receptor dual agonist",
+      "Amylin receptor agonist plus GLP-1R/GIPR dual agonist"
+    ]
+  },
+  {
+    "id": "amylin-plus-glp1-gip-glucagon-combination",
+    "label": "Amylin receptor agonist plus GLP-1 / GIP / glucagon receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "Amylin receptor", "action": "agonist" },
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" }
+    ],
+    "sortRank": 220,
+    "mechanisms": [
+      "Amylin receptor agonist plus GLP-1R/GIPR/GCGR triple agonist"
+    ]
+  },
+  {
+    "id": "amylin-plus-gip-combination",
+    "label": "Amylin receptor agonist plus GIP receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "Amylin receptor", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" }
+    ],
+    "sortRank": 230,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-plus-gip-combination",
+    "label": "GLP-1 receptor agonist plus GIP receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" }
+    ],
+    "sortRank": 240,
+    "mechanisms": ["GLP-1R agonist plus GIPR agonist"]
+  },
+  {
+    "id": "glp1-plus-basal-insulin-combination",
+    "label": "GLP-1 receptor agonist plus basal insulin",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "Insulin receptor", "action": "agonist" }
+    ],
+    "sortRank": 250,
+    "mechanisms": ["Insulin icodec plus GLP-1 receptor agonist"]
+  },
+  {
+    "id": "glp1-plus-thr-beta-combination",
+    "label": "GLP-1 receptor agonist plus THR-beta agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "THR-beta", "action": "agonist" }
+    ],
+    "sortRank": 260,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-gip-plus-thr-beta-combination",
+    "label": "GLP-1 / GIP receptor agonist plus THR-beta agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "THR-beta", "action": "agonist" }
+    ],
+    "sortRank": 270,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-plus-activin-receptor-combination",
+    "label": "GLP-1 receptor agonist plus activin type II receptor antibody",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "Activin type II receptor", "action": "antibody blockade" }
+    ],
+    "sortRank": 280,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-gip-plus-activin-receptor-combination",
+    "label": "GLP-1 / GIP receptor agonist plus activin type II receptor antibody",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "Activin type II receptor", "action": "antibody blockade" }
+    ],
+    "sortRank": 290,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-gip-plus-leptin-receptor-combination",
+    "label": "GLP-1 / GIP receptor agonist plus leptin receptor agonist antibody",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "Leptin receptor", "action": "agonist" }
+    ],
+    "sortRank": 300,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-gip-plus-il17a-combination",
+    "label": "GLP-1 / GIP receptor agonist plus IL-17A antagonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "IL-17A", "action": "antagonist" }
+    ],
+    "sortRank": 310,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-gip-plus-il23-combination",
+    "label": "GLP-1 / GIP receptor agonist plus IL-23p19 antagonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "IL-23p19", "action": "antagonist" }
+    ],
+    "sortRank": 320,
+    "mechanisms": []
+  }
+]

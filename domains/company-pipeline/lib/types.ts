@@ -130,6 +130,18 @@ export type RegimenRecord = {
   companyId: string;
   name: string;
   configurationKey?: string;
+  /**
+   * Authored mechanism-family id from `mechanism-families.json`.
+   *
+   * A Regimen carries no `technical.mechanism` of its own - only free-text
+   * component `role`s, which must never be parsed to derive pharmacology. The
+   * family is therefore assigned explicitly here, and must name a
+   * `multi-component` family because a regimen is by definition more than one
+   * independently administered product. Absent means unassigned: such a regimen
+   * is dispositioned as a coverage gap on comparison surfaces, never bucketed
+   * into an "other" family.
+   */
+  mechanismFamilyId?: string;
   components: ComponentReference[];
   indications: string[];
   development: DevelopmentProfile;

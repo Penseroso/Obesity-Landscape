@@ -3,6 +3,7 @@
     "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Bimagrumab plus semaglutide for obesity or overweight",
+    "mechanismFamilyId": "glp1-plus-activin-receptor-combination",
     "components": [
       { "assetName": "Bimagrumab", "codeName": "LY3985863", "role": "activin type II receptor antibody" },
       { "assetName": "Semaglutide", "externalCompanyName": "Novo Nordisk A/S", "role": "GLP-1 receptor agonist" }
@@ -29,6 +30,7 @@
     "id": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Bimagrumab plus tirzepatide for obesity or overweight",
+    "mechanismFamilyId": "glp1-gip-plus-activin-receptor-combination",
     "components": [
       { "assetName": "Bimagrumab", "codeName": "LY3985863", "role": "activin type II receptor antibody" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
@@ -55,6 +57,7 @@
     "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Macupatide plus eloralintide for obesity or overweight",
+    "mechanismFamilyId": "amylin-plus-gip-combination",
     "components": [
       { "assetId": "ly3532226", "role": "GIP receptor agonist" },
       { "assetId": "ly3841136", "role": "amylin receptor agonist" }
@@ -89,6 +92,7 @@
     "id": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Eloralintide plus tirzepatide for obesity or overweight",
+    "mechanismFamilyId": "amylin-plus-glp1-gip-combination",
     "components": [
       { "assetId": "ly3841136", "role": "amylin receptor agonist" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
@@ -117,6 +121,7 @@
     "id": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Mibavademab plus tirzepatide for obesity",
+    "mechanismFamilyId": "glp1-gip-plus-leptin-receptor-combination",
     "components": [
       { "assetName": "Mibavademab", "codeName": "REGN4461", "externalCompanyName": "Regeneron Pharmaceuticals, Inc.", "role": "leptin receptor agonist antibody" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
@@ -152,6 +157,7 @@
     "id": "eli-lilly-and-company-ixekizumab-tirzepatide-plaque-psoriasis-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Ixekizumab plus tirzepatide for plaque psoriasis with obesity",
+    "mechanismFamilyId": "glp1-gip-plus-il17a-combination",
     "components": [
       { "assetName": "Ixekizumab", "codeName": "LY2439821", "role": "IL-17A antagonist" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
@@ -178,6 +184,7 @@
     "id": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Ixekizumab plus tirzepatide for psoriatic arthritis with obesity",
+    "mechanismFamilyId": "glp1-gip-plus-il17a-combination",
     "components": [
       { "assetName": "Ixekizumab", "codeName": "LY2439821", "role": "IL-17A antagonist" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
@@ -204,6 +211,7 @@
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Mirikizumab plus tirzepatide for ulcerative colitis with obesity",
+    "mechanismFamilyId": "glp1-gip-plus-il23-combination",
     "components": [
       { "assetName": "Mirikizumab", "codeName": "LY3074828", "role": "IL-23p19 antagonist" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
@@ -230,6 +238,7 @@
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Mirikizumab plus tirzepatide for Crohn's disease with obesity",
+    "mechanismFamilyId": "glp1-gip-plus-il23-combination",
     "components": [
       { "assetName": "Mirikizumab", "codeName": "LY3074828", "role": "IL-23p19 antagonist" },
       { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }

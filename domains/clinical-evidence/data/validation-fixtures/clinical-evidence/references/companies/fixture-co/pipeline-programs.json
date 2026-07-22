@@ -6,7 +6,7 @@
     "assetName": "Fixture Asset",
     "codeName": "FIX-001",
     "technical": {
-      "mechanism": "Synthetic incretin analog",
+      "mechanism": "GLP-1 receptor agonist",
       "platform": null
     },
     "administration": {
@@ -41,7 +41,7 @@
     "assetName": "Fixture Asset 2",
     "codeName": "FIX-002",
     "technical": {
-      "mechanism": "Synthetic incretin analog",
+      "mechanism": "GLP-1 receptor agonist",
       "platform": null
     },
     "administration": {

@@ -1,4 +1,5 @@
 import developmentStageRegistry from "@/domains/company-pipeline/data/registries/development-stages.json";
+import mechanismFamilyRegistry from "@/domains/company-pipeline/data/registries/mechanism-families.json";
 import assetAliasTypeSource from "./asset-alias-types.json";
 import type { AssetAliasType } from "./types";
 
@@ -35,6 +36,82 @@ export const developmentStatuses = [
  * and the `scripts/data-registry.mjs` validator share one source of truth.
  */
 export const assetAliasTypes = assetAliasTypeSource as readonly AssetAliasType[];
+
+/**
+ * Mechanism-family registry entry.
+ *
+ * Families are defined by the normalized **target + pharmacologic action**
+ * combination, never by formulation, route, dosage form, or molecular modality.
+ * Peptide and non-peptide GLP-1 receptor agonists therefore share one family;
+ * they are distinguished, when needed, by `technical.platform` and the
+ * administration profile, which stay auxiliary metadata.
+ *
+ * `composition` keeps a single molecule acting on several targets separate from
+ * a product built out of several components, even when their target sets are
+ * identical. Retatrutide (one molecule, three targets) and a co-formulated
+ * amylin-plus-incretin product are never merged.
+ */
+export type MechanismFamilyComposition = "single-molecule" | "multi-component";
+
+export type MechanismFamilyTarget = {
+  target: string;
+  action: string;
+};
+
+export type MechanismFamilyRegistryEntry = {
+  id: string;
+  label: string;
+  composition: MechanismFamilyComposition;
+  targets: MechanismFamilyTarget[];
+  sortRank: number;
+  /**
+   * Exact `technical.mechanism` strings that resolve to this family. Matching is
+   * exact-string only: the stored free text is never parsed, lowercased, or
+   * substring-matched, because "GLP-1R agonist" and "GLP-1R agonist/GIPR
+   * antagonist" share a prefix but are different pharmacology.
+   *
+   * Empty for a family that only regimens reach, since a Regimen carries no
+   * mechanism string of its own (see `RegimenRecord.mechanismFamilyId`).
+   */
+  mechanisms: string[];
+};
+
+const mechanismFamilyEntries =
+  mechanismFamilyRegistry as MechanismFamilyRegistryEntry[];
+
+/** Registry order for display: authored `sortRank`, never a data-derived order. */
+export const mechanismFamilies = mechanismFamilyEntries
+  .slice()
+  .sort((a, b) => a.sortRank - b.sortRank || a.label.localeCompare(b.label));
+
+export const mechanismFamilyById = new Map(
+  mechanismFamilyEntries.map((family) => [family.id, family]),
+);
+
+const mechanismFamilyIdByMechanism = new Map(
+  mechanismFamilyEntries.flatMap((family) =>
+    family.mechanisms.map((mechanism) => [mechanism, family.id] as const),
+  ),
+);
+
+/**
+ * Resolves a stored `technical.mechanism` to its family id.
+ *
+ * Throws rather than returning an "other" bucket: an unmapped mechanism means
+ * the registry is out of date, and silently grouping it would put an asset in
+ * the wrong pharmacologic company on a comparison surface. The validator makes
+ * the same assertion over the whole dataset, so this should be unreachable in a
+ * validated build.
+ */
+export function getMechanismFamilyId(mechanism: string): string {
+  const familyId = mechanismFamilyIdByMechanism.get(mechanism);
+  if (!familyId) {
+    throw new Error(
+      `Mechanism "${mechanism}" is not mapped to any entry in mechanism-families.json`,
+    );
+  }
+  return familyId;
+}
 
 export const developmentStageRank = Object.fromEntries(
   stageRegistry.map((stage) => [stage.label, stage.sortRank]),

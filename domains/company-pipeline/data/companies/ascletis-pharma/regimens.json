@@ -3,6 +3,7 @@
     "id": "ascletis-pharma-asc47-asc35-combination",
     "companyId": "ascletis-pharma",
     "name": "ASC47 plus ASC35 combination",
+    "mechanismFamilyId": "glp1-gip-plus-thr-beta-combination",
     "components": [
       {
         "codeName": "ASC47",
@@ -40,6 +41,7 @@
     "id": "ascletis-pharma-asc31-asc47-combination",
     "companyId": "ascletis-pharma",
     "name": "ASC31 plus ASC47 combination",
+    "mechanismFamilyId": "glp1-gip-plus-thr-beta-combination",
     "components": [
       {
         "assetId": "asc31",
@@ -83,6 +85,7 @@
     "id": "ascletis-pharma-asc47-semaglutide-combination",
     "companyId": "ascletis-pharma",
     "name": "ASC47 plus semaglutide combination",
+    "mechanismFamilyId": "glp1-plus-thr-beta-combination",
     "components": [
       {
         "codeName": "ASC47",
