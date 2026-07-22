@@ -231,30 +231,30 @@
   },
   {
     "id": "glp1-plus-activin-receptor-combination",
-    "label": "GLP-1 receptor agonist plus activin type II receptor antibody",
+    "label": "GLP-1 receptor agonist plus activin type II receptor blockade",
     "composition": "multi-component",
     "targets": [
       { "target": "GLP-1R", "action": "agonist" },
-      { "target": "Activin type II receptor", "action": "antibody blockade" }
+      { "target": "Activin type II receptor", "action": "blockade" }
     ],
     "sortRank": 280,
     "mechanisms": []
   },
   {
     "id": "glp1-gip-plus-activin-receptor-combination",
-    "label": "GLP-1 / GIP receptor agonist plus activin type II receptor antibody",
+    "label": "GLP-1 / GIP receptor agonist plus activin type II receptor blockade",
     "composition": "multi-component",
     "targets": [
       { "target": "GLP-1R", "action": "agonist" },
       { "target": "GIPR", "action": "agonist" },
-      { "target": "Activin type II receptor", "action": "antibody blockade" }
+      { "target": "Activin type II receptor", "action": "blockade" }
     ],
     "sortRank": 290,
     "mechanisms": []
   },
   {
     "id": "glp1-gip-plus-leptin-receptor-combination",
-    "label": "GLP-1 / GIP receptor agonist plus leptin receptor agonist antibody",
+    "label": "GLP-1 / GIP receptor agonist plus leptin receptor agonist",
     "composition": "multi-component",
     "targets": [
       { "target": "GLP-1R", "action": "agonist" },

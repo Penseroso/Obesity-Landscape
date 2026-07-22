@@ -48,8 +48,9 @@ export const assetAliasTypes = assetAliasTypeSource as readonly AssetAliasType[]
  *
  * `composition` keeps a single molecule acting on several targets separate from
  * a product built out of several components, even when their target sets are
- * identical. Retatrutide (one molecule, three targets) and a co-formulated
- * amylin-plus-incretin product are never merged.
+ * identical. Zenagamtide (one molecule reaching GLP-1R and the amylin receptor)
+ * and CagriSema (cagrilintide plus semaglutide, reaching the same two) are never
+ * merged: a reader comparing them is comparing different things.
  */
 export type MechanismFamilyComposition = "single-molecule" | "multi-component";
 
@@ -99,7 +100,7 @@ const mechanismFamilyIdByMechanism = new Map(
  *
  * Throws rather than returning an "other" bucket: an unmapped mechanism means
  * the registry is out of date, and silently grouping it would put an asset in
- * the wrong pharmacologic company on a comparison surface. The validator makes
+ * the wrong pharmacologic family on a comparison surface. The validator makes
  * the same assertion over the whole dataset, so this should be unreachable in a
  * validated build.
  */

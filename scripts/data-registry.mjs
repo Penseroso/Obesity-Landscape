@@ -288,14 +288,34 @@ function validateRegistryEntries(entries, label, requireFamily) {
 const mechanismFamilyCompositions = new Set(["single-molecule", "multi-component"]);
 
 /**
+ * A family's pharmacology, reduced to a comparable key: its composition plus its
+ * target/action pairs, normalized and sorted so authoring order and casing
+ * cannot make two identical families look different.
+ *
+ * This is the identity that matters downstream. Two entries with different ids
+ * but the same signature would split one pharmacologic class across two rows of
+ * a comparison surface, which is the failure this key exists to catch.
+ */
+function getMechanismFamilySignature(entry) {
+  const pairs = entry.targets.map(
+    (target) => `${normalize(target.target)}|${normalize(target.action)}`,
+  );
+  return `${entry.composition}::${sortedStrings(pairs).join(" + ")}`;
+}
+
+/**
  * Mechanism-family registry. Its shape differs from the label/alias registries:
  * a family is keyed by a normalized target + action set, and carries the exact
  * `technical.mechanism` strings that resolve to it.
  *
- * Two properties matter downstream and are asserted here rather than left to a
- * consumer: family ids are unique, and no mechanism string appears in two
- * families. Without the second, a single asset could resolve to two families
- * and appear twice on a comparison surface.
+ * Four properties are asserted here rather than left to a consumer:
+ *
+ * - family ids, sortRanks, and normalized labels are unique;
+ * - no mechanism string appears in two families, so an asset can never resolve
+ *   to two families and render twice;
+ * - a family does not repeat a target/action pair within itself;
+ * - no two families share a semantic signature, so the same pharmacology cannot
+ *   be expressed under two ids.
  */
 function validateMechanismFamilyRegistry(entries, label) {
   assert(Array.isArray(entries), `${label} registry must be an array`);
@@ -303,6 +323,8 @@ function validateMechanismFamilyRegistry(entries, label) {
   const ids = new Set();
   const ranks = new Set();
   const mechanismOwner = new Map();
+  const labelOwner = new Map();
+  const signatureOwner = new Map();
 
   for (const entry of entries) {
     assert(isObject(entry), `${label} entries must be objects`);
@@ -310,6 +332,14 @@ function validateMechanismFamilyRegistry(entries, label) {
     assert(isNonEmptyString(entry.label), `${label} entry ${entry.id} label is required`);
     assert(!ids.has(entry.id), `${label} entry id ${entry.id} is duplicated`);
     ids.add(entry.id);
+
+    const labelKey = normalize(entry.label);
+    const labelHolder = labelOwner.get(labelKey);
+    assert(
+      !labelHolder,
+      `${label} label "${entry.label}" is duplicated by ${labelHolder} and ${entry.id}`,
+    );
+    labelOwner.set(labelKey, entry.id);
 
     assert(
       mechanismFamilyCompositions.has(entry.composition),
@@ -326,12 +356,27 @@ function validateMechanismFamilyRegistry(entries, label) {
       Array.isArray(entry.targets) && entry.targets.length > 0,
       `${label} entry ${entry.id} must list at least one target`,
     );
+    const targetPairs = new Set();
     for (const target of entry.targets) {
       assert(
         isObject(target) && isNonEmptyString(target.target) && isNonEmptyString(target.action),
         `${label} entry ${entry.id} target entries require target and action`,
       );
+      const pairKey = `${normalize(target.target)}|${normalize(target.action)}`;
+      assert(
+        !targetPairs.has(pairKey),
+        `${label} entry ${entry.id} repeats target/action pair "${target.target} ${target.action}"`,
+      );
+      targetPairs.add(pairKey);
     }
+
+    const signature = getMechanismFamilySignature(entry);
+    const signatureHolder = signatureOwner.get(signature);
+    assert(
+      !signatureHolder,
+      `${label} entries ${signatureHolder} and ${entry.id} describe the same pharmacology (${signature})`,
+    );
+    signatureOwner.set(signature, entry.id);
 
     assert(
       Array.isArray(entry.mechanisms),
@@ -355,6 +400,97 @@ function validateMechanismFamilyRegistry(entries, label) {
     familyById: new Map(entries.map((entry) => [entry.id, entry])),
     familyIdByMechanism: mechanismOwner,
   };
+}
+
+/**
+ * Deterministic probe for the mechanism-family registry rules.
+ *
+ * The semantic-uniqueness rules cannot be expressed as a synthetic company-data
+ * fixture: they constrain the registry itself, which the fixture loader reads
+ * from the real path. So the probe mutates an in-memory copy of the live
+ * registry and asserts each rule rejects it, proving the guard is wired rather
+ * than merely present.
+ */
+function probeMechanismFamilyRegistry() {
+  const registryPath = path.join(registryDir, "mechanism-families.json");
+  const live = readJson(registryPath);
+
+  validateMechanismFamilyRegistry(live, "mechanism-families");
+
+  const cases = [
+    {
+      name: "duplicate target/action pair within one family",
+      expected: /repeats target\/action pair/,
+      mutate: (entries) => {
+        entries[0].targets = [...entries[0].targets, { ...entries[0].targets[0] }];
+      },
+    },
+    {
+      name: "two ids describing the same pharmacology",
+      expected: /describe the same pharmacology/,
+      mutate: (entries) => {
+        entries[1].targets = entries[0].targets.map((target) => ({ ...target }));
+        entries[1].composition = entries[0].composition;
+      },
+    },
+    {
+      name: "same pharmacology reached by reordered, differently cased targets",
+      expected: /describe the same pharmacology/,
+      mutate: (entries) => {
+        const source = entries.find((entry) => entry.targets.length > 1);
+        const twin = entries.find(
+          (entry) => entry.id !== source.id && entry.composition === source.composition,
+        );
+        twin.targets = source.targets
+          .map((target) => ({
+            target: target.target.toUpperCase(),
+            action: `  ${target.action.toUpperCase()}  `,
+          }))
+          .reverse();
+      },
+    },
+    {
+      name: "duplicate normalized label",
+      expected: /label .* is duplicated/,
+      mutate: (entries) => {
+        entries[1].label = `  ${entries[0].label.toUpperCase()}  `;
+      },
+    },
+    {
+      name: "mechanism string claimed by two families",
+      expected: /is claimed by both/,
+      mutate: (entries) => {
+        const source = entries.find((entry) => entry.mechanisms.length > 0);
+        const other = entries.find(
+          (entry) => entry.id !== source.id && entry.mechanisms.length > 0,
+        );
+        other.mechanisms = [...other.mechanisms, source.mechanisms[0]];
+      },
+    },
+  ];
+
+  for (const testCase of cases) {
+    const mutated = JSON.parse(JSON.stringify(live));
+    testCase.mutate(mutated);
+
+    let rejected = false;
+    try {
+      validateMechanismFamilyRegistry(mutated, "mechanism-families");
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      assert(
+        testCase.expected.test(message),
+        `probe "${testCase.name}" was rejected for the wrong reason: ${message}`,
+      );
+      rejected = true;
+    }
+    assert(rejected, `probe "${testCase.name}" was accepted but must be rejected`);
+  }
+
+  const signatures = live.map((entry) => getMechanismFamilySignature(entry));
+  console.log(
+    `Probed mechanism-family registry: ${live.length} families, ${signatures.length} distinct semantic signatures, ${cases.length} rejection rules verified.`,
+  );
 }
 
 function loadRegistries() {
@@ -2946,6 +3082,9 @@ try {
       break;
     case "validate:synthetic":
       validateSyntheticFixtures();
+      break;
+    case "probe:mechanism-families":
+      probeMechanismFamilyRegistry();
       break;
     case "generate":
       generateAggregates();

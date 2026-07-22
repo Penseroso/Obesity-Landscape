@@ -115,6 +115,18 @@ family even though the modality differs.
 
 - Resolution is **exact-string lookup** on the stored `technical.mechanism`. The
   free text is never parsed, normalized, or substring-matched.
+- A family's identity is its **semantic signature**: `composition` plus its
+  normalized, sorted target/action pairs. The validator rejects two ids that
+  carry the same signature, a family that repeats a target/action pair, and two
+  families whose normalized labels collide — so one pharmacologic class cannot be
+  split across two families by reordered, differently cased, or duplicated
+  target entries. `npm run data:probe:mechanism-families` verifies each of those
+  rejections against mutated copies of the live registry.
+- **Modality never enters family identity.** Antibody, peptide, non-peptide, and
+  small-molecule are recorded in the component `role` text and in
+  `technical.platform`, never in a family `label` or in a target `action`. An
+  antibody that blocks a receptor is recorded as `blockade`, not as
+  `antibody blockade`.
 - `composition` separates a **single molecule acting on several targets** from a
   **product built from several components**, and the two are never merged even
   when their target sets are identical. Zenagamtide (unimolecular GLP-1 plus
