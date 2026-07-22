@@ -290,7 +290,7 @@ function toTreatmentView(study: ClinicalStudyRecord): StudyTreatmentView {
  * canonicalization the validator uses**: both must draw the same group boundary, or a
  * casing or hyphenation variant would split a group here that the validator treats as one.
  */
-function comparisonGroupKeyOf(outcome: ClinicalOutcomeRecord): string {
+export function comparisonGroupKeyOf(outcome: ClinicalOutcomeRecord): string {
   return [
     outcome.result.resultType,
     canonicalizeClinicalAnalysisPopulation(outcome.analysisPopulation),
