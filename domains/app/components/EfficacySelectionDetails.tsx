@@ -4,13 +4,15 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { FocusEvent } from "react";
 
 type EfficacySelectionDetailsProps = {
-  unitName: string;
   rationale: string[];
   facts: { label: string; value: string }[];
 };
 
 /**
- * Auxiliary disclosure for one comparison row.
+ * Auxiliary **disclosure** for one comparison row — a button that toggles a panel of
+ * supplementary detail, not a modal dialog. It carries `aria-expanded`/`aria-controls`
+ * and no dialog role or focus trap, because it neither demands a response nor removes
+ * the rest of the page from interaction.
  *
  * Deliberately **not** the only path to anything it shows: the row already renders
  * every fact needed to read its numbers, and links to the Study. This adds the
@@ -22,11 +24,10 @@ type EfficacySelectionDetailsProps = {
  * same interaction. There is deliberately no open-on-focus and no open-on-hover: a
  * touch tap fires focus *and* click together, and a mouse click is preceded by a
  * pointer-enter, so letting either also open would race the toggle and flicker the
- * panel shut. The popover closes when focus leaves the component, on Escape (returning
+ * panel shut. The panel closes when focus leaves the component, on Escape (returning
  * focus to the trigger), and on a pointer-down outside it.
  */
 export function EfficacySelectionDetails({
-  unitName,
   rationale,
   facts,
 }: EfficacySelectionDetailsProps) {
@@ -77,7 +78,6 @@ export function EfficacySelectionDetails({
         ref={buttonRef}
         type="button"
         onClick={() => setOpen((value) => !value)}
-        aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={open ? panelId : undefined}
         className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -89,8 +89,6 @@ export function EfficacySelectionDetails({
       {open ? (
         <div
           id={panelId}
-          role="dialog"
-          aria-label={`How the representative result was selected for ${unitName}`}
           className="absolute right-0 z-20 mt-2 w-[min(26rem,calc(100vw-2.5rem))] rounded-md border border-border bg-card p-3 text-left shadow-soft"
         >
           <p className="text-sm font-semibold text-card-foreground">

@@ -7,7 +7,10 @@ import type {
   EfficacyComparisonView,
   EfficacyCoverageGap,
 } from "@/domains/app/lib/efficacy-comparison/read-model";
-import type { HeadToHeadPair } from "@/domains/app/lib/efficacy-comparison/head-to-head";
+import type {
+  ComparisonEntity,
+  HeadToHeadPair,
+} from "@/domains/app/lib/efficacy-comparison/head-to-head";
 
 type EfficacyComparisonProps = {
   view: EfficacyComparisonView;
@@ -69,6 +72,36 @@ function ValueList({
 }
 
 /**
+ * A single head-to-head entity. A registry-resolved entity links to its Asset Detail
+ * route; an unresolved external comparator is deliberately not a link — there is no
+ * page to point it at — and is flagged so its status is not mistaken for a missing
+ * link. A resolved regimen has no detail route today and renders as plain text.
+ */
+function HeadToHeadEntity({ entity }: { entity: ComparisonEntity }) {
+  if (entity.companyId && entity.assetId) {
+    return (
+      <Link
+        href={`/assets/${entity.companyId}/${entity.assetId}`}
+        className={`rounded-sm hover:text-primary hover:underline ${focusRing}`}
+      >
+        {entity.label}
+      </Link>
+    );
+  }
+  if (entity.unresolved) {
+    return (
+      <span>
+        {entity.label}
+        <span className="ml-1 rounded border border-border px-1 text-[10px] font-normal uppercase tracking-wide text-muted-foreground">
+          external
+        </span>
+      </span>
+    );
+  }
+  return <span>{entity.label}</span>;
+}
+
+/**
  * One direct head-to-head pair. Kept structurally separate from a cross-trial row:
  * this is a within-trial comparison the source actually reported, not two rows placed
  * side by side. Its evidence is whatever proved the pair — a stored between-arm
@@ -78,8 +111,9 @@ function HeadToHeadEntry({ pair }: { pair: HeadToHeadPair }) {
   return (
     <li className="border-t border-border px-5 py-4 first:border-t-0">
       <h3 className="text-base font-semibold text-card-foreground">
-        {pair.left.label} <span className="text-muted-foreground">vs</span>{" "}
-        {pair.right.label}
+        <HeadToHeadEntity entity={pair.left} />{" "}
+        <span className="text-muted-foreground">vs</span>{" "}
+        <HeadToHeadEntity entity={pair.right} />
       </h3>
       <div className="mt-2">
         {pair.evidence.kind === "between-arm" ? (
@@ -136,12 +170,16 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
             )}
           </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            {row.companyName}
+            <Link
+              href={`/companies/${row.companyId}`}
+              className={`rounded-sm hover:text-primary hover:underline ${focusRing}`}
+            >
+              {row.companyName}
+            </Link>
             {row.mechanism ? <> &middot; {row.mechanism}</> : null}
           </p>
         </div>
         <EfficacySelectionDetails
-          unitName={row.name}
           rationale={evidence.selectionRationale}
           facts={[
             { label: "Study", value: evidence.studyTitle },

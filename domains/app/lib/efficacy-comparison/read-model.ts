@@ -43,6 +43,8 @@ export type EfficacyComparisonRow = {
   unitKind: EfficacyUnitKind;
   name: string;
   companyName: string;
+  /** Company slug for the `/companies/[companyId]` route. Display join only. */
+  companyId: string;
   /** Stored `technical.mechanism`, verbatim. Null for a regimen. */
   mechanism: string | null;
   /** Asset route; regimens have no detail route today. */
@@ -206,6 +208,7 @@ export function getEfficacyComparison(): EfficacyComparisonView {
       unitKind: unit.unitKind,
       name: display.name,
       companyName: display.companyName,
+      companyId: unit.companyId,
       mechanism: display.mechanism,
       href,
       evidence: selectRepresentative(candidates, detailByStudyId),

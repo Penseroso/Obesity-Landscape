@@ -141,8 +141,11 @@ shared `comparisonGroupKeyOf` primitive.
 - Rows are ordered by registry `sortRank` and curated order, **never by magnitude**;
   the page states that its rows are separate trials and not a ranking.
 - **Disclosure**: every fact needed to read a row renders inline, and every row
-  links to its Study. The hover/focus popover is auxiliary — it adds the selection
-  rationale only, and the page stays fully usable without it.
+  links to its Study, its company, and — in the head-to-head list — each
+  registry-resolved entity (an unresolved external comparator is flagged, not linked).
+  The selection-rationale disclosure is auxiliary: a button toggled by click, tap,
+  Enter, or Space (never hover or focus alone), with disclosure semantics rather than a
+  dialog. It adds the rationale only, and the page stays fully usable without it.
 
 ## Change boundary
 
