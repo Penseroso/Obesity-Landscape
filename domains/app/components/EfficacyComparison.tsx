@@ -48,12 +48,23 @@ function phaseBadgeClass(phase: string): string {
 /**
  * Compact form of a mechanism-family label for the jump-nav chips, where the full
  * pharmacology name ("GLP-1 / GIP receptor agonist") is too long. Deterministic
- * string compression, not a second authored label: "receptor agonist" → "RA" (the
- * conventional abbreviation, e.g. GLP-1RA), antagonist/blockade and "plus" shortened
- * likewise. The full label still heads each section.
+ * string compression, not a second authored label; the full label still heads each
+ * section and rides on the chip's `title`.
+ *
+ * Two passes. First, spelled-out receptor names collapse to their conventional
+ * short codes — the way GLP-1 and GIP already read in the source label, so glucagon
+ * and amylin match (GCG, AMY, CT), and multi-word receptors get their standard code
+ * (activin type II → ActRII). Then the action suffix compresses: "receptor agonist"
+ * → "RA" (giving GCGRA, AMYRA in parallel with GLP-1RA), antagonist/blockade and
+ * "plus" likewise. Antagonist stays spelled so it never collapses into an agonist
+ * chip (GLP-1 agonist / GIP antagonist must not read as a GLP-1/GIP dual agonist).
  */
 function shortFamilyLabel(label: string): string {
   return label
+    .replace(/activin type II receptor/gi, "ActRII")
+    .replace(/glucagon/gi, "GCG")
+    .replace(/amylin/gi, "AMY")
+    .replace(/calcitonin/gi, "CT")
     .replace(/ receptor agonist/g, "RA")
     .replace(/ receptor antagonist/g, "R antag")
     .replace(/ receptor blockade/g, "R block")
