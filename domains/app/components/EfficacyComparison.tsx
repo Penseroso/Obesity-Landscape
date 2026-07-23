@@ -10,6 +10,7 @@ import type {
   ComparisonEntity,
   HeadToHeadPair,
 } from "@/domains/app/lib/efficacy-comparison/head-to-head";
+import { getEfficacyPhaseTier } from "@/domains/app/lib/efficacy-comparison/policy";
 
 type EfficacyComparisonProps = {
   view: EfficacyComparisonView;
@@ -17,6 +18,27 @@ type EfficacyComparisonProps = {
 
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+
+/**
+ * Phase-tier badge color, keyed on the same tier `selectRepresentative` ranks
+ * candidates by (`policy.ts`) — not on the raw phase text, so "Phase 3" and
+ * "Phase 3b" read as the same color. Fixed hue per tier, never cycled; validated
+ * for CVD separation against the card surface (`dataviz` skill, light mode).
+ * An unrecognised phase (no tier) falls back to the neutral border/text used
+ * elsewhere on the page rather than guessing a color.
+ */
+const phaseTierBadgeClass: Record<number, string> = {
+  1: "border-[#B45309]/40 bg-[#B45309]/10 text-[#B45309]",
+  2: "border-[#0369A1]/40 bg-[#0369A1]/10 text-[#0369A1]",
+  3: "border-[#6D28D9]/40 bg-[#6D28D9]/10 text-[#6D28D9]",
+  4: "border-[#047857]/40 bg-[#047857]/10 text-[#047857]",
+};
+const neutralPhaseBadgeClass = "border-border text-muted-foreground";
+
+function phaseBadgeClass(phase: string): string {
+  const tier = getEfficacyPhaseTier(phase);
+  return tier ? phaseTierBadgeClass[tier] : neutralPhaseBadgeClass;
+}
 
 function ValueList({
   values,
@@ -137,7 +159,7 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
     <li className="border-t border-border px-5 py-4 first:border-t-0">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
-          <h3 className="text-base font-semibold text-card-foreground">
+          <h3 className="flex flex-wrap items-center gap-2 text-base font-semibold text-card-foreground">
             {row.href ? (
               <Link href={row.href} className={`rounded-sm hover:text-primary hover:underline ${focusRing}`}>
                 {row.name}
@@ -145,6 +167,11 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
             ) : (
               row.name
             )}
+            <span
+              className={`rounded border px-1 text-[10px] font-normal uppercase tracking-wide ${phaseBadgeClass(evidence.phase)}`}
+            >
+              {evidence.phase}
+            </span>
           </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
             <Link
@@ -157,9 +184,12 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
           </p>
         </div>
         <EfficacySelectionDetails
-          rationale={evidence.selectionRationale}
           facts={[
-            { label: "Study", value: evidence.studyTitle },
+            {
+              label: "Study",
+              value: evidence.studyTitle,
+              href: `/studies/${evidence.studyId}`,
+            },
             { label: "Endpoint", value: evidence.endpointName },
             { label: "Endpoint role", value: evidence.endpointRole },
             { label: "Timepoint", value: evidence.assessmentTimepoint },
@@ -250,21 +280,6 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
           </dd>
         </div>
       </dl>
-
-      <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-        <Link
-          href={`/studies/${evidence.studyId}`}
-          className={`rounded-sm font-medium text-primary hover:underline ${focusRing}`}
-        >
-          {evidence.studyTitle}
-        </Link>
-        <span>{evidence.phase}</span>
-        <span>{evidence.endpointName}</span>
-        <span>{evidence.assessmentTimepoint}</span>
-        <span>{evidence.analysisPopulation}</span>
-        {evidence.estimand ? <span>{evidence.estimand}</span> : null}
-      </p>
-      <p className="mt-1 text-xs text-muted-foreground">{evidence.population}</p>
     </li>
   );
 }

@@ -8,6 +8,7 @@ import {
   canonicalizeClinicalEstimand,
 } from "@/domains/clinical-evidence/lib/clinical-term-canonicalization.mjs";
 import type { ClinicalStudyRecord } from "@/domains/clinical-evidence/lib/types";
+import { getAnalysisPopulationRank, getEstimandRank } from "./policy";
 import type { EfficacyBetweenArmValue, EfficacyValue } from "./representative";
 
 /**
@@ -128,6 +129,28 @@ function toValue(view: OutcomeView, armById: Map<string, ArmView>): EfficacyValu
   };
 }
 
+function rankIsBetter(a: [number, number], b: [number, number]): boolean {
+  return a[0] !== b[0] ? a[0] < b[0] : a[1] < b[1];
+}
+
+/**
+ * One (population, estimand) analysis axis within an endpoint. A Study can report
+ * the same pair on more than one axis — SURMOUNT-5 publishes both a full-analysis-
+ * set/modified-treatment-regimen estimate and a separate efficacy-analysis-set/
+ * efficacy-estimand one for tirzepatide vs semaglutide, with different numbers on
+ * each. Keeping axes apart, rather than pooling every Outcome that mentions the
+ * pair, is what stops those two numbers from being shown as if they were one.
+ */
+type Axis = {
+  populationRank: number;
+  estimandRank: number;
+  byEntity: Map<string, { entity: ComparisonEntity; views: OutcomeView[] }>;
+  betweenArm: Map<
+    string,
+    { entities: [ComparisonEntity, ComparisonEntity]; views: OutcomeView[] }
+  >;
+};
+
 /**
  * Finds every entity pair this Study actually compared, proven from its body-weight
  * Outcomes.
@@ -138,8 +161,11 @@ function toValue(view: OutcomeView, armById: Map<string, ArmView>): EfficacyValu
  *       canonicalized analysis population + estimand — i.e. results the source
  *       reported together.
  *
- * Arm-level results from different comparison groups are never combined, and the Arm
- * list is never enumerated pairwise.
+ * When a pair is provable on more than one axis, only the best-ranked axis — by the
+ * same population/estimand policy `selectRepresentative` uses — is reported. Its
+ * arm-level and between-arm evidence are never pooled across axes: that would
+ * attribute one axis's between-arm estimate to another axis's arm-level values, or
+ * show the same two products twice with two different, uncombinable reductions.
  */
 export function findHeadToHeadPairs(detail: StudyDetailView): HeadToHeadPair[] {
   const { study, arms } = detail;
@@ -166,20 +192,44 @@ export function findHeadToHeadPairs(detail: StudyDetailView): HeadToHeadPair[] {
       href: `/studies/${study.id}`,
     };
 
-    // (a) stored direct estimates, grouped by the pair each proves.
-    //
-    // A between-arm Outcome is ONE reported comparison, so it proves exactly one
-    // pair. Enumerating its arms pairwise would copy a single stored number onto
-    // several pairs and assert comparisons the source never made.
-    const betweenArmByPair = new Map<
-      string,
-      { entities: [ComparisonEntity, ComparisonEntity]; values: EfficacyBetweenArmValue[] }
-    >();
+    const axisByKey = new Map<string, Axis>();
+    const getAxis = (population: string, estimand: string | undefined): Axis => {
+      const key = `${canonicalizeClinicalAnalysisPopulation(population)}|${canonicalizeClinicalEstimand(estimand)}`;
+      const existing = axisByKey.get(key);
+      if (existing) return existing;
+      const created: Axis = {
+        populationRank: getAnalysisPopulationRank(population),
+        estimandRank: getEstimandRank(estimand),
+        byEntity: new Map(),
+        betweenArm: new Map(),
+      };
+      axisByKey.set(key, created);
+      return created;
+    };
+
     for (const view of endpointGroup.outcomes) {
-      if (view.outcome.result.resultType !== "between-arm") continue;
+      const { outcome } = view;
+
+      if (outcome.result.resultType === "arm-level") {
+        const axis = getAxis(outcome.analysisPopulation, outcome.estimand);
+        for (const armId of outcome.armIds ?? []) {
+          const entity = entityByArmId.get(armId);
+          if (!entity) continue;
+          const bucket = axis.byEntity.get(entity.key);
+          if (bucket) bucket.views.push(view);
+          else axis.byEntity.set(entity.key, { entity, views: [view] });
+        }
+        continue;
+      }
+
+      if (outcome.result.resultType !== "between-arm") continue;
+
+      // A between-arm Outcome is ONE reported comparison, so it proves exactly one
+      // pair. Enumerating its arms pairwise would copy a single stored number onto
+      // several pairs and assert comparisons the source never made.
       const entities = Array.from(
         new Map(
-          (view.outcome.armIds ?? [])
+          (outcome.armIds ?? [])
             .map((armId) => entityByArmId.get(armId))
             .filter((entity): entity is ComparisonEntity => Boolean(entity))
             .map((entity) => [entity.key, entity]),
@@ -192,92 +242,79 @@ export function findHeadToHeadPairs(detail: StudyDetailView): HeadToHeadPair[] {
 
       if (entities.length > 2) {
         throw new Error(
-          `Efficacy Comparison: between-arm Outcome "${view.outcome.id}" in study "${study.id}" ` +
+          `Efficacy Comparison: between-arm Outcome "${outcome.id}" in study "${study.id}" ` +
             `resolves ${entities.length} distinct comparison entities ` +
             `(${entities.map((entity) => entity.key).join(", ")}); a single stored estimate ` +
             `cannot be attributed to more than one entity pair`,
         );
       }
 
+      const axis = getAxis(outcome.analysisPopulation, outcome.estimand);
       const key = pairKey(entities[0], entities[1]);
-      const bucket = betweenArmByPair.get(key) ?? {
+      const bucket = axis.betweenArm.get(key) ?? {
         entities: [entities[0], entities[1]] as [ComparisonEntity, ComparisonEntity],
-        values: [],
+        views: [],
       };
-      bucket.values.push({
-        ...toValue(view, armById),
-        effectMeasure: view.outcome.result.effectMeasure,
-        comparisonType: view.outcome.result.comparisonType,
-        confidenceInterval: view.outcome.result.confidenceInterval,
-        pValue: view.outcome.result.pValue,
-      });
-      betweenArmByPair.set(key, bucket);
+      bucket.views.push(view);
+      axis.betweenArm.set(key, bucket);
     }
 
-    // (b) arm-level results the source reported together, grouped by the pair.
-    const coReported = new Map<string, OutcomeView[]>();
-    for (const view of endpointGroup.outcomes) {
-      if (view.outcome.result.resultType !== "arm-level") continue;
-      const key = [
-        endpointGroup.endpoint.id,
-        canonicalizeClinicalAnalysisPopulation(view.outcome.analysisPopulation),
-        canonicalizeClinicalEstimand(view.outcome.estimand),
-      ].join("|");
-      const list = coReported.get(key);
-      if (list) list.push(view);
-      else coReported.set(key, [view]);
-    }
-
-    const armLevelByPair = new Map<
+    // For every pair provable on some axis, keep only the best-ranked axis.
+    const bestAxisForPair = new Map<
       string,
-      { entities: [ComparisonEntity, ComparisonEntity]; values: EfficacyValue[] }
+      { rank: [number, number]; axisKey: string; entities: [ComparisonEntity, ComparisonEntity] }
     >();
-    for (const group of coReported.values()) {
-      const byEntity = new Map<string, { entity: ComparisonEntity; views: OutcomeView[] }>();
-      for (const view of group) {
-        for (const armId of view.outcome.armIds ?? []) {
-          const entity = entityByArmId.get(armId);
-          if (!entity) continue;
-          const bucket = byEntity.get(entity.key);
-          if (bucket) bucket.views.push(view);
-          else byEntity.set(entity.key, { entity, views: [view] });
-        }
-      }
+    for (const [axisKey, axis] of axisByKey) {
+      const rank: [number, number] = [axis.populationRank, axis.estimandRank];
 
-      const entries = [...byEntity.values()];
+      const entries = [...axis.byEntity.values()];
       for (let i = 0; i < entries.length; i += 1) {
         for (let j = i + 1; j < entries.length; j += 1) {
           const key = pairKey(entries[i].entity, entries[j].entity);
-          const bucket = armLevelByPair.get(key) ?? {
-            entities: [entries[i].entity, entries[j].entity] as [ComparisonEntity, ComparisonEntity],
-            values: [],
-          };
-          bucket.values.push(
-            ...[...entries[i].views, ...entries[j].views].map((view) => toValue(view, armById)),
-          );
-          armLevelByPair.set(key, bucket);
+          const current = bestAxisForPair.get(key);
+          if (!current || rankIsBetter(rank, current.rank)) {
+            bestAxisForPair.set(key, {
+              rank,
+              axisKey,
+              entities: [entries[i].entity, entries[j].entity],
+            });
+          }
+        }
+      }
+
+      for (const [key, bucket] of axis.betweenArm) {
+        const current = bestAxisForPair.get(key);
+        if (!current || rankIsBetter(rank, current.rank)) {
+          bestAxisForPair.set(key, { rank, axisKey, entities: bucket.entities });
         }
       }
     }
 
-    // Merge: a pair proven by either proof is reported once, carrying whichever
-    // evidence kinds this endpointGroup actually found for it. Arm-level is the
-    // shared metric; a stored between-arm estimate rides alongside it rather than
-    // replacing it. A pair already set by an earlier endpointGroup is left alone —
-    // dedup stays scoped to the first proof encountered, same as before.
-    const pairKeysHere = new Set([...betweenArmByPair.keys(), ...armLevelByPair.keys()]);
-    for (const key of pairKeysHere) {
+    // A pair already set by an earlier endpointGroup is left alone — dedup stays
+    // scoped to the first endpointGroup that proved it, same as before.
+    for (const [key, best] of bestAxisForPair) {
       if (pairs.has(key)) continue;
-      const betweenArm = betweenArmByPair.get(key);
-      const armLevel = armLevelByPair.get(key);
-      const entities = armLevel?.entities ?? betweenArm!.entities;
+      const axis = axisByKey.get(best.axisKey)!;
+      const betweenArmBucket = axis.betweenArm.get(key);
+      const [entityA, entityB] = betweenArmBucket?.entities ?? best.entities;
+      const armLevelViews = [
+        ...(axis.byEntity.get(entityA.key)?.views ?? []),
+        ...(axis.byEntity.get(entityB.key)?.views ?? []),
+      ];
+
       pairs.set(key, {
         ...base,
-        left: entities[0],
-        right: entities[1],
+        left: entityA,
+        right: entityB,
         evidence: {
-          armLevel: armLevel?.values ?? [],
-          betweenArm: betweenArm?.values ?? [],
+          armLevel: armLevelViews.map((view) => toValue(view, armById)),
+          betweenArm: (betweenArmBucket?.views ?? []).map((view) => ({
+            ...toValue(view, armById),
+            effectMeasure: view.outcome.result.effectMeasure,
+            comparisonType: view.outcome.result.comparisonType,
+            confidenceInterval: view.outcome.result.confidenceInterval,
+            pValue: view.outcome.result.pValue,
+          })),
         },
       });
     }
