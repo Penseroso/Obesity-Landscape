@@ -4,6 +4,7 @@ import {
 } from "@/domains/clinical-evidence/lib/clinical-term-canonicalization.mjs";
 import type {
   ClinicalEndpointRole,
+  ClinicalReportedResult,
   ClinicalResultMaturity,
 } from "@/domains/clinical-evidence/lib/types";
 
@@ -168,3 +169,23 @@ export function getBestMaturityRank(
  * Converting between them is forbidden outright.
  */
 export const EFFICACY_OVERVIEW_UNIT = "percent";
+
+/**
+ * True when a result is a responder proportion — "% of participants who achieved a
+ * threshold reduction" — rather than a change value.
+ *
+ * A responder outcome shares `unit: "percent"` and a `body weight` endpoint with the
+ * change metric, so unit and domain cannot tell them apart; the presence of a
+ * `responderThreshold` (the ≥5% / ≥10% cutoff that defines the proportion) is the
+ * only structural marker. Every surface that assumes the overview change metric must
+ * skip these, or a "92%" responder rate reads as a 92% weight change. Never inferred
+ * from the endpoint name — the threshold field is the single source of truth.
+ */
+export function isResponderResult(
+  result: Pick<ClinicalReportedResult, "responderThreshold">,
+): boolean {
+  return (
+    typeof result.responderThreshold === "string" &&
+    result.responderThreshold.trim().length > 0
+  );
+}

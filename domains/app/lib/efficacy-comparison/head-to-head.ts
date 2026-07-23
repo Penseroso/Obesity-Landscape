@@ -8,7 +8,11 @@ import {
   canonicalizeClinicalEstimand,
 } from "@/domains/clinical-evidence/lib/clinical-term-canonicalization.mjs";
 import type { ClinicalStudyRecord } from "@/domains/clinical-evidence/lib/types";
-import { getAnalysisPopulationRank, getEstimandRank } from "./policy";
+import {
+  getAnalysisPopulationRank,
+  getEstimandRank,
+  isResponderResult,
+} from "./policy";
 import type { EfficacyBetweenArmValue, EfficacyValue } from "./representative";
 
 /**
@@ -280,6 +284,10 @@ export function findHeadToHeadGroups(detail: StudyDetailView): HeadToHeadGroup[]
 
     for (const view of endpointGroup.outcomes) {
       const { outcome } = view;
+
+      // A responder proportion shares the body-weight endpoint and percent unit but
+      // is a different measure; never mix it into a card of change values.
+      if (isResponderResult(outcome.result)) continue;
 
       if (outcome.result.resultType === "arm-level") {
         const axis = getAxis(outcome.analysisPopulation, outcome.estimand);

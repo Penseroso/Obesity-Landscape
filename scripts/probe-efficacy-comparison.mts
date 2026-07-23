@@ -14,6 +14,7 @@ import { readFileSync } from "node:fs";
 
 import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/read-model";
 import { EFFICACY_OVERVIEW_UNIT } from "@/domains/app/lib/efficacy-comparison/policy";
+import { screenStudy } from "@/domains/app/lib/efficacy-comparison/candidates";
 import { findHeadToHeadGroups } from "@/domains/app/lib/efficacy-comparison/head-to-head";
 import { getRegimenDisplay } from "@/domains/app/lib/efficacy-comparison/mechanism-family";
 import type { StudyDetailView } from "@/domains/app/lib/clinical-evidence/selectors";
@@ -478,6 +479,94 @@ check(
   "3-entity between-arm Outcome was accepted; it must fail loud rather than fan out into pairs",
 );
 console.log("  synthetic 3-entity between-arm Outcome: rejected as expected");
+
+// --- synthetic: a responder-proportion outcome is not the change metric ----
+//
+// A body-weight endpoint whose arm-level percent outcomes are responder rates
+// ("% achieving >=5% reduction") shares unit and domain with the change metric.
+// Every overview gate but the responder exclusion passes, so this pins that the
+// exclusion — and nothing else — keeps a 92% responder rate out of the column.
+
+function syntheticResponderStudy(withThreshold: boolean): StudyDetailView {
+  const study = {
+    id: "synthetic-responder",
+    companyId: "fixture-co",
+    assetId: "delta",
+    officialTitle: "Synthetic responder-proportion study",
+    phase: "Phase 2",
+    design: { randomization: "Randomized", masking: "Double-blind", comparator: "Placebo" },
+    population: "Adults with obesity, without diabetes.",
+    populationProfile: {
+      ageGroup: "adult",
+      diabetesStatus: "without-type-2-diabetes",
+      requiresAdditionalCondition: false,
+      treatmentContext: "initial-treatment",
+    },
+  };
+  const arms = [
+    { id: "d1", studyId: study.id, role: "experimental", label: "Delta", intervention: "Delta" },
+    { id: "dp", studyId: study.id, role: "placebo", label: "Placebo", intervention: "Placebo" },
+  ];
+  const endpoint = {
+    id: "re",
+    studyId: study.id,
+    name: "Percentage of participants achieving >=5% body-weight reduction",
+    role: "secondary",
+    domain: "body weight",
+    assessmentTimepoint: "Week 48",
+  };
+  const responderThreshold = withThreshold ? ">=5%" : undefined;
+  const mkOutcome = (id: string, armId: string, value: string) => ({
+    outcome: {
+      id,
+      studyId: study.id,
+      endpointId: "re",
+      armIds: [armId],
+      analysisPopulation: "Full analysis set (overall)",
+      estimand: "Efficacy estimand",
+      result: { value, numericValue: Number(value), unit: "percent", resultType: "arm-level", responderThreshold },
+      maturity: "peer-reviewed publication",
+      metadata: { lastVerifiedAt: "2026-07-23", updatedAt: "2026-07-23", sources: [] },
+    },
+    endpoint,
+    armLabels: [],
+  });
+  return {
+    study,
+    asset: { companyId: "fixture-co", assetId: "delta", assetName: "Delta" },
+    arms,
+    analysisGroups: [],
+    endpointGroups: [
+      {
+        endpoint,
+        outcomes: [mkOutcome("ro-exp", "d1", "92"), mkOutcome("ro-pbo", "dp", "27")],
+      },
+    ],
+    linkedFromAssets: [],
+  } as unknown as StudyDetailView;
+}
+
+// Control: identical study without the threshold is otherwise eligible, proving the
+// responder flag — not some other gate — is what excludes it.
+const responderControl = screenStudy(syntheticResponderStudy(false), 0);
+check(
+  responderControl.candidates.length > 0,
+  "responder control (no threshold) should be an eligible change-metric candidate",
+);
+
+const responderScreen = screenStudy(syntheticResponderStudy(true), 0);
+check(
+  responderScreen.candidates.length === 0 &&
+    responderScreen.reason === "metric-unavailable-percent",
+  `responder-only study must yield no overview candidate (got ${responderScreen.candidates.length} candidates, reason ${responderScreen.reason})`,
+);
+check(
+  findHeadToHeadGroups(syntheticResponderStudy(true)).length === 0,
+  "responder-only study must not form a head-to-head group",
+);
+console.log(
+  "  synthetic responder-proportion outcome: excluded from overview and head-to-head",
+);
 
 // --- regimen display ------------------------------------------------------
 

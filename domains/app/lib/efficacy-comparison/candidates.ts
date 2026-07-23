@@ -13,6 +13,7 @@ import {
   EFFICACY_OVERVIEW_UNIT,
   getEfficacyPhaseTier,
   isOverviewEligibleEndpointRole,
+  isResponderResult,
   type EfficacyPhaseTier,
 } from "./policy";
 
@@ -165,11 +166,19 @@ function checkDesign(
   return null;
 }
 
-/** G3 — the overview's single metric: an arm-level percent-change body-weight result. */
+/**
+ * G3 — the overview's single metric: an arm-level percent-change body-weight result.
+ *
+ * A responder proportion ("% achieving ≥5% reduction") is also arm-level, also
+ * `percent`, and also under a body-weight endpoint, so it is excluded explicitly by
+ * its `responderThreshold` — otherwise a 92% responder rate would enter the column as
+ * a 92% weight change.
+ */
 function isOverviewOutcome(view: OutcomeView): boolean {
   return (
     view.outcome.result.resultType === "arm-level" &&
-    view.outcome.result.unit === EFFICACY_OVERVIEW_UNIT
+    view.outcome.result.unit === EFFICACY_OVERVIEW_UNIT &&
+    !isResponderResult(view.outcome.result)
   );
 }
 

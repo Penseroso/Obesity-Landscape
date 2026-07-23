@@ -281,6 +281,17 @@ strings:
 - `effectMeasure` — what a between-arm number *measures* (`"Hazard ratio"`,
   `"Estimated treatment difference"`). Required on a `between-arm` Outcome, forbidden
   elsewhere. Direction stays in `comparisonType`.
+- `responderThreshold` — set only on an **arm-level** result to mark it a **responder
+  proportion**: "% of that arm's participants achieving the threshold" (e.g. `">=5%"`).
+  A responder proportion shares `unit: percent` and a `body weight` endpoint with the
+  cross-trial overview's change metric, so the threshold is the **only** structural
+  signal separating the two — a body-weight arm-level `percent` result is the overview's
+  shared change metric **only when it carries no `responderThreshold`**. Responder
+  proportions are valid data, shown on study detail (with a "Responder" chip) but
+  **excluded from the Efficacy Comparison overview and Head-to-head**, which compare
+  change from baseline. The validator confines `responderThreshold` to arm-level results
+  (a between-arm responder contrast is an `effectMeasure`), and both the TS read model
+  (`isResponderResult`) and the JS coverage probe apply the exclusion.
 
 `maturity` is a required enum with exactly these values: `interim`, `topline`,
 `final`, `registry result`, `conference result`, `peer-reviewed publication`. It

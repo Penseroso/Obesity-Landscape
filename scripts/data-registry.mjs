@@ -154,6 +154,19 @@ const clinicalResultMaturities = new Set([
   "peer-reviewed publication",
 ]);
 const clinicalResultTypes = new Set(["arm-level", "between-arm"]);
+
+/**
+ * True when a result is a responder proportion (carries a responderThreshold like
+ * ">=5%") rather than a change value. Mirrors isResponderResult in the TS policy
+ * module; the efficacy coverage probe uses it so a responder-only body-weight study
+ * is not counted as having the percent-change metric.
+ */
+function isResponderResult(result) {
+  return (
+    typeof result.responderThreshold === "string" &&
+    result.responderThreshold.trim().length > 0
+  );
+}
 // This deliberately checks structure, not terminology. Any source-reported analysis-set
 // vocabulary remains valid, but a value ending in "estimand" or "estimand population" is
 // unambiguously an estimand label in the wrong field. A trailing parenthetical subgroup
@@ -592,7 +605,12 @@ function probeEfficacyPopulationCoverage() {
           .some(
             (outcome) =>
               outcome.result.resultType === "arm-level" &&
-              outcome.result.unit === "percent",
+              outcome.result.unit === "percent" &&
+              // A responder proportion ("% achieving >=5% reduction") is arm-level and
+              // percent too; its responderThreshold excludes it so a responder-only
+              // study is not counted as having the percent-change metric. Kept in sync
+              // with isResponderResult / isOverviewOutcome on the TS read-model side.
+              !isResponderResult(outcome.result),
           ),
       )
       .map((endpoint) => endpoint.studyId),
@@ -1937,6 +1955,20 @@ function validateClinicalOutcomeResult(result, context, isAnalysisGroupAnchored)
   assertOptionalNonEmptyString(result.confidenceInterval, `${context}: result.confidenceInterval`);
   assertOptionalNonEmptyString(result.pValue, `${context}: result.pValue`);
   assertOptionalNonEmptyString(result.responderThreshold, `${context}: result.responderThreshold`);
+
+  // A responderThreshold marks an arm-level responder proportion ("% of this arm's
+  // participants achieving >=5% reduction"). It is the single structural signal that
+  // separates that measure from a percent-change value sharing the same unit, so it
+  // is confined to arm-level results: a between-arm contrast about responders is an
+  // effect measure and belongs in effectMeasure/comparisonType. This keeps the
+  // efficacy overview's exclusion total — a responder can never surface as a
+  // between-arm estimate on a selected change endpoint.
+  if (isResponderResult(result)) {
+    assert(
+      result.resultType === "arm-level",
+      `${context}: result.responderThreshold marks an arm-level responder proportion; a between-arm responder contrast belongs in effectMeasure/comparisonType`,
+    );
+  }
 }
 
 function validateClinicalOutcome(outcome, context) {
@@ -2853,6 +2885,15 @@ function validateClinicalEvidenceSyntheticFixtures() {
         delete study.studyFamily;
       }
     }],
+    // A responder proportion is valid data: an arm-level percent result may carry a
+    // responderThreshold. Its exclusion from the change-metric overview is a read
+    // concern, never a schema rejection.
+    ["responder-threshold-arm-level-validates", (fixture) => {
+      const armLevel = fixture.outcomes.find(
+        (outcome) => outcome.result.resultType === "arm-level",
+      );
+      armLevel.result.responderThreshold = ">=5%";
+    }],
   ];
 
   for (const [name, mutate] of validExpectations) {
@@ -2890,6 +2931,15 @@ function validateClinicalEvidenceSyntheticFixtures() {
   const invalidExpectations = [
     ["bad-nct", /NCT identifier must match/, (fixture) => {
       fixture.studies[0].registryIdentifiers[0].id = "NCT123";
+    }],
+    // A responderThreshold marks an arm-level proportion; putting it on a between-arm
+    // result is the error class the arm-level-only invariant guards against — it would
+    // otherwise dodge the overview's arm-level responder exclusion.
+    ["responder-threshold-on-between-arm-rejected", /responderThreshold marks an arm-level/, (fixture) => {
+      const betweenArm = fixture.outcomes.find(
+        (outcome) => outcome.result.resultType === "between-arm",
+      );
+      betweenArm.result.responderThreshold = ">=5%";
     }],
     ["cross-study-arm", /belongs to another study/, (fixture) => {
       fixture.studies.push(secondStudy);
