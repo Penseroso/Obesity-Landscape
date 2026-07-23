@@ -1,0 +1,176 @@
+{
+  "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+  "reviewedAt": "2026-07-23",
+  "reviewPurpose": "Compare the existing canonical Clinical Evidence record with stored result-bearing sources and repair missing core results.",
+  "reviewedSources": [
+    {
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+      "role": "highest-priority result source",
+      "reviewedSections": [
+        "main efficacy results",
+        "Table 2",
+        "safety and tolerability results"
+      ]
+    },
+    {
+      "url": "https://www.nejm.org/doi/suppl/10.1056/NEJMoa2301972/suppl_file/nejmoa2301972_appendix.pdf",
+      "role": "publication supplement",
+      "reviewedSections": [
+        "efficacy and responder tables",
+        "subgroup and sensitivity analyses",
+        "metabolic, cardiovascular, and patient-reported results",
+        "safety tables"
+      ]
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+      "role": "lower-priority publication index and abstract"
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT04881760",
+      "role": "lower-priority registry results"
+    }
+  ],
+  "canonicalComparisonScope": [
+    "primary efficacy",
+    "clinically central secondary efficacy",
+    "headline responder results",
+    "concise safety, tolerability, and discontinuation findings"
+  ],
+  "gapsFoundAndRepaired": [
+    {
+      "scope": "primary efficacy",
+      "finding": "The canonical record contained only selected dose and pooled values and omitted protocol-arm results and directly reported placebo comparisons.",
+      "endpointIds": [
+        "reta-p2-weight-week24"
+      ],
+      "canonicalOutcomeIds": [
+        "reta-p2-weight24-1mg",
+        "reta-p2-weight24-4mg-start2",
+        "reta-p2-weight24-4mg-start4",
+        "reta-p2-weight24-8mg-start2",
+        "reta-p2-weight24-8mg-start4",
+        "reta-p2-weight24-12mg",
+        "reta-p2-weight24-placebo",
+        "reta-p2-weight24-4mg",
+        "reta-p2-weight24-8mg",
+        "reta-p2-weight24-vs-placebo-1mg",
+        "reta-p2-weight24-vs-placebo-4mg-start2",
+        "reta-p2-weight24-vs-placebo-4mg-start4",
+        "reta-p2-weight24-vs-placebo-8mg-start2",
+        "reta-p2-weight24-vs-placebo-8mg-start4",
+        "reta-p2-weight24-vs-placebo-12mg"
+      ]
+    },
+    {
+      "scope": "clinically central secondary efficacy",
+      "finding": "Week-48 percent body-weight change was incomplete at the protocol-arm and directly reported comparison level.",
+      "endpointIds": [
+        "reta-p2-weight-week48"
+      ],
+      "canonicalOutcomeIds": [
+        "reta-p2-weight-1mg",
+        "reta-p2-weight48-4mg-start2",
+        "reta-p2-weight48-4mg-start4",
+        "reta-p2-weight48-8mg-start2",
+        "reta-p2-weight48-8mg-start4",
+        "reta-p2-weight-12mg",
+        "reta-p2-weight-placebo",
+        "reta-p2-weight-4mg",
+        "reta-p2-weight-8mg",
+        "reta-p2-weight48-vs-placebo-1mg",
+        "reta-p2-weight48-vs-placebo-4mg-start2",
+        "reta-p2-weight48-vs-placebo-4mg-start4",
+        "reta-p2-weight48-vs-placebo-8mg-start2",
+        "reta-p2-weight48-vs-placebo-8mg-start4",
+        "reta-p2-weight48-vs-placebo-12mg"
+      ]
+    },
+    {
+      "scope": "headline responder results",
+      "finding": "The canonical record omitted the publication's Week-48 5%, 10%, and 15% responder families.",
+      "endpointIds": [
+        "reta-p2-responder5-week48",
+        "reta-p2-responder10-week48",
+        "reta-p2-responder15-week48"
+      ],
+      "canonicalOutcomeIds": [
+        "reta-p2-responder5-1mg",
+        "reta-p2-responder5-4mg-start2",
+        "reta-p2-responder5-4mg-start4",
+        "reta-p2-responder5-8mg-start2",
+        "reta-p2-responder5-8mg-start4",
+        "reta-p2-responder5-12mg",
+        "reta-p2-responder5-placebo",
+        "reta-p2-responder5-4mg-pooled",
+        "reta-p2-responder5-8mg-pooled",
+        "reta-p2-responder10-1mg",
+        "reta-p2-responder10-4mg-start2",
+        "reta-p2-responder10-4mg-start4",
+        "reta-p2-responder10-8mg-start2",
+        "reta-p2-responder10-8mg-start4",
+        "reta-p2-responder10-12mg",
+        "reta-p2-responder10-placebo",
+        "reta-p2-responder10-4mg-pooled",
+        "reta-p2-responder10-8mg-pooled",
+        "reta-p2-responder15-1mg",
+        "reta-p2-responder15-4mg-start2",
+        "reta-p2-responder15-4mg-start4",
+        "reta-p2-responder15-8mg-start2",
+        "reta-p2-responder15-8mg-start4",
+        "reta-p2-responder15-12mg",
+        "reta-p2-responder15-placebo",
+        "reta-p2-responder15-4mg-pooled",
+        "reta-p2-responder15-8mg-pooled"
+      ]
+    },
+    {
+      "scope": "concise safety, tolerability, and discontinuation findings",
+      "finding": "The previous safety summary omitted overall adverse-event incidence, adverse-event discontinuation, serious adverse-event incidence, escalation timing, and starting-dose mitigation.",
+      "canonicalReference": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
+    }
+  ],
+  "sourcePriorityAssessment": [
+    {
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+      "assessment": "Core efficacy, responder, and safety statements duplicate the linked full peer-reviewed publication; no Outcome uses the index page as result provenance."
+    },
+    {
+      "source": "https://clinicaltrials.gov/study/NCT04881760",
+      "assessment": "Posted core efficacy and responder results duplicate the higher-priority peer-reviewed publication; registry-only participant-flow and detailed adverse-event rows are not canonicalized."
+    }
+  ],
+  "excludedNonCoreCategories": [
+    {
+      "category": "supportive anthropometric results",
+      "examples": "absolute body-weight, BMI, and waist-circumference changes",
+      "reason": "Supportive secondary measures are not needed to state the trial's central efficacy conclusion."
+    },
+    {
+      "category": "exploratory responder thresholds",
+      "examples": "20%, 25%, and 30% body-weight reduction",
+      "reason": "Exploratory thresholds are not headline responder endpoints."
+    },
+    {
+      "category": "metabolic and cardiovascular panels",
+      "examples": "glycemic, lipid, blood-pressure, and detailed heart-rate tables",
+      "reason": "Exploratory panels are not central efficacy outcomes; the material heart-rate pattern remains in the safety summary."
+    },
+    {
+      "category": "subgroup and sensitivity analyses",
+      "examples": "BMI and sex subgroups and hybrid-estimand analyses",
+      "reason": "These analyses are supportive and do not replace the overall primary or central secondary result families."
+    },
+    {
+      "category": "detailed patient-reported outcomes",
+      "examples": "SF-36 domain and component scores",
+      "reason": "Exploratory PRO detail is not central to this obesity efficacy study."
+    },
+    {
+      "category": "detailed safety and participant-flow rows",
+      "examples": "individual adverse-event terms, severity strata, and withdrawal-reason rows",
+      "reason": "Clinical Evidence stores a concise Study-level safety summary rather than exhaustive event or flow tables."
+    }
+  ],
+  "unresolvedGaps": []
+}

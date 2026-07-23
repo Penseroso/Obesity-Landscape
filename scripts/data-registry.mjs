@@ -1773,6 +1773,18 @@ function validateClinicalStudy(study, context, references) {
   assertOptionalNonEmptyString(study.overallDuration, `${context}: overallDuration`);
   assertOptionalNonEmptyString(study.followUpDuration, `${context}: followUpDuration`);
   assertOptionalNonEmptyString(study.safetySummary, `${context}: safetySummary`);
+  assertOptionalNonEmptyString(
+    study.seriousAdverseEventIncidence,
+    `${context}: seriousAdverseEventIncidence`,
+  );
+  assertOptionalNonEmptyString(
+    study.nauseaVomitingIncidence,
+    `${context}: nauseaVomitingIncidence`,
+  );
+  assertOptionalNonEmptyString(
+    study.antiDrugAntibodyIncidence,
+    `${context}: antiDrugAntibodyIncidence`,
+  );
   validateMetadata(study.metadata, context);
   assert(study.metadata.sources.length > 0, `${context}: metadata.sources must contain at least one source`);
 }

@@ -133,7 +133,12 @@ Studies, and generated projections. Reuse existing stable entity IDs and never
 mint a second ID for the same real-world Arm, AnalysisGroup, or Endpoint.
 
 Store concise study-level safety summaries only; do not reproduce exhaustive
-adverse-event tables.
+adverse-event tables. When a cited source reports them, also capture the
+study-level serious-adverse-event rate, nausea/vomiting rate, and anti-drug
+antibody (immunogenicity) rate in their own `Study` fields
+(`seriousAdverseEventIncidence`, `nauseaVomitingIncidence`,
+`antiDrugAntibodyIncidence`) — concise source-reported text, not a per-arm
+table. Omit a field the sources do not report.
 
 ## 5. Case-scoped schema fallback
 
@@ -198,7 +203,19 @@ Before claiming completion, reconcile the in-session result-review manifest:
     disclosed result — was re-searched in this run, and each is reported as
     newly resolved, still blocked by the same obstacle, or moved to a different
     disposition. A prior `RESULT_AVAILABILITY_UNRESOLVED` or deferral is never
-    carried forward untested.
+    carried forward untested;
+11. before completing any Study entered or updated as result-bearing in this
+    run, its canonical record was cross-checked against its highest-priority
+    reviewed result source to confirm each of the following is reflected:
+    primary/co-primary results, central/key-secondary results, headline
+    responder results, and the safety/tolerability/discontinuation summary.
+    Enter any core result this check finds missing under the ordinary
+    dispositions above. For any of these four categories the highest-priority
+    source does not support, record a short standing note — `not reported`,
+    `not applicable`, `outside scope`, or `unresolved` — rather than leaving it
+    unaddressed. This check does not require exhaustively extracting and
+    classifying every disclosed result or supplement; consult an additional
+    source only where needed to confirm one of these four categories.
 
 The JSON validators enforce only facts represented in canonical data. They
 cannot inspect external source contents or infer that a Study-level citation is
@@ -223,6 +240,10 @@ Report:
   disposition, reason, and re-entry condition where applicable;
 - result-disposition counts, including an explicit zero count for
   undispositioned disclosed results;
+- for each Study checked under completion-check item 11: any core result
+  entered as a result of the check, and the standing note (`not reported`,
+  `not applicable`, `outside scope`, or `unresolved`) for any of the four
+  categories the highest-priority source did not support;
 - exclusions, deferrals, conflicts, and pipeline discrepancies;
 - Schema boundary report and status counts;
 - generated output and validation results;

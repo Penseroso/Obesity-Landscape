@@ -1,4 +1,3 @@
-import { SourceList } from "@/domains/app/components/SourceList";
 import type { OutcomeView } from "@/domains/app/lib/clinical-evidence/selectors";
 
 /**
@@ -24,19 +23,29 @@ function displayValue(value: string, unit: string): string {
   return unitAlreadyInValue(value, unit) ? value : `${value} ${unit}`;
 }
 
+/** Human-readable label for a source-reported analysis-group construction. */
+const groupKindLabel: Record<string, string> = {
+  pooled: "Pooled",
+  derived: "Derived",
+  "starting-dose-subgroup": "Starting-dose subgroup",
+  other: "Analysis group",
+};
+
 export function Badge({
   children,
   tone = "muted",
 }: {
   children: React.ReactNode;
-  tone?: "muted" | "accent";
+  tone?: "muted" | "accent" | "primary";
 }) {
   return (
     <span
       className={
         tone === "accent"
           ? "whitespace-nowrap rounded-sm border border-border bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground"
-          : "whitespace-nowrap rounded-sm border border-border bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground"
+          : tone === "primary"
+            ? "whitespace-nowrap rounded-sm border border-primary/30 bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary"
+            : "whitespace-nowrap rounded-sm border border-border bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground"
       }
     >
       {children}
@@ -59,8 +68,6 @@ type OutcomeResultProps = {
   outcome: OutcomeView;
   /** Suppress the per-row maturity badge when the endpoint header already states it. */
   hideMaturity?: boolean;
-  /** Suppress the per-row source line when the endpoint header already states it. */
-  hideSource?: boolean;
   /** Suppress the per-row Population/Estimand block when a cluster header above already states it. */
   hidePopulationEstimand?: boolean;
   /**
@@ -75,28 +82,30 @@ type OutcomeResultProps = {
 export function OutcomeResult({
   outcome,
   hideMaturity = false,
-  hideSource = false,
   hidePopulationEstimand = false,
   clustered = false,
 }: OutcomeResultProps) {
-  const { result, analysisPopulation, estimand, maturity, metadata } =
-    outcome.outcome;
+  const { result, analysisPopulation, estimand, maturity } = outcome.outcome;
   const isBetweenArm = result.resultType === "between-arm";
 
   // Subject line: analysis-group anchored > between-arm comparison > arm-level.
   // For arm-level, join multiple arm labels neutrally — never "vs", which would
-  // imply a comparison the outcome does not make. For between-arm, prefer the
-  // fully-directional comparisonType and fall back to effectMeasure (+ the arms
-  // being compared); never show comparisonType and effectMeasure together.
+  // imply a comparison the outcome does not make. For between-arm, the arm
+  // labels are the dose identity and always lead the subject when available;
+  // comparisonType (falling back to effectMeasure) is the comparison's own
+  // methodology text, not a dose identifier — it renders as a secondary line so
+  // that rows sharing identical wording (e.g. every dose vs placebo reported as
+  // "Least-squares mean difference, retatrutide minus placebo") stay
+  // distinguishable by dose at a glance.
   let subject: string;
+  let subjectDetail: string | undefined;
   if (outcome.groupLabel) {
     subject = outcome.groupLabel;
   } else if (isBetweenArm) {
-    const fallback =
-      [result.effectMeasure, outcome.armLabels.join(" vs ") || undefined]
-        .filter(Boolean)
-        .join(" · ") || "Between-arm result";
-    subject = result.comparisonType ?? fallback;
+    const armSubject = outcome.armLabels.join(" vs ");
+    const methodology = result.comparisonType ?? result.effectMeasure;
+    subject = armSubject || methodology || "Between-arm result";
+    subjectDetail = armSubject ? methodology : undefined;
   } else {
     subject =
       outcome.armLabels.length > 0
@@ -113,12 +122,25 @@ export function OutcomeResult({
       {/* Column 1: treatment-regimen subject (arm/dose or analysis-group). */}
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-1.5">
-          <Badge tone={isBetweenArm ? "accent" : "muted"}>
-            {isBetweenArm ? "Between-arm" : "Arm-level"}
+          <Badge
+            tone={
+              isBetweenArm ? "accent" : outcome.groupKind ? "primary" : "muted"
+            }
+          >
+            {isBetweenArm
+              ? "Between-arm"
+              : outcome.groupKind
+                ? (groupKindLabel[outcome.groupKind] ?? "Analysis group")
+                : "Arm-level"}
           </Badge>
           {!hideMaturity ? <Badge>{maturity}</Badge> : null}
         </div>
         <p className="mt-1.5 text-sm font-medium text-foreground">{subject}</p>
+        {subjectDetail ? (
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            {subjectDetail}
+          </p>
+        ) : null}
       </div>
 
       {/* Column 2: efficacy estimand, kept visually distinct from the regimen subject. */}
@@ -156,13 +178,6 @@ export function OutcomeResult({
           ) : null}
         </div>
       </div>
-
-      {!hideSource && metadata.sources.length > 0 ? (
-        <p className="col-span-full flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-          <span className="font-semibold text-foreground">Source</span>
-          <SourceList sources={metadata.sources} variant="inline" />
-        </p>
-      ) : null}
     </li>
   );
 }

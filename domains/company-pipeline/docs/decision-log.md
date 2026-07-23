@@ -56,5 +56,7 @@ through ADR-0039 is available only through the
 
 | ADR-0045 | Accept 10-of-15 Efficacy Comparison population coverage and freeze it behind `npm run data:probe:efficacy-population-coverage`. | Correctness over coverage: liraglutide reports weight in kg only; cagrilintide and UBT251 state no diabetes criterion; MariTide phase 2 and CT-996-201 span a non-diabetic and a T2D cohort. Relaxing `mixed` or `not-specified` to non-diabetic would mix populations the sources never claimed. | Active | [Clinical Evidence contract](../../clinical-evidence/docs/README.md#deferred-limitations) |
 
+| ADR-0046 | Add optional `Study.seriousAdverseEventIncidence`, `nauseaVomitingIncidence`, and `antiDrugAntibodyIncidence` fields, required whenever a cited source reports them. | The prior "concise safety summary only" scope let SAE, GI tolerability, and immunogenicity incidence go unrecorded even when directly disclosed, since only free-text `safetySummary` existed to hold them. Concise per-fact fields close that gap without reintroducing exhaustive per-arm/per-event adverse-event modeling. Additive optional string fields, same precedent as `studyFamily`, so the schema version does not change. | Active | [Clinical Evidence contract](../../clinical-evidence/docs/README.md) |
+
 New entries stay one row. Put the enforceable rule in its current authority and
 use this index only to preserve the decision, short reason, status, and pointer.

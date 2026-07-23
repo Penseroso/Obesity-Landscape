@@ -88,6 +88,37 @@ JSON, and only these canonical selectors import that loader.
 - Clinical stage and regulatory milestone presentation must preserve the
   distinctions supplied by the Company/Pipeline contract.
 
+## Study Detail (`/studies/[studyId]`)
+
+- The Endpoints & outcomes list clusters outcomes under one Population/Estimand
+  header whenever two or more outcomes on the same endpoint share population,
+  estimand, and result shape — **regardless of whether they are arm-anchored or
+  AnalysisGroup-anchored**. Subject identity (which arm, or which pooled/derived
+  group) is a separate concern rendered per-row; it never blocks a shared
+  population/estimand from clustering together.
+- Endpoints sharing role, domain, and assessment timepoint, where every one of
+  an endpoint's own outcomes carries `result.responderThreshold`, are grouped
+  into one card as a presentation-only "responder thresholds" family (e.g. 5%,
+  10%, 15% body-weight reduction at the same timepoint). This never merges the
+  underlying Endpoint or Outcome records; it is `EndpointsSection`'s own
+  read-model-preserving grouping.
+- Endpoints & outcomes shows no per-outcome or per-endpoint Source line. Only
+  the Study-level Sources section (bottom of the page) renders citations, since
+  it already lists every source cited anywhere in the Study.
+- Safety is never modeled as an Endpoint/Outcome on this page. `safetySummary`
+  and the three optional incidence fields (`seriousAdverseEventIncidence`,
+  `nauseaVomitingIncidence`, `antiDrugAntibodyIncidence`) render as Overview
+  rows. The Endpoints & outcomes "Safety" role filter is expected to stay empty
+  for essentially every Study and shows explanatory copy rather than "No safety
+  endpoints recorded." when it does.
+- A between-arm outcome's subject line always leads with the compared arms'
+  dose identity (e.g. "Retatrutide 4 mg vs Placebo") when arm labels are
+  available; `comparisonType`/`effectMeasure` renders as secondary text below
+  it, never as the sole subject — source-reported comparison wording is often
+  identical across doses and must not stand in for dose identity.
+- Expand all / Collapse all is a single toggle whose label reflects whether
+  every currently visible card is expanded, not two independent buttons.
+
 ## Efficacy Comparison
 
 `/efficacy-comparison` compares reported body-weight reduction across mechanism

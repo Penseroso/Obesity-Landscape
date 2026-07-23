@@ -23,6 +23,32 @@ function MetaRow({ label, value }: { label: string; value?: string | null }) {
   );
 }
 
+/**
+ * Splits a trailing "(...)" off an Arm label so the Arm column can wrap it to
+ * its own line instead of forcing the column wider. Only a parenthetical at
+ * the very end qualifies — text is never rearranged or reworded, just given a
+ * line break at a boundary the label already marks with punctuation.
+ */
+function splitTrailingParenthetical(label: string): {
+  main: string;
+  detail?: string;
+} {
+  const match = label.match(/^(.*?)\s*(\([^()]*\))$/);
+  return match ? { main: match[1], detail: match[2] } : { main: label };
+}
+
+/**
+ * Presentation-only: when the Titration column already states the starting
+ * dose and escalation schedule, the Dose column's own "target dose" suffix
+ * repeats that context redundantly. Trimmed here for display only — the
+ * stored value is untouched and every other consumer of `arm.dose` still
+ * renders the source text verbatim.
+ */
+function doseCellValue(arm: ArmView): string | undefined {
+  if (!arm.dose || !arm.titration) return arm.dose;
+  return arm.dose.replace(/\s*target dose\s*$/i, "");
+}
+
 function ArmInterventionCell({ arm }: { arm: ArmView }) {
   if (arm.linkedAssetRef) {
     return (
@@ -37,17 +63,6 @@ function ArmInterventionCell({ arm }: { arm: ArmView }) {
   return <span>{formatNullableValue(arm.intervention)}</span>;
 }
 
-/**
- * Sticky-left cell shared by the Arm and Intervention columns, which stay
- * visible while the rest of the Arms table scrolls horizontally. Background
- * must be fully opaque (not the header's translucent `bg-muted/70`) so
- * content scrolling underneath the pinned columns cannot bleed through.
- */
-const stickyArmCellPosition =
-  "sticky left-0 z-10 w-48 min-w-[12rem] max-w-[12rem] px-3 py-2.5 align-middle";
-const stickyInterventionCellPosition =
-  "sticky left-48 z-10 min-w-[9rem] border-r border-border px-3 py-2.5 align-middle";
-
 function ArmsTable({ arms }: { arms: ArmView[] }) {
   if (arms.length === 0) {
     return <p className="text-sm text-muted-foreground">No arms recorded.</p>;
@@ -61,17 +76,11 @@ function ArmsTable({ arms }: { arms: ArmView[] }) {
 
   return (
     <div className="overflow-x-auto rounded-md border border-border bg-card shadow-soft">
-      <table className="w-full min-w-[1040px] border-collapse text-left text-sm">
+      <table className="w-full border-collapse text-left text-sm">
         <thead className="bg-muted/70 text-xs uppercase tracking-[0.12em] text-muted-foreground">
           <tr>
-            <th className={`${stickyArmCellPosition} bg-muted font-semibold`}>
-              Arm
-            </th>
-            <th
-              className={`${stickyInterventionCellPosition} bg-muted font-semibold`}
-            >
-              Intervention
-            </th>
+            <th className="px-3 py-2.5 font-semibold">Arm</th>
+            <th className="px-3 py-2.5 font-semibold">Intervention</th>
             <th className="px-3 py-2.5 font-semibold">Role</th>
             <th className="px-3 py-2.5 font-semibold">Dose</th>
             {showTitration ? (
@@ -89,42 +98,53 @@ function ArmsTable({ arms }: { arms: ArmView[] }) {
           </tr>
         </thead>
         <tbody className="divide-y divide-border">
-          {arms.map((arm) => (
-            <tr key={arm.id} className="bg-card text-muted-foreground">
-              <td
-                className={`${stickyArmCellPosition} bg-card font-medium text-foreground`}
-              >
-                {arm.label}
-              </td>
-              <td className={`${stickyInterventionCellPosition} bg-card`}>
-                <ArmInterventionCell arm={arm} />
-              </td>
-              <td className="px-3 py-2.5">{arm.role}</td>
-              <td className="px-3 py-2.5">{formatNullableValue(arm.dose)}</td>
-              {showTitration ? (
+          {arms.map((arm) => {
+            const { main: armLabelMain, detail: armLabelDetail } =
+              splitTrailingParenthetical(arm.label);
+            return (
+              <tr key={arm.id} className="bg-card text-muted-foreground">
+                <td className="px-3 py-2.5 align-middle font-medium text-foreground">
+                  <span className="block">{armLabelMain}</span>
+                  {armLabelDetail ? (
+                    <span className="block text-xs font-normal text-muted-foreground">
+                      {armLabelDetail}
+                    </span>
+                  ) : null}
+                </td>
+                <td className="px-3 py-2.5 align-middle">
+                  <ArmInterventionCell arm={arm} />
+                </td>
+                <td className="px-3 py-2.5">{arm.role}</td>
                 <td className="px-3 py-2.5">
-                  {formatNullableValue(arm.titration)}
+                  {formatNullableValue(doseCellValue(arm))}
                 </td>
-              ) : null}
-              <td className="px-3 py-2.5">{formatNullableValue(arm.route)}</td>
-              <td className="px-3 py-2.5">
-                {formatNullableValue(arm.dosingFrequency)}
-              </td>
-              <td className="px-3 py-2.5">
-                {formatNullableValue(arm.treatmentDuration)}
-              </td>
-              {showPlannedN ? (
-                <td className="px-3 py-2.5 tabular-nums">
-                  {formatCount(arm.plannedN)}
+                {showTitration ? (
+                  <td className="px-3 py-2.5">
+                    {formatNullableValue(arm.titration)}
+                  </td>
+                ) : null}
+                <td className="px-3 py-2.5">
+                  {formatNullableValue(arm.route)}
                 </td>
-              ) : null}
-              {showAnalyzedN ? (
-                <td className="px-3 py-2.5 tabular-nums">
-                  {formatCount(arm.analyzedN)}
+                <td className="px-3 py-2.5">
+                  {formatNullableValue(arm.dosingFrequency)}
                 </td>
-              ) : null}
-            </tr>
-          ))}
+                <td className="px-3 py-2.5">
+                  {formatNullableValue(arm.treatmentDuration)}
+                </td>
+                {showPlannedN ? (
+                  <td className="px-3 py-2.5 tabular-nums">
+                    {formatCount(arm.plannedN)}
+                  </td>
+                ) : null}
+                {showAnalyzedN ? (
+                  <td className="px-3 py-2.5 tabular-nums">
+                    {formatCount(arm.analyzedN)}
+                  </td>
+                ) : null}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
@@ -149,7 +169,9 @@ function AnalysisGroupCard({ group }: { group: AnalysisGroupView }) {
         </p>
       ) : null}
       {group.description ? (
-        <p className="mt-2 text-sm text-muted-foreground">{group.description}</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          {group.description}
+        </p>
       ) : null}
       {typeof group.analyzedN === "number" ? (
         <p className="mt-2 text-xs text-muted-foreground">
@@ -262,6 +284,18 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
           <MetaRow label="Overall duration" value={study.overallDuration} />
           <MetaRow label="Follow-up" value={study.followUpDuration} />
           <MetaRow label="Safety summary" value={study.safetySummary} />
+          <MetaRow
+            label="Serious adverse events"
+            value={study.seriousAdverseEventIncidence}
+          />
+          <MetaRow
+            label="Nausea/vomiting"
+            value={study.nauseaVomitingIncidence}
+          />
+          <MetaRow
+            label="Anti-drug antibodies"
+            value={study.antiDrugAntibodyIncidence}
+          />
         </dl>
       </section>
 
@@ -306,7 +340,8 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
             Linked from assets
           </h2>
           <p className="text-sm text-muted-foreground">
-            This study is also surfaced as a comparator / head-to-head study for:
+            This study is also surfaced as a comparator / head-to-head study
+            for:
           </p>
           <ul className="flex flex-wrap gap-2">
             {linkedFromAssets.map((linkedAsset) => (

@@ -94,8 +94,8 @@ authoritative; generated output must not be edited by hand.
 **Study** is one identifiable clinical protocol or registry study. It requires a
 stable study ID, `companyId`, `assetId`, exactly one of `programId` or `regimenId`,
 official title, registry identifier, phase, `registryStatus`, study design, population,
-optional duration/follow-up/safety summary, and verification metadata. NCT IDs
-must match `NCT########`.
+optional duration/follow-up/safety summary/safety incidence fields, and verification
+metadata. NCT IDs must match `NCT########`.
 
 `registryStatus` identifies the **single reference registry** used for tracking
 and UI. Its `registry` + `registryId` must match one `registryIdentifiers` entry.
@@ -429,8 +429,16 @@ The omission is a deferred schema case, not an operating-data defect.
   results. Under v1 this result was omitted because the starting-dose groups could not
   map to pooled "Arms"; the current contract represents it without distortion.
 
-Safety stays separate from efficacy outcomes. Store only a concise study-level
-safety summary; do not attempt exhaustive adverse-event capture in this module.
+Safety stays separate from efficacy outcomes and does not attempt exhaustive
+adverse-event capture in this module — no per-arm or per-event Endpoint/Outcome
+modeling. Beyond the free-text `safetySummary` narrative, three specific
+source-reported incidence facts each get their own optional `Study` field,
+required whenever a cited source reports them: `seriousAdverseEventIncidence`
+(SAE rate), `nauseaVomitingIncidence` (the most common GI tolerability signal
+for this drug class), and `antiDrugAntibodyIncidence` (immunogenicity, ADA).
+Each is concise source-reported text (e.g. a range across arms), never a
+per-arm structured result. Omit a field the cited sources do not report;
+never write "not reported" as if it were a value.
 
 ## Reference Rules
 

@@ -7,7 +7,12 @@
       "WebFetch(domain:www.sec.gov)",
       "WebFetch(domain:www.globenewswire.com)",
       "Bash(npm run *)",
-      "WebFetch(domain:clinicaltrials.gov)"
+      "WebFetch(domain:clinicaltrials.gov)",
+      "Bash(node -e ' *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m '@ *)",
+      "Bash(git push *)"
     ]
   }
 }

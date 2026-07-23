@@ -19,6 +19,7 @@ import {
 } from "@/domains/clinical-evidence/lib/clinical-term-canonicalization.mjs";
 import { pipelinePrograms, regimens } from "@/domains/company-pipeline/lib/data";
 import type {
+  ClinicalAnalysisGroupKind,
   ClinicalAnalysisGroupRecord,
   ClinicalArmRecord,
   ClinicalEndpointRecord,
@@ -163,6 +164,8 @@ export type OutcomeView = {
   armLabels: string[];
   /** Label of the analysis group this outcome anchors to, when group-anchored. */
   groupLabel?: string;
+  /** Source-reported construction of the analysis group, when group-anchored. */
+  groupKind?: ClinicalAnalysisGroupKind;
 };
 
 export type EndpointGroupView = {
@@ -613,6 +616,9 @@ export function getStudyDetail(studyId: string): StudyDetailView | undefined {
   const groupLabelById = new Map(
     analysisGroupRecords.map((group) => [group.id, group.label]),
   );
+  const groupKindById = new Map(
+    analysisGroupRecords.map((group) => [group.id, group.kind]),
+  );
   const analysisGroups: AnalysisGroupView[] = analysisGroupRecords.map(
     (group) => ({
       ...group,
@@ -641,8 +647,10 @@ export function getStudyDetail(studyId: string): StudyDetailView | undefined {
       );
     }
     let groupLabel: string | undefined;
+    let groupKind: ClinicalAnalysisGroupKind | undefined;
     if (outcome.analysisGroupId) {
       groupLabel = groupLabelById.get(outcome.analysisGroupId);
+      groupKind = groupKindById.get(outcome.analysisGroupId);
       if (groupLabel === undefined) {
         throw new Error(
           `Clinical Evidence outcome "${outcome.id}" references missing analysis group "${outcome.analysisGroupId}" in study "${studyId}"`,
@@ -656,6 +664,7 @@ export function getStudyDetail(studyId: string): StudyDetailView | undefined {
         resolveArmLabel(id, `outcome "${outcome.id}"`),
       ),
       groupLabel,
+      groupKind,
     };
     const list = outcomesByEndpointId.get(endpoint.id);
     if (list) {

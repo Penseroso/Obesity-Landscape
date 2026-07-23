@@ -131,6 +131,17 @@ export type ClinicalStudyRecord = {
   overallDuration?: string;
   followUpDuration?: string;
   safetySummary?: string;
+  /**
+   * Concise source-reported incidence text (e.g. a range across arms), not a
+   * per-arm structured result — the module still does not model exhaustive
+   * adverse-event capture. Present only when the study's cited sources report
+   * it; omit rather than write "not reported".
+   */
+  seriousAdverseEventIncidence?: string;
+  /** Same shape and omission rule as `seriousAdverseEventIncidence`, for nausea/vomiting incidence. */
+  nauseaVomitingIncidence?: string;
+  /** Same shape and omission rule as `seriousAdverseEventIncidence`, for anti-drug antibody (immunogenicity) incidence. */
+  antiDrugAntibodyIncidence?: string;
   metadata: RecordMetadata;
 };
 

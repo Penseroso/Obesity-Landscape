@@ -1760,7 +1760,9 @@
         "treatmentContext": "initial-treatment"
       },
       "overallDuration": "48 weeks",
-      "safetySummary": "The most common adverse events were gastrointestinal, were dose related and mostly mild to moderate; heart-rate increases peaked at 24 weeks and then declined.",
+      "safetySummary": "Adverse events occurred in 73% to 94% of retatrutide groups and 70% with placebo; gastrointestinal events were most common, predominantly mild to moderate, dose related, concentrated during escalation, and partly mitigated by a 2 mg rather than 4 mg starting dose. Adverse-event discontinuation occurred in 6% to 16% with retatrutide and 0% with placebo, while serious adverse events occurred in 4% of both groups. Heart rate increased dose dependently through week 24 and then declined.",
+      "seriousAdverseEventIncidence": "0% to 6% across retatrutide dose groups (lowest with the 4 mg 2 mg-starting-dose arm, highest with the 4 mg and 8 mg 4 mg-starting-dose arms) versus 4% with placebo.",
+      "nauseaVomitingIncidence": "Nausea occurred in 14% to 60% of retatrutide arms (dose dependent, highest with the 8 mg 4 mg-starting-dose arm) versus 11% with placebo; vomiting occurred in 3% to 26% of retatrutide arms (dose dependent) versus 1% with placebo.",
       "metadata": {
         "lastVerifiedAt": "2026-07-23",
         "updatedAt": "2026-07-23",
@@ -1769,14 +1771,21 @@
             "url": "https://clinicaltrials.gov/study/NCT04881760",
             "title": "Retatrutide Phase 2 obesity study record",
             "sourceType": "trial registry",
-            "checkedAt": "2026-07-13"
+            "checkedAt": "2026-07-23"
           },
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
             "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
             "publishedAt": "2023-06-26",
-            "checkedAt": "2026-07-13"
+            "checkedAt": "2026-07-23"
+          },
+          {
+            "url": "https://www.nejm.org/doi/suppl/10.1056/NEJMoa2301972/suppl_file/nejmoa2301972_appendix.pdf",
+            "title": "Supplementary Appendix: Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication supplement",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
           }
         ]
       },
@@ -12058,6 +12067,30 @@
       "assessmentTimepoint": "Week 48"
     },
     {
+      "id": "reta-p2-responder5-week48",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
+    },
+    {
+      "id": "reta-p2-responder10-week48",
+      "name": "Participants achieving at least 10% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
+    },
+    {
+      "id": "reta-p2-responder15-week48",
+      "name": "Participants achieving at least 15% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
+    },
+    {
       "id": "triumph4-weight-week68",
       "studyId": "eli-lilly-and-company-retatrutide-triumph-4-nct05931367",
       "name": "Percentage change from baseline in body weight",
@@ -14858,13 +14891,14 @@
       "armIds": [
         "reta-p2-1mg"
       ],
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-7.2",
         "numericValue": -7.2,
         "unit": "percent",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -8.5 to -5.9"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
@@ -14872,8 +14906,196 @@
         "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-4mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.8",
+        "numericValue": -11.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -13.3 to -10.2"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-4mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-13.9",
+        "numericValue": -13.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -15.9 to -11.9"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-8mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.7",
+        "numericValue": -16.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -18.4 to -15.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-8mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-17.9",
+        "numericValue": -17.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -19.7 to -16.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-12mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-17.5",
+        "numericValue": -17.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -18.8 to -16.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-1.6",
+        "numericValue": -1.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -2.7 to -0.5"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
             "checkedAt": "2026-07-23"
           }
         ]
@@ -14884,7 +15106,7 @@
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week24",
       "analysisGroupId": "reta-p2-pooled-4mg",
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12.9",
@@ -14898,8 +15120,10 @@
         "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
             "checkedAt": "2026-07-23"
           }
         ]
@@ -14910,7 +15134,7 @@
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week24",
       "analysisGroupId": "reta-p2-pooled-8mg",
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-17.3",
@@ -14924,64 +15148,10 @@
         "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-23"
-          }
-        ]
-      }
-    },
-    {
-      "id": "reta-p2-weight24-12mg",
-      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
-      "endpointId": "reta-p2-weight-week24",
-      "armIds": [
-        "reta-p2-12mg"
-      ],
-      "analysisPopulation": "Intention-to-treat (overall)",
-      "estimand": "Efficacy estimand",
-      "result": {
-        "value": "-17.5",
-        "numericValue": -17.5,
-        "unit": "percent",
-        "resultType": "arm-level"
-      },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-23",
-        "updatedAt": "2026-07-23",
-        "sources": [
-          {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
-            "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-23"
-          }
-        ]
-      }
-    },
-    {
-      "id": "reta-p2-weight24-placebo",
-      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
-      "endpointId": "reta-p2-weight-week24",
-      "armIds": [
-        "reta-p2-placebo"
-      ],
-      "analysisPopulation": "Intention-to-treat (overall)",
-      "estimand": "Efficacy estimand",
-      "result": {
-        "value": "-1.6",
-        "numericValue": -1.6,
-        "unit": "percent",
-        "resultType": "arm-level"
-      },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-23",
-        "updatedAt": "2026-07-23",
-        "sources": [
-          {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
-            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
             "checkedAt": "2026-07-23"
           }
         ]
@@ -14994,75 +15164,150 @@
       "armIds": [
         "reta-p2-1mg"
       ],
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-8.7",
         "numericValue": -8.7,
         "unit": "percent",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -10.5 to -6.8"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-13"
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
           }
         ]
       }
     },
     {
-      "id": "reta-p2-weight-4mg",
+      "id": "reta-p2-weight48-4mg-start2",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week48",
-      "analysisGroupId": "reta-p2-pooled-4mg",
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "armIds": [
+        "reta-p2-4mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
-        "value": "-17.1",
-        "numericValue": -17.1,
+        "value": "-16.3",
+        "numericValue": -16.3,
         "unit": "percent",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -19.4 to -13.2"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-13"
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
           }
         ]
       }
     },
     {
-      "id": "reta-p2-weight-8mg",
+      "id": "reta-p2-weight48-4mg-start4",
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
       "endpointId": "reta-p2-weight-week48",
-      "analysisGroupId": "reta-p2-pooled-8mg",
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "armIds": [
+        "reta-p2-4mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
-        "value": "-22.8",
-        "numericValue": -22.8,
+        "value": "-17.8",
+        "numericValue": -17.8,
         "unit": "percent",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -20.8 to -14.8"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-13"
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-8mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.7",
+        "numericValue": -21.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -24.5 to -19.0"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-8mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-23.9",
+        "numericValue": -23.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -26.8 to -20.9"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
           }
         ]
       }
@@ -15074,23 +15319,26 @@
       "armIds": [
         "reta-p2-12mg"
       ],
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-24.2",
         "numericValue": -24.2,
         "unit": "percent",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -26.6 to -21.8"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-13"
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
           }
         ]
       }
@@ -15102,23 +15350,1315 @@
       "armIds": [
         "reta-p2-placebo"
       ],
-      "analysisPopulation": "Intention-to-treat (overall)",
+      "analysisPopulation": "Efficacy analysis set (overall)",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.1",
         "numericValue": -2.1,
         "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -3.5 to -0.7"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight-4mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "analysisGroupId": "reta-p2-pooled-4mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-17.1",
+        "numericValue": -17.1,
+        "unit": "percent",
         "resultType": "arm-level"
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-13",
-        "updatedAt": "2026-07-13",
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
         "sources": [
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/37366315/",
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-13"
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight-8mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "analysisGroupId": "reta-p2-pooled-8mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-22.8",
+        "numericValue": -22.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-vs-placebo-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-1mg",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-5.6",
+        "numericValue": -5.6,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -7.3 to -3.9"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-vs-placebo-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-1mg",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.6",
+        "numericValue": -6.6,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -8.9 to -4.2"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-vs-placebo-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-4mg-start2",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.1",
+        "numericValue": -10.1,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -12.0 to -8.3"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-vs-placebo-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-4mg-start2",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.2",
+        "numericValue": -14.2,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -17.6 to -10.8"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-vs-placebo-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-4mg-start4",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.3",
+        "numericValue": -12.3,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -14.6 to -10.0"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-vs-placebo-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-4mg-start4",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.7",
+        "numericValue": -15.7,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -19.1 to -12.4"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-vs-placebo-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-8mg-start2",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.1",
+        "numericValue": -15.1,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -17.1 to -13.2"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-vs-placebo-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-8mg-start2",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-19.6",
+        "numericValue": -19.6,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -22.7 to -16.5"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-vs-placebo-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-8mg-start4",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.3",
+        "numericValue": -16.3,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -18.3 to -14.2"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-vs-placebo-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-8mg-start4",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.8",
+        "numericValue": -21.8,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -25.1 to -18.5"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight24-vs-placebo-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week24",
+      "armIds": [
+        "reta-p2-12mg",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.8",
+        "numericValue": -15.8,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -17.6 to -14.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-weight48-vs-placebo-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-weight-week48",
+      "armIds": [
+        "reta-p2-12mg",
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-22.1",
+        "numericValue": -22.1,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, retatrutide minus placebo",
+        "confidenceInterval": "95% CI, -24.9 to -19.3"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-1mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "64",
+        "numericValue": 64,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-4mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "87",
+        "numericValue": 87,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-4mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "97",
+        "numericValue": 97,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-8mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "100",
+        "numericValue": 100,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-8mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "100",
+        "numericValue": 100,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-12mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "100",
+        "numericValue": 100,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "armIds": [
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "27",
+        "numericValue": 27,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-4mg-pooled",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "analysisGroupId": "reta-p2-pooled-4mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "92",
+        "numericValue": 92,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder5-8mg-pooled",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder5-week48",
+      "analysisGroupId": "reta-p2-pooled-8mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "100",
+        "numericValue": 100,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-1mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "27",
+        "numericValue": 27,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-4mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "73",
+        "numericValue": 73,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-4mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "76",
+        "numericValue": 76,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-8mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "90",
+        "numericValue": 90,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-8mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "91",
+        "numericValue": 91,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-12mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "93",
+        "numericValue": 93,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "armIds": [
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "9",
+        "numericValue": 9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-4mg-pooled",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "analysisGroupId": "reta-p2-pooled-4mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "75",
+        "numericValue": 75,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder10-8mg-pooled",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder10-week48",
+      "analysisGroupId": "reta-p2-pooled-8mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "91",
+        "numericValue": 91,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-1mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-1mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "16",
+        "numericValue": 16,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-4mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-4mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "55",
+        "numericValue": 55,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-4mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-4mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "64",
+        "numericValue": 64,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-8mg-start2",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-8mg-start2"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "73",
+        "numericValue": 73,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-8mg-start4",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-8mg-start4"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "77",
+        "numericValue": 77,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-12mg",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-12mg"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "83",
+        "numericValue": 83,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-placebo",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "armIds": [
+        "reta-p2-placebo"
+      ],
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "2",
+        "numericValue": 2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-4mg-pooled",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "analysisGroupId": "reta-p2-pooled-4mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "60",
+        "numericValue": 60,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reta-p2-responder15-8mg-pooled",
+      "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
+      "endpointId": "reta-p2-responder15-week48",
+      "analysisGroupId": "reta-p2-pooled-8mg",
+      "analysisPopulation": "Efficacy analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "75",
+        "numericValue": 75,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2301972",
+            "title": "Triple-Hormone-Receptor Agonist Retatrutide for Obesity — A Phase 2 Trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-26",
+            "checkedAt": "2026-07-23"
           }
         ]
       }
