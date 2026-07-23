@@ -78,11 +78,18 @@ function shortFamilyLabel(label: string): string {
  * than the spelled word repeated down a dose list. Any other unit — a between-arm
  * effect measure in percentage points, kg, etc. — stays spelled out and muted, so a
  * different measure never hides behind the same glyph.
+ *
+ * The glyph is appended only when the stored value does not already carry one: the
+ * dataset records some percent values verbatim with a trailing "%" and others as a
+ * bare number, and doubling it up would print "−2.5%%". The value itself is never
+ * rewritten — a "%" already in the source is left exactly as stored.
  */
 function ValueNumber({ value, unit }: { value: string; unit: string }) {
   if (unit === "percent") {
     return (
-      <span className="font-semibold tabular-nums text-foreground">{value}%</span>
+      <span className="font-semibold tabular-nums text-foreground">
+        {value.includes("%") ? value : `${value}%`}
+      </span>
     );
   }
   return (
