@@ -22,7 +22,7 @@
       "stage": "Phase 3",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not yet recruiting"
+      "stageOperationalState": "Initiated or active"
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
@@ -45,6 +45,13 @@
           "url": "https://clinicaltrials.gov/study/NCT07020884",
           "title": "A Study of ZT002 Injection With Subjects With Overweight or Obesity",
           "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.linkedin.com/posts/qlbiopharm_qlbiopharm-horizon1-zovaglutide-activity-7420679673493225473-4sIj",
+          "title": "QL Biopharm Completes Dosing of First Patient in HORIZON-1, a Phase 3 Trial for Weight Loss with Zovaglutide, a Once-Monthly GLP-1 RA Peptide",
+          "sourceType": "company social media announcement",
+          "publishedAt": "2026-01-19",
           "checkedAt": "2026-07-24"
         }
       ]
