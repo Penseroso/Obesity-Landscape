@@ -75,6 +75,17 @@
     "mechanisms": ["GLP-1R/GLP-2R dual agonist"]
   },
   {
+    "id": "glp1-fgf21-agonist",
+    "label": "GLP-1 / FGF21 dual agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "FGF21R", "action": "agonist" }
+    ],
+    "sortRank": 65,
+    "mechanisms": ["GLP-1/FGF21 dual agonist"]
+  },
+  {
     "id": "gip-agonist",
     "label": "GIP receptor agonist",
     "composition": "single-molecule",

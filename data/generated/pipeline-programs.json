@@ -4439,6 +4439,196 @@
     }
   },
   {
+    "id": "ql-biopharm-zt002-subcutaneous-injection",
+    "assetId": "zt002",
+    "companyId": "ql-biopharm",
+    "assetName": "Zovaglutide",
+    "codeName": "ZT002",
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once monthly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/ql-biopharm-reports-phase-2-results-of-a-monthly-dose-study-evaluating-zovaglutide-a-novel-extended-half-life-glp-1-receptor-agonist-at-easd-2025-302558945.html",
+          "title": "QL Biopharm reports Phase 2 results of a monthly dose study evaluating zovaglutide, a novel, extended half-life GLP-1 receptor agonist at EASD 2025",
+          "sourceType": "company press release",
+          "publishedAt": "2025-09-18",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07230119",
+          "title": "A Study of Zovaglutide in Subjects With Overweight or Obesity (HORIZON-1)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07020884",
+          "title": "A Study of ZT002 Injection With Subjects With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ql-biopharm-zt002-subcutaneous-injection-type-2-diabetes",
+    "assetId": "zt002",
+    "companyId": "ql-biopharm",
+    "assetName": "Zovaglutide",
+    "codeName": "ZT002",
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once every 2 weeks"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 1b/2a",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07065032",
+          "title": "A Study of ZT002 Injection in Adult Chinese Subjects With Type 2 Diabetes Mellitus (T2DM)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ql-biopharm-zt003-subcutaneous-injection",
+    "assetId": "zt003",
+    "companyId": "ql-biopharm",
+    "assetName": "ZT003",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1/FGF21 dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Metabolic dysfunction-associated steatohepatitis"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "regulatoryStates": [
+      {
+        "state": "IND cleared",
+        "jurisdiction": "United States",
+        "authority": "U.S. FDA",
+        "date": "2025-06-27"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.qlbiopharm.com/en/news-info/368.html",
+          "title": "QL Biopharm's GLP-1/FGF21 Dual Agonist ZT003 Obtains FDA Approval for New Drug Clinical Trial",
+          "sourceType": "company press release",
+          "publishedAt": "2025-06-30",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07184502",
+          "title": "A Phase 1, Randomized, Double-blind, Placebo-controlled, Single and Multiple Ascending Dose Trial of ZT003 Injection",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ql-biopharm-zt006-oral-tablets",
+    "assetId": "zt006",
+    "companyId": "ql-biopharm",
+    "assetName": "ZT006",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily or once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.linkedin.com/posts/qlbiopharm_qlbiopharm-zt006-glp1-activity-7408911537480019970-IWdB",
+          "title": "QL Biopharm Doses First Patient in ZT006 Phase 2 Obesity Study",
+          "sourceType": "company social media announcement",
+          "publishedAt": "2025-12-12",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07230132",
+          "title": "Efficacy and Safety of ZT006 in Overweight and Obese Participants",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07307638",
+          "title": "Dose-escalation and Food Effect Study of ZT006 in Healthy, Overweight and Obese Participants",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
     "id": "roche-ct-868-subcutaneous-injection",
     "assetId": "ct-868",
     "companyId": "roche",

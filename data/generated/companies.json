@@ -25,6 +25,11 @@
     "headquartersCountry": "Denmark"
   },
   {
+    "id": "ql-biopharm",
+    "name": "QL Biopharm",
+    "headquartersCountry": "China"
+  },
+  {
     "id": "roche",
     "name": "Roche",
     "headquartersCountry": "Switzerland"

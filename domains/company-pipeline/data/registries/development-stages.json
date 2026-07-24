@@ -105,6 +105,15 @@
     "sortRank": 45
   },
   {
+    "id": "phase-1b-2a",
+    "label": "Phase 1b/2a",
+    "family": "Phase 1/2",
+    "aliases": [
+      "Phase Ib/IIa"
+    ],
+    "sortRank": 46
+  },
+  {
     "id": "phase-2",
     "label": "Phase 2",
     "family": "Phase 2",
