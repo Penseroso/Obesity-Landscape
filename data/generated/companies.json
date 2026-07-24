@@ -35,6 +35,11 @@
     "headquartersCountry": "Switzerland"
   },
   {
+    "id": "sciwind-biosciences",
+    "name": "Sciwind Biosciences",
+    "headquartersCountry": "China"
+  },
+  {
     "id": "zealand-pharma",
     "name": "Zealand Pharma",
     "headquartersCountry": "Denmark"

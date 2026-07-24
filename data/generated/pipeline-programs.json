@@ -4934,6 +4934,530 @@
     }
   },
   {
+    "id": "sciwind-biosciences-ecnoglutide-oral-tablets",
+    "assetId": "ecnoglutide",
+    "companyId": "sciwind-biosciences",
+    "assetName": "Ecnoglutide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "XW003"
+      },
+      {
+        "type": "development-code",
+        "value": "XW004"
+      }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 peptide analog",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily; once weekly also under investigation"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 1b/2a",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Verdiva Bio Limited",
+        "role": "licensee",
+        "territories": [
+          "Worldwide excluding Greater China and South Korea"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07243171",
+          "title": "A Phase Ib/IIa Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Oral Ecnoglutide Tablets in Chinese Participants With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05184322",
+          "title": "XW004 To Evaluate the Safety, Tolerability, PK, and PD of Oral Ecnoglutide Tablet in Healthy Adults",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-positive-results-from-phase-1-clinical-trial-of-xw004-an-oral-formulation-of-long-acting-glp-1-analog-ecnoglutide-302042633.html",
+          "title": "Sciwind Biosciences Announces Positive Results from Phase 1 Clinical Trial of XW004, an Oral Formulation of Long-acting GLP-1 Analog Ecnoglutide",
+          "sourceType": "company press release",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
+          "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2025-01-10",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
+    "assetId": "ecnoglutide",
+    "companyId": "sciwind-biosciences",
+    "assetName": "Ecnoglutide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "XW003"
+      },
+      {
+        "type": "development-code",
+        "value": "XW004"
+      }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Approved",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "China",
+        "authority": "National Medical Products Administration (NMPA)",
+        "date": "2026-03-06"
+      }
+    ],
+    "relationships": [
+      {
+        "externalCompanyName": "Pfizer",
+        "role": "commercialization partner",
+        "territories": [
+          "China"
+        ],
+        "rights": [
+          "commercialization"
+        ],
+        "effectiveDate": "2026-02-24",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-partners-with-pfizer-china-to-commercialize-its-biased-glp-1-in-china-302695339.html"
+        ]
+      },
+      {
+        "externalCompanyName": "HK inno.N Corporation",
+        "role": "licensee",
+        "territories": [
+          "South Korea"
+        ],
+        "rights": [
+          "development",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-07",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-and-hk-innon-corporation-announce-licensing-and-partnership-agreement-for-ecnoglutide-injection-xw003-in-south-korea-302137754.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-ecnoglutide-injection-approved-by-chinas-national-medical-products-administration-nmpa-for-chronic-weight-management-302706442.html",
+          "title": "Sciwind Biosciences Announces Ecnoglutide Injection Approved by China's National Medical Products Administration (NMPA) for Chronic Weight Management",
+          "sourceType": "company press release",
+          "publishedAt": "2026-03-06",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05680155",
+          "title": "SLIMMER: A Phase 3 Study of Ecnoglutide (XW003) in Chinese Adults With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.thelancet.com/journals/landia/article/PIIS2213-8587(25)00141-X/abstract",
+          "title": "Efficacy and safety of a biased GLP-1 receptor agonist ecnoglutide in adults with overweight or obesity: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial",
+          "sourceType": "peer-reviewed publication",
+          "publishedAt": "2025-06",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-adolescent-obesity",
+    "assetId": "ecnoglutide",
+    "companyId": "sciwind-biosciences",
+    "assetName": "Ecnoglutide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "XW003"
+      },
+      {
+        "type": "development-code",
+        "value": "XW004"
+      }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "regulatoryStates": [
+      {
+        "state": "IND cleared",
+        "jurisdiction": "China",
+        "authority": "National Medical Products Administration (NMPA)",
+        "date": "2026-01"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07143227",
+          "title": "A Study of XW003 Injection in Chinese Adolescents With Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-osa",
+    "assetId": "ecnoglutide",
+    "companyId": "sciwind-biosciences",
+    "assetName": "Ecnoglutide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "XW003"
+      },
+      {
+        "type": "development-code",
+        "value": "XW004"
+      }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obstructive sleep apnea"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07434050",
+          "title": "A Study of XW003 in Obese Participants With Obstructive Sleep Apnea Receiving Positive Airway Pressure Therapy",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "ecnoglutide",
+    "companyId": "sciwind-biosciences",
+    "assetName": "Ecnoglutide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "XW003"
+      },
+      {
+        "type": "development-code",
+        "value": "XW004"
+      }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Approved",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "China",
+        "authority": "National Medical Products Administration (NMPA)",
+        "date": "2026-01-30"
+      }
+    ],
+    "relationships": [
+      {
+        "externalCompanyName": "Pfizer",
+        "role": "commercialization partner",
+        "territories": [
+          "China"
+        ],
+        "rights": [
+          "commercialization"
+        ],
+        "effectiveDate": "2026-02-24",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-partners-with-pfizer-china-to-commercialize-its-biased-glp-1-in-china-302695339.html"
+        ]
+      },
+      {
+        "externalCompanyName": "HK inno.N Corporation",
+        "role": "licensee",
+        "territories": [
+          "South Korea"
+        ],
+        "rights": [
+          "development",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-07",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-and-hk-innon-corporation-announce-licensing-and-partnership-agreement-for-ecnoglutide-injection-xw003-in-south-korea-302137754.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/apac/news-releases/sciwind-biosciences-announces-ecnoglutide-injection-approved-by-chinas-national-medical-products-administration-nmpa-for-adult-type-2-diabetes-302675016.html",
+          "title": "Sciwind Biosciences Announces Ecnoglutide Injection Approved by China's National Medical Products Administration (NMPA) for Adult Type 2 Diabetes",
+          "sourceType": "company press release",
+          "publishedAt": "2026-01-30",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-positive-topline-results-from-phase-3-clinical-trial-of-ecnoglutide-xw003-a-long-acting-camp-signaling-biased-glp-1-analog-in-adult-patients-with-type-2-diabetes-in-china-302023591.html",
+          "title": "Sciwind Biosciences Announces Positive Topline Results from Phase 3 Clinical Trial of Ecnoglutide (XW003) in Adult Patients with Type 2 Diabetes in China",
+          "sourceType": "company press release",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-xw014-oral-capsule",
+    "assetId": "xw014",
+    "companyId": "sciwind-biosciences",
+    "assetName": "XW014",
+    "codeName": null,
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Capsule",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity",
+      "Overweight",
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-initiation-of-dosing-in-phase-1-clinical-trial-evaluating-xw014-an-oral-small-molecule-glp-1-receptor-agonist-for-the-treatment-of-obesity-and-type-2-diabetes-301644252.html",
+          "title": "Sciwind Biosciences Announces Initiation of Dosing in Phase 1 Clinical Trial Evaluating XW014, an Oral Small Molecule GLP-1 Receptor Agonist for the Treatment of Obesity and Type 2 Diabetes",
+          "sourceType": "company press release",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05579314",
+          "title": "XW014 in Healthy Subjects and Patients With Type 2 Diabetes Mellitus (T2DM)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-xw015-subcutaneous-injection",
+    "assetId": "xw015",
+    "companyId": "sciwind-biosciences",
+    "assetName": "XW015",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "IND-enabling",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Verdiva Bio Limited",
+        "role": "licensee",
+        "territories": [
+          "Worldwide excluding Greater China and South Korea"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
+          "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2025-01-10",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
     "id": "zealand-pharma-dapiglutide-subcutaneous-injection",
     "assetId": "dapiglutide",
     "companyId": "zealand-pharma",

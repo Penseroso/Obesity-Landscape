@@ -8,7 +8,9 @@
     "mechanisms": [
       "GLP-1 receptor agonist",
       "GLP-1R agonist",
-      "Non-peptide GLP-1 receptor agonist"
+      "Non-peptide GLP-1 receptor agonist",
+      "cAMP-biased GLP-1 receptor agonist",
+      "cAMP-biased GLP-1 peptide analog"
     ]
   },
   {
