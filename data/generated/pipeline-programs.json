@@ -1,5 +1,88 @@
 [
   {
+    "id": "abbvie-abbv-295-subcutaneous-injection",
+    "assetId": "abbv-295",
+    "companyId": "abbvie",
+    "assetName": "ABBV-295",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "GUB014295"
+      }
+    ],
+    "technical": {
+      "mechanism": "Agonist that specifically activates amylin and calcitonin receptors",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1b",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Gubra",
+        "role": "originator",
+        "sourceUrls": [
+          "https://news.abbvie.com/2025-03-03-AbbVie-and-Gubra-Announce-License-Agreement-to-Develop-an-Amylin-Analog-for-the-Treatment-of-Obesity"
+        ]
+      },
+      {
+        "externalCompanyName": "Gubra",
+        "role": "licensor",
+        "territories": [
+          "Worldwide"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-03-03",
+        "sourceUrls": [
+          "https://news.abbvie.com/2025-03-03-AbbVie-and-Gubra-Announce-License-Agreement-to-Develop-an-Amylin-Analog-for-the-Treatment-of-Obesity"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://news.abbvie.com/2025-03-03-AbbVie-and-Gubra-Announce-License-Agreement-to-Develop-an-Amylin-Analog-for-the-Treatment-of-Obesity",
+          "title": "AbbVie and Gubra Announce License Agreement to Develop an Amylin Analog for the Treatment of Obesity",
+          "sourceType": "press release",
+          "publishedAt": "2025-03-03",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+          "title": "AbbVie Announces Positive Topline Results from a Phase 1 Multiple Ascending Dose Study of ABBV-295, a Long-Acting Amylin Analog, in Adults",
+          "sourceType": "press release",
+          "publishedAt": "2026-03-09",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07291232",
+          "title": "A Study of ABBV-295 Subcutaneous Injections to Assess Adverse Events and Pharmacokinetics in Adult Participants With Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-05-11",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection",
     "assetId": "maridebart-cafraglutide",
     "companyId": "amgen",
