@@ -5155,7 +5155,7 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 1b",
       "status": "Active",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
@@ -5183,6 +5183,99 @@
           "url": "https://clinicaltrials.gov/study/NCT07143227",
           "title": "A Study of XW003 Injection in Chinese Adolescents With Obesity",
           "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-mash",
+    "assetId": "ecnoglutide",
+    "companyId": "sciwind-biosciences",
+    "assetName": "Ecnoglutide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "XW003"
+      },
+      {
+        "type": "development-code",
+        "value": "XW004"
+      }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Metabolic dysfunction-associated steatohepatitis"
+    ],
+    "development": {
+      "stage": "IND cleared",
+      "status": "Planned",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Cleared, not yet initiated"
+    },
+    "regulatoryStates": [
+      {
+        "state": "IND cleared",
+        "jurisdiction": "China",
+        "authority": "National Medical Products Administration (NMPA)",
+        "date": "2021-02-28"
+      }
+    ],
+    "relationships": [
+      {
+        "externalCompanyName": "HK inno.N Corporation",
+        "role": "licensee",
+        "territories": [
+          "South Korea"
+        ],
+        "rights": [
+          "development",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-07",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-and-hk-innon-corporation-announce-licensing-and-partnership-agreement-for-ecnoglutide-injection-xw003-in-south-korea-302137754.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.sciwindbio.com/portal/index/pipeline/category_id/3.html",
+          "title": "Sciwind Biosciences Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.sciwindbio.com/portal/index/newsdetail/id/119/category_id/5.html",
+          "title": "Sciwind's Investigational New Drug Approved for NASH Trial",
+          "sourceType": "company press release",
+          "publishedAt": "2021-02-28",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
+          "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
+          "sourceType": "IPO prospectus (draft)",
+          "publishedAt": "2026-03-22",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-and-hk-innon-corporation-announce-licensing-and-partnership-agreement-for-ecnoglutide-injection-xw003-in-south-korea-302137754.html",
+          "title": "Sciwind Biosciences and HK inno.N Corporation Announce Licensing and Partnership Agreement for Ecnoglutide Injection (XW003) in South Korea",
+          "sourceType": "company press release",
+          "publishedAt": "2024-05-07",
           "checkedAt": "2026-07-24"
         }
       ]
@@ -5229,6 +5322,12 @@
         {
           "url": "https://clinicaltrials.gov/study/NCT07434050",
           "title": "A Study of XW003 in Obese Participants With Obstructive Sleep Apnea Receiving Positive Airway Pressure Therapy",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07387094",
+          "title": "A Study of XW003 in Obese Participants With Obstructive Sleep Apnea But Not Receive Positive Airway Pressure Therapy",
           "sourceType": "trial registry",
           "checkedAt": "2026-07-24"
         },
