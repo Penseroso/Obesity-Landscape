@@ -2990,7 +2990,7 @@
       "stage": "Phase 3",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Completed"
+      "stageOperationalState": "Initiated or active"
     },
     "relationships": [
       {
@@ -3079,6 +3079,56 @@
           "title": "Gan & Lee Pharmaceuticals Achieves Significant Progress in Its Dual Pipeline for Metabolic Diseases -- Weekly Insulin Ludefen (GZR4) Meets Primary Endpoint in Phase III Clinical Trial in China; Bofanglutide Meets Primary Endpoints in Phase III Weight Loss Study in China and Phase II Study in the U.S.",
           "sourceType": "company press release",
           "publishedAt": "2026-06-12",
+          "checkedAt": "2026-07-24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-obstructive-sleep-apnea",
+    "assetId": "gzr18",
+    "companyId": "gan-lee-pharmaceuticals",
+    "assetName": "Bofanglutide",
+    "codeName": "GZR18",
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once every 2 weeks"
+    },
+    "indications": [
+      "Obstructive sleep apnea"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-24",
+      "updatedAt": "2026-07-24",
+      "sources": [
+        {
+          "url": "https://www.ganlee.com/detail/853.html",
+          "title": "Gan & Lee Pharmaceuticals ADA 2026 Abstract Data Review | Multiple Metabolic Pipeline Research Results Presented at International Academic Conference",
+          "sourceType": "company pipeline update",
+          "publishedAt": "2026-06-11",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07493057",
+          "title": "Evaluate the Efficacy and Safety of GZR18 Injection in Obese Subjects With Obstructive Sleep Apnea Not Treated With Positive Airway Pressure (PAP) Therapy",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07501832",
+          "title": "Evaluate the Efficacy and Safety of GZR18 Injection in Obese Subjects With Obstructive Sleep Apnea Receiving Positive Airway Pressure (PAP) Therapy",
+          "sourceType": "trial registry",
           "checkedAt": "2026-07-24"
         }
       ]
