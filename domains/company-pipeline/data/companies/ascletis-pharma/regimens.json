@@ -25,7 +25,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042905416.pdf",
@@ -35,7 +35,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc31-asc47-combination",
@@ -62,7 +63,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC31_ASC47_in_DIO_mice.pdf",
@@ -79,7 +80,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc47-semaglutide-combination",
@@ -108,7 +110,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06972992",
@@ -125,6 +127,7 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -44,9 +44,9 @@ export default function AssetsPage() {
           Program Register
         </h1>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
-          A searchable register of obesity/incretin development programs.
-          Filter by company, indication, route, development stage, and
-          development status.
+          A searchable register of obesity landscape development programs.
+          Filter by company, indication, route, development stage,
+          development status, and scope class.
         </p>
       </section>
       {/* PipelineTable reads drill-down filters from the URL via

@@ -10,8 +10,10 @@ update-boundary: Update when generated file inventory, determinism, ordering, co
 Defines the contract for derived files under `data/generated/`: what they are,
 how they are produced, what they guarantee to downstream consumers (UI, reports,
 future tools), and what they do not. The Company/Pipeline aggregates describe
-current Contract 1.1 behavior (ADR-0030) and preserve the stage semantics
-(ADR-0024); generation is a verbatim passthrough and adds no new fields.
+current Contract 1.2 behavior (ADR-0030, ADR-0053) and preserve the stage
+semantics (ADR-0024); generation is a verbatim passthrough and adds no new
+fields beyond the `scopeClass` field Contract 1.2 introduced on the operating
+source itself.
 `clinical-evidence.json` belongs to the separate Clinical Evidence data layer.
 
 ## 1. Source-of-truth boundary
@@ -98,11 +100,15 @@ For pipeline programs the generated output preserves, when present in the source
 - `regulatoryStates`
 - `relationships`
 - `metadata` (including `sources`)
+- `scopeClass` (Contract 1.2, ADR-0053 — required on every program; see
+  [Data Protocol §Dataset scope](./README.md#dataset-scope))
 
 `companies.json` preserves `id`, `name`, and `headquartersCountry` verbatim.
 Regimen records preserve their full operating shape (`id`, `companyId`, `name`,
 `configurationKey`, `components`, `indications`, `development`,
-`regulatoryStates`, `administration`, `relationships`, `metadata`).
+`regulatoryStates`, `administration`, `relationships`, `metadata`,
+`scopeClass`, required on every regimen under the same Contract 1.2 terms as
+programs).
 Clinical Evidence records preserve Study, Arm, AnalysisGroup, Endpoint, and
 Outcome source records verbatim in separate arrays. `registryStatus` is stored
 on Study; result availability is not stored and is derived from Outcome
@@ -136,10 +142,15 @@ Downstream UI, report, and tool consumers:
 - **Should** treat generated files that are stale relative to operating data as a
   build/validation failure to be fixed by regeneration, never as a competing
   source of truth.
-- **Must** describe counts derived from these files as **tracked
-  obesity/incretin competitive program** counts (the v1.1 scope, ADR-0026), not
-  GLP-1 receptor agonist-only counts; presence of a record does not imply the
-  program is a GLP-1 RA or GLP-1-containing.
+- **Must** describe counts derived from these files as **tracked obesity
+  landscape program** counts (Scope 2.0, ADR-0052), not GLP-1 receptor
+  agonist-only or mechanism-specific counts; presence of a record does not
+  imply the program shares any particular mechanism.
+- **Must** distinguish an aggregate consumer count by `scopeClass`, or
+  otherwise disclose that it does not, rather than reporting one
+  undifferentiated total. Presence of a record does not by itself imply the
+  row is an `obesity-treatment` or `obesity-adjunct` row — as of the Contract
+  1.2 backfill, 43 of 121 program rows are not.
 
 ## 6. Validation contract
 
@@ -148,7 +159,7 @@ Downstream UI, report, and tool consumers:
   registry-backed stage/regulatory-state/relationship values, component and
   reference rules, metadata and date rules). It guarantees the generated
   aggregate is **structurally valid and internally consistent** under
-  Contract 1.1.
+  Contract 1.2.
 - It does **not** by itself prove the generated files are **up-to-date** with
   operating data. Staleness is detected by running `npm run data:generate` and
   confirming `git diff` shows no change under `data/generated/`.
@@ -164,10 +175,11 @@ Downstream UI, report, and tool consumers:
   `npm run data:generate` and then the validators before reporting (see the
   [`Company/Pipeline Research Workflow`](./research-workflow.md)).
 
-## 7. Relationship with Contract 1.1 semantics
+## 7. Relationship with Contract 1.2 semantics
 
 Because generation is a verbatim passthrough, generated outputs preserve the
-ADR-0024 / ADR-0030 stage and identity semantics exactly:
+ADR-0024 / ADR-0030 stage and identity semantics exactly, and the ADR-0053
+`scopeClass` semantics identically:
 
 - `development.stage` remains the most advanced official current development
   stage for the program scope.
@@ -182,6 +194,9 @@ ADR-0024 / ADR-0030 stage and identity semantics exactly:
 - `assetId` is immutable, `assetName` is the canonical name, and typed `aliases`
   are passed through verbatim; generation does not rename, merge, or resolve
   aliases across companies.
+- `scopeClass` is the operating value verbatim; generation never derives,
+  infers, or corrects it from `indications`, `technical.mechanism`, or any
+  other field.
 
 ## 8. Deferred consumer boundaries
 

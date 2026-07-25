@@ -53,7 +53,8 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-alpha-external-drug-obesity",
@@ -86,7 +87,8 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-alpha-external-drug-simultaneous-obesity",
@@ -120,7 +122,8 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-alpha-external-drug-sequential-obesity",
@@ -154,6 +157,7 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

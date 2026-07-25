@@ -35,7 +35,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "disjoint-indication-fixture-co-gamma-oral-tablets-second-indication-row",
@@ -72,6 +73,7 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

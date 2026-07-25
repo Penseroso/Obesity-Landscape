@@ -24,7 +24,8 @@
           "checkedAt": "2026-07-14"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-external-only-combination",
@@ -55,6 +56,7 @@
           "checkedAt": "2026-07-14"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

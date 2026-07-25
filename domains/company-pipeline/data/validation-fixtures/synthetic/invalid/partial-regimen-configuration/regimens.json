@@ -6,7 +6,8 @@
     "components": [{ "assetId": "a" }, { "assetName": "B" }],
     "indications": ["Obesity"],
     "development": { "stage": "Phase 1", "status": "Active" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "regimen-2",
@@ -16,6 +17,7 @@
     "components": [{ "assetName": "B" }, { "assetId": "a" }],
     "indications": ["Obesity"],
     "development": { "stage": "Phase 1", "status": "Active" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s — Obesity Landscape",
   },
   description:
-    "A searchable register of obesity/incretin development programs and competitive landscape data.",
+    "A searchable register of obesity landscape development programs and competitive landscape data.",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
                   Obesity Landscape
                 </span>
                 <span className="block text-xs text-muted-foreground">
-                  Obesity/incretin pipeline intelligence
+                  Obesity landscape pipeline intelligence
                 </span>
               </span>
             </Link>

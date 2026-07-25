@@ -24,7 +24,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ascletis.com/data/upload/ueditor/20251030/Poster_ASC31_ASC47_in_DIO_mice.pdf",
@@ -41,7 +41,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc47-asc35-combination",
@@ -69,7 +70,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042905416.pdf",
@@ -79,7 +80,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc47-semaglutide-combination",
@@ -108,7 +110,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06972992",
@@ -125,7 +127,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-bimagrumab-semaglutide-obesity",
@@ -156,7 +159,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05616013",
@@ -165,7 +168,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-adjunct"
   },
   {
     "id": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
@@ -195,7 +199,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06643728",
@@ -204,7 +208,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-adjunct"
   },
   {
     "id": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
@@ -234,7 +239,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06603571",
@@ -243,7 +248,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ixekizumab-tirzepatide-plaque-psoriasis-obesity",
@@ -274,7 +280,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06588283",
@@ -283,7 +289,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
@@ -314,7 +321,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06588296",
@@ -323,7 +330,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
@@ -353,7 +361,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07215559",
@@ -368,7 +376,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
@@ -398,7 +407,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06373146",
@@ -414,7 +423,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
@@ -445,7 +455,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06937099",
@@ -454,7 +464,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
@@ -485,7 +496,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06937086",
@@ -494,7 +505,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "pfizer-berobenatide-met-233i-regimen",
@@ -522,7 +534,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -532,7 +544,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-met-034i-berobenatide-regimen",
@@ -560,7 +573,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -570,6 +583,7 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -44,7 +44,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
@@ -67,7 +67,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-petrelintide-subcutaneous-injection-chronic-weight-management",
@@ -113,7 +114,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
@@ -122,7 +123,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-dapiglutide-subcutaneous-injection",
@@ -150,7 +152,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/dapiglutide-program-paused/",
@@ -166,7 +168,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-zp6590-subcutaneous-injection",
@@ -194,7 +197,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/zp6590/",
@@ -210,7 +213,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-petrelintide-ct-388-fdc-subcutaneous-injection",
@@ -270,7 +274,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide-ct-388/",
@@ -286,6 +290,7 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

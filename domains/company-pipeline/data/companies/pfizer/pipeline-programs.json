@@ -26,7 +26,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-provides-update-oral-glp-1-receptor-agonist",
@@ -43,7 +43,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-07081532-oral-tablets",
@@ -72,7 +73,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11618248/",
@@ -89,7 +90,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-06954522-oral-tablets",
@@ -118,7 +120,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06003777",
@@ -142,7 +144,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-08653944-subcutaneous-injection",
@@ -185,7 +188,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -202,7 +205,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-08653945-subcutaneous-injection",
@@ -239,7 +243,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -256,7 +260,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-08654698-subcutaneous-injection",
@@ -293,7 +298,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -303,7 +308,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-07976016-oral-tablets",
@@ -331,7 +337,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -348,6 +354,7 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -35,7 +35,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "audit-fixture-co-alpha-oral-tablets-type-2-diabetes",
@@ -74,6 +75,7 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

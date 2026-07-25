@@ -12,7 +12,7 @@ update-boundary: Update when Clinical Evidence entities, field semantics, identi
 `Study.populationProfile` and changes nothing else. Every source file declares
 `"clinicalEvidenceSchemaVersion": "3.1"` and an earlier file is rejected. The field is
 namespaced to this domain — not a bare `schemaVersion` — because Company/Pipeline
-data is separately versioned as "Contract 1.1" (ADR-0030); a generic name here could
+data is separately versioned as "Contract 1.2" (ADR-0030, ADR-0053); a generic name here could
 be misread as versioning that whole registry contract instead of just Clinical
 Evidence.
 
@@ -572,5 +572,5 @@ This data layer does not introduce rankings, cross-company comparisons, new
 clinical calculations, news, timelines, or complex charts. Result availability
 is not a stored field: `hasReportedOutcomes` is derived solely from Outcome
 existence, and UI copy says “No recorded outcomes” rather than claiming that no
-result has been publicly disclosed. Company/Pipeline Contract 1.1 remains a
+result has been publicly disclosed. Company/Pipeline Contract 1.2 remains a
 separate authority.

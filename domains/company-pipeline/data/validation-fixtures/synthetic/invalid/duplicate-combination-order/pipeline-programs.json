@@ -9,7 +9,8 @@
     "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
     "indications": ["Obesity"],
     "development": { "stage": "Preclinical", "status": "Active" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "b",
@@ -21,7 +22,8 @@
     "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
     "indications": ["Obesity"],
     "development": { "stage": "Preclinical", "status": "Active" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ab-1",
@@ -35,7 +37,8 @@
     "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
     "indications": ["Obesity"],
     "development": { "stage": "Preclinical", "status": "Planned" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ab-2",
@@ -49,6 +52,7 @@
     "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
     "indications": ["Obesity"],
     "development": { "stage": "Preclinical", "status": "Planned" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] },
+    "scopeClass": "obesity-treatment"
   }
 ]

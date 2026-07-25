@@ -32,6 +32,7 @@
       "lastVerifiedAt": "2026-07-07",
       "updatedAt": "2026-07-07",
       "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

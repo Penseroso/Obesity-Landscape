@@ -10,6 +10,7 @@ export type ProgramTableColumnId =
   | "development"
   | "status"
   | "indications"
+  | "scopeClass"
   | "platform"
   | "companyCountry";
 
@@ -58,6 +59,14 @@ export const programTableColumns: ProgramTableColumn[] = [
     defaultWidth: 185,
     minWidth: 150,
     maxWidth: 420,
+  },
+  {
+    id: "scopeClass",
+    labels: { ko: "Scope Class", en: "Scope Class" },
+    defaultVisible: true,
+    defaultWidth: 165,
+    minWidth: 130,
+    maxWidth: 280,
   },
   {
     id: "route",

@@ -1,7 +1,8 @@
 import developmentStageRegistry from "@/domains/company-pipeline/data/registries/development-stages.json";
 import mechanismFamilyRegistry from "@/domains/company-pipeline/data/registries/mechanism-families.json";
+import scopeClassRegistry from "@/domains/company-pipeline/data/registries/scope-classes.json";
 import assetAliasTypeSource from "./asset-alias-types.json";
-import type { AssetAliasType } from "./types";
+import type { AssetAliasType, ScopeClass } from "./types";
 
 export type DevelopmentStageRegistryEntry = {
   id: string;
@@ -192,3 +193,60 @@ const CLINICAL_PHASE_BUCKET_IDS: readonly StageBucketId[] = [
 export const clinicalDevelopmentStages = developmentStages.filter((stage) =>
   CLINICAL_PHASE_BUCKET_IDS.includes(getStageBucketId(stage)),
 );
+
+/**
+ * Contract 1.2 registry entry (ADR-0053).
+ *
+ * `obesityPurposeQualifying` marks only whether the class expresses an
+ * obesity-purpose development objective, feeding the Scope 2.0 R1
+ * asset-qualification path (`entities-and-rows.md#scope-class`). It does not
+ * mean dataset membership, asset qualification, Clinical Evidence
+ * eligibility, or UI visibility - all non-qualifying-class rows remain
+ * ordinary stored records and are shown by default.
+ */
+export type ScopeClassRegistryEntry = {
+  id: ScopeClass;
+  label: string;
+  aliases: string[];
+  obesityPurposeQualifying: boolean;
+  sortRank: number;
+};
+
+const scopeClassEntries = scopeClassRegistry as ScopeClassRegistryEntry[];
+
+/** Registry order for display: authored `sortRank`, never a data-derived order. */
+export const scopeClasses = scopeClassEntries
+  .slice()
+  .sort((a, b) => a.sortRank - b.sortRank || a.label.localeCompare(b.label));
+
+export const scopeClassById = new Map(
+  scopeClassEntries.map((entry) => [entry.id, entry]),
+);
+
+/**
+ * Classes whose scopeClass expresses an obesity-purpose development
+ * objective (`obesity-treatment`, `obesity-adjunct`). Feeds the Scope 2.0 R1
+ * asset-qualification path; see the registry entry doc comment above for what
+ * it does not mean.
+ */
+export const obesityPurposeQualifyingScopeClasses = scopeClassEntries
+  .filter((entry) => entry.obesityPurposeQualifying)
+  .map((entry) => entry.id);
+
+/**
+ * Resolves a stored `scopeClass` id to its registry entry.
+ *
+ * Throws rather than falling back to an "unclassified" bucket: an unmapped id
+ * means the registry is out of date, and the validator makes the same
+ * assertion over the whole dataset, so this should be unreachable in a
+ * validated build.
+ */
+export function getScopeClassEntry(scopeClass: ScopeClass): ScopeClassRegistryEntry {
+  const entry = scopeClassById.get(scopeClass);
+  if (!entry) {
+    throw new Error(
+      `Scope class "${scopeClass}" is not mapped to any entry in scope-classes.json`,
+    );
+  }
+  return entry;
+}

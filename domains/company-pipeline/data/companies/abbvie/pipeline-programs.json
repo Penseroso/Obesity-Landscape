@@ -57,7 +57,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://news.abbvie.com/2025-03-03-AbbVie-and-Gubra-Announce-License-Agreement-to-Develop-an-Amylin-Analog-for-the-Treatment-of-Obesity",
@@ -88,6 +88,7 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

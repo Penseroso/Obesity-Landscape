@@ -38,7 +38,8 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-beta-subcutaneous-injection",
@@ -73,7 +74,8 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-alpha-beta-fdc-oral-tablets",
@@ -151,7 +153,8 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-alpha-gamma-coform-subcutaneous-injection",
@@ -208,6 +211,7 @@
           "checkedAt": "2026-07-07"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

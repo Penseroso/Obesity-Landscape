@@ -9,6 +9,7 @@ import {
   getCompanyStageMatrix,
   getLatestUpdateDate,
   getMostAdvancedPrograms,
+  getObesityPurposeProgramCount,
   getRouteDistribution,
 } from "@/domains/company-pipeline/lib/selectors";
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function OverviewPage() {
   const clinicalStagePrograms = getClinicalStageProgramCount(pipelinePrograms);
+  const obesityPurposePrograms = getObesityPurposeProgramCount(pipelinePrograms);
   const lastUpdated = getLatestUpdateDate(pipelinePrograms);
   const stageMatrix = getCompanyStageMatrix(companies, pipelinePrograms);
   const routeDistribution = getRouteDistribution(pipelinePrograms);
@@ -37,15 +39,15 @@ export default function OverviewPage() {
           Obesity Landscape
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
-          Tracks companies and development programs across the
-          obesity/incretin competitive landscape as company source records
-          are added.
+          Tracks companies and development programs across the competitive
+          obesity landscape as company source records are added.
         </p>
       </section>
 
       <OverviewMetadataStrip
         companyCount={companies.length}
         programCount={pipelinePrograms.length}
+        obesityPurposeProgramCount={obesityPurposePrograms}
         clinicalPhaseCount={clinicalStagePrograms}
         lastUpdated={lastUpdated}
       />

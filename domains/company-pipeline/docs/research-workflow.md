@@ -62,10 +62,18 @@ candidate must finish this run in exactly one disposition:
 
 **Disposition precedence.** When the Scope authority explicitly designates a
 candidate class as `Defer`, classify candidates of that class **DEFERRED**, not
-EXCLUDED. Under Scope v1.1 this means muscle-preserving or body-composition
-adjuncts and the named non-incretin anti-obesity classes are reported DEFERRED
-pending a Scope 2.0 review, even though they are not currently enterable — see
-[Defer from Scope v1.1](./README.md#defer-from-scope-v11).
+EXCLUDED — see [Data Protocol §Dataset scope](./README.md#dataset-scope). This
+still applies to the classes Scope 2.0 leaves conditional (for example a
+non-incretin anti-obesity class without yet-confirmed official obesity/
+weight-management development intent for that specific candidate) and to
+candidates unrepresentable under the current contract (for example device,
+procedural, or bariatric-surgical candidates — see
+[Edge Cases](./edge-cases.md)). Scope 2.0's R1 obesity-purpose path (ADR-0052)
+removed the prior Scope v1.1 rule that automatically DEFERRED every
+lean-mass/body-composition or non-incretin candidate regardless of evidence: a
+candidate with confirmed official obesity-treatment or obesity-adjunct intent
+now reaches STORED like any other qualifying candidate, through the normal
+`scopeClass` classification in section 5.
 
 Nothing surfaced may be silently dropped, and no in-scope candidate may leave
 this run without one of these three dispositions. One DEFERRED candidate does
@@ -110,13 +118,13 @@ once every item below holds; while any remain open, the run is **NO-GO**.
    licensed, acquired, partnered, renamed, and historical assets. Review the
    sponsor's full official pipeline for this purpose, but this reconciliation
    is the authoritative official-pipeline inventory for this run only within
-   Scope v1.1: every asset, formulation, route, and indication it names that
-   falls within Scope v1.1, or may plausibly qualify under it, is an in-scope
-   candidate that must reach a disposition under section 2, whether or not it
-   was already known before this run started — see
+   Scope 2.0: every asset, formulation, route, and indication it names that
+   falls within Scope 2.0 (R1 ∨ R2), or may plausibly qualify under it, is an
+   in-scope candidate that must reach a disposition under section 2, whether
+   or not it was already known before this run started — see
    [Dataset scope](./README.md#dataset-scope). Once an asset qualifies, keep
    investigating every current official program for that asset per the Data
-   Protocol, not only its obesity-indication rows.
+   Protocol, not only its obesity-purpose rows.
 2. For every `Filed` or `Approved` program, reconcile disclosed jurisdiction,
    authority, and official date in `regulatoryStates`.
 3. Classify every newly surfaced candidate.
@@ -174,6 +182,23 @@ once every item below holds; while any remain open, the run is **NO-GO**.
     the change and the superseding evidence explicitly. An earlier
     correction's disappearance without such a reported basis is a
     stacked-branch regression, not a valid update.
+11. Every Program and Regimen this run creates or touches carries a
+    `scopeClass` supported by that row's own official development objective
+    and required development context — never carried forward from a sibling
+    row, never derived from `indications` text — see
+    [Entities and Rows §Scope class](./entities-and-rows.md#scope-class).
+    `npm run data:probe:scope-class` reports candidates for review; it does
+    not decide them, so each candidate touching this run's rows must be
+    resolved against evidence. While any of these checks is unresolved, do
+    not report GO.
+12. If this run stores or updates a qualifying Regimen (`obesity-treatment` or
+    `obesity-adjunct`), confirm that qualification was **not** propagated to
+    its component assets: no component asset's other official Programs were
+    entered, and no new Program row was created for a component, on the
+    strength of the Regimen's own qualification alone — see
+    [Data Protocol §Dataset scope, R1](./README.md#dataset-scope). A component
+    asset entering scope this run needs its own qualifying Program or the
+    core-mechanism path (R2).
 
 This audit is in-session only. Do not create a per-run ledger or report file.
 
@@ -188,6 +213,7 @@ npm run data:validate:companies
 npm run data:validate:generated
 npm run data:validate:synthetic
 npm run data:probe:indication-scope
+npm run data:probe:scope-class
 npm run lint
 npm run build
 git diff --check
@@ -199,6 +225,15 @@ rules against fixtures and then **reports** indication-scope review candidates i
 company data. It does not fail a run by itself, and it never merges or edits a
 row — resolving a reported candidate is the gate responsibility in section 5
 item 9.
+
+`data:probe:scope-class` is likewise advisory: it self-checks its own detection
+rules, then reports rows whose stored `scopeClass` disagrees with an exact-match
+indication heuristic, or whose sibling rows share indications but disagree on
+`scopeClass` — see
+[Entities and Rows §Scope class](./entities-and-rows.md#scope-class). It never
+fails a row, decides an authored `scopeClass` value, or edits data; resolving a
+reported candidate against the row's own `metadata.sources` is the gate
+responsibility in section 5 item 11.
 
 ## 7. Report
 
@@ -212,6 +247,14 @@ Report, without a rigid template:
 - registry additions;
 - indication-scope review candidates reported for this run's rows, and how each
   was resolved;
+- the `scopeClass` assigned to every row this run created or touched, grouped
+  by class, and any `data:probe:scope-class` candidates reported for this
+  run's rows with how each was resolved;
+- for each touched row's `scopeClass`, whether it was authored from the
+  record's already-stored `metadata.sources` (no `lastVerifiedAt`/`checkedAt`
+  change) or from a source reopened this run (`lastVerifiedAt` and that
+  source's `checkedAt` updated) — see
+  [Source and Entry Policy §Metadata effects of an authored-field backfill](./source-and-entry-policy.md#metadata-effects-of-an-authored-field-backfill);
 - final independent coverage-pass result;
 - principal sources;
 - generation and validation results;

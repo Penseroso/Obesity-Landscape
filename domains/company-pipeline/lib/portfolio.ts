@@ -6,6 +6,7 @@ import type {
   Company,
   DevelopmentProfile,
   PipelineProgram,
+  ScopeClass,
   TechnicalProfile,
 } from "./types";
 
@@ -15,6 +16,7 @@ export type CompanyProgramVariant = {
   administration: AdministrationProfile;
   indications: string[];
   development: DevelopmentProfile;
+  scopeClass: ScopeClass;
 };
 
 export type CompanyPortfolioAsset = {
@@ -48,6 +50,7 @@ function toVariant(program: PipelineProgram): CompanyProgramVariant {
     administration: program.administration,
     indications: program.indications,
     development: program.development,
+    scopeClass: program.scopeClass,
   };
 }
 

@@ -9,6 +9,7 @@ import {
   type ProgramTableColumnId,
 } from "@/domains/app/config/program-table";
 import {
+  getScopeClassEntry,
   stageBuckets,
   type StageBucketId,
 } from "@/domains/company-pipeline/lib/constants";
@@ -89,6 +90,8 @@ function getProgramCellValue(
       return formatNullableValue(program.administration.dosingInterval);
     case "indications":
       return formatInlineValues(program.indications);
+    case "scopeClass":
+      return getScopeClassEntry(program.scopeClass).label;
     case "development":
       return program.development.stage;
     case "status":

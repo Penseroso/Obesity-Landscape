@@ -9,6 +9,7 @@ import type {
   AssetClinicalRollup,
   ProgramStudyPreview,
 } from "@/domains/app/lib/clinical-evidence/selectors";
+import { getScopeClassEntry } from "@/domains/company-pipeline/lib/constants";
 import { formatInlineValues, formatNullableValue } from "@/domains/app/lib/format";
 import type { PipelineProgram } from "@/domains/company-pipeline/lib/types";
 
@@ -326,6 +327,10 @@ export function ProgramDetailDrawer({
             <DetailRow
               label="Indications"
               value={formatInlineValues(renderedProgram.indications)}
+            />
+            <DetailRow
+              label="Scope class"
+              value={getScopeClassEntry(renderedProgram.scopeClass).label}
             />
             <DetailRow label="Stage" value={renderedProgram.development.stage} />
             <DetailRow label="Status" value={renderedProgram.development.status} />

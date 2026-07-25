@@ -25,7 +25,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-reinforces-its-differentiated-obesity-portfolio-at-american-diabetes-association-ada-2026-scientific-sessions-showcasing-asc30-clinical-data-and-exciting-preclinical-findings-from-asc37-and-asc39-302793255.html",
@@ -42,7 +42,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc30-oral-tablets-type-2-diabetes",
@@ -70,7 +71,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07321678",
@@ -87,7 +88,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ascletis-pharma-asc30-subcutaneous-depot-injection",
@@ -115,7 +117,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-positive-topline-results-from-us-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity-302709245.html",
@@ -125,7 +127,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc31-subcutaneous-injection",
@@ -151,7 +154,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-the-combination-of-asc47-and-asc31-its-dual-glp-1rgipr-peptide-agonist-demonstrated-significantly-greater-weight-loss-compared-to-the-combination-of-asc47-and-tirzepatide-in-an-animal-model-of-obesity-302531465.html",
@@ -168,7 +171,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc35-subcutaneous-injection",
@@ -204,7 +208,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-us-fda-ind-clearance-for-phase-i-study-of-once-monthly-subcutaneously-administered-glp-1rgipr-dual-peptide-agonist-asc35-for-the-treatment-of-obesity-302807534.html",
@@ -214,7 +218,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-subcutaneous-injection",
@@ -250,7 +255,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ascletis.com/news_detail/200/id/1415.html",
@@ -260,7 +265,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-35-fdc-subcutaneous-injection",
@@ -307,7 +313,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-submits-two-ind-applications-to-the-us-fda-for-the-treatment-of-obesity-asc36-once-monthly-injection-a-peptide-amylin-receptor-agonist-and-asc3635-fdc-once-monthly-injection-a-co-formulation-of-asc36-plus-peptide-g-302818044.html",
@@ -317,7 +323,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-oral-tablets",
@@ -343,7 +350,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/apac/news-releases/ascletis-selects-oral-amylin-receptor-peptide-agonist-asc36-for-clinical-development-302683760.html",
@@ -353,7 +360,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-37-fdc-subcutaneous-injection",
@@ -390,7 +398,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042905416.pdf",
@@ -407,7 +415,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc37-oral-tablets",
@@ -433,7 +442,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-selects-its-first-oral-glp-1rgiprgcgr-triple-peptide-agonist-asc37-for-clinical-development-302628537.html",
@@ -450,7 +459,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc37-subcutaneous-injection",
@@ -476,7 +486,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-selects-a-next-generation-once-monthly-subcutaneously-administered-glp-1rgiprgcgr-triple-peptide-agonist-asc37-for-clinical-development-302665194.html",
@@ -486,7 +496,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc39-oral-tablets",
@@ -512,7 +523,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/apac/news-releases/oral-small-molecule-amylin-receptor-agonist-asc39-demonstrated-eloralintide-like-amylin-selectivity-and-efficacy-in-preclinical-models-302715856.html",
@@ -529,7 +540,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc30-39-fdc-oral-tablets",
@@ -566,7 +578,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-fixed-dose-combination-of-asc30-once-daily-oral-small-molecule-glp-1r-agonist-and-asc39-once-daily-oral-small-molecule-amylin-selective-amylin-receptor-agonist-for-clinical-development-302735615.html",
@@ -576,7 +588,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc30-48-fdc-oral-tablets",
@@ -614,7 +627,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-selects-for-clinical-development-a-fixed-dose-combination-of-first-in-class-oral-small-molecule-gipr-agonist-asc48-and-oral-small-molecule-glp-1r-agonist-asc30-302826283.html",
@@ -624,6 +637,7 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

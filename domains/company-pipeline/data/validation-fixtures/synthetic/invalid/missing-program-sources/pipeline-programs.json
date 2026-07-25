@@ -9,6 +9,7 @@
     "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
     "indications": ["Obesity"],
     "development": { "stage": "Preclinical", "status": "Active" },
-    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] }
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [] },
+    "scopeClass": "obesity-treatment"
   }
 ]
