@@ -50,6 +50,11 @@
     "headquartersCountry": "China"
   },
   {
+    "id": "structure-therapeutics",
+    "name": "Structure Therapeutics",
+    "headquartersCountry": "United States"
+  },
+  {
     "id": "viking-therapeutics",
     "name": "Viking Therapeutics",
     "headquartersCountry": "United States"
