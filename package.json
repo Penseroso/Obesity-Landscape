@@ -21,6 +21,7 @@
     "data:probe:mechanism-families": "node scripts/data-registry.mjs probe:mechanism-families",
     "data:probe:indication-scope": "node scripts/data-registry.mjs probe:indication-scope",
     "data:probe:scope-class": "node scripts/data-registry.mjs probe:scope-class",
+    "data:probe:registry-citations": "node scripts/data-registry.mjs probe:registry-citations",
     "data:validate:registries": "node scripts/data-registry.mjs validate:registries",
     "data:validate:synthetic": "node scripts/data-registry.mjs validate:synthetic"
   },

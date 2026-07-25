@@ -38,6 +38,60 @@ If Company/Pipeline Research cannot complete, stop before Clinical Evidence
 changes. Clinical Evidence research never silently edits Company/Pipeline
 records; report any conflict discovered later.
 
+### Registry-citation preflight (ADR-0054)
+
+Company/Pipeline Research must have **already completed in this same run**
+before this preflight runs. A stored registry locator from a prior run is never
+a reason to skip the current run's Company/Pipeline refresh — this preflight
+indexes what Company/Pipeline just stored, it does not replace running
+Company/Pipeline Research.
+
+Immediately after Company/Pipeline Research completes, run:
+
+```text
+npm run data:probe:registry-citations -- --company <companyId>
+```
+
+This reports, for the named company, which Company/Pipeline-stored registry
+locators (`metadata.sources` entries recognized as a direct
+ClinicalTrials.gov Study-record URL) already correspond to a Clinical Evidence
+Study, which do not, and which raise an anchor ambiguity. Add the reported
+locators to the in-session traversal manifest as a **reference value only** —
+the same "do not persist" rule above applies to this preflight's output.
+
+Three things this preflight does **not** change:
+
+- **Co-location is not provenance.** That Company/Pipeline stored a source, or
+  that a source sits on a particular Program/Regimen row, is not itself
+  evidence for any Clinical Evidence claim or for a Study's focal anchor. A
+  locator this preflight surfaces may be used as a Study, Arm, Endpoint,
+  Outcome, or `registryStatus` source only after Clinical Evidence **directly
+  reopens and reviews it** under the Reviewed definition and Source access
+  states below — the same standard applied to any other source. Result value
+  and result-source priority remain Clinical Evidence's own independent
+  judgment (§3) regardless of what Company/Pipeline stored.
+- **The broad independent coverage search below is not reduced.** Every
+  locator this preflight surfaces still needs the discovery, disposition, and
+  completion-check steps below; and step 2's broad search for studies this
+  preflight did **not** surface still runs in full. A Study this preflight
+  did not surface is not evidence that none exists — it only means Company/
+  Pipeline's own stored sources did not happen to include a direct link to it.
+- **A missing locator is not a Company/Pipeline defect.** Company/Pipeline is
+  not obliged to cite every trial for a program — it stores the minimum
+  sufficient sources for its own stage/status claims (see the
+  [Company/Pipeline Source and Entry Policy](../../company-pipeline/docs/source-and-entry-policy.md)).
+  A Study this preflight reports as having no corresponding Company/Pipeline
+  locator is ordinary independent Clinical Evidence coverage, not a gap to
+  report back against Company/Pipeline data.
+
+This preflight never fails, never edits data, and never decides Study
+inclusion, focal anchor, Study completeness, result availability, or result
+provenance — those remain this workflow's own decisions below. When more than
+one Program or Regimen row cited the same locator, or the same locator was
+cited under more than one company, treat every listed row only as an anchor
+**candidate**; decide the actual anchor under this workflow's own reference
+rules, never from row co-location alone.
+
 ## 2. Establish and traverse the evidence set
 
 Inspect existing Clinical Evidence source files and decide initial
@@ -261,10 +315,16 @@ npm run data:validate:clinical-evidence
 npm run data:validate:clinical-evidence:generated
 npm run data:validate:clinical-evidence:synthetic
 npm run data:validate:generated
+npm run data:probe:registry-citations -- --company <companyId>
 npm run lint
 npm run build
 git diff --check
 ```
+
+`data:probe:registry-citations` is advisory only, as in the preflight above: it
+never fails and never decides Study inclusion, focal anchor, completeness, or
+provenance. Re-running it here surfaces any new anchor ambiguity or
+still-unmatched locator this run's changes created, for reporting only.
 
 Before claiming completion, reconcile the in-session result-review manifest:
 

@@ -98,6 +98,14 @@ representable, internally consistent, and non-duplicative. Reuse stable IDs and
 update mutable state in place. Promote a registry value only when the source
 policy's criteria are satisfied; otherwise defer it.
 
+A trial-registry source stored in `metadata.sources` under this workflow may
+later be reused by Clinical Evidence research as a discovery locator (ADR-0054,
+[Clinical Evidence workflow §Registry-citation preflight](../../clinical-evidence/docs/workflow.md#registry-citation-preflight-adr-0054)).
+That downstream reuse does not change this workflow: it adds no obligation to
+discover or cite additional trials beyond what this section already requires,
+and no Clinical Evidence Study/Arm/Endpoint/Outcome modeling or disposition
+responsibility belongs here.
+
 ## 4. Protect existing records
 
 - Do not delete a confirmed value merely because a newer source omits it.
