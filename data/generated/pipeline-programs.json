@@ -6035,6 +6035,20 @@
           "checkedAt": "2026-07-25"
         },
         {
+          "url": "https://clinicaltrials.gov/study/NCT07400588",
+          "title": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Study of the Safety and Tolerability of Aleniglipron in Adult Participants With Type 2 Diabetes Mellitus Living With Obesity or Overweight",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-02-10",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-fourth-quarter-and-full-year-2025",
+          "title": "Structure Therapeutics Reports Fourth Quarter and Full Year 2025 Financial Results and Recent Highlights",
+          "sourceType": "company press release",
+          "publishedAt": "2026-02-26",
+          "checkedAt": "2026-07-25"
+        },
+        {
           "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-phase-2",
           "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
           "sourceType": "company press release",
@@ -6053,53 +6067,6 @@
           "title": "A Randomized, Double-Blind, Placebo-Controlled, Pivotal Phase 3 Study to Evaluate the Long-Term Efficacy and Safety of Multiple Maintenance Doses of Once Daily Oral Aleniglipron for Chronic Weight Management in Adults With Obesity or Overweight and a Weight-Related Comorbidity (ACCOMPLISH-1)",
           "sourceType": "trial registry",
           "publishedAt": "2026-06-17",
-          "checkedAt": "2026-07-25"
-        }
-      ]
-    }
-  },
-  {
-    "id": "structure-therapeutics-gsbr-1290-oral-tablet-type-2-diabetes",
-    "assetId": "gsbr-1290",
-    "companyId": "structure-therapeutics",
-    "assetName": "Aleniglipron",
-    "codeName": "GSBR-1290",
-    "technical": {
-      "mechanism": "Non-peptide GLP-1 receptor agonist",
-      "platform": "Small molecule"
-    },
-    "administration": {
-      "route": "Oral",
-      "dosageForm": "Tablet",
-      "dosingInterval": "Once daily"
-    },
-    "indications": [
-      "Obesity",
-      "Overweight",
-      "Type 2 diabetes"
-    ],
-    "development": {
-      "stage": "Phase 3",
-      "status": "Active",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not yet recruiting"
-    },
-    "metadata": {
-      "lastVerifiedAt": "2026-07-25",
-      "updatedAt": "2026-07-25",
-      "sources": [
-        {
-          "url": "https://clinicaltrials.gov/study/NCT07400588",
-          "title": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Study of the Safety and Tolerability of Aleniglipron in Adult Participants With Type 2 Diabetes Mellitus Living With Obesity or Overweight",
-          "sourceType": "trial registry",
-          "publishedAt": "2026-02-10",
-          "checkedAt": "2026-07-25"
-        },
-        {
-          "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-fourth-quarter-and-full-year-2025",
-          "title": "Structure Therapeutics Reports Fourth Quarter and Full Year 2025 Financial Results and Recent Highlights",
-          "sourceType": "company press release",
-          "publishedAt": "2026-02-26",
           "checkedAt": "2026-07-25"
         },
         {
