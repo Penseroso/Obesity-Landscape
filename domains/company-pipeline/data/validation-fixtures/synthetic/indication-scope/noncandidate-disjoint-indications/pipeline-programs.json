@@ -1,0 +1,77 @@
+[
+  {
+    "id": "disjoint-indication-fixture-co-gamma-oral-tablets",
+    "assetId": "gamma",
+    "companyId": "disjoint-indication-fixture-co",
+    "assetName": "Gamma",
+    "codeName": "DIF-0003",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-disjoint-gamma-row-one",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "disjoint-indication-fixture-co-gamma-oral-tablets-second-indication-row",
+    "assetId": "gamma",
+    "companyId": "disjoint-indication-fixture-co",
+    "assetName": "Gamma",
+    "codeName": "DIF-0003",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Chronic kidney disease"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-disjoint-gamma-row-two",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  }
+]

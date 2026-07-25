@@ -322,6 +322,8 @@ Rules by field.
   indication, and a trial-objective phrase such as "morbidity and mortality in
   obesity" is not a disease indication — capture that framing in research
   reporting or the separate Clinical Evidence domain, not in `indications`.
+  Which diseases a source may promote into `indications` at all is governed by
+  [Population and comorbidity versus indication](#population-and-comorbidity-versus-indication).
 - **Development stage** — one of the enumerated stages; see status/stage rules.
 - **Development status** — one of the enumerated statuses; see status rules.
 - **Regulatory state** — one or more registry-backed regulatory milestones,
@@ -372,6 +374,35 @@ General requirements:
 `null` and `Unknown` are **not interchangeable**: `null` marks an absent
 nullable field value; `Unknown` is an enumerated stage/status for a confirmed
 program whose current state cannot be resolved.
+
+## Population and comorbidity versus indication
+
+`indications` records what a program is **being developed to treat or manage**,
+not who was enrolled to study it. A disease can appear in a source for either
+reason, and the two must not be conflated.
+
+- Do **not** store a disease in `PipelineProgram.indications` merely because it
+  appears in a trial title, a registry condition field, an eligibility
+  criterion, or a population description.
+- Distinguish a **comorbidity**, an **enrolled subpopulation**, and a
+  **stratification factor** from the program's own therapeutic and development
+  objective.
+- Storing a disease as an indication requires official evidence that
+  **directly supports treatment or management of that disease as that
+  program's own development objective**.
+- In a chronic weight-management trial conducted in people with obesity or
+  overweight, a comorbidity used as an enrollment condition or a population
+  characteristic — for example type 2 diabetes, obstructive sleep apnea,
+  cardiovascular disease, or MASH — leaves the program an obesity/overweight
+  program. Treat it as a separate treatment objective only when the sponsor is
+  confirmed to develop that comorbidity itself as a distinct objective.
+
+Whether population-specific studies of one asset become separate program rows
+is a row-splitting question owned by
+[`entities-and-rows.md`](./entities-and-rows.md#row-splitting).
+`npm run data:probe:indication-scope` reports rows whose shape suggests a
+population or comorbidity was promoted to an indication; it raises review
+candidates and never decides them.
 
 ## Status rules
 
