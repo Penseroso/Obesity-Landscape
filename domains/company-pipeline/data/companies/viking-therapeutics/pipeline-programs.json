@@ -61,7 +61,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk2735-oral-tablet",
@@ -111,7 +112,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk2735-subcutaneous-and-oral-obesity-maintenance",
@@ -154,7 +156,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk3019-subcutaneous-injection",
@@ -196,6 +199,7 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

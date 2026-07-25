@@ -22,8 +22,11 @@ const LOCKED_COUNT = lockedColumnIds.length;
 // Module 3's initial Register widths totaled 1,275px, which pushed the last
 // default-visible column beyond the content area on common desktop screens.
 // Recognize that exact default set so stored, uncustomized widths migrate to
-// the compact defaults without discarding a user's column choices.
-const previousDefaultColumnWidths: Record<ProgramTableColumnId, number> = {
+// the compact defaults without discarding a user's column choices. Partial
+// because columns introduced later (e.g. scopeClass, Contract 1.2) did not
+// exist at that migration point and so have no "previous" width to match -
+// an absent entry here still compares equal to an absent stored width.
+const previousDefaultColumnWidths: Partial<Record<ProgramTableColumnId, number>> = {
   company: 180,
   asset: 210,
   mechanism: 200,

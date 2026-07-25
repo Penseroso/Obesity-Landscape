@@ -87,6 +87,17 @@ JSON, and only these canonical selectors import that loader.
   no public result exists.
 - Clinical stage and regulatory milestone presentation must preserve the
   distinctions supplied by the Company/Pipeline contract.
+- **`scopeClass`** (Contract 1.2, ADR-0053) is a filter dimension, a Program
+  Register column (default-visible), and a Program Detail / company-page
+  field, on equal footing with company/indication/route/stage/status. It is
+  never a badge or color-coded status pill — it renders as plain text via its
+  registry `label`, the same treatment as indications. The default filter is
+  **All**: hiding non-qualifying classes (`obesity-comorbidity`,
+  `metabolic-adjacent`, `non-metabolic`) by default would silently drop 43 of
+  121 current program rows. The Overview metadata strip discloses an
+  obesity-purpose count (`obesity-treatment` + `obesity-adjunct`) **alongside**
+  the total program count, never in its place — see
+  `generated-output-contract.md#5-consumer-contract`.
 
 ## Study Detail (`/studies/[studyId]`)
 

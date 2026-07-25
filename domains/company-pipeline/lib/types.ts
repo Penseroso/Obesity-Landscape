@@ -103,6 +103,21 @@ export type RegulatoryStateReference = {
   date?: string;
 };
 
+/**
+ * Contract 1.2 field (ADR-0053; see `entities-and-rows.md#scope-class`).
+ * Authored classification of where a Program/Regimen row sits in the obesity
+ * landscape - never derived from `indications` text, never part of identity.
+ * The runtime value list is single-sourced in `scope-classes.json` (see
+ * `constants.ts` and the validator); this union is its compile-time
+ * counterpart. Required on every Program and Regimen.
+ */
+export type ScopeClass =
+  | "obesity-treatment"
+  | "obesity-adjunct"
+  | "obesity-comorbidity"
+  | "metabolic-adjacent"
+  | "non-metabolic";
+
 export type PipelineProgramRecord = {
   id: string;
   assetId: string;
@@ -119,6 +134,7 @@ export type PipelineProgramRecord = {
   regulatoryStates?: RegulatoryStateReference[];
   relationships?: CompanyRelationship[];
   metadata: RecordMetadata;
+  scopeClass: ScopeClass;
 };
 
 export type PipelineProgram = PipelineProgramRecord & {
@@ -149,6 +165,7 @@ export type RegimenRecord = {
   administration?: AdministrationProfile;
   relationships?: CompanyRelationship[];
   metadata: RecordMetadata;
+  scopeClass: ScopeClass;
 };
 
 export type Regimen = RegimenRecord & {
@@ -175,6 +192,10 @@ export type DevelopmentStatusFilter = DevelopmentStatus | "All";
  */
 export type StageBucketFilter = StageBucketId | "All";
 
+/** Contract 1.2 (ADR-0053) scope-class filter. Defaults to "All" - hiding a
+ * non-qualifying class by default would silently drop 43 of 121 current rows. */
+export type ScopeClassFilter = ScopeClass | "All";
+
 export type ProgramFilters = {
   company: string;
   indication: string;
@@ -182,6 +203,7 @@ export type ProgramFilters = {
   stage: DevelopmentStageFilter;
   stageBucket: StageBucketFilter;
   status: DevelopmentStatusFilter;
+  scopeClass: ScopeClassFilter;
   keyword: string;
 };
 
@@ -191,4 +213,6 @@ export type ProgramFilterOptions = {
   routes: string[];
   stages: string[];
   statuses: string[];
+  /** value = registry id (matches `program.scopeClass`), label = registry display label. */
+  scopeClasses: { value: ScopeClass; label: string }[];
 };

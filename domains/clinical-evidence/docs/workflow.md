@@ -16,11 +16,23 @@ the [Clinical Evidence contract](./README.md).
 
 Execute the complete [Company/Pipeline workflow](../../company-pipeline/docs/research-workflow.md) in the
 same run. Clinical Evidence may use only the resulting Company/Pipeline source
-data as its current Scope v1.1 asset list.
+data — the **complete** current tracked asset / Program / Regimen manifest,
+not a subset prefiltered by `scopeClass`. Every tracked asset is a traversal
+candidate under this workflow's own
+[Evidence Scope](./README.md#evidence-scope), regardless of `scopeClass`.
+
+`scopeClass` (Contract 1.2, ADR-0053) travels with the manifest as a
+**reference value only**: it may inform traversal order or be cited in a
+disposition, but it is **never** the authority for Study inclusion and it is
+**never** used as an inclusion filter — do not narrow traversal to
+`obesity-treatment` / `obesity-adjunct` rows. A Study anchored to an
+`obesity-comorbidity`, `metabolic-adjacent`, or `non-metabolic` row is
+in-scope exactly when it independently satisfies this workflow's own Evidence
+Scope; `scopeClass` neither includes nor excludes it.
 
 After that step, keep an in-session traversal manifest containing `assetId`,
 `programId`, canonical asset name, route, indication scope, development state,
-and unresolved conflicts. Do not persist this manifest.
+`scopeClass`, and unresolved conflicts. Do not persist this manifest.
 
 If Company/Pipeline Research cannot complete, stop before Clinical Evidence
 changes. Clinical Evidence research never silently edits Company/Pipeline

@@ -4,6 +4,8 @@ import {
   developmentStages,
   developmentStatuses,
   getStageBucketId,
+  obesityPurposeQualifyingScopeClasses,
+  scopeClasses,
   stageBuckets,
   type StageBucketId,
 } from "./constants";
@@ -50,6 +52,20 @@ export function getClinicalStageProgramCount(programs: PipelineProgram[]) {
   ).length;
 }
 
+/**
+ * Count of rows whose `scopeClass` expresses an obesity-purpose development
+ * objective (`obesity-treatment` or `obesity-adjunct`, Contract 1.2 ADR-0053).
+ * Shown alongside the total row count, never in place of it: presence of a
+ * record does not imply it is one of these rows (43 of 121 program rows are
+ * not, as of the Contract 1.2 backfill) - see
+ * `generated-output-contract.md#5-consumer-contract`.
+ */
+export function getObesityPurposeProgramCount(programs: PipelineProgram[]) {
+  const qualifying: readonly string[] = obesityPurposeQualifyingScopeClasses;
+  return programs.filter((program) => qualifying.includes(program.scopeClass))
+    .length;
+}
+
 export function getProgramFilterOptions(
   programs: PipelineProgram[],
 ): ProgramFilterOptions {
@@ -65,6 +81,11 @@ export function getProgramFilterOptions(
     statuses: developmentStatuses.filter((status) =>
       programs.some((program) => program.development.status === status),
     ),
+    scopeClasses: scopeClasses
+      .filter((entry) =>
+        programs.some((program) => program.scopeClass === entry.id),
+      )
+      .map((entry) => ({ value: entry.id, label: entry.label })),
   };
 }
 

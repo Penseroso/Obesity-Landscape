@@ -77,7 +77,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/765.html",
@@ -114,7 +114,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-obstructive-sleep-apnea",
@@ -142,7 +143,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/853.html",
@@ -164,7 +165,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-type-2-diabetes",
@@ -192,7 +194,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-three-innovative-drugs-gzr18-injection-gzr4-injection-and-gzr101-injection-achieve-primary-endpoints-in-phase-2-clinical-studies-302276311.html",
@@ -214,7 +216,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr102-fdc-subcutaneous-injection",
@@ -262,7 +265,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/796.html",
@@ -279,6 +282,7 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   }
 ]

@@ -15,13 +15,25 @@ authority. It does not repeat the research procedure.
 
 Two independent versions apply:
 
-- **Company/Pipeline Contract 1.1**: types, registries, validators, identity,
-  entry semantics, and generated-output behavior.
-- **Scope v1.1**: inclusion boundary for the obesity/incretin competitive
-  landscape.
+- **Company/Pipeline Contract 1.2**: types, registries, validators, identity,
+  entry semantics, and generated-output behavior. Supersedes Contract 1.1
+  (ADR-0053) by adding the required, registry-backed `scopeClass` field to
+  `PipelineProgramRecord` and `RegimenRecord`; no other Contract 1.1 shape
+  changed.
+- **Scope 2.0**: inclusion boundary for the obesity landscape. Supersedes
+  Scope v1.1 (ADR-0052) as an **additive** expansion: every Scope v1.1
+  inclusion, deferral, and exclusion rule is preserved unmodified as the R2
+  path below, and a second, mechanism-independent R1 path is added alongside
+  it. No asset or row held in scope under Scope v1.1 lost its scope basis.
 
 A scope change does not imply a schema change. Clinical Evidence uses its own
 independently versioned [contract](../../clinical-evidence/docs/README.md).
+
+Contract 1.2 and Scope 2.0 became the active version in the commit where every
+existing Program and Regimen was backfilled with a source-supported, authored
+`scopeClass` and the validator began requiring it on every Program and Regimen
+(the required-field migration gate; see the
+[Research Workflow](./research-workflow.md#5-research-completion-gate)).
 
 ## Canonical ownership
 
@@ -40,41 +52,84 @@ authority named above and reduce the other location to a link.
 
 ## Dataset scope
 
-Scope v1.1 is a competitive **obesity/incretin** landscape. Inclusion does not
-mean an asset is a GLP-1 receptor agonist or contains GLP-1 biology.
+Scope 2.0 (ADR-0052) is a competitive **obesity landscape**, no longer defined
+solely by mechanism. Inclusion does not mean an asset is a GLP-1 receptor
+agonist, contains GLP-1 biology, or otherwise shares any particular mechanism.
+An asset qualifies when **R1 ∨ R2** holds; once qualified, the current
+asset-scoped closure rule applies: investigate every current official Program
+that Contract 1.2 can represent for that asset, not only its obesity-purpose
+rows. Each stored Program and Regimen row then carries its own `scopeClass`
+(see [Entities and Rows §Scope class](./entities-and-rows.md#scope-class)),
+independent of whether that row itself qualified the asset.
 
-### Include
+### R1 — obesity-purpose path (mechanism-independent)
 
-- GLP-1 receptor agonists and GLP-1-containing dual or triple agonists;
-- GLP-1-based combination products and regimens;
-- amylin-only and amylin-containing obesity programs;
-- GIP-only, glucagon-only, and other incretin/amylin/glucagon-axis programs
-  when official evidence confirms obesity or weight-management intent.
+An asset qualifies when at least one of its official **Programs** is
+classified `obesity-treatment` or `obesity-adjunct`.
 
-Once an asset qualifies through core mechanism or confirmed obesity/weight-
-management intent, investigate every current official program for that asset
-that Contract 1.1 can represent. Scope is not limited to obesity-indication
-rows for an already-qualified asset.
+Qualification through R1 belongs to a qualifying **Program**, which triggers
+asset-scoped closure for its focal asset. A qualifying **Regimen** qualifies
+only itself: it does not qualify its component assets, and it does not
+trigger asset-scoped closure for them. A component asset must independently
+satisfy R1 through its own qualifying Program, or R2 below. (For example, a
+Regimen classified `obesity-adjunct` does not by itself bring its component
+asset's other official Programs into scope, and does not by itself create a
+new Program row for that component.)
 
-### Defer from Scope v1.1
+### R2 — core-mechanism path (Scope v1.1 include list, unchanged, permanent)
 
-Unless already GLP-1-based:
+The former Scope v1.1 include list is preserved **exactly as defined** — same
+classes, same unconditional/conditional split — as a second, permanent
+qualification path:
 
-- muscle-preserving or body-composition adjuncts;
+- GLP-1 receptor agonists and GLP-1-containing dual or triple agonists —
+  unconditional;
+- GLP-1-based combination products and regimens — unconditional;
+- amylin-only and amylin-containing obesity programs — unconditional;
+- GIP-only, glucagon-only, and other incretin/amylin/glucagon-axis programs —
+  **conditional**: only when official evidence confirms obesity or
+  weight-management intent.
+
+R2 is **not** "any incretin/amylin/glucagon-axis asset qualifies." The
+conditional classes remain conditional; Scope 2.0 did not relax them. R2 is a
+permanent path, not a legacy exception scheduled for removal: it protects
+assets already held in scope by core mechanism alone with no obesity-indication
+row of their own (for example Roche's CT-868, QL Biopharm's ZT003, Novo
+Nordisk's IcoSema, and Gan & Lee's GZR102 — see
+[Entities and Rows](./entities-and-rows.md)), and it lets a newly disclosed
+GLP-1/GIP/amylin/glucagon-axis asset qualify the moment its mechanism is
+confirmed, without waiting for an obesity-indication row to be disclosed
+first.
+
+### Defer
+
+Unless already qualifying under R1 or R2:
+
+- lean-mass, muscle-gain, or body-composition programs not combined with an
+  anti-obesity therapy (see `obesity-adjunct` in
+  [Entities and Rows §Scope class](./entities-and-rows.md#scope-class));
 - non-incretin anti-obesity classes such as MC4R, CB1, CNS-appetite, lipase
-  inhibitors, and unrelated small-molecule weight-loss programs;
+  inhibitors, and unrelated small-molecule weight-loss programs, until an
+  official obesity/weight-management development program is confirmed for
+  that specific candidate;
 - other candidates requiring a future full-obesity-pharmacotherapy boundary.
 
 ### Exclude by default
 
-- MASH-only, T2D-only, or comorbidity-only programs without qualifying core
-  mechanism or confirmed obesity/weight-management intent;
+- MASH-only, T2D-only, or comorbidity-only programs without qualifying R1 or
+  R2 evidence;
+- device, procedural, endoscopic, or bariatric-surgical candidates — these
+  remain **unrepresentable** under the current `administration` contract
+  (drug route/dosage-form only), not merely out of scope — see
+  [Edge Cases](./edge-cases.md);
 - preclinical/non-human material that does not establish a tracked program;
 - pure generic or biosimilar copies;
 - unsupported, speculative, or unidentifiable candidates.
 
 Detailed Clinical Evidence eligibility is governed by the separate Clinical
-Evidence contract and must not be inferred from Company/Pipeline inclusion.
+Evidence contract and must not be inferred from Company/Pipeline inclusion or
+from `scopeClass` — see
+[Clinical Evidence workflow §Scope](../../clinical-evidence/docs/workflow.md).
 
 ## Data layout and authority
 
@@ -88,6 +143,8 @@ domains/company-pipeline/data/registries/
   development-stages.json
   regulatory-states.json
   company-relationship-roles.json
+  mechanism-families.json
+  scope-classes.json
 
 data/generated/
   companies.json

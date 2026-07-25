@@ -38,7 +38,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/215256Orig1s000TOC.cfm",
@@ -76,7 +76,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-semaglutide-oral-tablets",
@@ -117,7 +118,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/fda-approves-novo-nordisks-wegovy-pill-the-first-and-only-oral-glp-1-for-weight-loss-in-adults-302648344.html",
@@ -155,7 +156,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-cagrisema-subcutaneous-injection",
@@ -201,7 +203,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-files-for-fda-approval-of-cagrisema-the-first-once-weekly-combination-of-glp1-and-amylin-analogues-for-weight-management-302645862.html",
@@ -218,7 +220,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-cagrisema-subcutaneous-injection-type-2-diabetes",
@@ -257,7 +260,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06323174",
@@ -281,7 +284,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-ubt251-subcutaneous-injection",
@@ -368,7 +372,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07395687",
@@ -406,7 +410,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-icosema-subcutaneous-injection",
@@ -471,7 +476,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05352815",
@@ -544,7 +549,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-liraglutide-subcutaneous-injection",
@@ -577,7 +583,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2014/206321Orig1s000TOC.cfm",
@@ -601,7 +607,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-cagrilintide-subcutaneous-injection",
@@ -630,7 +637,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.globenewswire.com/news-release/2025/09/16/3150597/0/en/Novo-Nordisk-presents-phase-3-data-for-next-generation-amylin-cagrilintide-leading-to-advancement-into-dedicated-clinical-programme.html",
@@ -647,7 +654,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-amycretin-subcutaneous-injection",
@@ -682,7 +690,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
@@ -705,7 +713,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-amycretin-subcutaneous-injection-type-2-diabetes",
@@ -739,7 +748,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html",
@@ -749,7 +758,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-amycretin-oral-tablets",
@@ -784,7 +794,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
@@ -801,7 +811,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-semaglutide-subcutaneous-injection-type-2-diabetes",
@@ -820,7 +831,7 @@
     "development": { "stage": "Approved", "status": "Active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209637Orig1s000TOC.cfm",
         "title": "Drug Approval Package: Ozempic (semaglutide) injection",
@@ -828,7 +839,8 @@
         "publishedAt": "2017-12-05",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-semaglutide-subcutaneous-injection-mash",
@@ -847,7 +859,7 @@
     "development": { "stage": "Approved", "status": "Active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-serious-liver-disease-known-mash",
         "title": "FDA approves treatment for serious liver disease known as MASH",
@@ -855,7 +867,8 @@
         "publishedAt": "2025-08-15",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-semaglutide-oral-tablets-type-2-diabetes",
@@ -874,7 +887,7 @@
     "development": { "stage": "Approved", "status": "Active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/213051Orig1s000TOC.cfm",
         "title": "Drug Approval Package: Rybelsus (semaglutide) tablets",
@@ -882,7 +895,8 @@
         "publishedAt": "2019-09-20",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-ubt251-subcutaneous-injection-type-2-diabetes",
@@ -896,7 +910,7 @@
     "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Completed" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916519",
         "title": "UBT251 phase 2 trial in people with type 2 diabetes",
@@ -904,7 +918,8 @@
         "publishedAt": "2026-03-25",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-amycretin-oral-tablets-type-2-diabetes",
@@ -919,14 +934,15 @@
     "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Completed" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://clinicaltrials.gov/study/NCT06542874",
         "title": "A study of oral and subcutaneous zenagamtide in adults with type 2 diabetes",
         "sourceType": "trial registry",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-amylin-355-subcutaneous-injection",
@@ -941,14 +957,15 @@
     "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Active not recruiting" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://clinicaltrials.gov/study/NCT06577766",
         "title": "A first human dose study of NNC0638-0355 in people with overweight or obesity",
         "sourceType": "trial registry",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-amylin-1213-subcutaneous-injection",
@@ -963,14 +980,15 @@
     "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://clinicaltrials.gov/study/NCT06719011",
         "title": "A first human dose study of NNC0174-1213 in people with overweight or obesity",
         "sourceType": "trial registry",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-triple-subcutaneous-injection",
@@ -985,14 +1003,15 @@
     "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://clinicaltrials.gov/study/NCT07184632",
         "title": "A study of NNC0662-0419 in adults with overweight or obesity",
         "sourceType": "trial registry",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-triple-subcutaneous-injection-type-2-diabetes",
@@ -1007,14 +1026,15 @@
     "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://clinicaltrials.gov/study/NCT07415954",
         "title": "A study of NNC0662-0419 in adults with type 2 diabetes",
         "sourceType": "trial registry",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-glp-1-analogue-subcutaneous-injection",
@@ -1029,13 +1049,14 @@
     "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [{
         "url": "https://clinicaltrials.gov/study/NCT07566390",
         "title": "A first human dose study of NNC0113-5840 in adults with overweight or obesity",
         "sourceType": "trial registry",
         "checkedAt": "2026-07-13"
       }]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -26,7 +26,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ql-biopharm-reports-phase-2-results-of-a-monthly-dose-study-evaluating-zovaglutide-a-novel-extended-half-life-glp-1-receptor-agonist-at-easd-2025-302558945.html",
@@ -55,7 +55,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ql-biopharm-zt002-subcutaneous-injection-type-2-diabetes",
@@ -83,7 +84,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07065032",
@@ -92,7 +93,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ql-biopharm-zt003-subcutaneous-injection",
@@ -128,7 +130,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.qlbiopharm.com/en/news-info/368.html",
@@ -144,7 +146,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ql-biopharm-zt006-oral-tablets",
@@ -172,7 +175,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.linkedin.com/posts/qlbiopharm_qlbiopharm-zt006-glp1-activity-7408911537480019970-IWdB",
@@ -194,6 +197,7 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -3,6 +3,7 @@ import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
 import type { CompanyDetailView } from "@/domains/app/lib/company-detail/read-model";
 import { formatInlineValues, formatNullableValue } from "@/domains/app/lib/format";
+import { getScopeClassEntry } from "@/domains/company-pipeline/lib/constants";
 
 function Metric({ label, value }: { label: string; value: number }) {
   return (
@@ -144,6 +145,9 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
                           <dl className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                             <VariantField label="Indication">
                               {formatInlineValues(variant.indications)}
+                            </VariantField>
+                            <VariantField label="Scope class">
+                              {getScopeClassEntry(variant.scopeClass).label}
                             </VariantField>
                             <VariantField label="Development stage">
                               <StageBadge stage={variant.development.stage} />

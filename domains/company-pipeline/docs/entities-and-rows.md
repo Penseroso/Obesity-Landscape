@@ -82,7 +82,7 @@ part of program identity or stable IDs.
   arm, and arbitrary suffixes must not be used as `configurationKey`.
 - Dose or trial-arm differences do not create regimen identities. For example,
   dose arms of `bimagrumab + semaglutide` are one component-level regimen under
-  Contract 1.1; dose-level arms belong to the future Clinical Evidence Arm
+  Contract 1.2; dose-level arms belong to the future Clinical Evidence Arm
   layer, not the current regimen registry.
 - If a second regimen needs a `configurationKey` but the official configuration
   discriminator cannot be confirmed, defer it instead of inventing one.
@@ -139,6 +139,69 @@ family even though the modality differs.
   `mechanismFamilyId` naming a `multi-component` family. Component `role` text is
   never parsed to infer one. Absent means unassigned — a comparison surface
   reports such a regimen as a coverage gap rather than bucketing it as "other".
+
+### Scope class
+
+`scopeClass` (Contract 1.2, ADR-0053) is an authored, registry-backed, and
+**required** classification naming **where a
+Program or Regimen row sits within the obesity landscape**. It is not a
+general therapeutic-purpose taxonomy meant for reuse outside this dataset, and
+it is not part of program, regimen, or asset identity — it never enters
+`programId`, the program identity key, or the regimen base identity key
+(see [Row splitting](#row-splitting) and [Stable IDs](#stable-ids)).
+
+Every Program and every Regimen carries exactly one `scopeClass`, drawn from
+[`scope-classes.json`](../data/registries/scope-classes.json):
+
+| id | Meaning |
+| --- | --- |
+| `obesity-treatment` | Weight reduction, or weight-maintenance after weight loss, is this row's own official development objective. |
+| `obesity-adjunct` | A lean-mass preservation, muscle-gain, or body-composition program **combined with** an anti-obesity therapy. |
+| `obesity-comorbidity` | Obesity or overweight is this row's **required development context**, but its own direct treatment objective is a separate comorbid disease. |
+| `metabolic-adjacent` | The direct objective is a cardiometabolic or hepatic disease, and obesity/overweight is **not** a required development context for this row. |
+| `non-metabolic` | Everything else on an otherwise-qualifying asset: obesity/overweight is not a required development context and the objective is not cardiometabolic or hepatic. |
+
+`obesity-comorbidity` deliberately does not assert that obesity *causes* the
+named disease — it states only the observable fact that the row's own
+development requires an obesity/overweight population. Whether a disease is a
+comorbidity or the row's own objective follows the same distinction
+[Population and comorbidity versus indication](./source-and-entry-policy.md#population-and-comorbidity-versus-indication)
+already draws for `indications`; `scopeClass` classifies the row using that
+same evidence, it does not re-derive it by parsing `indications` text.
+
+**Decision order** (research-time judgment, not a validator rule):
+
+1. Is this row's own official development objective weight reduction, or
+   weight maintenance after weight loss? → `obesity-treatment`.
+2. Otherwise, is it a lean-mass/muscle/body-composition program combined with
+   an anti-obesity therapy? → `obesity-adjunct`.
+3. Otherwise, is obesity or overweight a required development context for
+   this row? → `obesity-comorbidity`.
+4. Otherwise, is the direct objective a cardiometabolic or hepatic disease? →
+   `metabolic-adjacent`.
+5. Otherwise → `non-metabolic`.
+
+A routine antiemetic, tolerability-management, or other ordinary supportive-care
+program is not `obesity-adjunct` merely because it is studied alongside an
+anti-obesity therapy; it does not enter Scope 2.0 unless the sponsor
+separately develops it as a distinct obesity development program.
+
+**Registry shape.** Each `scope-classes.json` entry carries `id`, `label`,
+`aliases`, `sortRank`, and `obesityPurposeQualifying` (boolean). The flag
+marks only whether the class expresses an obesity-purpose development
+objective, feeding the Scope 2.0 R1 asset-qualification path. It does **not**
+mean: dataset membership (non-qualifying-class rows are ordinary stored
+records), asset qualification (computed separately from R1/R2, and only from
+qualifying **Programs** — see
+[Data Protocol §Dataset scope](./README.md#dataset-scope)),
+Clinical Evidence eligibility (Clinical Evidence applies its own Evidence
+Scope independently), or UI visibility (the default filter shows every class).
+
+**Program versus Regimen qualification is asymmetric.** A qualifying Program
+qualifies its focal asset and triggers asset-scoped closure. A qualifying
+Regimen qualifies only itself; it never qualifies, or triggers closure for,
+its component assets. A component asset needs its own qualifying Program, or
+the core-mechanism path (R2), to enter scope independently.
 
 ### Study classification
 

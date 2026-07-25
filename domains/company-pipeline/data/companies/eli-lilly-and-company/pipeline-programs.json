@@ -36,7 +36,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-medication-chronic-weight-management",
@@ -67,7 +67,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-surmount-mmo",
@@ -90,7 +91,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05556512",
@@ -99,7 +100,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-higher-dose-t2d",
@@ -122,7 +124,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06037252",
@@ -131,7 +133,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-higher-dose-ckd",
@@ -154,7 +157,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05536804",
@@ -163,7 +166,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-masld",
@@ -186,7 +190,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07165028",
@@ -195,7 +199,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-adolescent-obesity",
@@ -218,7 +223,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06439277",
@@ -227,7 +232,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-type-1-diabetes",
@@ -250,7 +256,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06914895",
@@ -259,7 +265,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-cardiovascular-outcomes",
@@ -282,7 +289,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT04255433",
@@ -298,7 +305,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets",
@@ -350,7 +358,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
@@ -373,7 +381,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-outcomes",
@@ -393,11 +402,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07241390", "title": "A Study of Orforglipron on Cardiovascular Outcomes in Adults With Atherosclerotic Cardiovascular Disease and/or Chronic Kidney Disease (ATTAIN-Outcomes)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-oa",
@@ -417,11 +427,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07153471", "title": "A Study of Orforglipron in Participants With Obesity or Overweight and Osteoarthritis of the Knee (ATTAIN-OA PAIN)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-restrain-sui",
@@ -441,11 +452,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07202884", "title": "A Study of Orforglipron in Female Participants With Stress Urinary Incontinence Who Have Obesity or Overweight (RESTRAIN-SUI)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-pad",
@@ -465,11 +477,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07223593", "title": "Efficacy and Safety of Orforglipron in Participants With Peripheral Artery Disease (ATTAIN-PAD)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-obesity-t2d",
@@ -489,11 +502,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT06972472", "title": "A Study of Orforglipron in Participants With Obesity or Overweight and Type 2 Diabetes", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-hypertension",
@@ -513,11 +527,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT06948435", "title": "A Master Protocol Study of Orforglipron in Participants With Hypertension and Obesity or Overweight (ATTAIN-Hypertension)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-osa",
@@ -537,11 +552,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT06649045", "title": "A Master Protocol for Orforglipron in Participants With Obstructive Sleep Apnea and Obesity or Overweight (ATTAIN-OSA)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-pediatric-diabetes",
@@ -561,12 +577,13 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07668336", "title": "A Study of Orforglipron Compared With Dulaglutide in Pediatric Participants With Type 2 Diabetes", "sourceType": "trial registry", "checkedAt": "2026-07-13" },
         { "url": "https://clinicaltrials.gov/study/NCT07613307", "title": "A Study of Orforglipron in Participants With Type 2 Diabetes Who Observe Ramadan Fasting", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
@@ -592,7 +609,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss",
@@ -608,7 +625,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-triumph-1-basket",
@@ -627,7 +645,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05929066",
@@ -643,7 +661,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-triumph-outcomes",
@@ -662,7 +681,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06383390",
@@ -671,7 +690,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-transcend-t2d",
@@ -690,7 +710,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06260722",
@@ -705,7 +725,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-masld",
@@ -724,11 +745,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07165028", "title": "A Master Protocol of Multiple Agents in Adults With Metabolic Dysfunction-Associated Steatotic Liver Disease (SYNERGY-Outcomes)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-low-back-pain",
@@ -747,11 +769,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07035093", "title": "A Study of Retatrutide in Participants Who Have Obesity or Overweight and Chronic Low Back Pain (TRIUMPH-7)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-oa",
@@ -770,11 +793,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT05931367", "title": "A Study of Retatrutide in Participants Who Have Obesity or Overweight and Osteoarthritis of the Knee (TRIUMPH-4)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3841136-subcutaneous-injection",
@@ -800,7 +824,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07321886",
@@ -828,7 +852,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3841136-subcutaneous-injection-osteoarthritis",
@@ -854,7 +879,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07353931",
@@ -863,7 +888,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3841136-subcutaneous-injection-obstructive-sleep-apnea",
@@ -889,7 +915,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07369011",
@@ -898,7 +924,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3532226-subcutaneous-injection",
@@ -924,7 +951,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07215559",
@@ -940,7 +967,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3549492-oral-solution",
@@ -966,7 +994,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06683508",
@@ -988,7 +1016,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection",
@@ -1014,7 +1043,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07476118",
@@ -1029,7 +1058,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-bipolar-disorder",
@@ -1048,11 +1078,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07286175", "title": "A Study of Brenipatide in Adult Participants With Bipolar Disorder (RENEW-Bipolar-1)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-schizophrenia",
@@ -1071,11 +1102,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07410507", "title": "A Study of Brenipatide in Adult Participants With Schizophrenia (RENEW-Scz-1)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-opioid-use-disorder",
@@ -1094,11 +1126,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07420283", "title": "A Study of Brenipatide in Participants With Opioid Use Disorder (RENEW-Op-1)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-tobacco-use-disorder",
@@ -1117,11 +1150,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07223840", "title": "A Study of Brenipatide in Adults Who Quit Smoking Cigarettes and Want to Avoid Relapse (RENEW-Smk-1)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-asthma",
@@ -1140,11 +1174,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07219173", "title": "A Study of Brenipatide in Adult Participants With Uncontrolled Moderate to Severe Asthma", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-ibs-d",
@@ -1163,11 +1198,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07545759", "title": "A Study of Brenipatide in Participants With Irritable Bowel Syndrome-Diarrhea (RENEW-IBS-D)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-ibs-c",
@@ -1186,11 +1222,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07545772", "title": "A Study of Brenipatide in Participants With Irritable Bowel Syndrome-Constipation (RENEW-IBS-C)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-alcohol-use-disorder",
@@ -1209,12 +1246,13 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07219953", "title": "A Study of Brenipatide in Participants With Alcohol Use Disorder (RENEW-ALC-2)", "sourceType": "trial registry", "checkedAt": "2026-07-13" },
         { "url": "https://clinicaltrials.gov/study/NCT07219966", "title": "A Study of Brenipatide in Participants With Moderate-to-Severe Alcohol Use Disorder (RENEW-ALC-1)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-major-depressive-disorder",
@@ -1233,11 +1271,12 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         { "url": "https://clinicaltrials.gov/study/NCT07412756", "title": "A Study of Brenipatide in Adult Participants With Major Depressive Disorder (RENEW-MDD-1)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3305677-subcutaneous-injection",
@@ -1286,7 +1325,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06124807",
@@ -1301,7 +1340,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3541105-subcutaneous-injection",
@@ -1327,7 +1367,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05380323",
@@ -1342,6 +1382,7 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

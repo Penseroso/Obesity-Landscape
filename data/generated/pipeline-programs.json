@@ -57,7 +57,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://news.abbvie.com/2025-03-03-AbbVie-and-Gubra-Announce-License-Agreement-to-Develop-an-Amylin-Analog-for-the-Treatment-of-Obesity",
@@ -88,7 +88,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection",
@@ -123,7 +124,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06858839",
@@ -168,7 +169,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-atherosclerotic-cardiovascular-disease",
@@ -202,7 +204,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07037433",
@@ -219,7 +221,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-elevated-liver-fat",
@@ -253,7 +256,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07441252",
@@ -270,7 +273,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-heart-failure",
@@ -304,7 +308,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07037459",
@@ -321,7 +325,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-obstructive-sleep-apnea",
@@ -355,7 +360,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07225686",
@@ -372,7 +377,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-type-2-diabetes",
@@ -406,7 +412,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06858878",
@@ -437,7 +443,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "ascletis-pharma-asc30-39-fdc-oral-tablets",
@@ -474,7 +481,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-fixed-dose-combination-of-asc30-once-daily-oral-small-molecule-glp-1r-agonist-and-asc39-once-daily-oral-small-molecule-amylin-selective-amylin-receptor-agonist-for-clinical-development-302735615.html",
@@ -484,7 +491,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc30-48-fdc-oral-tablets",
@@ -522,7 +530,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-selects-for-clinical-development-a-fixed-dose-combination-of-first-in-class-oral-small-molecule-gipr-agonist-asc48-and-oral-small-molecule-glp-1r-agonist-asc30-302826283.html",
@@ -532,7 +540,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc30-oral-tablets",
@@ -560,7 +569,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-reinforces-its-differentiated-obesity-portfolio-at-american-diabetes-association-ada-2026-scientific-sessions-showcasing-asc30-clinical-data-and-exciting-preclinical-findings-from-asc37-and-asc39-302793255.html",
@@ -577,7 +586,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc30-oral-tablets-type-2-diabetes",
@@ -605,7 +615,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07321678",
@@ -622,7 +632,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ascletis-pharma-asc30-subcutaneous-depot-injection",
@@ -650,7 +661,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-positive-topline-results-from-us-phase-ii-24-week-study-for-its-ultra-long-acting-subcutaneous-depot-formulations-of-small-molecule-glp-1r-agonist-asc30-for-obesity-302709245.html",
@@ -660,7 +671,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc31-subcutaneous-injection",
@@ -686,7 +698,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-the-combination-of-asc47-and-asc31-its-dual-glp-1rgipr-peptide-agonist-demonstrated-significantly-greater-weight-loss-compared-to-the-combination-of-asc47-and-tirzepatide-in-an-animal-model-of-obesity-302531465.html",
@@ -703,7 +715,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc35-subcutaneous-injection",
@@ -739,7 +752,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-announces-us-fda-ind-clearance-for-phase-i-study-of-once-monthly-subcutaneously-administered-glp-1rgipr-dual-peptide-agonist-asc35-for-the-treatment-of-obesity-302807534.html",
@@ -749,7 +762,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-35-fdc-subcutaneous-injection",
@@ -796,7 +810,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-submits-two-ind-applications-to-the-us-fda-for-the-treatment-of-obesity-asc36-once-monthly-injection-a-peptide-amylin-receptor-agonist-and-asc3635-fdc-once-monthly-injection-a-co-formulation-of-asc36-plus-peptide-g-302818044.html",
@@ -806,7 +820,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-37-fdc-subcutaneous-injection",
@@ -843,7 +858,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042905416.pdf",
@@ -860,7 +875,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-oral-tablets",
@@ -886,7 +902,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-20",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/apac/news-releases/ascletis-selects-oral-amylin-receptor-peptide-agonist-asc36-for-clinical-development-302683760.html",
@@ -896,7 +912,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc36-subcutaneous-injection",
@@ -932,7 +949,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ascletis.com/news_detail/200/id/1415.html",
@@ -942,7 +959,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc37-oral-tablets",
@@ -968,7 +986,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-selects-its-first-oral-glp-1rgiprgcgr-triple-peptide-agonist-asc37-for-clinical-development-302628537.html",
@@ -985,7 +1003,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc37-subcutaneous-injection",
@@ -1011,7 +1030,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-07",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ascletis-selects-a-next-generation-once-monthly-subcutaneously-administered-glp-1rgiprgcgr-triple-peptide-agonist-asc37-for-clinical-development-302665194.html",
@@ -1021,7 +1040,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ascletis-pharma-asc39-oral-tablets",
@@ -1047,7 +1067,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-20",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/apac/news-releases/oral-small-molecule-amylin-receptor-agonist-asc39-demonstrated-eloralintide-like-amylin-selectivity-and-efficacy-in-preclinical-models-302715856.html",
@@ -1064,7 +1084,8 @@
           "checkedAt": "2026-07-20"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
@@ -1117,7 +1138,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-new-medication-chronic-weight-management",
@@ -1148,7 +1169,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-adolescent-obesity",
@@ -1186,7 +1208,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06439277",
@@ -1195,7 +1217,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-cardiovascular-outcomes",
@@ -1233,7 +1256,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT04255433",
@@ -1249,7 +1272,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-higher-dose-ckd",
@@ -1290,7 +1314,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05536804",
@@ -1299,7 +1323,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-higher-dose-t2d",
@@ -1338,7 +1363,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06037252",
@@ -1347,7 +1372,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-masld",
@@ -1385,7 +1411,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07165028",
@@ -1394,7 +1420,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-surmount-mmo",
@@ -1433,7 +1460,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05556512",
@@ -1442,7 +1469,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-type-1-diabetes",
@@ -1482,7 +1510,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06914895",
@@ -1491,7 +1519,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3305677-subcutaneous-injection",
@@ -1564,7 +1593,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06124807",
@@ -1579,7 +1608,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
@@ -1608,7 +1638,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss",
@@ -1624,7 +1654,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-low-back-pain",
@@ -1654,7 +1685,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07035093",
@@ -1663,7 +1694,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-masld",
@@ -1691,7 +1723,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07165028",
@@ -1700,7 +1732,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-oa",
@@ -1730,7 +1763,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05931367",
@@ -1739,7 +1772,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-transcend-t2d",
@@ -1767,7 +1801,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06260722",
@@ -1782,7 +1816,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-triumph-1-basket",
@@ -1813,7 +1848,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05929066",
@@ -1829,7 +1864,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-triumph-outcomes",
@@ -1858,7 +1894,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06383390",
@@ -1867,7 +1903,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets",
@@ -1948,7 +1985,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
@@ -1971,7 +2008,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-hypertension",
@@ -2007,7 +2045,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06948435",
@@ -2016,7 +2054,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-oa",
@@ -2052,7 +2091,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07153471",
@@ -2061,7 +2100,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-osa",
@@ -2097,7 +2137,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06649045",
@@ -2106,7 +2146,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-outcomes",
@@ -2141,7 +2182,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07241390",
@@ -2150,7 +2191,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-pad",
@@ -2184,7 +2226,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07223593",
@@ -2193,7 +2235,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-obesity-t2d",
@@ -2229,7 +2272,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06972472",
@@ -2238,7 +2281,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-pediatric-diabetes",
@@ -2272,7 +2316,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07668336",
@@ -2287,7 +2331,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-restrain-sui",
@@ -2323,7 +2368,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07202884",
@@ -2332,7 +2377,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3532226-subcutaneous-injection",
@@ -2361,7 +2407,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07215559",
@@ -2377,7 +2423,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection",
@@ -2406,7 +2453,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07476118",
@@ -2421,7 +2468,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-alcohol-use-disorder",
@@ -2449,7 +2497,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07219953",
@@ -2464,7 +2512,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-asthma",
@@ -2492,7 +2541,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07219173",
@@ -2501,7 +2550,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-bipolar-disorder",
@@ -2529,7 +2579,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07286175",
@@ -2538,7 +2588,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-ibs-c",
@@ -2566,7 +2617,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07545772",
@@ -2575,7 +2626,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-ibs-d",
@@ -2603,7 +2655,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07545759",
@@ -2612,7 +2664,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-major-depressive-disorder",
@@ -2640,7 +2693,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07412756",
@@ -2649,7 +2702,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-opioid-use-disorder",
@@ -2677,7 +2731,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07420283",
@@ -2686,7 +2740,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-schizophrenia",
@@ -2714,7 +2769,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07410507",
@@ -2723,7 +2778,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection-tobacco-use-disorder",
@@ -2751,7 +2807,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07223840",
@@ -2760,7 +2816,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "non-metabolic"
   },
   {
     "id": "eli-lilly-and-company-ly3541105-subcutaneous-injection",
@@ -2789,7 +2846,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05380323",
@@ -2804,7 +2861,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3549492-oral-solution",
@@ -2833,7 +2891,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06683508",
@@ -2855,7 +2913,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3841136-subcutaneous-injection",
@@ -2885,7 +2944,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07321886",
@@ -2913,7 +2972,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3841136-subcutaneous-injection-obstructive-sleep-apnea",
@@ -2943,7 +3003,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07369011",
@@ -2952,7 +3012,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ly3841136-subcutaneous-injection-osteoarthritis",
@@ -2982,7 +3043,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-12",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07353931",
@@ -2991,7 +3052,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr102-fdc-subcutaneous-injection",
@@ -3039,7 +3101,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/796.html",
@@ -3056,7 +3118,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
@@ -3136,7 +3199,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/765.html",
@@ -3173,7 +3236,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-obstructive-sleep-apnea",
@@ -3201,7 +3265,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/853.html",
@@ -3223,7 +3287,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-type-2-diabetes",
@@ -3251,7 +3316,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-three-innovative-drugs-gzr18-injection-gzr4-injection-and-gzr101-injection-achieve-primary-endpoints-in-phase-2-clinical-studies-302276311.html",
@@ -3273,7 +3338,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-amycretin-oral-tablets",
@@ -3308,7 +3374,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
@@ -3325,7 +3391,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-amycretin-oral-tablets-type-2-diabetes",
@@ -3359,7 +3426,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06542874",
@@ -3368,7 +3435,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-amycretin-subcutaneous-injection",
@@ -3403,7 +3471,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-advances-early-stage-obesity-medication-amycretin-to-phase-3-clinical-development-based-on-early-phase-clinical-trial-results-in-people-with-obesity-or-excess-weight-published-in-the-lancet-302487500.html",
@@ -3426,7 +3494,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-amycretin-subcutaneous-injection-type-2-diabetes",
@@ -3460,7 +3529,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html",
@@ -3470,7 +3539,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-amylin-1213-subcutaneous-injection",
@@ -3505,7 +3575,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06719011",
@@ -3514,7 +3584,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-amylin-355-subcutaneous-injection",
@@ -3549,7 +3620,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06577766",
@@ -3558,7 +3629,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-cagrilintide-subcutaneous-injection",
@@ -3587,7 +3659,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.globenewswire.com/news-release/2025/09/16/3150597/0/en/Novo-Nordisk-presents-phase-3-data-for-next-generation-amylin-cagrilintide-leading-to-advancement-into-dedicated-clinical-programme.html",
@@ -3604,7 +3676,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-cagrisema-subcutaneous-injection",
@@ -3650,7 +3723,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisk-files-for-fda-approval-of-cagrisema-the-first-once-weekly-combination-of-glp1-and-amylin-analogues-for-weight-management-302645862.html",
@@ -3667,7 +3740,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-cagrisema-subcutaneous-injection-type-2-diabetes",
@@ -3706,7 +3780,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06323174",
@@ -3730,7 +3804,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-glp-1-analogue-subcutaneous-injection",
@@ -3765,7 +3840,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07566390",
@@ -3774,7 +3849,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-icosema-subcutaneous-injection",
@@ -3839,7 +3915,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05352815",
@@ -3912,7 +3988,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-liraglutide-subcutaneous-injection",
@@ -3945,7 +4022,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2014/206321Orig1s000TOC.cfm",
@@ -3969,7 +4046,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-semaglutide-oral-tablets",
@@ -4010,7 +4088,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/fda-approves-novo-nordisks-wegovy-pill-the-first-and-only-oral-glp-1-for-weight-loss-in-adults-302648344.html",
@@ -4048,7 +4126,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-semaglutide-oral-tablets-type-2-diabetes",
@@ -4088,7 +4167,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/213051Orig1s000TOC.cfm",
@@ -4098,7 +4177,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-semaglutide-subcutaneous-injection",
@@ -4139,7 +4219,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/215256Orig1s000TOC.cfm",
@@ -4177,7 +4257,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-semaglutide-subcutaneous-injection-mash",
@@ -4217,7 +4298,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-serious-liver-disease-known-mash",
@@ -4227,7 +4308,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-semaglutide-subcutaneous-injection-type-2-diabetes",
@@ -4267,7 +4349,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209637Orig1s000TOC.cfm",
@@ -4277,7 +4359,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-triple-subcutaneous-injection",
@@ -4312,7 +4395,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07184632",
@@ -4321,7 +4404,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-triple-subcutaneous-injection-type-2-diabetes",
@@ -4355,7 +4439,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07415954",
@@ -4364,7 +4448,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-ubt251-subcutaneous-injection",
@@ -4451,7 +4536,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-10",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07395687",
@@ -4489,7 +4574,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "novo-nordisk-ubt251-subcutaneous-injection-type-2-diabetes",
@@ -4517,7 +4603,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-13",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916519",
@@ -4527,7 +4613,8 @@
           "checkedAt": "2026-07-13"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "pfizer-pf-06882961-oral-tablets",
@@ -4556,7 +4643,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-provides-update-oral-glp-1-receptor-agonist",
@@ -4573,7 +4660,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-06954522-oral-tablets",
@@ -4602,7 +4690,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06003777",
@@ -4626,7 +4714,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-07081532-oral-tablets",
@@ -4655,7 +4744,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11618248/",
@@ -4672,7 +4761,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-07976016-oral-tablets",
@@ -4700,7 +4790,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -4717,7 +4807,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-08653944-subcutaneous-injection",
@@ -4760,7 +4851,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -4777,7 +4868,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-08653945-subcutaneous-injection",
@@ -4814,7 +4906,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -4831,7 +4923,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-pf-08654698-subcutaneous-injection",
@@ -4868,7 +4961,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
@@ -4878,7 +4971,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ql-biopharm-zt002-subcutaneous-injection",
@@ -4907,7 +5001,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ql-biopharm-reports-phase-2-results-of-a-monthly-dose-study-evaluating-zovaglutide-a-novel-extended-half-life-glp-1-receptor-agonist-at-easd-2025-302558945.html",
@@ -4936,7 +5030,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "ql-biopharm-zt002-subcutaneous-injection-type-2-diabetes",
@@ -4964,7 +5059,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07065032",
@@ -4973,7 +5068,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ql-biopharm-zt003-subcutaneous-injection",
@@ -5009,7 +5105,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.qlbiopharm.com/en/news-info/368.html",
@@ -5025,7 +5121,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ql-biopharm-zt006-oral-tablets",
@@ -5053,7 +5150,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.linkedin.com/posts/qlbiopharm_qlbiopharm-zt006-glp1-activity-7408911537480019970-IWdB",
@@ -5075,7 +5172,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "roche-ct-868-subcutaneous-injection",
@@ -5103,7 +5201,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06062069",
@@ -5120,7 +5218,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "roche-ct-996-oral-capsule",
@@ -5159,7 +5258,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07081958",
@@ -5182,7 +5281,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "roche-ct-996-oral-capsule-type-2-diabetes",
@@ -5220,7 +5320,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07112872",
@@ -5243,7 +5343,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "roche-enicepatide-subcutaneous-injection",
@@ -5282,7 +5383,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351045",
@@ -5312,7 +5413,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "roche-enicepatide-subcutaneous-injection-type-2-diabetes",
@@ -5350,7 +5452,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351058",
@@ -5373,7 +5475,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-oral-tablets",
@@ -5430,7 +5533,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07243171",
@@ -5458,7 +5561,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
@@ -5536,7 +5640,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-ecnoglutide-injection-approved-by-chinas-national-medical-products-administration-nmpa-for-chronic-weight-management-302706442.html",
@@ -5566,7 +5670,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-adolescent-obesity",
@@ -5612,7 +5717,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
@@ -5628,7 +5733,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-mash",
@@ -5691,7 +5797,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.sciwindbio.com/portal/index/pipeline/category_id/3.html",
@@ -5721,7 +5827,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-osa",
@@ -5759,7 +5866,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07434050",
@@ -5781,7 +5888,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-type-2-diabetes",
@@ -5858,7 +5966,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/apac/news-releases/sciwind-biosciences-announces-ecnoglutide-injection-approved-by-chinas-national-medical-products-administration-nmpa-for-adult-type-2-diabetes-302675016.html",
@@ -5881,7 +5989,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "sciwind-biosciences-xw014-oral-capsule",
@@ -5911,7 +6020,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-initiation-of-dosing-in-phase-1-clinical-trial-evaluating-xw014-an-oral-small-molecule-glp-1-receptor-agonist-for-the-treatment-of-obesity-and-type-2-diabetes-301644252.html",
@@ -5933,7 +6042,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "sciwind-biosciences-xw015-subcutaneous-injection",
@@ -5979,7 +6089,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-24",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
@@ -5996,7 +6106,8 @@
           "checkedAt": "2026-07-24"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "structure-therapeutics-gsbr-1290-oral-tablet",
@@ -6077,7 +6188,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk2735-oral-tablet",
@@ -6130,7 +6242,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk2735-subcutaneous-and-oral-obesity-maintenance",
@@ -6175,7 +6288,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk2735-subcutaneous-injection",
@@ -6242,7 +6356,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "viking-therapeutics-vk3019-subcutaneous-injection",
@@ -6286,7 +6401,8 @@
           "checkedAt": "2026-07-25"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-dapiglutide-subcutaneous-injection",
@@ -6314,7 +6430,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/dapiglutide-program-paused/",
@@ -6330,7 +6446,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-petrelintide-ct-388-fdc-subcutaneous-injection",
@@ -6390,7 +6507,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide-ct-388/",
@@ -6406,7 +6523,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-petrelintide-subcutaneous-injection",
@@ -6453,7 +6571,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
@@ -6476,7 +6594,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-petrelintide-subcutaneous-injection-chronic-weight-management",
@@ -6522,7 +6641,7 @@
     ],
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
@@ -6531,7 +6650,8 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "zealand-pharma-zp6590-subcutaneous-injection",
@@ -6559,7 +6679,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/zp6590/",
@@ -6575,6 +6695,7 @@
           "checkedAt": "2026-07-08"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

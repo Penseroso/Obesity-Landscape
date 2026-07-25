@@ -307,6 +307,21 @@ Rules by field.
   vocabulary, not of the row. A **regimen** is the one exception: it has no
   `technical` block, so it carries an authored `mechanismFamilyId`, which must
   name a `multi-component` family.
+- **Scope class** (Contract 1.2, ADR-0053) — a required, registry-backed
+  `scopeClass` naming the row's own position in the obesity landscape (`obesity-treatment`, `obesity-adjunct`,
+  `obesity-comorbidity`, `metabolic-adjacent`, or `non-metabolic`; see
+  [Entities and Rows §Scope class](./entities-and-rows.md#scope-class)).
+  Authored from the row's own official development objective and required
+  development context, never derived from `indications` text — `indications`
+  is unnormalized free text (for example `Type 2 diabetes` and `Type 2
+  diabetes mellitus` both occur, and `Elevated liver fat with obesity or
+  overweight` contains "obesity" but is not an obesity-treatment row), and
+  substring or exact-match parsing of it would misclassify rows the same way
+  parsing `technical.mechanism` is prohibited for mechanism families. Every
+  Program and every Regimen requires a value; storing one requires the same
+  source-supported confirmation as any other required field — do not carry
+  forward an unverified default or copy a sibling row's value without
+  row-specific evidence.
 - **Platform** — only as published; `null` if not disclosed. Platform and
   modality (peptide, non-peptide, small molecule, antibody conjugate) are
   auxiliary metadata and are **not** mechanism-family boundaries.
@@ -449,7 +464,7 @@ Additional rules:
 axes and are combined, not conflated: status is the program's overall lifecycle
 state; `stageOperationalState` annotates the operational state of the stored
 stage. When `stageOperationalState` is present, the validator enforces the
-following allowed combinations per Contract 1.1 (`Not separately confirmed` is
+following allowed combinations per Contract 1.2 (`Not separately confirmed` is
 the neutral value permitted with any status):
 
 | `status` | Allowed `stageOperationalState` |
@@ -487,6 +502,26 @@ partial precision:
 This applies to `publishedAt`, regulatory-state dates, and other evidence dates
 that may be introduced under the current contract. Do **not** estimate unknown
 months or days, and do **not** fill unknown values with `01`.
+
+### Metadata effects of an authored-field backfill
+
+Adding a value for a new required field (for example, backfilling `scopeClass`
+onto an existing record) is a metadata-affecting change only to the extent the
+record was actually re-examined:
+
+- Reading only the record's **already-stored** `metadata.sources` to confirm
+  and author the new value updates `updatedAt` (a stored value changed), but
+  **does not** update `lastVerifiedAt` or any source's `checkedAt` — the
+  record's prior verification is unaffected, and no source was reopened.
+- Opening an **external source again** — to re-confirm current state or to
+  supply evidence the stored sources do not cover — updates `updatedAt`,
+  updates `lastVerifiedAt`, and updates `checkedAt` only on the sources
+  actually reopened. Do not update `checkedAt` on a source that was not
+  reopened.
+
+A run performing a bulk backfill must report which records fall into each
+case, so a reader can distinguish "reclassified from existing evidence" from
+"reverified against current sources."
 
 ## Source metadata
 

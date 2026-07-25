@@ -1,0 +1,14 @@
+[
+  {
+    "id": "a",
+    "assetId": "a",
+    "companyId": "fixture-co",
+    "assetName": "A",
+    "codeName": null,
+    "technical": { "mechanism": "GLP-1R agonist", "platform": null },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Active" },
+    "metadata": { "lastVerifiedAt": "2026-07-07", "updatedAt": "2026-07-07", "sources": [{ "url": "https://example.com/fixture-source", "checkedAt": "2026-07-07" }] }
+  }
+]

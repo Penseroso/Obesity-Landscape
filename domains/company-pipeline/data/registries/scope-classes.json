@@ -1,0 +1,37 @@
+[
+  {
+    "id": "obesity-treatment",
+    "label": "Obesity treatment",
+    "aliases": [],
+    "obesityPurposeQualifying": true,
+    "sortRank": 10
+  },
+  {
+    "id": "obesity-adjunct",
+    "label": "Obesity therapy adjunct",
+    "aliases": [],
+    "obesityPurposeQualifying": true,
+    "sortRank": 20
+  },
+  {
+    "id": "obesity-comorbidity",
+    "label": "Obesity comorbidity",
+    "aliases": [],
+    "obesityPurposeQualifying": false,
+    "sortRank": 30
+  },
+  {
+    "id": "metabolic-adjacent",
+    "label": "Metabolic-adjacent",
+    "aliases": [],
+    "obesityPurposeQualifying": false,
+    "sortRank": 40
+  },
+  {
+    "id": "non-metabolic",
+    "label": "Non-metabolic",
+    "aliases": [],
+    "obesityPurposeQualifying": false,
+    "sortRank": 50
+  }
+]

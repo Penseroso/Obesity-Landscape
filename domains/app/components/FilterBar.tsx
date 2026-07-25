@@ -11,6 +11,8 @@ type FilterBarProps = {
 const selectClassName =
   "h-9 rounded-md border border-border bg-card px-3 text-sm text-foreground outline-none transition focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20";
 
+type SelectOption = string | { value: string; label: string };
+
 function SelectFilter({
   label,
   allLabel,
@@ -21,7 +23,7 @@ function SelectFilter({
   label: string;
   allLabel: string;
   value: string;
-  options: string[];
+  options: SelectOption[];
   onChange: (value: string) => void;
 }) {
   return (
@@ -33,11 +35,15 @@ function SelectFilter({
         className={selectClassName}
       >
         <option value="All">{allLabel}</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
+        {options.map((option) => {
+          const optionValue = typeof option === "string" ? option : option.value;
+          const optionLabel = typeof option === "string" ? option : option.label;
+          return (
+            <option key={optionValue} value={optionValue}>
+              {optionLabel}
+            </option>
+          );
+        })}
       </select>
     </label>
   );
@@ -50,7 +56,7 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
 
   return (
     <section className="rounded-md border border-border bg-card p-4 shadow-soft">
-      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
+      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-7">
         <label className="flex min-w-0 flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground xl:col-span-2">
           Keyword
           <input
@@ -95,6 +101,15 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
           options={options.statuses}
           onChange={(status) =>
             update({ status: status as ProgramFilters["status"] })
+          }
+        />
+        <SelectFilter
+          label="Scope class"
+          allLabel="All scope classes"
+          value={filters.scopeClass}
+          options={options.scopeClasses}
+          onChange={(scopeClass) =>
+            update({ scopeClass: scopeClass as ProgramFilters["scopeClass"] })
           }
         />
       </div>

@@ -36,7 +36,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351045",
@@ -66,7 +66,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "roche-enicepatide-subcutaneous-injection-type-2-diabetes",
@@ -104,7 +105,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351058",
@@ -127,7 +128,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "roche-ct-996-oral-capsule",
@@ -166,7 +168,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07081958",
@@ -189,7 +191,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "roche-ct-996-oral-capsule-type-2-diabetes",
@@ -227,7 +230,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07112872",
@@ -250,7 +253,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "roche-ct-868-subcutaneous-injection",
@@ -278,7 +282,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06062069",
@@ -295,6 +299,7 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   }
 ]

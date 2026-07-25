@@ -32,7 +32,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06858839",
@@ -77,7 +77,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-type-2-diabetes",
@@ -111,7 +112,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06858878",
@@ -142,7 +143,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-elevated-liver-fat",
@@ -176,7 +178,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07441252",
@@ -193,7 +195,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-atherosclerotic-cardiovascular-disease",
@@ -227,7 +230,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07037433",
@@ -244,7 +247,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-heart-failure",
@@ -278,7 +282,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07037459",
@@ -295,7 +299,8 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-obstructive-sleep-apnea",
@@ -329,7 +334,7 @@
     },
     "metadata": {
       "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-21",
+      "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07225686",
@@ -346,6 +351,7 @@
           "checkedAt": "2026-07-21"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-comorbidity"
   }
 ]

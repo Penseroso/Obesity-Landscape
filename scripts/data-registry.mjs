@@ -418,6 +418,66 @@ function validateMechanismFamilyRegistry(entries, label) {
 }
 
 /**
+ * Scope-class registry (Contract 1.2, ADR-0053). Each entry is a `scopeClass`
+ * value naming a Program or Regimen row's own position in the obesity landscape.
+ * `obesityPurposeQualifying` marks only whether the class expresses an obesity-purpose
+ * development objective, feeding the Scope 2.0 R1 asset-qualification path - it does
+ * not mean dataset membership, asset qualification, Clinical Evidence eligibility, or
+ * UI visibility (see domains/company-pipeline/docs/entities-and-rows.md#scope-class).
+ */
+function validateScopeClassRegistry(entries, label) {
+  assert(Array.isArray(entries), `${label} registry must be an array`);
+
+  const ids = new Set();
+  const ranks = new Set();
+  let qualifyingCount = 0;
+
+  for (const entry of entries) {
+    assert(isObject(entry), `${label} entries must be objects`);
+    assert(isNonEmptyString(entry.id), `${label} entry id is required`);
+    assert(isNonEmptyString(entry.label), `${label} entry ${entry.id} label is required`);
+    assert(Array.isArray(entry.aliases), `${label} entry ${entry.id} aliases must be an array`);
+    assert(!ids.has(entry.id), `${label} entry id ${entry.id} is duplicated`);
+    ids.add(entry.id);
+
+    for (const alias of entry.aliases) {
+      assert(isNonEmptyString(alias), `${label} entry ${entry.id} has an empty alias`);
+    }
+
+    assert(
+      Number.isFinite(entry.sortRank),
+      `${label} entry ${entry.id} sortRank is required`,
+    );
+    assert(!ranks.has(entry.sortRank), `${label} sortRank ${entry.sortRank} is duplicated`);
+    ranks.add(entry.sortRank);
+
+    assert(
+      typeof entry.obesityPurposeQualifying === "boolean",
+      `${label} entry ${entry.id} obesityPurposeQualifying must be a boolean`,
+    );
+    if (entry.obesityPurposeQualifying) {
+      qualifyingCount += 1;
+    }
+  }
+
+  validateUniqueRegistryText(entries, label);
+
+  assert(
+    qualifyingCount > 0,
+    `${label} registry must define at least one obesityPurposeQualifying entry`,
+  );
+
+  return {
+    scopeClassById: new Map(entries.map((entry) => [entry.id, entry])),
+    obesityPurposeQualifyingScopeClassIds: new Set(
+      entries
+        .filter((entry) => entry.obesityPurposeQualifying)
+        .map((entry) => entry.id),
+    ),
+  };
+}
+
+/**
  * Deterministic probe for the mechanism-family registry rules.
  *
  * The semantic-uniqueness rules cannot be expressed as a synthetic company-data
@@ -705,6 +765,7 @@ function loadRegistries() {
   const regulatoryStates = readJson(path.join(registryDir, "regulatory-states.json"));
   const relationshipRoles = readJson(path.join(registryDir, "company-relationship-roles.json"));
   const mechanismFamilies = readJson(path.join(registryDir, "mechanism-families.json"));
+  const scopeClasses = readJson(path.join(registryDir, "scope-classes.json"));
 
   validateRegistryEntries(stages, "development-stages", true);
   validateRegistryEntries(regulatoryStates, "regulatory-states", false);
@@ -713,6 +774,7 @@ function loadRegistries() {
     mechanismFamilies,
     "mechanism-families",
   );
+  const scopeClassIndex = validateScopeClassRegistry(scopeClasses, "scope-classes");
 
   return {
     stageLabels: new Set(stages.map((stage) => stage.label)),
@@ -720,6 +782,9 @@ function loadRegistries() {
     relationshipRoleLabels: new Set(relationshipRoles.map((role) => role.label)),
     mechanismFamilyById: mechanismFamilyIndex.familyById,
     mechanismFamilyIdByMechanism: mechanismFamilyIndex.familyIdByMechanism,
+    scopeClassById: scopeClassIndex.scopeClassById,
+    scopeClassIds: new Set(scopeClasses.map((entry) => entry.id)),
+    obesityPurposeQualifyingScopeClassIds: scopeClassIndex.obesityPurposeQualifyingScopeClassIds,
   };
 }
 
@@ -815,6 +880,27 @@ function validateIndications(indications, context) {
   for (const indication of indications) {
     assert(isNonEmptyString(indication), `${context}: empty indication`);
   }
+}
+
+/**
+ * Contract 1.2 / Scope 2.0 migration switch (ADR-0053), now flipped: every existing
+ * Program and Regimen carries a source-supported authored scopeClass (Phase 2
+ * backfill), zero rows are unresolved, and this is the required-field migration gate
+ * commit - see the Data Protocol's required-field migration gate and decision-log.md
+ * ADR-0052/ADR-0053. A *present* value is always checked against the registry
+ * regardless of the switch, so a bad value never passed quietly even while optional.
+ */
+const scopeClassRequired = true;
+
+function validateScopeClass(value, fieldLabel, context, registries) {
+  if (!scopeClassRequired && value === undefined) {
+    return;
+  }
+  assert(isNonEmptyString(value), `${context}: ${fieldLabel} is required`);
+  assert(
+    registries.scopeClassIds.has(value),
+    `${context}: scopeClass "${value}" is not in scope-classes.json`,
+  );
 }
 
 function validateRegulatoryStates(regulatoryStates, context, registries) {
@@ -1132,6 +1218,7 @@ function validateProgram(program, context, registries, dataset) {
   validateRegulatoryStates(program.regulatoryStates, context, registries);
   validateRelationships(program.relationships, context, registries, dataset);
   validateMetadata(program.metadata, context);
+  validateScopeClass(program.scopeClass, "program.scopeClass", context, registries);
 }
 
 function validateRegimen(regimen, context, registries, dataset) {
@@ -1182,6 +1269,7 @@ function validateRegimen(regimen, context, registries, dataset) {
   validateAdministration(regimen.administration, `${context}: administration`, false);
   validateRelationships(regimen.relationships, context, registries, dataset);
   validateMetadata(regimen.metadata, context);
+  validateScopeClass(regimen.scopeClass, "regimen.scopeClass", context, registries);
 }
 
 function validateDataset(
@@ -3398,6 +3486,9 @@ function validateSyntheticFixtures() {
     ["mixed-company-identity", /companyId and externalCompanyName cannot both be used/],
     ["missing-program-sources", /metadata\.sources must not be empty/],
     ["relationship-missing-sources", /relationships\[0\]\.sourceUrls must not be empty/],
+    ["unregistered-scope-class", /scopeClass "not-a-real-scope-class" is not in scope-classes\.json/],
+    ["missing-program-scope-class", /program\.scopeClass is required/],
+    ["missing-regimen-scope-class", /regimen\.scopeClass is required/],
   ];
 
   for (const [folder, expectedError] of invalidExpectations) {
@@ -3671,6 +3762,275 @@ function probeIndicationScope() {
   );
 }
 
+// Used only as an exact-match candidate-analysis signal below - never as a scope
+// gate, never substring-matched. "Elevated liver fat with obesity or overweight"
+// contains "obesity" but is not an exact match to any of these three labels, and
+// must not be flagged as one.
+const obesityFamilyIndicationLabels = new Set([
+  "Obesity",
+  "Overweight",
+  "Chronic weight management",
+]);
+
+function hasExactObesityFamilyIndication(indications) {
+  const normalizedFamily = new Set(
+    [...obesityFamilyIndicationLabels].map(normalize),
+  );
+  return indications.some((indication) => normalizedFamily.has(normalize(indication)));
+}
+
+/**
+ * scopeClass candidate-analysis helper (Contract 1.2, ADR-0053).
+ *
+ * Shared by the Phase 2 backfill review report and the `data:probe:scope-class`
+ * CLI (Phase 4), so the backfill review order and the standing post-backfill
+ * audit are driven by one rule set, never two that can drift apart.
+ *
+ * This function NEVER decides an authored `scopeClass` value and never blocks
+ * anything. Only a row's own `metadata.sources` can confirm its actual
+ * development objective and required development context - see
+ * `entities-and-rows.md#scope-class`. It reports up to four kinds of signal,
+ * exact-match only, never substring matching:
+ *
+ *   - `missing-scope-class` — the row has no authored scopeClass yet. This is
+ *     the Phase 2 review queue; it is expected to disappear by the required-
+ *     field migration gate and should not fire once Contract 1.2 is active.
+ *   - `obesity-treatment-without-family-indication` — stored scopeClass is
+ *     `obesity-treatment`, but no indication is an exact match to Obesity,
+ *     Overweight, or Chronic weight management.
+ *   - `family-indication-without-obesity-treatment` — an indication is an
+ *     exact match to one of those three labels, but stored scopeClass is
+ *     something other than `obesity-treatment`.
+ *   - `sibling-scope-class-disagreement` — two Program rows of the same
+ *     asset share the exact same indications set but carry different stored
+ *     scopeClass values.
+ *
+ * Absence of a signal does not certify a row's classification; it proves only
+ * that these heuristics did not fire.
+ */
+function findScopeClassCandidates(programs, regimens) {
+  const rows = [
+    ...programs.map((program) => ({
+      kind: "program",
+      id: program.id,
+      companyId: program.companyId,
+      assetId: program.assetId,
+      indications: program.indications,
+      scopeClass: program.scopeClass,
+      signals: [],
+    })),
+    ...regimens.map((regimen) => ({
+      kind: "regimen",
+      id: regimen.id,
+      companyId: regimen.companyId,
+      assetId: null,
+      indications: regimen.indications,
+      scopeClass: regimen.scopeClass,
+      signals: [],
+    })),
+  ];
+
+  for (const row of rows) {
+    const familyMatch = hasExactObesityFamilyIndication(row.indications);
+
+    if (row.scopeClass === undefined) {
+      row.signals.push({
+        signal: "missing-scope-class",
+        detail: `${row.kind} ${row.id} has no authored scopeClass yet`,
+      });
+      continue;
+    }
+
+    if (row.scopeClass === "obesity-treatment" && !familyMatch) {
+      row.signals.push({
+        signal: "obesity-treatment-without-family-indication",
+        detail: `${row.kind} ${row.id} is scopeClass "obesity-treatment" but indications [${row.indications.join(", ")}] contain no exact match to Obesity, Overweight, or Chronic weight management`,
+      });
+    }
+    if (row.scopeClass !== "obesity-treatment" && familyMatch) {
+      row.signals.push({
+        signal: "family-indication-without-obesity-treatment",
+        detail: `${row.kind} ${row.id} has an exact obesity-family indication but is scopeClass "${row.scopeClass}", not "obesity-treatment"`,
+      });
+    }
+  }
+
+  // Sibling disagreement: same asset, same indications set, different stored
+  // scopeClass. Program rows only - a Regimen has no shared assetId.
+  const byAsset = new Map();
+  for (const row of rows) {
+    if (row.kind !== "program") continue;
+    const key = `${row.companyId}|${row.assetId}`;
+    const siblings = byAsset.get(key) ?? [];
+    siblings.push(row);
+    byAsset.set(key, siblings);
+  }
+
+  for (const siblings of byAsset.values()) {
+    for (let i = 0; i < siblings.length; i += 1) {
+      for (let j = i + 1; j < siblings.length; j += 1) {
+        const [first, second] = [siblings[i], siblings[j]];
+        if (first.scopeClass === undefined || second.scopeClass === undefined) continue;
+        if (first.scopeClass === second.scopeClass) continue;
+
+        const firstKey = sortedStrings(first.indications.map(normalize)).join("|");
+        const secondKey = sortedStrings(second.indications.map(normalize)).join("|");
+        if (firstKey !== secondKey) continue;
+
+        const detail = `${first.id} (scopeClass "${first.scopeClass}") and ${second.id} (scopeClass "${second.scopeClass}") share the same asset and indications [${first.indications.join(", ")}] but disagree on scopeClass`;
+        first.signals.push({ signal: "sibling-scope-class-disagreement", detail });
+        second.signals.push({ signal: "sibling-scope-class-disagreement", detail });
+      }
+    }
+  }
+
+  return rows.filter((row) => row.signals.length > 0);
+}
+
+/**
+ * Self-check for `findScopeClassCandidates` against small in-memory synthetic
+ * rows (the same style as `probeMechanismFamilyRegistry`'s in-memory mutation
+ * testing) - proving each signal actually fires and does not misfire on a
+ * substring match, before reporting live-data candidates.
+ */
+function selfCheckScopeClassCandidates() {
+  const baseMetadata = { lastVerifiedAt: "2026-01-01", updatedAt: "2026-01-01", sources: [] };
+  const baseDevelopment = { stage: "Phase 2", status: "Active" };
+  const baseAdministration = { route: "Subcutaneous", dosageForm: "Injection", dosingInterval: null };
+  const baseTechnical = { mechanism: null, platform: null };
+
+  const program = (overrides) => ({
+    id: overrides.id,
+    assetId: overrides.assetId ?? "self-check-asset",
+    companyId: "self-check-co",
+    assetName: "Self-check asset",
+    codeName: null,
+    technical: baseTechnical,
+    administration: baseAdministration,
+    indications: overrides.indications,
+    development: baseDevelopment,
+    metadata: baseMetadata,
+    ...(overrides.scopeClass !== undefined ? { scopeClass: overrides.scopeClass } : {}),
+  });
+
+  // missing-scope-class: no scopeClass authored yet.
+  const missing = [program({ id: "missing-1", indications: ["Obesity"] })];
+  assertScopeClassSignals(missing, [], "missing-1", ["missing-scope-class"]);
+
+  // family-indication-without-obesity-treatment: exact "Obesity" match, wrong class.
+  const wrongClass = [
+    program({ id: "wrong-class-1", indications: ["Obesity"], scopeClass: "non-metabolic" }),
+  ];
+  assertScopeClassSignals(wrongClass, [], "wrong-class-1", [
+    "family-indication-without-obesity-treatment",
+  ]);
+
+  // obesity-treatment-without-family-indication: no exact family match, but class says treatment.
+  const noMatch = [
+    program({
+      id: "no-match-1",
+      indications: ["Type 2 diabetes mellitus"],
+      scopeClass: "obesity-treatment",
+    }),
+  ];
+  assertScopeClassSignals(noMatch, [], "no-match-1", [
+    "obesity-treatment-without-family-indication",
+  ]);
+
+  // Substring guard: "obesity" inside a longer indication must not count as an exact match.
+  const substring = [
+    program({
+      id: "substring-1",
+      indications: ["Elevated liver fat with obesity or overweight"],
+      scopeClass: "metabolic-adjacent",
+    }),
+  ];
+  assertScopeClassSignals(substring, [], "substring-1", []);
+
+  // sibling-scope-class-disagreement: same asset, same indications, different class.
+  const siblingA = program({
+    id: "sibling-a",
+    assetId: "shared-asset",
+    indications: ["Obesity", "Overweight"],
+    scopeClass: "obesity-treatment",
+  });
+  const siblingB = program({
+    id: "sibling-b",
+    assetId: "shared-asset",
+    indications: ["Obesity", "Overweight"],
+    scopeClass: "obesity-comorbidity",
+  });
+  const siblingResults = findScopeClassCandidates([siblingA, siblingB], []);
+  for (const id of ["sibling-a", "sibling-b"]) {
+    const row = siblingResults.find((entry) => entry.id === id);
+    assert(row, `self-check: expected a candidate row for ${id}`);
+    assert(
+      row.signals.some((entry) => entry.signal === "sibling-scope-class-disagreement"),
+      `self-check: expected sibling-scope-class-disagreement on ${id}`,
+    );
+  }
+
+  // A fully consistent obesity-treatment row must produce no signal at all.
+  const clean = [
+    program({ id: "clean-1", indications: ["Obesity", "Overweight"], scopeClass: "obesity-treatment" }),
+  ];
+  assert(
+    findScopeClassCandidates(clean, []).length === 0,
+    "self-check: a consistent obesity-treatment row must not be flagged",
+  );
+}
+
+function assertScopeClassSignals(programs, regimens, expectedId, expectedSignals) {
+  const results = findScopeClassCandidates(programs, regimens);
+  const row = results.find((entry) => entry.id === expectedId);
+  const observed = sortedStrings((row?.signals ?? []).map((entry) => entry.signal));
+  const expected = sortedStrings(expectedSignals);
+  assert(
+    JSON.stringify(observed) === JSON.stringify(expected),
+    `self-check: ${expectedId} expected signals ${JSON.stringify(expected)}, observed ${JSON.stringify(observed)}`,
+  );
+}
+
+/**
+ * `data:probe:scope-class` — advisory only, never fails a row, never merges or
+ * edits data. Runs the self-check above, then reports live-data candidates
+ * from `findScopeClassCandidates`. During the Phase 2 backfill this is
+ * dominated by `missing-scope-class`, the review queue; after the backfill it
+ * becomes a standing consistency audit and `missing-scope-class` should not
+ * appear.
+ */
+function probeScopeClass() {
+  selfCheckScopeClassCandidates();
+
+  const { programs, regimens } = loadCompanySources();
+  const candidates = findScopeClassCandidates(programs, regimens);
+  const bySignal = new Map();
+  for (const row of candidates) {
+    for (const entry of row.signals) {
+      const list = bySignal.get(entry.signal) ?? [];
+      list.push({ id: row.id, kind: row.kind, detail: entry.detail });
+      bySignal.set(entry.signal, list);
+    }
+  }
+
+  console.log("Scope-class candidate-analysis audit (Contract 1.2, ADR-0053)");
+  console.log(`  self-check signals verified: 5`);
+  console.log(`  program rows: ${programs.length}, regimen rows: ${regimens.length}`);
+  console.log(`  rows with a signal: ${candidates.length}`);
+
+  for (const signal of sortedStrings([...bySignal.keys()])) {
+    const entries = bySignal.get(signal);
+    console.log(`  - ${signal} (${entries.length})`);
+    for (const entry of entries) {
+      console.log(`      ${entry.kind} ${entry.id}: ${entry.detail}`);
+    }
+  }
+
+  console.log(
+    "This audit is advisory only: it never fails a row, merges rows, or edits data, and never decides an authored scopeClass value. Only a row's own metadata.sources can confirm its actual development objective and required development context.",
+  );
+}
+
 const command = process.argv[2];
 
 try {
@@ -3702,6 +4062,9 @@ try {
       break;
     case "probe:indication-scope":
       probeIndicationScope();
+      break;
+    case "probe:scope-class":
+      probeScopeClass();
       break;
     case "generate":
       generateAggregates();

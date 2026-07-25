@@ -1,4 +1,4 @@
-import { getStageBucketId } from "./constants";
+import { getScopeClassEntry, getStageBucketId } from "./constants";
 import type { PipelineProgram, ProgramFilters } from "./types";
 
 export const emptyProgramFilters: ProgramFilters = {
@@ -8,6 +8,7 @@ export const emptyProgramFilters: ProgramFilters = {
   stage: "All",
   stageBucket: "All",
   status: "All",
+  scopeClass: "All",
   keyword: "",
 };
 
@@ -36,11 +37,13 @@ export function filterPrograms(
       getStageBucketId(program.development.stage) === filters.stageBucket;
     const matchesStatus =
       filters.status === "All" || program.development.status === filters.status;
+    const matchesScopeClass =
+      filters.scopeClass === "All" || program.scopeClass === filters.scopeClass;
 
     // Keyword search is limited to fields a user can actually see somewhere
     // in the UI (company, asset, code name, mechanism, platform, indication,
-    // route, dosage form, dosing interval, stage, status) - internal
-    // identifiers such as id/assetId/companyId are never matched.
+    // route, dosage form, dosing interval, stage, status, scope class label) -
+    // internal identifiers such as id/assetId/companyId are never matched.
     const searchable = [
       companyName,
       program.assetName,
@@ -53,6 +56,7 @@ export function filterPrograms(
       program.indications.join(" "),
       program.development.stage,
       program.development.status,
+      getScopeClassEntry(program.scopeClass).label,
     ]
       .filter(Boolean)
       .join(" ")
@@ -65,6 +69,7 @@ export function filterPrograms(
       matchesStage &&
       matchesStageBucket &&
       matchesStatus &&
+      matchesScopeClass &&
       (!keyword || searchable.includes(keyword))
     );
   });

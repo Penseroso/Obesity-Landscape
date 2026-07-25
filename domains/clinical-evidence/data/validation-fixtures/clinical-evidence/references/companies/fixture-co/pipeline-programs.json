@@ -32,7 +32,8 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "fixture-co-fixture-asset-2-subcutaneous-injection",
@@ -67,6 +68,7 @@
           "checkedAt": "2026-07-10"
         }
       ]
-    }
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]
