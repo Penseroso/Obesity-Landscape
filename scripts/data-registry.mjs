@@ -793,20 +793,6 @@ function validateDevelopment(development, context, registries) {
   }
 }
 
-function validateDiscontinuationEvidence(development, metadata, context) {
-  // Discontinuation is a claim the source policy calls "explicit evidence"; a single
-  // secondary reference (e.g. one news article inferring a wind-down) has previously
-  // been enough to store a false Discontinued status. Require corroboration.
-  if (development.status !== "Discontinued") {
-    return;
-  }
-
-  assert(
-    metadata.sources.length >= 2,
-    `${context}: development.status "Discontinued" requires at least 2 metadata.sources`,
-  );
-}
-
 function validateAdministration(administration, context, required) {
   if (administration === undefined && !required) {
     return;
@@ -1145,7 +1131,6 @@ function validateProgram(program, context, registries, dataset) {
   validateRegulatoryStates(program.regulatoryStates, context, registries);
   validateRelationships(program.relationships, context, registries, dataset);
   validateMetadata(program.metadata, context);
-  validateDiscontinuationEvidence(program.development, program.metadata, context);
 }
 
 function validateRegimen(regimen, context, registries, dataset) {
@@ -1196,7 +1181,6 @@ function validateRegimen(regimen, context, registries, dataset) {
   validateAdministration(regimen.administration, `${context}: administration`, false);
   validateRelationships(regimen.relationships, context, registries, dataset);
   validateMetadata(regimen.metadata, context);
-  validateDiscontinuationEvidence(regimen.development, regimen.metadata, context);
 }
 
 function validateDataset(
@@ -3398,7 +3382,6 @@ function validateSyntheticFixtures() {
     ["mixed-company-identity", /companyId and externalCompanyName cannot both be used/],
     ["missing-program-sources", /metadata\.sources must not be empty/],
     ["relationship-missing-sources", /relationships\[0\]\.sourceUrls must not be empty/],
-    ["insufficient-discontinuation-evidence", /"Discontinued" requires at least 2 metadata\.sources/],
   ];
 
   for (const [folder, expectedError] of invalidExpectations) {

@@ -392,6 +392,14 @@ Additional rules:
 - `Approved` programs likewise remain in the dataset.
 - **Delay alone** does **not** prove `On hold`.
 - **Explicit evidence** should support `On hold` and `Discontinued`.
+- One authoritative source is sufficient for `Discontinued` when it directly
+  and explicitly states that row's own discontinuation. The number of cited
+  sources does not establish this by itself — a single primary statement
+  outweighs several secondary sources that merely infer a wind-down, and two
+  sources that do not themselves state discontinuation do not satisfy this
+  rule. Because directness of support cannot be judged mechanically from
+  record-level source count, confirming it is a research-completion gate
+  responsibility (`research-workflow.md`), not a validator rule.
 - A confirmed program with unresolved current status may use `Unknown`.
 - Evidence for a row's `development.status` and `stageOperationalState` must
   name that row's own program scope. A specific trial's operational state

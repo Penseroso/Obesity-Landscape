@@ -82,11 +82,16 @@ once every item below holds; while any remain open, the run is **NO-GO**.
 
 1. Reconcile the sponsor's current pipeline page, current investor materials,
    approved/filed obesity products, sponsor and asset registry searches, and
-   licensed, acquired, partnered, renamed, and historical assets. This
-   reconciliation is the authoritative official-pipeline inventory for this
-   run: every asset, formulation, route, and indication it names is an
-   in-scope candidate that must reach a disposition under section 2, whether
-   or not it was already known before this run started.
+   licensed, acquired, partnered, renamed, and historical assets. Review the
+   sponsor's full official pipeline for this purpose, but this reconciliation
+   is the authoritative official-pipeline inventory for this run only within
+   Scope v1.1: every asset, formulation, route, and indication it names that
+   falls within Scope v1.1, or may plausibly qualify under it, is an in-scope
+   candidate that must reach a disposition under section 2, whether or not it
+   was already known before this run started — see
+   [Dataset scope](./README.md#dataset-scope). Once an asset qualifies, keep
+   investigating every current official program for that asset per the Data
+   Protocol, not only its obesity-indication rows.
 2. For every `Filed` or `Approved` program, reconcile disclosed jurisdiction,
    authority, and official date in `regulatoryStates`.
 3. Classify every newly surfaced candidate.
@@ -111,14 +116,22 @@ once every item below holds; while any remain open, the run is **NO-GO**.
    position, or a planned/announced future stage into this row without
    row-specific evidence — see the row-scoped evidence rule in
    `entities-and-rows.md` and the stage evidence rules in
+   `source-and-entry-policy.md`. When a row's `development.status` is set to
+   `Discontinued`, confirm at least one cited source directly and explicitly
+   states discontinuation for that row's own scope — source count alone does
+   not satisfy this; see the discontinuation evidence rule in
    `source-and-entry-policy.md`.
 9. When this run's branch is stacked on Company/Pipeline changes from a prior
    research step not yet merged to the default branch, re-run the full
    validation suite (section 6) against the cumulative working tree — not
    only the files this run touched — and confirm every value corrected by an
-   earlier step in the stack is still present unchanged. A rebase, merge, or
+   earlier step in the stack is still present. A rebase, merge, or
    regeneration is never assumed to have preserved a prior correction; verify
-   it directly.
+   it directly. This run's own independently sourced, stronger evidence may
+   intentionally supersede an earlier correction; when that happens, report
+   the change and the superseding evidence explicitly. An earlier
+   correction's disappearance without such a reported basis is a
+   stacked-branch regression, not a valid update.
 
 This audit is in-session only. Do not create a per-run ledger or report file.
 
@@ -156,7 +169,8 @@ Report, without a rigid template:
 - run-level completion status — **GO** or **NO-GO** — per the gate in
   section 5, including confirmation that section 5 item 9 (stacked-branch
   re-validation) was applied when this run's branch is stacked on unmerged
-  prior changes.
+  prior changes, and any prior correction found intentionally superseded,
+  with its superseding evidence.
 
 Do not claim completion (GO) unless the coverage gate and required validation
 have completed.
