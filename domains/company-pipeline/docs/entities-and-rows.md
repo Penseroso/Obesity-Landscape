@@ -256,15 +256,13 @@ have a Phase 2 obesity/overweight row and a planned Phase 3 chronic
 weight-management row because the current program scopes differ.
 
 A **difference in enrolled population does not by itself create a program
-row.** When population-specific pivotal trials of the same asset belong to one
-sponsor-defined obesity or weight-management trial family and share route,
-dosage form, stage, status, and operational state, they are one program row; the
-differing population is not a second program. Viking's VANQUISH-1 and
-VANQUISH-2 (VK2735 subcutaneous) and Structure's ACCOMPLISH-1 and ACCOMPLISH-2
-(aleniglipron) each stay on one obesity/overweight row for this reason. A
+row.** Population-specific studies of the same asset belong on one row when
+official evidence supports one sponsor-defined development program and the
+route, dosage form, stage, status, and operational state are shared. A
 separate row requires a **distinct treatment objective**, a **distinct
-sponsor-defined program identity**, or a **different development state**. What
-may be stored as an indication in the first place is owned by
+sponsor-defined program identity**, a **different development state**, or
+another independently meaningful development configuration. What may be
+stored as an indication in the first place is owned by
 [`source-and-entry-policy.md`](./source-and-entry-policy.md#population-and-comorbidity-versus-indication).
 
 Create **regimen records**, not program rows, when multiple independent products

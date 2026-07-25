@@ -3442,7 +3442,7 @@ function validateSyntheticFixtures() {
 const indicationScopeFixtureFolders = [
   "audit-population-derived-indication",
   "valid-split-development-state",
-  "valid-split-sponsor-program",
+  "noncandidate-disjoint-indications",
 ];
 
 /**
@@ -3468,32 +3468,6 @@ const comorbidityRowIdSuffixes = new Set([
   "masld",
   "metabolic-dysfunction-associated-steatohepatitis",
 ]);
-
-const candidateDispositions = new Set(["STORED", "EXCLUDED", "DEFERRED"]);
-
-/**
- * Candidate classes the Scope authority explicitly leaves to a future decision
- * (`README.md#defer-from-scope-v11`). Disposition precedence: such a candidate is DEFERRED
- * even when a run would otherwise settle it as EXCLUDED, so a later Scope revision can
- * still reach it.
- */
-const scopeDeferredCandidateClasses = new Set([
-  "muscle-preserving-or-body-composition-adjunct",
-  "non-incretin-anti-obesity-class",
-  "future-obesity-pharmacotherapy-boundary",
-]);
-
-function resolveCandidateDisposition(candidate, context) {
-  assert(isNonEmptyString(candidate.scopeClass), `${context}: scopeClass is required`);
-  assert(
-    candidateDispositions.has(candidate.proposedDisposition),
-    `${context}: unsupported proposedDisposition ${candidate.proposedDisposition}`,
-  );
-
-  return scopeDeferredCandidateClasses.has(candidate.scopeClass)
-    ? "DEFERRED"
-    : candidate.proposedDisposition;
-}
 
 function getProgramConfigurationKey(program) {
   return [
@@ -3535,6 +3509,13 @@ function describeIndications(program) {
   return `[${program.indications.join(" + ")}]`;
 }
 
+function getRowPairKey(first, second) {
+  return sortedStrings([first.id, second.id]).join(" | ");
+}
+
+// Candidate identity is the unordered row-pair, not the detector signal: the same pair of
+// rows can trip both the comorbidity-suffix and indication-superset heuristics, and that
+// must surface as one review item with two reasons, not two separate counted candidates.
 function findIndicationScopeReviewCandidates(programs) {
   const byConfiguration = new Map();
   for (const program of programs) {
@@ -3544,7 +3525,19 @@ function findIndicationScopeReviewCandidates(programs) {
     byConfiguration.set(key, rows);
   }
 
-  const candidates = [];
+  const candidatesByPair = new Map();
+  const addSignal = (configuration, state, first, second, reason, detail) => {
+    const pairKey = getRowPairKey(first, second);
+    const candidate = candidatesByPair.get(pairKey) ?? {
+      configuration,
+      state,
+      programIds: sortedStrings([first.id, second.id]),
+      reasons: [],
+    };
+    candidate.reasons.push({ reason, detail });
+    candidatesByPair.set(pairKey, candidate);
+  };
+
   for (const configuration of sortedStrings([...byConfiguration.keys()])) {
     const byState = new Map();
     for (const program of byConfiguration.get(configuration)) {
@@ -3569,12 +3562,14 @@ function findIndicationScopeReviewCandidates(programs) {
           if (suffix !== null) {
             const base = getComorbidityRowIdSuffix(first, second) === null ? second : first;
             const sibling = base === first ? second : first;
-            candidates.push({
+            addSignal(
               configuration,
               state,
-              reason: "comorbidity-suffixed-row-id",
-              detail: `${sibling.id} ${describeIndications(sibling)} separates from ${base.id} ${describeIndications(base)} only by the comorbidity suffix "-${suffix}"`,
-            });
+              first,
+              second,
+              "comorbidity-suffixed-row-id",
+              `${sibling.id} ${describeIndications(sibling)} separates from ${base.id} ${describeIndications(base)} only by the comorbidity suffix "-${suffix}"`,
+            );
           }
 
           const wider = isStrictIndicationSuperset(first, second)
@@ -3584,30 +3579,39 @@ function findIndicationScopeReviewCandidates(programs) {
               : null;
           if (wider !== null) {
             const narrower = wider === first ? second : first;
-            candidates.push({
+            addSignal(
               configuration,
               state,
-              reason: "indication-superset",
-              detail: `${wider.id} ${describeIndications(wider)} is an indication superset of ${narrower.id} ${describeIndications(narrower)}`,
-            });
+              first,
+              second,
+              "indication-superset",
+              `${wider.id} ${describeIndications(wider)} is an indication superset of ${narrower.id} ${describeIndications(narrower)}`,
+            );
           }
         }
       }
     }
   }
 
-  return candidates;
+  return sortedStrings([...candidatesByPair.keys()]).map((pairKey) => candidatesByPair.get(pairKey));
+}
+
+function countDetectorSignals(candidates) {
+  return candidates.reduce((total, candidate) => total + candidate.reasons.length, 0);
 }
 
 function probeIndicationScope() {
   const registries = loadRegistries();
+  // Absence of a signal here proves only that the current heuristics (comorbidity-suffixed
+  // row id, indication superset) do not fire on this fixture's row shape — it does not prove
+  // the split is a valid sponsor-defined program, and the fixture names avoid claiming that.
   const expectedFixtureReasons = {
     "audit-population-derived-indication": [
       "comorbidity-suffixed-row-id",
       "indication-superset",
     ],
     "valid-split-development-state": [],
-    "valid-split-sponsor-program": [],
+    "noncandidate-disjoint-indications": [],
   };
 
   for (const folder of indicationScopeFixtureFolders) {
@@ -3624,7 +3628,9 @@ function probeIndicationScope() {
 
     const observed = sortedStrings([
       ...new Set(
-        findIndicationScopeReviewCandidates(fixture.programs).map((candidate) => candidate.reason),
+        findIndicationScopeReviewCandidates(fixture.programs).flatMap((candidate) =>
+          candidate.reasons.map((entry) => entry.reason),
+        ),
       ),
     ]);
     const expected = sortedStrings(expectedFixtureReasons[folder]);
@@ -3634,33 +3640,18 @@ function probeIndicationScope() {
     );
   }
 
-  const dispositionCases = readJson(
-    path.join(indicationScopeFixtureDir, "disposition-precedence.json"),
-  );
-  for (const dispositionCase of dispositionCases) {
-    const context = `disposition-precedence: ${dispositionCase.name}`;
-    assert(
-      candidateDispositions.has(dispositionCase.expectedDisposition),
-      `${context}: unsupported expectedDisposition ${dispositionCase.expectedDisposition}`,
-    );
-    const resolved = resolveCandidateDisposition(dispositionCase, context);
-    assert(
-      resolved === dispositionCase.expectedDisposition,
-      `${context}: resolved ${resolved}, fixture expects ${dispositionCase.expectedDisposition}`,
-    );
-  }
-
   const { programs } = loadCompanySources();
   const candidates = findIndicationScopeReviewCandidates(programs);
+  const detectorSignals = countDetectorSignals(candidates);
 
   console.log("Indication-scope semantic audit");
   console.log(`  detection fixtures verified: ${indicationScopeFixtureFolders.length}`);
-  console.log(`  disposition-precedence cases verified: ${dispositionCases.length}`);
   console.log(`  program rows audited: ${programs.length}`);
-  console.log(`  review candidates: ${candidates.length}`);
+  console.log(`  unique review row pairs: ${candidates.length}`);
+  console.log(`  detector signals: ${detectorSignals}`);
 
   if (candidates.length > 0) {
-    console.log("  Confirm for every candidate below, from official sources:");
+    console.log("  Confirm for every pair below, from official sources:");
     console.log("    1. no population or comorbidity was promoted to an indication;");
     console.log("    2. the rows are sponsor-defined distinct programs;");
     console.log(
@@ -3668,12 +3659,15 @@ function probeIndicationScope() {
     );
     for (const candidate of candidates) {
       console.log(`  - ${candidate.configuration} — ${candidate.state}`);
-      console.log(`      ${candidate.reason}: ${candidate.detail}`);
+      console.log(`      ${candidate.programIds.join(" | ")}`);
+      for (const entry of candidate.reasons) {
+        console.log(`      ${entry.reason}: ${entry.detail}`);
+      }
     }
   }
 
   console.log(
-    "Review candidates are reported for research review only: this audit never fails a row, merges rows, or edits data.",
+    "Review candidates are reported for research review only: this audit never fails a row, merges rows, or edits data. Absence of a signal does not certify a row split as valid.",
   );
 }
 

@@ -397,15 +397,6 @@ reason, and the two must not be conflated.
   program. Treat it as a separate treatment objective only when the sponsor is
   confirmed to develop that comorbidity itself as a distinct objective.
 
-Viking's VANQUISH-2 (VK2735 subcutaneous, "weight management in participants
-with type 2 diabetes who are obese, or overweight") and Structure's
-ACCOMPLISH-2 (aleniglipron, "chronic weight management in adults with obesity
-or overweight and type 2 diabetes mellitus") illustrate the pattern: each names
-type 2 diabetes as the enrolled population of a weight-management trial, not as
-a diabetes treatment objective, so each stays on its asset's
-obesity/overweight row. They are illustrations, not the basis of the rule — it
-applies to any sponsor, asset, and comorbidity.
-
 Whether population-specific studies of one asset become separate program rows
 is a row-splitting question owned by
 [`entities-and-rows.md`](./entities-and-rows.md#row-splitting).
