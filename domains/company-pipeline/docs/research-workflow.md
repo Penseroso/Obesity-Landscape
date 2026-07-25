@@ -35,18 +35,43 @@ Review each opened official source for every distinct asset, formulation,
 route, combination, regimen, and relationship it discloses. Every surfaced
 candidate must finish this run in exactly one disposition:
 
-- **STORED**: confirmed, in scope, representable, and reflected in operating
-  data — either **entered** as a new or updated record or **merged** into an
-  identified existing record;
-- **EXCLUDED**: outside scope or insufficiently evidenced, with a reason;
-- **DEFERRED**: unresolved identity, evidence, vocabulary, or structure, with a
-  reason.
+- **STORED** — in current scope, sufficiently supported by official evidence,
+  representable under the current contract, and reflected in operating data:
+  either **entered** as a new or updated record or **merged** into an
+  identified existing record.
+- **EXCLUDED** — confirmed **not a subject of this run**. Use it only when one
+  of these holds:
+  - confirmed outside current scope;
+  - not an official development program;
+  - the company under research is not the principal development entity;
+  - a generic or biosimilar copy;
+  - official evidence places it outside this company's operating data;
+  - speculative or unidentifiable, so it does not stand as a confirmed
+    candidate.
+
+  Do **not** use "insufficiently evidenced" as a catch-all EXCLUDED reason.
+- **DEFERRED** — an **unresolved case that can re-enter** a later run. Use it
+  when one of these holds:
+  - the Scope authority explicitly leaves this candidate class to a future
+    decision;
+  - plausibly in scope, but a required field is not officially disclosed;
+  - identity, route, dosage form, relationship, or development configuration is
+    unresolved;
+  - not representable under the current schema or registries;
+  - it must be re-evaluated on a future Scope or Contract change.
+
+**Disposition precedence.** When the Scope authority explicitly designates a
+candidate class as `Defer`, classify candidates of that class **DEFERRED**, not
+EXCLUDED. Under Scope v1.1 this means muscle-preserving or body-composition
+adjuncts and the named non-incretin anti-obesity classes are reported DEFERRED
+pending a Scope 2.0 review, even though they are not currently enterable — see
+[Defer from Scope v1.1](./README.md#defer-from-scope-v11).
 
 Nothing surfaced may be silently dropped, and no in-scope candidate may leave
 this run without one of these three dispositions. One DEFERRED candidate does
 not block other valid updates. DEFERRED and EXCLUDED are provisional until the
-independent coverage pass in section 5 has run: a candidate is not insufficiently
-evidenced merely because the first pass did not surface its evidence.
+independent coverage pass in section 5 has run: a candidate is not DEFERRED or
+EXCLUDED merely because the first pass did not surface its evidence.
 
 ## 3. Apply the contracts
 
@@ -121,17 +146,34 @@ once every item below holds; while any remain open, the run is **NO-GO**.
    states discontinuation for that row's own scope — source count alone does
    not satisfy this; see the discontinuation evidence rule in
    `source-and-entry-policy.md`.
-9. When this run's branch is stacked on Company/Pipeline changes from a prior
-   research step not yet merged to the default branch, re-run the full
-   validation suite (section 6) against the cumulative working tree — not
-   only the files this run touched — and confirm every value corrected by an
-   earlier step in the stack is still present. A rebase, merge, or
-   regeneration is never assumed to have preserved a prior correction; verify
-   it directly. This run's own independently sourced, stronger evidence may
-   intentionally supersede an earlier correction; when that happens, report
-   the change and the superseding evidence explicitly. An earlier
-   correction's disappearance without such a reported basis is a
-   stacked-branch regression, not a valid update.
+9. Every stored indication on every touched row passes indication-attribution
+   review:
+   - the indication states that program's own official treatment or development
+     objective;
+   - no comorbidity, enrolled population, eligibility criterion, or subgroup has
+     been carried into `indications` as an indication;
+   - where population-specific studies were kept as separate rows, a difference
+     in sponsor-defined program identity, indication objective, or development
+     state is directly confirmed by evidence.
+
+   The authority is
+   [Population and comorbidity versus indication](./source-and-entry-policy.md#population-and-comorbidity-versus-indication)
+   and the row rule in [`entities-and-rows.md`](./entities-and-rows.md#row-splitting).
+   `npm run data:probe:indication-scope` reports review candidates for this
+   check; it does not decide them, so each candidate touching this run's rows
+   must be resolved against evidence. While any of these checks is unresolved,
+   do not report GO.
+10. When this run's branch is stacked on Company/Pipeline changes from a prior
+    research step not yet merged to the default branch, re-run the full
+    validation suite (section 6) against the cumulative working tree — not
+    only the files this run touched — and confirm every value corrected by an
+    earlier step in the stack is still present. A rebase, merge, or
+    regeneration is never assumed to have preserved a prior correction; verify
+    it directly. This run's own independently sourced, stronger evidence may
+    intentionally supersede an earlier correction; when that happens, report
+    the change and the superseding evidence explicitly. An earlier
+    correction's disappearance without such a reported basis is a
+    stacked-branch regression, not a valid update.
 
 This audit is in-session only. Do not create a per-run ledger or report file.
 
@@ -145,12 +187,18 @@ npm run data:validate:registries
 npm run data:validate:companies
 npm run data:validate:generated
 npm run data:validate:synthetic
+npm run data:probe:indication-scope
 npm run lint
 npm run build
 git diff --check
 ```
 
 Generated files are outputs and must never be hand-edited.
+`data:probe:indication-scope` is a semantic audit: it verifies its own detection
+rules against fixtures and then **reports** indication-scope review candidates in
+company data. It does not fail a run by itself, and it never merges or edits a
+row — resolving a reported candidate is the gate responsibility in section 5
+item 9.
 
 ## 7. Report
 
@@ -162,12 +210,14 @@ Report, without a rigid template:
   DEFERRED — with reasons, and the count of undispositioned candidates
   remaining (must be zero to report GO);
 - registry additions;
+- indication-scope review candidates reported for this run's rows, and how each
+  was resolved;
 - final independent coverage-pass result;
 - principal sources;
 - generation and validation results;
 - blockers or source-access failures;
 - run-level completion status — **GO** or **NO-GO** — per the gate in
-  section 5, including confirmation that section 5 item 9 (stacked-branch
+  section 5, including confirmation that section 5 item 10 (stacked-branch
   re-validation) was applied when this run's branch is stacked on unmerged
   prior changes, and any prior correction found intentionally superseded,
   with its superseding evidence.

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "state-split-fixture-co-beta-subcutaneous-injection",
+    "assetId": "beta",
+    "companyId": "state-split-fixture-co",
+    "assetName": "Beta",
+    "codeName": "SSF-0002",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-state-split-beta-obesity",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "state-split-fixture-co-beta-subcutaneous-injection-type-2-diabetes",
+    "assetId": "beta",
+    "companyId": "state-split-fixture-co",
+    "assetName": "Beta",
+    "codeName": "SSF-0002",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-state-split-beta-type-2-diabetes",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  }
+]

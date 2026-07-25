@@ -1,0 +1,79 @@
+[
+  {
+    "id": "audit-fixture-co-alpha-oral-tablets",
+    "assetId": "alpha",
+    "companyId": "audit-fixture-co",
+    "assetName": "Alpha",
+    "codeName": "AFC-0001",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-audit-alpha-weight-management-1",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "audit-fixture-co-alpha-oral-tablets-type-2-diabetes",
+    "assetId": "alpha",
+    "companyId": "audit-fixture-co",
+    "assetName": "Alpha",
+    "codeName": "AFC-0001",
+    "technical": {
+      "mechanism": "GLP-1R agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight",
+      "Type 2 diabetes"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-audit-alpha-weight-management-2",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  }
+]
