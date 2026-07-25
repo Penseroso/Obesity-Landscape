@@ -4036,10 +4036,18 @@ function probeScopeClass() {
 // Advisory only: reports where a Company/Pipeline-stored registry locator and
 // a Clinical Evidence Study already correspond to the same company-scoped
 // registry identity, so a Clinical Evidence run can reopen a known source
-// instead of rediscovering it from a blank search. This never fails a row,
-// edits data, decides Study inclusion, decides a focal anchor, establishes
-// Study completeness or result availability, or ranks result sources - those
-// remain Clinical Evidence's own decisions under its workflow and contract.
+// instead of rediscovering it from a blank search. It never edits data or
+// decides Study inclusion, a focal anchor, Study completeness, result
+// availability, or result-source ranking - those remain Clinical Evidence's
+// own decisions under its workflow and contract.
+//
+// "Never fails" is scoped precisely: live-data unmatched, ambiguity,
+// multi-company, or unparsed findings never fail this command or the
+// research run. An unknown --company, a missing/duplicate --company value,
+// an unrecognized option, a positional argument, a self-check failure, a
+// parser-contract violation, or a source-read error fails normally, the same
+// as any other probe or validator in this file.
+//
 // See domains/clinical-evidence/docs/workflow.md for how a Clinical Evidence
 // run is expected to use this audit's output.
 
@@ -4101,7 +4109,7 @@ function getRegistryCitationKey(companyId, namespace, id) {
  * operating data, never resolves an ambiguity - it only surfaces one.
  */
 function findRegistryCitationCandidates(programs, regimens, ceStudies, ceCompanyFolders) {
-  const cpCiters = new Map(); // key -> [{ kind, rowId, companyId, scopeClass }]
+  const cpCiters = new Map(); // key -> [{ kind, rowId, companyId, scopeClass, url, checkedAt }]
   const unparsedCpSources = [];
 
   const scanRow = (row, kind) => {
@@ -4129,7 +4137,14 @@ function findRegistryCitationCandidates(programs, regimens, ceStudies, ceCompany
       seenKeysThisRow.add(key);
 
       const list = cpCiters.get(key) ?? [];
-      list.push({ kind, rowId: row.id, companyId: row.companyId, scopeClass: row.scopeClass });
+      list.push({
+        kind,
+        rowId: row.id,
+        companyId: row.companyId,
+        scopeClass: row.scopeClass,
+        url: source.url,
+        checkedAt: source.checkedAt,
+      });
       cpCiters.set(key, list);
     }
   };
@@ -4218,6 +4233,16 @@ function findRegistryCitationCandidates(programs, regimens, ceStudies, ceCompany
     });
   }
 
+  // Matched-locator count, preserved per company as well as globally: a
+  // compact-mode run must report the target company's own count, never the
+  // repository-wide total, so the per-company breakdown is computed here
+  // rather than only a single global number.
+  const matchedLocatorCountByCompany = new Map();
+  for (const key of ceStudiesByKey.keys()) {
+    const [companyId] = key.split("|");
+    matchedLocatorCountByCompany.set(companyId, (matchedLocatorCountByCompany.get(companyId) ?? 0) + 1);
+  }
+
   return {
     citedWithoutStudy,
     multiRowLocators,
@@ -4225,6 +4250,7 @@ function findRegistryCitationCandidates(programs, regimens, ceStudies, ceCompany
     studiesWithoutCpCitation,
     unparsedCpSources,
     matchedLocatorCount: ceStudiesByKey.size,
+    matchedLocatorCountByCompany,
   };
 }
 
@@ -4440,6 +4466,52 @@ function selfCheckRegistryCitations() {
       "self-check: compact-mode filtering must exclude another company's signals from the detailed view",
     );
   }
+
+  // 13: the matched-locator count must be reported per company, separate from
+  // the repository-wide total - compact mode for one company must never
+  // report the global number as if it were that company's own count.
+  {
+    const programs = [
+      program("p-match-a1", "self-check-co-match-a", [ctGovSource("NCT10000010")]),
+      program("p-match-a2", "self-check-co-match-a", [ctGovSource("NCT10000011")]),
+      program("p-match-b1", "self-check-co-match-b", [ctGovSource("NCT10000012")]),
+    ];
+    const studies = [
+      study("s-match-a1", "self-check-co-match-a", "p-match-a1", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000010" },
+      ]),
+      study("s-match-a2", "self-check-co-match-a", "p-match-a2", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000011" },
+      ]),
+      study("s-match-b1", "self-check-co-match-b", "p-match-b1", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000012" },
+      ]),
+    ];
+    const result = findRegistryCitationCandidates(programs, [], studies, [
+      "self-check-co-match-a",
+      "self-check-co-match-b",
+    ]);
+    assert(
+      result.matchedLocatorCount === 3,
+      "self-check: the global matched-locator count must total across every company",
+    );
+
+    const viewA = filterRegistryCitationResultForCompany(result, "self-check-co-match-a");
+    const viewB = filterRegistryCitationResultForCompany(result, "self-check-co-match-b");
+    assert(
+      viewA.matchedLocatorCountForCompany === 2,
+      "self-check: compact mode must report company A's own matched-locator count, not the global total",
+    );
+    assert(
+      viewB.matchedLocatorCountForCompany === 1,
+      "self-check: compact mode must report company B's own matched-locator count, not the global total",
+    );
+    assert(
+      viewA.matchedLocatorCountForCompany !== result.matchedLocatorCount &&
+        viewB.matchedLocatorCountForCompany !== result.matchedLocatorCount,
+      "self-check: a company's matched-locator count must be reported separately from the global total, never as the same number",
+    );
+  }
 }
 
 // Restricts a global findRegistryCitationCandidates() result to one company's
@@ -4453,25 +4525,110 @@ function filterRegistryCitationResultForCompany(result, companyId) {
     multiCompanyLocators: result.multiCompanyLocators.filter((entry) => entry.companyIds.includes(companyId)),
     studiesWithoutCpCitation: result.studiesWithoutCpCitation.filter((entry) => entry.companyId === companyId),
     unparsedCpSources: result.unparsedCpSources.filter((entry) => entry.companyId === companyId),
+    // The repository-wide total is preserved unchanged alongside it so a
+    // caller can always distinguish the two - never substitute one for the
+    // other in display.
     matchedLocatorCount: result.matchedLocatorCount,
+    matchedLocatorCountForCompany: result.matchedLocatorCountByCompany.get(companyId) ?? 0,
   };
 }
 
+// Strict CLI argument parsing: a typo or malformed invocation must fail
+// loudly rather than silently falling back to global mode or a wrong
+// company, which would misreport "0 signals" as if it were a clean result.
 function parseRegistryCitationsArgs(argv) {
   let company;
-  for (let index = 0; index < argv.length; index += 1) {
-    if (argv[index] === "--company") {
-      company = argv[index + 1];
-      index += 1;
+  let index = 0;
+
+  while (index < argv.length) {
+    const arg = argv[index];
+
+    if (arg === "--company") {
+      assert(company === undefined, "probe:registry-citations: --company was specified more than once");
+      const value = argv[index + 1];
+      assert(
+        value !== undefined && !value.startsWith("--"),
+        "probe:registry-citations: --company requires a value",
+      );
+      company = value;
+      index += 2;
+      continue;
     }
+
+    if (arg.startsWith("--")) {
+      throw new Error(`probe:registry-citations: unknown option "${arg}"`);
+    }
+
+    throw new Error(`probe:registry-citations: unexpected positional argument "${arg}"`);
   }
+
   return { company };
 }
 
+function assertRegistryCitationsArgsThrow(argv, message) {
+  let threw = false;
+  try {
+    parseRegistryCitationsArgs(argv);
+  } catch {
+    threw = true;
+  }
+  assert(threw, message);
+}
+
+/**
+ * Self-check for the CLI argument parser: proves each invalid invocation
+ * fails, and each valid one does not, before the probe ever reaches live
+ * data.
+ */
+function selfCheckRegistryCitationsArgParsing() {
+  assert(
+    parseRegistryCitationsArgs([]).company === undefined,
+    "self-check: no arguments must parse to no company filter",
+  );
+  assert(
+    parseRegistryCitationsArgs(["--company", "roche"]).company === "roche",
+    "self-check: --company <value> must parse to that company",
+  );
+  assertRegistryCitationsArgsThrow(
+    ["--company"],
+    "self-check: --company with no following value must fail argument parsing",
+  );
+  assertRegistryCitationsArgsThrow(
+    ["--company", "--company"],
+    "self-check: --company followed by another option must be treated as a missing value, not consumed as one",
+  );
+  assertRegistryCitationsArgsThrow(
+    ["--company", "roche", "--company", "novo-nordisk"],
+    "self-check: specifying --company more than once must fail argument parsing",
+  );
+  assertRegistryCitationsArgsThrow(
+    ["--unknown-option"],
+    "self-check: an unrecognized option must fail argument parsing",
+  );
+  assertRegistryCitationsArgsThrow(
+    ["roche"],
+    "self-check: a bare positional argument must fail argument parsing",
+  );
+}
+
 const registryCitationDisclaimer =
-  "This audit reports discovery aids only. It does not decide Study inclusion, focal anchor, Study completeness, result availability, or result provenance, and it never fails a row or edits data. CP row co-location is an anchor candidate only - the canonical anchor is Clinical Evidence's own Study.programId/regimenId. A locator listed here may be used as evidence only after Clinical Evidence directly reopens and reviews that same source; storing it in CP metadata.sources is not, by itself, provenance for any Clinical Evidence claim. scopeClass is display-only, never an inclusion filter. The absence of a signal is not proof that Clinical Evidence coverage is complete, and study-discovered-without-cp-registry-citation does not indicate any Company/Pipeline deficiency.";
+  "This audit reports discovery aids only. It does not decide Study inclusion, focal anchor, Study completeness, result availability, or result provenance, and it does not edit data. CP row co-location is an anchor candidate only - the canonical anchor is Clinical Evidence's own Study.programId/regimenId. A locator listed here may be used as evidence only after Clinical Evidence directly reopens and reviews that same source; storing it in CP metadata.sources is not, by itself, provenance for any Clinical Evidence claim. scopeClass is display-only, never an inclusion filter. The absence of a signal is not proof that Clinical Evidence coverage is complete, and study-discovered-without-cp-registry-citation does not indicate any Company/Pipeline deficiency. Live-data unmatched, ambiguity, multi-company, or unparsed findings do not fail this command or the research run; an unknown --company, invalid arguments, a self-check failure, a parser-contract violation, or a source-read error fails normally.";
+
+// A citer label always carries kind/id/scopeClass. Source URL and checkedAt
+// are included only in compact (--company) mode: global mode already lists
+// every company's entries in full, and stacking source detail onto every one
+// of those lines would make the architecture-wide audit unreadable, while a
+// single company's detailed drill-down is exactly where that detail is useful.
+function formatRegistryCitationCiter(citer, { includeSourceDetail, includeScopeClass }) {
+  const base = includeScopeClass ? `${citer.kind}:${citer.rowId} [${citer.scopeClass}]` : `${citer.kind}:${citer.rowId}`;
+  if (!includeSourceDetail) {
+    return base;
+  }
+  return `${base} (source: ${citer.url}, checkedAt: ${citer.checkedAt ?? "unknown"})`;
+}
 
 function probeRegistryCitations({ company } = {}) {
+  selfCheckRegistryCitationsArgParsing();
   selfCheckRegistryCitations();
 
   const { programs, regimens } = loadCompanySources();
@@ -4487,19 +4644,22 @@ function probeRegistryCitations({ company } = {}) {
   );
 
   const result = findRegistryCitationCandidates(programs, regimens, ceAggregate.studies, ceCompanyFolders);
+  const isCompact = company !== undefined;
 
   console.log("Registry-citation reuse audit (ADR-0054)");
-  console.log(`  mode: ${company !== undefined ? `compact (--company ${company})` : "global"}`);
+  console.log(`  mode: ${isCompact ? `compact (--company ${company})` : "global"}`);
   console.log(
     `  summary: ${result.citedWithoutStudy.length} cited-registry-record-without-study, ${result.multiRowLocators.length} registry-record-cited-by-multiple-rows, ${result.multiCompanyLocators.length} registry-record-cited-by-multiple-companies, ${result.studiesWithoutCpCitation.length} study-discovered-without-cp-registry-citation, ${result.unparsedCpSources.length} unparsed-registry-source`,
   );
 
-  const view = company !== undefined ? filterRegistryCitationResultForCompany(result, company) : result;
+  const view = isCompact ? filterRegistryCitationResultForCompany(result, company) : result;
 
   if (view.citedWithoutStudy.length > 0) {
     console.log("  cited-registry-record-without-study:");
     for (const entry of view.citedWithoutStudy) {
-      const citerLabel = entry.citers.map((c) => `${c.kind}:${c.rowId} [${c.scopeClass}]`).join(", ");
+      const citerLabel = entry.citers
+        .map((c) => formatRegistryCitationCiter(c, { includeSourceDetail: isCompact, includeScopeClass: true }))
+        .join(", ");
       console.log(
         `    ${entry.key} - ${entry.hasCeDataFolder ? "CE data present, no matching Study" : "no CE data folder for this company"} - cited by ${citerLabel}`,
       );
@@ -4509,7 +4669,10 @@ function probeRegistryCitations({ company } = {}) {
   if (view.multiRowLocators.length > 0) {
     console.log("  registry-record-cited-by-multiple-rows (anchor ambiguity - CE decides):");
     for (const entry of view.multiRowLocators) {
-      console.log(`    ${entry.key} <- ${entry.citers.map((c) => `${c.kind}:${c.rowId}`).join(" , ")}`);
+      const citerLabel = entry.citers
+        .map((c) => formatRegistryCitationCiter(c, { includeSourceDetail: isCompact, includeScopeClass: false }))
+        .join(" , ");
+      console.log(`    ${entry.key} <- ${citerLabel}`);
     }
   }
 
@@ -4528,7 +4691,7 @@ function probeRegistryCitations({ company } = {}) {
   }
 
   if (view.studiesWithoutCpCitation.length > 0) {
-    if (company !== undefined) {
+    if (isCompact) {
       console.log(
         `  study-discovered-without-cp-registry-citation (${view.studiesWithoutCpCitation.length} for ${company}, independent Clinical Evidence coverage - not a Company/Pipeline gap):`,
       );
@@ -4550,7 +4713,15 @@ function probeRegistryCitations({ company } = {}) {
     }
   }
 
-  console.log(`  matched company-scoped locators (CP locator + corresponding CE Study): ${result.matchedLocatorCount}`);
+  if (isCompact) {
+    console.log(
+      `  matched company-scoped locators for ${company}: ${view.matchedLocatorCountForCompany} (global total across all companies: ${result.matchedLocatorCount})`,
+    );
+  } else {
+    console.log(
+      `  matched company-scoped locators (global total, CP locator + corresponding CE Study): ${result.matchedLocatorCount}`,
+    );
+  }
   console.log(registryCitationDisclaimer);
 }
 

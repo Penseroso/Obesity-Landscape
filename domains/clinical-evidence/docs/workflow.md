@@ -84,13 +84,17 @@ Three things this preflight does **not** change:
   locator is ordinary independent Clinical Evidence coverage, not a gap to
   report back against Company/Pipeline data.
 
-This preflight never fails, never edits data, and never decides Study
-inclusion, focal anchor, Study completeness, result availability, or result
-provenance — those remain this workflow's own decisions below. When more than
-one Program or Regimen row cited the same locator, or the same locator was
-cited under more than one company, treat every listed row only as an anchor
-**candidate**; decide the actual anchor under this workflow's own reference
-rules, never from row co-location alone.
+This preflight never edits data and never decides Study inclusion, focal
+anchor, Study completeness, result availability, or result provenance — those
+remain this workflow's own decisions below. Live-data unmatched, ambiguity,
+multi-company, or unparsed findings do not fail the preflight or the research
+run; an unknown `--company`, invalid arguments, a self-check failure, a
+parser-contract violation, or a source-read error fails it normally, the same
+as any other probe or validator. When more than one Program or Regimen row
+cited the same locator, or the same locator was cited under more than one
+company, treat every listed row only as an anchor **candidate**; decide the
+actual anchor under this workflow's own reference rules, never from row
+co-location alone.
 
 ## 2. Establish and traverse the evidence set
 
@@ -321,10 +325,13 @@ npm run build
 git diff --check
 ```
 
-`data:probe:registry-citations` is advisory only, as in the preflight above: it
-never fails and never decides Study inclusion, focal anchor, completeness, or
-provenance. Re-running it here surfaces any new anchor ambiguity or
-still-unmatched locator this run's changes created, for reporting only.
+`data:probe:registry-citations` is advisory only, as in the preflight above:
+live-data findings never fail it and it never decides Study inclusion, focal
+anchor, completeness, or provenance; only invalid arguments, a self-check
+failure, a parser-contract violation, or a source-read error fail it, the same
+as any other probe or validator. Re-running it here surfaces any new anchor
+ambiguity or still-unmatched locator this run's changes created, for reporting
+only.
 
 Before claiming completion, reconcile the in-session result-review manifest:
 
