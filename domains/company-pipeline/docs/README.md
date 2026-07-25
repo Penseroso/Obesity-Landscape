@@ -21,10 +21,14 @@ Two independent versions apply:
   `PipelineProgramRecord` and `RegimenRecord`; no other Contract 1.1 shape
   changed.
 - **Scope 2.0**: inclusion boundary for the obesity landscape. Supersedes
-  Scope v1.1 (ADR-0052) as an **additive** expansion: every Scope v1.1
-  inclusion, deferral, and exclusion rule is preserved unmodified as the R2
-  path below, and a second, mechanism-independent R1 path is added alongside
-  it. No asset or row held in scope under Scope v1.1 lost its scope basis.
+  Scope v1.1 (ADR-0052) as an **additive** expansion: Scope v1.1's
+  qualification/include semantics are preserved unmodified as the R2 path
+  below, and a second, mechanism-independent R1 path is added alongside it.
+  No asset or row that qualified under Scope v1.1's include list lost its
+  scope basis. This is narrower than "every Scope v1.1 rule is unchanged": R1
+  changed the disposition of candidate classes Scope v1.1 automatically
+  deferred — see [Defer](#defer) below and
+  [R1](#r1--obesity-purpose-path-mechanism-independent).
 
 A scope change does not imply a schema change. Clinical Evidence uses its own
 independently versioned [contract](../../clinical-evidence/docs/README.md).
@@ -96,10 +100,14 @@ permanent path, not a legacy exception scheduled for removal: it protects
 assets already held in scope by core mechanism alone with no obesity-indication
 row of their own (for example Roche's CT-868, QL Biopharm's ZT003, Novo
 Nordisk's IcoSema, and Gan & Lee's GZR102 — see
-[Entities and Rows](./entities-and-rows.md)), and it lets a newly disclosed
-GLP-1/GIP/amylin/glucagon-axis asset qualify the moment its mechanism is
-confirmed, without waiting for an obesity-indication row to be disclosed
-first.
+[Entities and Rows](./entities-and-rows.md)). Only the unconditional
+classes above (GLP-1 receptor agonists and GLP-1-containing dual/triple
+agonists; GLP-1-based combination products and regimens; amylin-only and
+amylin-containing obesity programs) qualify the moment mechanism is confirmed,
+without waiting for an obesity-indication row to be disclosed first. A newly
+disclosed GIP-only, glucagon-only, or other conditional incretin/amylin/
+glucagon-axis asset still needs official evidence of obesity or
+weight-management intent before it qualifies under R2.
 
 ### Defer
 
@@ -112,16 +120,16 @@ Unless already qualifying under R1 or R2:
   inhibitors, and unrelated small-molecule weight-loss programs, until an
   official obesity/weight-management development program is confirmed for
   that specific candidate;
+- device, procedural, endoscopic, or bariatric-surgical candidates — these
+  remain **unrepresentable** under the current `administration` contract
+  (drug route/dosage-form only); a future administration-contract expansion
+  is the re-entry trigger — see [Edge Cases](./edge-cases.md);
 - other candidates requiring a future full-obesity-pharmacotherapy boundary.
 
 ### Exclude by default
 
 - MASH-only, T2D-only, or comorbidity-only programs without qualifying R1 or
   R2 evidence;
-- device, procedural, endoscopic, or bariatric-surgical candidates — these
-  remain **unrepresentable** under the current `administration` contract
-  (drug route/dosage-form only), not merely out of scope — see
-  [Edge Cases](./edge-cases.md);
 - preclinical/non-human material that does not establish a tracked program;
 - pure generic or biosimilar copies;
 - unsupported, speculative, or unidentifiable candidates.
