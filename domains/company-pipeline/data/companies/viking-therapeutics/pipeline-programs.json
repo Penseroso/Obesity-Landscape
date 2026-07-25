@@ -1,0 +1,201 @@
+[
+  {
+    "id": "viking-therapeutics-vk2735-subcutaneous-injection",
+    "assetId": "vk2735",
+    "companyId": "viking-therapeutics",
+    "assetName": "VK2735",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GIP/GLP-1 receptor dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": ["Obesity", "Overweight"],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-completion-of-enrollment-in-phase-3-vanquish-1-trial-of-vk2735-302619296.html",
+          "title": "Viking Therapeutics Announces Completion of Enrollment in Phase 3 VANQUISH-1 Trial of VK2735",
+          "sourceType": "company press release",
+          "publishedAt": "2025-11-19",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07104500",
+          "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, 78-Week Efficacy and Safety Study of VK2735 Administered Subcutaneously for Weight Management in Participants Without Type 2 Diabetes Who Are Obese, or Overweight With at Least One Weight-related Comorbid Condition (VANQUISH-1)",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-08-05",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-completion-of-enrollment-in-phase-3-vanquish-2-trial-of-vk2735-302725563.html",
+          "title": "Viking Therapeutics Announces Completion of Enrollment in Phase 3 VANQUISH-2 Trial of VK2735",
+          "sourceType": "company press release",
+          "publishedAt": "2026-03-26",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07104383",
+          "title": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, 78-Week Efficacy and Safety Study of VK2735 Administered Subcutaneously for Weight Management in Participants With Type 2 Diabetes Who Are Obese, or Overweight (VANQUISH-2)",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-08-05",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/oby.70106",
+          "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+          "sourceType": "peer-reviewed publication",
+          "publishedAt": "2026-01",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "viking-therapeutics-vk2735-oral-tablet",
+    "assetId": "vk2735",
+    "companyId": "viking-therapeutics",
+    "assetName": "VK2735",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GIP/GLP-1 receptor dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablet",
+      "dosingInterval": "Once daily"
+    },
+    "indications": ["Obesity", "Overweight"],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://ir.vikingtherapeutics.com/2025-08-19-Viking-Therapeutics-Announces-Positive-Top-Line-Results-from-Phase-2-VENTURE-Oral-Dosing-Trial-of-VK2735-Tablet-Formulation-in-Patients-with-Obesity",
+          "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2025-08-19",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+          "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+          "sourceType": "company press release",
+          "publishedAt": "2026-05-12",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-reports-first-quarter-2026-financial-results-and-provides-corporate-update-302757850.html",
+          "title": "Viking Therapeutics Reports First Quarter 2026 Financial Results and Provides Corporate Update",
+          "sourceType": "company press release",
+          "publishedAt": "2026-04-29",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "viking-therapeutics-vk2735-subcutaneous-and-oral-obesity-maintenance",
+    "assetId": "vk2735",
+    "companyId": "viking-therapeutics",
+    "assetName": "VK2735",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GIP/GLP-1 receptor dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous and oral",
+      "dosageForm": "Injection and tablet",
+      "dosingInterval": null
+    },
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-initiation-of-vk2735-maintenance-dosing-clinical-trial-in-patients-with-obesity-302589652.html",
+          "title": "Viking Therapeutics Announces Initiation of VK2735 Maintenance Dosing Clinical Trial in Patients with Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-21",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-completion-of-enrollment-in-maintenance-dosing-clinical-trial-of-vk2735-in-obesity-302655902.html",
+          "title": "Viking Therapeutics Announces Completion of Enrollment in Maintenance Dosing Clinical Trial of VK2735 in Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2026-01-08",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "viking-therapeutics-vk3019-subcutaneous-injection",
+    "assetId": "vk3019",
+    "companyId": "viking-therapeutics",
+    "assetName": "VK3019",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Dual amylin and calcitonin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-25",
+      "updatedAt": "2026-07-25",
+      "sources": [
+        {
+          "url": "https://ir.vikingtherapeutics.com/2026-06-24-Viking-Therapeutics-Announces-Initiation-of-Phase-1-Study-to-Evaluate-Novel-Amylin-Receptor-Agonist-VK3019-in-Healthy-Adults",
+          "title": "Viking Therapeutics Announces Initiation of Phase 1 Study to Evaluate Novel Amylin Receptor Agonist VK3019 in Healthy Adults",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-24",
+          "checkedAt": "2026-07-25"
+        },
+        {
+          "url": "https://vikingtherapeutics.com/pipeline/vk3019/",
+          "title": "VK3019 - Pipeline - Viking Therapeutics",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-25"
+        }
+      ]
+    }
+  }
+]
