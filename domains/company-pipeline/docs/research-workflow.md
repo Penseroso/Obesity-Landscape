@@ -275,6 +275,9 @@ npm run data:validate:registries
 npm run data:validate:companies
 npm run data:validate:generated
 npm run data:validate:synthetic
+npm run data:validate:clinical-evidence
+npm run data:validate:clinical-evidence:generated
+npm run data:validate:clinical-evidence:synthetic
 npm run data:probe:indication-scope
 npm run data:probe:scope-class
 npm run data:probe:registry-citations
@@ -284,6 +287,13 @@ git diff --check
 ```
 
 Generated files are outputs and must never be hand-edited.
+`data:validate:clinical-evidence`, `data:validate:clinical-evidence:generated`,
+and `data:validate:clinical-evidence:synthetic` are required whenever this
+run's Program/Study disposition (section 2) merges or removes a row that a
+Clinical Evidence Study anchors — the `programId`/`regimenId` repoint must land
+in the same change, and a dangling anchor otherwise only surfaces later at
+`npm run build`.
+
 `data:probe:indication-scope` is a semantic audit: it verifies its own detection
 rules against fixtures and then **reports** indication-scope review candidates in
 company data. It does not fail a run by itself, and it never merges or edits a

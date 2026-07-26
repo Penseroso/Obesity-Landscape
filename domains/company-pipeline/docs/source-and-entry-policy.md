@@ -48,19 +48,19 @@ Prefer:
 Use registry evidence where available, but **allow direct official company
 evidence** when registration is delayed or unavailable. Program state (phase and
 trial status) is best evidenced by the applicable **trial registry**; basic
-company research **may cite NCT registry records** to verify that a program
-exists and its current phase/status. Detailed trial design, arm, endpoint, and
+company research **may cite NCT registry records** to verify a known Program
+row's current phase or trial status. Detailed trial design, arm, endpoint, and
 result modeling is **owned by the separate Clinical Evidence domain** (see
 [`domains/clinical-evidence/docs/README.md`](../../clinical-evidence/docs/README.md)) and is not
 entered into `PipelineProgramRecord`.
 
 A registry record citable this way evidences a program row's **stage and
 status**; it does not by itself establish that the candidate is its own
-**Program**. A registry record may support a distinct Program when it directly
-establishes a distinct official development objective. A registry record does
-not establish a new Program merely because the Study it evidences differs in
-enrolled population, trial design, dose scheme, comparator, or treatment
-context — that disposition is decided under
+**Program**. A registry record may support a distinct Program only when it
+directly establishes a distinct official development objective. A registry
+record does not establish a new Program merely because the Study it evidences
+differs in enrolled population, trial design, dose scheme, comparator, or
+treatment context — that disposition is decided under
 [Research Workflow §2](./research-workflow.md#2-discover-and-classify), not by
 the citation count or the presence of a registry record alone.
 

@@ -362,6 +362,18 @@ state**, or another independently meaningful development configuration. What
 may be stored as an indication in the first place is owned by
 [`source-and-entry-policy.md`](./source-and-entry-policy.md#population-and-comorbidity-versus-indication).
 
+**A single Study registry record's own phase, status, or operational state is
+itself a Study-level fact and does not, by itself, satisfy the "different
+current `development.stage`, status, or `stageOperationalState`" discriminator
+above.** That discriminator requires official evidence establishing a
+**distinct Program-level development state** for this specific development
+configuration — for example a sponsor-declared program stage, not merely that
+one particular registered trial happens to carry its own phase or status in the
+registry. A candidate justified only by a Study's own registry-reported
+phase/status is a Study of the existing Program (see
+[Research Workflow §2](./research-workflow.md#2-discover-and-classify)), not a
+separate row.
+
 A trial acronym or study label may appear in a program `id` only as the
 **stable configuration suffix** already permitted under [Stable IDs](#stable-ids)
 — for example, to disambiguate two rows already justified by distinct route,

@@ -45,7 +45,9 @@ documented `technical` field-authorship level. This clarifies Contract 1.2
 entry semantics — consistent with ADR-0050 and ADR-0051, comparable or larger
 entry-semantics changes that did not change the active version — and is not a
 new Contract version: no type, registry, validator, or generated-output shape
-changed, and no previously valid row became invalid.
+changed, and no row valid under the pre-existing Program-level semantics
+became invalid; the rows removed under ADR-0055 were prior Study-to-Program
+misclassifications, not rows Contract 1.2 itself had certified correct.
 
 ## Canonical ownership
 

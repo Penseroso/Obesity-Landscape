@@ -4254,11 +4254,15 @@ function findRegistryCitationCandidates(programs, regimens, ceStudies, ceCompany
   // sharing one background/ancestor Study as a citation) and still fires,
   // carrying citerHasOwnAnchoredStudy: true so it can be weighed accordingly
   // rather than mistaken for a plain misclassification.
+  //
+  // anchoredRows is deliberately built from every CE Study's own anchor, not
+  // from ceStudiesByKey (which only covers locators CP already cites): a
+  // citer's own row can be separately anchored by a CE Study whose locator CP
+  // never cited at all, and that context is exactly as relevant to an
+  // operator weighing this signal as an anchored-and-cited one.
   const anchoredRows = new Set();
-  for (const entries of ceStudiesByKey.values()) {
-    for (const entry of entries) {
-      anchoredRows.add(entry.anchor.row);
-    }
+  for (const study of ceStudies) {
+    anchoredRows.add(study.programId !== undefined ? study.programId : study.regimenId);
   }
   const citedLocatorsAnchoredElsewhere = [];
   for (const [key, citers] of cpCiters) {
@@ -4558,6 +4562,34 @@ function selfCheckRegistryCitations() {
     assert(
       entry.citers.find((c) => c.rowId === "p-shared-b").citerHasOwnAnchoredStudy === true,
       "self-check: a citer with its own separately anchored Study must report citerHasOwnAnchoredStudy: true rather than being suppressed",
+    );
+  }
+
+  // 17: citerHasOwnAnchoredStudy must be computed from every CE Study's own
+  // anchor, not only from locators CP happens to cite - a citer's own row can
+  // be separately anchored by a CE Study whose locator CP never cited at all,
+  // and that must still report true.
+  {
+    const programs = [
+      program("p-uncited-a", "self-check-co-uncited", [ctGovSource("NCT10000017")]),
+      program("p-uncited-b", "self-check-co-uncited", [ctGovSource("NCT10000017")]),
+    ];
+    const studies = [
+      study("s-uncited-background", "self-check-co-uncited", "p-uncited-a", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000017" },
+      ]),
+      // p-uncited-b's own dedicated Study - anchored to p-uncited-b, but its
+      // locator (NCT10000018) is never cited in p-uncited-b's metadata.sources.
+      study("s-uncited-dedicated", "self-check-co-uncited", "p-uncited-b", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000018" },
+      ]),
+    ];
+    const result = findRegistryCitationCandidates(programs, [], studies, ["self-check-co-uncited"]);
+    const key = getRegistryCitationKey("self-check-co-uncited", registryCitationClinicalTrialsGovNamespace, "NCT10000017");
+    const entry = result.citedLocatorsAnchoredElsewhere.find((e) => e.key === key);
+    assert(
+      entry !== undefined && entry.citers.find((c) => c.rowId === "p-uncited-b")?.citerHasOwnAnchoredStudy === true,
+      "self-check: citerHasOwnAnchoredStudy must be true when the citer's own row is anchored by a CE Study even if CP never cites that Study's own locator",
     );
   }
 
