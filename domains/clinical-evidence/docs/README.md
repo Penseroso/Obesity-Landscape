@@ -16,6 +16,13 @@ data is separately versioned as "Contract 1.2" (ADR-0030, ADR-0053); a generic n
 be misread as versioning that whole registry contract instead of just Clinical
 Evidence.
 
+**Terminology note.** "Contract" is this document's own authority term
+throughout — its title, its prose, and every cross-domain reference to it
+(`AGENTS.md`, `decision-log.md`) — consistent with Company/Pipeline's usage.
+`clinicalEvidenceSchemaVersion` names the stored JSON version marker
+specifically; it does not introduce a competing "Schema" term for the contract
+itself.
+
 Authoritative semantic and file contract for the Clinical Evidence data layer.
 This module defines source files, TypeScript shapes, validation semantics, and
 entity behavior. It does not define research execution, routing, UI, ranking,
@@ -565,6 +572,14 @@ distorting the data:
 - **Comparisons between analysis groups** (group vs group, or group vs arm) — an
   analysis-group Outcome carries a single-unit result only.
 - **Structured superseded-value history** and **field-level provenance**.
+- **Efficacy Comparison population coverage is frozen at 10 of 15 assets**
+  (ADR-0045) rather than relaxed to reach full coverage, because the remaining
+  5 either report weight in a non-comparable unit, state no diabetes
+  criterion, or span a mixed non-diabetic/T2D cohort that the population model
+  above cannot represent per-result. `npm run data:probe:efficacy-population-coverage`
+  verifies this freeze; a research run touching one of the 5 excluded assets'
+  underlying evidence re-checks it rather than assuming the exclusion still
+  holds.
 
 ## Non-Goals
 

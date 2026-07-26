@@ -281,6 +281,7 @@ npm run data:validate:clinical-evidence:synthetic
 npm run data:probe:indication-scope
 npm run data:probe:scope-class
 npm run data:probe:registry-citations
+npm run data:probe:mechanism-families
 npm run lint
 npm run build
 git diff --check
@@ -317,6 +318,14 @@ never fails a run, never merges or edits a row, and a reported mismatch is not
 by itself proof of misclassification — see the CE consistency check in
 section 2. Resolving a reported candidate against sponsor-level evidence is the
 disposition responsibility in section 2.
+
+`data:probe:mechanism-families` verifies
+[`mechanism-families.json`](../data/registries/mechanism-families.json)'s own
+rejection rules — duplicate semantic signature, repeated target/action pair,
+colliding normalized label — against mutated copies of the live registry; see
+[Entities and Rows §Mechanism family](./entities-and-rows.md#mechanism-family).
+It is a registry self-consistency check, not a row-level candidate report, and
+runs whenever this run adds a new mechanism string or family.
 
 ## 7. Report
 

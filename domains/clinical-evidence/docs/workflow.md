@@ -76,13 +76,13 @@ Three things this preflight does **not** change:
   preflight did **not** surface still runs in full. A Study this preflight
   did not surface is not evidence that none exists — it only means Company/
   Pipeline's own stored sources did not happen to include a direct link to it.
-- **A missing locator is not a Company/Pipeline defect.** Company/Pipeline is
-  not obliged to cite every trial for a program — it stores the minimum
-  sufficient sources for its own stage/status claims (see the
-  [Company/Pipeline Source and Entry Policy](../../company-pipeline/docs/source-and-entry-policy.md)).
-  A Study this preflight reports as having no corresponding Company/Pipeline
-  locator is ordinary independent Clinical Evidence coverage, not a gap to
-  report back against Company/Pipeline data.
+- **A missing locator is not a Company/Pipeline defect.** What counts as
+  sufficient Company/Pipeline sourcing for a row's own stage/status claims is
+  owned by the
+  [Company/Pipeline Source and Entry Policy](../../company-pipeline/docs/source-and-entry-policy.md),
+  not restated here. A Study this preflight reports as having no corresponding
+  Company/Pipeline locator is ordinary independent Clinical Evidence coverage,
+  not a gap to report back against Company/Pipeline data.
 
 This preflight never edits data and never decides Study inclusion, focal
 anchor, Study completeness, result availability, or result provenance — those
@@ -95,6 +95,18 @@ cited the same locator, or the same locator was cited under more than one
 company, treat every listed row only as an anchor **candidate**; decide the
 actual anchor under this workflow's own reference rules, never from row
 co-location alone.
+
+This is the mirror image of Company/Pipeline's own rule (ADR-0055): Company/
+Pipeline decides Program/Study disposition on sponsor evidence alone and
+consults a Clinical Evidence anchor only as a non-authoritative consistency
+check, never as identity authority; Clinical Evidence decides its own Study
+anchor under this workflow's rules alone and consults Company/Pipeline
+co-location only as a candidate, never as anchor authority. Neither domain
+settles the other's identity question. The probe also reports
+`cited-registry-record-anchored-to-other-row` — a Company/Pipeline row citing
+a locator this workflow anchors to a *different* row — which is Company/
+Pipeline's own consistency signal, not an input to this workflow's anchor
+decision.
 
 ## 2. Establish and traverse the evidence set
 
@@ -258,7 +270,7 @@ happened to be looking at. Re-derive every Outcome in the family from the new
 source; where one cannot be re-derived, report the evidence for keeping its
 earlier value or defer it. Never leave part of a family on the superseded source.
 
-## 4. Author under the v3 contract
+## 4. Author under the Clinical Evidence Data Contract
 
 Create source files only at:
 

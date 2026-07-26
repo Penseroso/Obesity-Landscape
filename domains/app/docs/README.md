@@ -201,7 +201,10 @@ new inference rule, or changed user-visible meaning. Do not update it for local
 spacing, color, or component refactors that preserve those boundaries.
 
 Validate UI changes with `npm run lint`, `npm run build`, and relevant data
-validators when data consumption changes.
+validators when data consumption changes — for `/efficacy-comparison` this
+includes `npm run data:probe:efficacy-comparison` (see Probe runtime below)
+and, when a touched asset's Efficacy Comparison population coverage could be
+affected, `npm run data:probe:efficacy-population-coverage`.
 
 ## Probe runtime
 

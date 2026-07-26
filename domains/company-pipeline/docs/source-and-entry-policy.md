@@ -563,8 +563,8 @@ Minimum source coverage should **collectively** support:
 When authoritative sources conflict, preserve the relevant conflicting sources
 and do not invent a resolution.
 
-Do **not** redesign the schema for field-level provenance in Module 5;
-field-level provenance is logged as an edge case.
+Do **not** redesign the schema for field-level provenance here;
+field-level provenance is logged as an edge case (see `edge-cases.md`).
 
 ## Registry promotion
 
