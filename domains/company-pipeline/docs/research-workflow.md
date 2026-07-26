@@ -75,6 +75,61 @@ candidate with confirmed official obesity-treatment or obesity-adjunct intent
 now reaches STORED like any other qualifying candidate, through the normal
 `scopeClass` classification in section 5.
 
+**Program/Study/Regimen/add-on disposition order.** Before any candidate becomes
+a new Program row, classify it using official sponsor-level evidence only — never
+by consulting Clinical Evidence first (see the CE consistency check below):
+
+1. A different route or dosage form justifies a new Program only when official
+   evidence independently establishes it as a separately tracked development
+   configuration. A route or dosage form difference is not self-justifying by
+   itself. An administration difference that exists only as a **Study-specific**
+   arrangement — a formulation used for one trial, a route explored within a
+   single study — does not create a Program.
+2. The same route and dosage form, but a different **official development
+   objective** — what the sponsor states it is developing the asset to treat —
+   justifies a new Program. An indication that appears only as an enrolled
+   population, eligibility criterion, or stratification factor is not a
+   development objective — see
+   [Population and comorbidity versus indication](./source-and-entry-policy.md#population-and-comorbidity-versus-indication).
+3. The same route, dosage form, and development objective, with no separate
+   Program-level evidence, is a **Study of the existing Program**: add no row.
+   Cite the registry record on the existing row only if it evidences that row's
+   own stage or status.
+   - **Exception.** If the sponsor explicitly identifies independently tracked
+     concurrent Programs under these same conditions and the current contract
+     cannot represent the distinction, do not force the candidate into a Study.
+     Classify it DEFERRED with reason `DEFERRED_SCHEMA_CASE`, and record the
+     sponsor evidence and the specific representational limit — this preserves
+     the case for a future Contract or schema decision instead of absorbing it
+     into an incorrect Study disposition.
+4. Multiple independently administered products, sponsor-confirmed as a distinct
+   development configuration, are a **Regimen** — never a Program row.
+5. A fixed-dose combination or co-formulation is a **combination Program**.
+6. A focal asset on required background therapy whose component is not
+   confirmed is an **add-on case**: classify it DEFERRED — see
+   [Edge Cases](./edge-cases.md).
+7. Otherwise, classify the candidate DEFERRED.
+
+Trial design, dose scheme, maintenance-versus-initial treatment,
+head-to-head-versus-placebo comparator, and enrolled population are Study-level
+facts and are never, by themselves, Program discriminators — see
+[Entities and Rows §Row splitting](./entities-and-rows.md#row-splitting).
+
+**CE consistency check — advisory, never authoritative.** Only after step 1
+above independently yields "new Program," query existing Clinical Evidence
+anchors as a non-authoritative consistency check; reading CE at this step is
+expected, but Clinical Evidence never supplies or withholds Program identity
+(Company/Pipeline research never depends on Clinical Evidence data — see
+[Data Protocol](./README.md)). If the cited registry record is already a Study
+of a *different* CP row, record the mismatch — `npm run data:probe:registry-citations`
+surfaces it as `cited-registry-record-anchored-to-other-row` — but do not
+auto-merge and do not auto-reject the candidate on that basis alone. Retaining
+the new Program requires official evidence that directly shows a separate
+development objective; a bare identity-key collision, in either direction, is
+not evidence. Symmetrically, the absence of any Clinical Evidence Study for a
+candidate is never evidence for a new Program — Clinical Evidence's coverage is
+independently paced and incomplete by design.
+
 Nothing surfaced may be silently dropped, and no in-scope candidate may leave
 this run without one of these three dispositions. One DEFERRED candidate does
 not block other valid updates. DEFERRED and EXCLUDED are provisional until the
@@ -222,6 +277,7 @@ npm run data:validate:generated
 npm run data:validate:synthetic
 npm run data:probe:indication-scope
 npm run data:probe:scope-class
+npm run data:probe:registry-citations
 npm run lint
 npm run build
 git diff --check
@@ -242,6 +298,15 @@ indication heuristic, or whose sibling rows share indications but disagree on
 fails a row, decides an authored `scopeClass` value, or edits data; resolving a
 reported candidate against the row's own `metadata.sources` is the gate
 responsibility in section 5 item 11.
+
+`data:probe:registry-citations` (ADR-0054, ADR-0055) is likewise advisory: it
+self-checks its own detection rules, then reports registry-citation signals
+including `cited-registry-record-anchored-to-other-row` — a CP row citing a
+trial registry record that Clinical Evidence anchors to a *different* row. It
+never fails a run, never merges or edits a row, and a reported mismatch is not
+by itself proof of misclassification — see the CE consistency check in
+section 2. Resolving a reported candidate against sponsor-level evidence is the
+disposition responsibility in section 2.
 
 ## 7. Report
 

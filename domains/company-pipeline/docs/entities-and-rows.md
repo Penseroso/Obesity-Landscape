@@ -63,6 +63,37 @@ part of program identity or stable IDs.
 - Salt, prodrug, and conjugate identity rules remain **provisional** and must be
   documented as edge cases (see `edge-cases.md`).
 
+## Technical profile level
+
+`technical.mechanism` and `technical.platform` (`TechnicalProfile`) are not
+authored at the same level, and the validator does not currently enforce either
+level — this section states the intended level so a research pass can apply it,
+and so a future validator addition (see `edge-cases.md`) has a documented target.
+
+- **`mechanism` is asset-level in pharmacologic meaning.** What must not
+  conflict across an asset's program rows is the **pharmacologic meaning** —
+  the mechanism family the stored string resolves to via
+  [`mechanism-families.json`](../data/registries/mechanism-families.json) (see
+  [Mechanism family](#mechanism-family)) — not the raw string. The **stored
+  wording may legitimately differ per row** when each row's own direct source
+  supports its own wording; published wording is stored verbatim and is never
+  rewritten to a canonical form (`source-and-entry-policy.md`). Two rows of one
+  asset whose stored mechanism strings resolve to **different** families are a
+  genuine conflict and must be adjudicated against each row's direct source,
+  never silently picked.
+- **`platform` is program/formulation-level, not asset-level.** Platform
+  records the sponsor's delivery or discovery platform for **that
+  administration configuration** and is documented as auxiliary metadata that
+  is explicitly not a mechanism-family boundary (see
+  [Mechanism family](#mechanism-family)). The same asset delivered through two
+  sponsor platforms — for example an oral small-molecule platform and a
+  separate long-acting parenteral platform — legitimately carries two different
+  `platform` values across its rows. This is expected data, not drift.
+
+Neither field participates in program identity (see
+[Program identity](#program-identity)) or in the asset-identity consistency
+check the validator already performs on `assetName`, `codeName`, and `aliases`.
+
 ## Regimen
 
 - A regimen is a separate entity for multiple independent products administered
@@ -318,15 +349,27 @@ scope; update the existing row instead. For example, Zealand petrelintide may
 have a Phase 2 obesity/overweight row and a planned Phase 3 chronic
 weight-management row because the current program scopes differ.
 
-A **difference in enrolled population does not by itself create a program
-row.** Population-specific studies of the same asset belong on one row when
-official evidence supports one sponsor-defined development program and the
-route, dosage form, stage, status, and operational state are shared. A
-separate row requires a **distinct treatment objective**, a **distinct
-sponsor-defined program identity**, a **different development state**, or
-another independently meaningful development configuration. What may be
-stored as an indication in the first place is owned by
+A **Study-level difference does not by itself create a program row.** None of
+the following, alone, justifies a separate row for the same asset, route, and
+dosage form: enrolled population, trial design, dose scheme,
+maintenance-versus-initial treatment, head-to-head-versus-placebo comparator,
+or treatment context. Population-specific studies of the same asset belong on
+one row when official evidence supports one sponsor-defined development
+program and the route, dosage form, stage, status, and operational state are
+shared. A separate row requires a **distinct treatment objective**, a
+**distinct sponsor-defined program identity**, a **different development
+state**, or another independently meaningful development configuration. What
+may be stored as an indication in the first place is owned by
 [`source-and-entry-policy.md`](./source-and-entry-policy.md#population-and-comorbidity-versus-indication).
+
+A trial acronym or study label may appear in a program `id` only as the
+**stable configuration suffix** already permitted under [Stable IDs](#stable-ids)
+— for example, to disambiguate two rows already justified by distinct route,
+dosage form, or development objective. A trial acronym in an `id` is never
+itself a discriminator: it does not justify the row it labels, and it must not
+be read as evidence that the row's indication scope is a distinct development
+objective. Audit any such row against the Study-level differences listed above,
+not against the presence of the acronym.
 
 Create **regimen records**, not program rows, when multiple independent products
 are only being co-administered.

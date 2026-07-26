@@ -1096,7 +1096,7 @@
       "id": "eli-lilly-and-company-tirzepatide-surmount-mmo-nct05556512",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
-      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection-surmount-mmo",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
       "officialTitle": "A Phase 3, Randomized, Double-blind, Placebo-Controlled Study to Investigate the Effect of Tirzepatide on the Reduction of Morbidity and Mortality in Adults With Obesity",
       "acronym": "SURMOUNT-MMO",
       "studyFamily": "SURMOUNT",
@@ -1141,7 +1141,7 @@
       "id": "eli-lilly-and-company-tirzepatide-nct06037252",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
-      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection-higher-dose-t2d",
+      "programId": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
       "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-Controlled Study to Assess the Efficacy and Safety of Investigational Tirzepatide Doses in Participants With Type 2 Diabetes and Obesity",
       "registryIdentifiers": [
         {

@@ -39,6 +39,14 @@ existing Program and Regimen was backfilled with a source-supported, authored
 (the required-field migration gate; see the
 [Research Workflow](./research-workflow.md#5-research-completion-gate)).
 
+ADR-0055 added a Program/Study/Regimen/add-on disposition order, scoped
+registry-citation evidence, an advisory anchor-mismatch probe signal, and a
+documented `technical` field-authorship level. This clarifies Contract 1.2
+entry semantics — consistent with ADR-0050 and ADR-0051, comparable or larger
+entry-semantics changes that did not change the active version — and is not a
+new Contract version: no type, registry, validator, or generated-output shape
+changed, and no previously valid row became invalid.
+
 ## Canonical ownership
 
 | Topic | Authority |

@@ -4243,12 +4243,52 @@ function findRegistryCitationCandidates(programs, regimens, ceStudies, ceCompany
     matchedLocatorCountByCompany.set(companyId, (matchedLocatorCountByCompany.get(companyId) ?? 0) + 1);
   }
 
+  // cited-registry-record-anchored-to-other-row (ADR-0055): a CP row cites a
+  // registry locator that Clinical Evidence already anchors (Study.programId /
+  // regimenId) to a *different* CP row. This is the Program/Study consistency
+  // check in research-workflow.md section 2 - advisory only, never an
+  // automatic merge or rejection; the disposition still comes from official
+  // sponsor evidence. A citer whose own row is separately anchored by some CE
+  // Study elsewhere is a benign, context-enriched case (for example two
+  // Program rows that each anchor their own dedicated Study while also
+  // sharing one background/ancestor Study as a citation) and still fires,
+  // carrying citerHasOwnAnchoredStudy: true so it can be weighed accordingly
+  // rather than mistaken for a plain misclassification.
+  const anchoredRows = new Set();
+  for (const entries of ceStudiesByKey.values()) {
+    for (const entry of entries) {
+      anchoredRows.add(entry.anchor.row);
+    }
+  }
+  const citedLocatorsAnchoredElsewhere = [];
+  for (const [key, citers] of cpCiters) {
+    const ceEntries = ceStudiesByKey.get(key);
+    if (!ceEntries) {
+      continue;
+    }
+    const anchorRowsAtKey = new Set(ceEntries.map((entry) => entry.anchor.row));
+    const elsewhereCiters = citers
+      .filter((citer) => !anchorRowsAtKey.has(citer.rowId))
+      .map((citer) => ({ ...citer, citerHasOwnAnchoredStudy: anchoredRows.has(citer.rowId) }));
+    if (elsewhereCiters.length === 0) {
+      continue;
+    }
+    const [companyId] = key.split("|");
+    citedLocatorsAnchoredElsewhere.push({
+      key,
+      companyId,
+      anchor: ceEntries[0].anchor,
+      citers: elsewhereCiters,
+    });
+  }
+
   return {
     citedWithoutStudy,
     multiRowLocators,
     multiCompanyLocators,
     studiesWithoutCpCitation,
     unparsedCpSources,
+    citedLocatorsAnchoredElsewhere,
     matchedLocatorCount: ceStudiesByKey.size,
     matchedLocatorCountByCompany,
   };
@@ -4437,10 +4477,87 @@ function selfCheckRegistryCitations() {
         citedWithoutStudy: sortedStrings(result.citedWithoutStudy.map((entry) => entry.key)),
         multiRowLocators: sortedStrings(result.multiRowLocators.map((entry) => entry.key)),
         multiCompanyLocators: sortedStrings(result.multiCompanyLocators.map((entry) => entry.bareKey)),
+        citedLocatorsAnchoredElsewhere: sortedStrings(result.citedLocatorsAnchoredElsewhere.map((entry) => entry.key)),
       });
     assert(
       signalKeysOf(resultA) === signalKeysOf(resultB),
       "self-check: scopeClass must not change which registry-citation signals fire",
+    );
+  }
+
+  // 14: a CP row citing a locator that Clinical Evidence anchors to a
+  // *different* CP row must trigger cited-registry-record-anchored-to-other-row
+  // for the mismatched citer only, never for the row the Study actually anchors.
+  {
+    const programs = [
+      program("p-anchor-a", "self-check-co-anchor", [ctGovSource("NCT10000013")]),
+      program("p-anchor-b", "self-check-co-anchor", [ctGovSource("NCT10000013")]),
+    ];
+    const studies = [
+      study("s-anchor", "self-check-co-anchor", "p-anchor-a", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000013" },
+      ]),
+    ];
+    const result = findRegistryCitationCandidates(programs, [], studies, ["self-check-co-anchor"]);
+    const key = getRegistryCitationKey("self-check-co-anchor", registryCitationClinicalTrialsGovNamespace, "NCT10000013");
+    const entry = result.citedLocatorsAnchoredElsewhere.find((e) => e.key === key);
+    assert(
+      entry !== undefined && entry.citers.length === 1 && entry.citers[0].rowId === "p-anchor-b",
+      "self-check: a CP row citing a locator CE anchors to a different row must trigger cited-registry-record-anchored-to-other-row for the mismatched row only",
+    );
+    assert(
+      entry.citers[0].citerHasOwnAnchoredStudy === false,
+      "self-check: a mismatched citer with no separately anchored Study of its own must report citerHasOwnAnchoredStudy: false",
+    );
+  }
+
+  // 15: a locator that Clinical Evidence anchors to the citing row itself must
+  // never trigger cited-registry-record-anchored-to-other-row - self-anchoring
+  // is the normal, consistent case (already covered for other signals by 9 & 10).
+  {
+    const programs = [program("p-anchor-self", "self-check-co-anchor-self", [ctGovSource("NCT10000014")])];
+    const studies = [
+      study("s-anchor-self", "self-check-co-anchor-self", "p-anchor-self", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000014" },
+      ]),
+    ];
+    const result = findRegistryCitationCandidates(programs, [], studies, ["self-check-co-anchor-self"]);
+    assert(
+      result.citedLocatorsAnchoredElsewhere.length === 0,
+      "self-check: a locator anchored to the citing row itself must not trigger cited-registry-record-anchored-to-other-row",
+    );
+  }
+
+  // 16: benign / context-enriched positive - a row citing a shared background
+  // locator anchored to a different row must still fire even when the citing
+  // row has its own, separately anchored Study elsewhere; that context is
+  // reported via citerHasOwnAnchoredStudy rather than used to suppress the
+  // signal (this is the live Roche CT-996 shape: a shared Phase 1 background
+  // Study cited by two Program rows that each separately anchor their own
+  // Phase 2 Study).
+  {
+    const programs = [
+      program("p-shared-a", "self-check-co-shared", [ctGovSource("NCT10000015")]),
+      program("p-shared-b", "self-check-co-shared", [ctGovSource("NCT10000015"), ctGovSource("NCT10000016")]),
+    ];
+    const studies = [
+      study("s-shared-background", "self-check-co-shared", "p-shared-a", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000015" },
+      ]),
+      study("s-shared-dedicated", "self-check-co-shared", "p-shared-b", [
+        { registry: registryCitationClinicalTrialsGovNamespace, id: "NCT10000016" },
+      ]),
+    ];
+    const result = findRegistryCitationCandidates(programs, [], studies, ["self-check-co-shared"]);
+    const key = getRegistryCitationKey("self-check-co-shared", registryCitationClinicalTrialsGovNamespace, "NCT10000015");
+    const entry = result.citedLocatorsAnchoredElsewhere.find((e) => e.key === key);
+    assert(
+      entry !== undefined && entry.citers.some((c) => c.rowId === "p-shared-b"),
+      "self-check: a shared background locator anchored elsewhere must still fire for a citer that has its own separately anchored Study",
+    );
+    assert(
+      entry.citers.find((c) => c.rowId === "p-shared-b").citerHasOwnAnchoredStudy === true,
+      "self-check: a citer with its own separately anchored Study must report citerHasOwnAnchoredStudy: true rather than being suppressed",
     );
   }
 
@@ -4525,6 +4642,9 @@ function filterRegistryCitationResultForCompany(result, companyId) {
     multiCompanyLocators: result.multiCompanyLocators.filter((entry) => entry.companyIds.includes(companyId)),
     studiesWithoutCpCitation: result.studiesWithoutCpCitation.filter((entry) => entry.companyId === companyId),
     unparsedCpSources: result.unparsedCpSources.filter((entry) => entry.companyId === companyId),
+    citedLocatorsAnchoredElsewhere: result.citedLocatorsAnchoredElsewhere.filter(
+      (entry) => entry.companyId === companyId,
+    ),
     // The repository-wide total is preserved unchanged alongside it so a
     // caller can always distinguish the two - never substitute one for the
     // other in display.
@@ -4649,7 +4769,7 @@ function probeRegistryCitations({ company } = {}) {
   console.log("Registry-citation reuse audit (ADR-0054)");
   console.log(`  mode: ${isCompact ? `compact (--company ${company})` : "global"}`);
   console.log(
-    `  summary: ${result.citedWithoutStudy.length} cited-registry-record-without-study, ${result.multiRowLocators.length} registry-record-cited-by-multiple-rows, ${result.multiCompanyLocators.length} registry-record-cited-by-multiple-companies, ${result.studiesWithoutCpCitation.length} study-discovered-without-cp-registry-citation, ${result.unparsedCpSources.length} unparsed-registry-source`,
+    `  summary: ${result.citedWithoutStudy.length} cited-registry-record-without-study, ${result.multiRowLocators.length} registry-record-cited-by-multiple-rows, ${result.multiCompanyLocators.length} registry-record-cited-by-multiple-companies, ${result.studiesWithoutCpCitation.length} study-discovered-without-cp-registry-citation, ${result.unparsedCpSources.length} unparsed-registry-source, ${result.citedLocatorsAnchoredElsewhere.length} cited-registry-record-anchored-to-other-row`,
   );
 
   const view = isCompact ? filterRegistryCitationResultForCompany(result, company) : result;
@@ -4687,6 +4807,22 @@ function probeRegistryCitations({ company } = {}) {
     console.log("  unparsed-registry-source:");
     for (const entry of view.unparsedCpSources) {
       console.log(`    ${entry.companyId} ${entry.rowKind}:${entry.rowId} - ${entry.sourceType} - ${entry.url}`);
+    }
+  }
+
+  if (view.citedLocatorsAnchoredElsewhere.length > 0) {
+    console.log(
+      "  cited-registry-record-anchored-to-other-row (Program/Study consistency check - advisory, never auto-resolved):",
+    );
+    for (const entry of view.citedLocatorsAnchoredElsewhere) {
+      const anchorLabel = `${entry.anchor.kind}:${entry.anchor.row}`;
+      const citerLabel = entry.citers
+        .map((c) => {
+          const base = formatRegistryCitationCiter(c, { includeSourceDetail: isCompact, includeScopeClass: false });
+          return c.citerHasOwnAnchoredStudy ? `${base} [has own anchored study]` : base;
+        })
+        .join(", ");
+      console.log(`    ${entry.key} -> anchored to ${anchorLabel} - also cited by ${citerLabel}`);
     }
   }
 

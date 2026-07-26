@@ -54,6 +54,16 @@ result modeling is **owned by the separate Clinical Evidence domain** (see
 [`domains/clinical-evidence/docs/README.md`](../../clinical-evidence/docs/README.md)) and is not
 entered into `PipelineProgramRecord`.
 
+A registry record citable this way evidences a program row's **stage and
+status**; it does not by itself establish that the candidate is its own
+**Program**. A registry record may support a distinct Program when it directly
+establishes a distinct official development objective. A registry record does
+not establish a new Program merely because the Study it evidences differs in
+enrolled population, trial design, dose scheme, comparator, or treatment
+context — that disposition is decided under
+[Research Workflow §2](./research-workflow.md#2-discover-and-classify), not by
+the citation count or the presence of a registry record alone.
+
 Phase sub-stages and combined stages must preserve their official semantic
 precision. For example, `Phase 1b`, `Phase 2a`, and `Phase 1/2` are not reduced
 to broader labels solely to fit existing vocabulary; if they satisfy the
