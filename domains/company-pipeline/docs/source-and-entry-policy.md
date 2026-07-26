@@ -176,14 +176,17 @@ not only the trial's general population.
 
 Clinical Evidence, not Company/Pipeline, owns result values and result source
 priority (see the [Clinical Evidence workflow](../../clinical-evidence/docs/workflow.md#3-sources-and-updates)
-for the ranked source classes and fallback rules). Company/Pipeline research
-may cite clinical sources only to confirm that a program exists, its phase,
-its status, and sponsor intent. Do not enter a clinical result value, or a
-clinical result source ranking, in `PipelineProgramRecord`.
+for the ranked source classes and fallback rules). Clinical sources may support
+the phase, status, and sponsor intent of an **independently established**
+Program; they do not establish a distinct Program from Study-level facts
+alone — the same registry-evidence scope defined in
+[Phase 1–3 stage and trial status](#phase-13-stage-and-trial-status) applies
+identically to a clinical-literature citation. Do not enter a clinical result
+value, or a clinical result source ranking, in `PipelineProgramRecord`.
 
 ## Stage evidence rules
 
-For v1, `development.stage` is the most advanced official current development
+Under Contract 1.2, `development.stage` is the most advanced official current development
 stage for the specific program scope. It includes Discovery, Preclinical,
 IND-enabling, regulatory-development milestones such as `IND submitted`,
 `IND cleared`, `CTA submitted`, and `CTA approved`, clinical phases, Filed, and
@@ -353,7 +356,7 @@ Rules by field.
 - **Development status** — one of the enumerated statuses; see status rules.
 - **Regulatory state** — one or more registry-backed regulatory milestones,
   separate from development stage.
-  For v1, this means detailed regulatory-state data supplements the unified
+  Under Contract 1.2, this means detailed regulatory-state data supplements the unified
   `development.stage`; it does not exclude regulatory-development milestones
   from being stage values.
 - **Asset type** — `single-asset`, `fixed-dose-combination`, or

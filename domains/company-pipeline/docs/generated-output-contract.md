@@ -71,7 +71,7 @@ output.
 
 ## 3. Generated file inventory
 
-| File | Source operating files | Shape | Kind | Primary consumers | Stable v1 output |
+| File | Source operating files | Shape | Kind | Primary consumers | Stable under Contract 1.2 |
 | --- | --- | --- | --- | --- | --- |
 | `companies.json` | every `domains/company-pipeline/data/companies/*/company.json` | JSON array of `Company` | flat aggregate | UI company lists, report grouping, loader | yes |
 | `pipeline-programs.json` | every `domains/company-pipeline/data/companies/*/pipeline-programs.json` | JSON array of `PipelineProgramRecord` | flat aggregate | UI program board/detail, filtering, reports | yes |
@@ -117,7 +117,7 @@ existence by selectors.
 The generator does **not** join the resolving `Company` object into program or
 regimen records. `PipelineProgram.company` / `Regimen.company` are populated at
 **load time** by `domains/company-pipeline/lib/data.ts`, not stored in the generated files. This
-is current v1 behavior; consumers that need the company object resolve it through
+is current Contract 1.2 behavior; consumers that need the company object resolve it through
 the loader, not from the generated file.
 
 Optional fields absent from a source record are simply absent from the generated

@@ -33,15 +33,6 @@ Two independent versions apply:
 A scope change does not imply a schema change. Clinical Evidence uses its own
 independently versioned [contract](../../clinical-evidence/docs/README.md).
 
-**"v1"/"v2" is informal historical shorthand, not a third version axis.**
-Several docs (`edge-cases.md`, `generated-output-contract.md`,
-`source-and-entry-policy.md`) carry a "v1"/"v2" column or phrase predating the
-Contract-numbering convention this section defines: "v1" means the original
-pre-Contract-1.1 baseline, and "v2" means an unscheduled future-backlog
-candidate. Neither maps onto a specific Contract or Scope number. Only
-**Contract** and **Scope**, as defined above, are versions in the sense this
-section governs.
-
 Contract 1.2 and Scope 2.0 became the active version in the commit where every
 existing Program and Regimen was backfilled with a source-supported, authored
 `scopeClass` and the validator began requiring it on every Program and Regimen

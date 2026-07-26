@@ -8,8 +8,8 @@ update-boundary: Update when a current contract limitation, deferral, or schema 
 # Edge Cases
 
 Real situations Contract 1.2 (ADR-0030, ADR-0053) cannot yet cleanly represent. Each is
-logged for later contract review as v2 backlog. **No final schema solution is
-invented here.**
+logged for later contract review as future contract/schema backlog. **No final
+schema solution is invented here.**
 
 **Decision status** is one of:
 
