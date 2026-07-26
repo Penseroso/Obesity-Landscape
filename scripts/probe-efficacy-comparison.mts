@@ -16,7 +16,11 @@ import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/rea
 import { EFFICACY_OVERVIEW_UNIT } from "@/domains/app/lib/efficacy-comparison/policy";
 import { screenStudy } from "@/domains/app/lib/efficacy-comparison/candidates";
 import { findHeadToHeadGroups } from "@/domains/app/lib/efficacy-comparison/head-to-head";
-import { getRegimenDisplay } from "@/domains/app/lib/efficacy-comparison/mechanism-family";
+import {
+  efficacyMechanismFamilies,
+  getRegimenDisplay,
+  resolveMechanismFamilyFromMechanisms,
+} from "@/domains/app/lib/efficacy-comparison/mechanism-family";
 import type { StudyDetailView } from "@/domains/app/lib/clinical-evidence/selectors";
 
 type StoredOutcome = {
@@ -577,6 +581,81 @@ check(
 );
 console.log(
   "  synthetic responder-proportion outcome: excluded from overview and head-to-head",
+);
+
+// --- synthetic: mechanism-family resolution compares families, not wording -
+//
+// ADR-0057: an asset's program rows must agree on the *resolved* mechanism
+// family, never on verbatim wording. Regression-pins the fix for
+// sciwind-biosciences/ecnoglutide's two rows, which carry different published
+// wording for the same molecule.
+
+{
+  // Two different verbatim wordings that resolve to the same family must not
+  // throw. Sourced from the live registry rather than hardcoded, so this stays
+  // valid if mechanism-families.json is edited.
+  const familyWithTwoWordings = efficacyMechanismFamilies.find(
+    (family) => family.mechanisms.length >= 2,
+  );
+  check(
+    familyWithTwoWordings !== undefined,
+    "self-check setup: no mechanism family in the live registry has 2+ wordings to test same-family resolution",
+  );
+  if (familyWithTwoWordings) {
+    const [wordingA, wordingB] = familyWithTwoWordings.mechanisms;
+    const resolution = resolveMechanismFamilyFromMechanisms(
+      [wordingA, wordingB],
+      "synthetic same-family asset",
+    );
+    check(
+      resolution.family !== null && resolution.family.id === familyWithTwoWordings.id,
+      "two different verbatim wordings resolving to the same family must not throw",
+    );
+  }
+}
+
+// Families that only regimens reach carry an empty `mechanisms` array (see
+// `MechanismFamilyRegistryEntry.mechanisms`) - filter those out before picking
+// asset-reachable families for the remaining synthetic cases.
+const assetReachableFamilies = efficacyMechanismFamilies.filter(
+  (family) => family.mechanisms.length > 0,
+);
+check(
+  assetReachableFamilies.length >= 2,
+  "self-check setup: fewer than 2 asset-reachable mechanism families exist to test cross-family resolution",
+);
+
+if (assetReachableFamilies.length >= 2) {
+  // Two mechanisms resolving to different families is a genuine pharmacological
+  // conflict and must still throw.
+  const [familyA, familyB] = assetReachableFamilies;
+  let threw = false;
+  try {
+    resolveMechanismFamilyFromMechanisms(
+      [familyA.mechanisms[0], familyB.mechanisms[0]],
+      "synthetic cross-family asset",
+    );
+  } catch {
+    threw = true;
+  }
+  check(threw, "two mechanisms resolving to different families must throw");
+}
+
+if (assetReachableFamilies.length >= 1) {
+  // A mix of a disclosed and an undisclosed mechanism across rows is a distinct
+  // inconsistency from a family conflict, and must also throw.
+  const anyMechanism = assetReachableFamilies[0].mechanisms[0];
+  let threw = false;
+  try {
+    resolveMechanismFamilyFromMechanisms([anyMechanism, null], "synthetic mixed-disclosure asset");
+  } catch {
+    threw = true;
+  }
+  check(threw, "a mix of disclosed and undisclosed mechanism across rows must throw");
+}
+
+console.log(
+  "  synthetic mechanism-family resolution: same-family wording accepted, cross-family and mixed-disclosure rejected",
 );
 
 // --- regimen display ------------------------------------------------------

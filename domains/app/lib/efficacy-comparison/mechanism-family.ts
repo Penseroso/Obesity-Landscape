@@ -36,16 +36,45 @@ export type MechanismFamilyResolution =
   | { family: null; reason: "mechanism-undisclosed" | "family-unassigned" };
 
 /**
- * Asset path. Program rows of one asset must agree on pharmacology — the resolved
- * mechanism family — not on verbatim wording: two rows may legitimately store
- * different published wording for the same molecule (for example an
- * oral-formulation press release versus a peer-reviewed subcutaneous-arm
- * publication) while both resolve to the same family (Entities and Rows §Technical
- * profile level). Only a genuine cross-family disagreement, or a mix of disclosed
- * and undisclosed rows, is corrupt generated data and throws, matching the read
- * model's existing fail-loud posture rather than silently picking one row's
- * pharmacology.
+ * Pure resolution core, decoupled from the live `pipelinePrograms` lookup so it can
+ * be exercised directly against synthetic mechanism combinations (see
+ * `scripts/probe-efficacy-comparison.mts`'s mechanism-family self-check).
+ *
+ * Program rows of one asset must agree on pharmacology — the resolved mechanism
+ * family — not on verbatim wording: two rows may legitimately store different
+ * published wording for the same molecule (for example an oral-formulation press
+ * release versus a peer-reviewed subcutaneous-arm publication) while both resolve
+ * to the same family (Entities and Rows §Technical profile level). Only a genuine
+ * cross-family disagreement, or a mix of disclosed and undisclosed rows, is corrupt
+ * generated data and throws, matching the read model's existing fail-loud posture
+ * rather than silently picking one row's pharmacology.
  */
+export function resolveMechanismFamilyFromMechanisms(
+  rowMechanisms: readonly (string | null)[],
+  contextLabel: string,
+): MechanismFamilyResolution {
+  const mechanisms = Array.from(new Set(rowMechanisms));
+  const disclosed = mechanisms.filter((mechanism): mechanism is string => mechanism !== null);
+
+  if (disclosed.length === 0) {
+    // Undisclosed mechanism is a real state in the source policy, not bad data.
+    return { family: null, reason: "mechanism-undisclosed" };
+  }
+
+  const familyIds = new Set(disclosed.map((mechanism) => getMechanismFamilyId(mechanism)));
+  if (familyIds.size > 1 || disclosed.length !== mechanisms.length) {
+    throw new Error(
+      `Efficacy Comparison: ${contextLabel} has conflicting mechanisms across its program rows: ${mechanisms
+        .map((mechanism) => JSON.stringify(mechanism))
+        .join(", ")}`,
+    );
+  }
+
+  const mechanism = disclosed[0];
+  return { family: mechanismFamilyById.get(getMechanismFamilyId(mechanism))!, mechanism };
+}
+
+/** Asset path: looks up the asset's program rows, then defers to the pure core. */
 export function resolveAssetMechanismFamily(
   companyId: string,
   assetId: string,
@@ -57,27 +86,10 @@ export function resolveAssetMechanismFamily(
     );
   }
 
-  const mechanisms = Array.from(
-    new Set(programs.map((program) => program.technical.mechanism)),
+  return resolveMechanismFamilyFromMechanisms(
+    programs.map((program) => program.technical.mechanism),
+    `asset "${companyId}/${assetId}"`,
   );
-  const disclosed = mechanisms.filter((mechanism): mechanism is string => mechanism !== null);
-
-  if (disclosed.length === 0) {
-    // Undisclosed mechanism is a real state in the source policy, not bad data.
-    return { family: null, reason: "mechanism-undisclosed" };
-  }
-
-  const familyIds = new Set(disclosed.map((mechanism) => getMechanismFamilyId(mechanism)));
-  if (familyIds.size > 1 || disclosed.length !== mechanisms.length) {
-    throw new Error(
-      `Efficacy Comparison: asset "${companyId}/${assetId}" has conflicting mechanisms across its program rows: ${mechanisms
-        .map((mechanism) => JSON.stringify(mechanism))
-        .join(", ")}`,
-    );
-  }
-
-  const mechanism = disclosed[0];
-  return { family: mechanismFamilyById.get(getMechanismFamilyId(mechanism))!, mechanism };
 }
 
 /**
