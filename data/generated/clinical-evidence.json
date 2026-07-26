@@ -26477,6 +26477,33 @@
       }
     },
     {
+      "id": "amyoral-weight-50",
+      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
+      "endpointId": "amyoral-weight-week12",
+      "armIds": [
+        "amyoral-50"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "result": {
+        "value": "-10.4",
+        "numericValue": -10.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40550229/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
       "id": "amyoral-weight-100",
       "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "endpointId": "amyoral-weight-week12",
@@ -26526,33 +26553,6 @@
             "url": "https://pubmed.ncbi.nlm.nih.gov/40550229/",
             "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-07-13"
-          }
-        ]
-      }
-    },
-    {
-      "id": "amyoral-weight-50",
-      "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
-      "endpointId": "amyoral-weight-week12",
-      "armIds": [
-        "amyoral-50"
-      ],
-      "analysisPopulation": "Full analysis set (overall)",
-      "result": {
-        "value": "-10.4",
-        "numericValue": -10.4,
-        "unit": "percent",
-        "resultType": "arm-level"
-      },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-24",
-        "updatedAt": "2026-07-24",
-        "sources": [
-          {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/40550229/",
-            "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-24"
           }
         ]
       }

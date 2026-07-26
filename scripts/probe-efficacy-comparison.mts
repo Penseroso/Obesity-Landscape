@@ -34,10 +34,21 @@ const aggregate = JSON.parse(
 
 const outcomeById = new Map(aggregate.outcomes.map((outcome) => [outcome.id, outcome]));
 
-/** The reviewed gate, mirroring the JS coverage probe (ADR-0045). */
+/**
+ * The reviewed gate. `novo-nordisk/liraglutide` moved from a gap to an eligible row
+ * (10/5 -> 11/4): its SCALE Obesity and Prediabetes result at
+ * `scaleobesity-weight-lira30` was corrected from a stored `kg` value to a directly
+ * reported `percent` value in the "Backfill clinical efficacy and safety evidence"
+ * change, which is exactly the metric this overview requires — confirmed against the
+ * source publication, not assumed. `data:probe:efficacy-population-coverage`'s own
+ * frozen snapshot (ADR-0045, `scripts/data-registry.mjs`) still reads 10/5 and now
+ * disagrees with this probe for the identical reason; ADR-0045 explicitly frames that
+ * as a deliberate policy freeze requiring its own reviewed change, so it is left
+ * alone here rather than folded into this probe's own evidence-identity update.
+ */
 const REVIEWED_TOTALS = {
-  eligibleUnits: 10,
-  gapUnits: 5,
+  eligibleUnits: 11,
+  gapUnits: 4,
   totalUnits: 15,
   headToHeadStudies: 5,
   headToHeadGroups: 5,
@@ -46,7 +57,6 @@ const REVIEWED_TOTALS = {
 const REVIEWED_GAPS: Record<string, string> = {
   "asset:amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
   "asset:novo-nordisk/cagrilintide": "population-diabetes-status-not-specified",
-  "asset:novo-nordisk/liraglutide": "metric-unavailable-percent",
   "asset:novo-nordisk/ubt251": "population-diabetes-status-not-specified",
   "asset:roche/ct-996": "population-mixed-diabetes-status",
 };
@@ -94,6 +104,16 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  "asset:novo-nordisk/liraglutide": {
+    familyId: "glp1-agonist",
+    studyId: "novo-nordisk-liraglutide-scale-obesity-nct01272219",
+    endpointId: "scaleobesity-weight-week56",
+    comparisonGroupKey: "arm-level|full analysis set(overall)|",
+    treatmentOutcomeIds: ["scaleobesity-weight-lira30"],
+    placeboOutcomeIds: ["scaleobesity-weight-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
   "asset:novo-nordisk/semaglutide": {
     familyId: "glp1-agonist",
     studyId: "novo-nordisk-semaglutide-step-8-nct04074161",
@@ -134,10 +154,14 @@ const REVIEWED_EVIDENCE: Record<
   "asset:eli-lilly-and-company/ly3305677": {
     familyId: "glp1-glucagon-agonist",
     studyId: "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
-    endpointId: "glory1-weight-week48",
+    // Week 32 (co-primary) beats week 48 (secondary) under getEndpointRoleRank: GLORY-1's
+    // week-32 co-primary endpoints were added from the NEJM publication by "Fix two
+    // primary/co-primary endpoint gaps found in a full role-coverage sweep" - the
+    // week-48 endpoint was already, and remains, correctly secondary.
+    endpointId: "glory1-weight-week32",
     comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
-    treatmentOutcomeIds: ["glory1-weight-maz4", "glory1-weight-maz6"],
-    placeboOutcomeIds: ["glory1-weight-placebo"],
+    treatmentOutcomeIds: ["glory1-weight32-maz4", "glory1-weight32-maz6"],
+    placeboOutcomeIds: ["glory1-weight32-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
@@ -189,7 +213,13 @@ const REVIEWED_EVIDENCE: Record<
     studyId: "novo-nordisk-amycretin-oral-phase1-nct05369390",
     endpointId: "amyoral-weight-week12",
     comparisonGroupKey: "arm-level|full analysis set(overall)|",
-    treatmentOutcomeIds: ["amyoral-weight-100"],
+    // The MAD study (pubmed.ncbi.nlm.nih.gov/40550229) ran three escalation parts:
+    // C1 to 50 mg, C2 to 2x50 mg (100 mg), and D to 2x25 mg (also 50 mg total, by a
+    // different tablet split) - the "225" outcome id names the tablet count/split,
+    // not a 225 mg dose. Source order is the study's own C1/C2/D part sequence, not a
+    // numeric sort on the id. The 50 mg and 225 mg (2x25 mg) arms were backfilled
+    // from the same source as the pre-existing 100 mg arm.
+    treatmentOutcomeIds: ["amyoral-weight-50", "amyoral-weight-100", "amyoral-weight-225"],
     placeboOutcomeIds: ["amyoral-weight-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
