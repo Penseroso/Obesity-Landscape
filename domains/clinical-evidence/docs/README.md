@@ -572,12 +572,13 @@ distorting the data:
 - **Comparisons between analysis groups** (group vs group, or group vs arm) — an
   analysis-group Outcome carries a single-unit result only.
 - **Structured superseded-value history** and **field-level provenance**.
-- **Efficacy Comparison population coverage is frozen at 10 of 15 assets**
-  (ADR-0045) rather than relaxed to reach full coverage, because the remaining
-  5 either report weight in a non-comparable unit, state no diabetes
-  criterion, or span a mixed non-diabetic/T2D cohort that the population model
-  above cannot represent per-result. `npm run data:probe:efficacy-population-coverage`
-  verifies this freeze; a research run touching one of the 5 excluded assets'
+- **Efficacy Comparison population coverage is frozen at 11 of 15 assets**
+  (ADR-0058, revising ADR-0045 after liraglutide gained a directly reported
+  percent-change result) rather than relaxed to reach full coverage. The remaining
+  4 either state no diabetes criterion or span a mixed non-diabetic/T2D cohort
+  that the population model above cannot represent per-result.
+  `npm run data:probe:efficacy-population-coverage`
+  verifies this freeze; a research run touching one of the 4 excluded assets'
   underlying evidence re-checks it rather than assuming the exclusion still
   holds.
 

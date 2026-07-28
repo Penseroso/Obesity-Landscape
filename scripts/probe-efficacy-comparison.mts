@@ -2,7 +2,7 @@
  * Deterministic probe for the Efficacy Comparison read model.
  *
  * Distinct from `data:probe:efficacy-population-coverage`, which reads the generated
- * aggregate directly and freezes the accepted 10-of-15 gate. This one drives the
+ * aggregate directly and freezes the accepted 11-of-15 gate. This one drives the
  * **TypeScript read model** and asserts it reaches the same disposition, so the two
  * implementations of the eligibility ladder cannot drift apart silently.
  *
@@ -40,11 +40,9 @@ const outcomeById = new Map(aggregate.outcomes.map((outcome) => [outcome.id, out
  * `scaleobesity-weight-lira30` was corrected from a stored `kg` value to a directly
  * reported `percent` value in the "Backfill clinical efficacy and safety evidence"
  * change, which is exactly the metric this overview requires — confirmed against the
- * source publication, not assumed. `data:probe:efficacy-population-coverage`'s own
- * frozen snapshot (ADR-0045, `scripts/data-registry.mjs`) still reads 10/5 and now
- * disagrees with this probe for the identical reason; ADR-0045 explicitly frames that
- * as a deliberate policy freeze requiring its own reviewed change, so it is left
- * alone here rather than folded into this probe's own evidence-identity update.
+ * source publication, not assumed. ADR-0058 reviewed the same change for
+ * `data:probe:efficacy-population-coverage` and synchronized its separately frozen
+ * snapshot without relaxing the eligibility policy.
  */
 const REVIEWED_TOTALS = {
   eligibleUnits: 11,

@@ -159,7 +159,7 @@ shared `comparisonGroupKeyOf` primitive.
   exactly, no additional required condition, initial treatment, randomised and
   controlled, and percent change from baseline in body weight. `mixed` and
   `not-specified` are never read as non-diabetic. `regionRestriction` is display
-  only. Coverage is frozen at 10 of 15 units by ADR-0045 and two probes.
+  only. Coverage is frozen at 11 of 15 units by ADR-0058 and two probes.
 - **One arm-level metric.** `kg` and `percentage points` never appear as an overview
   arm-level value, and units are never converted. A stored `between-arm` estimate is
   shown separately, under a **comparator-neutral heading** ("Between-arm estimate, as

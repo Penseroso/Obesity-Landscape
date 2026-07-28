@@ -577,18 +577,23 @@ function probeMechanismFamilyRegistry() {
  * drift silently — an authoring edit that quietly moves a unit in or out of the
  * comparison would otherwise pass every validator.
  *
- * The reviewed snapshot below is the accepted 10-of-15 result. Changing it is a
- * deliberate act that must be reviewed alongside the authoring change that caused
- * it, never a mechanical update to make the probe pass again.
+ * The reviewed snapshot below is the accepted 11-of-15 result (ADR-0058).
+ * Liraglutide became eligible when its directly reported SCALE percent-change
+ * result replaced the formerly stored kg-only result; no eligibility rule was
+ * relaxed. SUMMIT also added one body-weight Outcome after the original snapshot,
+ * bringing the study counters to 52 total and 1 without an authored profile. Its
+ * absence is explicitly dispositioned as unclassified and does not make the
+ * tirzepatide unit eligible; other eligible tirzepatide Studies do. Changing this
+ * snapshot remains a deliberate review, never a mechanical update to make the
+ * probe pass again.
  */
 const efficacyPopulationCoverageSnapshot = {
-  bodyWeightOutcomeStudies: 51,
-  bodyWeightStudiesMissingProfile: 0,
+  bodyWeightOutcomeStudies: 52,
+  bodyWeightStudiesMissingProfile: 1,
   evidenceBearingUnits: 15,
-  eligibleUnits: 10,
-  gapUnits: 5,
+  eligibleUnits: 11,
+  gapUnits: 4,
   gaps: {
-    "novo-nordisk/liraglutide": "metric-unavailable-percent",
     "novo-nordisk/cagrilintide": "population-diabetes-status-not-specified",
     "novo-nordisk/ubt251": "population-diabetes-status-not-specified",
     "amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
