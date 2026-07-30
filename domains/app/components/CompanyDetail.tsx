@@ -52,16 +52,46 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
         Back to Program Register
       </Link>
 
-      <section>
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          Company portfolio
-        </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          {view.company.name}
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Headquarters: {view.company.headquartersCountry}
-        </p>
+      <section className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            Company portfolio
+          </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            {view.company.name}
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Headquarters: {view.company.headquartersCountry}
+          </p>
+        </div>
+        {view.company.officialWebsite || view.company.officialPipeline ? (
+          <div className="flex flex-wrap gap-2 sm:pt-1">
+            {view.company.officialWebsite ? (
+              <a
+                href={view.company.officialWebsite.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Checked ${view.company.officialWebsite.checkedAt}`}
+                className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-2 text-sm font-medium text-foreground transition hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                Official website
+                <span aria-hidden="true">&#8599;</span>
+              </a>
+            ) : null}
+            {view.company.officialPipeline ? (
+              <a
+                href={view.company.officialPipeline.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Checked ${view.company.officialPipeline.checkedAt}`}
+                className="inline-flex items-center gap-1.5 rounded-md border border-primary bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                Official pipeline
+                <span aria-hidden="true">&#8599;</span>
+              </a>
+            ) : null}
+          </div>
+        ) : null}
       </section>
 
       <section className="rounded-md border border-border bg-card shadow-soft">
