@@ -26,16 +26,8 @@ function stageChipClassName(count: number) {
   return `${base} border-primary bg-primary text-primary-foreground`;
 }
 
-function clinicalDotClassName(hasClinicalEvidence: boolean, hasStudies: boolean) {
-  if (hasClinicalEvidence) return "border-primary bg-primary";
-  if (hasStudies) return "border-primary/40 bg-primary/40";
-  return "border-border bg-transparent";
-}
-
-function clinicalDotLabel(hasClinicalEvidence: boolean, hasStudies: boolean) {
-  if (hasClinicalEvidence) return "Clinical evidence available";
-  if (hasStudies) return "Studies recorded; no reported outcomes yet";
-  return "No clinical studies recorded";
+function clinicalPillLabel(hasClinicalEvidence: boolean) {
+  return hasClinicalEvidence ? "Clinical evidence" : "Studies recorded";
 }
 
 export function CompanyDetail({ view }: { view: CompanyDetailView }) {
@@ -151,45 +143,47 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
                 asset.assetName,
               )}`;
               return (
-                <li key={`${asset.companyId}|${asset.assetId}`}>
+                <li
+                  key={`${asset.companyId}|${asset.assetId}`}
+                  className="flex flex-col gap-3 p-5 transition hover:bg-accent/20 sm:flex-row sm:items-center sm:justify-between"
+                >
                   <Link
                     href={assetHref}
-                    className="flex flex-col gap-3 p-5 transition hover:bg-accent/35 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary sm:flex-row sm:items-center sm:justify-between"
+                    className="rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
-                    <span className="flex items-center gap-2.5">
-                      <span
-                        className={`h-2 w-2 shrink-0 rounded-full border ${clinicalDotClassName(
-                          asset.clinical.hasClinicalEvidence,
-                          asset.clinical.hasStudies,
-                        )}`}
-                      >
-                        <span className="sr-only">
-                          {clinicalDotLabel(
-                            asset.clinical.hasClinicalEvidence,
-                            asset.clinical.hasStudies,
-                          )}
-                        </span>
-                      </span>
-                      <span className="flex flex-col">
-                        <span className="text-base font-semibold text-card-foreground">
-                          {asset.assetName}
-                        </span>
-                        {asset.codeName ? (
-                          <span className="text-xs text-muted-foreground">
-                            Code {asset.codeName}
-                          </span>
-                        ) : null}
-                      </span>
+                    <span className="text-base font-semibold text-card-foreground">
+                      {asset.assetName}
                     </span>
-                    <span className="flex items-center gap-3">
-                      {mostAdvancedStage ? (
-                        <StageBadge stage={mostAdvancedStage} />
-                      ) : null}
-                      <span className="text-xs text-muted-foreground">
-                        {variantCount} {variantCount === 1 ? "variant" : "variants"}
+                    {asset.codeName ? (
+                      <span className="block text-xs text-muted-foreground">
+                        Code {asset.codeName}
                       </span>
-                    </span>
+                    ) : null}
                   </Link>
+                  <span className="flex flex-wrap items-center gap-3">
+                    {mostAdvancedStage ? (
+                      <StageBadge stage={mostAdvancedStage} />
+                    ) : null}
+                    <span className="text-xs text-muted-foreground">
+                      {variantCount} {variantCount === 1 ? "variant" : "variants"}
+                    </span>
+                    {asset.clinical.hasStudies ? (
+                      <Link
+                        href={asset.clinical.href}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary hover:bg-accent/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className={`h-1.5 w-1.5 rounded-full ${
+                            asset.clinical.hasClinicalEvidence
+                              ? "bg-primary"
+                              : "bg-primary/40"
+                          }`}
+                        />
+                        {clinicalPillLabel(asset.clinical.hasClinicalEvidence)}
+                      </Link>
+                    ) : null}
+                  </span>
                 </li>
               );
             })}
