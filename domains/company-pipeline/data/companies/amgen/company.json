@@ -1,5 +1,13 @@
 {
   "id": "amgen",
   "name": "Amgen Inc.",
-  "headquartersCountry": "United States"
+  "headquartersCountry": "United States",
+  "officialWebsite": {
+    "url": "https://www.amgen.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.amgenpipeline.com/",
+    "checkedAt": "2026-07-30"
+  }
 }

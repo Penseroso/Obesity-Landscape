@@ -793,6 +793,22 @@ function loadRegistries() {
   };
 }
 
+function validateCompanyReferenceLink(link, fieldName, context) {
+  if (link === undefined || link === null) return;
+  assert(
+    isObject(link),
+    `${context}: company.${fieldName} must be an object or null`,
+  );
+  assert(
+    isNonEmptyString(link.url),
+    `${context}: company.${fieldName}.url is required`,
+  );
+  assert(
+    isValidFullDate(link.checkedAt),
+    `${context}: company.${fieldName}.checkedAt must be YYYY-MM-DD`,
+  );
+}
+
 function validateCompany(company, context) {
   assert(isObject(company), `${context}: company must be an object`);
   assert(isNonEmptyString(company.id), `${context}: company.id is required`);
@@ -801,6 +817,8 @@ function validateCompany(company, context) {
     isNonEmptyString(company.headquartersCountry),
     `${context}: company.headquartersCountry is required`,
   );
+  validateCompanyReferenceLink(company.officialWebsite, "officialWebsite", context);
+  validateCompanyReferenceLink(company.officialPipeline, "officialPipeline", context);
 }
 
 function validateSource(source, context) {

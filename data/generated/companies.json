@@ -2,66 +2,164 @@
   {
     "id": "abbvie",
     "name": "AbbVie",
-    "headquartersCountry": "United States"
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.abbvie.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.abbvie.com/science/pipeline.html",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "amgen",
     "name": "Amgen Inc.",
-    "headquartersCountry": "United States"
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.amgen.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.amgenpipeline.com/",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "ascletis-pharma",
     "name": "Ascletis Pharma Inc.",
-    "headquartersCountry": "China"
+    "headquartersCountry": "China",
+    "officialWebsite": {
+      "url": "https://www.ascletis.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.ascletis.com/single/145.html",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "eli-lilly-and-company",
     "name": "Eli Lilly and Company",
-    "headquartersCountry": "United States"
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.lilly.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.lilly.com/science/research-development/pipeline",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "gan-lee-pharmaceuticals",
     "name": "Gan & Lee Pharmaceuticals",
-    "headquartersCountry": "China"
+    "headquartersCountry": "China",
+    "officialWebsite": {
+      "url": "https://www.ganlee.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.ganleediabetes.com/pipeline/",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "novo-nordisk",
     "name": "Novo Nordisk",
-    "headquartersCountry": "Denmark"
+    "headquartersCountry": "Denmark",
+    "officialWebsite": {
+      "url": "https://www.novonordisk.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.novonordisk.com/science-and-technology/r-d-pipeline.html",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "pfizer",
     "name": "Pfizer",
-    "headquartersCountry": "United States"
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.pfizer.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.pfizer.com/science/drug-product-pipeline",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "ql-biopharm",
     "name": "QL Biopharm",
-    "headquartersCountry": "China"
+    "headquartersCountry": "China",
+    "officialWebsite": {
+      "url": "https://www.qlbiopharm.com/en",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": null
   },
   {
     "id": "roche",
     "name": "Roche",
-    "headquartersCountry": "Switzerland"
+    "headquartersCountry": "Switzerland",
+    "officialWebsite": {
+      "url": "https://www.roche.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.roche.com/solutions/pipeline",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "sciwind-biosciences",
     "name": "Sciwind Biosciences",
-    "headquartersCountry": "China"
+    "headquartersCountry": "China",
+    "officialWebsite": {
+      "url": "https://www.sciwindbio.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.sciwindbio.com/pipeline-1",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "structure-therapeutics",
     "name": "Structure Therapeutics",
-    "headquartersCountry": "United States"
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.structuretx.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": null
   },
   {
     "id": "viking-therapeutics",
     "name": "Viking Therapeutics",
-    "headquartersCountry": "United States"
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.vikingtherapeutics.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://vikingtherapeutics.com/pipeline/overview/",
+      "checkedAt": "2026-07-30"
+    }
   },
   {
     "id": "zealand-pharma",
     "name": "Zealand Pharma",
-    "headquartersCountry": "Denmark"
+    "headquartersCountry": "Denmark",
+    "officialWebsite": {
+      "url": "https://www.zealandpharma.com/",
+      "checkedAt": "2026-07-30"
+    },
+    "officialPipeline": {
+      "url": "https://www.zealandpharma.com/pipeline/",
+      "checkedAt": "2026-07-30"
+    }
   }
 ]

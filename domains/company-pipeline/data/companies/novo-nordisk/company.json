@@ -1,5 +1,13 @@
 {
   "id": "novo-nordisk",
   "name": "Novo Nordisk",
-  "headquartersCountry": "Denmark"
+  "headquartersCountry": "Denmark",
+  "officialWebsite": {
+    "url": "https://www.novonordisk.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.novonordisk.com/science-and-technology/r-d-pipeline.html",
+    "checkedAt": "2026-07-30"
+  }
 }

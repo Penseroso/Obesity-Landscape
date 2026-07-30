@@ -1,5 +1,13 @@
 {
   "id": "ascletis-pharma",
   "name": "Ascletis Pharma Inc.",
-  "headquartersCountry": "China"
+  "headquartersCountry": "China",
+  "officialWebsite": {
+    "url": "https://www.ascletis.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.ascletis.com/single/145.html",
+    "checkedAt": "2026-07-30"
+  }
 }

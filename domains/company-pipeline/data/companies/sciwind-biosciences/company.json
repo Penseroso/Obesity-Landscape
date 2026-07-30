@@ -1,5 +1,13 @@
 {
   "id": "sciwind-biosciences",
   "name": "Sciwind Biosciences",
-  "headquartersCountry": "China"
+  "headquartersCountry": "China",
+  "officialWebsite": {
+    "url": "https://www.sciwindbio.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.sciwindbio.com/pipeline-1",
+    "checkedAt": "2026-07-30"
+  }
 }

@@ -6,10 +6,24 @@ export type {
   SourceReference,
 } from "@/domains/shared/lib/record-metadata";
 
+/**
+ * A dated reference link, not an evidentiary source for a data claim: the
+ * `url` points at the company's own official page, and `checkedAt` records
+ * when that page was last confirmed to resolve to it.
+ */
+export type CompanyReferenceLink = {
+  url: string;
+  checkedAt: string;
+};
+
 export type Company = {
   id: string;
   name: string;
   headquartersCountry: string;
+  /** Official corporate homepage. `null`/omitted when not yet confirmed. */
+  officialWebsite?: CompanyReferenceLink | null;
+  /** Official public pipeline/R&D page, when the company publishes one. */
+  officialPipeline?: CompanyReferenceLink | null;
 };
 
 export type AssetType =

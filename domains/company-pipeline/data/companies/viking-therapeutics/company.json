@@ -1,5 +1,13 @@
 {
   "id": "viking-therapeutics",
   "name": "Viking Therapeutics",
-  "headquartersCountry": "United States"
+  "headquartersCountry": "United States",
+  "officialWebsite": {
+    "url": "https://www.vikingtherapeutics.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://vikingtherapeutics.com/pipeline/overview/",
+    "checkedAt": "2026-07-30"
+  }
 }
