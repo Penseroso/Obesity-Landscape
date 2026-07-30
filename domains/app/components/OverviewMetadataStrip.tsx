@@ -27,14 +27,16 @@ function MetadataItem({
     <div
       className={
         first
-          ? "flex items-baseline gap-1.5 px-4 py-2 first:pl-0"
-          : "flex items-baseline gap-1.5 border-l border-border px-4 py-2"
+          ? "flex-1 min-w-[130px] px-5 py-4 first:pl-0"
+          : "flex-1 min-w-[130px] border-l border-border px-5 py-4"
       }
     >
-      <span className="text-sm font-semibold text-foreground">{value}</span>
-      <span className="text-xs uppercase tracking-[0.1em] text-muted-foreground">
+      <div className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">
         {label}
-      </span>
+      </div>
+      <div className="mt-1.5 text-[28px] font-bold leading-none tracking-tight text-foreground">
+        {value}
+      </div>
     </div>
   );
 }
@@ -47,7 +49,7 @@ export function OverviewMetadataStrip({
   lastUpdated,
 }: OverviewMetadataStripProps) {
   return (
-    <div className="flex flex-wrap items-stretch rounded-md border border-border bg-card px-4">
+    <div className="flex flex-wrap items-stretch rounded-md border border-border bg-card px-4 shadow-soft">
       <MetadataItem
         first
         value={companyCount}

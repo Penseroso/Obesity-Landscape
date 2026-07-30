@@ -1,5 +1,10 @@
 {
   "id": "ql-biopharm",
   "name": "QL Biopharm",
-  "headquartersCountry": "China"
+  "headquartersCountry": "China",
+  "officialWebsite": {
+    "url": "https://www.qlbiopharm.com/en",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": null
 }

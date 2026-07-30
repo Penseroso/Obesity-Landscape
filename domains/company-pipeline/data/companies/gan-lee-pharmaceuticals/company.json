@@ -1,5 +1,13 @@
 {
   "id": "gan-lee-pharmaceuticals",
   "name": "Gan & Lee Pharmaceuticals",
-  "headquartersCountry": "China"
+  "headquartersCountry": "China",
+  "officialWebsite": {
+    "url": "https://www.ganlee.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.ganleediabetes.com/pipeline/",
+    "checkedAt": "2026-07-30"
+  }
 }

@@ -23,6 +23,13 @@ part of program identity or stable IDs.
   to the current company source folder and should normally refer to that
   folder's principal company. Other companies are represented with
   `externalCompanyName`.
+- **`officialWebsite`** and **`officialPipeline`** are optional dated reference
+  links (`{ url, checkedAt }`, `checkedAt` as `YYYY-MM-DD`) to the company's own
+  official homepage and public pipeline/R&D page. They are reference links, not
+  evidentiary sources for a data claim: `checkedAt` records when the URL was
+  last confirmed to resolve to that page, not when a fact was verified. Omit or
+  set `officialPipeline` to `null` when the company does not publish a
+  dedicated pipeline page rather than pointing it at an unrelated page.
 
 ## Asset
 

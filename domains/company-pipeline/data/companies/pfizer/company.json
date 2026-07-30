@@ -1,5 +1,13 @@
 {
   "id": "pfizer",
   "name": "Pfizer",
-  "headquartersCountry": "United States"
+  "headquartersCountry": "United States",
+  "officialWebsite": {
+    "url": "https://www.pfizer.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.pfizer.com/science/drug-product-pipeline",
+    "checkedAt": "2026-07-30"
+  }
 }

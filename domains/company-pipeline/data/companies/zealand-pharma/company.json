@@ -1,5 +1,13 @@
 {
   "id": "zealand-pharma",
   "name": "Zealand Pharma",
-  "headquartersCountry": "Denmark"
+  "headquartersCountry": "Denmark",
+  "officialWebsite": {
+    "url": "https://www.zealandpharma.com/",
+    "checkedAt": "2026-07-30"
+  },
+  "officialPipeline": {
+    "url": "https://www.zealandpharma.com/pipeline/",
+    "checkedAt": "2026-07-30"
+  }
 }
