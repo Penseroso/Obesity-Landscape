@@ -161,14 +161,21 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
           </h2>
           <ul className="divide-y divide-border overflow-hidden rounded-md border border-border bg-card shadow-soft">
             {view.assets.map((asset) => {
-              const mostAdvancedStage = asset.programVariants[0]?.development.stage;
+              const leadVariant = asset.programVariants[0];
+              const mostAdvancedStage = leadVariant?.development.stage;
               const variantCount = asset.programVariants.length;
+              // The lead (most-advanced) variant's mechanism, shown as identity
+              // context only - not re-deriving or hardcoding a label. Mechanism
+              // is consistent across a given asset's variants in every case but
+              // one (a wording-only split, not a real second mechanism), so the
+              // lead variant's value is representative.
+              const mechanism = leadVariant?.technical.mechanism ?? null;
               // Route into the Program Register pre-filtered to this asset
               // (company + a keyword seed matching the asset name) rather than
               // straight to the Asset Clinical Detail page: the register's row
               // drawer already surfaces the same clinical-context link, plus
-              // the mechanism/route/indication facts this list no longer
-              // duplicates inline.
+              // the route/indication facts this list still doesn't duplicate
+              // inline.
               const assetHref = `${registerHref}&keyword=${encodeURIComponent(
                 asset.assetName,
               )}`;
@@ -184,9 +191,14 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
                     <span className="text-base font-semibold text-card-foreground">
                       {asset.assetName}
                     </span>
-                    {asset.codeName ? (
+                    {asset.codeName || mechanism ? (
                       <span className="block text-xs text-muted-foreground">
-                        Code {asset.codeName}
+                        {[
+                          asset.codeName ? `Code ${asset.codeName}` : null,
+                          mechanism,
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
                       </span>
                     ) : null}
                   </Link>
