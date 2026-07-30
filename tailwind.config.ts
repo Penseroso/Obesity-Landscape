@@ -21,7 +21,7 @@ const config: Config = {
         "primary-foreground": "hsl(var(--primary-foreground))",
       },
       boxShadow: {
-        soft: "0 1px 2px rgba(28, 20, 12, 0.05)",
+        soft: "0 18px 45px rgba(28, 20, 12, 0.07)",
       },
     },
   },
