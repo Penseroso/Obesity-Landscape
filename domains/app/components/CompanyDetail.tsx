@@ -141,10 +141,19 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
             {view.assets.map((asset) => {
               const mostAdvancedStage = asset.programVariants[0]?.development.stage;
               const variantCount = asset.programVariants.length;
+              // Route into the Program Register pre-filtered to this asset
+              // (company + a keyword seed matching the asset name) rather than
+              // straight to the Asset Clinical Detail page: the register's row
+              // drawer already surfaces the same clinical-context link, plus
+              // the mechanism/route/indication facts this list no longer
+              // duplicates inline.
+              const assetHref = `${registerHref}&keyword=${encodeURIComponent(
+                asset.assetName,
+              )}`;
               return (
                 <li key={`${asset.companyId}|${asset.assetId}`}>
                   <Link
-                    href={asset.clinical.href}
+                    href={assetHref}
                     className="flex flex-col gap-3 p-5 transition hover:bg-accent/35 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary sm:flex-row sm:items-center sm:justify-between"
                   >
                     <span className="flex items-center gap-2.5">

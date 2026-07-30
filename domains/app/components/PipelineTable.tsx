@@ -228,10 +228,11 @@ export function PipelineTable({
     return map;
   }, [programs]);
 
-  // URL-driven filters for the Company × Development Stage Matrix drill-down.
-  // Only `company` (by companyId) and `stageBucket` (a bucket id) are read;
-  // unknown or invalid values fall back to "All". Every other filter stays at
-  // its default, so a plain /assets visit is unchanged.
+  // URL-driven filters for the Company × Development Stage Matrix drill-down
+  // and the Company Detail asset index. `company` (by companyId), `stageBucket`
+  // (a bucket id), and `keyword` (raw text, e.g. an asset name) are read;
+  // unknown or invalid values fall back to "All"/"". Every other filter stays
+  // at its default, so a plain /assets visit is unchanged.
   const seededCompany = useMemo(() => {
     const companyId = searchParams.get("company");
     return (companyId ? companyNameById.get(companyId) : undefined) ?? "All";
@@ -242,19 +243,25 @@ export function PipelineTable({
       ? (bucketParam as StageBucketId)
       : "All";
   }, [searchParams]);
+  const seededKeyword = useMemo(
+    () => searchParams.get("keyword") ?? "",
+    [searchParams],
+  );
 
   const [filters, setFilters] = useState<ProgramFilters>(() => ({
     ...emptyProgramFilters,
     company: seededCompany,
     stageBucket: seededStageBucket,
+    keyword: seededKeyword,
   }));
 
   // Re-apply the seed when the URL's seed actually changes (deep link,
-  // browser back/forward, chip removal, reset). This overrides ONLY the two
+  // browser back/forward, chip removal, reset). This overrides ONLY the
   // URL-driven dimensions and merges into the current filters, so manual
-  // FilterBar edits (indication/route/exact stage/status/keyword) are never
-  // reset. The ref guard skips the no-op case where the seed is unchanged.
-  const seedKey = `${seededCompany}|${seededStageBucket}`;
+  // FilterBar edits (indication/route/exact stage/status, or a keyword typed
+  // directly into the box) are never reset. The ref guard skips the no-op
+  // case where the seed is unchanged.
+  const seedKey = `${seededCompany}|${seededStageBucket}|${seededKeyword}`;
   const lastSeedKeyRef = useRef(seedKey);
   useEffect(() => {
     if (lastSeedKeyRef.current === seedKey) return;
@@ -263,8 +270,9 @@ export function PipelineTable({
       ...prev,
       company: seededCompany,
       stageBucket: seededStageBucket,
+      keyword: seededKeyword,
     }));
-  }, [seedKey, seededCompany, seededStageBucket]);
+  }, [seedKey, seededCompany, seededStageBucket, seededKeyword]);
 
   const [sort, setSort] = useState<ProgramSort | null>(null);
   const [selectedProgram, setSelectedProgram] = useState<PipelineProgram | null>(
