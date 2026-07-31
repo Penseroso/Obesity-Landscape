@@ -1309,6 +1309,32 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Completed"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2024-11"
+      },
+      {
+        "state": "Application withdrawn",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2025-05"
+      },
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "European Union",
+        "authority": "EMA",
+        "date": "2024-11"
+      },
+      {
+        "state": "Application not approved",
+        "jurisdiction": "European Union",
+        "authority": "EMA",
+        "date": "2026-01"
+      }
+    ],
     "metadata": {
       "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-31",
@@ -1857,53 +1883,6 @@
           "sourceType": "company press release",
           "publishedAt": "2026-06-06",
           "checkedAt": "2026-07-13"
-        }
-      ]
-    },
-    "scopeClass": "obesity-treatment"
-  },
-  {
-    "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection-triumph-2",
-    "assetId": "ly3437943",
-    "companyId": "eli-lilly-and-company",
-    "assetName": "Retatrutide",
-    "codeName": "LY3437943",
-    "technical": {
-      "mechanism": "GIP, GLP-1, and glucagon receptor agonist",
-      "platform": null
-    },
-    "administration": {
-      "route": "Subcutaneous",
-      "dosageForm": "Injection",
-      "dosingInterval": "Once weekly"
-    },
-    "indications": [
-      "Obesity",
-      "Overweight",
-      "Obstructive sleep apnea"
-    ],
-    "development": {
-      "stage": "Phase 3",
-      "status": "Active",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Completed"
-    },
-    "metadata": {
-      "lastVerifiedAt": "2026-07-31",
-      "updatedAt": "2026-07-31",
-      "sources": [
-        {
-          "url": "https://clinicaltrials.gov/study/NCT05929079",
-          "title": "A Master Protocol to Investigate the Efficacy and Safety of LY3437943 Once Weekly in Participants With Type 2 Diabetes Mellitus Who Have Obesity or Overweight (TRIUMPH-2)",
-          "sourceType": "trial registry",
-          "checkedAt": "2026-07-31"
-        },
-        {
-          "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-successful-two-additional",
-          "title": "Lilly's triple agonist, retatrutide, successful in two additional Phase 3 obesity trials, delivering significant improvements in weight and A1C",
-          "sourceType": "company press release",
-          "publishedAt": "2026-07-23",
-          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -2842,7 +2821,7 @@
     ],
     "development": {
       "stage": "Phase 1",
-      "status": "Discontinued",
+      "status": "Unknown",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
@@ -2953,7 +2932,7 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Discontinued",
+      "status": "Unknown",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },

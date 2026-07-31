@@ -184,7 +184,7 @@
         "checkedAt": "2026-07-31"
       }]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
@@ -212,7 +212,7 @@
         "checkedAt": "2026-07-31"
       }]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
@@ -240,7 +240,7 @@
         "checkedAt": "2026-07-31"
       }]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
@@ -268,6 +268,6 @@
         "checkedAt": "2026-07-31"
       }]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -289,7 +289,7 @@
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
@@ -330,7 +330,7 @@
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
@@ -463,7 +463,7 @@
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
@@ -504,7 +504,7 @@
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "pfizer-berobenatide-met-233i-regimen",
