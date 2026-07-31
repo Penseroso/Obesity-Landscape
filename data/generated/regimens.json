@@ -228,8 +228,7 @@
     ],
     "indications": [
       "Obesity",
-      "Overweight",
-      "Type 2 diabetes"
+      "Overweight"
     ],
     "development": {
       "stage": "Phase 2",
@@ -238,14 +237,14 @@
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06603571",
           "title": "A Study to Investigate Weight Management With LY3841136 and Tirzepatide (LY3298176), Alone or in Combination, in Adult Participants With Obesity or Overweight With Type 2 Diabetes",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -273,20 +272,20 @@
       "Overweight"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 3b",
       "status": "Active",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06588283",
           "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight (TOGETHER-PsO)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -314,20 +313,20 @@
       "Overweight"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 3b",
       "status": "Active",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06588296",
           "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Psoriatic Arthritis and Obesity or Overweight (TOGETHER-PsA)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -350,8 +349,7 @@
     ],
     "indications": [
       "Obesity",
-      "Overweight",
-      "Type 2 diabetes"
+      "Overweight"
     ],
     "development": {
       "stage": "Phase 2",
@@ -360,20 +358,20 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07215559",
           "title": "A Study of Macupatide (LY3532226) and Eloralintide (LY3841136), Alone or in Combination, in Adults With Obesity or Overweight and With Type 2 Diabetes",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07589608",
           "title": "A Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -448,20 +446,20 @@
       "Overweight"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 3b",
       "status": "Active",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06937099",
           "title": "Mirikizumab and Tirzepatide Administered in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight (COMMIT-CD)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -489,20 +487,20 @@
       "Overweight"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 3b",
       "status": "Active",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06937086",
           "title": "Mirikizumab Administered at the Same Time as Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight (COMMIT-UC)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
