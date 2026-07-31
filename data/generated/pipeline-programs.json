@@ -1156,6 +1156,237 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+    "assetId": "bi-3034701",
+    "companyId": "boehringer-ingelheim",
+    "assetName": "BI 3034701",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1/GIP/NPY2 receptor triple agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Gubra",
+        "role": "originator",
+        "territories": [
+          "Worldwide"
+        ],
+        "rights": [
+          "licensor"
+        ],
+        "sourceUrls": [
+          "https://www.gubra.dk/mfn_news/boehringer-ingelheim-advances-gubra-originated-obesity-triple-agonist-peptide-into-phase-2-development/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/07/16/3328210/0/en/boehringer-ingelheim-strengthens-obesity-pipeline-as-potential-first-in-class-triple-receptor-agonist-bi-3034701-enters-phase-ii-development.html",
+          "title": "Boehringer Ingelheim strengthens obesity pipeline as potential first-in-class triple receptor agonist BI 3034701 enters Phase II development",
+          "sourceType": "press release",
+          "publishedAt": "2026-07-16",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07662122",
+          "title": "A Study to Test How Well BI 3034701 Helps People Living With Obesity or Overweight to Lose Weight",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06352437",
+          "title": "A Study to Test How Well Different Doses of BI 3034701 Are Tolerated by Healthy Men and People With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.gubra.dk/mfn_news/boehringer-ingelheim-advances-gubra-originated-obesity-triple-agonist-peptide-into-phase-2-development/",
+          "title": "Boehringer Ingelheim advances Gubra originated obesity triple agonist peptide into Phase 2 development",
+          "sourceType": "press release",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+    "assetId": "survodutide",
+    "companyId": "boehringer-ingelheim",
+    "assetName": "Survodutide",
+    "codeName": "BI 456906",
+    "technical": {
+      "mechanism": "Glucagon receptor/GLP-1 receptor dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Zealand Pharma",
+        "role": "originator",
+        "territories": [
+          "Worldwide"
+        ],
+        "rights": [
+          "licensor"
+        ],
+        "effectiveDate": "2011-06-16",
+        "sourceUrls": [
+          "https://www.globenewswire.com/news-release/2011/06/16/219336/0/en/Zealand-Pharma-and-Boehringer-Ingelheim-enter-into-a-licence-and-collaboration-agreement-to-advance-novel-compounds-to-treat-Type-2-diabetes-and-obesity.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.boehringer-ingelheim.com/science-innovation/human-health-innovation/clinical-pipeline/survodutide-bi-456906-glp1-gcgr-agonist-obesity",
+          "title": "Survodutide (BI 456906): GLP1/GCGR agonist | obesity",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/04/28/3282218/0/en/boehringer-ingelheim-s-novel-glucagon-glp-1-dual-agonist-survodutide-achieved-significant-weight-loss-of-16-6-delivering-meaningful-metabolic-improvement-in-people-with-obesity-or-.html",
+          "title": "Boehringer Ingelheim's novel glucagon/GLP-1 dual agonist survodutide achieved significant weight loss of 16.6% in Phase III trial (SYNCHRONIZE-1 topline)",
+          "sourceType": "press release",
+          "publishedAt": "2026-04-28",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06066515",
+          "title": "A Study to Test Whether Survodutide (BI 456906) Helps People Living With Overweight or Obesity Who do Not Have Diabetes to Lose Weight (SYNCHRONIZE-1)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06066528",
+          "title": "A Study to Test Whether Survodutide (BI 456906) Helps People Living With Overweight or Obesity Who Also Have Diabetes to Lose Weight (SYNCHRONIZE-2)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06214741",
+          "title": "A Study to Test Whether Survodutide (BI 456906) Helps Chinese People Living With Overweight or Obesity to Lose Weight (SYNCHRONIZE-CN)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06309992",
+          "title": "A Study to Test Whether Survodutide Helps People Living With Obesity or Overweight and With a Confirmed or Presumed Liver Disease Called NASH to Reduce Liver Fat and to Lose Weight (SYNCHRONIZE-MASLD)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "boehringer-ingelheim-survodutide-subcutaneous-injection-mash",
+    "assetId": "survodutide",
+    "companyId": "boehringer-ingelheim",
+    "assetName": "Survodutide",
+    "codeName": "BI 456906",
+    "technical": {
+      "mechanism": "Glucagon receptor/GLP-1 receptor dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Metabolic dysfunction-associated steatohepatitis"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Zealand Pharma",
+        "role": "originator",
+        "territories": [
+          "Worldwide"
+        ],
+        "rights": [
+          "licensor"
+        ],
+        "effectiveDate": "2011-06-16",
+        "sourceUrls": [
+          "https://www.globenewswire.com/news-release/2011/06/16/219336/0/en/Zealand-Pharma-and-Boehringer-Ingelheim-enter-into-a-licence-and-collaboration-agreement-to-advance-novel-compounds-to-treat-Type-2-diabetes-and-obesity.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.boehringer-ingelheim.com/human-health/metabolic-diseases/survodutide-us-fda-breakthrough-therapy-phase-3-trials-mash",
+          "title": "Survodutide US FDA Breakthrough Therapy phase 3 trials MASH",
+          "sourceType": "press release",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06632444",
+          "title": "LIVERAGE: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Moderate or Advanced Liver Fibrosis",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06632457",
+          "title": "LIVERAGE-Cirrhosis: A Study to Test Whether Survodutide Helps People With a Liver Disease Called NASH/MASH Who Have Cirrhosis",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT04771273",
+          "title": "A Study to Test Safety and Efficacy of Survodutide (BI456906) in Adults With Non-alcoholic Steatohepatitis (NASH) and Fibrosis (F1-F3)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
     "assetId": "ly3298176",
     "companyId": "eli-lilly-and-company",

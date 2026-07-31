@@ -39,6 +39,19 @@
     }
   },
   {
+    "id": "boehringer-ingelheim",
+    "name": "Boehringer Ingelheim",
+    "headquartersCountry": "Germany",
+    "officialWebsite": {
+      "url": "https://www.boehringer-ingelheim.com/",
+      "checkedAt": "2026-07-31"
+    },
+    "officialPipeline": {
+      "url": "https://www.boehringer-ingelheim.com/science-innovation/human-health-innovation/clinical-pipeline",
+      "checkedAt": "2026-07-31"
+    }
+  },
+  {
     "id": "eli-lilly-and-company",
     "name": "Eli Lilly and Company",
     "headquartersCountry": "United States",
