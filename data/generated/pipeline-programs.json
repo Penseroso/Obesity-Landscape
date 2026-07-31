@@ -7261,6 +7261,182 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "structure-therapeutics-accg-2671-oral-undisclosed",
+    "assetId": "accg-2671",
+    "companyId": "structure-therapeutics",
+    "assetName": "ACCG-2671",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Dual amylin and calcitonin receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Schrödinger, Inc.",
+        "role": "co-developer",
+        "rights": [
+          "discovery"
+        ],
+        "effectiveDate": "2023-11",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1888886/000110465926020562/gpcr-20251231x10k.htm"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://structuretx.com/",
+          "title": "Structure Therapeutics Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-announces-initiation-phase-1-clinical",
+          "title": "Structure Therapeutics Announces Initiation of Phase 1 Clinical Study of Oral Small Molecule Amylin Receptor Agonist ACCG-2671 for the Treatment of Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2025-12-17",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-first-quarter-2026-financial",
+          "title": "Structure Therapeutics Reports First Quarter 2026 Financial Results and Recent Highlights",
+          "sourceType": "company press release",
+          "publishedAt": "2026-05-07",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926020562/gpcr-20251231x10k.htm",
+          "title": "Structure Therapeutics Inc. 2025 Annual Report on Form 10-K",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-02-26",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "structure-therapeutics-accg-3535-oral-undisclosed",
+    "assetId": "accg-3535",
+    "companyId": "structure-therapeutics",
+    "assetName": "ACCG-3535",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Dual amylin and calcitonin receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "IND-enabling",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Schrödinger, Inc.",
+        "role": "co-developer",
+        "rights": [
+          "discovery"
+        ],
+        "effectiveDate": "2023-11",
+        "sourceUrls": [
+          "https://www.sec.gov/Archives/edgar/data/1888886/000110465926020562/gpcr-20251231x10k.htm"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://structuretx.com/",
+          "title": "Structure Therapeutics Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-first-quarter-2026-financial",
+          "title": "Structure Therapeutics Reports First Quarter 2026 Financial Results and Recent Highlights",
+          "sourceType": "company press release",
+          "publishedAt": "2026-05-07",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926020562/gpcr-20251231x10k.htm",
+          "title": "Structure Therapeutics Inc. 2025 Annual Report on Form 10-K",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-02-26",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "structure-therapeutics-anpa-0073-oral-undisclosed",
+    "assetId": "anpa-0073",
+    "companyId": "structure-therapeutics",
+    "assetName": "ANPA-0073",
+    "codeName": null,
+    "technical": {
+      "mechanism": null,
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Discontinued",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926020562/gpcr-20251231x10k.htm",
+          "title": "Structure Therapeutics Inc. 2025 Annual Report on Form 10-K",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-02-26",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "structure-therapeutics-gsbr-1290-oral-tablet",
     "assetId": "gsbr-1290",
     "companyId": "structure-therapeutics",
@@ -7286,57 +7462,64 @@
       "stageOperationalState": "Not yet recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-25",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-its-phase",
           "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study for its Oral Non-Peptide Small Molecule GLP-1 Receptor Agonist GSBR-1290",
           "sourceType": "company press release",
           "publishedAt": "2024-06-03",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07400588",
           "title": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Study of the Safety and Tolerability of Aleniglipron in Adult Participants With Type 2 Diabetes Mellitus Living With Obesity or Overweight",
           "sourceType": "trial registry",
           "publishedAt": "2026-02-10",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-fourth-quarter-and-full-year-2025",
           "title": "Structure Therapeutics Reports Fourth Quarter and Full Year 2025 Financial Results and Recent Highlights",
           "sourceType": "company press release",
           "publishedAt": "2026-02-26",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-phase-2",
           "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
           "sourceType": "company press release",
           "publishedAt": "2026-03-16",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-first-quarter-2026-financial",
           "title": "Structure Therapeutics Reports First Quarter 2026 Financial Results and Recent Highlights",
           "sourceType": "company press release",
           "publishedAt": "2026-05-07",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-announces-publication-nature-medicine",
+          "title": "Structure Therapeutics Announces Publication in Nature Medicine Highlighting Phase 2b ACCESS Program of Aleniglipron for Obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-05",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07654361",
           "title": "A Randomized, Double-Blind, Placebo-Controlled, Pivotal Phase 3 Study to Evaluate the Long-Term Efficacy and Safety of Multiple Maintenance Doses of Once Daily Oral Aleniglipron for Chronic Weight Management in Adults With Obesity or Overweight and a Weight-Related Comorbidity (ACCOMPLISH-1)",
           "sourceType": "trial registry",
           "publishedAt": "2026-06-17",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07654374",
           "title": "A Long-Term Randomized, Double-Blind, Placebo-Controlled, Phase 3 Study to Evaluate the Efficacy and Safety of Multiple Maintenance Doses of Oral Once Daily Aleniglipron for Chronic Weight Management in Adults With Obesity or Overweight and Type 2 Diabetes Mellitus (ACCOMPLISH-2)",
           "sourceType": "trial registry",
           "publishedAt": "2026-06-17",
-          "checkedAt": "2026-07-25"
+          "checkedAt": "2026-07-31"
         }
       ]
     },

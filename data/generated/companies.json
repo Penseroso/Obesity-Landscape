@@ -131,10 +131,13 @@
     "name": "Structure Therapeutics",
     "headquartersCountry": "United States",
     "officialWebsite": {
-      "url": "https://www.structuretx.com/",
-      "checkedAt": "2026-07-30"
+      "url": "https://structuretx.com/",
+      "checkedAt": "2026-07-31"
     },
-    "officialPipeline": null
+    "officialPipeline": {
+      "url": "https://structuretx.com/",
+      "checkedAt": "2026-07-31"
+    }
   },
   {
     "id": "viking-therapeutics",
