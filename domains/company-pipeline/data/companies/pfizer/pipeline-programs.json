@@ -25,7 +25,7 @@
       "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -33,14 +33,14 @@
           "title": "Pfizer Provides Update on Oral GLP-1 Receptor Agonist Danuglipron",
           "sourceType": "press release",
           "publishedAt": "2025-04-14",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-advances-development-once-daily-formulation-oral-glp",
           "title": "Pfizer Advances Development of Once-Daily Formulation of Oral GLP-1 Receptor Agonist Danuglipron",
           "sourceType": "press release",
           "publishedAt": "2024-07-11",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -80,14 +80,14 @@
           "title": "Evaluation of an oral small-molecule glucagon-like peptide-1 receptor agonist, lotiglipron, for type 2 diabetes and obesity: A dose-ranging, phase 2, randomized, placebo-controlled study",
           "sourceType": "peer-reviewed publication",
           "publishedAt": "2024",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-provides-update-glp-1-ra-clinical-development",
           "title": "Pfizer Provides Update on GLP-1-RA Clinical Development Program for Adults with Obesity and Type 2 Diabetes Mellitus",
           "sourceType": "press release",
           "publishedAt": "2023-06-26",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -119,7 +119,7 @@
       "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -127,21 +127,21 @@
           "title": "A Study to Learn How Different Amounts of the Study Medicine Called PF-06954522 Are Tolerated and Act in the Body in Healthy Adults",
           "sourceType": "trial registry",
           "publishedAt": "2023",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06279234",
           "title": "A Study to Learn How Different Amounts of PF-06954522 Are Tolerated and Act in Adults With Type 2 Diabetes Mellitus",
           "sourceType": "trial registry",
           "publishedAt": "2024",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://investors.nxera.life/common/pdf/20240618_Annual_Report_2023_EN.pdf",
           "title": "Nxera Pharma Annual Report 2023",
           "sourceType": "annual report",
           "publishedAt": "2024-06-18",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -157,6 +157,10 @@
       {
         "type": "development-code",
         "value": "MET-097i"
+      },
+      {
+        "type": "development-code",
+        "value": "PF’3944"
       }
     ],
     "technical": {
@@ -182,31 +186,169 @@
         "externalCompanyName": "Metsera",
         "role": "originator",
         "sourceUrls": [
-          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-acquire-metsera-and-its-next-generation-obesity"
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-acquire-metsera-and-its-next-generation-obesity",
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
         ]
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
           "title": "Pfizer Pipeline Update, May 5, 2026",
           "sourceType": "investor presentation",
           "publishedAt": "2026-05-05",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
           "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust and Continued Weight Loss with Monthly Dosing in Phase 2b Trial",
           "sourceType": "press release",
-          "publishedAt": "2026-06",
-          "checkedAt": "2026-07-24"
+          "publishedAt": "2026-02-03",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07595549",
+          "title": "A Study to Learn About the Study Medicine Called Berobenatide (PF-08653944) in People With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "pfizer-pf-08653944-subcutaneous-injection-obstructive-sleep-apnea",
+    "assetId": "pf-08653944",
+    "companyId": "pfizer",
+    "assetName": "Berobenatide",
+    "codeName": "PF-08653944",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "MET-097i"
+      },
+      {
+        "type": "development-code",
+        "value": "PF’3944"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "NuSH platform"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obstructive sleep apnea"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Planned",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Planned, not yet initiated"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Metsera",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.pfizer.com/pfizer-pipeline-key-anticipated-2026-catalysts",
+          "title": "Pfizer Pipeline: Key Anticipated 2026 Catalysts",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
+          "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust and Continued Weight Loss with Monthly Dosing in Phase 2b Trial",
+          "sourceType": "press release",
+          "publishedAt": "2026-02-03",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "pfizer-pf-08653944-subcutaneous-injection-knee-osteoarthritis",
+    "assetId": "pf-08653944",
+    "companyId": "pfizer",
+    "assetName": "Berobenatide",
+    "codeName": "PF-08653944",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "MET-097i"
+      },
+      {
+        "type": "development-code",
+        "value": "PF’3944"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "NuSH platform"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Osteoarthritis of the knee"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Planned",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Planned, not yet initiated"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Metsera",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.pfizer.com/pfizer-pipeline-key-anticipated-2026-catalysts",
+          "title": "Pfizer Pipeline: Key Anticipated 2026 Catalysts",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
+          "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust and Continued Weight Loss with Monthly Dosing in Phase 2b Trial",
+          "sourceType": "press release",
+          "publishedAt": "2026-02-03",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "pfizer-pf-08653945-subcutaneous-injection",
@@ -214,6 +356,12 @@
     "companyId": "pfizer",
     "assetName": "MET-233i",
     "codeName": "PF-08653945",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "PF’3945"
+      }
+    ],
     "technical": {
       "mechanism": "Amylin analog with dual amylin and calcitonin receptor activity",
       "platform": "NuSH platform"
@@ -237,38 +385,92 @@
         "externalCompanyName": "Metsera",
         "role": "originator",
         "sourceUrls": [
-          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-acquire-metsera-and-its-next-generation-obesity"
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-acquire-metsera-and-its-next-generation-obesity",
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
         ]
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
           "title": "Pfizer Pipeline Update, May 5, 2026",
           "sourceType": "investor presentation",
           "publishedAt": "2026-05-05",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.biospace.com/press-releases/metsera-announces-positive-phase-1-data-of-first-in-class-once-monthly-amylin-candidate-met-233i",
           "title": "Metsera Announces Positive Phase 1 Data of First-in-Class Once-Monthly Amylin Candidate MET-233i",
           "sourceType": "press release",
           "publishedAt": "2025-06-09",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07575932",
+          "title": "A Study of PF-08653945 and PF-08653944 in Adults With Overweight or Obesity (SOLIS-1)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
     "scopeClass": "obesity-treatment"
   },
   {
-    "id": "pfizer-pf-08654698-subcutaneous-injection",
-    "assetId": "pf-08654698",
+    "id": "pfizer-pf-07999415-subcutaneous-undisclosed",
+    "assetId": "pf-07999415",
+    "companyId": "pfizer",
+    "assetName": "PF-07999415",
+    "codeName": null,
+    "technical": {
+      "mechanism": null,
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
+          "title": "Pfizer Pipeline Update, May 5, 2026",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06965465",
+          "title": "A Study to Learn How Different Amounts of the Study Medicine Called PF-07999415 Are Tolerated and Act in the Body in Healthy Adults",
+          "sourceType": "trial registry",
+          "publishedAt": "2025",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "pfizer-pf-08654696-subcutaneous-injection",
+    "assetId": "pf-08654696",
     "companyId": "pfizer",
     "assetName": "MET-034i",
-    "codeName": "PF-08654698",
+    "codeName": "PF-08654696",
     "technical": {
       "mechanism": "GIPR agonist",
       "platform": "NuSH platform"
@@ -292,20 +494,220 @@
         "externalCompanyName": "Metsera",
         "role": "originator",
         "sourceUrls": [
-          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-acquire-metsera-and-its-next-generation-obesity"
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-acquire-metsera-and-its-next-generation-obesity",
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
         ]
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
           "title": "Pfizer Pipeline Update, May 5, 2026",
           "sourceType": "investor presentation",
           "publishedAt": "2026-05-05",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "pfizer-pf-08656796-oral-undisclosed",
+    "assetId": "pf-08656796",
+    "companyId": "pfizer",
+    "assetName": "MET-224o",
+    "codeName": "PF-08656796",
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "MOMENTUM oral peptide platform"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Metsera",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
+          "title": "Pfizer Pipeline Update, May 5, 2026",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://investors.metsera.com/node/6946/pdf",
+          "title": "Metsera Reports Second Quarter 2025 Financial Results and Continued Portfolio Progress",
+          "sourceType": "press release",
+          "publishedAt": "2025-08",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://s206.q4cdn.com/795948973/files/doc_financials/2025/q4/Q4-2025-Earnings-Charts.pdf",
+          "title": "Pfizer Fourth Quarter 2025 Earnings Charts",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-02-03",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "pfizer-pf-08656795-undisclosed-undisclosed",
+    "assetId": "pf-08656795",
+    "companyId": "pfizer",
+    "assetName": "MET-815i",
+    "codeName": "PF-08656795",
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "NuSH platform"
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": "Once quarterly"
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Metsera",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-completes-acquisition-metsera"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
+          "title": "Pfizer Pipeline Update, May 5, 2026",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://investors.metsera.com/node/6946/pdf",
+          "title": "Metsera Reports Second Quarter 2025 Financial Results and Continued Portfolio Progress",
+          "sourceType": "press release",
+          "publishedAt": "2025-08",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://s206.q4cdn.com/795948973/files/doc_financials/2025/q4/Q4-2025-Earnings-Charts.pdf",
+          "title": "Pfizer Fourth Quarter 2025 Earnings Charts",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-02-03",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "pfizer-pf-08642534-oral-tablets",
+    "assetId": "pf-08642534",
+    "companyId": "pfizer",
+    "assetName": "PF-08642534",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "YP05002"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "YaoPharma",
+        "role": "licensor",
+        "sourceUrls": [
+          "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-enters-exclusive-collaboration-and-license-agreement"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
+          "title": "Pfizer Pipeline Update, May 5, 2026",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-enters-exclusive-collaboration-and-license-agreement",
+          "title": "Pfizer Enters into Exclusive Collaboration and License Agreement with YaoPharma",
+          "sourceType": "press release",
+          "publishedAt": "2025-12-09",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://s206.q4cdn.com/795948973/files/doc_financials/2025/q4/Q4-2025-Earnings-Charts.pdf",
+          "title": "Pfizer Fourth Quarter 2025 Earnings Charts",
+          "sourceType": "investor presentation",
+          "publishedAt": "2026-02-03",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07731139",
+          "title": "A Study to Learn How Different Amounts of the Study Medicine Called PF-08642534 Are Tolerated and Act in the Body of People Who Have Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -336,7 +738,7 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -344,14 +746,14 @@
           "title": "Pfizer Pipeline Update, May 5, 2026",
           "sourceType": "investor presentation",
           "publishedAt": "2026-05-05",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.tipranks.com/news/company-announcements/pfizer-completes-mid-stage-trial-of-new-obesity-drug-candidate-pf-07976016",
           "title": "Pfizer Completes Mid-Stage Trial of New Obesity Drug Candidate PF-07976016",
           "sourceType": "news article",
           "publishedAt": "2026",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },

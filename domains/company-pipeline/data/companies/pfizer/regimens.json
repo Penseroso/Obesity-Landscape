@@ -24,15 +24,22 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
           "title": "Pfizer Pipeline Update, May 5, 2026",
           "sourceType": "investor presentation",
           "publishedAt": "2026-05-05",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07575932",
+          "title": "A Study of PF-08653945 and PF-08653944 in Adults With Overweight or Obesity (SOLIS-1)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -45,7 +52,7 @@
     "mechanismFamilyId": "glp1-plus-gip-combination",
     "components": [
       {
-        "assetId": "pf-08654698",
+        "assetId": "pf-08654696",
         "role": "GIPR agonist"
       },
       {
@@ -63,15 +70,15 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf",
           "title": "Pfizer Pipeline Update, May 5, 2026",
           "sourceType": "investor presentation",
           "publishedAt": "2026-05-05",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
