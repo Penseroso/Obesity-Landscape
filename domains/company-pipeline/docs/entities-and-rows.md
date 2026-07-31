@@ -18,13 +18,13 @@ part of program identity or stable IDs.
 - It does **not** necessarily represent the originator, licensor, licensee,
   regional rights holder, or every co-development partner.
 - Supplying investigational drug, providing clinical-trial operations support
-  (for example, through an internal accelerator or contract-research
-  organization such as Lilly's Chorus), or providing funding alone does
-  **not** make a company a co-development or principal development entity for
-  another company's asset. Absent confirmed rights-holding or co-sponsorship
-  evidence, the trial's own registered sponsor is the default basis for
-  identifying the principal development entity — see the `EXCLUDED` reason
-  "the company under research is not the principal development entity" in the
+  (for example, through an internal development-support organization such as
+  Lilly's Chorus), or providing funding alone does **not** make a company a
+  co-development or principal development entity for another company's asset.
+  Absent confirmed rights-holding or co-sponsorship evidence, the trial's own
+  registered sponsor is the default basis for identifying the principal
+  development entity — see the `EXCLUDED` reason "the company under research
+  is not the principal development entity" in the
   [Research Workflow](./research-workflow.md#2-discover-and-classify).
 - Additional program/regimen-level company roles, rights, and territories belong
   in `relationships`, not in a company-global record.

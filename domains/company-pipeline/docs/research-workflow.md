@@ -26,46 +26,66 @@ semantics remain authoritative in the [Data Protocol](./README.md).
 
 ## 1a. Segmented execution for large companies
 
-A company whose current or newly discovered candidate count makes full
-single-execution closure under section 5 impractical may be researched across
-multiple executions as explicit **segments**, instead of one execution.
-Segmented execution changes only how work is divided and reported; every rule
-in sections 2–4 and every per-row item in section 5 (items 2, 3, 8, 9, 11, 13)
-applies identically inside a segment.
+A company whose current stored-row count makes full single-execution closure
+under section 5 impractical may be researched across multiple executions as
+explicit **segments** — each re-verifying a declared subset of the company's
+**existing stored rows** — instead of one execution.
 
-1. **Declare the segment.** Before researching, state the segment's exact
-   scope — the asset groups, programs, or regimens this execution covers —
-   and record it in this execution's own report (section 7). An execution
-   that does not declare a segment is understood to cover the full company
+1. **Declare the segment.** State the segment's exact scope — the asset
+   groups, programs, or regimens whose existing stored rows this execution
+   re-verifies — in this execution's own report (section 7) **and** in its
+   commit message(s), together with the refresh effort's baseline date (item
+   4). An execution that does not declare a segment covers the full company
    and is held to the unmodified section 5 gate.
-2. **What a segment must still close.** Every candidate discovered within the
-   declared segment reaches a final STORED, EXCLUDED, or DEFERRED disposition
-   (section 2) before this execution reports completion for its segment — the
-   "zero undispositioned candidates" requirement (section 5 item 7) applies to
-   the segment's own scope, not the company's full scope. Section 5 items 2,
-   3, 8, 9, 11, and 13 apply in full to every row this segment touches.
-3. **What a segment does not close.** Section 5 item 1 (full sponsor-pipeline
-   reconciliation) and items 4–7 (the independent second discovery pass) are
-   company-wide requirements and are not repeated per segment. A segmented
-   execution reports its own scope as **segment complete**, never as
-   company-level **GO** — GO remains reserved for the outcome defined in
-   section 5, unchanged.
-4. **Handoff between segments.** No per-run ledger is created (section 5
-   remains in-session-only for its audit). Coverage across segments is read
-   directly from each row's own `metadata.lastVerifiedAt`: a row last verified
-   before this refresh effort began has not yet been covered by any segment. A
-   later execution — whether continuing the same refresh effort or performing
-   the closing consolidation pass — determines remaining scope this way, not
-   from a separate tracking file.
-5. **Consolidation pass.** Company-level GO requires one execution to perform
-   the closing consolidation pass after every declared segment reports
-   segment-complete: reconcile the sponsor's full official pipeline (item 1)
-   once, run one genuinely independent second discovery pass across the whole
-   company (items 4–7) without reusing any segment's source list, confirm
-   every row's `metadata.lastVerifiedAt` falls within the refresh effort (no
-   row was skipped by every segment), and re-run the full validation and probe
-   suite (section 6) against the cumulative working tree. Only this pass may
-   report company-level **GO**.
+2. **What a segment covers.** A segment re-verifies its declared rows against
+   current sources with full per-row rigor: section 5 items 2, 3, 8, 9, 10,
+   11, 12, and 13 apply in full to every row this segment touches, and the
+   "zero undispositioned candidates" requirement (item 7) applies to whatever
+   this segment actually surfaced.
+
+   A segment is **not required** to run full company-centered discovery
+   (section 2; section 5 item 1) beyond its declared rows. If re-verifying a
+   declared row's own sources incidentally surfaces a genuinely new
+   candidate — a new indication, a new trial, a newly announced program — the
+   segment **must** still fully disposition it (STORED, EXCLUDED, or
+   DEFERRED) before reporting segment-complete; being outside the declared row
+   list is never a reason to leave it undispositioned. What a segment must
+   **not** do is claim to have performed the company-wide discovery sweep
+   itself.
+3. **What stays company-wide.** Full sponsor-pipeline reconciliation (item 1),
+   the company-wide independent second discovery pass (items 4–7), and
+   re-review of every candidate any segment excluded or deferred are not
+   repeated per segment — they are the closing consolidation pass's exclusive
+   responsibility (item 5). A segmented execution reports its own scope as
+   **segment complete**, never as company-level **GO** — GO remains reserved
+   for the outcome defined in section 5, unchanged.
+4. **Handoff between segments — no new ledger.** Coverage is read from two
+   sources that already exist and are already durable, not a new tracking
+   file:
+   - each row's own `metadata.lastVerifiedAt`, for which existing rows this
+     refresh effort has, and has not, re-verified;
+   - git history for the company's data folder — each segment's commit
+     message states its declared scope and the refresh effort's baseline date
+     (the date of that effort's first segment) — for what any segment
+     discovered, excluded, or deferred outside its declared row list, and for
+     what remains unreviewed.
+
+   Before creating a row, reversing a prior disposition, or changing a stored
+   value, check this history. A `cited-registry-record-anchored-to-other-row`
+   signal (`npm run data:probe:registry-citations`), or any other conflict
+   with a value already in the dataset, is a reason to look for a prior
+   determination — in `decision-log.md` and git history — not a reason to
+   override it on fresh judgment alone.
+5. **Consolidation pass.** Company-level GO requires one execution, after
+   every declared segment reports segment-complete, to: reconcile the
+   sponsor's full official pipeline (item 1); run one genuinely independent
+   company-wide discovery pass (items 4–7) without reusing any segment's
+   source list; read every segment's commit messages and `decision-log.md` to
+   re-review every candidate any segment excluded or deferred, alongside
+   every candidate the company-wide pass newly surfaces; confirm every row's
+   `metadata.lastVerifiedAt` falls within the refresh effort; and re-run the
+   full validation and probe suite (section 6) against the cumulative working
+   tree. Only this pass may report company-level **GO**.
 
 ## 2. Discover and classify
 
@@ -220,8 +240,8 @@ Before generation and reporting, this run may report completion (**GO**) only
 once every item below holds; while any remain open, the run is **NO-GO**. This
 gate assumes full-company scope. A run operating under a declared segment
 (section 1a) reports **segment complete**, not GO, once it closes items 2, 3,
-8, 9, 11, and 13 for its own scope — see section 1a for which items apply per
-segment and which are company-wide.
+8, 9, 10, 11, 12, and 13 for its own scope — see section 1a for which items
+apply per segment and which are company-wide.
 
 1. Reconcile the sponsor's current pipeline page, current investor materials,
    approved/filed obesity products, sponsor and asset registry searches, and

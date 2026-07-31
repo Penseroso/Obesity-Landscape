@@ -112,6 +112,27 @@ jurisdiction, authority, and official date into `regulatoryStates`. An aggregate
 jurisdiction-level official evidence is available. Keep `development.stage` as
 the aggregate most-advanced stage; do not collapse jurisdiction details into it.
 
+### Application withdrawal and non-approval
+
+A pending application can be **withdrawn** by the sponsor, or **not approved**
+by the regulator (a Complete Response Letter, a negative CHMP opinion, or an
+equivalent refusal) instead of reaching `Approved`. Record this in
+`regulatoryStates` using the `Application withdrawn` or
+`Application not approved` registry value for that jurisdiction and authority,
+with the official date of the withdrawal or decision. Do **not** remove the
+prior `NDA submitted` (or equivalent) entry that led to it — both are
+independently true historical facts, and `regulatoryStates` accumulates a
+jurisdiction's history rather than holding only its latest state.
+
+When a program's `development.stage` is `Filed` on the strength of a
+jurisdiction that is later withdrawn or not approved, and **no** jurisdiction
+retains an active Filed or Approved status, `development.stage` reverts to the
+most advanced stage still supported by direct evidence for that row's own
+scope (ordinarily the clinical phase evidenced before the filing) — it is
+never left at `Filed` once every filing behind it has been withdrawn or
+refused. A jurisdiction where the application is still under active review is
+unaffected by another jurisdiction's withdrawal or refusal.
+
 ### Mechanism, formulation, and platform
 
 Prefer:
@@ -418,20 +439,26 @@ reason, and the two must not be conflated.
 - Storing a disease as an indication requires official evidence that
   **directly supports treatment or management of that disease as that
   program's own development objective**.
-- **Primary and secondary outcome measures are the most direct check** when a
-  trial registry record is available. A disease that is this program's own
-  treatment objective is evidenced by its own dedicated primary or co-primary
-  outcome measure (for example, a nested subset's own efficacy endpoint — see
+- **Outcome measures are strong evidence, weighed together with the sponsor's
+  own stated objective — neither is a mechanical, standalone gate.** A
+  dedicated primary or co-primary outcome measure for a disease (for example,
+  a nested subset's own efficacy endpoint, or a composite endpoint requiring
+  the disease response and a weight-loss response jointly — see
   [Entities and Rows §Study classification](./entities-and-rows.md#study-classification)
-  on platform/master-protocol nesting). A disease that appears only as a
-  secondary or exploratory outcome, or does not appear as an outcome measure
-  at all — surfacing only in the title, conditions field, or eligibility
-  criteria — is population evidence, not indication evidence, regardless of
-  how large or defining that population is for the trial. Whether every
-  enrolled participant shares the disease (a required population) does not by
-  itself change this: the "Population and comorbidity" distinction this
-  section draws applies identically to a subgroup-level and a whole-trial-level
-  population.
+  on platform/master-protocol nesting) is ordinarily sufficient on its own to
+  evidence that disease as this program's own treatment objective. A disease
+  measured only as a secondary or exploratory outcome is **not** automatically
+  disqualified: a multi-objective program can legitimately measure a genuine
+  treatment objective as a secondary endpoint in a given trial while the
+  sponsor's own official materials (pipeline page, investor presentation,
+  program description) directly state it as a development objective — check
+  those before concluding the disease is population evidence. What remains
+  excluded is a disease with **neither** outcome-measure support **nor** a
+  sponsor statement of it as a treatment objective, appearing only in a trial
+  title, registry condition field, or eligibility criterion — that
+  combination is population evidence, not indication evidence, regardless of
+  how large or defining that population is for the trial. This applies
+  identically whether the population is a subgroup or the whole trial.
 - In a chronic weight-management trial conducted in people with obesity or
   overweight, a comorbidity used as an enrollment condition or a population
   characteristic — for example type 2 diabetes, obstructive sleep apnea,
