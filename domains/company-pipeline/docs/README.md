@@ -49,6 +49,21 @@ changed, and no row valid under the pre-existing Program-level semantics
 became invalid; the rows removed under ADR-0055 were prior Study-to-Program
 misclassifications, not rows Contract 1.2 itself had certified correct.
 
+ADR-0060 permits `administration.route`/`administration.dosageForm` to hold
+the sentinel `"Undisclosed"` for a row whose `development.stage` sorts
+strictly before `Phase 3` — see
+[Entities and Rows §Program identity](./entities-and-rows.md#program-identity)
+and
+[Source and Entry Policy §Undisclosed route/dosage form](./source-and-entry-policy.md#undisclosed-routedosage-form).
+This does add one new validator assertion (previously any non-empty string,
+including the literal string `"Undisclosed"`, passed at any stage; the
+validator now rejects it outside Discovery through Phase 2), but it is not a
+new Contract version: no field, type shape, or generated-output shape
+changed, and no row that validated correctly under Contract 1.2 before this
+change becomes invalid — the new assertion only ever rejects the literal
+sentinel string outside its allowed stage range, a combination no correctly
+authored pre-existing row used.
+
 ## Canonical ownership
 
 | Topic | Authority |

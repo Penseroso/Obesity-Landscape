@@ -327,6 +327,15 @@ Define stable program identity using:
 **Do not** include mutable stage or status values in program identity or in
 stable IDs.
 
+Route and dosage form may each independently hold the sentinel value
+`"Undisclosed"` for an early-stage row (Contract 1.2, ADR-0060; see
+[Source and Entry Policy §Undisclosed route/dosage form](./source-and-entry-policy.md#undisclosed-routedosage-form)).
+`"Undisclosed"` participates in program identity like any other stored value —
+it does not exempt a row from the ordinary duplicate-identity check, so two
+distinct early-stage candidates for the same asset that are both genuinely
+undisclosed on the same field still need a real discriminator (a confirmed
+value, or a distinct indication scope) to coexist as separate rows.
+
 ## Mutable state
 
 Treat these as **mutable properties**, not identity:

@@ -359,8 +359,11 @@ Rules by field.
 - **Platform** — only as published; `null` if not disclosed. Platform and
   modality (peptide, non-peptide, small molecule, antibody conjugate) are
   auxiliary metadata and are **not** mechanism-family boundaries.
-- **Route** — only as published; do not infer.
-- **Dosage form** — only as published; do not infer.
+- **Route** — only as published; do not infer. May be `"Undisclosed"` under the
+  [Undisclosed route/dosage form](#undisclosed-routedosage-form) allowance
+  below.
+- **Dosage form** — only as published; do not infer. May be `"Undisclosed"`
+  under the same allowance.
 - **Dosing interval** — only as published; `null` if not disclosed.
 - **Indications** — a **disease or clinically defined treatment indication**
   only, as published; may hold multiple values under the row rules in
@@ -418,7 +421,47 @@ General requirements:
 - **Required non-null fields** — if route, dosage form, indication, asset
   identity, or responsible company **cannot be confirmed**, do **not** infer a
   value and do **not** enter the record. Defer it as an unresolved pilot case
-  rather than entering a partial or guessed record.
+  rather than entering a partial or guessed record. Route and dosage form have
+  one narrow exception — see
+  [Undisclosed route/dosage form](#undisclosed-routedosage-form) below.
+
+### Undisclosed route/dosage form
+
+(Contract 1.2, ADR-0060.) A route or dosage form is routinely not yet fixed,
+or not yet published, while an asset is early-stage — a company pipeline page
+may name a candidate and its indication well before it states how the
+candidate will be dosed. Deferring every such candidate discarded real,
+officially-named pipeline assets solely for an administration detail that
+plausibly does not exist yet.
+
+`administration.route` and/or `administration.dosageForm` may each
+independently hold the literal sentinel value `"Undisclosed"` instead of a
+real disclosed value, but **only** while `development.stage` sorts strictly
+before `Phase 3` in
+[`development-stages.json`](../data/registries/development-stages.json) —
+Discovery through every Phase 1 and Phase 2 label, inclusive (`Phase 1/2`,
+`Phase 1b/2a`, `Phase 2a`, `Phase 2b`, and any future registry addition in
+that range). The validator enforces this cutoff directly. Once a row's stage
+reaches Phase 3, Filed, or Approved, both fields require a real disclosed
+value — if one is still unconfirmed at that point, defer the row as normal
+rather than continuing to hold `"Undisclosed"`.
+
+Rules:
+
+- Use `"Undisclosed"` only when the field genuinely is not officially stated
+  anywhere — never as a substitute for actually checking the source classes in
+  [Discovery, Preclinical, and IND-enabling stage](#discovery-preclinical-and-ind-enabling-stage).
+- Store a real value for whichever of the two fields the source *does* state.
+  For example, a sponsor pipeline page naming an asset as an "injectable
+  biologic" without naming the anatomical route supports `dosageForm:
+  "Injection"` with `route: "Undisclosed"` — do not mark both fields
+  `"Undisclosed"` when only one is actually unstated.
+- When the real value is later disclosed (or the row advances to Phase 3),
+  replace `"Undisclosed"` with it under the ordinary update rules in
+  [Research Workflow §4](./research-workflow.md#4-protect-existing-records).
+- `"Undisclosed"` is exact-string only; it is never inferred, defaulted, or
+  applied to a stage-appropriate row without direct confirmation that the
+  source truly omits the field.
 
 `null` and `Unknown` are **not interchangeable**: `null` marks an absent
 nullable field value; `Unknown` is an enumerated stage/status for a confirmed

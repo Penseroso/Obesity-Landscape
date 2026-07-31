@@ -213,5 +213,41 @@
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "fixture-co-delta-undisclosed",
+    "assetId": "delta",
+    "companyId": "fixture-co",
+    "assetName": "Delta",
+    "codeName": "DEL",
+    "technical": {
+      "mechanism": null,
+      "platform": null
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-07",
+      "updatedAt": "2026-07-07",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-delta",
+          "sourceType": "synthetic fixture",
+          "publishedAt": "2026-07",
+          "checkedAt": "2026-07-07"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

@@ -54,6 +54,14 @@ const developmentStageBases = new Set([
   "Operational evidence",
   "Official regulatory-development milestone",
 ]);
+// ADR-0060: the one sentinel value `administration.route`/`administration.dosageForm`
+// may hold instead of a real disclosed value, and only while `development.stage`
+// sorts strictly before "Phase 3" (Discovery through every Phase 1/Phase 2 label,
+// inclusive) - a formulation is routinely still undecided or unpublished that
+// early, but is expected to be disclosed by the time a Phase 3 program is run.
+// Exact-string match only; this is never inferred or defaulted.
+const UNDISCLOSED_ADMINISTRATION = "Undisclosed";
+const UNDISCLOSED_ADMINISTRATION_CUTOFF_STAGE = "Phase 3";
 const developmentStageOperationalStates = new Set([
   "Initiated or active",
   "Active not recruiting",
@@ -781,8 +789,19 @@ function loadRegistries() {
   );
   const scopeClassIndex = validateScopeClassRegistry(scopeClasses, "scope-classes");
 
+  const stageSortRankByLabel = new Map(stages.map((stage) => [stage.label, stage.sortRank]));
+  const undisclosedAdministrationCutoffSortRank = stageSortRankByLabel.get(
+    UNDISCLOSED_ADMINISTRATION_CUTOFF_STAGE,
+  );
+  assert(
+    undisclosedAdministrationCutoffSortRank !== undefined,
+    `development-stages: registry is missing the "${UNDISCLOSED_ADMINISTRATION_CUTOFF_STAGE}" label ADR-0060 anchors the "${UNDISCLOSED_ADMINISTRATION}" administration cutoff to`,
+  );
+
   return {
     stageLabels: new Set(stages.map((stage) => stage.label)),
+    stageSortRankByLabel,
+    undisclosedAdministrationCutoffSortRank,
     regulatoryStateLabels: new Set(regulatoryStates.map((state) => state.label)),
     relationshipRoleLabels: new Set(relationshipRoles.map((role) => role.label)),
     mechanismFamilyById: mechanismFamilyIndex.familyById,
@@ -882,7 +901,7 @@ function validateDevelopment(development, context, registries) {
   }
 }
 
-function validateAdministration(administration, context, required) {
+function validateAdministration(administration, context, required, developmentStage, registries) {
   if (administration === undefined && !required) {
     return;
   }
@@ -895,6 +914,21 @@ function validateAdministration(administration, context, required) {
       isNonEmptyString(administration.dosingInterval),
     `${context}: invalid dosingInterval`,
   );
+
+  // ADR-0060: "Undisclosed" is only valid before Phase 3, while the sponsor may
+  // genuinely not have fixed or published a route/dosage form yet - not a general
+  // escape hatch for any stage that happens to lack a disclosed value.
+  const usesUndisclosed =
+    administration.route === UNDISCLOSED_ADMINISTRATION ||
+    administration.dosageForm === UNDISCLOSED_ADMINISTRATION;
+  if (usesUndisclosed) {
+    const stageSortRank = registries.stageSortRankByLabel.get(developmentStage);
+    assert(
+      stageSortRank !== undefined &&
+        stageSortRank < registries.undisclosedAdministrationCutoffSortRank,
+      `${context}: administration.route/dosageForm may only be "${UNDISCLOSED_ADMINISTRATION}" for a stage before "${UNDISCLOSED_ADMINISTRATION_CUTOFF_STAGE}" (found "${developmentStage}")`,
+    );
+  }
 }
 
 function validateIndications(indications, context) {
@@ -1235,7 +1269,13 @@ function validateProgram(program, context, registries, dataset) {
     `${context}: invalid platform`,
   );
 
-  validateAdministration(program.administration, `${context}: administration`, true);
+  validateAdministration(
+    program.administration,
+    `${context}: administration`,
+    true,
+    program.development?.stage,
+    registries,
+  );
   validateIndications(program.indications, context);
   validateDevelopment(program.development, context, registries);
   validateRegulatoryStates(program.regulatoryStates, context, registries);
@@ -1289,7 +1329,13 @@ function validateRegimen(regimen, context, registries, dataset) {
   validateIndications(regimen.indications, context);
   validateDevelopment(regimen.development, context, registries);
   validateRegulatoryStates(regimen.regulatoryStates, context, registries);
-  validateAdministration(regimen.administration, `${context}: administration`, false);
+  validateAdministration(
+    regimen.administration,
+    `${context}: administration`,
+    false,
+    regimen.development?.stage,
+    registries,
+  );
   validateRelationships(regimen.relationships, context, registries, dataset);
   validateMetadata(regimen.metadata, context);
   validateScopeClass(regimen.scopeClass, "regimen.scopeClass", context, registries);
@@ -3512,6 +3558,7 @@ function validateSyntheticFixtures() {
     ["unregistered-scope-class", /scopeClass "not-a-real-scope-class" is not in scope-classes\.json/],
     ["missing-program-scope-class", /program\.scopeClass is required/],
     ["missing-regimen-scope-class", /regimen\.scopeClass is required/],
+    ["undisclosed-administration-at-phase-3", /may only be "Undisclosed" for a stage before "Phase 3"/],
   ];
 
   for (const [folder, expectedError] of invalidExpectations) {

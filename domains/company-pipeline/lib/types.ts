@@ -77,6 +77,12 @@ export type TechnicalProfile = {
   platform: string | null;
 };
 
+/**
+ * `route`/`dosageForm` may each independently be the literal sentinel
+ * `"Undisclosed"` for a row whose `development.stage` sorts strictly before
+ * `Phase 3` (Contract 1.2, ADR-0060) - validator-enforced, never inferred.
+ * See `source-and-entry-policy.md#undisclosed-routedosage-form`.
+ */
 export type AdministrationProfile = {
   route: string;
   dosageForm: string;

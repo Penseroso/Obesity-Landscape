@@ -6156,6 +6156,145 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "sciwind-biosciences-xw016-oral-undisclosed",
+    "assetId": "xw016",
+    "companyId": "sciwind-biosciences",
+    "assetName": "XW016",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "IND-enabling",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Verdiva Bio Limited",
+        "role": "licensee",
+        "territories": [
+          "Worldwide excluding Greater China and South Korea"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
+          "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2025-01-10",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.sciwindbio.com/portal/index/pipeline/category_id/3.html",
+          "title": "Sciwind Biosciences Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "sciwind-biosciences-xw019-undisclosed-injection",
+    "assetId": "xw019",
+    "companyId": "sciwind-biosciences",
+    "assetName": "XW019",
+    "codeName": null,
+    "technical": {
+      "mechanism": null,
+      "platform": null
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once monthly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.sciwindbio.com/portal/index/pipeline/category_id/3.html",
+          "title": "Sciwind Biosciences Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "sciwind-biosciences-xw020-undisclosed-injection",
+    "assetId": "xw020",
+    "companyId": "sciwind-biosciences",
+    "assetName": "XW020",
+    "codeName": null,
+    "technical": {
+      "mechanism": null,
+      "platform": null
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.sciwindbio.com/portal/index/pipeline/category_id/3.html",
+          "title": "Sciwind Biosciences Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "structure-therapeutics-gsbr-1290-oral-tablet",
     "assetId": "gsbr-1290",
     "companyId": "structure-therapeutics",
