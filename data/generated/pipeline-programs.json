@@ -7996,21 +7996,28 @@
       "stageOperationalState": "Paused"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/dapiglutide-program-paused/",
           "title": "Dapiglutide (program paused) - Pipeline - Zealand Pharma",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06000891",
           "title": "A Trial Assessing Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of ZP7570",
           "sourceType": "trial registry",
           "publishedAt": "2023-08-21",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2025/11/13/3186997/0/en/Zealand-Pharma-Announces-Financial-Results-for-the-First-Nine-Months-of-2025.html",
+          "title": "Zealand Pharma Announces Financial Results for the First Nine Months of 2025 (dapiglutide pause announcement)",
+          "sourceType": "press release",
+          "publishedAt": "2025-11-13",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -8073,21 +8080,28 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide-ct-388/",
           "title": "Petrelintide / CT-388 - Pipeline - Zealand Pharma",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07589686",
-          "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight",
+          "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight (ZYNERGY)",
           "sourceType": "trial registry",
           "publishedAt": "2026-05-15",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
+          "title": "Roche enters into an exclusive collaboration & licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide, including a fixed-dose combination with CT-388",
+          "sourceType": "press release",
+          "publishedAt": "2025-03-12",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -8116,7 +8130,7 @@
       "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Active not recruiting"
+      "stageOperationalState": "Completed"
     },
     "relationships": [
       {
@@ -8137,8 +8151,8 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
@@ -8151,14 +8165,21 @@
           "title": "Once-weekly Petrelintide Versus Placebo for Obesity or Overweight With Co-morbidities",
           "sourceType": "trial registry",
           "publishedAt": "2024-10-29",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06926842",
           "title": "Efficacy and Safety of Petrelintide in Participants With Overweight or Obesity and Type 2 Diabetes (ZUPREME 2)",
           "sourceType": "trial registry",
           "publishedAt": "2025-04-15",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/03/05/3250569/0/en/Zealand-Pharma-announces-positive-Phase-2-results-for-petrelintide-an-amylin-analog-with-potential-to-redefine-the-weight-management-experience-for-people-living-with-overweight-an.html",
+          "title": "Zealand Pharma announces positive Phase 2 results for petrelintide (ZUPREME-1 topline)",
+          "sourceType": "press release",
+          "publishedAt": "2026-03-05",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -8207,14 +8228,21 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
           "title": "Petrelintide - Pipeline - Zealand Pharma",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/04/29/3284133/0/en/zealand-pharma-and-roche-to-advance-petrelintide-an-amylin-analog-to-phase-3-trials-for-chronic-weight-management.html",
+          "title": "Zealand Pharma and Roche to advance petrelintide to Phase 3 trials for chronic weight management",
+          "sourceType": "press release",
+          "publishedAt": "2026-04-29",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -8239,20 +8267,20 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Preclinical",
+      "stage": "Early Phase 1",
       "status": "Active",
-      "stageBasis": "Sponsor-declared current pipeline stage",
-      "stageOperationalState": "Not separately confirmed"
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-08",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.zealandpharma.com/pipeline/zp6590/",
           "title": "ZP6590 - Pipeline - Zealand Pharma",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-07-08"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.zealandpharma.com/media/lbwavfca/zp6590-plus-sema-dio-rat-obesityweek-2022.pdf",
@@ -8260,6 +8288,13 @@
           "sourceType": "scientific presentation",
           "publishedAt": "2022-11-02",
           "checkedAt": "2026-07-08"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07721597",
+          "title": "A Single and Multiple Ascending Dose Trial Assessing Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of ZP6590 in Participants With Normal Weight, Overweight and Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-07-16",
+          "checkedAt": "2026-07-31"
         }
       ]
     },

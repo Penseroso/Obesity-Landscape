@@ -68,6 +68,16 @@
     "sortRank": 34
   },
   {
+    "id": "early-phase-1",
+    "label": "Early Phase 1",
+    "family": "Phase 1",
+    "aliases": [
+      "Phase 0",
+      "Early Phase I"
+    ],
+    "sortRank": 39
+  },
+  {
     "id": "phase-1",
     "label": "Phase 1",
     "family": "Phase 1",
