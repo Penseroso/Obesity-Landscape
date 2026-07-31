@@ -244,7 +244,7 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Phase 1",
+      "stage": "Preclinical",
       "status": "Discontinued",
       "stageBasis": "Sponsor-declared current pipeline stage",
       "stageOperationalState": "Not separately confirmed"
@@ -253,6 +253,13 @@
       "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-31",
       "sources": [
+        {
+          "url": "https://ir.structuretx.com/static-files/a8f217ad-560f-49b0-b83f-eba5c2d45daa",
+          "title": "Structure Therapeutics Inc. Quarterly Report on Form 10-Q for the Quarter Ended March 31, 2025",
+          "sourceType": "SEC filing",
+          "publishedAt": "2025-05-08",
+          "checkedAt": "2026-07-31"
+        },
         {
           "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926020562/gpcr-20251231x10k.htm",
           "title": "Structure Therapeutics Inc. 2025 Annual Report on Form 10-K",
