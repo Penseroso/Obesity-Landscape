@@ -1046,6 +1046,42 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "eli-lilly-and-company-ly3549492-oral-undisclosed",
+    "assetId": "ly3549492",
+    "companyId": "eli-lilly-and-company",
+    "assetName": "Naperiglipron",
+    "codeName": "LY3549492",
+    "technical": {
+      "mechanism": "Non-peptide GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": ["Obesity", "Overweight"],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07232732",
+          "title": "A Phase-1, Parallel-Design, Open-Label, Randomized, Multiple-Dose Escalation Study to Investigate the Safety, Tolerability, and Pharmacokinetics of LY3549492 in Healthy Participants With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "eli-lilly-and-company-ly3537031-subcutaneous-injection",
     "assetId": "ly3537031",
     "companyId": "eli-lilly-and-company",
