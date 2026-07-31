@@ -418,6 +418,20 @@ reason, and the two must not be conflated.
 - Storing a disease as an indication requires official evidence that
   **directly supports treatment or management of that disease as that
   program's own development objective**.
+- **Primary and secondary outcome measures are the most direct check** when a
+  trial registry record is available. A disease that is this program's own
+  treatment objective is evidenced by its own dedicated primary or co-primary
+  outcome measure (for example, a nested subset's own efficacy endpoint — see
+  [Entities and Rows §Study classification](./entities-and-rows.md#study-classification)
+  on platform/master-protocol nesting). A disease that appears only as a
+  secondary or exploratory outcome, or does not appear as an outcome measure
+  at all — surfacing only in the title, conditions field, or eligibility
+  criteria — is population evidence, not indication evidence, regardless of
+  how large or defining that population is for the trial. Whether every
+  enrolled participant shares the disease (a required population) does not by
+  itself change this: the "Population and comorbidity" distinction this
+  section draws applies identically to a subgroup-level and a whole-trial-level
+  population.
 - In a chronic weight-management trial conducted in people with obesity or
   overweight, a comorbidity used as an enrollment condition or a population
   characteristic — for example type 2 diabetes, obstructive sleep apnea,
@@ -430,7 +444,12 @@ is a row-splitting question owned by
 [`entities-and-rows.md`](./entities-and-rows.md#row-splitting).
 `npm run data:probe:indication-scope` reports rows whose shape suggests a
 population or comorbidity was promoted to an indication; it raises review
-candidates and never decides them.
+candidates and never decides them. Its detectors compare **across** rows
+(comorbidity-suffixed IDs, indication supersets, sibling-row shape); they do
+**not** evaluate a single row's own indications against that row's own
+outcome-measure evidence, so a row with no comparable sibling can carry a
+promoted population with no probe signal at all. The outcome-measure check
+above is a per-row, source-level requirement independent of the probe.
 
 ## Status rules
 

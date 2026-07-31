@@ -262,6 +262,14 @@ once every item below holds; while any remain open, the run is **NO-GO**.
     [Data Protocol §Dataset scope, R1](./README.md#dataset-scope). A component
     asset entering scope this run needs its own qualifying Program or the
     core-mechanism path (R2).
+13. For every touched row whose direct evidence source states an official
+    phase sub-stage or combined stage (for example `Phase 1b`, `Phase 2a`,
+    `Phase 1/2`, `Phase 3b`), confirm whether that value already exists as a
+    [`development-stages.json`](../data/registries/development-stages.json)
+    label or alias, or whether it satisfies the
+    [registry promotion](./source-and-entry-policy.md#registry-promotion)
+    criteria and must be added. Do not round the stored `development.stage`
+    to a broader existing label solely to avoid this check.
 
 This audit is in-session only. Do not create a per-run ledger or report file.
 
@@ -288,6 +296,22 @@ git diff --check
 ```
 
 Generated files are outputs and must never be hand-edited.
+
+A `duplicate program identity` or `duplicate regimen identity` error from
+`data:generate` is **not a defect to route around** by adding, widening, or
+inventing a field value (an indication, a `configurationKey`, an id suffix)
+until the collision disappears. It is the tool surfacing that two candidates
+you treated as distinct do not currently have confirmed, evidenced grounds to
+be distinct under [Entities and Rows](./entities-and-rows.md) — [Program
+identity](./entities-and-rows.md#program-identity) for programs, [Regimen
+identity](./entities-and-rows.md#regimen) for regimens. Resolve the
+collision by re-applying the applicable disposition order — a Study of the
+existing Program/Regimen (no new row), a confirmed stable discriminator
+(`configurationKey`, or a route/dosage-form/indication difference with direct
+evidence), or `DEFERRED_SCHEMA_CASE` when official evidence establishes a
+distinct configuration the current contract cannot represent — never by
+patching a field's stored value solely to make the validator pass.
+
 `data:validate:clinical-evidence`, `data:validate:clinical-evidence:generated`,
 and `data:validate:clinical-evidence:synthetic` are required whenever this
 run's Program/Study disposition (section 2) merges or removes a row that a
@@ -337,6 +361,10 @@ Report, without a rigid template:
   DEFERRED — with reasons, and the count of undispositioned candidates
   remaining (must be zero to report GO);
 - registry additions;
+- every `cited-registry-record-anchored-to-other-row` signal
+  (`npm run data:probe:registry-citations`, ADR-0054/ADR-0055) touching this
+  run's rows, and the sponsor-level-evidence conclusion that resolved each one
+  — see [Research Workflow §2 CE consistency check](#2-discover-and-classify);
 - indication-scope review candidates reported for this run's rows, and how each
   was resolved;
 - the `scopeClass` assigned to every row this run created or touched, grouped
