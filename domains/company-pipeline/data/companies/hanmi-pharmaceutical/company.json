@@ -1,0 +1,13 @@
+{
+  "id": "hanmi-pharmaceutical",
+  "name": "Hanmi Pharmaceutical",
+  "headquartersCountry": "South Korea",
+  "officialWebsite": {
+    "url": "https://www.hanmipharm.com/",
+    "checkedAt": "2026-07-31"
+  },
+  "officialPipeline": {
+    "url": "https://www.hanmipharm.com/science/pipeline/innovative-rnd-pipeline.hm",
+    "checkedAt": "2026-07-31"
+  }
+}

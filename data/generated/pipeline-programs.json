@@ -3750,6 +3750,312 @@
     "scopeClass": "metabolic-adjacent"
   },
   {
+    "id": "hanmi-pharmaceutical-efocipegtrutide-subcutaneous-injection",
+    "assetId": "efocipegtrutide",
+    "companyId": "hanmi-pharmaceutical",
+    "assetName": "Efocipegtrutide",
+    "codeName": "HM15211",
+    "technical": {
+      "mechanism": "Long-acting glucagon, gastric inhibitory peptide (GIP) and glucagon-like peptide-1 (GLP-1) triple full agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Metabolic dysfunction-associated steatohepatitis"
+    ],
+    "development": {
+      "stage": "Phase 2b",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.hanmipharm.com/science/pipeline/focused/efocipegtrutide.hm",
+          "title": "Efocipegtrutide | Pipeline | Hanmi Pharmaceutical",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT04505436",
+          "title": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled, Parallel Group Study to Evaluate Efficacy, Safety and Tolerability of HM15211(Efocipegtrutide) Treatment for 12 Months in Subjects With Biopsy Confirmed NASH (HM-TRIA-201)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "hanmi-pharmaceutical-efpeglenatide-subcutaneous-injection",
+    "assetId": "efpeglenatide",
+    "companyId": "hanmi-pharmaceutical",
+    "assetName": "Efpeglenatide",
+    "codeName": "HM11260C",
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Filed",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Submitted, pending clearance"
+    },
+    "regulatoryStates": [
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "South Korea",
+        "authority": "MFDS",
+        "date": "2025-12-17"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://hanmi.co.kr/about/news-media/press/detail-3342.hm",
+          "title": "한미약품, 에페글레나타이드 국내 허가 신청 완료...밸류업 여정 본격화",
+          "sourceType": "press release",
+          "publishedAt": "2025-12-17",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://hanmi.co.kr/about/news-media/press/detail-3242.hm",
+          "title": "한미 국민 비만약, 글로벌 혁신제품 신속심사(GIFT) 대상 지정",
+          "sourceType": "press release",
+          "publishedAt": "2025-12-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.koreabiomed.com/news/articleView.html?idxno=25786",
+          "title": "Hanmi Pharm advances launch of obesity drug efpeglenatide to late 2026",
+          "sourceType": "news article",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "hanmi-pharmaceutical-hm15275-subcutaneous-injection",
+    "assetId": "hm15275",
+    "companyId": "hanmi-pharmaceutical",
+    "assetName": "HM15275",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Long-acting glucagon-like peptide (GLP-1), gastric inhibitory peptide (GIP) and glucagon triple agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://hanmipharm.com/science/pipeline/focused/hm15275.hm",
+          "title": "HM15275 | Pipeline | Hanmi Pharmaceutical",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07205900",
+          "title": "A Phase 2 Study to Evaluate HM15275 in Obese or Overweight Subjects Without Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06481098",
+          "title": "A Phase 1 Study to Assess HM15275 in Healthy and Obese Subjects",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "hanmi-pharmaceutical-hm15275-subcutaneous-injection-type-2-diabetes",
+    "assetId": "hm15275",
+    "companyId": "hanmi-pharmaceutical",
+    "assetName": "HM15275",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Long-acting glucagon-like peptide (GLP-1), gastric inhibitory peptide (GIP) and glucagon triple agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07527650",
+          "title": "A Phase 2 Study to Evaluate HM15275 for 36 Weeks in Subjects With Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://hanmipharm.com/science/pipeline/focused/hm15275.hm",
+          "title": "HM15275 | Pipeline | Hanmi Pharmaceutical",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "hanmi-pharmaceutical-hm17321-subcutaneous-injection",
+    "assetId": "hm17321",
+    "companyId": "hanmi-pharmaceutical",
+    "assetName": "HM17321",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "LA-UCN2"
+      }
+    ],
+    "technical": {
+      "mechanism": "Corticotropin-releasing factor 2 (CRF2) receptor selective urocortin-2 (UCN2) analog with a long-acting technology",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.hanmipharm.com/science/pipeline/focused/hm17321.hm",
+          "title": "HM17321 | Pipeline | Hanmi Pharmaceutical",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07219589",
+          "title": "A Randomized, Double-Blind, Placebo-Controlled, Single and Multiple Ascending Dose Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of HM17321 in Healthy and Obese Participants",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.hanmipharm.com/about/investor-relations/press/detail-3082.hm",
+          "title": "Hanmi Highlights Next-Generation Obesity Pipelines at ObesityWeek 2025",
+          "sourceType": "press release",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "hanmi-pharmaceutical-laps-glucagon-combo-subcutaneous-injection",
+    "assetId": "laps-glucagon-combo",
+    "companyId": "hanmi-pharmaceutical",
+    "assetType": "co-formulation",
+    "assetName": "LAPS Glucagon Combo",
+    "codeName": null,
+    "components": [
+      {
+        "assetId": "efpeglenatide",
+        "role": "GLP-1 receptor agonist"
+      },
+      {
+        "assetName": "Efpegerglucagon",
+        "codeName": "HM15136",
+        "companyId": "hanmi-pharmaceutical",
+        "role": "Glucagon receptor agonist"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist plus glucagon receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.hanmipharm.com/science/pipeline/focused/lapsglucagon-combo.hm",
+          "title": "LAPS Glucagon Combo | Pipeline | Hanmi Pharmaceutical",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "novo-nordisk-acsl5i-oral-undisclosed",
     "assetId": "nn6989",
     "companyId": "novo-nordisk",

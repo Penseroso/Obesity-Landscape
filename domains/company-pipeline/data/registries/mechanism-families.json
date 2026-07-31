@@ -67,7 +67,9 @@
     "mechanisms": [
       "GIP, GLP-1, and glucagon receptor agonist",
       "GLP-1/GIP/glucagon receptor triple agonist",
-      "GLP-1R/GIPR/GCGR triple agonist"
+      "GLP-1R/GIPR/GCGR triple agonist",
+      "Long-acting glucagon-like peptide (GLP-1), gastric inhibitory peptide (GIP) and glucagon triple agonist",
+      "Long-acting glucagon, gastric inhibitory peptide (GIP) and glucagon-like peptide-1 (GLP-1) triple full agonist"
     ]
   },
   {
@@ -198,6 +200,16 @@
     "mechanisms": ["Acyl co-enzyme A synthetase 5 inhibitor"]
   },
   {
+    "id": "crf2-ucn2-agonist",
+    "label": "CRF2 receptor agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "CRF2R", "action": "agonist" }],
+    "sortRank": 135,
+    "mechanisms": [
+      "Corticotropin-releasing factor 2 (CRF2) receptor selective urocortin-2 (UCN2) analog with a long-acting technology"
+    ]
+  },
+  {
     "id": "amylin-plus-glp1-combination",
     "label": "Amylin receptor agonist plus GLP-1 receptor agonist",
     "composition": "multi-component",
@@ -274,6 +286,17 @@
     ],
     "sortRank": 240,
     "mechanisms": ["GLP-1R agonist plus GIPR agonist"]
+  },
+  {
+    "id": "glp1-plus-glucagon-combination",
+    "label": "GLP-1 receptor agonist plus glucagon receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" }
+    ],
+    "sortRank": 245,
+    "mechanisms": ["GLP-1 receptor agonist plus glucagon receptor agonist"]
   },
   {
     "id": "glp1-plus-basal-insulin-combination",
