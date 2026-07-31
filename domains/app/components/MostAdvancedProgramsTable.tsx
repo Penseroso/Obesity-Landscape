@@ -33,7 +33,6 @@ export function MostAdvancedProgramsTable({
               <th className="px-4 py-2 font-semibold">Asset</th>
               <th className="px-4 py-2 font-semibold">Stage</th>
               <th className="px-4 py-2 font-semibold">Route</th>
-              <th className="px-4 py-2 font-semibold">Status</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
@@ -69,15 +68,12 @@ export function MostAdvancedProgramsTable({
                 <td className="whitespace-nowrap px-4 py-2 text-muted-foreground">
                   {formatNullableValue(program.administration.route)}
                 </td>
-                <td className="whitespace-nowrap px-4 py-2 text-muted-foreground">
-                  {program.development.status}
-                </td>
               </tr>
             ))}
             {programs.length === 0 ? (
               <tr>
                 <td
-                  colSpan={5}
+                  colSpan={4}
                   className="px-4 py-10 text-center text-sm text-muted-foreground"
                 >
                   No programs to display.

@@ -63,7 +63,7 @@ export const programTableColumns: ProgramTableColumn[] = [
   {
     id: "scopeClass",
     labels: { ko: "Scope Class", en: "Scope Class" },
-    defaultVisible: true,
+    defaultVisible: false,
     defaultWidth: 165,
     minWidth: 130,
     maxWidth: 280,

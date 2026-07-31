@@ -105,10 +105,10 @@ JSON, and only these canonical selectors import that loader.
   a generic "co-developed" label) so a licensee/licensor pairing is not
   visually conflated with genuine co-development.
 - **`scopeClass`** (Contract 1.2, ADR-0053) is a filter dimension, a Program
-  Register column (default-visible), and a Program Detail / company-page
-  field, on equal footing with company/indication/route/stage/status. It is
-  never a badge or color-coded status pill — it renders as plain text via its
-  registry `label`, the same treatment as indications. The default filter is
+  Register column (configurable, hidden by default), and a Program Detail /
+  company-page field. It is never a badge or color-coded status pill — it
+  renders as plain text via its registry `label`, the same treatment as
+  indications. The default filter is
   **All**: hiding non-qualifying classes (`obesity-comorbidity`,
   `metabolic-adjacent`, `non-metabolic`) by default would silently drop 43 of
   121 current program rows. The Overview metadata strip discloses an
