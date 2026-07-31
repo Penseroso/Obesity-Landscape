@@ -3375,6 +3375,65 @@
     "scopeClass": "metabolic-adjacent"
   },
   {
+    "id": "novo-nordisk-acsl5i-oral-undisclosed",
+    "assetId": "nn6989",
+    "companyId": "novo-nordisk",
+    "assetName": "ACSL5i",
+    "codeName": "NN6989",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "NNC6989-0001"
+      }
+    ],
+    "technical": {
+      "mechanism": "Acyl co-enzyme A synthetase 5 inhibitor",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.novonordisk.com/science-and-technology/r-d-pipeline.html",
+          "title": "Research and development pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/pdfs/financial-results/2026/Q1-2026-investor-presentation.pdf",
+          "title": "Novo Nordisk Q1 2026 investor presentation",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2026-05-06",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07437079",
+          "title": "A Study to See How Safe a New Medicine (NNC6989-0001) is in Healthy People Living With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-02-27",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "novo-nordisk-amycretin-oral-tablets",
     "assetId": "amycretin",
     "companyId": "novo-nordisk",
@@ -3406,7 +3465,7 @@
       "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -3458,14 +3517,14 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06542874",
           "title": "A study of oral and subcutaneous zenagamtide in adults with type 2 diabetes",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -3503,7 +3562,7 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -3517,7 +3576,7 @@
           "url": "https://clinicaltrials.gov/study/NCT07503210",
           "title": "A Study of Zenagamtide (Amycretin) for the Maintenance of Weight Loss in People With Obesity (AMAZE 12)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-10"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/novo-nordisks-investigational-zenagamtide-shows-significant-a1c-reductions-with-up-to-14-6-weight-loss-in-adults-with-type-2-diabetespresented-at-ada-2026--302793124.html",
@@ -3529,6 +3588,52 @@
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "novo-nordisk-amycretin-subcutaneous-injection-heart-failure-obesity",
+    "assetId": "amycretin",
+    "companyId": "novo-nordisk",
+    "assetName": "Zenagamtide",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "Amycretin"
+      }
+    ],
+    "technical": {
+      "mechanism": "Unimolecular GLP-1 and amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Heart failure with preserved or mildly reduced ejection fraction",
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07567001",
+          "title": "A Research Study to Look at How Well NNC0487-0111 Works Compared to Placebo in People With Heart Failure and Obesity (HF-POLARIS)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "novo-nordisk-amycretin-subcutaneous-injection-type-2-diabetes",
@@ -3561,7 +3666,7 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -3607,14 +3712,14 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06719011",
           "title": "A first human dose study of NNC0174-1213 in people with overweight or obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -3652,14 +3757,14 @@
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06577766",
           "title": "A first human dose study of NNC0638-0355 in people with overweight or obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -3691,7 +3796,7 @@
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -3706,7 +3811,7 @@
           "title": "Weight Loss in People Living With Overweight or Obesity Following Treatment With Cagrilintide (RENEW 1)",
           "sourceType": "trial registry",
           "publishedAt": "2026-01-06",
-          "checkedAt": "2026-07-10"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -3755,7 +3860,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -3809,32 +3914,32 @@
       "stage": "Phase 3",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Active not recruiting"
+      "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06323174",
           "title": "A Research Study to See How Much CagriSema Lowers Blood Sugar and Body Weight Compared to Placebo in People With Type 2 Diabetes Treated With Diet and Exercise (REIMAGINE 1)",
           "sourceType": "trial registry",
           "publishedAt": "2024-03-12",
-          "checkedAt": "2026-07-10"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06323161",
           "title": "A Research Study to See How Much CagriSema Lowers Blood Sugar and Body Weight Compared to Placebo in People With Type 2 Diabetes Treated With Once-daily Basal Insulin With or Without Metformin (REIMAGINE 3)",
           "sourceType": "trial registry",
           "publishedAt": "2024-03-12",
-          "checkedAt": "2026-07-10"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06534411",
           "title": "A Research Study to See How Much CagriSema Lowers Blood Sugar and Body Weight Compared to Tirzepatide in People With Type 2 Diabetes Treated With Metformin, SGLT2 Inhibitor or Both (REIMAGINE 5)",
           "sourceType": "trial registry",
           "publishedAt": "2024-08-02",
-          "checkedAt": "2026-07-10"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -3872,14 +3977,14 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07566390",
           "title": "A first human dose study of NNC0113-5840 in adults with overweight or obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -3947,7 +4052,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -3983,7 +4088,7 @@
           "title": "Innovation and therapeutic focus - Annual Report 2025",
           "sourceType": "company annual report",
           "publishedAt": "2026-02-04",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/kyinsu",
@@ -4025,6 +4130,62 @@
     "scopeClass": "metabolic-adjacent"
   },
   {
+    "id": "novo-nordisk-inv-347-oral-undisclosed",
+    "assetId": "inv-347",
+    "companyId": "novo-nordisk",
+    "assetName": "INV-347",
+    "codeName": "NN9441",
+    "technical": {
+      "mechanism": "CB-1 receptor inverse agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Inversago Pharma",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/pdfs/financial-results/2025/CA250806-Q2-Earnings.pdf"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://annualreport.novonordisk.com/2024/strategic-aspirations/innovation-and-therapeutic-focus.html",
+          "title": "Innovation and therapeutic focus - Annual Report 2024",
+          "sourceType": "company annual report",
+          "publishedAt": "2025-02-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/pdfs/financial-results/2025/CA250806-Q2-Earnings.pdf",
+          "title": "Novo Nordisk financial report for the period 1 January 2025 to 30 June 2025",
+          "sourceType": "company financial report",
+          "publishedAt": "2025-08-06",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "novo-nordisk-liraglutide-subcutaneous-injection",
     "assetId": "liraglutide",
     "companyId": "novo-nordisk",
@@ -4053,9 +4214,17 @@
       "stage": "Approved",
       "status": "Active"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2014-12-23"
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2014/206321Orig1s000TOC.cfm",
@@ -4081,6 +4250,287 @@
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "novo-nordisk-monlunabant-oral-tablets",
+    "assetId": "monlunabant",
+    "companyId": "novo-nordisk",
+    "assetName": "Monlunabant",
+    "codeName": "NN9440",
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "INV-202"
+      }
+    ],
+    "technical": {
+      "mechanism": "CB-1 receptor inverse agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Metabolic syndrome"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Inversago Pharma",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=166304"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.novonordisk.com/science-and-technology/r-d-pipeline.html",
+          "title": "Research and development pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/innovation-and-therapeutic-focus.html",
+          "title": "Innovation and therapeutic focus - Annual Report 2025",
+          "sourceType": "company annual report",
+          "publishedAt": "2026-02-04",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05891834",
+          "title": "A Study of INV-202 in Participants With Obesity and Metabolic Syndrome",
+          "sourceType": "trial registry",
+          "publishedAt": "2023-06-07",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=166304",
+          "title": "Novo Nordisk to acquire Inversago Pharma to develop new therapies for people living with obesity, diabetes and other serious metabolic diseases",
+          "sourceType": "company press release",
+          "publishedAt": "2023-08-10",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "novo-nordisk-monlunabant-oral-tablets-diabetic-kidney-disease",
+    "assetId": "monlunabant",
+    "companyId": "novo-nordisk",
+    "assetName": "Monlunabant",
+    "codeName": "NN9440",
+    "aliases": [
+      {
+        "type": "former-name",
+        "value": "INV-202"
+      }
+    ],
+    "technical": {
+      "mechanism": "CB-1 receptor inverse agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Diabetic kidney disease"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Inversago Pharma",
+        "role": "originator",
+        "sourceUrls": [
+          "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=166304"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.novonordisk.com/science-and-technology/r-d-pipeline.html",
+          "title": "Research and development pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://annualreport.novonordisk.com/2025/strategic-aspirations/innovation-and-therapeutic-focus.html",
+          "title": "Innovation and therapeutic focus - Annual Report 2025",
+          "sourceType": "company annual report",
+          "publishedAt": "2026-02-04",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05514548",
+          "title": "A Study of INV-202 in Participants With Diabetic Kidney Disease",
+          "sourceType": "trial registry",
+          "publishedAt": "2022-08-24",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=166304",
+          "title": "Novo Nordisk to acquire Inversago Pharma to develop new therapies for people living with obesity, diabetes and other serious metabolic diseases",
+          "sourceType": "company press release",
+          "publishedAt": "2023-08-10",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "novo-nordisk-nnc0519-0130-subcutaneous-injection",
+    "assetId": "nnc0519-0130",
+    "companyId": "novo-nordisk",
+    "assetName": "NNC0519-0130",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GIP/GLP-1 co-agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.novonordisk.com/content/dam/nncorp/global/en/investors/pdfs/financial-results/2025/CA250806-Q2-Earnings.pdf",
+          "title": "Novo Nordisk financial report for the period 1 January 2025 to 30 June 2025",
+          "sourceType": "company financial report",
+          "publishedAt": "2025-08-06",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06326060",
+          "title": "A Study of NNC0519-0130 in People Living With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-03-22",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "novo-nordisk-nnc0519-0130-subcutaneous-injection-chronic-kidney-disease",
+    "assetId": "nnc0519-0130",
+    "companyId": "novo-nordisk",
+    "assetName": "NNC0519-0130",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GIP/GLP-1 co-agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Chronic kidney disease"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06717698",
+          "title": "A Study of NNC0519-0130 in Participants With Chronic Kidney Disease",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-12-05",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "novo-nordisk-nnc0519-0130-subcutaneous-injection-type-2-diabetes",
+    "assetId": "nnc0519-0130",
+    "companyId": "novo-nordisk",
+    "assetName": "NNC0519-0130",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GIP/GLP-1 co-agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/353278/000035327826000006/caq42025.htm",
+          "title": "Novo Nordisk financial report for 2025",
+          "sourceType": "regulatory filing",
+          "publishedAt": "2026-02-04",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06567041",
+          "title": "A Research Study of NNC0519-0130 in People Living With Excess Body Weight With or Without Type 2 Diabetes",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-08-22",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "novo-nordisk-semaglutide-oral-tablets",
@@ -4119,9 +4569,17 @@
       "stage": "Approved",
       "status": "Active"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2025-12-22"
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/fda-approves-novo-nordisks-wegovy-pill-the-first-and-only-oral-glp-1-for-weight-loss-in-adults-302648344.html",
@@ -4142,7 +4600,7 @@
           "title": "Wegovy tablets FDA approval letter",
           "sourceType": "regulatory approval letter",
           "publishedAt": "2025-12-22",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/213051Orig1s000TOC.cfm",
@@ -4198,9 +4656,17 @@
       "stage": "Approved",
       "status": "Active"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2019-09-20"
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/213051Orig1s000TOC.cfm",
@@ -4250,9 +4716,17 @@
       "stage": "Approved",
       "status": "Active"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2021-06-04"
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/215256Orig1s000TOC.cfm",
@@ -4329,16 +4803,24 @@
       "stage": "Approved",
       "status": "Active"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2025-08-15"
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-serious-liver-disease-known-mash",
           "title": "FDA approves treatment for serious liver disease known as MASH",
           "sourceType": "regulatory announcement",
           "publishedAt": "2025-08-15",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -4380,9 +4862,17 @@
       "stage": "Approved",
       "status": "Active"
     },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2017-12-05"
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2017/209637Orig1s000TOC.cfm",
@@ -4424,17 +4914,17 @@
       "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07184632",
           "title": "A study of NNC0662-0419 in adults with overweight or obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -4471,14 +4961,14 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07415954",
           "title": "A study of NNC0662-0419 in adults with type 2 diabetes",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -4568,7 +5058,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-10",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -4576,7 +5066,7 @@
           "title": "A Research Study on How Well Different Doses of the Medicine UBT251 Help People Living With Overweight or Obesity",
           "sourceType": "trial registry",
           "publishedAt": "2026-01-07",
-          "checkedAt": "2026-07-10"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.barrons.com/articles/novo-nordisk-stock-price-weight-loss-china-deal-2c2bfcf6",
@@ -4597,14 +5087,14 @@
           "title": "Novo Nordisk enters exclusive license agreement for UBT251",
           "sourceType": "company press release",
           "publishedAt": "2025-03-24",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916503",
           "title": "UBT251 Phase 2 obesity headline results",
           "sourceType": "company press release",
           "publishedAt": "2026-02-24",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -4635,7 +5125,7 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -4643,7 +5133,7 @@
           "title": "UBT251 phase 2 trial in people with type 2 diabetes",
           "sourceType": "company press release",
           "publishedAt": "2026-03-25",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },

@@ -25,7 +25,8 @@
     "mechanisms": [
       "GIP and GLP-1 receptor agonist",
       "GLP-1R/GIPR dual agonist",
-      "GIP/GLP-1 receptor dual agonist"
+      "GIP/GLP-1 receptor dual agonist",
+      "GIP/GLP-1 co-agonist"
     ]
   },
   {
@@ -158,6 +159,25 @@
     ],
     "sortRank": 110,
     "mechanisms": ["GLP-1/GIP/amylin receptor agonist"]
+  },
+  {
+    "id": "cb1-inverse-agonist",
+    "label": "CB1 receptor inverse agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "CB1R", "action": "inverse agonist" }],
+    "sortRank": 120,
+    "mechanisms": [
+      "CB-1 receptor inverse agonist",
+      "CB1R inverse agonist"
+    ]
+  },
+  {
+    "id": "acsl5-inhibitor",
+    "label": "ACSL5 inhibitor",
+    "composition": "single-molecule",
+    "targets": [{ "target": "ACSL5", "action": "inhibitor" }],
+    "sortRank": 130,
+    "mechanisms": ["Acyl co-enzyme A synthetase 5 inhibitor"]
   },
   {
     "id": "amylin-plus-glp1-combination",
