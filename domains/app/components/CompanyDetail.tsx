@@ -30,6 +30,13 @@ function clinicalPillLabel(hasClinicalEvidence: boolean) {
   return hasClinicalEvidence ? "Clinical evidence" : "Studies recorded";
 }
 
+const relationshipRoleBadgeClassName =
+  "inline-flex items-center whitespace-nowrap rounded-sm border border-dashed border-border bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground";
+
+function capitalize(text: string): string {
+  return text.length > 0 ? text[0].toUpperCase() + text.slice(1) : text;
+}
+
 export function CompanyDetail({ view }: { view: CompanyDetailView }) {
   const stageCounts = new Map<string, number>(
     stageBuckets.map((bucket) => [bucket.id, 0]),
@@ -232,6 +239,73 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
           </ul>
         </section>
       )}
+
+      {view.partneredAssets.length > 0 ? (
+        <section
+          aria-labelledby="company-partnered-assets-heading"
+          className="space-y-3"
+        >
+          <h2
+            id="company-partnered-assets-heading"
+            className="text-xl font-semibold tracking-tight text-foreground"
+          >
+            Co-developed &amp; partnered assets ({view.partneredAssets.length})
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Principally developed by another company, with {view.company.name}
+            {" "}
+            named on the record.
+          </p>
+          <ul className="divide-y divide-border overflow-hidden rounded-md border border-border bg-card shadow-soft">
+            {view.partneredAssets.map((asset) => {
+              const leadVariant = asset.programVariants[0];
+              const mostAdvancedStage = leadVariant?.development.stage;
+              const roles = Array.from(
+                new Set(
+                  asset.programVariants.flatMap(
+                    (variant) => variant.relationshipRoles,
+                  ),
+                ),
+              );
+              const ownerHref = `/companies/${encodeURIComponent(
+                asset.ownerCompanyId,
+              )}`;
+              return (
+                <li
+                  key={`${asset.ownerCompanyId}|${asset.assetId}`}
+                  className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div>
+                    <span className="text-base font-semibold text-card-foreground">
+                      {asset.assetName}
+                    </span>
+                    <span className="block text-xs text-muted-foreground">
+                      Developed by{" "}
+                      <Link
+                        href={ownerHref}
+                        className="rounded-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      >
+                        {asset.ownerCompanyName}
+                      </Link>
+                      {asset.codeName ? ` · Code ${asset.codeName}` : null}
+                    </span>
+                  </div>
+                  <span className="flex flex-wrap items-center gap-3">
+                    {mostAdvancedStage ? (
+                      <StageBadge stage={mostAdvancedStage} />
+                    ) : null}
+                    {roles.map((role) => (
+                      <span key={role} className={relationshipRoleBadgeClassName}>
+                        {capitalize(role)}
+                      </span>
+                    ))}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ) : null}
     </div>
   );
 }

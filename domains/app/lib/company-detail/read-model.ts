@@ -4,7 +4,9 @@ import {
 } from "@/domains/app/lib/clinical-evidence/selectors";
 import {
   getCompanyPortfolio,
+  getPartneredAssets,
   listCompanyIds,
+  type CompanyPartneredAsset,
   type CompanyPortfolioAsset,
 } from "@/domains/company-pipeline/lib/portfolio";
 import type { Company } from "@/domains/company-pipeline/lib/types";
@@ -29,6 +31,9 @@ export type CompanyDetailView = {
     associatedClinicalStudyCount: number;
   };
   assets: CompanyDetailAssetView[];
+  /** Assets another company principally develops where this company appears
+   * in that row's `relationships` (co-development, licensing, origination). */
+  partneredAssets: CompanyPartneredAsset[];
 };
 
 export function listCompanyDetailIds(): string[] {
@@ -83,5 +88,6 @@ export function getCompanyDetail(
       associatedClinicalStudyCount: associatedStudyIds.size,
     },
     assets,
+    partneredAssets: getPartneredAssets(companyId),
   };
 }

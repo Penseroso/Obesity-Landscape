@@ -87,6 +87,23 @@ JSON, and only these canonical selectors import that loader.
   no public result exists.
 - Clinical stage and regulatory milestone presentation must preserve the
   distinctions supplied by the Company/Pipeline contract.
+- **Company Detail cross-lists partnered assets.** `getPartneredAssets`
+  (`domains/company-pipeline/lib/portfolio.ts`) surfaces, on a company's own
+  page, assets **another** company principally develops (`companyId`) whose
+  row `relationships` names this company (for example Roche on Zealand
+  Pharma's petrelintide, or Zealand Pharma on Boehringer Ingelheim's
+  survodutide). This is a read-only display join over the existing
+  `relationships` field — it does not change `companyId`, Program identity,
+  or the ADR-0018/0019 single-principal-company rule. Matching normalizes
+  `externalCompanyName` against `Company.name` (case, punctuation, common
+  legal-entity suffixes) rather than requiring an exact string; a
+  relationship naming a company this dataset has no record for surfaces
+  nowhere and is not an error. A relationship whose `role` describes the
+  row's own company (a self-declared role such as a licensee recording
+  itself) is excluded from the partnering company's own list. Each
+  partnered-asset row shows the actual stored `relationship.role` text (never
+  a generic "co-developed" label) so a licensee/licensor pairing is not
+  visually conflated with genuine co-development.
 - **`scopeClass`** (Contract 1.2, ADR-0053) is a filter dimension, a Program
   Register column (default-visible), and a Program Detail / company-page
   field, on equal footing with company/indication/route/stage/status. It is
