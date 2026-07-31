@@ -98,7 +98,10 @@
       "url": "https://www.qlbiopharm.com/en",
       "checkedAt": "2026-07-30"
     },
-    "officialPipeline": null
+    "officialPipeline": {
+      "url": "https://www.qlbiopharm.com/en/pipelines.html",
+      "checkedAt": "2026-07-31"
+    }
   },
   {
     "id": "roche",

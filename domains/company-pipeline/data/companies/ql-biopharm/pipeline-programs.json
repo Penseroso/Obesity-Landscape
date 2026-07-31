@@ -25,8 +25,8 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/ql-biopharm-reports-phase-2-results-of-a-monthly-dose-study-evaluating-zovaglutide-a-novel-extended-half-life-glp-1-receptor-agonist-at-easd-2025-302558945.html",
@@ -39,13 +39,13 @@
           "url": "https://clinicaltrials.gov/study/NCT07230119",
           "title": "A Study of Zovaglutide in Subjects With Overweight or Obesity (HORIZON-1)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07020884",
           "title": "A Study of ZT002 Injection With Subjects With Overweight or Obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.linkedin.com/posts/qlbiopharm_qlbiopharm-horizon1-zovaglutide-activity-7420679673493225473-4sIj",
@@ -53,6 +53,13 @@
           "sourceType": "company social media announcement",
           "publishedAt": "2026-01-19",
           "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://www.qlbiopharm.com/en/news-info/393.html",
+          "title": "QL Biopharm Reports on Investigator's Meeting of HORIZON-1, a Phase 3 Clinical Study of Zovaglutide, a Novel Once-Monthly Peptide GLP-1 RA",
+          "sourceType": "company press release",
+          "publishedAt": "2026-03-26",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -83,14 +90,14 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07065032",
           "title": "A Study of ZT002 Injection in Adult Chinese Subjects With Type 2 Diabetes Mellitus (T2DM)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -112,7 +119,8 @@
       "dosingInterval": null
     },
     "indications": [
-      "Metabolic dysfunction-associated steatohepatitis"
+      "Metabolic dysfunction-associated steatohepatitis",
+      "Severe hypertriglyceridemia"
     ],
     "development": {
       "stage": "Phase 1",
@@ -129,8 +137,8 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.qlbiopharm.com/en/news-info/368.html",
@@ -143,7 +151,14 @@
           "url": "https://clinicaltrials.gov/study/NCT07184502",
           "title": "A Phase 1, Randomized, Double-blind, Placebo-controlled, Single and Multiple Ascending Dose Trial of ZT003 Injection",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www1.hkexnews.hk/app/sehk/2026/108464/documents/sehk26042404194_c.pdf",
+          "title": "Beijing QL Biopharmaceutical Co., Ltd. — Application Proof (HKEX listing document)",
+          "sourceType": "IPO prospectus filing",
+          "publishedAt": "2026-04-24",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -174,7 +189,7 @@
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -188,16 +203,122 @@
           "url": "https://clinicaltrials.gov/study/NCT07230132",
           "title": "Efficacy and Safety of ZT006 in Overweight and Obese Participants",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07307638",
           "title": "Dose-escalation and Food Effect Study of ZT006 in Healthy, Overweight and Obese Participants",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "ql-biopharm-zt006-oral-tablets-type-2-diabetes",
+    "assetId": "zt006",
+    "companyId": "ql-biopharm",
+    "assetName": "ZT006",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "IND cleared",
+      "status": "Planned",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Cleared, not yet initiated"
+    },
+    "regulatoryStates": [
+      {
+        "state": "IND cleared",
+        "jurisdiction": "China",
+        "authority": "NMPA",
+        "date": "2024-11"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://bydrug.pharmcube.com/news/detail/2d24ef3e2558b305f8ec805a7b38f164",
+          "title": "治疗阿尔茨海默病-质肽生物创新型口服GLP-1多肽第三适应症获批临床",
+          "sourceType": "industry news report",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "http://finance.sina.com.cn/stock/med/2024-08-27/doc-incmachi7363183.shtml",
+          "title": "新一代口服GLP-1新药申报临床！质肽生物研发",
+          "sourceType": "industry news report",
+          "publishedAt": "2024-08-27",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "ql-biopharm-zt006-oral-tablets-alzheimers-disease",
+    "assetId": "zt006",
+    "companyId": "ql-biopharm",
+    "assetName": "ZT006",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Alzheimer's disease"
+    ],
+    "development": {
+      "stage": "IND cleared",
+      "status": "Planned",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Cleared, not yet initiated"
+    },
+    "regulatoryStates": [
+      {
+        "state": "IND cleared",
+        "jurisdiction": "China",
+        "authority": "NMPA",
+        "date": "2025-03-31"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://bydrug.pharmcube.com/news/detail/2d24ef3e2558b305f8ec805a7b38f164",
+          "title": "治疗阿尔茨海默病-质肽生物创新型口服GLP-1多肽第三适应症获批临床",
+          "sourceType": "industry news report",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://synapse.zhihuiya.com/blog/%E8%B4%A8%E8%82%BD%E7%94%9F%E7%89%A9%E5%88%9B%E6%96%B0%E5%8F%A3%E6%9C%8Dglp-1%E5%A4%9A%E8%82%BD%E8%8E%B7%E6%89%B9%E4%B8%B4%E5%BA%8A%EF%BC%8C%E5%8A%A9%E5%8A%9B%E9%98%BF%E5%B0%94%E8%8C%A8%E6%B5%B7%E9%BB%98%E7%97%85%E6%B2%BB%E7%96%97%E6%96%B0%E7%AA%81%E7%A0%B4",
+          "title": "质肽生物创新口服GLP-1多肽获批临床，助力阿尔茨海默病治疗新突破",
+          "sourceType": "industry news report",
+          "publishedAt": "2025-03-31",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "non-metabolic"
   }
 ]
