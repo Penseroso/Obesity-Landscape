@@ -590,5 +590,51 @@
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "verdiva-bio-ecnoglutide-vrb-103-regimen",
+    "companyId": "verdiva-bio",
+    "name": "Ecnoglutide (VRB-101) plus VRB-103",
+    "mechanismFamilyId": "amylin-plus-glp1-combination",
+    "components": [
+      {
+        "assetId": "ecnoglutide",
+        "role": "GLP-1 receptor agonist"
+      },
+      {
+        "assetId": "vrb-103",
+        "role": "Amylin receptor agonist"
+      }
+    ],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.biospace.com/press-releases/verdiva-bio-initiates-phase-1-study-of-vrb-103-a-selective-oral-amylin-peptide-analog-with-weekly-dosing-potential",
+          "title": "Verdiva Bio Initiates Phase 1 Study of VRB-103, a Selective Oral Amylin Peptide Analog With Weekly Dosing Potential",
+          "sourceType": "company press release",
+          "publishedAt": "2026-07-30",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07628127",
+          "title": "A Trial of Oral VRB-103 Alone or in Combination With Oral Ecnoglutide (VRB-101) in Participants With Obesity or Overweight",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

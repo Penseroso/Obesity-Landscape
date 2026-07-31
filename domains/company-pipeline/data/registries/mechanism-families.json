@@ -161,7 +161,10 @@
       { "target": "Amylin receptor", "action": "agonist" }
     ],
     "sortRank": 100,
-    "mechanisms": ["Unimolecular GLP-1 and amylin receptor agonist"]
+    "mechanisms": [
+      "Unimolecular GLP-1 and amylin receptor agonist",
+      "Novel unimolecular amylin and GLP-1 receptor dual agonist"
+    ]
   },
   {
     "id": "glp1-gip-amylin-agonist",

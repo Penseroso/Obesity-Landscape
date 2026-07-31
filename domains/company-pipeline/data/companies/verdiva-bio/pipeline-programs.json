@@ -1,0 +1,262 @@
+[
+  {
+    "id": "verdiva-bio-ecnoglutide-oral-tablets",
+    "assetId": "ecnoglutide",
+    "companyId": "verdiva-bio",
+    "assetName": "Ecnoglutide",
+    "codeName": "VRB-101",
+    "aliases": [
+      { "type": "development-code", "value": "XW004" }
+    ],
+    "technical": {
+      "mechanism": "cAMP-biased GLP-1 peptide analog",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2b",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Sciwind Biosciences",
+        "role": "originator",
+        "territories": ["Worldwide excluding Greater China and South Korea"],
+        "rights": ["licensor"],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://verdivabio.com/",
+          "title": "Verdiva Bio - Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07281937",
+          "title": "A Study of Weekly Oral Ecnoglutide (VRB-101) in Participants Who Have Obesity or Overweight With Weight-Related Comorbidities (EVOLVE-2)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07553299",
+          "title": "A Study of Weekly Oral Dose of Ecnoglutide (VRB-101) for Weight Maintenance in Participants Who Have Obesity or Overweight With Weight-Related Comorbidities",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://verdivabio.com/wp-content/uploads/VRB-101-Enrollment-Completion-Release.pdf",
+          "title": "Verdiva Bio Announces Completion of Enrollment for EVOLVE-2 Phase 2b Study of VRB-101",
+          "sourceType": "company press release",
+          "publishedAt": "2026-02-25",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
+          "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2025-01-10",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "verdiva-bio-vrb-102-subcutaneous-injection",
+    "assetId": "vrb-102",
+    "companyId": "verdiva-bio",
+    "assetName": "VRB-102",
+    "codeName": null,
+    "aliases": [
+      { "type": "development-code", "value": "XW015" }
+    ],
+    "technical": {
+      "mechanism": "Amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Sciwind Biosciences",
+        "role": "originator",
+        "territories": ["Worldwide excluding Greater China and South Korea"],
+        "rights": ["licensor"],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://verdivabio.com/",
+          "title": "Verdiva Bio - Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.businesswire.com/news/home/20260519669196/en/Verdiva-Bio-to-Present-Preclinical-Data-on-Investigational-Obesity-Drug-Candidates-at-the-American-Diabetes-Association-86th-Scientific-Sessions",
+          "title": "Verdiva Bio to Present Preclinical Data on Investigational Obesity Drug Candidates at the American Diabetes Association 86th Scientific Sessions",
+          "sourceType": "company press release",
+          "publishedAt": "2026-05-19",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
+          "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2025-01-10",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "verdiva-bio-vrb-103-oral-undisclosed",
+    "assetId": "vrb-103",
+    "companyId": "verdiva-bio",
+    "assetName": "VRB-103",
+    "codeName": null,
+    "aliases": [
+      { "type": "development-code", "value": "XW016" }
+    ],
+    "technical": {
+      "mechanism": "Amylin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Sciwind Biosciences",
+        "role": "originator",
+        "territories": ["Worldwide excluding Greater China and South Korea"],
+        "rights": ["licensor"],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.biospace.com/press-releases/verdiva-bio-initiates-phase-1-study-of-vrb-103-a-selective-oral-amylin-peptide-analog-with-weekly-dosing-potential",
+          "title": "Verdiva Bio Initiates Phase 1 Study of VRB-103, a Selective Oral Amylin Peptide Analog With Weekly Dosing Potential",
+          "sourceType": "company press release",
+          "publishedAt": "2026-07-30",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07628127",
+          "title": "A Trial of Oral VRB-103 Alone or in Combination With Oral Ecnoglutide (VRB-101) in Participants With Obesity or Overweight",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html",
+          "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2025-01-10",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "verdiva-bio-vrb-104-subcutaneous-injection",
+    "assetId": "vrb-104",
+    "companyId": "verdiva-bio",
+    "assetName": "VRB-104",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Novel unimolecular amylin and GLP-1 receptor dual agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260519669196/en/Verdiva-Bio-to-Present-Preclinical-Data-on-Investigational-Obesity-Drug-Candidates-at-the-American-Diabetes-Association-86th-Scientific-Sessions",
+          "title": "Verdiva Bio to Present Preclinical Data on Investigational Obesity Drug Candidates at the American Diabetes Association 86th Scientific Sessions",
+          "sourceType": "company press release",
+          "publishedAt": "2026-05-19",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://verdivabio.com/",
+          "title": "Verdiva Bio - Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  }
+]
