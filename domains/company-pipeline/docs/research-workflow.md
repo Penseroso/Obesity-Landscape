@@ -24,6 +24,69 @@ semantics remain authoritative in the [Data Protocol](./README.md).
    as insufficiently evidenced, or report a claim as undisclosed, because a
    source was unreachable.
 
+## 1a. Segmented execution for large companies
+
+A company whose current stored-row count makes full single-execution closure
+under section 5 impractical may be researched across multiple executions as
+explicit **segments** — each re-verifying a declared subset of the company's
+**existing stored rows** — instead of one execution.
+
+1. **Declare the segment.** State the segment's exact scope — the asset
+   groups, programs, or regimens whose existing stored rows this execution
+   re-verifies — in this execution's own report (section 7) **and** in its
+   commit message(s), together with the refresh effort's baseline date (item
+   4). An execution that does not declare a segment covers the full company
+   and is held to the unmodified section 5 gate.
+2. **What a segment covers.** A segment re-verifies its declared rows against
+   current sources with full per-row rigor: section 5 items 2, 3, 8, 9, 10,
+   11, 12, and 13 apply in full to every row this segment touches, and the
+   "zero undispositioned candidates" requirement (item 7) applies to whatever
+   this segment actually surfaced.
+
+   A segment is **not required** to run full company-centered discovery
+   (section 2; section 5 item 1) beyond its declared rows. If re-verifying a
+   declared row's own sources incidentally surfaces a genuinely new
+   candidate — a new indication, a new trial, a newly announced program — the
+   segment **must** still fully disposition it (STORED, EXCLUDED, or
+   DEFERRED) before reporting segment-complete; being outside the declared row
+   list is never a reason to leave it undispositioned. What a segment must
+   **not** do is claim to have performed the company-wide discovery sweep
+   itself.
+3. **What stays company-wide.** Full sponsor-pipeline reconciliation (item 1),
+   the company-wide independent second discovery pass (items 4–7), and
+   re-review of every candidate any segment excluded or deferred are not
+   repeated per segment — they are the closing consolidation pass's exclusive
+   responsibility (item 5). A segmented execution reports its own scope as
+   **segment complete**, never as company-level **GO** — GO remains reserved
+   for the outcome defined in section 5, unchanged.
+4. **Handoff between segments — no new ledger.** Coverage is read from two
+   sources that already exist and are already durable, not a new tracking
+   file:
+   - each row's own `metadata.lastVerifiedAt`, for which existing rows this
+     refresh effort has, and has not, re-verified;
+   - git history for the company's data folder — each segment's commit
+     message states its declared scope and the refresh effort's baseline date
+     (the date of that effort's first segment) — for what any segment
+     discovered, excluded, or deferred outside its declared row list, and for
+     what remains unreviewed.
+
+   Before creating a row, reversing a prior disposition, or changing a stored
+   value, check this history. A `cited-registry-record-anchored-to-other-row`
+   signal (`npm run data:probe:registry-citations`), or any other conflict
+   with a value already in the dataset, is a reason to look for a prior
+   determination — in `decision-log.md` and git history — not a reason to
+   override it on fresh judgment alone.
+5. **Consolidation pass.** Company-level GO requires one execution, after
+   every declared segment reports segment-complete, to: reconcile the
+   sponsor's full official pipeline (item 1); run one genuinely independent
+   company-wide discovery pass (items 4–7) without reusing any segment's
+   source list; read every segment's commit messages and `decision-log.md` to
+   re-review every candidate any segment excluded or deferred, alongside
+   every candidate the company-wide pass newly surfaces; confirm every row's
+   `metadata.lastVerifiedAt` falls within the refresh effort; and re-run the
+   full validation and probe suite (section 6) against the cumulative working
+   tree. Only this pass may report company-level **GO**.
+
 ## 2. Discover and classify
 
 Perform company-centred discovery, build the in-scope asset inventory, and run
@@ -174,7 +237,11 @@ responsibility belongs here.
 ## 5. Research-completion gate
 
 Before generation and reporting, this run may report completion (**GO**) only
-once every item below holds; while any remain open, the run is **NO-GO**.
+once every item below holds; while any remain open, the run is **NO-GO**. This
+gate assumes full-company scope. A run operating under a declared segment
+(section 1a) reports **segment complete**, not GO, once it closes items 2, 3,
+8, 9, 10, 11, 12, and 13 for its own scope — see section 1a for which items
+apply per segment and which are company-wide.
 
 1. Reconcile the sponsor's current pipeline page, current investor materials,
    approved/filed obesity products, sponsor and asset registry searches, and
@@ -204,7 +271,8 @@ once every item below holds; while any remain open, the run is **NO-GO**.
    both passes that does not carry a final STORED, EXCLUDED, or DEFERRED
    disposition (section 2). This count must be exactly zero before the run
    may report GO — a nonzero count is NO-GO regardless of how much other work
-   has completed.
+   has completed. Under a declared segment (section 1a), this count is scoped
+   to candidates surfaced within the segment.
 8. Every touched program row's `development.stage`, `development.status`, and
    `stageOperationalState` are confirmed by evidence naming that row's own
    program scope (asset, route, dosage form, and indication scope). Do not
@@ -262,6 +330,14 @@ once every item below holds; while any remain open, the run is **NO-GO**.
     [Data Protocol §Dataset scope, R1](./README.md#dataset-scope). A component
     asset entering scope this run needs its own qualifying Program or the
     core-mechanism path (R2).
+13. For every touched row whose direct evidence source states an official
+    phase sub-stage or combined stage (for example `Phase 1b`, `Phase 2a`,
+    `Phase 1/2`, `Phase 3b`), confirm whether that value already exists as a
+    [`development-stages.json`](../data/registries/development-stages.json)
+    label or alias, or whether it satisfies the
+    [registry promotion](./source-and-entry-policy.md#registry-promotion)
+    criteria and must be added. Do not round the stored `development.stage`
+    to a broader existing label solely to avoid this check.
 
 This audit is in-session only. Do not create a per-run ledger or report file.
 
@@ -288,6 +364,22 @@ git diff --check
 ```
 
 Generated files are outputs and must never be hand-edited.
+
+A `duplicate program identity` or `duplicate regimen identity` error from
+`data:generate` is **not a defect to route around** by adding, widening, or
+inventing a field value (an indication, a `configurationKey`, an id suffix)
+until the collision disappears. It is the tool surfacing that two candidates
+you treated as distinct do not currently have confirmed, evidenced grounds to
+be distinct under [Entities and Rows](./entities-and-rows.md) — [Program
+identity](./entities-and-rows.md#program-identity) for programs, [Regimen
+identity](./entities-and-rows.md#regimen) for regimens. Resolve the
+collision by re-applying the applicable disposition order — a Study of the
+existing Program/Regimen (no new row), a confirmed stable discriminator
+(`configurationKey`, or a route/dosage-form/indication difference with direct
+evidence), or `DEFERRED_SCHEMA_CASE` when official evidence establishes a
+distinct configuration the current contract cannot represent — never by
+patching a field's stored value solely to make the validator pass.
+
 `data:validate:clinical-evidence`, `data:validate:clinical-evidence:generated`,
 and `data:validate:clinical-evidence:synthetic` are required whenever this
 run's Program/Study disposition (section 2) merges or removes a row that a
@@ -337,6 +429,10 @@ Report, without a rigid template:
   DEFERRED — with reasons, and the count of undispositioned candidates
   remaining (must be zero to report GO);
 - registry additions;
+- every `cited-registry-record-anchored-to-other-row` signal
+  (`npm run data:probe:registry-citations`, ADR-0054/ADR-0055) touching this
+  run's rows, and the sponsor-level-evidence conclusion that resolved each one
+  — see [Research Workflow §2 CE consistency check](#2-discover-and-classify);
 - indication-scope review candidates reported for this run's rows, and how each
   was resolved;
 - the `scopeClass` assigned to every row this run created or touched, grouped
@@ -351,11 +447,15 @@ Report, without a rigid template:
 - principal sources;
 - generation and validation results;
 - blockers or source-access failures;
-- run-level completion status — **GO** or **NO-GO** — per the gate in
-  section 5, including confirmation that section 5 item 10 (stacked-branch
-  re-validation) was applied when this run's branch is stacked on unmerged
-  prior changes, and any prior correction found intentionally superseded,
-  with its superseding evidence.
+- run-level completion status — **GO**, **NO-GO**, or, when this run declared
+  a segment under section 1a, **segment complete** with the segment's exact
+  scope restated — per the gate in section 5, including confirmation that
+  section 5 item 10 (stacked-branch re-validation) was applied when this run's
+  branch is stacked on unmerged prior changes, and any prior correction found
+  intentionally superseded, with its superseding evidence;
+- when this run performs a closing consolidation pass (section 1a item 5),
+  confirm and state that every row's `metadata.lastVerifiedAt` falls within
+  the refresh effort before reporting company-level GO.
 
 Do not claim completion (GO) unless the coverage gate and required validation
 have completed.

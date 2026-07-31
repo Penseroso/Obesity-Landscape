@@ -150,6 +150,15 @@
     "sortRank": 60
   },
   {
+    "id": "phase-3b",
+    "label": "Phase 3b",
+    "family": "Phase 3",
+    "aliases": [
+      "Phase IIIb"
+    ],
+    "sortRank": 61
+  },
+  {
     "id": "filed",
     "label": "Filed",
     "family": "Regulatory review",

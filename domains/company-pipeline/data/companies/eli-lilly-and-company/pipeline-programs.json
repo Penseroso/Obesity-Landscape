@@ -82,7 +82,7 @@
     ],
     "technical": { "mechanism": "GIP and GLP-1 receptor agonist", "platform": null },
     "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
-    "indications": ["Overweight", "Obesity", "Type 2 diabetes", "Chronic kidney disease"],
+    "indications": ["Chronic kidney disease"],
     "development": {
       "stage": "Phase 2",
       "status": "Active",
@@ -90,18 +90,18 @@
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05536804",
           "title": "A Study of Tirzepatide in Participants With Overweight or Obesity and Chronic Kidney Disease With or Without Type 2 Diabetes (TREASURE-CKD)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
-    "scopeClass": "obesity-treatment"
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-masld",
@@ -241,6 +241,86 @@
       ]
     },
     "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection-hfpef",
+    "assetId": "ly3298176",
+    "companyId": "eli-lilly-and-company",
+    "assetName": "Tirzepatide",
+    "codeName": "LY3298176",
+    "aliases": [
+      { "type": "brand-name", "value": "Mounjaro" },
+      { "type": "brand-name", "value": "Zepbound" }
+    ],
+    "technical": { "mechanism": "GIP and GLP-1 receptor agonist", "platform": null },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Heart failure with preserved ejection fraction"],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "regulatoryStates": [
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2024-11"
+      },
+      {
+        "state": "Application withdrawn",
+        "jurisdiction": "United States",
+        "authority": "FDA",
+        "date": "2025-05"
+      },
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "European Union",
+        "authority": "EMA",
+        "date": "2024-11"
+      },
+      {
+        "state": "Application not approved",
+        "jurisdiction": "European Union",
+        "authority": "EMA",
+        "date": "2026-01"
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT04847557",
+          "title": "A Study of Tirzepatide (LY3298176) in Participants With Heart Failure With Preserved Ejection Fraction (HFpEF) and Obesity: The SUMMIT Trial",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-tirzepatide-reduced-risk-worsening-heart-failure-events",
+          "title": "Lilly's tirzepatide reduced the risk of worsening heart failure events by 38% in adults with heart failure with preserved ejection fraction (HFpEF) and obesity",
+          "sourceType": "company press release",
+          "publishedAt": "2024-11-16",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://conscienhealth.org/2025/05/03/lilly-withdraws-tirzepatide-application-to-fda-for-heart-failure/",
+          "title": "Lilly Withdraws Tirzepatide Application to FDA for Heart Failure",
+          "sourceType": "press coverage",
+          "publishedAt": "2025-05-03",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-26-29-january-2026",
+          "title": "Meeting highlights from the Committee for Medicinal Products for Human Use (CHMP) 26-29 January 2026",
+          "sourceType": "regulator meeting highlights",
+          "publishedAt": "2026-01-29",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets",
@@ -427,21 +507,23 @@
     "aliases": [{ "type": "brand-name", "value": "Foundayo" }],
     "technical": { "mechanism": "Non-peptide GLP-1 receptor agonist", "platform": "Small molecule" },
     "administration": { "route": "Oral", "dosageForm": "Tablets", "dosingInterval": "Once daily" },
-    "indications": ["Obesity", "Overweight", "Type 2 diabetes"],
+    "indications": ["Type 2 diabetes"],
     "development": {
       "stage": "Phase 3",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Active not recruiting"
+      "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
-        { "url": "https://clinicaltrials.gov/study/NCT06972472", "title": "A Study of Orforglipron in Participants With Obesity or Overweight and Type 2 Diabetes", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
+        { "url": "https://clinicaltrials.gov/study/NCT06972472", "title": "A Study of Orforglipron in Participants With Obesity or Overweight and Type 2 Diabetes", "sourceType": "trial registry", "checkedAt": "2026-07-31" },
+        { "url": "https://clinicaltrials.gov/study/NCT07668336", "title": "A Study of Orforglipron Compared With Dulaglutide in Pediatric Participants With Type 2 Diabetes", "sourceType": "trial registry", "checkedAt": "2026-07-31" },
+        { "url": "https://clinicaltrials.gov/study/NCT07613307", "title": "A Study of Orforglipron in Participants With Type 2 Diabetes Who Observe Ramadan Fasting", "sourceType": "trial registry", "checkedAt": "2026-07-31" }
       ]
     },
-    "scopeClass": "obesity-treatment"
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "eli-lilly-and-company-ly3502970-oral-tablets-attain-hypertension",
@@ -494,32 +576,6 @@
     "scopeClass": "obesity-treatment"
   },
   {
-    "id": "eli-lilly-and-company-ly3502970-oral-tablets-pediatric-diabetes",
-    "assetId": "ly3502970",
-    "companyId": "eli-lilly-and-company",
-    "assetName": "Orforglipron",
-    "codeName": "LY3502970",
-    "aliases": [{ "type": "brand-name", "value": "Foundayo" }],
-    "technical": { "mechanism": "Non-peptide GLP-1 receptor agonist", "platform": "Small molecule" },
-    "administration": { "route": "Oral", "dosageForm": "Tablets", "dosingInterval": "Once daily" },
-    "indications": ["Type 2 diabetes"],
-    "development": {
-      "stage": "Phase 3",
-      "status": "Planned",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not yet recruiting"
-    },
-    "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
-      "sources": [
-        { "url": "https://clinicaltrials.gov/study/NCT07668336", "title": "A Study of Orforglipron Compared With Dulaglutide in Pediatric Participants With Type 2 Diabetes", "sourceType": "trial registry", "checkedAt": "2026-07-13" },
-        { "url": "https://clinicaltrials.gov/study/NCT07613307", "title": "A Study of Orforglipron in Participants With Type 2 Diabetes Who Observe Ramadan Fasting", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
-      ]
-    },
-    "scopeClass": "metabolic-adjacent"
-  },
-  {
     "id": "eli-lilly-and-company-ly3437943-subcutaneous-injection",
     "assetId": "ly3437943",
     "companyId": "eli-lilly-and-company",
@@ -536,14 +592,14 @@
     },
     "indications": ["Obesity", "Overweight"],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 3b",
       "status": "Active",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss",
@@ -554,9 +610,9 @@
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07232719",
-          "title": "A Study of Retatrutide (LY3437943) in Participants With Obesity or Overweight (TRIUMPH-8)",
+          "title": "A Phase 3b Study to Investigate the Efficacy and Safety of Retatrutide Once Weekly in Participants Without Type 2 Diabetes Who Have Obesity or Overweight (TRIUMPH-8)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -699,13 +755,13 @@
       "stage": "Phase 3",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
-        { "url": "https://clinicaltrials.gov/study/NCT07035093", "title": "A Study of Retatrutide in Participants Who Have Obesity or Overweight and Chronic Low Back Pain (TRIUMPH-7)", "sourceType": "trial registry", "checkedAt": "2026-07-13" }
+        { "url": "https://clinicaltrials.gov/study/NCT07035093", "title": "A Study of Retatrutide in Participants Who Have Obesity or Overweight and Chronic Low Back Pain (TRIUMPH-7)", "sourceType": "trial registry", "checkedAt": "2026-07-31" }
       ]
     },
     "scopeClass": "obesity-treatment"
@@ -749,7 +805,7 @@
       "dosageForm": "Injection",
       "dosingInterval": "Once weekly"
     },
-    "indications": ["Obesity", "Overweight", "Type 2 diabetes"],
+    "indications": ["Obesity", "Overweight"],
     "development": {
       "stage": "Phase 3",
       "status": "Active",
@@ -757,20 +813,20 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07321886",
           "title": "A Study of Eloralintide (LY3841136) in Participants With Obesity, or Overweight Without Type 2 Diabetes (ENLIGHTEN-1)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07282600",
           "title": "A Study of Eloralintide in Participants With Obesity or Overweight and Type 2 Diabetes (ENLIGHTEN-2)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-13"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06345066",
@@ -948,6 +1004,42 @@
           "sourceType": "investor presentation",
           "publishedAt": "2026-04-30",
           "checkedAt": "2026-07-13"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "eli-lilly-and-company-ly3549492-oral-tablets",
+    "assetId": "ly3549492",
+    "companyId": "eli-lilly-and-company",
+    "assetName": "Naperiglipron",
+    "codeName": "LY3549492",
+    "technical": {
+      "mechanism": "Non-peptide GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": null
+    },
+    "indications": ["Obesity", "Overweight"],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07030868",
+          "title": "A Phase 2, Parallel-Group, Double-Blind 4-arm Study to Investigate the Effects of Treatment With LY3549492 Tablets Compared With Placebo in an Obese or Overweight Population With Type-2 Diabetes (T2D)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -1227,13 +1319,22 @@
       "dosageForm": "Injection",
       "dosingInterval": "Once weekly"
     },
-    "indications": ["Obesity", "Overweight"],
-    "development": {
-      "stage": "Phase 2",
-      "status": "Unknown",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not separately confirmed"
-    },
+    "indications": ["Obesity", "Overweight", "Type 2 diabetes"],
+    "development": { "stage": "Approved", "status": "Active" },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "China",
+        "authority": "NMPA",
+        "date": "2025-06-27"
+      },
+      {
+        "state": "NDA approved",
+        "jurisdiction": "China",
+        "authority": "NMPA",
+        "date": "2025-09-19"
+      }
+    ],
     "relationships": [
       {
         "externalCompanyName": "Innovent Biologics, Inc.",
@@ -1258,8 +1359,8 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06124807",
@@ -1272,6 +1373,20 @@
           "title": "Innovent's Mazdutide 9 mg Demonstrates Robust Weight Loss in Phase 3 GLORY-2 Study",
           "sourceType": "partner press release",
           "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/innovent-announces-mazdutide-first-dual-gcgglp-1-receptor-agonist-received-approval-from-chinas-nmpa-for-chronic-weight-management-302493152.html",
+          "title": "Innovent Announces Mazdutide, First Dual GCG/GLP-1 Receptor Agonist, Received Approval from China's NMPA for Chronic Weight Management",
+          "sourceType": "partner press release",
+          "publishedAt": "2025-06-27",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.prnewswire.com/news-releases/innovent-announces-mazdutide-received-approval-from-chinas-nmpa-for-glycemic-control-in-adults-with-type-2-diabetes-302561434.html",
+          "title": "Innovent Announces Mazdutide Received Approval from China's NMPA for Glycemic Control in Adults with Type 2 Diabetes",
+          "sourceType": "partner press release",
+          "publishedAt": "2025-09-19",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -1300,8 +1415,8 @@
       "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-13",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05380323",
@@ -1314,6 +1429,20 @@
           "title": "Lilly Select NME and NILEX Pipeline",
           "sourceType": "investor presentation",
           "checkedAt": "2026-07-13"
+        },
+        {
+          "url": "https://investor.lilly.com/static-files/09d156c0-f88d-420b-b5f1-1ed2b417461b",
+          "title": "Q4 2024 Lilly Earnings Call",
+          "sourceType": "investor presentation",
+          "publishedAt": "2025-02-06",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.fiercebiotech.com/biotech/eli-lilly-lops-alzheimers-and-obesity-assets-pipeline-q4-update",
+          "title": "UPDATED: Eli Lilly lops Alzheimer's and obesity assets from pipeline in Q4 update",
+          "sourceType": "press coverage",
+          "publishedAt": "2025-02",
+          "checkedAt": "2026-07-31"
         }
       ]
     },

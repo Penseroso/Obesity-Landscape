@@ -34,7 +34,8 @@
     "label": "NDA submitted",
     "aliases": [
       "New Drug Application submitted",
-      "NDA filed"
+      "NDA filed",
+      "Marketing Authorisation Application submitted"
     ]
   },
   {
@@ -42,7 +43,28 @@
     "label": "NDA approved",
     "aliases": [
       "New Drug Application approved",
-      "FDA approved"
+      "FDA approved",
+      "Marketing Authorisation Application approved"
+    ]
+  },
+  {
+    "id": "application-withdrawn",
+    "label": "Application withdrawn",
+    "aliases": [
+      "NDA withdrawn",
+      "sNDA withdrawn",
+      "BLA withdrawn",
+      "Marketing Authorisation Application withdrawn"
+    ]
+  },
+  {
+    "id": "application-not-approved",
+    "label": "Application not approved",
+    "aliases": [
+      "Complete Response Letter",
+      "CRL issued",
+      "Negative CHMP opinion",
+      "Marketing Authorisation Application refused"
     ]
   }
 ]
