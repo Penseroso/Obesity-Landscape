@@ -92,6 +92,58 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "amgen-amg-513-undisclosed-undisclosed",
+    "assetId": "amg-513",
+    "companyId": "amgen",
+    "assetName": "AMG 513",
+    "codeName": null,
+    "technical": {
+      "mechanism": null,
+      "platform": null
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://www.amgenpipeline.com/",
+          "title": "Amgen Pipeline",
+          "sourceType": "company pipeline",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06585462",
+          "title": "Single and Multiple Ascending Dose Study of AMG 513 in Participants With Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-09-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.amgen.com/newsroom/press-releases/2026/04/amgen-reports-first-quarter-2026-financial-results",
+          "title": "Amgen Reports First Quarter 2026 Financial Results",
+          "sourceType": "company press release",
+          "publishedAt": "2026-04-30",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection",
     "assetId": "maridebart-cafraglutide",
     "companyId": "amgen",
@@ -123,50 +175,64 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT06858839",
           "title": "Evaluation of Maridebart Cafraglutide in Adult Participants Without Type 2 Diabetes Mellitus Who Have Obesity or Are Overweight (MARITIME-1)",
           "sourceType": "trial registry",
-          "publishedAt": "2025-10-20",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2025-03-05",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06858878",
+          "title": "Efficacy and Safety of Maridebart Cafraglutide in Adult Participants With Type 2 Diabetes Mellitus Who Have Obesity or Are Overweight (MARITIME-2)",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-03-05",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT05669599",
           "title": "Dose-ranging Study to Evaluate the Efficacy, Safety, and Tolerability of AMG 133 in Adult Subjects With Overweight or Obesity, With or Without Type 2 Diabetes Mellitus",
           "sourceType": "trial registry",
-          "publishedAt": "2026-01-20",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2023-01-03",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07575399",
           "title": "Efficacy, Safety and Tolerability of Switching From Glucagon-like Peptide-1 Receptor Agonists (GLP-1RA) to Maridebart Cafraglutide in Adults With Obesity or Overweight (MARITIME-SWITCH)",
           "sourceType": "trial registry",
           "publishedAt": "2026-05-08",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07684235",
           "title": "Extension Trial to Evaluate the Long-term Efficacy, Safety, and Tolerability of Maridebart Cafraglutide (MARITIME-1-EXTENSION)",
           "sourceType": "trial registry",
           "publishedAt": "2026-07-06",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07684144",
+          "title": "Extension Trial to Evaluate the Long-term Efficacy, Safety, and Tolerability of Maridebart Cafraglutide (MARITIME-2-EXTENSION)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-07-06",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions",
           "title": "Results From Amgen's Phase 2 Obesity Study of Monthly MariTide Presented at the American Diabetes Association 85th Scientific Sessions",
           "sourceType": "company press release",
           "publishedAt": "2025-06",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://investors.amgen.com/static-files/e03cb67f-f3cb-42bb-9c8a-e53151d412f6",
           "title": "Amgen Reports First Quarter 2026 Financial Results",
           "sourceType": "regulatory filing",
           "publishedAt": "2026-04-30",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -203,22 +269,22 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07037433",
           "title": "Evaluating the Impact of Maridebart Cafraglutide on Cardiovascular Outcomes in Participants With Atherosclerotic Cardiovascular Disease and Overweight or Obesity (MARITIME-CV)",
           "sourceType": "trial registry",
-          "publishedAt": "2026-07-10",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2025-06-25",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.amgen.com/stories/2025/06/inside-amgens-phase-3-maritime-program---advancing-the-future-of-obesity-care",
           "title": "Inside Amgen's Phase 3 MARITIME Program: Advancing the Future of Obesity Care",
           "sourceType": "company pipeline page",
           "publishedAt": "2025-06",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -246,7 +312,9 @@
       "dosingInterval": "Every 4 weeks"
     },
     "indications": [
-      "Elevated liver fat with obesity or overweight"
+      "Obesity",
+      "Overweight",
+      "Elevated liver fat"
     ],
     "development": {
       "stage": "Phase 2b",
@@ -255,26 +323,26 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07441252",
           "title": "A Trial to Evaluate Efficacy and Safety of Maridebart Cafraglutide in Adults Living With Elevated Liver Fat and Obesity or Overweight",
           "sourceType": "trial registry",
           "publishedAt": "2026-02-27",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://investors.amgen.com/static-files/e03cb67f-f3cb-42bb-9c8a-e53151d412f6",
           "title": "Amgen Reports First Quarter 2026 Financial Results",
           "sourceType": "regulatory filing",
           "publishedAt": "2026-04-30",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "amgen-maridebart-cafraglutide-subcutaneous-injection-heart-failure",
@@ -307,22 +375,22 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07037459",
           "title": "Maridebart Cafraglutide on Mortality and Morbidity in Participants Living With Heart Failure With Preserved or Mildly Reduced Ejection Fraction and Obesity (MARITIME-HF)",
           "sourceType": "trial registry",
-          "publishedAt": "2026-07-02",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2025-06-25",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.amgen.com/stories/2025/06/inside-amgens-phase-3-maritime-program---advancing-the-future-of-obesity-care",
           "title": "Inside Amgen's Phase 3 MARITIME Program: Advancing the Future of Obesity Care",
           "sourceType": "company pipeline page",
           "publishedAt": "2025-06",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -359,22 +427,22 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07225686",
-          "title": "Maridebart Cafraglutide in Adult Participants With Obstructive Sleep Apnea on Positive Airway Pressure Therapy and Living With Overweight or Obesity (MARITIME-OSA-1)",
+          "title": "Maridebart Cafraglutide Versus Placebo in Adult Participants With Obstructive Sleep Apnea on Positive Airway Pressure Therapy (MARITIME-OSA-1)",
           "sourceType": "trial registry",
-          "publishedAt": "2026-06-12",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2025-11-10",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07226765",
-          "title": "Maridebart Cafraglutide in Adult Participants With Obstructive Sleep Apnea Not on Positive Airway Pressure Therapy and Living With Overweight or Obesity (MARITIME-OSA-2)",
+          "title": "Maridebart Cafraglutide Versus Placebo in Adult Participants With Obstructive Sleep Apnea Not on Positive Airway Pressure Therapy (MARITIME-OSA-2)",
           "sourceType": "trial registry",
-          "publishedAt": "2026-06-12",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2025-11-10",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -405,46 +473,46 @@
       "Type 2 diabetes mellitus"
     ],
     "development": {
-      "stage": "Phase 3",
+      "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
-          "url": "https://clinicaltrials.gov/study/NCT06858878",
-          "title": "Efficacy and Safety of Maridebart Cafraglutide in Adult Participants With Type 2 Diabetes Mellitus Who Have Obesity or Are Overweight (MARITIME-2)",
+          "url": "https://clinicaltrials.gov/study/NCT06660173",
+          "title": "A Study of Maridebart Cafraglutide in Adult Participants With Type 2 Diabetes Mellitus (T2DM)",
           "sourceType": "trial registry",
-          "publishedAt": "2025-12-31",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2024-10-28",
+          "checkedAt": "2026-07-31"
         },
         {
-          "url": "https://clinicaltrials.gov/study/NCT07684144",
-          "title": "Extension Trial to Evaluate the Long-term Efficacy, Safety, and Tolerability of Maridebart Cafraglutide (MARITIME-2-EXTENSION)",
+          "url": "https://clinicaltrials.gov/study/NCT07160257",
+          "title": "A Study to Evaluate the Effect of Maridebart Cafraglutide on Insulin Sensitivity and Beta-cell Function in Participants With Type 2 Diabetes Mellitus",
           "sourceType": "trial registry",
-          "publishedAt": "2026-07-06",
-          "checkedAt": "2026-07-21"
+          "publishedAt": "2025-09-08",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.amgen.com/newsroom/press-releases/2025/06/results-from-amgens-phase-2-obesity-study-of-monthly-maritide-presented-at-the-american-diabetes-association-85th-scientific-sessions",
           "title": "Results From Amgen's Phase 2 Obesity Study of Monthly MariTide Presented at the American Diabetes Association 85th Scientific Sessions",
           "sourceType": "company press release",
           "publishedAt": "2025-06",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://investors.amgen.com/static-files/e03cb67f-f3cb-42bb-9c8a-e53151d412f6",
           "title": "Amgen Reports First Quarter 2026 Financial Results",
           "sourceType": "regulatory filing",
           "publishedAt": "2026-04-30",
-          "checkedAt": "2026-07-21"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "ascletis-pharma-asc30-39-fdc-oral-tablets",
