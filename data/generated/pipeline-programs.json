@@ -5565,14 +5565,14 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07243171",
           "title": "A Phase Ib/IIa Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Oral Ecnoglutide Tablets in Chinese Participants With Overweight or Obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT05184322",
@@ -5672,35 +5672,35 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-ecnoglutide-injection-approved-by-chinas-national-medical-products-administration-nmpa-for-chronic-weight-management-302706442.html",
           "title": "Sciwind Biosciences Announces Ecnoglutide Injection Approved by China's National Medical Products Administration (NMPA) for Chronic Weight Management",
           "sourceType": "company press release",
           "publishedAt": "2026-03-06",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
-          "url": "https://clinicaltrials.gov/study/NCT05680155",
+          "url": "https://clinicaltrials.gov/study/NCT05813795",
           "title": "SLIMMER: A Phase 3 Study of Ecnoglutide (XW003) in Chinese Adults With Overweight or Obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.thelancet.com/journals/landia/article/PIIS2213-8587(25)00141-X/abstract",
           "title": "Efficacy and safety of a biased GLP-1 receptor agonist ecnoglutide in adults with overweight or obesity: a multicentre, randomised, double-blind, placebo-controlled, phase 3 trial",
           "sourceType": "peer-reviewed publication",
           "publishedAt": "2025-06",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
           "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
           "sourceType": "IPO prospectus (draft)",
           "publishedAt": "2026-03-22",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -5738,7 +5738,7 @@
       "stage": "Phase 1b",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Completed"
     },
     "regulatoryStates": [
       {
@@ -5749,21 +5749,21 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
           "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
           "sourceType": "IPO prospectus (draft)",
           "publishedAt": "2026-03-22",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07143227",
           "title": "A Study of XW003 Injection in Chinese Adolescents With Obesity",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -5829,14 +5829,14 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://www.sciwindbio.com/portal/index/pipeline/category_id/3.html",
           "title": "Sciwind Biosciences Pipeline",
           "sourceType": "company pipeline",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.sciwindbio.com/portal/index/newsdetail/id/119/category_id/5.html",
@@ -5898,27 +5898,27 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07434050",
           "title": "A Study of XW003 in Obese Participants With Obstructive Sleep Apnea Receiving Positive Airway Pressure Therapy",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07387094",
           "title": "A Study of XW003 in Obese Participants With Obstructive Sleep Apnea But Not Receive Positive Airway Pressure Therapy",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
           "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
           "sourceType": "IPO prospectus (draft)",
           "publishedAt": "2026-03-22",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -5998,28 +5998,41 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.prnewswire.com/apac/news-releases/sciwind-biosciences-announces-ecnoglutide-injection-approved-by-chinas-national-medical-products-administration-nmpa-for-adult-type-2-diabetes-302675016.html",
           "title": "Sciwind Biosciences Announces Ecnoglutide Injection Approved by China's National Medical Products Administration (NMPA) for Adult Type 2 Diabetes",
           "sourceType": "company press release",
           "publishedAt": "2026-01-30",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-positive-topline-results-from-phase-3-clinical-trial-of-ecnoglutide-xw003-a-long-acting-camp-signaling-biased-glp-1-analog-in-adult-patients-with-type-2-diabetes-in-china-302023591.html",
           "title": "Sciwind Biosciences Announces Positive Topline Results from Phase 3 Clinical Trial of Ecnoglutide (XW003) in Adult Patients with Type 2 Diabetes in China",
           "sourceType": "company press release",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05680155",
+          "title": "A Phase 3 Study to Evaluate the Efficacy of XW003 Compared With Placebo in T2DM Patients",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.nature.com/articles/s41467-025-68165-7",
+          "title": "Efficacy and safety of cAMP signalling-biased GLP-1 analogue ecnoglutide monotherapy versus placebo in patients with type 2 diabetes (EECOH-1): a multi-centre, randomised, double-blind, placebo-controlled, phase 3 trial",
+          "sourceType": "peer-reviewed publication",
+          "publishedAt": "2026-01",
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
           "title": "Hangzhou Sciwind Biosciences Co., Ltd. - Application Proof / Business Section (Our Pipeline of Drug Candidates)",
           "sourceType": "IPO prospectus (draft)",
           "publishedAt": "2026-03-22",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -6052,7 +6065,7 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -6065,7 +6078,7 @@
           "url": "https://clinicaltrials.gov/study/NCT05579314",
           "title": "XW014 in Healthy Subjects and Patients With Type 2 Diabetes Mellitus (T2DM)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
@@ -6121,7 +6134,7 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
+      "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-25",
       "sources": [
         {
@@ -6129,7 +6142,7 @@
           "title": "Sciwind Biosciences Announces Global Licensing and Collaboration Agreement for Metabolic Disease Portfolio",
           "sourceType": "company press release",
           "publishedAt": "2025-01-10",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.hkexnews.hk/app/sehk/2026/108322/a131023/sehk26032301329.pdf",
