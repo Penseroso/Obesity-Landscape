@@ -76,8 +76,8 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/765.html",
@@ -104,14 +104,39 @@
           "url": "https://clinicaltrials.gov/study/NCT06728124",
           "title": "A Phase III Clinical Study to Evaluate the Efficacy and Safety of GZR18 Injection in Adult Obese/Overweight Subjects",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
           "title": "Gan & Lee Pharmaceuticals Achieves Significant Progress in Its Dual Pipeline for Metabolic Diseases -- Weekly Insulin Ludefen (GZR4) Meets Primary Endpoint in Phase III Clinical Trial in China; Bofanglutide Meets Primary Endpoints in Phase III Weight Loss Study in China and Phase II Study in the U.S.",
           "sourceType": "company press release",
           "publishedAt": "2026-06-12",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07150975",
+          "title": "Phase III Clinical Study Comparing the Efficacy and Safety of GZR18 Injection and Semaglutide (Wegovy) in Adult Obese or Overweight Subjects",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06737042",
+          "title": "Efficacy and Safety of GZR18 Every 2 Weeks Versus Tirzepatide and Placebo in Obese or Overweight Participants",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07622810",
+          "title": "BALANCE-OBS: Bofanglutide (GZR18) Versus Semaglutide in Latin American Adults With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.ganlee.com.cn/detail/1615.html",
+          "title": "Gan & Lee Pharmaceuticals' Bofanglutide (GZR18) Injection China Obesity/Overweight Phase III Clinical Study GRADUAL-2 Completes First Subject Dosing",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-28",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -139,11 +164,11 @@
       "stage": "Phase 3",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Not yet recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/853.html",
@@ -156,13 +181,13 @@
           "url": "https://clinicaltrials.gov/study/NCT07493057",
           "title": "Evaluate the Efficacy and Safety of GZR18 Injection in Obese Subjects With Obstructive Sleep Apnea Not Treated With Positive Airway Pressure (PAP) Therapy",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07501832",
           "title": "Evaluate the Efficacy and Safety of GZR18 Injection in Obese Subjects With Obstructive Sleep Apnea Receiving Positive Airway Pressure (PAP) Therapy",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -193,8 +218,8 @@
       "stageOperationalState": "Active not recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-three-innovative-drugs-gzr18-injection-gzr4-injection-and-gzr101-injection-achieve-primary-endpoints-in-phase-2-clinical-studies-302276311.html",
@@ -207,13 +232,19 @@
           "url": "https://clinicaltrials.gov/study/NCT06777238",
           "title": "A Phase III Clinical Study to Evaluate the Efficacy and Safety of GZR18 Injection in Subjects With Type 2 Diabetes Mellitus and Poor Blood Glucose Control by Diet and Exercise",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06778967",
           "title": "A Phase III Clinical Study to Evaluate the Efficacy and Safety of GZR18 Injection in Adult Type 2 Diabetes Mellitus",
           "sourceType": "trial registry",
-          "checkedAt": "2026-07-24"
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07628985",
+          "title": "BALANCE-DM2 Study of Bofanglutide in Adults With Type 2 Diabetes",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
@@ -250,10 +281,10 @@
       "Type 2 diabetes mellitus"
     ],
     "development": {
-      "stage": "Phase 1",
+      "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Active not recruiting"
     },
     "regulatoryStates": [
       {
@@ -264,8 +295,8 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-24",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
       "sources": [
         {
           "url": "https://www.ganlee.com/detail/796.html",
@@ -280,6 +311,12 @@
           "sourceType": "company press release",
           "publishedAt": "2025-05-16",
           "checkedAt": "2026-07-24"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07055386",
+          "title": "A Study to Compare the Efficacy and Safety of GZR102 Injection and GZR18 Injection in Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
         }
       ]
     },
