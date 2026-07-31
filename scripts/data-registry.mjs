@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import {
   existsSync,
   mkdirSync,
@@ -194,7 +195,11 @@ function cloneJson(value) {
 }
 
 function writeJson(filePath, value) {
-  writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
+  writeFileSync(filePath, serializeJson(value));
+}
+
+function serializeJson(value) {
+  return `${JSON.stringify(value, null, 2)}\n`;
 }
 
 function normalize(value) {
@@ -2563,7 +2568,7 @@ function validateCompanySources() {
   console.log(`Validated ${folders.length} company source folder(s).`);
 }
 
-function generateAggregates() {
+function loadValidatedCompanyPipelineAggregates() {
   const registries = loadRegistries();
   const { folders, companies, programs, regimens } = loadCompanySources();
 
@@ -2578,15 +2583,24 @@ function generateAggregates() {
   validateDataset(companies, programs, regimens, "generated aggregate", registries, {
     companyLocalReferences: true,
   });
-  const clinicalEvidence = buildClinicalEvidenceAggregate(
-    clinicalEvidenceSourceDir,
-    createClinicalReferenceContext(companies, programs, regimens),
-    "data/clinical-evidence",
-  );
   companies.sort((a, b) => a.id.localeCompare(b.id));
   programs.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
   regimens.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
 
+  return { companies, programs, regimens };
+}
+
+function buildCurrentClinicalEvidenceAggregate(companies, programs, regimens) {
+  return buildClinicalEvidenceAggregate(
+    clinicalEvidenceSourceDir,
+    createClinicalReferenceContext(companies, programs, regimens),
+    "data/clinical-evidence",
+  );
+}
+
+function generateAggregates() {
+  const { companies, programs, regimens } = loadValidatedCompanyPipelineAggregates();
+  const clinicalEvidence = buildCurrentClinicalEvidenceAggregate(companies, programs, regimens);
   const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence);
 
   mkdirSync(generatedDir, { recursive: true });
@@ -2601,6 +2615,100 @@ function generateAggregates() {
   console.log(
     `Generated ${companies.length} company record(s), ${programs.length} program record(s), ${regimens.length} regimen record(s), ${clinicalEvidence.studies.length} clinical study record(s), ${clinicalEvidence.analysisGroups.length} clinical analysis group(s), and a reciprocal asset index over ${clinicalAssetStudyIndex.assets.length} asset(s).`,
   );
+}
+
+function generateClinicalEvidenceAggregates() {
+  const { companies, programs, regimens } = validateCompanyPipelineManifest();
+  const clinicalEvidence = buildCurrentClinicalEvidenceAggregate(companies, programs, regimens);
+  const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence);
+
+  mkdirSync(generatedDir, { recursive: true });
+  writeJson(path.join(generatedDir, "clinical-evidence.json"), clinicalEvidence);
+  writeJson(
+    path.join(generatedDir, "clinical-evidence-asset-studies.json"),
+    clinicalAssetStudyIndex,
+  );
+  console.log(
+    `Generated Clinical Evidence only: ${clinicalEvidence.studies.length} clinical study record(s), ${clinicalEvidence.analysisGroups.length} clinical analysis group(s), and a reciprocal asset index over ${clinicalAssetStudyIndex.assets.length} asset(s). Company/Pipeline source and generated artifacts were read only.`,
+  );
+}
+
+function assertCompanyPipelineManifestFileCurrent(actualText, records, fileName) {
+  assert(
+    actualText === serializeJson(records),
+    `data/generated/${fileName} is stale relative to Company/Pipeline operating source; do not regenerate it during Clinical Evidence research`,
+  );
+}
+
+function selfCheckCompanyPipelineManifestFreshness() {
+  const records = [{ id: "manifest-self-check" }];
+  assertCompanyPipelineManifestFileCurrent(
+    serializeJson(records),
+    records,
+    "self-check.json",
+  );
+
+  let rejectedStale = false;
+  try {
+    assertCompanyPipelineManifestFileCurrent(
+      serializeJson([]),
+      records,
+      "self-check.json",
+    );
+  } catch (error) {
+    rejectedStale =
+      error instanceof Error &&
+      error.message.includes("is stale relative to Company/Pipeline operating source");
+  }
+  assert(rejectedStale, "self-check: Company/Pipeline manifest freshness must reject stale bytes");
+}
+
+function assertCompanyPipelineManifestWorktreeIsClean() {
+  const paths = [
+    "domains/company-pipeline/data/companies",
+    "domains/company-pipeline/data/registries",
+    "data/generated/companies.json",
+    "data/generated/pipeline-programs.json",
+    "data/generated/regimens.json",
+  ];
+  const status = execFileSync(
+    "git",
+    ["status", "--porcelain", "--untracked-files=all", "--", ...paths],
+    { cwd: root, encoding: "utf8" },
+  ).trim();
+  assert(
+    status.length === 0,
+    `Company/Pipeline manifest baseline has uncommitted changes; Clinical Evidence must not consume or modify an ambiguous baseline:\n${status}`,
+  );
+}
+
+function validateCompanyPipelineManifest() {
+  selfCheckCompanyPipelineManifestFreshness();
+  assertCompanyPipelineManifestWorktreeIsClean();
+  const expected = loadValidatedCompanyPipelineAggregates();
+  const files = [
+    ["companies.json", expected.companies],
+    ["pipeline-programs.json", expected.programs],
+    ["regimens.json", expected.regimens],
+  ];
+
+  for (const [fileName, records] of files) {
+    const filePath = path.join(generatedDir, fileName);
+    assert(
+      existsSync(filePath),
+      `data/generated/${fileName} is missing; Company/Pipeline manifest is not usable for Clinical Evidence`,
+    );
+    assertCompanyPipelineManifestFileCurrent(
+      readFileSync(filePath, "utf8"),
+      records,
+      fileName,
+    );
+  }
+
+  console.log(
+    `Validated read-only Company/Pipeline manifest with ${expected.companies.length} company record(s), ${expected.programs.length} program record(s), and ${expected.regimens.length} regimen record(s); generated artifacts are byte-current.`,
+  );
+  return expected;
 }
 
 function validateGenerated() {
@@ -3249,6 +3357,19 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["stale-schema-version", /clinicalEvidenceSchemaVersion must be "3\.1"/, (fixture) => {
       fixture.clinicalEvidenceSchemaVersion = "1.0";
+    }],
+    ["study-missing-company-reference", /missing companyId reference fixture-company-does-not-exist/, (fixture) => {
+      fixture.studies[0].companyId = "fixture-company-does-not-exist";
+    }],
+    ["study-missing-asset-reference", /missing asset reference fixture-co\/fixture-asset-does-not-exist/, (fixture) => {
+      fixture.studies[0].assetId = "fixture-asset-does-not-exist";
+    }],
+    ["study-missing-program-reference", /missing programId reference fixture-program-does-not-exist/, (fixture) => {
+      fixture.studies[0].programId = "fixture-program-does-not-exist";
+    }],
+    ["study-missing-regimen-reference", /missing regimenId reference fixture-regimen-does-not-exist/, (fixture) => {
+      delete fixture.studies[0].programId;
+      fixture.studies[0].regimenId = "fixture-regimen-does-not-exist";
     }],
     ["study-without-focal-mapping", /exactly one of programId or regimenId is required/, (fixture) => {
       delete fixture.studies[0].programId;
@@ -5005,6 +5126,12 @@ try {
     }
     case "generate":
       generateAggregates();
+      break;
+    case "generate:clinical-evidence":
+      generateClinicalEvidenceAggregates();
+      break;
+    case "validate:company-pipeline:manifest":
+      validateCompanyPipelineManifest();
       break;
     case "validate:generated":
       validateGenerated();

@@ -11,6 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "data:generate": "node scripts/data-registry.mjs generate",
+    "data:generate:clinical-evidence": "node scripts/data-registry.mjs generate:clinical-evidence",
+    "data:validate:company-pipeline:manifest": "node scripts/data-registry.mjs validate:company-pipeline:manifest",
     "data:validate:companies": "node scripts/data-registry.mjs validate:companies",
     "data:validate:generated": "node scripts/data-registry.mjs validate:generated",
     "data:validate:clinical-evidence": "node scripts/data-registry.mjs validate:clinical-evidence",

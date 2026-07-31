@@ -24,9 +24,12 @@ source itself.
   are the human-edited Clinical Evidence source of truth.
 - `data/generated/*.json` files are **generated artifacts**. Do not edit them by
   hand.
-- They are produced only by `npm run data:generate`
+- The complete five-file set is produced by `npm run data:generate`
   (`scripts/data-registry.mjs`) from operating data plus the
   repository-controlled registries under `domains/company-pipeline/data/registries/`.
+  `npm run data:generate:clinical-evidence` is the narrower Clinical Evidence
+  workflow command: it writes only the two Clinical Evidence-owned generated
+  files and treats Company/Pipeline source and generated artifacts as read only.
 - Generation creates **no new canonical facts**: aggregate records are verbatim
   copies of operating records (see §4). It aggregates and orders them; the
   separately versioned asset-study projection derives only reciprocal links
@@ -34,9 +37,9 @@ source itself.
 
 ## 2. Determinism and ordering
 
-`npm run data:generate` is deterministic: the same operating data and registries
-always produce byte-identical output. Ordering is guaranteed by code in
-`scripts/data-registry.mjs`, not merely observed:
+Both generation commands are deterministic: the same operating data and
+registries always produce byte-identical output. Ordering is guaranteed by code
+in `scripts/data-registry.mjs`, not merely observed:
 
 - **File set:** exactly five files — `companies.json`,
   `pipeline-programs.json`, `regimens.json`, `clinical-evidence.json`, and
@@ -161,13 +164,20 @@ Downstream UI, report, and tool consumers:
   aggregate is **structurally valid and internally consistent** under
   Contract 1.2.
 - It does **not** by itself prove the generated files are **up-to-date** with
-  operating data. Staleness is detected by running `npm run data:generate` and
-  confirming `git diff` shows no change under `data/generated/`.
+  operating data. `npm run data:validate:company-pipeline:manifest` performs a
+  read-only, byte-current comparison of `companies.json`,
+  `pipeline-programs.json`, and `regimens.json` against validated
+  Company/Pipeline operating source. Full five-file staleness may also be
+  checked by running `npm run data:generate` and confirming `git diff` shows no
+  change under `data/generated/`; Clinical Evidence research must use the
+  read-only validator and must not regenerate Company/Pipeline artifacts.
 - Generated validation does **not** replace the other validators:
   `data:validate:companies` (operating source), `data:validate:registries`
   (vocabularies), and `data:validate:synthetic` (fixtures) each cover a
   different active surface. Historical diagnostic archives are not validated.
 - Clinical Evidence has additional validators:
+  `data:validate:company-pipeline:manifest` (its read-only identity/traversal
+  preflight),
   `data:validate:clinical-evidence`,
   `data:validate:clinical-evidence:generated`, and
   `data:validate:clinical-evidence:synthetic`.

@@ -15,7 +15,7 @@ read only the path for the task. Do not read the full documentation tree.
 | Task | Required reading | Read only when needed |
 | --- | --- | --- |
 | Company/Pipeline research | [`research-workflow.md`](domains/company-pipeline/docs/research-workflow.md), [`Data Protocol`](domains/company-pipeline/docs/README.md), [`entities-and-rows.md`](domains/company-pipeline/docs/entities-and-rows.md), [`source-and-entry-policy.md`](domains/company-pipeline/docs/source-and-entry-policy.md) | Generated-output changes: [`generated-output-contract.md`](domains/company-pipeline/docs/generated-output-contract.md). Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
-| Clinical Evidence research | Run the Company/Pipeline path first, then read [`workflow.md`](domains/clinical-evidence/docs/workflow.md) and [`Clinical Evidence Data Contract`](domains/clinical-evidence/docs/README.md) | Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
+| Clinical Evidence research | [`workflow.md`](domains/clinical-evidence/docs/workflow.md) and [`Clinical Evidence Data Contract`](domains/clinical-evidence/docs/README.md) | Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
 | Schema or validator | Relevant type file, relevant contract, and the relevant section of `scripts/data-registry.mjs` | Aggregate/projection change: generated-output contract. Workflow only if operator behavior changes. |
 | UI | [`UI Reference`](domains/app/docs/README.md), then only the relevant route, component, selector, and read-model files | Data contract only when the UI consumes or changes that contract's meaning. |
 | Historical decision review | [`decision-log.md`](domains/company-pipeline/docs/decision-log.md), then the linked current authority | Use [`docs/history/README.md`](docs/history/README.md) only when the compact index is insufficient. |
@@ -42,11 +42,15 @@ Broad terms without clinical context, such as earnings results or a
 manufacturing test, remain Company/Pipeline requests. Mentioning an asset does
 not replace the required company name.
 
-For a Clinical Evidence request, Company/Pipeline Research runs first in the
-same execution. If that first step cannot access required sources, stop before
-all operating-data changes. If it completes but Clinical Evidence source access
-later fails, retain the completed Company/Pipeline changes, make no Clinical
-Evidence changes, and report partial completion.
+For a Clinical Evidence request, do **not** run Company/Pipeline Research and do
+not edit Company/Pipeline operating data or generated artifacts. Clinical
+Evidence reads the checked-out, stored Company/Pipeline manifest as a read-only
+identity and traversal reference under its own workflow. If that manifest is
+missing, internally conflicting, stale relative to its generated artifacts, or
+contradicted by current evidence in a way that prevents reliable Clinical
+Evidence traversal or anchoring, stop the affected scope and report a blocker;
+never refresh or repair Company/Pipeline data as part of the Clinical Evidence
+run.
 
 ## Update boundaries
 

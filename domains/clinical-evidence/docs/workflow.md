@@ -12,10 +12,29 @@ intent. The company name is the only input. Routing is authoritative in
 [`AGENTS.md`](../../../AGENTS.md); entity and result semantics are authoritative in
 the [Clinical Evidence contract](./README.md).
 
-## 1. Run Company/Pipeline Research first
+## 1. Load the stored Company/Pipeline manifest read only
 
-Execute the complete [Company/Pipeline workflow](../../company-pipeline/docs/research-workflow.md) in the
-same run. Clinical Evidence may use only the resulting Company/Pipeline source
+Do **not** run Company/Pipeline Research in a Clinical Evidence execution.
+Clinical Evidence uses the checked-out Company/Pipeline operating source as its
+stored identity and traversal manifest and treats the corresponding generated
+Company/Pipeline artifacts as a read-only freshness check. It never edits,
+refreshes, regenerates, or repairs either surface.
+
+Before source discovery or any Clinical Evidence edit:
+
+1. confirm that the intended Company/Pipeline source and generated paths have no
+   pre-existing uncommitted change that would make the baseline ambiguous;
+2. run `npm run data:validate:company-pipeline:manifest`; and
+3. run `npm run data:probe:registry-citations -- --company <companyId>`.
+
+The manifest validator checks the complete Company, asset / Program, and Regimen
+source graph and requires the three generated Company/Pipeline aggregates to be
+byte-current with it. It writes nothing. A missing generated file, invalid
+source graph, identity collision, or source/generated drift is a blocker. Do
+not run `npm run data:generate` to clear that blocker inside Clinical Evidence;
+report it for a separate Company/Pipeline execution.
+
+Clinical Evidence may use only the stored Company/Pipeline source
 data — the **complete** current tracked asset / Program / Regimen manifest,
 not a subset prefiltered by `scopeClass`. Every tracked asset is a traversal
 candidate under this workflow's own
@@ -30,23 +49,23 @@ disposition, but it is **never** the authority for Study inclusion and it is
 in-scope exactly when it independently satisfies this workflow's own Evidence
 Scope; `scopeClass` neither includes nor excludes it.
 
-After that step, keep an in-session traversal manifest containing `assetId`,
+Keep an in-session traversal manifest containing `assetId`,
 `programId`, canonical asset name, route, indication scope, development state,
 `scopeClass`, and unresolved conflicts. Do not persist this manifest.
 
-If Company/Pipeline Research cannot complete, stop before Clinical Evidence
-changes. Clinical Evidence research never silently edits Company/Pipeline
-records; report any conflict discovered later.
+The stored manifest's age alone is not a blocker because the contract defines
+no expiry threshold. Treat it as materially stale when current evidence shows
+that a missing or contradicted Company/Pipeline identity prevents a reliable
+traversal or focal mapping. A repository-wide structural or generated-drift
+failure blocks the run. A target-company inventory failure blocks that
+company. A localized unresolved asset / Program / Regimen anchor blocks the
+affected Study or asset and makes the company result `PARTIAL`. In every case,
+leave Company/Pipeline unchanged and report the exact blocker and the separate
+Company/Pipeline re-entry condition.
 
 ### Registry-citation preflight (ADR-0054)
 
-Company/Pipeline Research must have **already completed in this same run**
-before this preflight runs. A stored registry locator from a prior run is never
-a reason to skip the current run's Company/Pipeline refresh — this preflight
-indexes what Company/Pipeline just stored, it does not replace running
-Company/Pipeline Research.
-
-Immediately after Company/Pipeline Research completes, run:
+After the read-only manifest validation, run:
 
 ```text
 npm run data:probe:registry-citations -- --company <companyId>
@@ -94,7 +113,10 @@ as any other probe or validator. When more than one Program or Regimen row
 cited the same locator, or the same locator was cited under more than one
 company, treat every listed row only as an anchor **candidate**; decide the
 actual anchor under this workflow's own reference rules, never from row
-co-location alone.
+co-location alone. If direct current evidence later shows that none of the
+stored candidates can support a reliable focal mapping, apply the manifest
+blocker rule above; do not reinterpret the advisory probe result itself as a
+failure.
 
 This is the mirror image of Company/Pipeline's own rule (ADR-0055): Company/
 Pipeline decides Program/Study disposition on sponsor evidence alone and
@@ -326,7 +348,8 @@ of forcing an entry or misclassifying an evidence gap as a schema limitation.
 After valid Clinical Evidence changes:
 
 ```text
-npm run data:generate
+npm run data:validate:company-pipeline:manifest
+npm run data:generate:clinical-evidence
 npm run data:validate:clinical-evidence
 npm run data:validate:clinical-evidence:generated
 npm run data:validate:clinical-evidence:synthetic
@@ -336,6 +359,15 @@ npm run lint
 npm run build
 git diff --check
 ```
+
+`data:generate:clinical-evidence` writes only
+`data/generated/clinical-evidence.json` and
+`data/generated/clinical-evidence-asset-studies.json`. It reads the stored
+Company/Pipeline manifest for identity resolution but must not write the
+Company/Pipeline source or `companies.json`, `pipeline-programs.json`, or
+`regimens.json`. Re-run the read-only manifest validator after generation and
+confirm the Company/Pipeline paths have the same pre-run diff before claiming
+completion.
 
 `data:probe:registry-citations` is advisory only, as in the preflight above:
 live-data findings never fail it and it never decides Study inclusion, focal
@@ -404,8 +436,8 @@ completion as `FULL` when no result was blocked and no fallback was required,
 `FULL_WITH_FALLBACK` when every otherwise-blocked result was still entered on
 an equivalent fallback source, or `PARTIAL` when at least one result remains
 unresolved after fallback. This blocking is case-scoped and does not reach
-outside Clinical Evidence: Company/Pipeline changes are retained regardless of
-a later Clinical Evidence source-access failure.
+outside Clinical Evidence. A Clinical Evidence execution never makes
+Company/Pipeline changes.
 
 ## 7. Report
 
@@ -425,6 +457,8 @@ Report:
   `not applicable`, `outside scope`, or `unresolved`) for any of the four
   categories the highest-priority source did not support;
 - exclusions, deferrals, conflicts, and pipeline discrepancies;
+- the stored Company/Pipeline manifest baseline used, its read-only validation
+  result, and any manifest blocker or re-entry condition;
 - Schema boundary report and status counts;
 - generated output and validation results;
 - source-access states and blockers for every source consulted under the
@@ -440,8 +474,9 @@ This report is in-conversation only; it is not persisted as a repository
 document. The per-company handover file (step 8) is the sole persisted record
 of an unresolved or blocked source.
 
-Do not claim Clinical Evidence completion unless traversal, the step 6
-completion check, valid updates, generation, validation, and reporting all
+Do not claim Clinical Evidence completion unless manifest preflight, traversal,
+the step 6 completion check, valid updates, Clinical-Evidence-only generation,
+validation, Company/Pipeline no-change confirmation, and reporting all
 completed.
 
 ## 8. Unresolved-source handover
