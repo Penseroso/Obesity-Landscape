@@ -592,6 +592,105 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "regeneron-trevogrumab-garetosmab-semaglutide-obesity",
+    "companyId": "regeneron",
+    "name": "Trevogrumab + Garetosmab + Semaglutide",
+    "mechanismFamilyId": "glp1-plus-myostatin-activin-a-combination",
+    "components": [
+      {
+        "assetName": "Trevogrumab",
+        "codeName": "REGN1033",
+        "role": "GDF8 (myostatin) blockade"
+      },
+      {
+        "assetName": "Garetosmab",
+        "codeName": "REGN2477",
+        "role": "Activin A blockade"
+      },
+      {
+        "assetName": "Semaglutide",
+        "externalCompanyName": "Novo Nordisk",
+        "role": "GLP-1 receptor agonist"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06299098",
+          "title": "A Randomized, Double-Blind Study of The Efficacy and Safety of Trevogrumab, With or Without Garetosmab, in Addition to Semaglutide in Patients With Obesity (COURAGE)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://investor.regeneron.com/news-releases/news-release-details/results-phase-2-courage-trial-demonstrating-potential-improve/",
+          "title": "Results from Phase 2 COURAGE Trial Demonstrating Potential to Improve Quality of GLP-1 receptor agonist-induced Weight Loss by Preserving Lean Mass, Presented at EASD",
+          "sourceType": "company press release",
+          "publishedAt": "2025-09",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-adjunct"
+  },
+  {
+    "id": "regeneron-trevogrumab-semaglutide-obesity",
+    "companyId": "regeneron",
+    "name": "Trevogrumab + Semaglutide",
+    "mechanismFamilyId": "glp1-plus-myostatin-combination",
+    "components": [
+      {
+        "assetName": "Trevogrumab",
+        "codeName": "REGN1033",
+        "role": "GDF8 (myostatin) blockade"
+      },
+      {
+        "assetName": "Semaglutide",
+        "externalCompanyName": "Novo Nordisk",
+        "role": "GLP-1 receptor agonist"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06299098",
+          "title": "A Randomized, Double-Blind Study of The Efficacy and Safety of Trevogrumab, With or Without Garetosmab, in Addition to Semaglutide in Patients With Obesity (COURAGE)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://investor.regeneron.com/news-releases/news-release-details/results-phase-2-courage-trial-demonstrating-potential-improve/",
+          "title": "Results from Phase 2 COURAGE Trial Demonstrating Potential to Improve Quality of GLP-1 receptor agonist-induced Weight Loss by Preserving Lean Mass, Presented at EASD",
+          "sourceType": "company press release",
+          "publishedAt": "2025-09",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-adjunct"
+  },
+  {
     "id": "verdiva-bio-ecnoglutide-vrb-103-regimen",
     "companyId": "verdiva-bio",
     "name": "Ecnoglutide (VRB-101) plus VRB-103",

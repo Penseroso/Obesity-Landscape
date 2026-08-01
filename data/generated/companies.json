@@ -143,6 +143,19 @@
     }
   },
   {
+    "id": "regeneron",
+    "name": "Regeneron",
+    "headquartersCountry": "United States",
+    "officialWebsite": {
+      "url": "https://www.regeneron.com/",
+      "checkedAt": "2026-08-01"
+    },
+    "officialPipeline": {
+      "url": "https://www.regeneron.com/science/investigational-pipeline",
+      "checkedAt": "2026-08-01"
+    }
+  },
+  {
     "id": "roche",
     "name": "Roche",
     "headquartersCountry": "Switzerland",

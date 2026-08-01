@@ -1,0 +1,66 @@
+[
+  {
+    "id": "regeneron-olatorepatide-subcutaneous-injection",
+    "assetId": "olatorepatide",
+    "companyId": "regeneron",
+    "assetName": "Olatorepatide",
+    "codeName": "HS-20094",
+    "technical": {
+      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Hansoh Pharma",
+        "role": "licensor",
+        "territories": ["Worldwide excluding Chinese mainland, Hong Kong, and Macau"],
+        "rights": ["development", "manufacturing", "commercialization"],
+        "effectiveDate": "2025-06-02",
+        "sourceUrls": [
+          "https://investor.regeneron.com/news-releases/news-release-details/regeneron-expands-clinical-stage-obesity-portfolio-strategic"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.regeneron.com/science/investigational-pipeline",
+          "title": "Regeneron Pipeline & Medicines in Development",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://investor.regeneron.com/news-releases/news-release-details/regeneron-expands-clinical-stage-obesity-portfolio-strategic",
+          "title": "Regeneron Expands Clinical-Stage Obesity Portfolio with Strategic In-Licensing of Novel Dual GLP-1/GIP Receptor Agonist",
+          "sourceType": "company press release",
+          "publishedAt": "2025-06-02",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://investor.regeneron.com/news-releases/news-release-details/olatorepatide-obesity-treatment-licensed-regeneron-demonstrates",
+          "title": "Olatorepatide Obesity Treatment Licensed by Regeneron Demonstrates Positive Phase 3 Results in Chinese Patients",
+          "sourceType": "company press release",
+          "publishedAt": "2026-03-07",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  }
+]

@@ -26,7 +26,8 @@
       "GIP and GLP-1 receptor agonist",
       "GLP-1R/GIPR dual agonist",
       "GIP/GLP-1 receptor dual agonist",
-      "GIP/GLP-1 co-agonist"
+      "GIP/GLP-1 co-agonist",
+      "dual GLP-1/GIP receptor agonist"
     ]
   },
   {
@@ -393,6 +394,29 @@
       { "target": "IL-23p19", "action": "antagonist" }
     ],
     "sortRank": 320,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-plus-myostatin-combination",
+    "label": "GLP-1 receptor agonist plus GDF8 (myostatin) blockade",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GDF8 (myostatin)", "action": "blockade" }
+    ],
+    "sortRank": 330,
+    "mechanisms": []
+  },
+  {
+    "id": "glp1-plus-myostatin-activin-a-combination",
+    "label": "GLP-1 receptor agonist plus GDF8 (myostatin) and Activin A blockade",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GDF8 (myostatin)", "action": "blockade" },
+      { "target": "Activin A", "action": "blockade" }
+    ],
+    "sortRank": 340,
     "mechanisms": []
   }
 ]
