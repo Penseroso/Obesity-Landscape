@@ -1,0 +1,13 @@
+{
+  "id": "hansoh-pharma",
+  "name": "Hansoh Pharma",
+  "headquartersCountry": "China",
+  "officialWebsite": {
+    "url": "https://www.hspharm.com/",
+    "checkedAt": "2026-08-01"
+  },
+  "officialPipeline": {
+    "url": "https://www.hansoh.cn/en/technology/research-field.htm",
+    "checkedAt": "2026-08-01"
+  }
+}

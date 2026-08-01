@@ -4056,6 +4056,151 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "hansoh-pharma-olatorepatide-subcutaneous-injection",
+    "assetId": "olatorepatide",
+    "companyId": "hansoh-pharma",
+    "assetName": "Olatorepatide",
+    "codeName": "HS-20094",
+    "technical": {
+      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Filed",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Submitted, pending clearance"
+    },
+    "regulatoryStates": [
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "China",
+        "authority": "NMPA",
+        "date": "2026-06-04"
+      }
+    ],
+    "relationships": [
+      {
+        "externalCompanyName": "Regeneron",
+        "role": "licensee",
+        "territories": [
+          "Worldwide excluding Chinese mainland, Hong Kong, and Macau"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-06-02",
+        "sourceUrls": [
+          "https://www.hspharm.com/news/news-detail-513320.htm"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.hspharm.com/news/news-detail-513468.htm",
+          "title": "New Drug Application for Olatorepatide Injection Accepted by the National Medical Products Administration",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-04",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.hspharm.com/news/news-detail-513424.htm",
+          "title": "Olatorepatide (HS-20094) Achieves Up to 19.3% Weight Loss at Week 48 in Phase 3 Study with Favorable Gastrointestinal Tolerability",
+          "sourceType": "company press release",
+          "publishedAt": "2026-03",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06839664",
+          "title": "A Study of HS-20094 in Chinese Adults With Overweight or Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-08-27",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.hspharm.com/news/news-detail-513320.htm",
+          "title": "Hansoh Pharma Grants Regeneron an Exclusive License Rights to Its Investigational Dual GLP-1/GIP Receptor Agonist HS-20094",
+          "sourceType": "company press release",
+          "publishedAt": "2025-06-02",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "hansoh-pharma-olatorepatide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "olatorepatide",
+    "companyId": "hansoh-pharma",
+    "assetName": "Olatorepatide",
+    "codeName": "HS-20094",
+    "technical": {
+      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07156500",
+          "title": "A Phase 3 Study of HS-20094 in Patients With T2DM Inadequately Controlled With Diet and Exercise Alone",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07156539",
+          "title": "A Study of HS-20094 Versus Dulaglutide Once Weekly as Add-on Therapy to Metformin Monotherapy or in Combination With SGLT2 Inhibitors in Participants With Type 2 Diabetes",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06901648",
+          "title": "A Study of HS-20094 in Patients With T2DM",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-03-30",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.hspharm.com/news/news-detail-513198.htm",
+          "title": "2024 ADA | Hansoh Pharma Released the Phase II Clinical Study Data of the Novel Dual GIP and GLP-1 Receptor Agonist",
+          "sourceType": "company press release",
+          "publishedAt": "2024-06",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
     "id": "merck-co-efinopegdutide-subcutaneous-injection",
     "assetId": "efinopegdutide",
     "companyId": "merck-co",
