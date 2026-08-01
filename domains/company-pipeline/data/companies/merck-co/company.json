@@ -1,0 +1,13 @@
+{
+  "id": "merck-co",
+  "name": "Merck & Co.",
+  "headquartersCountry": "United States",
+  "officialWebsite": {
+    "url": "https://www.merck.com/",
+    "checkedAt": "2026-08-01"
+  },
+  "officialPipeline": {
+    "url": "https://www.merck.com/research/product-pipeline/",
+    "checkedAt": "2026-08-01"
+  }
+}

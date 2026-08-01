@@ -1,0 +1,183 @@
+[
+  {
+    "id": "merck-co-efinopegdutide-subcutaneous-injection",
+    "assetId": "efinopegdutide",
+    "companyId": "merck-co",
+    "assetName": "Efinopegdutide",
+    "codeName": "MK-6024",
+    "technical": {
+      "mechanism": "dual GLP-1/glucagon receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Metabolic dysfunction-associated steatohepatitis"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Active not recruiting"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Hanmi Pharmaceutical",
+        "role": "licensor",
+        "territories": ["Worldwide excluding South Korea"],
+        "rights": ["development", "manufacturing", "commercialization"],
+        "effectiveDate": "2020-08-04",
+        "sourceUrls": [
+          "https://www.merck.com/news/merck-and-hanmi-pharmaceutical-enter-into-licensing-agreement-to-develop-efinopegdutide-an-investigational-once-weekly-therapy-for-nonalcoholic-steatohepatitis-nash/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.merck.com/research/product-pipeline/",
+          "title": "Merck Product Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.merck.com/news/merck-and-hanmi-pharmaceutical-enter-into-licensing-agreement-to-develop-efinopegdutide-an-investigational-once-weekly-therapy-for-nonalcoholic-steatohepatitis-nash/",
+          "title": "Merck and Hanmi Pharmaceutical Enter into Licensing Agreement to Develop Efinopegdutide, an Investigational Once-Weekly Therapy for Nonalcoholic Steatohepatitis (NASH)",
+          "sourceType": "company press release",
+          "publishedAt": "2020-08-04",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05877547",
+          "title": "A Clinical Study of Efinopegdutide in Participants With Precirrhotic Nonalcoholic Steatohepatitis (NASH) (MK-6024-013)",
+          "sourceType": "trial registry",
+          "publishedAt": "2023-05-25",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06465186",
+          "title": "A Clinical Study of Efinopegdutide in People With Compensated Cirrhosis Due to Steatohepatitis (MK-6024-017)",
+          "sourceType": "trial registry",
+          "publishedAt": "2024-06-14",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "merck-co-hs-10535-oral-undisclosed",
+    "assetId": "hs-10535",
+    "companyId": "merck-co",
+    "assetName": "HS-10535",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Hansoh Pharma",
+        "role": "licensor",
+        "territories": ["Worldwide"],
+        "rights": ["development", "manufacturing", "commercialization"],
+        "effectiveDate": "2024-12-18",
+        "sourceUrls": [
+          "https://www.merck.com/news/merck-enters-into-exclusive-global-license-agreement-with-hansoh-pharma-for-investigational-oral-glp-1-receptor-agonist/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.merck.com/news/merck-enters-into-exclusive-global-license-agreement-with-hansoh-pharma-for-investigational-oral-glp-1-receptor-agonist/",
+          "title": "Merck Enters into Exclusive Global License Agreement with Hansoh Pharma for Investigational Oral GLP-1 Receptor Agonist",
+          "sourceType": "company press release",
+          "publishedAt": "2024-12-18",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.hspharm.com/news/news-detail-513270.htm",
+          "title": "Hansoh Grants MSD an Exclusive Global License Rights to Its Investigational Oral GLP-1 Receptor Agonist HS-10535",
+          "sourceType": "company press release",
+          "publishedAt": "2024-12-18",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "merck-co-taranabant-oral-capsule",
+    "assetId": "taranabant",
+    "companyId": "merck-co",
+    "assetName": "Taranabant",
+    "codeName": "MK-0364",
+    "technical": {
+      "mechanism": "CB1R inverse agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Capsule",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT00384605",
+          "title": "A Phase III Randomized, Placebo-Controlled Clinical Trial to Study the Safety and Efficacy of Taranabant (MK0364) in Obese Patients and in Overweight Patients With Obesity-Related Co-Morbidities, Followed by a 1-Year Extension",
+          "sourceType": "trial registry",
+          "publishedAt": "2006-10",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18177726/",
+          "title": "The acyclic CB1R inverse agonist taranabant mediates weight loss by increasing energy expenditure and decreasing caloric intake",
+          "sourceType": "peer-reviewed publication",
+          "publishedAt": "2008-01",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.fiercebiotech.com/biotech/merck-dumps-late-stage-obesity-drug",
+          "title": "Merck dumps late-stage obesity drug",
+          "sourceType": "news article",
+          "publishedAt": "2008-10",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  }
+]
