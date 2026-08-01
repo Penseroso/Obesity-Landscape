@@ -7276,6 +7276,182 @@
     "scopeClass": "metabolic-adjacent"
   },
   {
+    "id": "regeneron-mibavademab-subcutaneous-injection",
+    "assetId": "mibavademab",
+    "companyId": "regeneron",
+    "assetName": "Mibavademab",
+    "codeName": "REGN4461",
+    "technical": {
+      "mechanism": "Leptin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Monogenic obesity"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.regeneron.com/science/investigational-pipeline",
+          "title": "Regeneron Pipeline & Medicines in Development",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07220772",
+          "title": "An Open-Label Study of Mibavademab (REGN4461), a Leptin Receptor Agonist, for the Treatment of Monogenic Obesity Due to Biallelic Loss of Function Variants of the LEP Gene",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.science.org/doi/10.1126/scitranslmed.add4897",
+          "title": "Preclinical, randomized phase 1, and compassionate use evaluation of REGN4461, a leptin receptor agonist antibody for leptin deficiency",
+          "sourceType": "peer-reviewed publication",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "regeneron-mibavademab-subcutaneous-injection-familial-partial-lipodystrophy",
+    "assetId": "mibavademab",
+    "companyId": "regeneron",
+    "assetName": "Mibavademab",
+    "codeName": "REGN4461",
+    "technical": {
+      "mechanism": "Leptin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Familial partial lipodystrophy"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05088460",
+          "title": "A Study to Examine the Effects of the Leptin Receptor (LEPR) Agonist Antibody REGN4461 in Adult Patients With Familial Partial Lipodystrophy (FPLD)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "regeneron-mibavademab-subcutaneous-injection-functional-hypothalamic-amenorrhea",
+    "assetId": "mibavademab",
+    "companyId": "regeneron",
+    "assetName": "Mibavademab",
+    "codeName": "REGN4461",
+    "technical": {
+      "mechanism": "Leptin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Functional hypothalamic amenorrhea"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.regeneron.com/science/investigational-pipeline",
+          "title": "Regeneron Pipeline & Medicines in Development",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07235917",
+          "title": "A Phase 2, Double-Blind, Placebo-Controlled Study to Investigate the Safety and Efficacy of Mibavademab in Adult Women With Functional Hypothalamic Amenorrhea",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "non-metabolic"
+  },
+  {
+    "id": "regeneron-mibavademab-subcutaneous-injection-generalized-lipodystrophy",
+    "assetId": "mibavademab",
+    "companyId": "regeneron",
+    "assetName": "Mibavademab",
+    "codeName": "REGN4461",
+    "technical": {
+      "mechanism": "Leptin receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Generalized lipodystrophy"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-01",
+      "updatedAt": "2026-08-01",
+      "sources": [
+        {
+          "url": "https://www.regeneron.com/science/investigational-pipeline",
+          "title": "Regeneron Pipeline & Medicines in Development",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07220785",
+          "title": "A Two-Part, Randomized, Placebo-Controlled Phase 3 Study of the Efficacy, Safety, and Pharmacokinetics of Mibavademab in Patients With Generalized Lipodystrophy (LAGO)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-01"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
     "id": "regeneron-olatorepatide-subcutaneous-injection",
     "assetId": "olatorepatide",
     "companyId": "regeneron",

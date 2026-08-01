@@ -212,6 +212,17 @@
     ]
   },
   {
+    "id": "leptin-receptor-agonist",
+    "label": "Leptin receptor agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "Leptin receptor", "action": "agonist" }],
+    "sortRank": 140,
+    "mechanisms": [
+      "Leptin receptor agonist",
+      "leptin receptor agonist antibody"
+    ]
+  },
+  {
     "id": "amylin-plus-glp1-combination",
     "label": "Amylin receptor agonist plus GLP-1 receptor agonist",
     "composition": "multi-component",
