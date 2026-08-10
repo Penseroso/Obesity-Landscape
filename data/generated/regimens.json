@@ -152,7 +152,7 @@
       "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Sponsor-declared current pipeline stage",
-      "stageOperationalState": "Not separately confirmed"
+      "stageOperationalState": "Completed"
     },
     "metadata": {
       "lastVerifiedAt": "2026-08-10",

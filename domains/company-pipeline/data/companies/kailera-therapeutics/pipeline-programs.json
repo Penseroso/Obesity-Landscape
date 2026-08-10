@@ -11,7 +11,7 @@
       { "type": "development-code", "value": "HRS9531-T" }
     ],
     "technical": {
-      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "mechanism": "GLP-1/GIP receptor dual agonist",
       "platform": "Peptide"
     },
     "administration": {
@@ -88,7 +88,7 @@
       { "type": "development-code", "value": "HRS9531-T" }
     ],
     "technical": {
-      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "mechanism": "GLP-1/GIP receptor dual agonist",
       "platform": "Peptide"
     },
     "administration": {
@@ -161,7 +161,7 @@
       { "type": "development-code", "value": "HRS-7535" }
     ],
     "technical": {
-      "mechanism": "Non-peptide GLP-1 receptor agonist",
+      "mechanism": "GLP-1 receptor agonist",
       "platform": "Small molecule"
     },
     "administration": {
@@ -236,7 +236,7 @@
       { "type": "development-code", "value": "HRS-4729" }
     ],
     "technical": {
-      "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
+      "mechanism": "GLP-1/GIP/glucagon receptor tri-agonist",
       "platform": "Peptide"
     },
     "administration": {

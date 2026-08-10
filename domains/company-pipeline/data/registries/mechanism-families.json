@@ -27,6 +27,7 @@
       "GLP-1R/GIPR dual agonist",
       "GIP/GLP-1 receptor dual agonist",
       "GIP/GLP-1 co-agonist",
+      "GLP-1/GIP receptor dual agonist",
       "dual GLP-1/GIP receptor agonist"
     ]
   },
@@ -68,6 +69,7 @@
     "sortRank": 50,
     "mechanisms": [
       "GIP, GLP-1, and glucagon receptor agonist",
+      "GLP-1/GIP/glucagon receptor tri-agonist",
       "GLP-1/GIP/glucagon receptor triple agonist",
       "GLP-1R/GIPR/GCGR triple agonist",
       "Long-acting glucagon-like peptide (GLP-1), gastric inhibitory peptide (GIP) and glucagon triple agonist",

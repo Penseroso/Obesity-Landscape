@@ -1370,7 +1370,7 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Discontinued",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
@@ -1383,6 +1383,13 @@
           "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
           "sourceType": "company clinical trials appendix",
           "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2023/q1/Q1-2023-results-announcement.pdf",
+          "title": "AstraZeneca Q1 2023 Results",
+          "sourceType": "company results announcement",
+          "publishedAt": "2023-04-27",
           "checkedAt": "2026-08-10"
         },
         {
@@ -1415,7 +1422,7 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Discontinued",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
@@ -1428,6 +1435,13 @@
           "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
           "sourceType": "company clinical trials appendix",
           "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2023/q1/Q1-2023-results-announcement.pdf",
+          "title": "AstraZeneca Q1 2023 Results",
+          "sourceType": "company results announcement",
+          "publishedAt": "2023-04-27",
           "checkedAt": "2026-08-10"
         },
         {
@@ -1460,7 +1474,7 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Discontinued",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
@@ -1473,6 +1487,13 @@
           "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
           "sourceType": "company clinical trials appendix",
           "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2023/q1/Q1-2023-results-announcement.pdf",
+          "title": "AstraZeneca Q1 2023 Results",
+          "sourceType": "company results announcement",
+          "publishedAt": "2023-04-27",
           "checkedAt": "2026-08-10"
         },
         {
@@ -1505,7 +1526,7 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Unknown",
+      "status": "Discontinued",
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
@@ -1518,6 +1539,13 @@
           "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
           "sourceType": "company clinical trials appendix",
           "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2023/q1/Q1-2023-results-announcement.pdf",
+          "title": "AstraZeneca Q1 2023 Results",
+          "sourceType": "company results announcement",
+          "publishedAt": "2023-04-27",
           "checkedAt": "2026-08-10"
         },
         {
@@ -4926,7 +4954,7 @@
       }
     ],
     "technical": {
-      "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
+      "mechanism": "GLP-1/GIP/glucagon receptor tri-agonist",
       "platform": "Peptide"
     },
     "administration": {
@@ -5008,7 +5036,7 @@
       }
     ],
     "technical": {
-      "mechanism": "Non-peptide GLP-1 receptor agonist",
+      "mechanism": "GLP-1 receptor agonist",
       "platform": "Small molecule"
     },
     "administration": {
@@ -5100,7 +5128,7 @@
       }
     ],
     "technical": {
-      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "mechanism": "GLP-1/GIP receptor dual agonist",
       "platform": "Peptide"
     },
     "administration": {
@@ -5190,7 +5218,7 @@
       }
     ],
     "technical": {
-      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "mechanism": "GLP-1/GIP receptor dual agonist",
       "platform": "Peptide"
     },
     "administration": {
