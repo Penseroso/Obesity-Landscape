@@ -1,0 +1,13 @@
+{
+  "id": "astrazeneca",
+  "name": "AstraZeneca",
+  "headquartersCountry": "United Kingdom",
+  "officialWebsite": {
+    "url": "https://www.astrazeneca.com/",
+    "checkedAt": "2026-08-10"
+  },
+  "officialPipeline": {
+    "url": "https://www.astrazeneca.com/our-therapy-areas/pipeline.html",
+    "checkedAt": "2026-08-10"
+  }
+}

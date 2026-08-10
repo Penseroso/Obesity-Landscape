@@ -1,0 +1,105 @@
+[
+  {
+    "id": "astrazeneca-azd9550-azd6234-obesity",
+    "companyId": "astrazeneca",
+    "name": "AZD9550 + AZD6234",
+    "mechanismFamilyId": "glp1-glucagon-plus-amylin-combination",
+    "components": [
+      {
+        "assetName": "AZD9550",
+        "role": "dual GLP-1/glucagon receptor agonist"
+      },
+      {
+        "assetId": "azd6234",
+        "role": "selective amylin receptor agonist"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/our-therapy-areas/pipeline.html",
+          "title": "AstraZeneca Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06862791",
+          "title": "A Phase IIb Study to Evaluate AZD9550 and AZD6234 in Participants Living With Obesity or Overweight With Co-morbidity (ASCEND)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/D8460C00002/",
+          "title": "A Trial to Learn How Safe AZD9550 Monotherapy and Combined With AZD6234 Is in People With or Without Type 2 Diabetes Who Are Living With Obesity and Overweight (CONTEMPO)",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-pramlintide-metreleptin-obesity",
+    "companyId": "astrazeneca",
+    "name": "Pramlintide + metreleptin",
+    "mechanismFamilyId": "amylin-plus-leptin-combination",
+    "components": [
+      { "assetId": "pramlintide", "role": "amylin receptor agonist" },
+      { "assetName": "Metreleptin", "role": "leptin receptor agonist" }
+    ],
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Paused"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Takeda Pharmaceutical Company Limited",
+        "role": "co-developer",
+        "sourceUrls": [
+          "https://www.takeda.com/en-us/newsroom/news-releases/2011/amylin-and-takeda-discontinue-development-of-pramlintidemetreleptin-combination-treatment-for-obesity-following-commercial-reassessment-of-the-program/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2013/Diabetes-alliance-transaction-overview.pdf",
+          "title": "AstraZeneca acquisition of BMS share of global diabetes alliance",
+          "sourceType": "company transaction presentation",
+          "publishedAt": "2013-12-19",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/DFA102/",
+          "title": "Study to Examine Safety, Tolerability, and Effect on Body Weight of Metreleptin Administered in Conjunction with Pramlintide in Obese and Overweight Subjects",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.takeda.com/en-us/newsroom/news-releases/2011/amylin-and-takeda-discontinue-development-of-pramlintidemetreleptin-combination-treatment-for-obesity-following-commercial-reassessment-of-the-program/",
+          "title": "Amylin and Takeda Discontinue Development of Pramlintide/Metreleptin Combination Treatment for Obesity Following Commercial Reassessment of the Program",
+          "sourceType": "partner company press release",
+          "publishedAt": "2011-08-05",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  }
+]

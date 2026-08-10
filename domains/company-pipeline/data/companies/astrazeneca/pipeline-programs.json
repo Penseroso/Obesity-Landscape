@@ -1,0 +1,663 @@
+[
+  {
+    "id": "astrazeneca-azd1043-subcutaneous-or-intravenous-injection",
+    "assetId": "azd1043",
+    "companyId": "astrazeneca",
+    "assetName": "AZD1043",
+    "codeName": null,
+    "technical": {
+      "mechanism": "ActRII monoclonal antibody",
+      "platform": "Large molecule"
+    },
+    "administration": {
+      "route": "Subcutaneous or intravenous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/our-therapy-areas/pipeline.html",
+          "title": "AstraZeneca Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07511205",
+          "title": "A Study to Investigate Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of AZD1043 in Healthy Adult Participants Living With Overweight and/or Obesity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-04-06",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-elecoglipron-oral-tablets",
+    "assetId": "elecoglipron",
+    "companyId": "astrazeneca",
+    "assetName": "Elecoglipron",
+    "codeName": "AZD5004",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "ECC5004"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Eccogene",
+        "role": "licensor",
+        "territories": ["Worldwide except China"],
+        "rights": ["development", "commercialization"],
+        "effectiveDate": "2023-11-09",
+        "sourceUrls": [
+          "https://www.eccogene.com/eccogene-enters-exclusive-license-agreement-with-astrazeneca-to-develop-and-commercialize-small-molecule-glp-1-receptor-agonist-ecc5004-for-cardiometabolic-diseases/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/our-therapy-areas/pipeline.html",
+          "title": "AstraZeneca Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+          "title": "Elecoglipron, an oral small molecule GLP-1 RA, moves to Phase III programme and unlocks next chapter in AstraZeneca's cardiometabolic and kidney portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-09",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07667803",
+          "title": "A Master Protocol to Investigate Efficacy and Safety of Elecoglipron in Participants With Obesity or Overweight With or Without T2DM (Embold)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-06-26",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.eccogene.com/eccogene-enters-exclusive-license-agreement-with-astrazeneca-to-develop-and-commercialize-small-molecule-glp-1-receptor-agonist-ecc5004-for-cardiometabolic-diseases/",
+          "title": "Eccogene Enters Exclusive License Agreement With AstraZeneca to Develop and Commercialize Small Molecule GLP-1 Receptor Agonist ECC5004 for Cardiometabolic Diseases",
+          "sourceType": "partner company press release",
+          "publishedAt": "2023-11-09",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-elecoglipron-oral-tablets-type-2-diabetes",
+    "assetId": "elecoglipron",
+    "companyId": "astrazeneca",
+    "assetName": "Elecoglipron",
+    "codeName": "AZD5004",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "ECC5004"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Eccogene",
+        "role": "licensor",
+        "territories": ["Worldwide except China"],
+        "rights": ["development", "commercialization"],
+        "effectiveDate": "2023-11-09",
+        "sourceUrls": [
+          "https://www.eccogene.com/eccogene-enters-exclusive-license-agreement-with-astrazeneca-to-develop-and-commercialize-small-molecule-glp-1-receptor-agonist-ecc5004-for-cardiometabolic-diseases/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/our-therapy-areas/pipeline.html",
+          "title": "AstraZeneca Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+          "title": "Elecoglipron, an oral small molecule GLP-1 RA, moves to Phase III programme and unlocks next chapter in AstraZeneca's cardiometabolic and kidney portfolio",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-09",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07667803",
+          "title": "A Master Protocol to Investigate Efficacy and Safety of Elecoglipron in Participants With Obesity or Overweight With or Without T2DM (Embold)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-06-26",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07664553",
+          "title": "A Phase III Study to Investigate the Efficacy and Safety of Elecoglipron Compared With Placebo in Adults With Type 2 Diabetes Mellitus on Background Insulin (Eluminate-3)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-06-24",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "astrazeneca-azd6234-subcutaneous-injection",
+    "assetId": "azd6234",
+    "companyId": "astrazeneca",
+    "assetName": "AZD6234",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Selective, long-acting amylin receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Chronic weight management"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Completed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/our-therapy-areas/pipeline.html",
+          "title": "AstraZeneca Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazeneca.com/what-science-can-do/topics/disease-understanding/creating-better-health-outcomes-holistic-approach-weight-management.html",
+          "title": "Creating better health outcomes with a holistic approach towards weight management",
+          "sourceType": "company scientific article",
+          "publishedAt": "2024-11-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06595238",
+          "title": "A Study in Participants With Obesity or Overweight With at Least One Weight-related Comorbidity (APRICUS)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-cotadutide-subcutaneous-injection",
+    "assetId": "cotadutide",
+    "companyId": "astrazeneca",
+    "assetName": "Cotadutide",
+    "codeName": "MEDI0382",
+    "technical": {
+      "mechanism": "dual GLP-1/glucagon receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2021/q1-2021/Q1_2021_results_clinical_trials_appendix.pdf",
+          "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
+          "sourceType": "company clinical trials appendix",
+          "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT03625778",
+          "title": "A Study to Assess the Safety and Tolerability of Cotadutide in Non-diabetic Subjects Who Have Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "cotadutide",
+    "companyId": "astrazeneca",
+    "assetName": "Cotadutide",
+    "codeName": "MEDI0382",
+    "technical": {
+      "mechanism": "dual GLP-1/glucagon receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Type 2 diabetes mellitus"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2021/q1-2021/Q1_2021_results_clinical_trials_appendix.pdf",
+          "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
+          "sourceType": "company clinical trials appendix",
+          "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT03235050",
+          "title": "A Study to Evaluate the Efficacy and Safety of Cotadutide in Participants With Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "astrazeneca-cotadutide-subcutaneous-injection-mash",
+    "assetId": "cotadutide",
+    "companyId": "astrazeneca",
+    "assetName": "Cotadutide",
+    "codeName": "MEDI0382",
+    "technical": {
+      "mechanism": "dual GLP-1/glucagon receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Metabolic dysfunction-associated steatohepatitis"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2021/q1-2021/Q1_2021_results_clinical_trials_appendix.pdf",
+          "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
+          "sourceType": "company clinical trials appendix",
+          "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT04019561",
+          "title": "A Study of Cotadutide in Participants With Non-alcoholic Steatohepatitis With Fibrosis",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "astrazeneca-cotadutide-subcutaneous-injection-diabetic-kidney-disease",
+    "assetId": "cotadutide",
+    "companyId": "astrazeneca",
+    "assetName": "Cotadutide",
+    "codeName": "MEDI0382",
+    "technical": {
+      "mechanism": "dual GLP-1/glucagon receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Diabetic kidney disease"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2021/q1-2021/Q1_2021_results_clinical_trials_appendix.pdf",
+          "title": "AstraZeneca Q1 2021 Results Clinical Trials Appendix",
+          "sourceType": "company clinical trials appendix",
+          "publishedAt": "2021-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT04515849",
+          "title": "A Study of Cotadutide in Participants Who Have Chronic Kidney Disease With Type 2 Diabetes Mellitus",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "astrazeneca-azd1979-oral-solution",
+    "assetId": "azd1979",
+    "companyId": "astrazeneca",
+    "assetName": "AZD1979",
+    "codeName": null,
+    "technical": {
+      "mechanism": "MCH-1 receptor antagonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Solution",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.rns-pdf.londonstockexchange.com/rns/8358N_1-2014-7-31.pdf",
+          "title": "AstraZeneca Development Pipeline, 31 July 2014",
+          "sourceType": "regulatory filing exhibit",
+          "publishedAt": "2014-07-31",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/D3930C00001/",
+          "title": "A First Time in Man Study to Assess the Safety, Tolerability and Pharmacokinetics of AZD1979 in Healthy Males",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-azd2820-subcutaneous-injection",
+    "assetId": "azd2820",
+    "companyId": "astrazeneca",
+    "assetName": "AZD2820",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Melanocortin-4 receptor partial agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Discontinued",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Paused"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Palatin Technologies",
+        "role": "co-developer",
+        "sourceUrls": [
+          "https://palatin.com/press_releases/palatin-technologies-provides-update-regarding-its-obesity-research-development-collaboration-with-astrazeneca/"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://palatin.com/press_releases/palatin-technologies-provides-update-regarding-its-obesity-research-development-collaboration-with-astrazeneca/",
+          "title": "Palatin Technologies Provides Update Regarding Its Obesity Research/Development Collaboration with AstraZeneca",
+          "sourceType": "partner company press release",
+          "publishedAt": "2012-09-07",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/azd2820-sad-study-in-healthy-male-volunteers/",
+          "title": "AZD2820 SAD study in healthy male volunteers",
+          "sourceType": "regulatory research summary",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+    "assetId": "pramlintide",
+    "companyId": "astrazeneca",
+    "assetName": "Pramlintide",
+    "codeName": null,
+    "technical": { "mechanism": "Amylin receptor agonist", "platform": "Peptide" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2013/Diabetes-alliance-transaction-overview.pdf",
+          "title": "AstraZeneca acquisition of BMS share of global diabetes alliance",
+          "sourceType": "company transaction presentation",
+          "publishedAt": "2013-12-19",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/137OB-201/",
+          "title": "A Study to Examine the Effect of Pramlintide on Body Weight and its Safety and Tolerability in Obese Subjects",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-exenatide-subcutaneous-injection-obesity",
+    "assetId": "exenatide",
+    "companyId": "astrazeneca",
+    "assetName": "Exenatide",
+    "codeName": null,
+    "aliases": [
+      { "type": "development-code", "value": "AC2993" },
+      { "type": "brand-name", "value": "Byetta" }
+    ],
+    "technical": { "mechanism": "GLP-1 receptor agonist", "platform": "Peptide" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Twice daily" },
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Eli Lilly and Company",
+        "role": "co-developer",
+        "sourceUrls": ["https://www.astrazenecaclinicaltrials.com/study/H8O-MC-GWBP/"]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2013/Diabetes-alliance-transaction-overview.pdf",
+          "title": "AstraZeneca acquisition of BMS share of global diabetes alliance",
+          "sourceType": "company transaction presentation",
+          "publishedAt": "2013-12-19",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/H8O-MC-GWBP/",
+          "title": "A Pilot Study of Effects of Exenatide on Body Weight in Non-Diabetic, Obese Patients",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/H8O-US-GWBM/",
+          "title": "Effect on Weight Loss of Exenatide Versus Placebo",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "astrazeneca-davalintide-subcutaneous-injection-obesity",
+    "assetId": "davalintide",
+    "companyId": "astrazeneca",
+    "assetName": "Davalintide",
+    "codeName": "AC2307",
+    "technical": { "mechanism": "Dual amylin and calcitonin receptor agonist", "platform": "Peptide" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Twice daily" },
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Unknown",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.astrazeneca.com/content/dam/az/PDF/2013/Diabetes-alliance-transaction-overview.pdf",
+          "title": "AstraZeneca acquisition of BMS share of global diabetes alliance",
+          "sourceType": "company transaction presentation",
+          "publishedAt": "2013-12-19",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.astrazenecaclinicaltrials.com/study/CFA104/",
+          "title": "Study to Examine Safety, Tolerability and Effect on Body Weight of Subcutaneous AC2307 in Obese or Overweight Subjects",
+          "sourceType": "company trial registry",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19935749/",
+          "title": "Davalintide (AC2307), a novel amylin-mimetic peptide: enhanced pharmacological properties over native amylin to reduce food intake and body weight",
+          "sourceType": "peer-reviewed publication",
+          "publishedAt": "2010-02",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  }
+]

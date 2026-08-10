@@ -223,6 +223,30 @@
     ]
   },
   {
+    "id": "actrii-antibody",
+    "label": "Activin type II receptor monoclonal antibody",
+    "composition": "single-molecule",
+    "targets": [{ "target": "Activin type II receptor", "action": "monoclonal antibody" }],
+    "sortRank": 150,
+    "mechanisms": ["ActRII monoclonal antibody"]
+  },
+  {
+    "id": "mch1-antagonist",
+    "label": "MCH-1 receptor antagonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "MCH-1 receptor", "action": "antagonist" }],
+    "sortRank": 160,
+    "mechanisms": ["MCH-1 receptor antagonist"]
+  },
+  {
+    "id": "mc4-partial-agonist",
+    "label": "Melanocortin-4 receptor partial agonist",
+    "composition": "single-molecule",
+    "targets": [{ "target": "MC4R", "action": "partial agonist" }],
+    "sortRank": 170,
+    "mechanisms": ["Melanocortin-4 receptor partial agonist"]
+  },
+  {
     "id": "amylin-plus-glp1-combination",
     "label": "Amylin receptor agonist plus GLP-1 receptor agonist",
     "composition": "multi-component",
@@ -250,6 +274,29 @@
       "Amylin analog plus GLP-1/GIP receptor dual agonist",
       "Amylin receptor agonist plus GLP-1R/GIPR dual agonist"
     ]
+  },
+  {
+    "id": "glp1-glucagon-plus-amylin-combination",
+    "label": "GLP-1 / glucagon receptor agonist plus amylin receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" },
+      { "target": "Amylin receptor", "action": "agonist" }
+    ],
+    "sortRank": 215,
+    "mechanisms": []
+  },
+  {
+    "id": "amylin-plus-leptin-combination",
+    "label": "Amylin receptor agonist plus leptin receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "Amylin receptor", "action": "agonist" },
+      { "target": "Leptin receptor", "action": "agonist" }
+    ],
+    "sortRank": 218,
+    "mechanisms": []
   },
   {
     "id": "amylin-plus-glp1-gip-glucagon-combination",
