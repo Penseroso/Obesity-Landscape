@@ -1,0 +1,1250 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "assetId": "elecoglipron",
+  "studies": [
+    {
+      "id": "astrazeneca-elecoglipron-nct06579092",
+      "companyId": "astrazeneca",
+      "assetId": "elecoglipron",
+      "programId": "astrazeneca-elecoglipron-oral-tablets",
+      "officialTitle": "A Phase IIb Randomized, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of AZD5004 in Participants Living With Obesity or Overweight With Comorbidity",
+      "acronym": "VISTA",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06579092"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D7260C00001",
+        "2024-513691-18-00"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06579092",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Six-arm parallel-group dose-ranging study of once-daily oral elecoglipron with standardized diet and physical-activity advice."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks",
+      "safetySummary": "Adverse events were predominantly gastrointestinal and mild to moderate. The official result announcement reported nausea and vomiting most frequently at 75 mg, infrequent discontinuations due to adverse events, and no liver safety signal; the disclosed 75 mg safety percentages were not assignable to one of the two distinct 75 mg escalation arms.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06579092",
+            "title": "VISTA study record (NCT06579092)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42259337/",
+            "title": "Elecoglipron, an oral small molecule GLP-1 receptor agonist in adults with obesity or overweight (VISTA): a multicentre, phase 2, randomised, placebo-controlled clinical trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-08",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "title": "Elecoglipron, an oral small molecule GLP-1 RA, moves to Phase III programme and unlocks next chapter in AstraZeneca's cardiometabolic and kidney portfolio",
+            "sourceType": "company result announcement",
+            "publishedAt": "2026-06-08",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "vista-elecoglipron-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 5 mg",
+      "intervention": "Elecoglipron 5 mg oral tablet once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "5 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 15 mg",
+      "intervention": "Elecoglipron 15 mg oral tablet once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "15 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-50mg-q4w-escalation",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 50 mg, every-four-week escalation",
+      "intervention": "Elecoglipron oral tablet escalated every four weeks to 50 mg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "50 mg target dose",
+      "titration": "Dose escalated every four weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-75mg-weekly-escalation",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 75 mg, weekly escalation",
+      "intervention": "Elecoglipron oral tablet escalated weekly to 75 mg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "75 mg target dose",
+      "titration": "Dose escalated weekly",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-75mg-q2w-escalation",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 75 mg, every-two-week escalation",
+      "intervention": "Elecoglipron oral tablet escalated every two weeks to 75 mg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "75 mg target dose",
+      "titration": "Dose escalated every two weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching elecoglipron oral tablet once daily",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "vista-body-weight-week26",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Percent change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "vista-weight-loss-5-week26",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "vista-body-weight-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "vista-weight-loss-5-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "vista-weight-loss-10-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 10% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "vista-weight-loss-15-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 15% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "vista-bw26-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.6%",
+        "numericValue": -2.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-5.6%",
+        "numericValue": -5.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-8.1%",
+        "numericValue": -8.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.5%",
+        "numericValue": -10.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.0%",
+        "numericValue": -10,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.6%",
+        "numericValue": -0.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "40.4%",
+        "numericValue": 40.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "51.3%",
+        "numericValue": 51.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "72.5%",
+        "numericValue": 72.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "86.1%",
+        "numericValue": 86.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "88.8%",
+        "numericValue": 88.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.7%",
+        "numericValue": -2.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.5%",
+        "numericValue": -6.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.2%",
+        "numericValue": -9.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.8%",
+        "numericValue": -11.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.1%",
+        "numericValue": -11.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.3%",
+        "numericValue": -0.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "41.3%",
+        "numericValue": 41.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "55.7%",
+        "numericValue": 55.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "76.1%",
+        "numericValue": 76.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "85.1%",
+        "numericValue": 85.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "76.8%",
+        "numericValue": 76.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "21.4%",
+        "numericValue": 21.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "8.8%",
+        "numericValue": 8.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "35.1%",
+        "numericValue": 35.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "52.0%",
+        "numericValue": 52,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "61.9%",
+        "numericValue": 61.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "62.5%",
+        "numericValue": 62.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "4.5%",
+        "numericValue": 4.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "4.9%",
+        "numericValue": 4.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "14.0%",
+        "numericValue": 14,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "14.1%",
+        "numericValue": 14.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "39.3%",
+        "numericValue": 39.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "39.8%",
+        "numericValue": 39.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "2.7%",
+        "numericValue": 2.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "15.6%",
+        "numericValue": 15.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ]
+}

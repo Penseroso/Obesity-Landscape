@@ -651,6 +651,1273 @@
       }
     },
     {
+      "id": "astrazeneca-azd6234-nct06132841",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "programId": "astrazeneca-azd6234-subcutaneous-injection",
+      "officialTitle": "A Phase I Randomized, Single-blind, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of AZD6234 Following Repeat Dose Administration in Participants With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06132841"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8750C00002"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06132841",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Four sequential repeat-dose cohorts, including Japanese participant cohorts, with cohort-specific treatment periods."
+      },
+      "population": "Healthy adults with overweight or obesity, including Japanese participants; the protocol includes change in body weight as a pharmacodynamic endpoint.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Up to 26 weeks of treatment, depending on cohort",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06132841",
+            "title": "AZD6234 repeat-dose study record (NCT06132841)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/ph-1-study-to-evaluate-safety-tolerability-pk-pd-of-repeat-azd6234-doses-in-obese-participants/",
+            "title": "Phase 1 study to evaluate safety, tolerability, PK and PD of repeat AZD6234 doses in obese participants",
+            "sourceType": "regulatory research summary",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-azd6234-nct06595238",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "programId": "astrazeneca-azd6234-subcutaneous-injection",
+      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of AZD6234 in Participants Living With Obesity or Overweight With Comorbidity",
+      "acronym": "APRICUS",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06595238"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8750C00004"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06595238",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm parallel-group dose-ranging study of once-weekly subcutaneous AZD6234."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06595238",
+            "title": "APRICUS study record (NCT06595238)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/apricus/",
+            "title": "APRICUS regulatory research summary",
+            "sourceType": "regulatory research summary",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-azd6234-nct06851858",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "programId": "astrazeneca-azd6234-subcutaneous-injection",
+      "officialTitle": "A Phase II Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of AZD6234 in Participants Living With Overweight or Obesity With Type 2 Diabetes Who Are on a Stable Dose of GLP-1 Receptor Agonist",
+      "acronym": "ARAY",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06851858"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8750C00005"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06851858",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm study of once-weekly subcutaneous AZD6234 or matching placebo added to stable GLP-1 receptor agonist therapy."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes receiving a stable GLP-1 receptor agonist dose.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "26 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06851858",
+            "title": "ARAY study record (NCT06851858)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://astrazeneca.trialsummaries.com/Study/StudyDetails?tenant=MT_MED_9011&uniqueStudyId=D8750C00005",
+            "title": "ARAY AstraZeneca trial summary listing",
+            "sourceType": "company trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-azd6234-nct06862791",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "regimenId": "astrazeneca-azd9550-azd6234-obesity",
+      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of Co-administration of AZD9550 and AZD6234 in Participants Living With Obesity or Overweight With Co-morbidity (ASCEND)",
+      "acronym": "ASCEND",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06862791"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8460C00004",
+        "2024-516176-15-00"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06862791",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo and component monotherapies",
+        "description": "Nine-arm reduced-factorial study of once-weekly AZD9550 and AZD6234 dose combinations, component monotherapies, or corresponding placebos."
+      },
+      "population": "Adults with obesity, or overweight with hypertension, dyslipidemia, or obstructive sleep apnoea, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks of treatment; approximately 47 weeks including screening and follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06862791",
+            "title": "ASCEND study record (NCT06862791)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/",
+            "title": "ASCEND AstraZeneca study page",
+            "sourceType": "company trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct02548585",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 1/2, Randomized, Double-blind, Placebo-controlled, Multiple-ascending-dose Study to Evaluate the Efficacy, Safety, and Pharmacokinetics of MEDI0382 in Overweight and Obese Subjects With a History of Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT02548585"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00002"
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT02548585",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2019-01"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Six sequential multiple-ascending-dose cohorts with once-daily subcutaneous cotadutide."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "7 to 41 days of treatment, depending on cohort",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT02548585",
+            "title": "Cotadutide multiple-ascending-dose study record (NCT02548585)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29856343/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-26",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03235050",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase IIb, Randomised, Parallel, Double-Blind Placebo-Controlled and Open-Label Active Comparator Study to Evaluate the Efficacy and Safety of MEDI0382 in the Treatment of Overweight and Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03235050"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00004"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03235050",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind for cotadutide and placebo; open-label active comparator",
+        "comparator": "Placebo and liraglutide",
+        "description": "Five-arm dose-ranging study on background metformin with three cotadutide doses, placebo, and liraglutide."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes treated with metformin.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "54 weeks of treatment plus 28-day follow-up",
+      "safetySummary": "The peer-reviewed 54-week report described gastrointestinal adverse events as the most common events and a dose-dependent increase in heart rate; detailed per-arm named safety facts were not entered without a completed full-text table mapping review.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03235050",
+            "title": "Cotadutide Phase 2b study record (NCT03235050)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03244800",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 2, Randomised, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy, Safety, Tolerability, and Pharmacokinetics of Different Doses of MEDI0382 in Overweight and Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03244800"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00011"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03244800",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2019-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two parallel titration cohorts, each with cotadutide and matching placebo groups."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "49 days of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03244800",
+            "title": "Cotadutide dose study record (NCT03244800)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03596177",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "An Exploratory Phase 2a, Randomised, Double-blind, Placebo-controlled Study to Evaluate the Effect of MEDI0382 on Energy Balance in Overweight and Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03596177"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00021"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03596177",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2022-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm energy-balance study with a 16-day placebo run-in and 42-day double-blind treatment period."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "59 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03596177",
+            "title": "Cotadutide energy-balance study record (NCT03596177)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31665464/",
+            "title": "Efficacy, Safety, and Mechanistic Insights of Cotadutide, a Dual Receptor Glucagon-Like Peptide-1 and Glucagon Agonist",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2019-10-30",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03625778",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection",
+      "officialTitle": "A Randomized, Blinded, Placebo-controlled Study to Assess Pharmacokinetics, Safety, and Tolerability of Ascending Doses of MEDI0382 in Non-diabetic Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03625778"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5672C00001"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03625778",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2021-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Three parallel titration cohorts comparing different cotadutide titration schedules with matching placebo."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "9, 14, or 18 weeks of treatment, depending on cohort",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03625778",
+            "title": "Cotadutide non-diabetic obesity study record (NCT03625778)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03645421",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase IIa, Randomised, Parallel, Double-Blind,Placebo-Controlled Study to Evaluate the Safety, Efficacy, and Pharmacokinetics of MEDI0382 in Japanese Preobese or Obese Subjects With Type 2 Diabetes Who Have Inadequate Glycemic Control With Diet and Exercise",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03645421"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5674C00001"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03645421",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2019-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm dose-ranging study of once-daily cotadutide in Japanese participants."
+      },
+      "population": "Japanese adults with preobesity or obesity and type 2 diabetes inadequately controlled with diet and exercise.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "48 days of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "title": "Japanese cotadutide dose study record (NCT03645421)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03745937",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 2a Randomized, Blinded, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of MEDI0382 in Overweight/Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03745937"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00030"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03745937",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Two cotadutide titration cohorts with separate matching-placebo cohorts and a three-week treatment extension."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "11 weeks of treatment plus 28-day follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "title": "Cotadutide titration study record (NCT03745937)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04208620",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 1 Randomized, Blinded, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of Cotadutide in Japanese Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04208620"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5671C00003"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04208620",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm study of subcutaneous cotadutide or placebo in Japanese participants."
+      },
+      "population": "Japanese adults with obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "98 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04208620",
+            "title": "Japanese cotadutide Phase 1 study record (NCT04208620)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-davalintide-nct00785408",
+      "companyId": "astrazeneca",
+      "assetId": "davalintide",
+      "programId": "astrazeneca-davalintide-subcutaneous-injection-obesity",
+      "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Parallel-group, Dose-ranging Study to Examine the Safety, Tolerability, and Effect on Body Weight of Subcutaneous AC2307 in Obese or Overweight Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00785408"
+        }
+      ],
+      "protocolIdentifiers": [
+        "CFA104"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00785408",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2014-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Six-arm parallel dose-ranging study with low-, middle-, and high-dose davalintide and dose-matched placebo groups."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00785408",
+            "title": "Davalintide obesity study record (NCT00785408)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-elecoglipron-nct06579092",
+      "companyId": "astrazeneca",
+      "assetId": "elecoglipron",
+      "programId": "astrazeneca-elecoglipron-oral-tablets",
+      "officialTitle": "A Phase IIb Randomized, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of AZD5004 in Participants Living With Obesity or Overweight With Comorbidity",
+      "acronym": "VISTA",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06579092"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D7260C00001",
+        "2024-513691-18-00"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06579092",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Six-arm parallel-group dose-ranging study of once-daily oral elecoglipron with standardized diet and physical-activity advice."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks",
+      "safetySummary": "Adverse events were predominantly gastrointestinal and mild to moderate. The official result announcement reported nausea and vomiting most frequently at 75 mg, infrequent discontinuations due to adverse events, and no liver safety signal; the disclosed 75 mg safety percentages were not assignable to one of the two distinct 75 mg escalation arms.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06579092",
+            "title": "VISTA study record (NCT06579092)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42259337/",
+            "title": "Elecoglipron, an oral small molecule GLP-1 receptor agonist in adults with obesity or overweight (VISTA): a multicentre, phase 2, randomised, placebo-controlled clinical trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-08",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "title": "Elecoglipron, an oral small molecule GLP-1 RA, moves to Phase III programme and unlocks next chapter in AstraZeneca's cardiometabolic and kidney portfolio",
+            "sourceType": "company result announcement",
+            "publishedAt": "2026-06-08",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-exenatide-nct00375492",
+      "companyId": "astrazeneca",
+      "assetId": "exenatide",
+      "programId": "astrazeneca-exenatide-subcutaneous-injection-obesity",
+      "officialTitle": "A Pilot Study of Effects of Exenatide on Body Weight in Non-Diabetic, Obese Patients",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00375492"
+        }
+      ],
+      "protocolIdentifiers": [
+        "H8O-MC-GWBP"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00375492",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group study of exenatide or placebo alongside a lifestyle-modification program."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00375492",
+            "title": "Exenatide body-weight study record (NCT00375492)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-exenatide-nct00500370",
+      "companyId": "astrazeneca",
+      "assetId": "exenatide",
+      "programId": "astrazeneca-exenatide-subcutaneous-injection-obesity",
+      "officialTitle": "Effect on Weight Loss of Exenatide Versus Placebo",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00500370"
+        }
+      ],
+      "protocolIdentifiers": [
+        "H8O-US-GWBM"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00500370",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group study of twice-daily exenatide or matching placebo with a lifestyle-modification program."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00500370",
+            "title": "Exenatide weight-loss study record (NCT00500370)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00112021",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "A Study to Examine the Effect of Pramlintide on Body Weight and Its Safety and Tolerability in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00112021"
+        }
+      ],
+      "protocolIdentifiers": [
+        "137OB-201"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00112021",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00112021",
+            "title": "Pramlintide obesity study record (NCT00112021)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00189514",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "Extension Study of Protocol 137OB-201 to Examine the Long Term Effect of Pramlintide on Body Weight and Its Safety and Tolerability in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00189514"
+        }
+      ],
+      "protocolIdentifiers": [
+        "137OB-201E"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00189514",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Long-term extension of protocol 137OB-201 with three pramlintide regimens and placebo."
+      },
+      "population": "Adults with obesity who completed the preceding pramlintide obesity study.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "maintenance-or-continuation"
+      },
+      "overallDuration": "Up to 12 months across the parent and extension studies",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00189514",
+            "title": "Pramlintide obesity extension study record (NCT00189514)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18753666/",
+            "title": "Sustained weight loss following 12-month pramlintide treatment as an adjunct to lifestyle intervention in obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2008-06-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00402077",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "A Study to Examine the Safety, Tolerability, and Body Weight Effect of Pramlintide Alone and in Combination With Oral Antiobesity Agents in Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00402077"
+        }
+      ],
+      "protocolIdentifiers": [
+        "AFA203"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00402077",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm study of pramlintide alone or with oral antiobesity agents; registry arm labels do not disclose the individual combination assignments."
+      },
+      "population": "Adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00402077",
+            "title": "Pramlintide combination obesity study record (NCT00402077)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00444561",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "Exploratory Study to Evaluate Various Pharmacodynamic Effects of Subcutaneously Infused or Injected Pramlintide in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00444561"
+        }
+      ],
+      "protocolIdentifiers": [
+        "137-160"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00444561",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Not reported",
+        "masking": "Not reported",
+        "comparator": "None reported",
+        "description": "Exploratory pharmacodynamic study of subcutaneous pramlintide infusion or injection."
+      },
+      "population": "Adults with obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00444561",
+            "title": "Pramlintide pharmacodynamic obesity study record (NCT00444561)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "A Phase 2A, Randomized, Controlled, Double-Blind, Multicenter Study to Evaluate the Safety, Tolerability, and Effect on Body Weight of Recombinant-Methionyl Human Leptin Administered in Conjunction With Pramlintide in Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00392925"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA101"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00392925",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and component monotherapy"
+      },
+      "population": "Adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00392925",
+            "title": "DFA101 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Dose-Ranging Study to Examine the Safety, Tolerability, and Effect on Body Weight of Metreleptin Administered in Conjunction With Pramlintide in Obese and Overweight Subjects.",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00673387"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA102"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00673387",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and component monotherapy",
+        "description": "Eight-arm dose-ranging study of pramlintide and metreleptin alone or in combination."
+      },
+      "population": "Adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00673387",
+            "title": "DFA102 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "Extension Study of Protocol DFA102 to Examine the Long-Term Safety, Tolerability, and Effect on Body Weight of Pramlintide Administered in Combination With Metreleptin in Obese and Overweight Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00819234"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA102E"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00819234",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Registry-defined continuation groups",
+        "description": "Long-term extension of DFA102; the reviewed registry labels the four protocol arms numerically."
+      },
+      "population": "Adults with overweight or obesity who completed protocol DFA102.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "maintenance-or-continuation"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00819234",
+            "title": "DFA102E extension study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct01235741",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controled, Multicenter Study To Examine The Efficacy And Safety Of Pramlintide+Metreleptin In Obese Subjects Following A Low-Calorie Diet Lead-In",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT01235741"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA104"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT01235741",
+        "overallStatus": "terminated",
+        "sourceStatus": "Terminated",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Low-calorie-diet lead-in followed by planned randomized treatment; the sponsor terminated the study after neutralizing activity to metreleptin was observed in DFA102."
+      },
+      "population": "Adults with obesity who achieved at least 2% weight loss during a low-calorie-diet lead-in.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT01235741",
+            "title": "DFA104 study record and results",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
       "id": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
@@ -7245,6 +8512,1108 @@
       "plannedN": 15
     },
     {
+      "id": "azd6234-00002-cohort1",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 1: AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "6 weeks"
+    },
+    {
+      "id": "azd6234-00002-cohort2",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 2: AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "azd6234-00002-cohort3-japanese",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 3: Japanese participants, AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo in Japanese participants",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "azd6234-00002-cohort4-japanese",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 4: Japanese participants of childbearing potential, AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo in Japanese participants of childbearing potential",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "apricus-azd6234-dose1",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "experimental",
+      "label": "AZD6234 dose 1",
+      "intervention": "AZD6234 dose 1 once-weekly subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "apricus-azd6234-dose2",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "experimental",
+      "label": "AZD6234 dose 2",
+      "intervention": "AZD6234 dose 2 once-weekly subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "apricus-azd6234-dose3",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "experimental",
+      "label": "AZD6234 dose 3",
+      "intervention": "AZD6234 dose 3 once-weekly subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "apricus-placebo",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "placebo",
+      "label": "Dose-matched placebo",
+      "intervention": "Placebo matched to AZD6234 dose groups",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "aray-azd6234",
+      "studyId": "astrazeneca-azd6234-nct06851858",
+      "role": "experimental",
+      "label": "AZD6234",
+      "intervention": "Weekly AZD6234 subcutaneous injections on stable GLP-1 receptor agonist therapy",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "aray-placebo",
+      "studyId": "astrazeneca-azd6234-nct06851858",
+      "role": "placebo",
+      "label": "Placebo for AZD6234",
+      "intervention": "Weekly matching placebo subcutaneous injections on stable GLP-1 receptor agonist therapy",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "ascend-arm1",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 1",
+      "intervention": "AZD9550 low dose plus AZD6234 low dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm2",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 2",
+      "intervention": "AZD9550 medium dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm3",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 3",
+      "intervention": "AZD9550 high dose plus AZD6234 high dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm4",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 4",
+      "intervention": "AZD9550 low dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm5",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 5",
+      "intervention": "AZD9550 medium dose plus AZD6234 low dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm6",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 6",
+      "intervention": "AZD9550 high dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm7",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 7",
+      "intervention": "AZD9550 medium dose plus AZD6234 high dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm8",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "active comparator",
+      "label": "Arm 8",
+      "intervention": "AZD9550 high dose monotherapy or corresponding placebo",
+      "linkedAsset": {
+        "assetName": "AZD9550"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm9",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "active comparator",
+      "label": "Arm 9",
+      "intervention": "AZD6234 high dose monotherapy or corresponding placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "cotadutide-00002-placebo",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo once daily across six dose cohorts"
+    },
+    {
+      "id": "cotadutide-00002-c1-100",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 1: cotadutide 100 mcg",
+      "intervention": "Cotadutide 100 mcg once daily for 7 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c2-150",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 2: cotadutide 150 mcg",
+      "intervention": "Cotadutide titrated from 100 mcg to 150 mcg once daily over 11 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c3-200",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 3: cotadutide 200 mcg",
+      "intervention": "Cotadutide titrated from 100 mcg through 150 mcg to 200 mcg once daily over 15 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c4-200",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 4: cotadutide 200 mcg extended",
+      "intervention": "Cotadutide titrated to 200 mcg once daily and continued through Day 41",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c5-300",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 5: cotadutide 300 mcg",
+      "intervention": "Cotadutide titrated to 300 mcg once daily over 22 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c6-300",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 6: cotadutide 300 mcg",
+      "intervention": "Cotadutide titrated to 300 mcg once daily over 17 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-low",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "experimental",
+      "label": "Cotadutide low dose plus metformin",
+      "intervention": "Low-dose cotadutide once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-mid",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "experimental",
+      "label": "Cotadutide mid dose plus metformin",
+      "intervention": "Mid-dose cotadutide once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-high",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "experimental",
+      "label": "Cotadutide high dose plus metformin",
+      "intervention": "High-dose cotadutide once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "placebo",
+      "label": "Placebo plus metformin",
+      "intervention": "Matching placebo once daily on background metformin"
+    },
+    {
+      "id": "cotadutide-00004-liraglutide",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "active comparator",
+      "label": "Liraglutide plus metformin",
+      "intervention": "Liraglutide 1.8 mg once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "liraglutide"
+      }
+    },
+    {
+      "id": "cotadutide-00011-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "placebo",
+      "label": "Placebo cohort 1",
+      "intervention": "Matching placebo once daily for 49 days",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00011-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "experimental",
+      "label": "Cotadutide cohort 1",
+      "intervention": "Cotadutide four-step titration once daily for 49 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Four-step titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00011-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "placebo",
+      "label": "Placebo cohort 2",
+      "intervention": "Matching placebo once daily for 49 days",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00011-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "experimental",
+      "label": "Cotadutide cohort 2",
+      "intervention": "Cotadutide four-step titration once daily for 49 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Four-step titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00021-active",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "role": "experimental",
+      "label": "Cotadutide",
+      "intervention": "Placebo run-in followed by cotadutide titrated to 300 mcg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 days after run-in"
+    },
+    {
+      "id": "cotadutide-00021-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo run-in followed by matching placebo once daily",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 days after run-in"
+    },
+    {
+      "id": "cotadutide-200001-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "placebo",
+      "label": "Placebo cohort 1",
+      "intervention": "Matching placebo once daily for 9 weeks"
+    },
+    {
+      "id": "cotadutide-200001-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "experimental",
+      "label": "Cotadutide cohort 1",
+      "intervention": "Seven-step cotadutide titration once daily over 9 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-200001-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "placebo",
+      "label": "Placebo cohort 2",
+      "intervention": "Matching placebo once daily for 14 weeks"
+    },
+    {
+      "id": "cotadutide-200001-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "experimental",
+      "label": "Cotadutide cohort 2",
+      "intervention": "Five-step cotadutide titration once daily over 14 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-200001-placebo-c3",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "placebo",
+      "label": "Placebo cohort 3",
+      "intervention": "Matching placebo once daily for 18 weeks"
+    },
+    {
+      "id": "cotadutide-200001-active-c3",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "experimental",
+      "label": "Cotadutide cohort 3",
+      "intervention": "Four-step cotadutide titration once daily over 18 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-400001-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo once daily for 48 days",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-400001-100",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "experimental",
+      "label": "Cotadutide 100 mcg",
+      "intervention": "Cotadutide titrated to 100 mcg once daily for 48 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 100 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-400001-200",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "experimental",
+      "label": "Cotadutide 200 mcg",
+      "intervention": "Cotadutide titrated to 200 mcg once daily for 48 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 200 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-400001-300",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "experimental",
+      "label": "Cotadutide 300 mcg",
+      "intervention": "Cotadutide titrated to 300 mcg once daily for 48 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-00030-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "experimental",
+      "label": "Cotadutide cohort 1",
+      "intervention": "Cotadutide titrated weekly for 8 weeks then continued for 3 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Registry-defined weekly titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-00030-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "placebo",
+      "label": "Placebo cohort 1",
+      "intervention": "Matching placebo once daily for 11 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-00030-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "experimental",
+      "label": "Cotadutide cohort 2",
+      "intervention": "Cotadutide titrated weekly for 8 weeks then continued for 3 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Registry-defined weekly titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-00030-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "placebo",
+      "label": "Placebo cohort 2",
+      "intervention": "Matching placebo once daily for 11 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-100003-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04208620",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Subcutaneous placebo"
+    },
+    {
+      "id": "cotadutide-100003-active",
+      "studyId": "astrazeneca-cotadutide-nct04208620",
+      "role": "experimental",
+      "label": "Cotadutide",
+      "intervention": "Subcutaneous cotadutide",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "nct00785408-davalintide-low",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "experimental",
+      "label": "AC2307 low dose",
+      "intervention": "Low-dose AC2307 subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "davalintide"
+      }
+    },
+    {
+      "id": "nct00785408-davalintide-middle",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "experimental",
+      "label": "AC2307 middle dose",
+      "intervention": "Middle-dose AC2307 subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "davalintide"
+      }
+    },
+    {
+      "id": "nct00785408-davalintide-high",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "experimental",
+      "label": "AC2307 high dose",
+      "intervention": "High-dose AC2307 subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "davalintide"
+      }
+    },
+    {
+      "id": "nct00785408-placebo-low",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "placebo",
+      "label": "Low-dose matching placebo",
+      "intervention": "Low-dose matching placebo subcutaneous injection twice daily"
+    },
+    {
+      "id": "nct00785408-placebo-middle",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "placebo",
+      "label": "Middle-dose matching placebo",
+      "intervention": "Middle-dose matching placebo subcutaneous injection twice daily"
+    },
+    {
+      "id": "nct00785408-placebo-high",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "placebo",
+      "label": "High-dose matching placebo",
+      "intervention": "High-dose matching placebo subcutaneous injection twice daily"
+    },
+    {
+      "id": "vista-elecoglipron-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 5 mg",
+      "intervention": "Elecoglipron 5 mg oral tablet once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "5 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 15 mg",
+      "intervention": "Elecoglipron 15 mg oral tablet once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "15 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-50mg-q4w-escalation",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 50 mg, every-four-week escalation",
+      "intervention": "Elecoglipron oral tablet escalated every four weeks to 50 mg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "50 mg target dose",
+      "titration": "Dose escalated every four weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-75mg-weekly-escalation",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 75 mg, weekly escalation",
+      "intervention": "Elecoglipron oral tablet escalated weekly to 75 mg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "75 mg target dose",
+      "titration": "Dose escalated weekly",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-elecoglipron-75mg-q2w-escalation",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "experimental",
+      "label": "Elecoglipron 75 mg, every-two-week escalation",
+      "intervention": "Elecoglipron oral tablet escalated every two weeks to 75 mg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "elecoglipron"
+      },
+      "dose": "75 mg target dose",
+      "titration": "Dose escalated every two weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "vista-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching elecoglipron oral tablet once daily",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "nct00375492-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "role": "experimental",
+      "label": "Exenatide",
+      "intervention": "Exenatide subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "exenatide"
+      },
+      "dose": "Registry-defined exenatide dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "nct00375492-placebo",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo subcutaneous injection twice daily",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "nct00500370-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "role": "experimental",
+      "label": "Exenatide",
+      "intervention": "Exenatide 5 micrograms twice daily for 4 weeks, then 10 micrograms twice daily for 20 weeks, with lifestyle modification",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "exenatide"
+      },
+      "dose": "5 micrograms, then 10 micrograms",
+      "titration": "5 micrograms for 4 weeks, then 10 micrograms for 20 weeks",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "nct00500370-placebo",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Volume-equivalent placebo subcutaneous injection twice daily with lifestyle modification",
+      "dose": "Volume-equivalent placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "dfa101-metreleptin",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "active comparator",
+      "label": "Placebo and metreleptin",
+      "intervention": "Metreleptin with pramlintide-matching placebo"
+    },
+    {
+      "id": "dfa101-pramlintide",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "active comparator",
+      "label": "Pramlintide and placebo",
+      "intervention": "Pramlintide with metreleptin-matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa101-combination",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "experimental",
+      "label": "Pramlintide and metreleptin",
+      "intervention": "Pramlintide administered with metreleptin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa101-leadin",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "other",
+      "label": "Lead-in period",
+      "intervention": "Registry-defined lead-in period"
+    },
+    {
+      "id": "dfa102-placebo",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "placebo",
+      "label": "Placebo-P + Placebo-M",
+      "intervention": "Matching placebos for pramlintide and metreleptin"
+    },
+    {
+      "id": "dfa102-pramlintide",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "active comparator",
+      "label": "Pramlintide 360 mcg + Placebo-M",
+      "intervention": "Pramlintide 360 micrograms with metreleptin-matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-metreleptin",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "active comparator",
+      "label": "Placebo-P + Metreleptin 5.0 mg",
+      "intervention": "Metreleptin 5.0 mg with pramlintide-matching placebo"
+    },
+    {
+      "id": "dfa102-combo-180-2-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 180 mcg + Metreleptin 2.5 mg",
+      "intervention": "Pramlintide 180 micrograms with metreleptin 2.5 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-180-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 180 mcg + Metreleptin 5.0 mg",
+      "intervention": "Pramlintide 180 micrograms with metreleptin 5.0 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-360-1-25",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 360 mcg + Metreleptin 1.25 mg",
+      "intervention": "Pramlintide 360 micrograms with metreleptin 1.25 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-360-2-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 360 mcg + Metreleptin 2.5 mg",
+      "intervention": "Pramlintide 360 micrograms with metreleptin 2.5 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-360-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 360 mcg + Metreleptin 5.0 mg",
+      "intervention": "Pramlintide 360 micrograms with metreleptin 5.0 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102e-arm1",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 1",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa102e-arm2",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 2",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa102e-arm3",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 3",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa102e-arm4",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 4",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa104-combination",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct01235741",
+      "role": "experimental",
+      "label": "Pramlintide + metreleptin",
+      "intervention": "Pramlintide 360 micrograms plus metreleptin 5.0 mg subcutaneously twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa104-placebo",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct01235741",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching pramlintide and metreleptin placebos subcutaneously twice daily"
+    },
+    {
+      "id": "pramlintide-201-active",
+      "studyId": "astrazeneca-pramlintide-nct00112021",
+      "role": "experimental",
+      "label": "Pramlintide acetate",
+      "intervention": "Subcutaneous pramlintide acetate",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201-placebo",
+      "studyId": "astrazeneca-pramlintide-nct00112021",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching subcutaneous placebo"
+    },
+    {
+      "id": "pramlintide-201e-arm1",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "experimental",
+      "label": "Registry arm 1",
+      "intervention": "Registry-defined subcutaneous pramlintide regimen; exact arm-to-dose assignment not disclosed",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201e-arm2",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "experimental",
+      "label": "Registry arm 2",
+      "intervention": "Registry-defined subcutaneous pramlintide regimen; exact arm-to-dose assignment not disclosed",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201e-arm3",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "experimental",
+      "label": "Registry arm 3",
+      "intervention": "Registry-defined subcutaneous pramlintide regimen; exact arm-to-dose assignment not disclosed",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201e-placebo",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Volume-matched subcutaneous placebo three times daily"
+    },
+    {
+      "id": "pramlintide-afa203-arm1",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "experimental",
+      "label": "Arm 1",
+      "intervention": "Registry-defined pramlintide monotherapy or oral antiobesity-agent combination",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-afa203-arm2",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "experimental",
+      "label": "Arm 2",
+      "intervention": "Registry-defined pramlintide monotherapy or oral antiobesity-agent combination",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-afa203-arm3",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "experimental",
+      "label": "Arm 3",
+      "intervention": "Registry-defined pramlintide monotherapy or oral antiobesity-agent combination",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-afa203-placebo",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "placebo",
+      "label": "Arm 4",
+      "intervention": "Registry-defined placebo comparator"
+    },
+    {
+      "id": "pramlintide-137160-active",
+      "studyId": "astrazeneca-pramlintide-nct00444561",
+      "role": "experimental",
+      "label": "Pramlintide acetate (AC137)",
+      "intervention": "Pramlintide acetate administered by subcutaneous infusion or injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
       "id": "nct07476118-brenipatide",
       "studyId": "eli-lilly-and-company-brenipatide-nct07476118",
       "role": "experimental",
@@ -12332,6 +14701,102 @@
       "assessmentTimepoint": "Week 13"
     },
     {
+      "id": "cotadutide-00011-body-weight-day50",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 50"
+    },
+    {
+      "id": "cotadutide-00021-body-weight-day59",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 59"
+    },
+    {
+      "id": "cotadutide-400001-body-weight-day48",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 48"
+    },
+    {
+      "id": "cotadutide-00030-body-weight-day77",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 77"
+    },
+    {
+      "id": "vista-body-weight-week26",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Percent change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "vista-weight-loss-5-week26",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "vista-body-weight-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "vista-weight-loss-5-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "vista-weight-loss-10-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 10% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "vista-weight-loss-15-week36",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "name": "Participants achieving at least 15% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "nct00375492-body-weight-week24",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "name": "Change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
+    },
+    {
+      "id": "nct00500370-body-weight-week24",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "name": "Change in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
+    },
+    {
       "id": "elora-p2-weight-week48",
       "studyId": "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
       "name": "Percentage change from baseline in body weight",
@@ -17240,6 +19705,1484 @@
             "url": "https://www.ascletis.com/data/upload/pdf/ASC30%20Phase%202%20%40%20ADA%202026%20-%2020250518%20-%20final.pdf",
             "sourceType": "official scientific presentation",
             "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00011-bw-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "endpointId": "cotadutide-00011-body-weight-day50",
+      "armIds": [
+        "cotadutide-00011-placebo-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-0.21%",
+        "numericValue": -0.21,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03244800",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00011-bw-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "endpointId": "cotadutide-00011-body-weight-day50",
+      "armIds": [
+        "cotadutide-00011-active-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.59%",
+        "numericValue": -3.59,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03244800",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-bw-active",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-body-weight-day59",
+      "armIds": [
+        "cotadutide-00021-active"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.98%",
+        "numericValue": -3.98,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03596177",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-bw-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-body-weight-day59",
+      "armIds": [
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-1.40%",
+        "numericValue": -1.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03596177",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-placebo"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-0.82%",
+        "numericValue": -0.82,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-100",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-100"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-2.12%",
+        "numericValue": -2.12,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-200",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-200"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.34%",
+        "numericValue": -3.34,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-300",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-300"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.34%",
+        "numericValue": -3.34,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-active-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-6.88%",
+        "numericValue": -6.88,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-placebo-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-1.38%",
+        "numericValue": -1.38,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-active-c2"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-5.08%",
+        "numericValue": -5.08,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-placebo-c2"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-1.76%",
+        "numericValue": -1.76,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.6%",
+        "numericValue": -2.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-5.6%",
+        "numericValue": -5.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-8.1%",
+        "numericValue": -8.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.5%",
+        "numericValue": -10.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.0%",
+        "numericValue": -10,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw26-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week26",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.6%",
+        "numericValue": -0.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "40.4%",
+        "numericValue": 40.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "51.3%",
+        "numericValue": 51.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "72.5%",
+        "numericValue": 72.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "86.1%",
+        "numericValue": 86.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "88.8%",
+        "numericValue": 88.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.7%",
+        "numericValue": -2.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.5%",
+        "numericValue": -6.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.2%",
+        "numericValue": -9.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.8%",
+        "numericValue": -11.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.1%",
+        "numericValue": -11.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-bw36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-body-weight-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.3%",
+        "numericValue": -0.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "41.3%",
+        "numericValue": 41.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "55.7%",
+        "numericValue": 55.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "76.1%",
+        "numericValue": 76.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "85.1%",
+        "numericValue": 85.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "76.8%",
+        "numericValue": 76.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "21.4%",
+        "numericValue": 21.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "8.8%",
+        "numericValue": 8.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "35.1%",
+        "numericValue": 35.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "52.0%",
+        "numericValue": 52,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "61.9%",
+        "numericValue": 61.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "62.5%",
+        "numericValue": 62.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r10-36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-10-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "4.5%",
+        "numericValue": 4.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-5mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-5mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "4.9%",
+        "numericValue": 4.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-15mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-15mg"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "14.0%",
+        "numericValue": 14,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-50mg",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-50mg-q4w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "14.1%",
+        "numericValue": 14.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-75mg-weekly",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-weekly-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "39.3%",
+        "numericValue": 39.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-75mg-q2w",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-elecoglipron-75mg-q2w-escalation"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "39.8%",
+        "numericValue": 39.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r15-36-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-15-week36",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "2.7%",
+        "numericValue": 2.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 15% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vista-r5-26-placebo",
+      "studyId": "astrazeneca-elecoglipron-nct06579092",
+      "endpointId": "vista-weight-loss-5-week26",
+      "armIds": [
+        "vista-placebo"
+      ],
+      "analysisPopulation": "Participants who followed treatment as directed",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "15.6%",
+        "numericValue": 15.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight loss"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://news.cision.com/astrazeneca/r/elecoglipron--an-oral-small-molecule-glp-1-ra--moves-to-phase-iii-programme-and-unlocks-next-chapter-in-astrazeneca-s-cardiometabolic-and-kidney-portfolio,c4359385",
+            "sourceType": "company result announcement",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00375492-bw-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "endpointId": "nct00375492-body-weight-week24",
+      "armIds": [
+        "nct00375492-exenatide"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-6.16 kg",
+        "numericValue": -6.16,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "uncertainty": "SE 0.54"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00375492",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00375492-bw-placebo",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "endpointId": "nct00375492-body-weight-week24",
+      "armIds": [
+        "nct00375492-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-3.97 kg",
+        "numericValue": -3.97,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "uncertainty": "SE 0.52"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00375492",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00500370-bw-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "endpointId": "nct00500370-body-weight-week24",
+      "armIds": [
+        "nct00500370-exenatide"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-5.06 kg",
+        "numericValue": -5.06,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00500370",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00500370-bw-placebo",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "endpointId": "nct00500370-body-weight-week24",
+      "armIds": [
+        "nct00500370-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-1.61 kg",
+        "numericValue": -1.61,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00500370",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
           }
         ]
       }

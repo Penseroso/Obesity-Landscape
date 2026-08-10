@@ -1,0 +1,681 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "assetId": "pramlintide",
+  "studies": [
+    {
+      "id": "astrazeneca-pramlintide-nct00112021",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "A Study to Examine the Effect of Pramlintide on Body Weight and Its Safety and Tolerability in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00112021"
+        }
+      ],
+      "protocolIdentifiers": [
+        "137OB-201"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00112021",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00112021",
+            "title": "Pramlintide obesity study record (NCT00112021)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00189514",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "Extension Study of Protocol 137OB-201 to Examine the Long Term Effect of Pramlintide on Body Weight and Its Safety and Tolerability in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00189514"
+        }
+      ],
+      "protocolIdentifiers": [
+        "137OB-201E"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00189514",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Long-term extension of protocol 137OB-201 with three pramlintide regimens and placebo."
+      },
+      "population": "Adults with obesity who completed the preceding pramlintide obesity study.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "maintenance-or-continuation"
+      },
+      "overallDuration": "Up to 12 months across the parent and extension studies",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00189514",
+            "title": "Pramlintide obesity extension study record (NCT00189514)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18753666/",
+            "title": "Sustained weight loss following 12-month pramlintide treatment as an adjunct to lifestyle intervention in obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2008-06-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00402077",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "A Study to Examine the Safety, Tolerability, and Body Weight Effect of Pramlintide Alone and in Combination With Oral Antiobesity Agents in Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00402077"
+        }
+      ],
+      "protocolIdentifiers": [
+        "AFA203"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00402077",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm study of pramlintide alone or with oral antiobesity agents; registry arm labels do not disclose the individual combination assignments."
+      },
+      "population": "Adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00402077",
+            "title": "Pramlintide combination obesity study record (NCT00402077)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-nct00444561",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "programId": "astrazeneca-pramlintide-subcutaneous-injection-obesity",
+      "officialTitle": "Exploratory Study to Evaluate Various Pharmacodynamic Effects of Subcutaneously Infused or Injected Pramlintide in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00444561"
+        }
+      ],
+      "protocolIdentifiers": [
+        "137-160"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00444561",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-05"
+      },
+      "design": {
+        "randomization": "Not reported",
+        "masking": "Not reported",
+        "comparator": "None reported",
+        "description": "Exploratory pharmacodynamic study of subcutaneous pramlintide infusion or injection."
+      },
+      "population": "Adults with obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00444561",
+            "title": "Pramlintide pharmacodynamic obesity study record (NCT00444561)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "A Phase 2A, Randomized, Controlled, Double-Blind, Multicenter Study to Evaluate the Safety, Tolerability, and Effect on Body Weight of Recombinant-Methionyl Human Leptin Administered in Conjunction With Pramlintide in Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00392925"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA101"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00392925",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and component monotherapy"
+      },
+      "population": "Adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00392925",
+            "title": "DFA101 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Dose-Ranging Study to Examine the Safety, Tolerability, and Effect on Body Weight of Metreleptin Administered in Conjunction With Pramlintide in Obese and Overweight Subjects.",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00673387"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA102"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00673387",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and component monotherapy",
+        "description": "Eight-arm dose-ranging study of pramlintide and metreleptin alone or in combination."
+      },
+      "population": "Adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00673387",
+            "title": "DFA102 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "Extension Study of Protocol DFA102 to Examine the Long-Term Safety, Tolerability, and Effect on Body Weight of Pramlintide Administered in Combination With Metreleptin in Obese and Overweight Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00819234"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA102E"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00819234",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Registry-defined continuation groups",
+        "description": "Long-term extension of DFA102; the reviewed registry labels the four protocol arms numerically."
+      },
+      "population": "Adults with overweight or obesity who completed protocol DFA102.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "maintenance-or-continuation"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00819234",
+            "title": "DFA102E extension study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-pramlintide-metreleptin-nct01235741",
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controled, Multicenter Study To Examine The Efficacy And Safety Of Pramlintide+Metreleptin In Obese Subjects Following A Low-Calorie Diet Lead-In",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT01235741"
+        }
+      ],
+      "protocolIdentifiers": [
+        "DFA104"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT01235741",
+        "overallStatus": "terminated",
+        "sourceStatus": "Terminated",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Low-calorie-diet lead-in followed by planned randomized treatment; the sponsor terminated the study after neutralizing activity to metreleptin was observed in DFA102."
+      },
+      "population": "Adults with obesity who achieved at least 2% weight loss during a low-calorie-diet lead-in.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT01235741",
+            "title": "DFA104 study record and results",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "pramlintide-201-active",
+      "studyId": "astrazeneca-pramlintide-nct00112021",
+      "role": "experimental",
+      "label": "Pramlintide acetate",
+      "intervention": "Subcutaneous pramlintide acetate",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201-placebo",
+      "studyId": "astrazeneca-pramlintide-nct00112021",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching subcutaneous placebo"
+    },
+    {
+      "id": "pramlintide-201e-arm1",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "experimental",
+      "label": "Registry arm 1",
+      "intervention": "Registry-defined subcutaneous pramlintide regimen; exact arm-to-dose assignment not disclosed",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201e-arm2",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "experimental",
+      "label": "Registry arm 2",
+      "intervention": "Registry-defined subcutaneous pramlintide regimen; exact arm-to-dose assignment not disclosed",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201e-arm3",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "experimental",
+      "label": "Registry arm 3",
+      "intervention": "Registry-defined subcutaneous pramlintide regimen; exact arm-to-dose assignment not disclosed",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-201e-placebo",
+      "studyId": "astrazeneca-pramlintide-nct00189514",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Volume-matched subcutaneous placebo three times daily"
+    },
+    {
+      "id": "pramlintide-afa203-arm1",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "experimental",
+      "label": "Arm 1",
+      "intervention": "Registry-defined pramlintide monotherapy or oral antiobesity-agent combination",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-afa203-arm2",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "experimental",
+      "label": "Arm 2",
+      "intervention": "Registry-defined pramlintide monotherapy or oral antiobesity-agent combination",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-afa203-arm3",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "experimental",
+      "label": "Arm 3",
+      "intervention": "Registry-defined pramlintide monotherapy or oral antiobesity-agent combination",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "pramlintide-afa203-placebo",
+      "studyId": "astrazeneca-pramlintide-nct00402077",
+      "role": "placebo",
+      "label": "Arm 4",
+      "intervention": "Registry-defined placebo comparator"
+    },
+    {
+      "id": "pramlintide-137160-active",
+      "studyId": "astrazeneca-pramlintide-nct00444561",
+      "role": "experimental",
+      "label": "Pramlintide acetate (AC137)",
+      "intervention": "Pramlintide acetate administered by subcutaneous infusion or injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa101-metreleptin",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "active comparator",
+      "label": "Placebo and metreleptin",
+      "intervention": "Metreleptin with pramlintide-matching placebo"
+    },
+    {
+      "id": "dfa101-pramlintide",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "active comparator",
+      "label": "Pramlintide and placebo",
+      "intervention": "Pramlintide with metreleptin-matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa101-combination",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "experimental",
+      "label": "Pramlintide and metreleptin",
+      "intervention": "Pramlintide administered with metreleptin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa101-leadin",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00392925",
+      "role": "other",
+      "label": "Lead-in period",
+      "intervention": "Registry-defined lead-in period"
+    },
+    {
+      "id": "dfa102-placebo",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "placebo",
+      "label": "Placebo-P + Placebo-M",
+      "intervention": "Matching placebos for pramlintide and metreleptin"
+    },
+    {
+      "id": "dfa102-pramlintide",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "active comparator",
+      "label": "Pramlintide 360 mcg + Placebo-M",
+      "intervention": "Pramlintide 360 micrograms with metreleptin-matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-metreleptin",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "active comparator",
+      "label": "Placebo-P + Metreleptin 5.0 mg",
+      "intervention": "Metreleptin 5.0 mg with pramlintide-matching placebo"
+    },
+    {
+      "id": "dfa102-combo-180-2-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 180 mcg + Metreleptin 2.5 mg",
+      "intervention": "Pramlintide 180 micrograms with metreleptin 2.5 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-180-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 180 mcg + Metreleptin 5.0 mg",
+      "intervention": "Pramlintide 180 micrograms with metreleptin 5.0 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-360-1-25",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 360 mcg + Metreleptin 1.25 mg",
+      "intervention": "Pramlintide 360 micrograms with metreleptin 1.25 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-360-2-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 360 mcg + Metreleptin 2.5 mg",
+      "intervention": "Pramlintide 360 micrograms with metreleptin 2.5 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102-combo-360-5",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00673387",
+      "role": "experimental",
+      "label": "Pramlintide 360 mcg + Metreleptin 5.0 mg",
+      "intervention": "Pramlintide 360 micrograms with metreleptin 5.0 mg",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa102e-arm1",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 1",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa102e-arm2",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 2",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa102e-arm3",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 3",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa102e-arm4",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct00819234",
+      "role": "other",
+      "label": "Registry arm 4",
+      "intervention": "Registry-defined continuation regimen"
+    },
+    {
+      "id": "dfa104-combination",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct01235741",
+      "role": "experimental",
+      "label": "Pramlintide + metreleptin",
+      "intervention": "Pramlintide 360 micrograms plus metreleptin 5.0 mg subcutaneously twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "pramlintide"
+      }
+    },
+    {
+      "id": "dfa104-placebo",
+      "studyId": "astrazeneca-pramlintide-metreleptin-nct01235741",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching pramlintide and metreleptin placebos subcutaneously twice daily"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

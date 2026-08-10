@@ -1,0 +1,116 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "assetId": "davalintide",
+  "studies": [
+    {
+      "id": "astrazeneca-davalintide-nct00785408",
+      "companyId": "astrazeneca",
+      "assetId": "davalintide",
+      "programId": "astrazeneca-davalintide-subcutaneous-injection-obesity",
+      "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Parallel-group, Dose-ranging Study to Examine the Safety, Tolerability, and Effect on Body Weight of Subcutaneous AC2307 in Obese or Overweight Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00785408"
+        }
+      ],
+      "protocolIdentifiers": [
+        "CFA104"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00785408",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2014-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Six-arm parallel dose-ranging study with low-, middle-, and high-dose davalintide and dose-matched placebo groups."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00785408",
+            "title": "Davalintide obesity study record (NCT00785408)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "nct00785408-davalintide-low",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "experimental",
+      "label": "AC2307 low dose",
+      "intervention": "Low-dose AC2307 subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "davalintide"
+      }
+    },
+    {
+      "id": "nct00785408-davalintide-middle",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "experimental",
+      "label": "AC2307 middle dose",
+      "intervention": "Middle-dose AC2307 subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "davalintide"
+      }
+    },
+    {
+      "id": "nct00785408-davalintide-high",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "experimental",
+      "label": "AC2307 high dose",
+      "intervention": "High-dose AC2307 subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "davalintide"
+      }
+    },
+    {
+      "id": "nct00785408-placebo-low",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "placebo",
+      "label": "Low-dose matching placebo",
+      "intervention": "Low-dose matching placebo subcutaneous injection twice daily"
+    },
+    {
+      "id": "nct00785408-placebo-middle",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "placebo",
+      "label": "Middle-dose matching placebo",
+      "intervention": "Middle-dose matching placebo subcutaneous injection twice daily"
+    },
+    {
+      "id": "nct00785408-placebo-high",
+      "studyId": "astrazeneca-davalintide-nct00785408",
+      "role": "placebo",
+      "label": "High-dose matching placebo",
+      "intervention": "High-dose matching placebo subcutaneous injection twice daily"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

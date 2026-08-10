@@ -28,6 +28,72 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "focalStudyIds": [
+        "astrazeneca-azd6234-nct06132841",
+        "astrazeneca-azd6234-nct06595238",
+        "astrazeneca-azd6234-nct06851858",
+        "astrazeneca-azd6234-nct06862791"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "focalStudyIds": [
+        "astrazeneca-cotadutide-nct02548585",
+        "astrazeneca-cotadutide-nct03235050",
+        "astrazeneca-cotadutide-nct03244800",
+        "astrazeneca-cotadutide-nct03596177",
+        "astrazeneca-cotadutide-nct03625778",
+        "astrazeneca-cotadutide-nct03645421",
+        "astrazeneca-cotadutide-nct03745937",
+        "astrazeneca-cotadutide-nct04208620"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "astrazeneca",
+      "assetId": "davalintide",
+      "focalStudyIds": [
+        "astrazeneca-davalintide-nct00785408"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "astrazeneca",
+      "assetId": "elecoglipron",
+      "focalStudyIds": [
+        "astrazeneca-elecoglipron-nct06579092"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "astrazeneca",
+      "assetId": "exenatide",
+      "focalStudyIds": [
+        "astrazeneca-exenatide-nct00375492",
+        "astrazeneca-exenatide-nct00500370"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "astrazeneca",
+      "assetId": "pramlintide",
+      "focalStudyIds": [
+        "astrazeneca-pramlintide-nct00112021",
+        "astrazeneca-pramlintide-nct00189514",
+        "astrazeneca-pramlintide-nct00402077",
+        "astrazeneca-pramlintide-nct00444561",
+        "astrazeneca-pramlintide-metreleptin-nct00392925",
+        "astrazeneca-pramlintide-metreleptin-nct00673387",
+        "astrazeneca-pramlintide-metreleptin-nct00819234",
+        "astrazeneca-pramlintide-metreleptin-nct01235741"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
       "focalStudyIds": [
@@ -192,6 +258,7 @@
         "novo-nordisk-liraglutide-scale-kids-nct04775082"
       ],
       "linkedStudyIds": [
+        "astrazeneca-cotadutide-nct03235050",
         "novo-nordisk-cagrilintide-phase2-nct03856047",
         "novo-nordisk-semaglutide-step-8-nct04074161"
       ]

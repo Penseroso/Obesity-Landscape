@@ -1,0 +1,297 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "assetId": "exenatide",
+  "studies": [
+    {
+      "id": "astrazeneca-exenatide-nct00375492",
+      "companyId": "astrazeneca",
+      "assetId": "exenatide",
+      "programId": "astrazeneca-exenatide-subcutaneous-injection-obesity",
+      "officialTitle": "A Pilot Study of Effects of Exenatide on Body Weight in Non-Diabetic, Obese Patients",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00375492"
+        }
+      ],
+      "protocolIdentifiers": [
+        "H8O-MC-GWBP"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00375492",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group study of exenatide or placebo alongside a lifestyle-modification program."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00375492",
+            "title": "Exenatide body-weight study record (NCT00375492)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-exenatide-nct00500370",
+      "companyId": "astrazeneca",
+      "assetId": "exenatide",
+      "programId": "astrazeneca-exenatide-subcutaneous-injection-obesity",
+      "officialTitle": "Effect on Weight Loss of Exenatide Versus Placebo",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT00500370"
+        }
+      ],
+      "protocolIdentifiers": [
+        "H8O-US-GWBM"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT00500370",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2015-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group study of twice-daily exenatide or matching placebo with a lifestyle-modification program."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00500370",
+            "title": "Exenatide weight-loss study record (NCT00500370)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "nct00375492-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "role": "experimental",
+      "label": "Exenatide",
+      "intervention": "Exenatide subcutaneous injection twice daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "exenatide"
+      },
+      "dose": "Registry-defined exenatide dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "nct00375492-placebo",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo subcutaneous injection twice daily",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "nct00500370-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "role": "experimental",
+      "label": "Exenatide",
+      "intervention": "Exenatide 5 micrograms twice daily for 4 weeks, then 10 micrograms twice daily for 20 weeks, with lifestyle modification",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "exenatide"
+      },
+      "dose": "5 micrograms, then 10 micrograms",
+      "titration": "5 micrograms for 4 weeks, then 10 micrograms for 20 weeks",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "nct00500370-placebo",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Volume-equivalent placebo subcutaneous injection twice daily with lifestyle modification",
+      "dose": "Volume-equivalent placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "24 weeks"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "nct00375492-body-weight-week24",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "name": "Change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
+    },
+    {
+      "id": "nct00500370-body-weight-week24",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "name": "Change in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "nct00375492-bw-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "endpointId": "nct00375492-body-weight-week24",
+      "armIds": [
+        "nct00375492-exenatide"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-6.16 kg",
+        "numericValue": -6.16,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "uncertainty": "SE 0.54"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00375492",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00375492-bw-placebo",
+      "studyId": "astrazeneca-exenatide-nct00375492",
+      "endpointId": "nct00375492-body-weight-week24",
+      "armIds": [
+        "nct00375492-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-3.97 kg",
+        "numericValue": -3.97,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "uncertainty": "SE 0.52"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00375492",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00500370-bw-exenatide",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "endpointId": "nct00500370-body-weight-week24",
+      "armIds": [
+        "nct00500370-exenatide"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-5.06 kg",
+        "numericValue": -5.06,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00500370",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "nct00500370-bw-placebo",
+      "studyId": "astrazeneca-exenatide-nct00500370",
+      "endpointId": "nct00500370-body-weight-week24",
+      "armIds": [
+        "nct00500370-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-1.61 kg",
+        "numericValue": -1.61,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT00500370",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ]
+}

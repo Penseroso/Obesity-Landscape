@@ -1,0 +1,493 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "assetId": "azd6234",
+  "studies": [
+    {
+      "id": "astrazeneca-azd6234-nct06132841",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "programId": "astrazeneca-azd6234-subcutaneous-injection",
+      "officialTitle": "A Phase I Randomized, Single-blind, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of AZD6234 Following Repeat Dose Administration in Participants With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06132841"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8750C00002"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06132841",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Four sequential repeat-dose cohorts, including Japanese participant cohorts, with cohort-specific treatment periods."
+      },
+      "population": "Healthy adults with overweight or obesity, including Japanese participants; the protocol includes change in body weight as a pharmacodynamic endpoint.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Up to 26 weeks of treatment, depending on cohort",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06132841",
+            "title": "AZD6234 repeat-dose study record (NCT06132841)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/ph-1-study-to-evaluate-safety-tolerability-pk-pd-of-repeat-azd6234-doses-in-obese-participants/",
+            "title": "Phase 1 study to evaluate safety, tolerability, PK and PD of repeat AZD6234 doses in obese participants",
+            "sourceType": "regulatory research summary",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-azd6234-nct06595238",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "programId": "astrazeneca-azd6234-subcutaneous-injection",
+      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of AZD6234 in Participants Living With Obesity or Overweight With Comorbidity",
+      "acronym": "APRICUS",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06595238"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8750C00004"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06595238",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm parallel-group dose-ranging study of once-weekly subcutaneous AZD6234."
+      },
+      "population": "Adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06595238",
+            "title": "APRICUS study record (NCT06595238)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/apricus/",
+            "title": "APRICUS regulatory research summary",
+            "sourceType": "regulatory research summary",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-azd6234-nct06851858",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "programId": "astrazeneca-azd6234-subcutaneous-injection",
+      "officialTitle": "A Phase II Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of AZD6234 in Participants Living With Overweight or Obesity With Type 2 Diabetes Who Are on a Stable Dose of GLP-1 Receptor Agonist",
+      "acronym": "ARAY",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06851858"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8750C00005"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06851858",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm study of once-weekly subcutaneous AZD6234 or matching placebo added to stable GLP-1 receptor agonist therapy."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes receiving a stable GLP-1 receptor agonist dose.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "26 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06851858",
+            "title": "ARAY study record (NCT06851858)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://astrazeneca.trialsummaries.com/Study/StudyDetails?tenant=MT_MED_9011&uniqueStudyId=D8750C00005",
+            "title": "ARAY AstraZeneca trial summary listing",
+            "sourceType": "company trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-azd6234-nct06862791",
+      "companyId": "astrazeneca",
+      "assetId": "azd6234",
+      "regimenId": "astrazeneca-azd9550-azd6234-obesity",
+      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of Co-administration of AZD9550 and AZD6234 in Participants Living With Obesity or Overweight With Co-morbidity (ASCEND)",
+      "acronym": "ASCEND",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06862791"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8460C00004",
+        "2024-516176-15-00"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06862791",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo and component monotherapies",
+        "description": "Nine-arm reduced-factorial study of once-weekly AZD9550 and AZD6234 dose combinations, component monotherapies, or corresponding placebos."
+      },
+      "population": "Adults with obesity, or overweight with hypertension, dyslipidemia, or obstructive sleep apnoea, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks of treatment; approximately 47 weeks including screening and follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06862791",
+            "title": "ASCEND study record (NCT06862791)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/",
+            "title": "ASCEND AstraZeneca study page",
+            "sourceType": "company trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "azd6234-00002-cohort1",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 1: AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "6 weeks"
+    },
+    {
+      "id": "azd6234-00002-cohort2",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 2: AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "azd6234-00002-cohort3-japanese",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 3: Japanese participants, AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo in Japanese participants",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "azd6234-00002-cohort4-japanese",
+      "studyId": "astrazeneca-azd6234-nct06132841",
+      "role": "experimental",
+      "label": "Cohort 4: Japanese participants of childbearing potential, AZD6234 or placebo",
+      "intervention": "Repeated subcutaneous doses of AZD6234 or matching placebo in Japanese participants of childbearing potential",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "apricus-azd6234-dose1",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "experimental",
+      "label": "AZD6234 dose 1",
+      "intervention": "AZD6234 dose 1 once-weekly subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "apricus-azd6234-dose2",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "experimental",
+      "label": "AZD6234 dose 2",
+      "intervention": "AZD6234 dose 2 once-weekly subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "apricus-azd6234-dose3",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "experimental",
+      "label": "AZD6234 dose 3",
+      "intervention": "AZD6234 dose 3 once-weekly subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "apricus-placebo",
+      "studyId": "astrazeneca-azd6234-nct06595238",
+      "role": "placebo",
+      "label": "Dose-matched placebo",
+      "intervention": "Placebo matched to AZD6234 dose groups",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "aray-azd6234",
+      "studyId": "astrazeneca-azd6234-nct06851858",
+      "role": "experimental",
+      "label": "AZD6234",
+      "intervention": "Weekly AZD6234 subcutaneous injections on stable GLP-1 receptor agonist therapy",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "aray-placebo",
+      "studyId": "astrazeneca-azd6234-nct06851858",
+      "role": "placebo",
+      "label": "Placebo for AZD6234",
+      "intervention": "Weekly matching placebo subcutaneous injections on stable GLP-1 receptor agonist therapy",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "ascend-arm1",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 1",
+      "intervention": "AZD9550 low dose plus AZD6234 low dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm2",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 2",
+      "intervention": "AZD9550 medium dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm3",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 3",
+      "intervention": "AZD9550 high dose plus AZD6234 high dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm4",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 4",
+      "intervention": "AZD9550 low dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm5",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 5",
+      "intervention": "AZD9550 medium dose plus AZD6234 low dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm6",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 6",
+      "intervention": "AZD9550 high dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm7",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 7",
+      "intervention": "AZD9550 medium dose plus AZD6234 high dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm8",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "active comparator",
+      "label": "Arm 8",
+      "intervention": "AZD9550 high dose monotherapy or corresponding placebo",
+      "linkedAsset": {
+        "assetName": "AZD9550"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm9",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "active comparator",
+      "label": "Arm 9",
+      "intervention": "AZD6234 high dose monotherapy or corresponding placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

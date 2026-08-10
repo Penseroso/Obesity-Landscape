@@ -1,0 +1,1184 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "assetId": "cotadutide",
+  "studies": [
+    {
+      "id": "astrazeneca-cotadutide-nct02548585",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 1/2, Randomized, Double-blind, Placebo-controlled, Multiple-ascending-dose Study to Evaluate the Efficacy, Safety, and Pharmacokinetics of MEDI0382 in Overweight and Obese Subjects With a History of Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT02548585"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00002"
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT02548585",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2019-01"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Six sequential multiple-ascending-dose cohorts with once-daily subcutaneous cotadutide."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "7 to 41 days of treatment, depending on cohort",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT02548585",
+            "title": "Cotadutide multiple-ascending-dose study record (NCT02548585)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29856343/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-26",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03235050",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase IIb, Randomised, Parallel, Double-Blind Placebo-Controlled and Open-Label Active Comparator Study to Evaluate the Efficacy and Safety of MEDI0382 in the Treatment of Overweight and Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03235050"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00004"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03235050",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind for cotadutide and placebo; open-label active comparator",
+        "comparator": "Placebo and liraglutide",
+        "description": "Five-arm dose-ranging study on background metformin with three cotadutide doses, placebo, and liraglutide."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes treated with metformin.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "54 weeks of treatment plus 28-day follow-up",
+      "safetySummary": "The peer-reviewed 54-week report described gastrointestinal adverse events as the most common events and a dose-dependent increase in heart rate; detailed per-arm named safety facts were not entered without a completed full-text table mapping review.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03235050",
+            "title": "Cotadutide Phase 2b study record (NCT03235050)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03244800",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 2, Randomised, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy, Safety, Tolerability, and Pharmacokinetics of Different Doses of MEDI0382 in Overweight and Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03244800"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00011"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03244800",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2019-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two parallel titration cohorts, each with cotadutide and matching placebo groups."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "49 days of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03244800",
+            "title": "Cotadutide dose study record (NCT03244800)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03596177",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "An Exploratory Phase 2a, Randomised, Double-blind, Placebo-controlled Study to Evaluate the Effect of MEDI0382 on Energy Balance in Overweight and Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03596177"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00021"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03596177",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2022-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm energy-balance study with a 16-day placebo run-in and 42-day double-blind treatment period."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "59 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03596177",
+            "title": "Cotadutide energy-balance study record (NCT03596177)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31665464/",
+            "title": "Efficacy, Safety, and Mechanistic Insights of Cotadutide, a Dual Receptor Glucagon-Like Peptide-1 and Glucagon Agonist",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2019-10-30",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03625778",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection",
+      "officialTitle": "A Randomized, Blinded, Placebo-controlled Study to Assess Pharmacokinetics, Safety, and Tolerability of Ascending Doses of MEDI0382 in Non-diabetic Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03625778"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5672C00001"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03625778",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2021-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Three parallel titration cohorts comparing different cotadutide titration schedules with matching placebo."
+      },
+      "population": "Adults with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "9, 14, or 18 weeks of treatment, depending on cohort",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03625778",
+            "title": "Cotadutide non-diabetic obesity study record (NCT03625778)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03645421",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase IIa, Randomised, Parallel, Double-Blind,Placebo-Controlled Study to Evaluate the Safety, Efficacy, and Pharmacokinetics of MEDI0382 in Japanese Preobese or Obese Subjects With Type 2 Diabetes Who Have Inadequate Glycemic Control With Diet and Exercise",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03645421"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5674C00001"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03645421",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2019-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm dose-ranging study of once-daily cotadutide in Japanese participants."
+      },
+      "population": "Japanese adults with preobesity or obesity and type 2 diabetes inadequately controlled with diet and exercise.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "48 days of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "title": "Japanese cotadutide dose study record (NCT03645421)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct03745937",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 2a Randomized, Blinded, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of MEDI0382 in Overweight/Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03745937"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5670C00030"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03745937",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Two cotadutide titration cohorts with separate matching-placebo cohorts and a three-week treatment extension."
+      },
+      "population": "Adults with overweight or obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "11 weeks of treatment plus 28-day follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "title": "Cotadutide titration study record (NCT03745937)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04208620",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "A Phase 1 Randomized, Blinded, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of Cotadutide in Japanese Obese Subjects With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04208620"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5671C00003"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04208620",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm study of subcutaneous cotadutide or placebo in Japanese participants."
+      },
+      "population": "Japanese adults with obesity and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "98 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04208620",
+            "title": "Japanese cotadutide Phase 1 study record (NCT04208620)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "cotadutide-00002-placebo",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo once daily across six dose cohorts"
+    },
+    {
+      "id": "cotadutide-00002-c1-100",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 1: cotadutide 100 mcg",
+      "intervention": "Cotadutide 100 mcg once daily for 7 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c2-150",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 2: cotadutide 150 mcg",
+      "intervention": "Cotadutide titrated from 100 mcg to 150 mcg once daily over 11 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c3-200",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 3: cotadutide 200 mcg",
+      "intervention": "Cotadutide titrated from 100 mcg through 150 mcg to 200 mcg once daily over 15 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c4-200",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 4: cotadutide 200 mcg extended",
+      "intervention": "Cotadutide titrated to 200 mcg once daily and continued through Day 41",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c5-300",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 5: cotadutide 300 mcg",
+      "intervention": "Cotadutide titrated to 300 mcg once daily over 22 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00002-c6-300",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "role": "experimental",
+      "label": "Cohort 6: cotadutide 300 mcg",
+      "intervention": "Cotadutide titrated to 300 mcg once daily over 17 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-low",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "experimental",
+      "label": "Cotadutide low dose plus metformin",
+      "intervention": "Low-dose cotadutide once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-mid",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "experimental",
+      "label": "Cotadutide mid dose plus metformin",
+      "intervention": "Mid-dose cotadutide once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-high",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "experimental",
+      "label": "Cotadutide high dose plus metformin",
+      "intervention": "High-dose cotadutide once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-00004-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "placebo",
+      "label": "Placebo plus metformin",
+      "intervention": "Matching placebo once daily on background metformin"
+    },
+    {
+      "id": "cotadutide-00004-liraglutide",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "role": "active comparator",
+      "label": "Liraglutide plus metformin",
+      "intervention": "Liraglutide 1.8 mg once daily on background metformin",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "liraglutide"
+      }
+    },
+    {
+      "id": "cotadutide-00011-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "placebo",
+      "label": "Placebo cohort 1",
+      "intervention": "Matching placebo once daily for 49 days",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00011-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "experimental",
+      "label": "Cotadutide cohort 1",
+      "intervention": "Cotadutide four-step titration once daily for 49 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Four-step titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00011-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "placebo",
+      "label": "Placebo cohort 2",
+      "intervention": "Matching placebo once daily for 49 days",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00011-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "role": "experimental",
+      "label": "Cotadutide cohort 2",
+      "intervention": "Cotadutide four-step titration once daily for 49 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Four-step titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "49 days"
+    },
+    {
+      "id": "cotadutide-00021-active",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "role": "experimental",
+      "label": "Cotadutide",
+      "intervention": "Placebo run-in followed by cotadutide titrated to 300 mcg once daily",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 days after run-in"
+    },
+    {
+      "id": "cotadutide-00021-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo run-in followed by matching placebo once daily",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "56 days after run-in"
+    },
+    {
+      "id": "cotadutide-200001-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "placebo",
+      "label": "Placebo cohort 1",
+      "intervention": "Matching placebo once daily for 9 weeks"
+    },
+    {
+      "id": "cotadutide-200001-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "experimental",
+      "label": "Cotadutide cohort 1",
+      "intervention": "Seven-step cotadutide titration once daily over 9 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-200001-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "placebo",
+      "label": "Placebo cohort 2",
+      "intervention": "Matching placebo once daily for 14 weeks"
+    },
+    {
+      "id": "cotadutide-200001-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "experimental",
+      "label": "Cotadutide cohort 2",
+      "intervention": "Five-step cotadutide titration once daily over 14 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-200001-placebo-c3",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "placebo",
+      "label": "Placebo cohort 3",
+      "intervention": "Matching placebo once daily for 18 weeks"
+    },
+    {
+      "id": "cotadutide-200001-active-c3",
+      "studyId": "astrazeneca-cotadutide-nct03625778",
+      "role": "experimental",
+      "label": "Cotadutide cohort 3",
+      "intervention": "Four-step cotadutide titration once daily over 18 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    },
+    {
+      "id": "cotadutide-400001-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo once daily for 48 days",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-400001-100",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "experimental",
+      "label": "Cotadutide 100 mcg",
+      "intervention": "Cotadutide titrated to 100 mcg once daily for 48 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 100 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-400001-200",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "experimental",
+      "label": "Cotadutide 200 mcg",
+      "intervention": "Cotadutide titrated to 200 mcg once daily for 48 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 200 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-400001-300",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "role": "experimental",
+      "label": "Cotadutide 300 mcg",
+      "intervention": "Cotadutide titrated to 300 mcg once daily for 48 days",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "48 days"
+    },
+    {
+      "id": "cotadutide-00030-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "experimental",
+      "label": "Cotadutide cohort 1",
+      "intervention": "Cotadutide titrated weekly for 8 weeks then continued for 3 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Registry-defined weekly titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-00030-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "placebo",
+      "label": "Placebo cohort 1",
+      "intervention": "Matching placebo once daily for 11 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-00030-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "experimental",
+      "label": "Cotadutide cohort 2",
+      "intervention": "Cotadutide titrated weekly for 8 weeks then continued for 3 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "Registry-defined weekly titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-00030-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "role": "placebo",
+      "label": "Placebo cohort 2",
+      "intervention": "Matching placebo once daily for 11 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 weeks"
+    },
+    {
+      "id": "cotadutide-100003-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04208620",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Subcutaneous placebo"
+    },
+    {
+      "id": "cotadutide-100003-active",
+      "studyId": "astrazeneca-cotadutide-nct04208620",
+      "role": "experimental",
+      "label": "Cotadutide",
+      "intervention": "Subcutaneous cotadutide",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      }
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "cotadutide-00011-body-weight-day50",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 50"
+    },
+    {
+      "id": "cotadutide-00021-body-weight-day59",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 59"
+    },
+    {
+      "id": "cotadutide-400001-body-weight-day48",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 48"
+    },
+    {
+      "id": "cotadutide-00030-body-weight-day77",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 77"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "cotadutide-00011-bw-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "endpointId": "cotadutide-00011-body-weight-day50",
+      "armIds": [
+        "cotadutide-00011-placebo-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-0.21%",
+        "numericValue": -0.21,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03244800",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00011-bw-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03244800",
+      "endpointId": "cotadutide-00011-body-weight-day50",
+      "armIds": [
+        "cotadutide-00011-active-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.59%",
+        "numericValue": -3.59,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03244800",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-bw-active",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-body-weight-day59",
+      "armIds": [
+        "cotadutide-00021-active"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.98%",
+        "numericValue": -3.98,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03596177",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-bw-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-body-weight-day59",
+      "armIds": [
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-1.40%",
+        "numericValue": -1.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03596177",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-placebo"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-0.82%",
+        "numericValue": -0.82,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-100",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-100"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-2.12%",
+        "numericValue": -2.12,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-200",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-200"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.34%",
+        "numericValue": -3.34,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-400001-bw-300",
+      "studyId": "astrazeneca-cotadutide-nct03645421",
+      "endpointId": "cotadutide-400001-body-weight-day48",
+      "armIds": [
+        "cotadutide-400001-300"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-3.34%",
+        "numericValue": -3.34,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03645421",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-active-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-active-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-6.88%",
+        "numericValue": -6.88,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-placebo-c1",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-placebo-c1"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-1.38%",
+        "numericValue": -1.38,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-active-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-active-c2"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-5.08%",
+        "numericValue": -5.08,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00030-bw-placebo-c2",
+      "studyId": "astrazeneca-cotadutide-nct03745937",
+      "endpointId": "cotadutide-00030-body-weight-day77",
+      "armIds": [
+        "cotadutide-00030-placebo-c2"
+      ],
+      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "result": {
+        "value": "-1.76%",
+        "numericValue": -1.76,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "final",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03745937",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ]
+}
