@@ -607,7 +607,8 @@
       }
     ],
     "indications": [
-      "Obesity"
+      "Obesity",
+      "Type 2 diabetes with dyslipidemia"
     ],
     "development": {
       "stage": "Unknown",
@@ -623,6 +624,13 @@
           "title": "Regeneron Corporate Presentation - April 2026",
           "sourceType": "company investor presentation",
           "publishedAt": "2026-04",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/872589/000110465926002691/tm262861d1_ex99-1.htm",
+          "title": "Regeneron Corporate Presentation Furnished with Form 8-K",
+          "sourceType": "regulatory filing exhibit",
+          "publishedAt": "2026-01-12",
           "checkedAt": "2026-08-10"
         }
       ]
