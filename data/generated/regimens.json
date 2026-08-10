@@ -592,6 +592,44 @@
     "scopeClass": "obesity-treatment"
   },
   {
+    "id": "regeneron-olatorepatide-praluent-obesity",
+    "companyId": "regeneron",
+    "name": "Olatorepatide + Praluent",
+    "mechanismFamilyId": "glp1-gip-plus-pcsk9-combination",
+    "components": [
+      {
+        "assetId": "olatorepatide",
+        "role": "dual GIP/GLP-1 receptor agonist"
+      },
+      {
+        "assetName": "Praluent",
+        "role": "PCSK9 inhibitor"
+      }
+    ],
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Unknown",
+      "status": "Planned",
+      "stageOperationalState": "Planned, not yet initiated"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://newsroom.regeneron.com/static-files/34bd3814-ec41-4433-8472-1e866a858c18",
+          "title": "Regeneron Corporate Presentation - April 2026",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2026-04",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "regeneron-trevogrumab-garetosmab-semaglutide-obesity",
     "companyId": "regeneron",
     "name": "Trevogrumab + Garetosmab + Semaglutide",

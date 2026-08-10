@@ -21,7 +21,7 @@
       "stage": "Phase 2",
       "status": "Active",
       "stageBasis": "Sponsor-declared current pipeline stage",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Active not recruiting"
     },
     "relationships": [
       {
@@ -36,14 +36,14 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
-      "updatedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
       "sources": [
         {
           "url": "https://www.regeneron.com/science/investigational-pipeline",
           "title": "Regeneron Pipeline & Medicines in Development",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://investor.regeneron.com/news-releases/news-release-details/regeneron-expands-clinical-stage-obesity-portfolio-strategic",
@@ -58,6 +58,19 @@
           "sourceType": "company press release",
           "publishedAt": "2026-03-07",
           "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07431086",
+          "title": "Study of Olatorepatide in Adult Participants Living With Overweight or Obesity in the US",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-02-24",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07685808",
+          "title": "Study of Olatorepatide in Adult Participants Living With Overweight or Obesity Without Diabetes",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
         }
       ]
     },
@@ -88,20 +101,20 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
       "updatedAt": "2026-08-01",
       "sources": [
         {
           "url": "https://www.regeneron.com/science/investigational-pipeline",
           "title": "Regeneron Pipeline & Medicines in Development",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07220772",
           "title": "An Open-Label Study of Mibavademab (REGN4461), a Leptin Receptor Agonist, for the Treatment of Monogenic Obesity Due to Biallelic Loss of Function Variants of the LEP Gene",
           "sourceType": "trial registry",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://www.science.org/doi/10.1126/scitranslmed.add4897",
@@ -138,20 +151,20 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
       "updatedAt": "2026-08-01",
       "sources": [
         {
           "url": "https://www.regeneron.com/science/investigational-pipeline",
           "title": "Regeneron Pipeline & Medicines in Development",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07220785",
           "title": "A Two-Part, Randomized, Placebo-Controlled Phase 3 Study of the Efficacy, Safety, and Pharmacokinetics of Mibavademab in Patients With Generalized Lipodystrophy (LAGO)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         }
       ]
     },
@@ -182,7 +195,7 @@
       "stageOperationalState": "Initiated or active"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
       "updatedAt": "2026-08-01",
       "sources": [
         {
@@ -195,7 +208,7 @@
           "url": "https://clinicaltrials.gov/study/NCT07235917",
           "title": "A Phase 2, Double-Blind, Placebo-Controlled Study to Investigate the Safety and Efficacy of Mibavademab in Adult Women With Functional Hypothalamic Amenorrhea",
           "sourceType": "trial registry",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         }
       ]
     },
@@ -221,19 +234,19 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Discontinued",
+      "status": "Unknown",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Completed"
+      "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
-      "updatedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT05088460",
           "title": "A Study to Examine the Effects of the Leptin Receptor (LEPR) Agonist Antibody REGN4461 in Adult Patients With Familial Partial Lipodystrophy (FPLD)",
           "sourceType": "trial registry",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         }
       ]
     },

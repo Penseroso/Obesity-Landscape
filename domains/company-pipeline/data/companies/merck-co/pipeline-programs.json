@@ -74,8 +74,14 @@
     "id": "merck-co-hs-10535-oral-undisclosed",
     "assetId": "hs-10535",
     "companyId": "merck-co",
-    "assetName": "HS-10535",
+    "assetName": "MK-4082",
     "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "HS-10535"
+      }
+    ],
     "technical": {
       "mechanism": "GLP-1 receptor agonist",
       "platform": "Small molecule"
@@ -106,8 +112,8 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
-      "updatedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
       "sources": [
         {
           "url": "https://www.merck.com/news/merck-enters-into-exclusive-global-license-agreement-with-hansoh-pharma-for-investigational-oral-glp-1-receptor-agonist/",
@@ -122,6 +128,13 @@
           "sourceType": "company press release",
           "publishedAt": "2024-12-18",
           "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/310158/000162828025007732/mrk-20241231.htm",
+          "title": "Merck & Co., Inc. 2024 Annual Report (Form 10-K)",
+          "sourceType": "regulatory filing",
+          "publishedAt": "2025-02-25",
+          "checkedAt": "2026-08-10"
         }
       ]
     },
@@ -152,8 +165,8 @@
       "stageOperationalState": "Completed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
-      "updatedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT00384605",
@@ -175,6 +188,12 @@
           "sourceType": "news article",
           "publishedAt": "2008-10",
           "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/64978/000095012308014244/y72257e10vq.htm",
+          "title": "Merck & Co., Inc. Quarterly Report for the Period Ended September 30, 2008 (Form 10-Q)",
+          "sourceType": "regulatory filing",
+          "checkedAt": "2026-08-10"
         }
       ]
     },

@@ -29,7 +29,7 @@
         "state": "NDA submitted",
         "jurisdiction": "China",
         "authority": "NMPA",
-        "date": "2026-06-04"
+        "date": "2026-06-03"
       }
     ],
     "relationships": [
@@ -45,15 +45,15 @@
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
-      "updatedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
       "sources": [
         {
           "url": "https://www.hspharm.com/news/news-detail-513468.htm",
           "title": "New Drug Application for Olatorepatide Injection Accepted by the National Medical Products Administration",
           "sourceType": "company press release",
           "publishedAt": "2026-06-04",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://www.hspharm.com/news/news-detail-513424.htm",
@@ -67,7 +67,7 @@
           "title": "A Study of HS-20094 in Chinese Adults With Overweight or Obesity",
           "sourceType": "trial registry",
           "publishedAt": "2024-08-27",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://www.hspharm.com/news/news-detail-513320.htm",
@@ -75,6 +75,13 @@
           "sourceType": "company press release",
           "publishedAt": "2025-06-02",
           "checkedAt": "2026-08-01"
+        },
+        {
+          "url": "https://cn.hspharm.com/news/news-detail-513473.htm",
+          "title": "ENDO 2026丨翰森制药发布新型双偏向性GLP-1/GIP受体激动剂奥莱泊肽体外药理学研究报告",
+          "sourceType": "company press release",
+          "publishedAt": "2026-06-16",
+          "checkedAt": "2026-08-10"
         }
       ]
     },
@@ -105,27 +112,27 @@
       "stageOperationalState": "Not yet recruiting"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-08-01",
+      "lastVerifiedAt": "2026-08-10",
       "updatedAt": "2026-08-01",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07156500",
           "title": "A Phase 3 Study of HS-20094 in Patients With T2DM Inadequately Controlled With Diet and Exercise Alone",
           "sourceType": "trial registry",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT07156539",
           "title": "A Study of HS-20094 Versus Dulaglutide Once Weekly as Add-on Therapy to Metformin Monotherapy or in Combination With SGLT2 Inhibitors in Participants With Type 2 Diabetes",
           "sourceType": "trial registry",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://clinicaltrials.gov/study/NCT06901648",
           "title": "A Study of HS-20094 in Patients With T2DM",
           "sourceType": "trial registry",
           "publishedAt": "2025-03-30",
-          "checkedAt": "2026-08-01"
+          "checkedAt": "2026-08-10"
         },
         {
           "url": "https://www.hspharm.com/news/news-detail-513198.htm",

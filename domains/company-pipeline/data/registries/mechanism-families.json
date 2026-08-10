@@ -384,6 +384,18 @@
     "mechanisms": []
   },
   {
+    "id": "glp1-gip-plus-pcsk9-combination",
+    "label": "GLP-1 / GIP receptor agonist plus PCSK9 inhibition",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "PCSK9", "action": "inhibitor" }
+    ],
+    "sortRank": 305,
+    "mechanisms": []
+  },
+  {
     "id": "glp1-gip-plus-il17a-combination",
     "label": "GLP-1 / GIP receptor agonist plus IL-17A antagonist",
     "composition": "multi-component",
