@@ -915,6 +915,7 @@
         "treatmentContext": "initial-treatment"
       },
       "overallDuration": "7 to 41 days of treatment, depending on cohort",
+      "safetySummary": "In the peer-reviewed Phase 2a portion, treatment-emergent adverse events occurred in 88% of both groups. Gastrointestinal events were more frequent with cotadutide; no cotadutide recipient had a grade 3 or worse event, and there were no deaths.",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
@@ -926,10 +927,10 @@
             "checkedAt": "2026-08-10"
           },
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/29856343/",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
             "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
             "sourceType": "peer-reviewed publication",
-            "publishedAt": "2018-06-26",
+            "publishedAt": "2018-06-23",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -972,7 +973,7 @@
         "treatmentContext": "initial-treatment"
       },
       "overallDuration": "54 weeks of treatment plus 28-day follow-up",
-      "safetySummary": "The peer-reviewed 54-week report described gastrointestinal adverse events as the most common events and a dose-dependent increase in heart rate; detailed per-arm named safety facts were not entered without a completed full-text table mapping review.",
+      "safetySummary": "The fully reviewed 54-week report identified gastrointestinal disorders, including nausea and vomiting, as the most common events and reported that their event rates decreased over time. Three deaths occurred and none was considered treatment related; exact per-arm named safety outcomes remain unavailable because the supporting tables were not included with the public article.",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
@@ -1080,6 +1081,7 @@
         "treatmentContext": "initial-treatment"
       },
       "overallDuration": "59 days",
+      "safetySummary": "Most adverse events were mild or moderate. Four cotadutide recipients discontinued permanently because of adverse events; the publication reports nausea and vomiting among the most frequent events but leaves the exact per-arm named-event table in unavailable Supporting Information Table S7.",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
@@ -1091,10 +1093,10 @@
             "checkedAt": "2026-08-10"
           },
           {
-            "url": "https://pubmed.ncbi.nlm.nih.gov/31665464/",
-            "title": "Efficacy, Safety, and Mechanistic Insights of Cotadutide, a Dual Receptor Glucagon-Like Peptide-1 and Glucagon Agonist",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
             "sourceType": "peer-reviewed publication",
-            "publishedAt": "2019-10-30",
+            "publishedAt": "2024-04-01",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -6660,6 +6662,7 @@
         "comparator": "Placebo"
       },
       "population": "Adults with type 2 diabetes mellitus and adults with obesity without type 2 diabetes mellitus.",
+      "safetySummary": "The peer-reviewed report found no serious treatment-emergent adverse events or deaths. Nausea and vomiting were the most frequent events, increased generally with target dose, and treatment discontinuation was common at higher doses, particularly in the obesity cohort.",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
@@ -6668,6 +6671,13 @@
             "url": "https://clinicaltrials.gov/study/NCT04617275",
             "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
             "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -6698,6 +6708,7 @@
         "comparator": "Placebo"
       },
       "population": "Adults with obesity without diabetes.",
+      "safetySummary": "The peer-reviewed report found most treatment-emergent adverse events were mild; serious events occurred in 3.0% overall and no deaths occurred. Nausea and vomiting were the most frequent events, and discontinuation due to adverse events was higher with danuglipron, particularly at higher doses and faster escalation schedules.",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
@@ -6706,6 +6717,13 @@
             "url": "https://clinicaltrials.gov/study/NCT04707313",
             "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
             "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -9259,7 +9277,11 @@
       "studyId": "astrazeneca-cotadutide-nct02548585",
       "role": "placebo",
       "label": "Placebo",
-      "intervention": "Matching placebo once daily across six dose cohorts"
+      "intervention": "Matching placebo once daily across six dose cohorts",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "7 to 41 days, depending on cohort"
     },
     {
       "id": "cotadutide-00002-c1-100",
@@ -9270,7 +9292,11 @@
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "100 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "7 days"
     },
     {
       "id": "cotadutide-00002-c2-150",
@@ -9281,7 +9307,12 @@
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 150 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "11 days",
+      "titration": "100 mcg for Days 1-4, then 150 mcg for Days 5-11"
     },
     {
       "id": "cotadutide-00002-c3-200",
@@ -9292,7 +9323,12 @@
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 200 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "15 days",
+      "titration": "100 mcg for Days 1-4, 150 mcg for Days 5-8, then 200 mcg for Days 9-15"
     },
     {
       "id": "cotadutide-00002-c4-200",
@@ -9303,7 +9339,12 @@
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 200 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "41 days",
+      "titration": "100 mcg for Days 1-4, 150 mcg for Days 5-8, then 200 mcg for Days 9-41"
     },
     {
       "id": "cotadutide-00002-c5-300",
@@ -9314,7 +9355,12 @@
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "22 days",
+      "titration": "100 mcg for Days 1-5, 150 mcg for Days 6-10, 200 mcg for Days 11-15, then 300 mcg for Days 16-22"
     },
     {
       "id": "cotadutide-00002-c6-300",
@@ -9325,47 +9371,70 @@
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "17 days",
+      "titration": "100 mcg for Days 1-5, 200 mcg for Days 6-10, then 300 mcg for Days 11-17"
     },
     {
       "id": "cotadutide-00004-low",
       "studyId": "astrazeneca-cotadutide-nct03235050",
       "role": "experimental",
-      "label": "Cotadutide low dose plus metformin",
-      "intervention": "Low-dose cotadutide once daily on background metformin",
+      "label": "Cotadutide 100 mcg plus metformin",
+      "intervention": "Cotadutide 100 mcg once daily on background metformin",
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "100 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "54 weeks"
     },
     {
       "id": "cotadutide-00004-mid",
       "studyId": "astrazeneca-cotadutide-nct03235050",
       "role": "experimental",
-      "label": "Cotadutide mid dose plus metformin",
-      "intervention": "Mid-dose cotadutide once daily on background metformin",
+      "label": "Cotadutide 200 mcg plus metformin",
+      "intervention": "Cotadutide titrated to 200 mcg once daily on background metformin",
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 200 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "54 weeks",
+      "titration": "Initiated at 100 mcg and increased weekly by 100 mcg"
     },
     {
       "id": "cotadutide-00004-high",
       "studyId": "astrazeneca-cotadutide-nct03235050",
       "role": "experimental",
-      "label": "Cotadutide high dose plus metformin",
-      "intervention": "High-dose cotadutide once daily on background metformin",
+      "label": "Cotadutide 300 mcg plus metformin",
+      "intervention": "Cotadutide titrated to 300 mcg once daily on background metformin",
       "linkedAsset": {
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
-      }
+      },
+      "dose": "Titrated to 300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "54 weeks",
+      "titration": "Initiated at 100 mcg and increased weekly by 100 mcg"
     },
     {
       "id": "cotadutide-00004-placebo",
       "studyId": "astrazeneca-cotadutide-nct03235050",
       "role": "placebo",
       "label": "Placebo plus metformin",
-      "intervention": "Matching placebo once daily on background metformin"
+      "intervention": "Matching placebo once daily on background metformin",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "54 weeks"
     },
     {
       "id": "cotadutide-00004-liraglutide",
@@ -9376,7 +9445,12 @@
       "linkedAsset": {
         "companyId": "novo-nordisk",
         "assetId": "liraglutide"
-      }
+      },
+      "dose": "Titrated to 1.8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "54 weeks",
+      "titration": "Initiated at 0.6 mg and increased by 0.6 mg weekly to 1.8 mg"
     },
     {
       "id": "cotadutide-00011-placebo-c1",
@@ -15997,12 +16071,84 @@
       "assessmentTimepoint": "Week 13"
     },
     {
+      "id": "cotadutide-00002-body-weight-day41",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "name": "Change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 41"
+    },
+    {
+      "id": "cotadutide-00002-responder5-day41",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 41"
+    },
+    {
+      "id": "cotadutide-00002-sae",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Treatment period through 28 days after last dose"
+    },
+    {
+      "id": "cotadutide-00002-nausea",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Treatment period through 28 days after last dose"
+    },
+    {
+      "id": "cotadutide-00002-vomiting",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Treatment period through 28 days after last dose"
+    },
+    {
+      "id": "cotadutide-00004-body-weight-week14",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "name": "Percent change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 14"
+    },
+    {
+      "id": "cotadutide-00004-responder5-week54",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 54"
+    },
+    {
       "id": "cotadutide-00011-body-weight-day50",
       "studyId": "astrazeneca-cotadutide-nct03244800",
       "name": "Percent change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
       "assessmentTimepoint": "Day 50"
+    },
+    {
+      "id": "cotadutide-00021-energy-intake-day32",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "name": "Percent change from baseline in total energy intake from ad libitum lunch",
+      "role": "secondary",
+      "domain": "other",
+      "assessmentTimepoint": "Day 32"
+    },
+    {
+      "id": "cotadutide-00021-energy-intake-day59",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "name": "Percent change from baseline in total energy intake from ad libitum lunch",
+      "role": "secondary",
+      "domain": "other",
+      "assessmentTimepoint": "Day 59"
     },
     {
       "id": "cotadutide-00021-body-weight-day59",
@@ -17983,7 +18129,7 @@
     {
       "id": "danu-1008-sae",
       "studyId": "pfizer-pf-06882961-nct04617275",
-      "name": "Participants with all-causality serious adverse events",
+      "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
@@ -17991,7 +18137,7 @@
     {
       "id": "danu-1008-nausea",
       "studyId": "pfizer-pf-06882961-nct04617275",
-      "name": "Participants with nausea",
+      "name": "Nausea",
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
@@ -17999,7 +18145,7 @@
     {
       "id": "danu-1008-vomiting",
       "studyId": "pfizer-pf-06882961-nct04617275",
-      "name": "Participants with vomiting",
+      "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
@@ -18039,7 +18185,7 @@
     {
       "id": "danu-1019-sae",
       "studyId": "pfizer-pf-06882961-nct04707313",
-      "name": "Participants with all-causality serious adverse events",
+      "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
@@ -18047,7 +18193,7 @@
     {
       "id": "danu-1019-nausea",
       "studyId": "pfizer-pf-06882961-nct04707313",
-      "name": "Participants with nausea",
+      "name": "Nausea",
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
@@ -18055,7 +18201,7 @@
     {
       "id": "danu-1019-vomiting",
       "studyId": "pfizer-pf-06882961-nct04707313",
-      "name": "Participants with vomiting",
+      "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
@@ -21142,6 +21288,577 @@
       }
     },
     {
+      "id": "cotadutide-00002-bw-active-day41",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-body-weight-day41",
+      "armIds": [
+        "cotadutide-00002-c4-200"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (Phase 2a portion)",
+      "result": {
+        "value": "-3.84 kg",
+        "numericValue": -3.84,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -4.55 to -3.12"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-bw-placebo-day41",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-body-weight-day41",
+      "armIds": [
+        "cotadutide-00002-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (Phase 2a portion)",
+      "result": {
+        "value": "-1.70 kg",
+        "numericValue": -1.7,
+        "unit": "kg",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -2.40 to -1.01"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-responder5-active-day41",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-responder5-day41",
+      "armIds": [
+        "cotadutide-00002-c4-200"
+      ],
+      "analysisPopulation": "Participants in the Phase 2a portion who completed the study",
+      "result": {
+        "value": "41%",
+        "numericValue": 41,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-sae-active",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-sae",
+      "armIds": [
+        "cotadutide-00002-c4-200"
+      ],
+      "analysisPopulation": "Participants who received study drug (Phase 2a portion)",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-sae-placebo",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-sae",
+      "armIds": [
+        "cotadutide-00002-placebo"
+      ],
+      "analysisPopulation": "Participants who received study drug (Phase 2a portion)",
+      "result": {
+        "value": "4%",
+        "numericValue": 4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-nausea-active",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-nausea",
+      "armIds": [
+        "cotadutide-00002-c4-200"
+      ],
+      "analysisPopulation": "Participants who received study drug (Phase 2a portion)",
+      "result": {
+        "value": "52%",
+        "numericValue": 52,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-nausea-placebo",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-nausea",
+      "armIds": [
+        "cotadutide-00002-placebo"
+      ],
+      "analysisPopulation": "Participants who received study drug (Phase 2a portion)",
+      "result": {
+        "value": "19%",
+        "numericValue": 19,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-vomiting-active",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-vomiting",
+      "armIds": [
+        "cotadutide-00002-c4-200"
+      ],
+      "analysisPopulation": "Participants who received study drug (Phase 2a portion)",
+      "result": {
+        "value": "32%",
+        "numericValue": 32,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00002-vomiting-placebo",
+      "studyId": "astrazeneca-cotadutide-nct02548585",
+      "endpointId": "cotadutide-00002-vomiting",
+      "armIds": [
+        "cotadutide-00002-placebo"
+      ],
+      "analysisPopulation": "Participants who received study drug (Phase 2a portion)",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29945727/",
+            "title": "MEDI0382, a GLP-1 and glucagon receptor dual agonist, in obese or overweight patients with type 2 diabetes: a randomised, controlled, double-blind, ascending dose and phase 2a study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2018-06-23",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-bw-low-week14",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-body-weight-week14",
+      "armIds": [
+        "cotadutide-00004-low"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "-2.98%",
+        "numericValue": -2.98,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "95% CI, -3.87 to -2.09"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-bw-mid-week14",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-body-weight-week14",
+      "armIds": [
+        "cotadutide-00004-mid"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "-3.67%",
+        "numericValue": -3.67,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "95% CI, -4.22 to -3.13"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-bw-high-week14",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-body-weight-week14",
+      "armIds": [
+        "cotadutide-00004-high"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "-5.01%",
+        "numericValue": -5.01,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "95% CI, -5.57 to -4.45"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-bw-liraglutide-week14",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-body-weight-week14",
+      "armIds": [
+        "cotadutide-00004-liraglutide"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "-3.44%",
+        "numericValue": -3.44,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "95% CI, -4.20 to -2.68"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-bw-placebo-week14",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-body-weight-week14",
+      "armIds": [
+        "cotadutide-00004-placebo"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "-0.74%",
+        "numericValue": -0.74,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "95% CI, -1.56 to 0.07"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-responder5-low-week54",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-responder5-week54",
+      "armIds": [
+        "cotadutide-00004-low"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "40%",
+        "numericValue": 40,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-responder5-mid-week54",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-responder5-week54",
+      "armIds": [
+        "cotadutide-00004-mid"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "30%",
+        "numericValue": 30,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-responder5-high-week54",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-responder5-week54",
+      "armIds": [
+        "cotadutide-00004-high"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "47%",
+        "numericValue": 47,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-responder5-liraglutide-week54",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-responder5-week54",
+      "armIds": [
+        "cotadutide-00004-liraglutide"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "31%",
+        "numericValue": 31,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00004-responder5-placebo-week54",
+      "studyId": "astrazeneca-cotadutide-nct03235050",
+      "endpointId": "cotadutide-00004-responder5-week54",
+      "armIds": [
+        "cotadutide-00004-placebo"
+      ],
+      "analysisPopulation": "Per-protocol population",
+      "result": {
+        "value": "10%",
+        "numericValue": 10,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34016612/",
+            "title": "Effects of Cotadutide on Metabolic and Hepatic Parameters in Adults With Overweight or Obesity and Type 2 Diabetes: A 54-Week Randomized Phase 2b Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2021-05-20",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
       "id": "cotadutide-00011-bw-placebo-c1",
       "studyId": "astrazeneca-cotadutide-nct03244800",
       "endpointId": "cotadutide-00011-body-weight-day50",
@@ -21198,28 +21915,223 @@
       }
     },
     {
+      "id": "cotadutide-00021-ei-active-day32",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-energy-intake-day32",
+      "armIds": [
+        "cotadutide-00021-active"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-50.7%",
+        "numericValue": -50.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -63.5 to -37.8"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-ei-placebo-day32",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-energy-intake-day32",
+      "armIds": [
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-5.2%",
+        "numericValue": -5.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -23.3 to 13.0"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-ei-active-vs-placebo-day32",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-energy-intake-day32",
+      "armIds": [
+        "cotadutide-00021-active",
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-45.5 percentage points",
+        "numericValue": -45.5,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference in least-squares mean percent change from baseline",
+        "comparisonType": "Cotadutide minus placebo",
+        "confidenceInterval": "90% CI, -67.8 to -23.2",
+        "pValue": "0.002"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-ei-active-day59",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-energy-intake-day59",
+      "armIds": [
+        "cotadutide-00021-active"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-51.9%",
+        "numericValue": -51.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -66.5 to -37.3"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-ei-placebo-day59",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-energy-intake-day59",
+      "armIds": [
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-10.6%",
+        "numericValue": -10.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -31.3 to 10.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-ei-active-vs-placebo-day59",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-energy-intake-day59",
+      "armIds": [
+        "cotadutide-00021-active",
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-41.3 percentage points",
+        "numericValue": -41.3,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference in least-squares mean percent change from baseline",
+        "comparisonType": "Cotadutide minus placebo",
+        "confidenceInterval": "90% CI, -66.7 to -15.9",
+        "pValue": "0.011"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
       "id": "cotadutide-00021-bw-active",
       "studyId": "astrazeneca-cotadutide-nct03596177",
       "endpointId": "cotadutide-00021-body-weight-day59",
       "armIds": [
         "cotadutide-00021-active"
       ],
-      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "analysisPopulation": "Modified intention-to-treat population",
       "result": {
-        "value": "-3.98%",
-        "numericValue": -3.98,
+        "value": "-4.0%",
+        "numericValue": -4,
         "unit": "percent",
         "resultType": "arm-level",
-        "statistic": "Least-squares mean"
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -4.9 to -3.1"
       },
-      "maturity": "final",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT03596177",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -21232,22 +22144,59 @@
       "armIds": [
         "cotadutide-00021-placebo"
       ],
-      "analysisPopulation": "Participants analyzed in the registry outcome",
+      "analysisPopulation": "Modified intention-to-treat population",
       "result": {
-        "value": "-1.40%",
+        "value": "-1.4%",
         "numericValue": -1.4,
         "unit": "percent",
         "resultType": "arm-level",
-        "statistic": "Least-squares mean"
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -2.7 to -0.1"
       },
-      "maturity": "final",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT03596177",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cotadutide-00021-bw-active-vs-placebo",
+      "studyId": "astrazeneca-cotadutide-nct03596177",
+      "endpointId": "cotadutide-00021-body-weight-day59",
+      "armIds": [
+        "cotadutide-00021-active",
+        "cotadutide-00021-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population",
+      "result": {
+        "value": "-2.6 percentage points",
+        "numericValue": -2.6,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference in least-squares mean percent change from baseline",
+        "comparisonType": "Cotadutide minus placebo",
+        "confidenceInterval": "90% CI, -4.2 to -1.0",
+        "pValue": "0.011"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38562018/",
+            "title": "Dual glucagon-like peptide-1 and glucagon receptor agonism reduces energy intake in type 2 diabetes with obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-01",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44672,17 +45621,20 @@
         "value": "-0.11 kg",
         "numericValue": -0.11,
         "unit": "kg",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -3.93 to 3.72"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44700,17 +45652,20 @@
         "value": "-3.85 kg",
         "numericValue": -3.85,
         "unit": "kg",
-        "resultType": "arm-level"
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean",
+        "confidenceInterval": "90% CI, -6.25 to -1.44"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44758,20 +45713,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44786,20 +45742,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "12.5%",
+        "numericValue": 12.5,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44814,20 +45771,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "12.5%",
+        "numericValue": 12.5,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44842,20 +45800,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44870,20 +45829,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "4 participants",
-        "numericValue": 4,
-        "unit": "participants",
+        "value": "20.0%",
+        "numericValue": 20,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44898,20 +45858,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "5 participants",
-        "numericValue": 5,
-        "unit": "participants",
+        "value": "25.0%",
+        "numericValue": 25,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44926,20 +45887,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44954,20 +45916,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "5 participants",
-        "numericValue": 5,
-        "unit": "participants",
+        "value": "22.7%",
+        "numericValue": 22.7,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -44982,20 +45945,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "4 participants",
-        "numericValue": 4,
-        "unit": "participants",
+        "value": "18.2%",
+        "numericValue": 18.2,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45010,20 +45974,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45038,20 +46003,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "6 participants",
-        "numericValue": 6,
-        "unit": "participants",
+        "value": "27.3%",
+        "numericValue": 27.3,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45066,20 +46032,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "6 participants",
-        "numericValue": 6,
-        "unit": "participants",
+        "value": "27.3%",
+        "numericValue": 27.3,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45094,20 +46061,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45122,20 +46090,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "8 participants",
-        "numericValue": 8,
-        "unit": "participants",
+        "value": "36.4%",
+        "numericValue": 36.4,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45150,20 +46119,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "9 participants",
-        "numericValue": 9,
-        "unit": "participants",
+        "value": "40.9%",
+        "numericValue": 40.9,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45178,20 +46148,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45206,20 +46177,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "10 participants",
-        "numericValue": 10,
-        "unit": "participants",
+        "value": "47.6%",
+        "numericValue": 47.6,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45234,20 +46206,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "6 participants",
-        "numericValue": 6,
-        "unit": "participants",
+        "value": "28.6%",
+        "numericValue": 28.6,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45262,20 +46235,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45290,20 +46264,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45318,20 +46293,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45346,20 +46322,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45374,20 +46351,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "13 participants",
-        "numericValue": 13,
-        "unit": "participants",
+        "value": "59.1%",
+        "numericValue": 59.1,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -45402,20 +46380,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
       "result": {
-        "value": "10 participants",
-        "numericValue": 10,
-        "unit": "participants",
+        "value": "45.5%",
+        "numericValue": 45.5,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04617275",
-            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37311722/",
+            "title": "Tolerability, safety and pharmacodynamics of oral, small-molecule glucagon-like peptide-1 receptor agonist danuglipron for type 2 diabetes: A 12-week, randomized, placebo-controlled, Phase 2 study comparing different dose-escalation schemes",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-06-13",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46534,20 +47513,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "1 participants",
+        "value": "1%",
         "numericValue": 1,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46562,20 +47542,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "11 participants",
-        "numericValue": 11,
-        "unit": "participants",
+        "value": "15%",
+        "numericValue": 15,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46590,20 +47571,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "3%",
+        "numericValue": 3,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46618,20 +47600,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "3%",
+        "numericValue": 3,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46646,20 +47629,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "28 participants",
-        "numericValue": 28,
-        "unit": "participants",
+        "value": "45%",
+        "numericValue": 45,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46674,20 +47658,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "10 participants",
-        "numericValue": 10,
-        "unit": "participants",
+        "value": "16%",
+        "numericValue": 16,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46702,20 +47687,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "1 participants",
-        "numericValue": 1,
-        "unit": "participants",
+        "value": "2%",
+        "numericValue": 2,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46730,20 +47716,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "39 participants",
-        "numericValue": 39,
-        "unit": "participants",
+        "value": "62%",
+        "numericValue": 62,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46758,20 +47745,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "24 participants",
-        "numericValue": 24,
-        "unit": "participants",
+        "value": "38%",
+        "numericValue": 38,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46786,20 +47774,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46814,20 +47803,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "41 participants",
-        "numericValue": 41,
-        "unit": "participants",
+        "value": "64%",
+        "numericValue": 64,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46842,20 +47832,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "26 participants",
-        "numericValue": 26,
-        "unit": "participants",
+        "value": "41%",
+        "numericValue": 41,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46870,20 +47861,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "1 participants",
-        "numericValue": 1,
-        "unit": "participants",
+        "value": "2%",
+        "numericValue": 2,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46898,20 +47890,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "36 participants",
-        "numericValue": 36,
-        "unit": "participants",
+        "value": "57%",
+        "numericValue": 57,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46926,20 +47919,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "27 participants",
-        "numericValue": 27,
-        "unit": "participants",
+        "value": "43%",
+        "numericValue": 43,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46954,20 +47948,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "5 participants",
-        "numericValue": 5,
-        "unit": "participants",
+        "value": "8%",
+        "numericValue": 8,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -46982,20 +47977,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "34 participants",
-        "numericValue": 34,
-        "unit": "participants",
+        "value": "54%",
+        "numericValue": 54,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47010,20 +48006,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "29 participants",
-        "numericValue": 29,
-        "unit": "participants",
+        "value": "46%",
+        "numericValue": 46,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47038,20 +48035,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "1 participants",
-        "numericValue": 1,
-        "unit": "participants",
+        "value": "3%",
+        "numericValue": 3,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47066,20 +48064,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "22 participants",
-        "numericValue": 22,
-        "unit": "participants",
+        "value": "58%",
+        "numericValue": 58,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47094,20 +48093,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "16 participants",
-        "numericValue": 16,
-        "unit": "participants",
+        "value": "42%",
+        "numericValue": 42,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47122,20 +48122,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47150,20 +48151,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "25 participants",
-        "numericValue": 25,
-        "unit": "participants",
+        "value": "68%",
+        "numericValue": 68,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47178,20 +48180,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "11 participants",
-        "numericValue": 11,
-        "unit": "participants",
+        "value": "30%",
+        "numericValue": 30,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47206,20 +48209,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "1 participants",
-        "numericValue": 1,
-        "unit": "participants",
+        "value": "3%",
+        "numericValue": 3,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47234,20 +48238,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "18 participants",
-        "numericValue": 18,
-        "unit": "participants",
+        "value": "50%",
+        "numericValue": 50,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47262,20 +48267,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "16 participants",
-        "numericValue": 16,
-        "unit": "participants",
+        "value": "44%",
+        "numericValue": 44,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47290,20 +48296,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "0 participants",
+        "value": "0%",
         "numericValue": 0,
-        "unit": "participants",
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47318,20 +48325,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "11%",
+        "numericValue": 11,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47346,20 +48354,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "1 participants",
-        "numericValue": 1,
-        "unit": "participants",
+        "value": "5%",
+        "numericValue": 5,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47374,20 +48383,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "5%",
+        "numericValue": 5,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47402,20 +48412,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "14 participants",
-        "numericValue": 14,
-        "unit": "participants",
+        "value": "38%",
+        "numericValue": 38,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47430,20 +48441,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "3 participants",
-        "numericValue": 3,
-        "unit": "participants",
+        "value": "8%",
+        "numericValue": 8,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47458,20 +48470,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "2 participants",
-        "numericValue": 2,
-        "unit": "participants",
+        "value": "5%",
+        "numericValue": 5,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47486,20 +48499,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "27 participants",
-        "numericValue": 27,
-        "unit": "participants",
+        "value": "73%",
+        "numericValue": 73,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47514,20 +48528,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "14 participants",
-        "numericValue": 14,
-        "unit": "participants",
+        "value": "38%",
+        "numericValue": 38,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47542,20 +48557,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "3 participants",
-        "numericValue": 3,
-        "unit": "participants",
+        "value": "8%",
+        "numericValue": 8,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47570,20 +48586,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "25 participants",
-        "numericValue": 25,
-        "unit": "participants",
+        "value": "69%",
+        "numericValue": 69,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
@@ -47598,20 +48615,21 @@
       ],
       "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
       "result": {
-        "value": "17 participants",
-        "numericValue": 17,
-        "unit": "participants",
+        "value": "47%",
+        "numericValue": 47,
+        "unit": "percent",
         "resultType": "arm-level"
       },
-      "maturity": "registry result",
+      "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
         "updatedAt": "2026-08-10",
         "sources": [
           {
-            "url": "https://clinicaltrials.gov/study/NCT04707313",
-            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
-            "sourceType": "trial registry",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40539310/",
+            "title": "Efficacy and safety of danuglipron (PF-06882961) in adults with obesity: A randomized, placebo-controlled, dose-ranging phase 2b study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-20",
             "checkedAt": "2026-08-10"
           }
         ]
