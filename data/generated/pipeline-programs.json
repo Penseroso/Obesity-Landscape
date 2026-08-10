@@ -4914,6 +4914,354 @@
     "scopeClass": "metabolic-adjacent"
   },
   {
+    "id": "kailera-therapeutics-kai-4729-subcutaneous-injection",
+    "assetId": "kai-4729",
+    "companyId": "kailera-therapeutics",
+    "assetName": "KAI-4729",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "HRS-4729"
+      }
+    ],
+    "technical": {
+      "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-15",
+        "sourceUrls": [
+          "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.kailera.com/development-pipeline/",
+          "title": "Kailera Development Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06762600",
+          "title": "A Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of HRS-4729 Injection in Healthy Subjects",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-reports-first-quarter-2026-financial-results-and",
+          "title": "Kailera Reports First Quarter 2026 Financial Results and Provides Clinical Data Updates",
+          "sourceType": "company press release",
+          "publishedAt": "2026-05-26",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa",
+          "title": "Kailera Therapeutics Form 424B4",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-04-17",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "kailera-therapeutics-kai-7535-oral-tablets",
+    "assetId": "kai-7535",
+    "companyId": "kailera-therapeutics",
+    "assetName": "KAI-7535",
+    "codeName": null,
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "HRS-7535"
+      }
+    ],
+    "technical": {
+      "mechanism": "Non-peptide GLP-1 receptor agonist",
+      "platform": "Small molecule"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-15",
+        "sourceUrls": [
+          "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.kailera.com/development-pipeline/",
+          "title": "Kailera Development Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07497880",
+          "title": "Efficacy and Safety of Oral KAI-7535 in Adult Participants Living With Obesity or Overweight With at Least 1 Weight-Related Comorbidity",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-03-27",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-therapeutics-announces-positive-topline-data-two-hengrui",
+          "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+          "sourceType": "company press release",
+          "publishedAt": "2026-07-07",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa",
+          "title": "Kailera Therapeutics Form 424B4",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-04-17",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "kailera-therapeutics-ribupatide-oral-tablets",
+    "assetId": "ribupatide",
+    "companyId": "kailera-therapeutics",
+    "assetName": "Ribupatide",
+    "codeName": "KAI-9531",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "HRS9531"
+      },
+      {
+        "type": "development-code",
+        "value": "KAI-9531-T"
+      },
+      {
+        "type": "development-code",
+        "value": "HRS9531-T"
+      }
+    ],
+    "technical": {
+      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Oral",
+      "dosageForm": "Tablets",
+      "dosingInterval": "Once daily"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Completed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-15",
+        "sourceUrls": [
+          "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.kailera.com/development-pipeline/",
+          "title": "Kailera Development Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-therapeutics-and-hengrui-pharma-report-positive-topline",
+          "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+          "sourceType": "company press release",
+          "publishedAt": "2026-02-10",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06841445",
+          "title": "A Study to Evaluate the Efficacy and Safety of HRS9531 Tablets in Participants With Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa",
+          "title": "Kailera Therapeutics Form 424B4",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-04-17",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+    "assetId": "ribupatide",
+    "companyId": "kailera-therapeutics",
+    "assetName": "Ribupatide",
+    "codeName": "KAI-9531",
+    "aliases": [
+      {
+        "type": "development-code",
+        "value": "HRS9531"
+      },
+      {
+        "type": "development-code",
+        "value": "KAI-9531-T"
+      },
+      {
+        "type": "development-code",
+        "value": "HRS9531-T"
+      }
+    ],
+    "technical": {
+      "mechanism": "dual GLP-1/GIP receptor agonist",
+      "platform": "Peptide"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2024-05-15",
+        "sourceUrls": [
+          "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-10",
+      "updatedAt": "2026-08-10",
+      "sources": [
+        {
+          "url": "https://www.kailera.com/development-pipeline/",
+          "title": "Kailera Development Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-therapeutics-announces-first-participants-randomized",
+          "title": "Kailera Therapeutics Announces First Participants Randomized in KaiNETIC Global Phase 3 Clinical Program of GLP-1/GIP Receptor Dual Agonist Ribupatide (KAI-9531)",
+          "sourceType": "company press release",
+          "publishedAt": "2026-01-12",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07284875",
+          "title": "Efficacy and Safety of Ribupatide in Participants Living With Obesity or Overweight With Weight-Related Comorbidities Who Do Not Have Diabetes",
+          "sourceType": "trial registry",
+          "publishedAt": "2025-12-16",
+          "checkedAt": "2026-08-10"
+        },
+        {
+          "url": "https://investors.kailera.com/static-files/63fba240-d702-4035-b0df-7b3a3c68a3aa",
+          "title": "Kailera Therapeutics Form 424B4",
+          "sourceType": "SEC filing",
+          "publishedAt": "2026-04-17",
+          "checkedAt": "2026-08-10"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "merck-co-efinopegdutide-subcutaneous-injection",
     "assetId": "efinopegdutide",
     "companyId": "merck-co",
