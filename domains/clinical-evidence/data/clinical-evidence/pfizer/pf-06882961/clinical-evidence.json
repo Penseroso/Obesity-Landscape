@@ -86,150 +86,3707 @@
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "placebo",
       "label": "Placebo: T2DM",
-      "intervention": "Placebo"
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks"
     },
     {
       "id": "danu-1008-80-low-slow",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "experimental",
       "label": "PF-06882961 80 mg low/slow: T2DM",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "80 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "Titrated from 5 mg to 80 mg over 12 weeks"
     },
     {
       "id": "danu-1008-80-high-slow",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "experimental",
       "label": "PF-06882961 80 mg high/slow: T2DM",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "80 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "Titrated from 10 mg to 80 mg over 12 weeks"
     },
     {
       "id": "danu-1008-120-low-fast",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "experimental",
       "label": "PF-06882961 120 mg low/fast: T2DM",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "Titrated from 5 mg to 120 mg over 12 weeks"
     },
     {
       "id": "danu-1008-120-high-fast",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "experimental",
       "label": "PF-06882961 120 mg high/fast: T2DM",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "Titrated from 10 mg to 120 mg over 12 weeks"
     },
     {
       "id": "danu-1008-200-t2d",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "experimental",
       "label": "PF-06882961 200 mg: T2DM",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "Titrated from 10 mg to 200 mg over 12 weeks"
     },
     {
       "id": "danu-1008-placebo-obesity",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "placebo",
       "label": "Placebo: obesity without diabetes",
-      "intervention": "Placebo"
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks"
     },
     {
       "id": "danu-1008-200-obesity",
       "studyId": "pfizer-pf-06882961-nct04617275",
       "role": "experimental",
       "label": "PF-06882961 200 mg: obesity without diabetes",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "12 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "Titrated from 10 mg to 200 mg over 12 weeks"
     },
     {
       "id": "danu-1019-arm-1",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "placebo",
       "label": "Placebo Cohorts 1 and 2",
-      "intervention": "Placebo"
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks"
     },
     {
       "id": "danu-1019-arm-2",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "40 mg twice daily, 1-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "40 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "1-week titration"
     },
     {
       "id": "danu-1019-arm-3",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "80 mg twice daily, 1-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "80 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "1-week titration"
     },
     {
       "id": "danu-1019-arm-4",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "120 mg twice daily, 1-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "1-week titration"
     },
     {
       "id": "danu-1019-arm-5",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "160 mg twice daily, 1-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "160 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "1-week titration"
     },
     {
       "id": "danu-1019-arm-6",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "200 mg twice daily, 1-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "1-week titration"
     },
     {
       "id": "danu-1019-arm-7",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "120 mg twice daily, 2-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "2-week titration"
     },
     {
       "id": "danu-1019-arm-8",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "160 mg twice daily, 2-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "160 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "2-week titration"
     },
     {
       "id": "danu-1019-arm-9",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "200 mg twice daily, 2-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "26 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "2-week titration"
     },
     {
       "id": "danu-1019-arm-10",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "placebo",
       "label": "Placebo Cohort 3",
-      "intervention": "Placebo"
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "32 weeks"
     },
     {
       "id": "danu-1019-arm-11",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "80 mg twice daily, 4-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "80 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "4-week titration"
     },
     {
       "id": "danu-1019-arm-12",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "140 mg twice daily, 4-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "140 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "4-week titration"
     },
     {
       "id": "danu-1019-arm-13",
       "studyId": "pfizer-pf-06882961-nct04707313",
       "role": "experimental",
       "label": "200 mg twice daily, 4-week titration",
-      "intervention": "Danuglipron"
+      "intervention": "Danuglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Twice daily",
+      "treatmentDuration": "32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-06882961"
+      },
+      "titration": "4-week titration"
     }
   ],
   "analysisGroups": [],
-  "endpoints": [],
-  "outcomes": []
+  "endpoints": [
+    {
+      "id": "danu-1008-weight-week12-t2d",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "name": "Change from baseline in body weight in participants with type 2 diabetes",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12"
+    },
+    {
+      "id": "danu-1008-weight-week12-obesity",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "name": "Change from baseline in body weight in participants with obesity without diabetes",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12"
+    },
+    {
+      "id": "danu-1008-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "name": "Participants with all-causality serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
+    },
+    {
+      "id": "danu-1008-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "name": "Participants with nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
+    },
+    {
+      "id": "danu-1008-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "name": "Participants with vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
+    },
+    {
+      "id": "danu-1019-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Percent change from baseline in body weight at end of treatment",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "danu-1019-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Percent change from baseline in body weight at end of treatment",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32"
+    },
+    {
+      "id": "danu-1019-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26"
+    },
+    {
+      "id": "danu-1019-responder5-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Participants achieving at least 5% body weight loss",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32"
+    },
+    {
+      "id": "danu-1019-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Participants with all-causality serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
+    },
+    {
+      "id": "danu-1019-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Participants with nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
+    },
+    {
+      "id": "danu-1019-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "name": "Participants with vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "danu-1008-placebo-t2d-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-0.42 kg",
+        "numericValue": -0.42,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-low-slow-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-80-low-slow"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-3.64 kg",
+        "numericValue": -3.64,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-high-slow-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-80-high-slow"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-1.93 kg",
+        "numericValue": -1.93,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-low-fast-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-120-low-fast"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-5.38 kg",
+        "numericValue": -5.38,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-high-fast-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-120-high-fast"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-2.93 kg",
+        "numericValue": -2.93,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-t2d-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-200-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-5.37 kg",
+        "numericValue": -5.37,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-low-slow-vs-placebo-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-80-low-slow",
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-3.21 kg",
+        "numericValue": -3.21,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference in change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -5.22 to -1.20",
+        "pValue": "0.0047"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-high-slow-vs-placebo-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-80-high-slow",
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-1.51 kg",
+        "numericValue": -1.51,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference in change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -3.45 to 0.44",
+        "pValue": "0.1003"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-low-fast-vs-placebo-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-120-low-fast",
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-4.95 kg",
+        "numericValue": -4.95,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference in change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -6.96 to -2.95",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-high-fast-vs-placebo-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-120-high-fast",
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-2.5 kg",
+        "numericValue": -2.5,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference in change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -4.49 to -0.51",
+        "pValue": "0.0197"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-t2d-vs-placebo-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-t2d",
+      "armIds": [
+        "danu-1008-200-t2d",
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Estimand Set 1A: evaluable participants with type 2 diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation or glycemic rescue were censored.",
+      "result": {
+        "value": "-4.94 kg",
+        "numericValue": -4.94,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference in change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -7.03 to -2.85",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-obesity-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-obesity",
+      "armIds": [
+        "danu-1008-placebo-obesity"
+      ],
+      "analysisPopulation": "Estimand Set 1B: evaluable participants with obesity without diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation were censored.",
+      "result": {
+        "value": "-0.11 kg",
+        "numericValue": -0.11,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-obesity-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-obesity",
+      "armIds": [
+        "danu-1008-200-obesity"
+      ],
+      "analysisPopulation": "Estimand Set 1B: evaluable participants with obesity without diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation were censored.",
+      "result": {
+        "value": "-3.85 kg",
+        "numericValue": -3.85,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-obesity-vs-placebo-weight-week12",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-weight-week12-obesity",
+      "armIds": [
+        "danu-1008-200-obesity",
+        "danu-1008-placebo-obesity"
+      ],
+      "analysisPopulation": "Estimand Set 1B: evaluable participants with obesity without diabetes randomly assigned to investigational product who took at least one dose; values after treatment discontinuation were censored.",
+      "result": {
+        "value": "-3.74 kg",
+        "numericValue": -3.74,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference in change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -8.23 to 0.75",
+        "pValue": "0.0826"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-t2d-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-t2d-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-t2d-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-placebo-t2d"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-low-slow-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-80-low-slow"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-low-slow-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-80-low-slow"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "4 participants",
+        "numericValue": 4,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-low-slow-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-80-low-slow"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "5 participants",
+        "numericValue": 5,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-high-slow-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-80-high-slow"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-high-slow-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-80-high-slow"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "5 participants",
+        "numericValue": 5,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-80-high-slow-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-80-high-slow"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "4 participants",
+        "numericValue": 4,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-low-fast-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-120-low-fast"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-low-fast-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-120-low-fast"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "6 participants",
+        "numericValue": 6,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-low-fast-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-120-low-fast"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "6 participants",
+        "numericValue": 6,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-high-fast-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-120-high-fast"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-high-fast-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-120-high-fast"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "8 participants",
+        "numericValue": 8,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-120-high-fast-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-120-high-fast"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "9 participants",
+        "numericValue": 9,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-t2d-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-200-t2d"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-t2d-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-200-t2d"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "10 participants",
+        "numericValue": 10,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-t2d-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-200-t2d"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "6 participants",
+        "numericValue": 6,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-obesity-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-placebo-obesity"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-obesity-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-placebo-obesity"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-placebo-obesity-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-placebo-obesity"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-obesity-sae",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-sae",
+      "armIds": [
+        "danu-1008-200-obesity"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-obesity-nausea",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-nausea",
+      "armIds": [
+        "danu-1008-200-obesity"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "13 participants",
+        "numericValue": 13,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1008-200-obesity-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "endpointId": "danu-1008-vomiting",
+      "armIds": [
+        "danu-1008-200-obesity"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of investigational product.",
+      "result": {
+        "value": "10 participants",
+        "numericValue": 10,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-1-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "0.17%",
+        "numericValue": 0.17,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-2-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-2"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-5.43%",
+        "numericValue": -5.43,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-3-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-3"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-4.83%",
+        "numericValue": -4.83,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-4-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-4"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-8.94%",
+        "numericValue": -8.94,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-7-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-7"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-6.43%",
+        "numericValue": -6.43,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-5-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-5"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-9.36%",
+        "numericValue": -9.36,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-8-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-8"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-6.96%",
+        "numericValue": -6.96,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-6-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-6"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-8.96%",
+        "numericValue": -8.96,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-9-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-9"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-7.02%",
+        "numericValue": -7.02,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-2-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-2",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-5.6 percentage points",
+        "numericValue": -5.6,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -7.41 to -3.74",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-3-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-3",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-5 percentage points",
+        "numericValue": -5,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -6.80 to -3.16",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-4-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-4",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-9.1 percentage points",
+        "numericValue": -9.1,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -10.89 to -7.28",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-7-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-7",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-6.6 percentage points",
+        "numericValue": -6.6,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -8.75 to -4.39",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-5-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-5",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-9.52 percentage points",
+        "numericValue": -9.52,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -11.43 to -7.56",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-8-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-8",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-7.12 percentage points",
+        "numericValue": -7.12,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -9.41 to -4.78",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-6-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-6",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-9.12 percentage points",
+        "numericValue": -9.12,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -11.11 to -7.08",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-9-vs-placebo-weight-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week26",
+      "armIds": [
+        "danu-1019-arm-9",
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-7.18 percentage points",
+        "numericValue": -7.18,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -9.32 to -4.99",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-10-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1.4%",
+        "numericValue": 1.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-11-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-11"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-6.92%",
+        "numericValue": -6.92,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-12-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-12"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-7.15%",
+        "numericValue": -7.15,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-13-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-13"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-11.65%",
+        "numericValue": -11.65,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-11-vs-placebo-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-11",
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-8.21 percentage points",
+        "numericValue": -8.21,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -11.66 to -4.63",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-12-vs-placebo-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-12",
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-8.44 percentage points",
+        "numericValue": -8.44,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -11.83 to -4.92",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-13-vs-placebo-weight-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-weight-week32",
+      "armIds": [
+        "danu-1019-arm-13",
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "-12.87 percentage points",
+        "numericValue": -12.87,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Difference to placebo in percent change from baseline",
+        "comparisonType": "Danuglipron minus placebo",
+        "confidenceInterval": "90% CI, -16.15 to -9.47",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-1-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "6 participants",
+        "numericValue": 6,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-2-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-2"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "16 participants",
+        "numericValue": 16,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-3-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-3"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "15 participants",
+        "numericValue": 15,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-4-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-4"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "17 participants",
+        "numericValue": 17,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-7-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-7"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "12 participants",
+        "numericValue": 12,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-5-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-5"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "15 participants",
+        "numericValue": 15,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-8-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-8"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "6 participants",
+        "numericValue": 6,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-6-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-6"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "12 participants",
+        "numericValue": 12,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-9-responder5-week26",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week26",
+      "armIds": [
+        "danu-1019-arm-9"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "8 participants",
+        "numericValue": 8,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-10-responder5-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week32",
+      "armIds": [
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-11-responder5-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week32",
+      "armIds": [
+        "danu-1019-arm-11"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "9 participants",
+        "numericValue": 9,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-12-responder5-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week32",
+      "armIds": [
+        "danu-1019-arm-12"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "11 participants",
+        "numericValue": 11,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-13-responder5-week32",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-responder5-week32",
+      "armIds": [
+        "danu-1019-arm-13"
+      ],
+      "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
+      "result": {
+        "value": "10 participants",
+        "numericValue": 10,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight loss",
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-1-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1 participants",
+        "numericValue": 1,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-1-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "11 participants",
+        "numericValue": 11,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-1-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-1"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-2-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-2"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-2-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-2"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "28 participants",
+        "numericValue": 28,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-2-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-2"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "10 participants",
+        "numericValue": 10,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-3-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-3"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1 participants",
+        "numericValue": 1,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-3-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-3"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "39 participants",
+        "numericValue": 39,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-3-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-3"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "24 participants",
+        "numericValue": 24,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-4-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-4"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-4-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-4"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "41 participants",
+        "numericValue": 41,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-4-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-4"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "26 participants",
+        "numericValue": 26,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-5-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-5"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1 participants",
+        "numericValue": 1,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-5-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-5"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "36 participants",
+        "numericValue": 36,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-5-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-5"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "27 participants",
+        "numericValue": 27,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-6-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-6"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "5 participants",
+        "numericValue": 5,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-6-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-6"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "34 participants",
+        "numericValue": 34,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-6-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-6"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "29 participants",
+        "numericValue": 29,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-7-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-7"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1 participants",
+        "numericValue": 1,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-7-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-7"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "22 participants",
+        "numericValue": 22,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-7-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-7"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "16 participants",
+        "numericValue": 16,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-8-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-8"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-8-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-8"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "25 participants",
+        "numericValue": 25,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-8-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-8"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "11 participants",
+        "numericValue": 11,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-9-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-9"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1 participants",
+        "numericValue": 1,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-9-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-9"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "18 participants",
+        "numericValue": 18,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-9-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-9"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "16 participants",
+        "numericValue": 16,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-10-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "0 participants",
+        "numericValue": 0,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-10-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-10-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-10"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "1 participants",
+        "numericValue": 1,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-11-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-11"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-11-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-11"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "14 participants",
+        "numericValue": 14,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-11-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-11"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "3 participants",
+        "numericValue": 3,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-12-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-12"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "2 participants",
+        "numericValue": 2,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-12-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-12"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "27 participants",
+        "numericValue": 27,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-12-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-12"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "14 participants",
+        "numericValue": 14,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-13-sae",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-sae",
+      "armIds": [
+        "danu-1019-arm-13"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "3 participants",
+        "numericValue": 3,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-13-nausea",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-nausea",
+      "armIds": [
+        "danu-1019-arm-13"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "25 participants",
+        "numericValue": 25,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "danu-1019-arm-13-vomiting",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "endpointId": "danu-1019-vomiting",
+      "armIds": [
+        "danu-1019-arm-13"
+      ],
+      "analysisPopulation": "Safety analysis set: all randomized participants who took at least one dose of study intervention.",
+      "result": {
+        "value": "17 participants",
+        "numericValue": 17,
+        "unit": "participants",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ]
 }
