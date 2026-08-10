@@ -1,0 +1,106 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "pfizer",
+  "assetId": "pf-08653945",
+  "studies": [
+    {
+      "id": "pfizer-pf-08653945-nct07022977",
+      "companyId": "pfizer",
+      "assetId": "pf-08653945",
+      "programId": "pfizer-pf-08653945-subcutaneous-injection",
+      "officialTitle": "A Phase 1 Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics, and Efficacy of MET233 in Adults With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07022977"
+        }
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07022977",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with overweight or obesity.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07022977",
+            "title": "A Phase 1 Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics, and Efficacy of MET233 in Adults With Overweight or Obesity (NCT07022977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "met233-part-a-active",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "experimental",
+      "label": "Part A: MET233",
+      "intervention": "MET233"
+    },
+    {
+      "id": "met233-part-a-placebo",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "placebo",
+      "label": "Part A: placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "met233-part-b-active",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "experimental",
+      "label": "Part B: MET233",
+      "intervention": "MET233"
+    },
+    {
+      "id": "met233-part-b-placebo",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "placebo",
+      "label": "Part B: placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "met233-part-c-active",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "experimental",
+      "label": "Part C: MET233",
+      "intervention": "MET233"
+    },
+    {
+      "id": "met233-part-c-placebo",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "placebo",
+      "label": "Part C: placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "met233-part-d-active",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "experimental",
+      "label": "Part D: MET233",
+      "intervention": "MET233"
+    },
+    {
+      "id": "met233-part-d-placebo",
+      "studyId": "pfizer-pf-08653945-nct07022977",
+      "role": "placebo",
+      "label": "Part D: placebo",
+      "intervention": "Placebo"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

@@ -325,6 +325,7 @@
       "linkedStudyIds": [
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
+        "pfizer-pf-07081532-nct05579977",
         "roche-ct-996-bp45703-nct07112872"
       ]
     },
@@ -334,6 +335,53 @@
       "focalStudyIds": [
         "novo-nordisk-ubt251-china-phase2-nct07177469",
         "novo-nordisk-ubt251-nct07395687"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "pfizer",
+      "assetId": "pf-06882961",
+      "focalStudyIds": [
+        "pfizer-pf-06882961-nct04617275",
+        "pfizer-pf-06882961-nct04707313"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "pfizer",
+      "assetId": "pf-07081532",
+      "focalStudyIds": [
+        "pfizer-pf-07081532-nct05579977"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "pfizer",
+      "assetId": "pf-07976016",
+      "focalStudyIds": [
+        "pfizer-pf-07976016-nct06717425"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "focalStudyIds": [
+        "pfizer-pf-08653944-nct06857617",
+        "pfizer-pf-08653944-nct06712836",
+        "pfizer-pf-08653944-nct06897202",
+        "pfizer-pf-08653944-nct06973720",
+        "pfizer-pf-08653944-nct07311850",
+        "pfizer-pf-08653944-nct07400653",
+        "pfizer-pf-08653944-nct07595549"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "pfizer",
+      "assetId": "pf-08653945",
+      "focalStudyIds": [
+        "pfizer-pf-08653945-nct07022977"
       ],
       "linkedStudyIds": []
     },

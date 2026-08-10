@@ -1,0 +1,1150 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "pfizer",
+  "assetId": "pf-07081532",
+  "studies": [
+    {
+      "id": "pfizer-pf-07081532-nct05579977",
+      "companyId": "pfizer",
+      "assetId": "pf-07081532",
+      "programId": "pfizer-pf-07081532-oral-tablets",
+      "officialTitle": "A Phase 2, Randomized, Double-Blind, Placebo Controlled, Dose Ranging, Dose Finding, Parallel Group Study to Assess Efficacy and Safety of PF-07081532, and Open Label Oral Semaglutide, in Adults With Type 2 Diabetes Mellitus (T2DM) Inadequately Controlled on Metformin, and Separately PF-07081532 Compared to Matching Placebo in Adults With Obesity but Without T2DM",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05579977"
+        }
+      ],
+      "protocolIdentifiers": [
+        "C3991004"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05579977",
+        "overallStatus": "terminated",
+        "sourceStatus": "Terminated"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and active comparator"
+      },
+      "population": "Adults with type 2 diabetes mellitus inadequately controlled on metformin and, separately, adults with obesity without type 2 diabetes mellitus.",
+      "safetySummary": "The study was terminated early after elevated transaminases and unexpectedly high lotiglipron exposure were observed across this study and two Phase 1 DDI studies. In the obesity stratum, 81.5% had at least one treatment-emergent adverse event and 2.6% had at least one serious adverse event; gastrointestinal events were the most frequent.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+            "title": "Final Full Clinical Study Report: Protocol C3991004",
+            "sourceType": "clinical study report",
+            "publishedAt": "2024-01-26",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+            "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+            "sourceType": "clinical study result summary",
+            "publishedAt": "2024-04-01",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "loti-t2d-placebo",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "placebo",
+      "label": "T2DM placebo",
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks"
+    },
+    {
+      "id": "loti-t2d-20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "T2DM PF-07081532 20 mg",
+      "intervention": "Lotiglipron",
+      "dose": "20 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      }
+    },
+    {
+      "id": "loti-t2d-40",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "T2DM PF-07081532 40 mg",
+      "intervention": "Lotiglipron",
+      "dose": "40 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      }
+    },
+    {
+      "id": "loti-t2d-80",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "T2DM PF-07081532 80 mg",
+      "intervention": "Lotiglipron",
+      "dose": "80 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      }
+    },
+    {
+      "id": "loti-t2d-160",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "T2DM PF-07081532 160 mg",
+      "intervention": "Lotiglipron",
+      "dose": "160 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      }
+    },
+    {
+      "id": "loti-t2d-260",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "T2DM PF-07081532 260 mg",
+      "intervention": "Lotiglipron",
+      "dose": "260 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      }
+    },
+    {
+      "id": "loti-t2d-rybelsus",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "active comparator",
+      "label": "T2DM Rybelsus 14 mg",
+      "intervention": "Semaglutide",
+      "dose": "14 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "titration": "Dose escalation to 14 mg"
+    },
+    {
+      "id": "loti-obesity-placebo",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "placebo",
+      "label": "Obesity placebo",
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks"
+    },
+    {
+      "id": "loti-obesity-80",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "Obesity PF-07081532 80 mg",
+      "intervention": "Lotiglipron",
+      "dose": "80 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      },
+      "titration": "Dose escalation"
+    },
+    {
+      "id": "loti-obesity-140",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "Obesity PF-07081532 140 mg",
+      "intervention": "Lotiglipron",
+      "dose": "140 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      },
+      "titration": "Dose escalation"
+    },
+    {
+      "id": "loti-obesity-200-5step",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "Obesity PF-07081532 200 mg, 5-step titration",
+      "intervention": "Lotiglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      },
+      "titration": "5-step titration"
+    },
+    {
+      "id": "loti-obesity-200-4step",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "Obesity PF-07081532 200 mg, 4-step titration",
+      "intervention": "Lotiglipron",
+      "dose": "200 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      },
+      "titration": "4-step titration"
+    },
+    {
+      "id": "loti-obesity-260",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "role": "experimental",
+      "label": "Obesity PF-07081532 260 mg",
+      "intervention": "Lotiglipron",
+      "dose": "260 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "Up to 32 weeks",
+      "linkedAsset": {
+        "companyId": "pfizer",
+        "assetId": "pf-07081532"
+      },
+      "titration": "Dose escalation"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "loti-body-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "name": "Percent change from baseline in body weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 20"
+    },
+    {
+      "id": "loti-obesity-nausea-through-follow-up",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "name": "Participants with nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through study follow-up"
+    },
+    {
+      "id": "loti-obesity-vomiting-through-follow-up",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "name": "Participants with vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through study follow-up"
+    },
+    {
+      "id": "loti-obesity-sae-through-follow-up",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "name": "Participants with all-causality serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through study follow-up"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "loti-obesity-placebo-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-placebo"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-1.84%",
+        "numericValue": -1.84,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-80-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-80"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-4.28%",
+        "numericValue": -4.28,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-140-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-140"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-6.21%",
+        "numericValue": -6.21,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-200-5step-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-200-5step"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-7.47%",
+        "numericValue": -7.47,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-200-4step-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-200-4step"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-6.88%",
+        "numericValue": -6.88,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-260-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-260"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-7.26%",
+        "numericValue": -7.26,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-80-vs-placebo-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-80",
+        "loti-obesity-placebo"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-2.44 percentage points",
+        "numericValue": -2.44,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Lotiglipron minus placebo",
+        "confidenceInterval": "90% CI, -3.88 to -1.00",
+        "pValue": "0.0055"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-140-vs-placebo-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-140",
+        "loti-obesity-placebo"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-4.37 percentage points",
+        "numericValue": -4.37,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Lotiglipron minus placebo",
+        "confidenceInterval": "90% CI, -5.84 to -2.89",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-200-5step-vs-placebo-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-200-5step",
+        "loti-obesity-placebo"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-5.63 percentage points",
+        "numericValue": -5.63,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Lotiglipron minus placebo",
+        "confidenceInterval": "90% CI, -7.07 to -4.18",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-200-4step-vs-placebo-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-200-4step",
+        "loti-obesity-placebo"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-5.04 percentage points",
+        "numericValue": -5.04,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Lotiglipron minus placebo",
+        "confidenceInterval": "90% CI, -6.50 to -3.58",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loti-obesity-260-vs-placebo-weight-week20",
+      "studyId": "pfizer-pf-07081532-nct05579977",
+      "endpointId": "loti-body-weight-week20",
+      "armIds": [
+        "loti-obesity-260",
+        "loti-obesity-placebo"
+      ],
+      "analysisPopulation": "Evaluable set",
+      "result": {
+        "value": "-5.42 percentage points",
+        "numericValue": -5.42,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Lotiglipron minus placebo",
+        "confidenceInterval": "90% CI, -6.91 to -3.93",
+        "pValue": "<0.0001"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05579977",
+            "title": "Trial to Learn About PF-07081532 and Rybelsus in People With Type 2 Diabetes and Separately PF-07081532 in People With Obesity (NCT05579977)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+      {
+        "id": "loti-obesity-placebo-nausea",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-nausea-through-follow-up",
+        "armIds": [
+          "loti-obesity-placebo"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "12.5%",
+          "numericValue": 12.5,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-placebo-vomiting",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-vomiting-through-follow-up",
+        "armIds": [
+          "loti-obesity-placebo"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "1.6%",
+          "numericValue": 1.6,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-placebo-serious-adverse-events",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-sae-through-follow-up",
+        "armIds": [
+          "loti-obesity-placebo"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "1 participant",
+          "numericValue": 1,
+          "unit": "participants",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+              "title": "Final Full Clinical Study Report: Protocol C3991004",
+              "sourceType": "clinical study report",
+              "publishedAt": "2024-01-26",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-80-nausea",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-nausea-through-follow-up",
+        "armIds": [
+          "loti-obesity-80"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "51.5%",
+          "numericValue": 51.5,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-80-vomiting",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-vomiting-through-follow-up",
+        "armIds": [
+          "loti-obesity-80"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "10.6%",
+          "numericValue": 10.6,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-80-serious-adverse-events",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-sae-through-follow-up",
+        "armIds": [
+          "loti-obesity-80"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "2 participants",
+          "numericValue": 2,
+          "unit": "participants",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+              "title": "Final Full Clinical Study Report: Protocol C3991004",
+              "sourceType": "clinical study report",
+              "publishedAt": "2024-01-26",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-140-nausea",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-nausea-through-follow-up",
+        "armIds": [
+          "loti-obesity-140"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "46.9%",
+          "numericValue": 46.9,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-140-vomiting",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-vomiting-through-follow-up",
+        "armIds": [
+          "loti-obesity-140"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "15.6%",
+          "numericValue": 15.6,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-140-serious-adverse-events",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-sae-through-follow-up",
+        "armIds": [
+          "loti-obesity-140"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "2 participants",
+          "numericValue": 2,
+          "unit": "participants",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+              "title": "Final Full Clinical Study Report: Protocol C3991004",
+              "sourceType": "clinical study report",
+              "publishedAt": "2024-01-26",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-200-5step-nausea",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-nausea-through-follow-up",
+        "armIds": [
+          "loti-obesity-200-5step"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "58.5%",
+          "numericValue": 58.5,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-200-5step-vomiting",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-vomiting-through-follow-up",
+        "armIds": [
+          "loti-obesity-200-5step"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "32.3%",
+          "numericValue": 32.3,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-200-5step-serious-adverse-events",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-sae-through-follow-up",
+        "armIds": [
+          "loti-obesity-200-5step"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "1 participant",
+          "numericValue": 1,
+          "unit": "participants",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+              "title": "Final Full Clinical Study Report: Protocol C3991004",
+              "sourceType": "clinical study report",
+              "publishedAt": "2024-01-26",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-200-4step-nausea",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-nausea-through-follow-up",
+        "armIds": [
+          "loti-obesity-200-4step"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "60.6%",
+          "numericValue": 60.6,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-200-4step-vomiting",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-vomiting-through-follow-up",
+        "armIds": [
+          "loti-obesity-200-4step"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "28.8%",
+          "numericValue": 28.8,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-200-4step-serious-adverse-events",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-sae-through-follow-up",
+        "armIds": [
+          "loti-obesity-200-4step"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "2 participants",
+          "numericValue": 2,
+          "unit": "participants",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+              "title": "Final Full Clinical Study Report: Protocol C3991004",
+              "sourceType": "clinical study report",
+              "publishedAt": "2024-01-26",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-260-nausea",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-nausea-through-follow-up",
+        "armIds": [
+          "loti-obesity-260"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "50.0%",
+          "numericValue": 50,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-260-vomiting",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-vomiting-through-follow-up",
+        "armIds": [
+          "loti-obesity-260"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "34.4%",
+          "numericValue": 34.4,
+          "unit": "percent",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://www.pfizer.com/sites/default/files/plsr-studies/C3991004%20Plain%20Language%20Study%20Results%20Summary%20%28PLSRS%29%20Phase%202-4.pdf",
+              "title": "Clinical Study Results: PF-07081532 (lotiglipron), Protocol C3991004",
+              "sourceType": "clinical study result summary",
+              "publishedAt": "2024-04-01",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      },
+      {
+        "id": "loti-obesity-260-serious-adverse-events",
+        "studyId": "pfizer-pf-07081532-nct05579977",
+        "endpointId": "loti-obesity-sae-through-follow-up",
+        "armIds": [
+          "loti-obesity-260"
+        ],
+        "analysisPopulation": "All treated participants with obesity (Stratum 2)",
+        "result": {
+          "value": "2 participants",
+          "numericValue": 2,
+          "unit": "participants",
+          "resultType": "arm-level"
+        },
+        "maturity": "final",
+        "metadata": {
+          "lastVerifiedAt": "2026-08-10",
+          "updatedAt": "2026-08-10",
+          "sources": [
+            {
+              "url": "https://cdn.pfizer.com/pfizercom/clinical%20trials/csr%20synopsis/C3991004%20Public%20Disclosure%20Synopsis%20.pdf?VersionId=UKdMmTHVMeU6we4KcUiTx_zo3oT3a3A_",
+              "title": "Final Full Clinical Study Report: Protocol C3991004",
+              "sourceType": "clinical study report",
+              "publishedAt": "2024-01-26",
+              "checkedAt": "2026-08-10"
+            }
+          ]
+        }
+      }
+  ]
+}

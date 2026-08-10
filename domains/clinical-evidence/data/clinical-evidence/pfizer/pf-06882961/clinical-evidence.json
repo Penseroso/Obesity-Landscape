@@ -1,0 +1,235 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "pfizer",
+  "assetId": "pf-06882961",
+  "studies": [
+    {
+      "id": "pfizer-pf-06882961-nct04617275",
+      "companyId": "pfizer",
+      "assetId": "pf-06882961",
+      "programId": "pfizer-pf-06882961-oral-tablets",
+      "officialTitle": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04617275"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04617275",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with type 2 diabetes mellitus and adults with obesity without type 2 diabetes mellitus.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04617275",
+            "title": "A Phase 2b Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Type 2 Diabetes Mellitus and Adults With Obesity Without Type 2 Diabetes Mellitus (NCT04617275)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-06882961-nct04707313",
+      "companyId": "pfizer",
+      "assetId": "pf-06882961",
+      "programId": "pfizer-pf-06882961-oral-tablets",
+      "officialTitle": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04707313"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04707313",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity without diabetes.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04707313",
+            "title": "A Study to Evaluate the Efficacy and Safety of PF-06882961 in Adults With Obesity (NCT04707313)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "danu-1008-placebo-t2d",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "placebo",
+      "label": "Placebo: T2DM",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "danu-1008-80-low-slow",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "experimental",
+      "label": "PF-06882961 80 mg low/slow: T2DM",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1008-80-high-slow",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "experimental",
+      "label": "PF-06882961 80 mg high/slow: T2DM",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1008-120-low-fast",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "experimental",
+      "label": "PF-06882961 120 mg low/fast: T2DM",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1008-120-high-fast",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "experimental",
+      "label": "PF-06882961 120 mg high/fast: T2DM",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1008-200-t2d",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "experimental",
+      "label": "PF-06882961 200 mg: T2DM",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1008-placebo-obesity",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "placebo",
+      "label": "Placebo: obesity without diabetes",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "danu-1008-200-obesity",
+      "studyId": "pfizer-pf-06882961-nct04617275",
+      "role": "experimental",
+      "label": "PF-06882961 200 mg: obesity without diabetes",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-1",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "placebo",
+      "label": "Placebo Cohorts 1 and 2",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "danu-1019-arm-2",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "40 mg twice daily, 1-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-3",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "80 mg twice daily, 1-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-4",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "120 mg twice daily, 1-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-5",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "160 mg twice daily, 1-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-6",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "200 mg twice daily, 1-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-7",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "120 mg twice daily, 2-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-8",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "160 mg twice daily, 2-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-9",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "200 mg twice daily, 2-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-10",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "placebo",
+      "label": "Placebo Cohort 3",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "danu-1019-arm-11",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "80 mg twice daily, 4-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-12",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "140 mg twice daily, 4-week titration",
+      "intervention": "Danuglipron"
+    },
+    {
+      "id": "danu-1019-arm-13",
+      "studyId": "pfizer-pf-06882961-nct04707313",
+      "role": "experimental",
+      "label": "200 mg twice daily, 4-week titration",
+      "intervention": "Danuglipron"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

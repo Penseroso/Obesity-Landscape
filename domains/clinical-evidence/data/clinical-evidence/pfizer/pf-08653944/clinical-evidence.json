@@ -1,0 +1,677 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "pfizer",
+  "assetId": "pf-08653944",
+  "studies": [
+    {
+      "id": "pfizer-pf-08653944-nct06857617",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "A Phase 1/2 Randomized Placebo-Controlled Double-Blind Study to Investigate the Safety, Tolerability, Efficacy, Pharmacokinetics, and Pharmacodynamics of Subcutaneous Doses of MET097 in Adult Participants With Obesity and Overweight But Otherwise Healthy",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06857617"
+        }
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06857617",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight who were otherwise healthy.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06857617",
+            "title": "A Phase 1/2 Randomized Placebo-Controlled Double-Blind Study to Investigate the Safety, Tolerability, Efficacy, Pharmacokinetics, and Pharmacodynamics of Subcutaneous Doses of MET097 in Adult Participants With Obesity and Overweight But Otherwise Healthy (NCT06857617)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-08653944-nct06712836",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "A Phase 2b Study to Examine the Safety and Efficacy of Once-Weekly MET097 in Adults With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06712836"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06712836",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight without type 2 diabetes mellitus.",
+      "acronym": "VESPER-1",
+      "studyFamily": "VESPER",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06712836",
+            "title": "A Phase 2b Study to Examine the Safety and Efficacy of Once-Weekly MET097 in Adults With Obesity or Overweight (NCT06712836)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-08653944-nct06897202",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "A Phase 2b Study to Examine the Safety and Efficacy of Once-Weekly MET097 in Adults With Obesity or Overweight and Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06897202"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06897202",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes mellitus.",
+      "acronym": "VESPER-2",
+      "studyFamily": "VESPER",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06897202",
+            "title": "A Phase 2b Study to Examine the Safety and Efficacy of Once-Weekly MET097 in Adults With Obesity or Overweight and Type 2 Diabetes Mellitus (NCT06897202)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-08653944-nct06973720",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "A Phase 2 Study to Examine the Safety and Efficacy of Once-Monthly MET097 in Adults With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06973720"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06973720",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight without type 2 diabetes mellitus.",
+      "acronym": "VESPER-3",
+      "studyFamily": "VESPER",
+      "safetySummary": "Gastrointestinal treatment-emergent adverse events were mostly mild or moderate. Across Arms 1 and 3, five participants discontinued during weekly dosing and five during monthly dosing; no placebo participants discontinued.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06973720",
+            "title": "A Phase 2 Study to Examine the Safety and Efficacy of Once-Monthly MET097 in Adults With Obesity or Overweight (NCT06973720)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-08653944-nct07311850",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "Evaluating The Efficacy and Safety of MET097, a Fully-Biased, Ultra Long-Acting GLP-1RA, In People With Overweight or Obesity: A Phase 3, Multi-Center Randomized, Controlled Trial (VESPER-4)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07311850"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07311850",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-06-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight.",
+      "acronym": "VESPER-4",
+      "studyFamily": "VESPER",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07311850",
+            "title": "A Phase 3 Study to Evaluate the Efficacy and Safety of PF-08653944 in Adults With Obesity or Overweight (NCT07311850)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-08653944-nct07400653",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "EVALUATING THE EFFICACY AND SAFETY OF MET097, A FULLY-BIASED ULTRA LONG-ACTING GLP-1RA, IN PEOPLE WITH OVERWEIGHT OR OBESITY AND TYPE 2 DIABETES: A PHASE 3, MULTI-CENTER RANDOMIZED PLACEBO-CONTROLLED TRIAL (VESPER-5)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07400653"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07400653",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-05-18"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight and type 2 diabetes mellitus.",
+      "acronym": "VESPER-5",
+      "studyFamily": "VESPER",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07400653",
+            "title": "A Phase 3 Study to Evaluate the Efficacy and Safety of PF-08653944 in Adults With Obesity or Overweight and Type 2 Diabetes Mellitus (NCT07400653)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pfizer-pf-08653944-nct07595549",
+      "companyId": "pfizer",
+      "assetId": "pf-08653944",
+      "programId": "pfizer-pf-08653944-subcutaneous-injection",
+      "officialTitle": "A PHASE 3, RANDOMIZED, DOUBLE-BLIND, PLACEBO-CONTROLLED STUDY TO ASSESS THE EFFICACY AND SAFETY OF ONCE-MONTHLY PF-08653944 IN ADULTS WITH OVERWEIGHT OR OBESITY (VESPER-6)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07595549"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07595549",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-06-23"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity or overweight.",
+      "acronym": "VESPER-6",
+      "studyFamily": "VESPER",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07595549",
+            "title": "A Phase 3 Study to Evaluate the Efficacy and Safety of Once-Monthly PF-08653944 in Adults With Obesity or Overweight (NCT07595549)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "met097-23101-active",
+      "studyId": "pfizer-pf-08653944-nct06857617",
+      "role": "experimental",
+      "label": "Part C MET097",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "met097-23101-placebo",
+      "studyId": "pfizer-pf-08653944-nct06857617",
+      "role": "placebo",
+      "label": "Part C placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "vesper1-active",
+      "studyId": "pfizer-pf-08653944-nct06712836",
+      "role": "experimental",
+      "label": "MET097 at four dose levels",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper1-placebo",
+      "studyId": "pfizer-pf-08653944-nct06712836",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "vesper2-regimen-1",
+      "studyId": "pfizer-pf-08653944-nct06897202",
+      "role": "experimental",
+      "label": "MET097 dose regimen 1",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper2-regimen-2",
+      "studyId": "pfizer-pf-08653944-nct06897202",
+      "role": "experimental",
+      "label": "MET097 dose regimen 2",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper2-regimen-3",
+      "studyId": "pfizer-pf-08653944-nct06897202",
+      "role": "experimental",
+      "label": "MET097 dose regimen 3",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper2-regimen-4",
+      "studyId": "pfizer-pf-08653944-nct06897202",
+      "role": "experimental",
+      "label": "MET097 dose regimen 4",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper2-placebo",
+      "studyId": "pfizer-pf-08653944-nct06897202",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "vesper3-arm1",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "role": "experimental",
+      "label": "Arm 1: 0.4 mg QW, 0.8 mg QW, then 3.2 mg QM",
+      "intervention": "Berobenatide",
+      "dose": "0.4 mg to 3.2 mg",
+      "titration": "0.4 mg once weekly, then 0.8 mg once weekly, then 3.2 mg once monthly",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly followed by once monthly",
+      "treatmentDuration": "28 weeks"
+    },
+    {
+      "id": "vesper3-arm2",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "role": "experimental",
+      "label": "Arm 2: 0.8 mg QW, then 3.2 mg QM",
+      "intervention": "Berobenatide",
+      "dose": "0.8 mg to 3.2 mg",
+      "titration": "0.8 mg once weekly, then 3.2 mg once monthly",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly followed by once monthly",
+      "treatmentDuration": "28 weeks"
+    },
+    {
+      "id": "vesper3-arm3",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "role": "experimental",
+      "label": "Arm 3: 0.4 mg QW, 0.8 mg QW, 1.2 mg QW, then 4.8 mg QM",
+      "intervention": "Berobenatide",
+      "dose": "0.4 mg to 4.8 mg",
+      "titration": "0.4 mg, 0.8 mg, and 1.2 mg once weekly, then 4.8 mg once monthly",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly followed by once monthly",
+      "treatmentDuration": "28 weeks"
+    },
+    {
+      "id": "vesper3-arm4",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "role": "experimental",
+      "label": "Arm 4: 0.6 mg QW, 1.2 mg QW, then 4.8 mg QM",
+      "intervention": "Berobenatide",
+      "dose": "0.6 mg to 4.8 mg",
+      "titration": "0.6 mg and 1.2 mg once weekly, then 4.8 mg once monthly",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly followed by once monthly",
+      "treatmentDuration": "28 weeks"
+    },
+    {
+      "id": "vesper3-placebo",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly followed by once monthly",
+      "treatmentDuration": "28 weeks"
+    },
+    {
+      "id": "vesper4-dose-1",
+      "studyId": "pfizer-pf-08653944-nct07311850",
+      "role": "experimental",
+      "label": "PF-08653944 dose regimen 1",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper4-dose-2",
+      "studyId": "pfizer-pf-08653944-nct07311850",
+      "role": "experimental",
+      "label": "PF-08653944 dose regimen 2",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper4-dose-3",
+      "studyId": "pfizer-pf-08653944-nct07311850",
+      "role": "experimental",
+      "label": "PF-08653944 dose regimen 3",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper4-placebo",
+      "studyId": "pfizer-pf-08653944-nct07311850",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "vesper5-dose-1",
+      "studyId": "pfizer-pf-08653944-nct07400653",
+      "role": "experimental",
+      "label": "PF-08653944 dose regimen 1",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper5-dose-2",
+      "studyId": "pfizer-pf-08653944-nct07400653",
+      "role": "experimental",
+      "label": "PF-08653944 dose regimen 2",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper5-dose-3",
+      "studyId": "pfizer-pf-08653944-nct07400653",
+      "role": "experimental",
+      "label": "PF-08653944 dose regimen 3",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper5-placebo",
+      "studyId": "pfizer-pf-08653944-nct07400653",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "vesper6-arm-1",
+      "studyId": "pfizer-pf-08653944-nct07595549",
+      "role": "experimental",
+      "label": "Treatment Arm 1",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper6-arm-2",
+      "studyId": "pfizer-pf-08653944-nct07595549",
+      "role": "experimental",
+      "label": "Treatment Arm 2",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper6-arm-3",
+      "studyId": "pfizer-pf-08653944-nct07595549",
+      "role": "experimental",
+      "label": "Treatment Arm 3",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper6-arm-4",
+      "studyId": "pfizer-pf-08653944-nct07595549",
+      "role": "experimental",
+      "label": "Treatment Arm 4",
+      "intervention": "Berobenatide"
+    },
+    {
+      "id": "vesper6-placebo",
+      "studyId": "pfizer-pf-08653944-nct07595549",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "vesper3-body-weight-week28",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "name": "Percent change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 28"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "vesper3-arm1-efficacy-weight",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "endpointId": "vesper3-body-weight-week28",
+      "armIds": [
+        "vesper3-arm1",
+        "vesper3-placebo"
+      ],
+      "analysisPopulation": "Efficacy adherence to study dataset",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10%",
+        "numericValue": -10,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Berobenatide minus placebo",
+        "pValue": "<0.001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
+            "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust Weight Loss With Monthly Dosing in Phase 2 VESPER-3 Study",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-03",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06973720",
+            "title": "VESPER-3 study record (NCT06973720)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vesper3-arm3-efficacy-weight",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "endpointId": "vesper3-body-weight-week28",
+      "armIds": [
+        "vesper3-arm3",
+        "vesper3-placebo"
+      ],
+      "analysisPopulation": "Efficacy adherence to study dataset",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.3%",
+        "numericValue": -12.3,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Berobenatide minus placebo",
+        "pValue": "<0.001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
+            "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust Weight Loss With Monthly Dosing in Phase 2 VESPER-3 Study",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-03",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06973720",
+            "title": "VESPER-3 study record (NCT06973720)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vesper3-arm1-treatment-policy-weight",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "endpointId": "vesper3-body-weight-week28",
+      "armIds": [
+        "vesper3-arm1",
+        "vesper3-placebo"
+      ],
+      "analysisPopulation": "All available weight measurements",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-8.4%",
+        "numericValue": -8.4,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Berobenatide minus placebo",
+        "pValue": "<0.001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
+            "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust Weight Loss With Monthly Dosing in Phase 2 VESPER-3 Study",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-03",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06973720",
+            "title": "VESPER-3 study record (NCT06973720)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vesper3-arm3-treatment-policy-weight",
+      "studyId": "pfizer-pf-08653944-nct06973720",
+      "endpointId": "vesper3-body-weight-week28",
+      "armIds": [
+        "vesper3-arm3",
+        "vesper3-placebo"
+      ],
+      "analysisPopulation": "All available weight measurements",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-10.5%",
+        "numericValue": -10.5,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference in percent change from baseline",
+        "comparisonType": "Berobenatide minus placebo",
+        "pValue": "<0.001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizers-ultra-long-acting-injectable-glp-1-ra-shows-robust",
+            "title": "Pfizer's Ultra-Long-Acting Injectable GLP-1 RA Shows Robust Weight Loss With Monthly Dosing in Phase 2 VESPER-3 Study",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-02-03",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06973720",
+            "title": "VESPER-3 study record (NCT06973720)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ]
+}

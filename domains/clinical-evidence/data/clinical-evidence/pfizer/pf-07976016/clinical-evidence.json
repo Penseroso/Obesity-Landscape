@@ -1,0 +1,78 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "pfizer",
+  "assetId": "pf-07976016",
+  "studies": [
+    {
+      "id": "pfizer-pf-07976016-nct06717425",
+      "companyId": "pfizer",
+      "assetId": "pf-07976016",
+      "programId": "pfizer-pf-07976016-oral-tablets",
+      "officialTitle": "A Phase 2 Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of PF-07976016 in Adults With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06717425"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06717425",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Adults with obesity.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06717425",
+            "title": "A Phase 2 Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of PF-07976016 in Adults With Obesity (NCT06717425)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "pf07976016-dose-1",
+      "studyId": "pfizer-pf-07976016-nct06717425",
+      "role": "experimental",
+      "label": "PF-07976016 dose 1",
+      "intervention": "PF-07976016"
+    },
+    {
+      "id": "pf07976016-dose-2",
+      "studyId": "pfizer-pf-07976016-nct06717425",
+      "role": "experimental",
+      "label": "PF-07976016 dose 2",
+      "intervention": "PF-07976016"
+    },
+    {
+      "id": "pf07976016-dose-3",
+      "studyId": "pfizer-pf-07976016-nct06717425",
+      "role": "experimental",
+      "label": "PF-07976016 dose 3",
+      "intervention": "PF-07976016"
+    },
+    {
+      "id": "pf07976016-placebo",
+      "studyId": "pfizer-pf-07976016-nct06717425",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}
