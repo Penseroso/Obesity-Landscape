@@ -48,13 +48,21 @@ Outcome records; do not create a migration entity or duplicate Study.
 
 Do not include non-human or observational studies; healthy-volunteer PK studies
 without an explicit obesity or weight-management objective; MASH-only,
-T2D-only, CKD/CV/lipid/comorbidity-only studies; studies where body weight is
-incidental; or preclinical/non-human studies.
+T2D-only, CKD/CV/lipid/comorbidity-only studies; indication-expansion studies
+where body weight is incidental; or preclinical/non-human studies.
 
-A study enrolling participants with obesity or overweight plus T2D remains
-eligible when weight management is an explicit objective. MASH and other
-indication expansion remain outside the initial Clinical Evidence scope until a
-later scope decision.
+The presence of MASH or another comorbidity is not itself an exclusion reason.
+A mixed-purpose Study remains eligible when obesity, overweight, chronic weight
+management, or weight reduction is an explicit Study objective, including when
+that objective is evaluated alongside a MASH objective. Only a MASH-only Study,
+or another indication-expansion Study in which body weight is incidental, is
+excluded on this boundary. The same rule applies to a Study enrolling
+participants with obesity or overweight plus T2D: it remains eligible when
+weight management is an explicit objective.
+
+NCT06309992 (SYNCHRONIZE-MASLD) is the normative mixed-purpose example: it
+evaluates both body-weight reduction and MASLD efficacy as explicit co-primary
+objectives, so it remains in canonical Clinical Evidence.
 
 ## File Layout
 

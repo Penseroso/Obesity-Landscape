@@ -62,64 +62,6 @@
       }
     },
     {
-      "id": "boehringer-ingelheim-survodutide-nct04384081",
-      "companyId": "boehringer-ingelheim",
-      "assetId": "survodutide",
-      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
-      "officialTitle": "A Phase I, Single-blinded, Randomized, Multiple Dose, Placebo-controlled Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Different Dose Escalation Schemes of BI 456906 in Healthy Japanese Male Subject With BMI 23-40 kg/m2",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT04384081"
-        }
-      ],
-      "protocolIdentifiers": [
-        "1404-0004"
-      ],
-      "phase": "Phase 1",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT04384081",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2021-01-26"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Single-blind",
-        "comparator": "Placebo",
-        "description": "Four-arm multiple-dose study of three dose-escalation schedules and placebo."
-      },
-      "population": "Otherwise healthy Japanese men with BMI 23 to 40 kg/m2, stable body weight and HbA1c below 6.5%.",
-      "populationProfile": {
-        "ageGroup": "adult",
-        "diabetesStatus": "without-type-2-diabetes",
-        "requiresAdditionalCondition": false,
-        "treatmentContext": "initial-treatment",
-        "regionRestriction": "Japan"
-      },
-      "overallDuration": "16 weeks of treatment with end-of-treatment assessment at Week 17",
-      "safetySummary": "Drug-related adverse events were reported in all 27 survodutide-treated participants and four placebo participants; gastrointestinal events predominated and 10 active-treatment participants stopped dose escalation.",
-      "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT04384081",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
-          },
-          {
-            "url": "https://doi.org/10.1111/dom.15064",
-            "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity",
-            "sourceType": "peer-reviewed publication",
-            "publishedAt": "2023-04-27",
-            "checkedAt": "2026-08-11"
-          }
-        ]
-      }
-    },
-    {
       "id": "boehringer-ingelheim-survodutide-nct04667377",
       "companyId": "boehringer-ingelheim",
       "assetId": "survodutide",
@@ -775,57 +717,6 @@
       "route": "Subcutaneous"
     },
     {
-      "id": "survo-04384081-1-8mg-qw",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "role": "experimental",
-      "label": "BI 456906 1.8 mg once weekly",
-      "intervention": "BI 456906",
-      "linkedAsset": { "companyId": "boehringer-ingelheim", "assetId": "survodutide" },
-      "dose": "Escalated to 1.8 mg",
-      "route": "Subcutaneous",
-      "dosingFrequency": "Once weekly",
-      "treatmentDuration": "16 weeks",
-      "analyzedN": 9
-    },
-    {
-      "id": "survo-04384081-4-8mg-qw",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "role": "experimental",
-      "label": "BI 456906 4.8 mg once weekly",
-      "intervention": "BI 456906",
-      "linkedAsset": { "companyId": "boehringer-ingelheim", "assetId": "survodutide" },
-      "dose": "Escalated to 4.8 mg",
-      "route": "Subcutaneous",
-      "dosingFrequency": "Once weekly",
-      "treatmentDuration": "16 weeks",
-      "analyzedN": 9
-    },
-    {
-      "id": "survo-04384081-2-4mg-biw",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "role": "experimental",
-      "label": "BI 456906 2.4 mg twice weekly",
-      "intervention": "BI 456906",
-      "linkedAsset": { "companyId": "boehringer-ingelheim", "assetId": "survodutide" },
-      "dose": "Escalated to 2.4 mg",
-      "route": "Subcutaneous",
-      "dosingFrequency": "Twice weekly",
-      "treatmentDuration": "16 weeks",
-      "analyzedN": 9
-    },
-    {
-      "id": "survo-04384081-placebo",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "role": "placebo",
-      "label": "Placebo",
-      "intervention": "Placebo",
-      "dose": "Matching placebo",
-      "route": "Subcutaneous",
-      "dosingFrequency": "Matched to active treatment",
-      "treatmentDuration": "16 weeks",
-      "analyzedN": 9
-    },
-    {
       "id": "survo-04667377-0-6mg",
       "studyId": "boehringer-ingelheim-survodutide-nct04667377",
       "role": "experimental",
@@ -1188,14 +1079,6 @@
   "analysisGroups": [],
   "endpoints": [
     {
-      "id": "survo-04384081-weight-week17",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "name": "Percentage change from baseline in body weight",
-      "role": "exploratory",
-      "domain": "body weight",
-      "assessmentTimepoint": "Week 17"
-    },
-    {
       "id": "survo-04667377-weight-week46",
       "studyId": "boehringer-ingelheim-survodutide-nct04667377",
       "name": "Percentage change from baseline in body weight",
@@ -1237,58 +1120,6 @@
     }
   ],
   "outcomes": [
-    {
-      "id": "survo-04384081-weight-1-8mg",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "endpointId": "survo-04384081-weight-week17",
-      "armIds": ["survo-04384081-1-8mg-qw"],
-      "analysisPopulation": "Treated participants (overall)",
-      "result": { "value": "-4.51", "numericValue": -4.51, "unit": "percent", "resultType": "arm-level" },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-08-11", "updatedAt": "2026-08-11",
-        "sources": [{ "url": "https://doi.org/10.1111/dom.15064", "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity", "sourceType": "peer-reviewed publication", "publishedAt": "2023-04-27", "checkedAt": "2026-08-11" }]
-      }
-    },
-    {
-      "id": "survo-04384081-weight-4-8mg",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "endpointId": "survo-04384081-weight-week17",
-      "armIds": ["survo-04384081-4-8mg-qw"],
-      "analysisPopulation": "Treated participants (overall)",
-      "result": { "value": "-11.31", "numericValue": -11.31, "unit": "percent", "resultType": "arm-level" },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-08-11", "updatedAt": "2026-08-11",
-        "sources": [{ "url": "https://doi.org/10.1111/dom.15064", "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity", "sourceType": "peer-reviewed publication", "publishedAt": "2023-04-27", "checkedAt": "2026-08-11" }]
-      }
-    },
-    {
-      "id": "survo-04384081-weight-2-4mg-biw",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "endpointId": "survo-04384081-weight-week17",
-      "armIds": ["survo-04384081-2-4mg-biw"],
-      "analysisPopulation": "Treated participants (overall)",
-      "result": { "value": "-8.56", "numericValue": -8.56, "unit": "percent", "resultType": "arm-level" },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-08-11", "updatedAt": "2026-08-11",
-        "sources": [{ "url": "https://doi.org/10.1111/dom.15064", "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity", "sourceType": "peer-reviewed publication", "publishedAt": "2023-04-27", "checkedAt": "2026-08-11" }]
-      }
-    },
-    {
-      "id": "survo-04384081-weight-placebo",
-      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
-      "endpointId": "survo-04384081-weight-week17",
-      "armIds": ["survo-04384081-placebo"],
-      "analysisPopulation": "Treated participants (overall)",
-      "result": { "value": "+1.06", "numericValue": 1.06, "unit": "percent", "resultType": "arm-level" },
-      "maturity": "peer-reviewed publication",
-      "metadata": {
-        "lastVerifiedAt": "2026-08-11", "updatedAt": "2026-08-11",
-        "sources": [{ "url": "https://doi.org/10.1111/dom.15064", "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity", "sourceType": "peer-reviewed publication", "publishedAt": "2023-04-27", "checkedAt": "2026-08-11" }]
-      }
-    },
     {
       "id": "survo-04667377-weight-0-6mg",
       "studyId": "boehringer-ingelheim-survodutide-nct04667377",
