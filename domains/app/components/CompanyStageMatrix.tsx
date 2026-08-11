@@ -1,31 +1,10 @@
 import Link from "next/link";
+import { stageCountChipClassName } from "@/domains/app/components/StageCountChip";
 import type { CompanyStageMatrix as CompanyStageMatrixData } from "@/domains/company-pipeline/lib/selectors";
 
 type CompanyStageMatrixProps = {
   matrix: CompanyStageMatrixData;
 };
-
-function heatChipClassName(count: number) {
-  const base =
-    "inline-flex h-[26px] min-w-[34px] items-center justify-center rounded-sm border text-sm font-semibold tabular-nums";
-
-  if (count <= 0) {
-    return `${base} border-border bg-transparent text-border`;
-  }
-  if (count === 1) {
-    return `${base} border-border bg-[hsl(var(--primary)/0.14)] text-foreground`;
-  }
-  if (count === 2) {
-    return `${base} border-border bg-[hsl(var(--primary)/0.28)] text-foreground`;
-  }
-  if (count === 3) {
-    return `${base} border-border bg-[hsl(var(--primary)/0.45)] text-foreground`;
-  }
-  if (count === 4) {
-    return `${base} border-primary/60 bg-[hsl(var(--primary)/0.7)] text-primary-foreground`;
-  }
-  return `${base} border-primary bg-primary text-primary-foreground`;
-}
 
 export function CompanyStageMatrix({ matrix }: CompanyStageMatrixProps) {
   const { columns, rows } = matrix;
@@ -71,7 +50,7 @@ export function CompanyStageMatrix({ matrix }: CompanyStageMatrixProps) {
                 {columns.map((column) => {
                   const count = row.counts[column.id];
                   const chip = (
-                    <span className={heatChipClassName(count)}>
+                    <span className={stageCountChipClassName(count)}>
                       {count > 0 ? count : <>&ndash;</>}
                     </span>
                   );

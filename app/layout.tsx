@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen antialiased">
-        <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 py-4 sm:px-8">
+        <div className="mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-5 py-4 sm:px-8">
           <header className="mb-6 flex flex-col gap-4 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/"

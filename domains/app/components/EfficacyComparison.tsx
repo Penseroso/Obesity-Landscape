@@ -26,9 +26,14 @@ const focusRing =
  * for CVD separation against the card surface (`dataviz` skill, light mode).
  * An unrecognised phase (no tier) falls back to the neutral border/text used
  * elsewhere on the page rather than guessing a color.
+ *
+ * Tier 1's text color is amber-800 (`#92400E`), not the lighter amber-700
+ * (`#B45309`) still used for its border/fill: measured against the badge's
+ * own composited background, amber-700 text scored 4.22:1 (fails WCAG AA's
+ * 4.5:1 for this 10px text); amber-800 scores 5.95:1.
  */
 const phaseTierBadgeClass: Record<number, string> = {
-  1: "border-[#B45309]/40 bg-[#B45309]/10 text-[#B45309]",
+  1: "border-[#B45309]/40 bg-[#B45309]/10 text-[#92400E]",
   2: "border-[#0369A1]/40 bg-[#0369A1]/10 text-[#0369A1]",
   3: "border-[#6D28D9]/40 bg-[#6D28D9]/10 text-[#6D28D9]",
   4: "border-[#047857]/40 bg-[#047857]/10 text-[#047857]",

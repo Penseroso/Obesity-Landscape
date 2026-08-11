@@ -555,7 +555,7 @@ export function PipelineTable({
                           {column.id === "company" ? (
                             <Link
                               href={`/companies/${program.companyId}`}
-                              className="block truncate rounded-sm font-medium text-foreground hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                              className="block truncate rounded-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                               title={value}
                             >
                               {value}

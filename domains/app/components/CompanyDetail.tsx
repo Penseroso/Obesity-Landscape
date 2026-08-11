@@ -1,30 +1,12 @@
 import Link from "next/link";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
+import { stageCountChipClassName } from "@/domains/app/components/StageCountChip";
 import type { CompanyDetailView } from "@/domains/app/lib/company-detail/read-model";
 import {
   getStageBucketId,
   stageBuckets,
 } from "@/domains/company-pipeline/lib/constants";
-
-function stageChipClassName(count: number) {
-  const base =
-    "inline-flex h-[26px] min-w-[34px] items-center justify-center rounded-sm border text-sm font-semibold tabular-nums";
-
-  if (count <= 0) {
-    return `${base} border-border bg-transparent text-border`;
-  }
-  if (count === 1) {
-    return `${base} border-border bg-[hsl(var(--primary)/0.14)] text-foreground`;
-  }
-  if (count === 2) {
-    return `${base} border-border bg-[hsl(var(--primary)/0.28)] text-foreground`;
-  }
-  if (count <= 4) {
-    return `${base} border-primary/60 bg-[hsl(var(--primary)/0.6)] text-primary-foreground`;
-  }
-  return `${base} border-primary bg-primary text-primary-foreground`;
-}
 
 function clinicalPillLabel(hasClinicalEvidence: boolean) {
   return hasClinicalEvidence ? "Clinical evidence" : "Studies recorded";
@@ -111,7 +93,7 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
           {stageBuckets.map((bucket) => {
             const count = stageCounts.get(bucket.id) ?? 0;
             const chip = (
-              <span className={stageChipClassName(count)}>
+              <span className={stageCountChipClassName(count)}>
                 {count > 0 ? count : <>&ndash;</>}
               </span>
             );
@@ -193,9 +175,9 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
                 >
                   <Link
                     href={assetHref}
-                    className="rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    className="rounded-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
-                    <span className="text-base font-semibold text-card-foreground">
+                    <span className="text-base font-semibold text-primary">
                       {asset.assetName}
                     </span>
                     {asset.codeName || mechanism ? (

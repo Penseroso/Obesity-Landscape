@@ -160,7 +160,7 @@ export function StudyTable({ studies }: { studies: StudySummaryView[] }) {
               <td className="px-4 py-3">
                 <Link
                   href={`/studies/${study.id}`}
-                  className="font-semibold text-card-foreground hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  className="font-semibold text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   title={study.officialTitle}
                 >
                   {/* An unacronymed study shows its official title here, so clamp it:
