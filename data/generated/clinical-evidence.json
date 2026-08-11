@@ -5736,6 +5736,124 @@
       }
     },
     {
+      "id": "hansoh-pharma-olatorepatide-nct06118021",
+      "companyId": "hansoh-pharma",
+      "assetId": "olatorepatide",
+      "programId": "hansoh-pharma-olatorepatide-subcutaneous-injection",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase II Clinical Study to Evaluate the Efficacy and Safety of HS-20094 in Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06118021"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HS-20094-202"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06118021",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four dose cohorts, each randomized 4:1 to once-weekly HS-20094 or matching placebo."
+      },
+      "population": "Chinese adults aged 18 to 65 years with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "24 weeks of treatment plus 6 weeks of follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06118021",
+            "title": "A Study of HS-20094 Evaluating Weight Loss in Obese and Overweight Chinese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hansoh-pharma-olatorepatide-nct06839664",
+      "companyId": "hansoh-pharma",
+      "assetId": "olatorepatide",
+      "programId": "hansoh-pharma-olatorepatide-subcutaneous-injection",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of HS-20094 in Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06839664"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HS-20094-301",
+        "CTR20243973"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06839664",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm, 1:1:1:1 study of three once-weekly olatorepatide doses and placebo across 33 sites in China."
+      },
+      "population": "Chinese adults aged 18 to 65 years with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "48 weeks of treatment",
+      "safetySummary": "The sponsor reported low gastrointestinal adverse-event and treatment-discontinuation rates; average nausea incidence was below 10% and average vomiting incidence was below 5%, without a dose-specific breakdown.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06839664",
+            "title": "A Study of HS-20094 in Chinese Adults With Overweight or Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.hspharm.com/news/news-detail-513424.htm",
+            "title": "Olatorepatide (HS-20094) Achieves Up to 19.3% Weight Loss at Week 48 in Phase 3 Study with Favorable Gastrointestinal Tolerability",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-07",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://cn.hspharm.com/news/news-detail-513473.htm",
+            "title": "ENDO 2026 | Hansoh Pharma presents an in-vitro pharmacology report on olatorepatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-16",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
       "id": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
@@ -15030,6 +15148,169 @@
       }
     },
     {
+      "id": "olatorepatide-nct06118021-5mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "experimental",
+      "label": "HS-20094 5 mg",
+      "intervention": "HS-20094 5 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-5mg-placebo",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "placebo",
+      "label": "Matching placebo for 5 mg cohort",
+      "intervention": "Matching placebo administered subcutaneously once weekly for the 5 mg cohort",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-10mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "experimental",
+      "label": "HS-20094 10 mg",
+      "intervention": "HS-20094 titrated from 5 mg to 10 mg and administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "10 mg target dose",
+      "titration": "5 mg during Weeks 1-4; 10 mg during Weeks 5-24",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-10mg-placebo",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "placebo",
+      "label": "Matching placebo for 10 mg cohort",
+      "intervention": "Matching placebo administered subcutaneously once weekly for the 10 mg cohort",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-15mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "experimental",
+      "label": "HS-20094 15 mg",
+      "intervention": "HS-20094 titrated from 5 mg to 15 mg and administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "15 mg target dose",
+      "titration": "5 mg during Weeks 1-4; 10 mg during Weeks 5-8; 15 mg during Weeks 9-24",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-15mg-placebo",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "placebo",
+      "label": "Matching placebo for 15 mg cohort",
+      "intervention": "Matching placebo administered subcutaneously once weekly for the 15 mg cohort",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-20mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "experimental",
+      "label": "HS-20094 20 mg",
+      "intervention": "HS-20094 titrated from 5 mg to 20 mg and administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "20 mg target dose",
+      "titration": "5 mg during Weeks 1-4; 10 mg during Weeks 5-8; 15 mg during Weeks 9-12; 20 mg during Weeks 13-24",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06118021-20mg-placebo",
+      "studyId": "hansoh-pharma-olatorepatide-nct06118021",
+      "role": "placebo",
+      "label": "Matching placebo for 20 mg cohort",
+      "intervention": "Matching placebo administered subcutaneously once weekly for the 20 mg cohort",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06839664-5mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "role": "experimental",
+      "label": "HS-20094 5 mg",
+      "intervention": "HS-20094 5 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06839664-10mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "role": "experimental",
+      "label": "HS-20094 10 mg",
+      "intervention": "HS-20094 10 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06839664-15mg",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "role": "experimental",
+      "label": "HS-20094 15 mg",
+      "intervention": "HS-20094 15 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide"
+      },
+      "dose": "15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "olatorepatide-nct06839664-placebo",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
       "id": "amyoral-100",
       "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "role": "experimental",
@@ -19481,6 +19762,22 @@
       "role": "primary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 36"
+    },
+    {
+      "id": "olatorepatide-nct06839664-body-weight-week-48",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "name": "Percent change in body weight from baseline",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48"
+    },
+    {
+      "id": "olatorepatide-nct06839664-five-percent-responder-week-48",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "name": "Participants achieving at least 5% body weight reduction",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48"
     },
     {
       "id": "amyoral-weight-week12",
@@ -37872,6 +38169,65 @@
             "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
             "sourceType": "company press release",
             "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "olatorepatide-nct06839664-15mg-body-weight-week-48",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "endpointId": "olatorepatide-nct06839664-body-weight-week-48",
+      "armIds": [
+        "olatorepatide-nct06839664-15mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-19.3%",
+        "numericValue": -19.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://cn.hspharm.com/news/news-detail-513473.htm",
+            "title": "ENDO 2026 | Hansoh Pharma presents an in-vitro pharmacology report on olatorepatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-16",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "olatorepatide-nct06839664-15mg-five-percent-responder-week-48",
+      "studyId": "hansoh-pharma-olatorepatide-nct06839664",
+      "endpointId": "olatorepatide-nct06839664-five-percent-responder-week-48",
+      "armIds": [
+        "olatorepatide-nct06839664-15mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "97.2%",
+        "numericValue": 97.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "responderThreshold": "At least 5% body weight reduction from baseline",
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://cn.hspharm.com/news/news-detail-513473.htm",
+            "title": "ENDO 2026 | Hansoh Pharma presents an in-vitro pharmacology report on olatorepatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-16",
             "checkedAt": "2026-08-11"
           }
         ]

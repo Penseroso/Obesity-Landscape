@@ -261,6 +261,15 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "hansoh-pharma",
+      "assetId": "olatorepatide",
+      "focalStudyIds": [
+        "hansoh-pharma-olatorepatide-nct06118021",
+        "hansoh-pharma-olatorepatide-nct06839664"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
       "focalStudyIds": [
