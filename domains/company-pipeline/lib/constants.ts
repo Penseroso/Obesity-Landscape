@@ -175,25 +175,6 @@ export function isRegulatoryMilestoneStage(stage: string): boolean {
   return getStageBucketId(stage) === "regulatory-milestone";
 }
 
-const CLINICAL_PHASE_BUCKET_IDS: readonly StageBucketId[] = [
-  "phase-1",
-  "phase-2",
-  "phase-3",
-];
-
-/**
- * Clinical-phase stages: Phase 1-3 only (including sub-phases such as
- * "Phase 1b" and the combined "Phase 1/2" stage), matching the same
- * phase-1/phase-2/phase-3 buckets used by the Company x Development Stage
- * Matrix. Regulatory-development milestones and Filed/Approved are always
- * excluded, so "clinical-phase" has one shared definition across the
- * Overview instead of a separate rank threshold that could drift from the
- * matrix's bucketing.
- */
-export const clinicalDevelopmentStages = developmentStages.filter((stage) =>
-  CLINICAL_PHASE_BUCKET_IDS.includes(getStageBucketId(stage)),
-);
-
 /**
  * Contract 1.2 registry entry (ADR-0053).
  *

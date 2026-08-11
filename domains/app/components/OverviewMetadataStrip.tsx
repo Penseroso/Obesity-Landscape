@@ -10,7 +10,6 @@ type OverviewMetadataStripProps = {
    * `generated-output-contract.md#5-consumer-contract`.
    */
   obesityPurposeProgramCount: number;
-  clinicalPhaseCount: number;
   lastUpdated?: string;
 };
 
@@ -45,28 +44,33 @@ export function OverviewMetadataStrip({
   companyCount,
   programCount,
   obesityPurposeProgramCount,
-  clinicalPhaseCount,
   lastUpdated,
 }: OverviewMetadataStripProps) {
   return (
-    <div className="flex flex-wrap items-stretch rounded-md border border-border bg-card px-4 shadow-soft">
-      <MetadataItem
-        first
-        value={companyCount}
-        label={companyCount === 1 ? "Company" : "Companies"}
-      />
-      <MetadataItem
-        value={programCount}
-        label={programCount === 1 ? "Program" : "Programs"}
-      />
-      <MetadataItem
-        value={`${obesityPurposeProgramCount} of ${programCount}`}
-        label="Obesity-purpose"
-      />
-      <MetadataItem value={clinicalPhaseCount} label="Clinical-phase" />
+    <div>
       {lastUpdated ? (
-        <MetadataItem value={lastUpdated} label="Latest updated" />
+        // Provenance metadata, not a KPI - kept outside the card entirely
+        // rather than sharing the tile row, where it floated at an
+        // ambiguous mid-height next to the two-line tiles.
+        <p className="mb-1.5 text-right text-xs text-muted-foreground">
+          Updated {lastUpdated}
+        </p>
       ) : null}
+      <div className="flex flex-wrap items-stretch rounded-md border border-border bg-card px-4 shadow-soft">
+        <MetadataItem
+          first
+          value={companyCount}
+          label={companyCount === 1 ? "Company" : "Companies"}
+        />
+        <MetadataItem
+          value={programCount}
+          label={programCount === 1 ? "Program" : "Programs"}
+        />
+        <MetadataItem
+          value={`${obesityPurposeProgramCount} of ${programCount}`}
+          label="Obesity-purpose"
+        />
+      </div>
     </div>
   );
 }

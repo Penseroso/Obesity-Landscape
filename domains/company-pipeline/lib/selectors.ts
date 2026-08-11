@@ -1,5 +1,4 @@
 import {
-  clinicalDevelopmentStages,
   developmentStageRank,
   developmentStages,
   developmentStatuses,
@@ -45,14 +44,6 @@ export function getMostAdvancedDevelopmentStage(programs: PipelineProgram[]) {
       ? program.development.stage
       : current;
   }, undefined);
-}
-
-export function getClinicalStageProgramCount(programs: PipelineProgram[]) {
-  const clinicalStages: readonly DevelopmentStage[] = clinicalDevelopmentStages;
-
-  return programs.filter((program) =>
-    clinicalStages.includes(program.development.stage),
-  ).length;
 }
 
 /**

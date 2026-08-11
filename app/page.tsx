@@ -5,7 +5,6 @@ import { OverviewMetadataStrip } from "@/domains/app/components/OverviewMetadata
 import { RouteMixPanel } from "@/domains/app/components/RouteMixPanel";
 import { companies, pipelinePrograms } from "@/domains/company-pipeline/lib/data";
 import {
-  getClinicalStageProgramCount,
   getCompanyStageMatrix,
   getLatestUpdateDate,
   getMechanismMix,
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default function OverviewPage() {
-  const clinicalStagePrograms = getClinicalStageProgramCount(pipelinePrograms);
   const obesityPurposePrograms = getObesityPurposeProgramCount(pipelinePrograms);
   const lastUpdated = getLatestUpdateDate(pipelinePrograms);
   const stageMatrix = getCompanyStageMatrix(companies, pipelinePrograms);
@@ -38,9 +36,8 @@ export default function OverviewPage() {
         <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Obesity Landscape
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
-          Tracks companies and development programs across the competitive
-          obesity landscape as company source records are added.
+        <p className="mt-4 max-w-none text-base leading-7 text-muted-foreground">
+          Tracks companies and development programs across the competitive obesity landscape as company source records are added.
         </p>
       </section>
 
@@ -48,7 +45,6 @@ export default function OverviewPage() {
         companyCount={companies.length}
         programCount={pipelinePrograms.length}
         obesityPurposeProgramCount={obesityPurposePrograms}
-        clinicalPhaseCount={clinicalStagePrograms}
         lastUpdated={lastUpdated}
       />
 
