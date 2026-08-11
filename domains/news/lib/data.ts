@@ -6,7 +6,7 @@ import type {
   NewsSourceRegistryEntry,
 } from "./types";
 
-/** Sole typed access point for the validated News snapshot and Core 11 registry. */
+/** Sole typed access point for the validated News snapshot and Core 9 registry. */
 export const newsSnapshot = newsData as NewsSnapshot;
 export const newsSources = newsSourceData as NewsSourceRegistryEntry[];
 export const newsSourceById = new Map<NewsSourceId, NewsSourceRegistryEntry>(

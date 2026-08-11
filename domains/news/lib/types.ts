@@ -8,11 +8,9 @@ export const NEWS_SOURCE_IDS = [
   "biospectator",
   "yakup",
   "bosa",
-  "endpoints",
   "stat",
   "fierce-biotech",
   "biopharma-dive",
-  "reuters-healthcare-pharmaceuticals",
 ] as const;
 
 export type NewsSourceId = (typeof NEWS_SOURCE_IDS)[number];

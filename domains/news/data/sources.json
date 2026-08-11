@@ -42,13 +42,6 @@
     "allowedHosts": ["bosa.co.kr"]
   },
   {
-    "id": "endpoints",
-    "name": "Endpoints News",
-    "region": "international",
-    "baseUrl": "https://endpoints.news/",
-    "allowedHosts": ["endpoints.news"]
-  },
-  {
     "id": "stat",
     "name": "STAT",
     "region": "international",
@@ -68,12 +61,5 @@
     "region": "international",
     "baseUrl": "https://www.biopharmadive.com/",
     "allowedHosts": ["biopharmadive.com"]
-  },
-  {
-    "id": "reuters-healthcare-pharmaceuticals",
-    "name": "Reuters Healthcare & Pharmaceuticals",
-    "region": "international",
-    "baseUrl": "https://www.reuters.com/business/healthcare-pharmaceuticals/",
-    "allowedHosts": ["reuters.com"]
   }
 ]

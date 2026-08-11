@@ -12,11 +12,9 @@ const expectedSourceIds = [
   "biospectator",
   "yakup",
   "bosa",
-  "endpoints",
   "stat",
   "fierce-biotech",
   "biopharma-dive",
-  "reuters-healthcare-pharmaceuticals",
 ];
 
 const categories = new Set([
@@ -96,7 +94,7 @@ function validateRegistry() {
 
   const ids = sources.map((source) => source.id);
   assert(new Set(ids).size === ids.length, "news source registry ids must be unique");
-  assert(JSON.stringify([...ids].sort()) === JSON.stringify([...expectedSourceIds].sort()), "news source registry must contain the exact Core 11 source ids");
+  assert(JSON.stringify([...ids].sort()) === JSON.stringify([...expectedSourceIds].sort()), "news source registry must contain the exact Core 9 source ids");
 
   const baseUrls = new Set();
   for (const source of sources) {
@@ -186,7 +184,7 @@ function validateSnapshotData(snapshot, registry, refs) {
   assert(snapshot.coverage.length === expectedSourceIds.length, `news.coverage must contain exactly ${expectedSourceIds.length} entries`);
   const coverageIds = snapshot.coverage.map((entry) => entry.sourceId);
   assert(new Set(coverageIds).size === coverageIds.length, "news.coverage source ids must be unique");
-  assert(JSON.stringify([...coverageIds].sort()) === JSON.stringify([...expectedSourceIds].sort()), "news.coverage must cover the exact Core 11 registry");
+  assert(JSON.stringify([...coverageIds].sort()) === JSON.stringify([...expectedSourceIds].sort()), "news.coverage must cover the exact Core 9 registry");
   for (const entry of snapshot.coverage) {
     assert(registry.sourceById.has(entry.sourceId), `news.coverage references unknown source ${entry.sourceId}`);
     assert(entry.checkedAt === snapshot.asOf, `news.coverage ${entry.sourceId}.checkedAt must equal news.asOf`);
@@ -222,7 +220,7 @@ function validateSnapshotData(snapshot, registry, refs) {
     for (const [sourceIndex, source] of story.sources.entries()) {
       const sourceContext = `${context}.sources[${sourceIndex}]`;
       const registrySource = registry.sourceById.get(source.sourceId);
-      assert(registrySource, `${sourceContext}.sourceId is not in the Core 11 registry`);
+      assert(registrySource, `${sourceContext}.sourceId is not in the Core 9 registry`);
       assertNonEmptyString(source.title, `${sourceContext}.title`);
       const sourcePublishedAt = parseDate(source.publishedAt, `${sourceContext}.publishedAt`);
       assert(sourcePublishedAt >= windowStart && sourcePublishedAt <= asOf, `${sourceContext}.publishedAt falls outside the snapshot window`);

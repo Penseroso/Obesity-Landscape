@@ -13,11 +13,16 @@ Event state and is not an evidence source for either canonical data domain.
 
 ## Scope and sources
 
-News v1 reviews exactly the Core 11 publications registered in
-`domains/news/data/sources.json`: six domestic and five international media
+News v1 reviews exactly the Core 9 publications registered in
+`domains/news/data/sources.json`: six domestic and three international media
 outlets. A stored article must use a registry `sourceId` and an article URL on
 that source's allowed host. Search results and non-Core publications may help
 locate a Core article but are not stored as News sources.
+
+Endpoints News and Reuters are non-Core discovery leads. Their official RSS or
+sitemap metadata may surface a candidate, but they have no coverage obligation
+and cannot be stored as Story sources. Enter the development only after an
+accessible registered Core article independently supports it.
 
 Include a material development concerning an obesity-landscape candidate:
 new-candidate disclosure, program status, clinical study or results,
@@ -54,7 +59,10 @@ research workflow.
 Coverage is `FULL` only when all Core sources are `reviewed`. A
 `partially-accessible` or `blocked` source makes it `PARTIAL`; failure to reach
 a source is never evidence that it published no relevant article. Every access
-issue carries a short `note`; a fully reviewed source does not.
+issue carries a short `note`; a fully reviewed source does not. A single tool,
+parser, TLS, or user-agent-specific failure is not sufficient evidence for
+either access status: apply the workflow's cross-route access verification
+before classifying the source.
 
 ## Story and source semantics
 
