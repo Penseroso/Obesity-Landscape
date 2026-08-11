@@ -1920,6 +1920,934 @@
       }
     },
     {
+      "id": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "Safety, Tolerability and Pharmacokinetics of Single Subcutaneous Doses of BI 3034701 in Healthy Male Volunteers (Part A) and of Multiple Rising Subcutaneous Doses in Otherwise Healthy Male and Female Volunteers With Obesity/Overweight (Part B)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06352437"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0001",
+        "2023-508767-79-00",
+        "U1111-1302-5933"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06352437",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-11-21"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Two-part first-in-human study: eight single-ascending-dose BI 3034701 groups plus placebo in healthy men, followed by four multiple-rising-dose groups plus placebo in otherwise healthy adults with overweight or obesity."
+      },
+      "population": "Part A enrolled healthy men aged 18 to 55 years; Part B enrolled otherwise healthy men and women aged 18 to 65 years with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Part A safety and pharmacokinetic follow-up through 48 days; Part B safety follow-up through 130 days",
+      "safetySummary": "Official sponsor and partner disclosures described the Phase 1 safety and tolerability profile as generally favorable, but did not report dose- or arm-level incidence values.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06352437",
+            "title": "BI 3034701 first-in-human Phase 1 study record (NCT06352437)",
+            "sourceType": "trial registry",
+            "publishedAt": "2025-11-21",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.gubra.dk/mfn_news/boehringer-ingelheim-advances-next-generation-triple-agonist-peptide-for-the-treatment-of-obesity-into-mid-stage-development",
+            "title": "Boehringer Ingelheim advances next-generation triple-agonist peptide for the treatment of obesity into mid-stage development",
+            "sourceType": "partner topline announcement",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/16/3328210/0/en/boehringer-ingelheim-strengthens-obesity-pipeline-as-potential-first-in-class-triple-receptor-agonist-bi-3034701-enters-phase-ii-development.html",
+            "title": "Boehringer Ingelheim strengthens obesity pipeline as BI 3034701 enters Phase II development",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-16",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "A Phase II, Randomised, Double-blind, Parallel-group, 42-week Dose-finding Trial for BI 3034701 Administered Subcutaneously Compared to Placebo in Participants With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07662122"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0002",
+        "U1111-1335-5538"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07662122",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-08-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Seven-arm dose-finding study of six undisclosed BI 3034701 treatment groups and placebo, with lifestyle counseling."
+      },
+      "population": "Adults aged 18 to 74 years with BMI at least 30 kg/m2, or BMI at least 27 kg/m2 with at least one weight-related complication, without diabetes and with a prior unsuccessful dietary weight-loss effort.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "42 weeks of treatment; approximately 10 months of trial participation",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07662122",
+            "title": "BI 3034701 Phase 2 dose-finding study record (NCT07662122)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-08-06",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/16/3328210/0/en/boehringer-ingelheim-strengthens-obesity-pipeline-as-potential-first-in-class-triple-receptor-agonist-bi-3034701-enters-phase-ii-development.html",
+            "title": "Boehringer Ingelheim strengthens obesity pipeline as BI 3034701 enters Phase II development",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-16",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct07693231",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "A Phase I, Single-blinded, Randomised, Placebo-controlled Study to Assess the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Multiple Rising Doses of BI 3034701 in Japanese Male and Female Participants With Obesity/Overweight and Otherwise Healthy (Part 1) and Safety, Tolerability, and Pharmacokinetics of Multiple Rising Doses of BI 3034701 in Japanese Male and Female Healthy Volunteers (Part 2)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07693231"
+        },
+        {
+          "registry": "jRCT",
+          "id": "jRCT2071260055"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0004",
+        "U1111-1334-2043"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07693231",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-24"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Two-part multiple-rising-dose study in Japanese participants, with an overweight/obesity Part 1 and a lower-BMI healthy-volunteer Part 2."
+      },
+      "population": "Japanese adults aged 18 to 64 years; Part 1 enrolls otherwise healthy participants with BMI at least 27 kg/m2, and Part 2 enrolls healthy participants with BMI from 23 to less than 27 kg/m2.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "Part 1 includes 16 weeks of treatment with follow-up through Week 19; Part 2 includes 7 weeks of treatment with follow-up through Week 10",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07693231",
+            "title": "Japanese BI 3034701 multiple-rising-dose Phase 1 study record (NCT07693231)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-07-24",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://jrct.mhlw.go.jp/en-latest-detail/jRCT2071260055",
+            "title": "Japanese BI 3034701 Phase 1 registry record (jRCT2071260055)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-07-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "A Phase I, Randomized, Single-blind, Parallel-group Trial for BI 3034701 Compared to Placebo in Participants With Overweight / Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07754474"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0026",
+        "U1111-1336-9903",
+        "2026-526090-42-00"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07754474",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-08-10"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm study comparing two undisclosed BI 3034701 dose and titration strategies with placebo."
+      },
+      "population": "Otherwise healthy adults aged 18 to 74 years with BMI 27.0 to 39.9 kg/m2 and at least one weight-related complication.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Safety follow-up through 113 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07754474",
+            "title": "BI 3034701 Phase 1 dose and titration study record (NCT07754474)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-08-10",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct03591718",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase I, Blinded Within Dose Groups, Multiple Dose, Placebo-controlled Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Different Titration Schemes of BI 456906 in Patients With Obesity and Overweight.",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03591718"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0003",
+        "2018-000250-22"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03591718",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2021-03-22"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-part multiple-rising-dose study evaluating seven dose-escalation schedules and placebo."
+      },
+      "population": "Adults aged 18 to under 70 years with BMI from 27 to under 40 kg/m2, stable body weight and HbA1c below 6.5%.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Part A 6 weeks; Part B 16 weeks",
+      "safetySummary": "The peer-reviewed report described gastrointestinal disorders as the main adverse events leading to treatment discontinuation in the longer Part B; the published dose-schedule result could not be mapped completely without the detailed schedule table.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03591718",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://doi.org/10.1111/dom.14948",
+            "title": "Phase I studies of the safety, tolerability, pharmacokinetics and pharmacodynamics of the dual glucagon receptor/glucagon-like peptide-1 receptor agonist BI 456906",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-01-30",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct04384081",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase I, Single-blinded, Randomized, Multiple Dose, Placebo-controlled Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Different Dose Escalation Schemes of BI 456906 in Healthy Japanese Male Subject With BMI 23-40 kg/m2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04384081"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0004"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04384081",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2021-01-26"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm multiple-dose study of three dose-escalation schedules and placebo."
+      },
+      "population": "Otherwise healthy Japanese men with BMI 23 to 40 kg/m2, stable body weight and HbA1c below 6.5%.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "16 weeks of treatment with end-of-treatment assessment at Week 17",
+      "safetySummary": "Drug-related adverse events were reported in all 27 survodutide-treated participants and four placebo participants; gastrointestinal events predominated and 10 active-treatment participants stopped dose escalation.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04384081",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://doi.org/10.1111/dom.15064",
+            "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-04-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct04667377",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase II, Randomized, Double Blind, Parallel Group,46 Weeks Dose-finding Study of BI 456906 Administered Once Weekly Subcutaneously Compared With Placebo in Patients With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04667377"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0036",
+        "2020-002479-37"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04667377",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2023-11-02"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Five-arm dose-finding trial with a 20-week flexible dose-escalation period followed by 26 weeks of maintenance treatment."
+      },
+      "population": "Adults with BMI at least 27 kg/m2, without diabetes, after at least one unsuccessful nonsurgical weight-loss attempt.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "46 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most frequent treatment-emergent adverse events; the peer-reviewed report described the overall tolerability profile as similar to GLP-1 receptor mono-agonists.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04667377",
+            "sourceType": "trial registry",
+            "publishedAt": "2023-11-02",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://doi.org/10.1016/S2213-8587(23)00356-X",
+            "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-02-05",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct05202353",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "Open-label, Randomised, 4 Parallel-group, Phase I Clinical Trial to Investigate BI 456906 Occupancy of Glucagon Receptors in Liver and Glucagon-like Peptide 1 Receptors in Pancreas in Comparison With Semaglutide After Administration of Radiolabeled Tracer in Male and Female Subjects With Obesity Using PET and MRI",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05202353"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0047",
+        "2021-000363-76",
+        "2024-515417-17-00"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05202353",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-08-04"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Semaglutide",
+        "description": "Four-arm PET/MRI receptor-occupancy study crossing two treatments with liver or pancreas imaging cohorts."
+      },
+      "population": "Adults with obesity, BMI 30 to 40 kg/m2, without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Approximately 17 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05202353",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-08-04",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06066515",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomised, Double-blind, Parallel-group, 76-week, Efficacy and Safety Study of BI 456906 Administered Subcutaneously Compared With Placebo in Participants With Overweight or Obesity Without Type 2 Diabetes",
+      "acronym": "SYNCHRONIZE-1",
+      "studyFamily": "SYNCHRONIZE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06066515"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0038",
+        "U1111-1288-9400",
+        "2022-502529-17-00"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06066515",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-03-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm trial of dose-adjusted once-weekly survodutide or placebo with lifestyle modification."
+      },
+      "population": "Adults with BMI at least 30 kg/m2, or at least 27 kg/m2 with an obesity-related complication, without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks",
+      "safetySummary": "Gastrointestinal symptoms were the most common adverse events and were typically mild to moderate; no deaths were reported in the peer-reviewed primary report.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06066515",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-03-12",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06066528",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomised, Double-blind, Parallel-group, 76-week, Efficacy and Safety Study of BI 456906 Administered Subcutaneously Compared With Placebo in Participants With Overweight or Obesity and Type 2 Diabetes Mellitus",
+      "acronym": "SYNCHRONIZE-2",
+      "studyFamily": "SYNCHRONIZE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06066528"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0041",
+        "2022-502531-18-00",
+        "U1111-1289-0247"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06066528",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-08-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm trial of dose-adjusted once-weekly survodutide or placebo with lifestyle modification."
+      },
+      "population": "Adults with BMI at least 27 kg/m2 and type 2 diabetes, with a prior unsuccessful dietary weight-loss effort.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06066528",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-08-06",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12803687/",
+            "title": "Baseline characteristics in the SYNCHRONIZE-2 randomized phase 3 trial",
+            "sourceType": "peer-reviewed design and baseline publication",
+            "publishedAt": "2025-11-11",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06077864",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomised, Double-blind, Parallel-group, Event-driven, Cardiovascular Safety Study With BI 456906 Administered Subcutaneously Compared With Placebo in Participants With Overweight or Obesity With Established Cardiovascular Disease (CVD) or Chronic Kidney Disease, and/or at Least Two Weight-related Complications or Risk Factors for CVD",
+      "acronym": "SYNCHRONIZE-CVOT",
+      "studyFamily": "SYNCHRONIZE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06077864"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0040",
+        "2022-502442-27-00",
+        "U1111-1289-0174"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06077864",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-07-23"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Event-driven cardiovascular safety trial with two survodutide dose groups and placebo."
+      },
+      "population": "Adults with overweight or obesity and established cardiovascular disease or chronic kidney disease, and/or at least two weight-related complications or cardiovascular risk factors; type 2 diabetes was permitted.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Event-driven; follow-up up to approximately 114 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06077864",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-07-23",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06176365",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase III, Randomised, Double-blind, Parallel-group, 76-week, Efficacy and Safety Study of Survodutide Administered Subcutaneously Compared With Placebo in Patients With Obesity Disease in Japanese",
+      "acronym": "SYNCHRONIZE-JP",
+      "studyFamily": "SYNCHRONIZE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06176365"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0053"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06176365",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-04-30"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm Japanese obesity-disease trial of once-weekly survodutide or placebo."
+      },
+      "population": "Japanese adults with obesity disease and required obesity-related comorbidities; eligible participants could have or not have type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "76 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06176365",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-04-30",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42219222/",
+            "title": "Survodutide for the Treatment of Obesity Disease in Japanese Participants: Rationale, Design and Baseline Characteristics of the Phase 3 SYNCHRONIZE-JP Trial",
+            "sourceType": "peer-reviewed design and baseline publication",
+            "publishedAt": "2026",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06200467",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Double-blind, Randomized, Placebo-controlled, Multiple-dose, Parallel Group With Nested Crossover Design Trial With Moxifloxacin as Positive Control to Evaluate the Effects of Multiple Subcutaneous Doses of BI 456906 in a Titration Scheme on Cardiac Safety Parameters in (Otherwise) Healthy Male and Female Subjects With Overweight/Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06200467"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0011",
+        "2023-506375-10-00",
+        "U1111-1295-4369"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06200467",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-03-13"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo with moxifloxacin positive control",
+        "description": "Three parallel treatment sequences with a nested crossover evaluation of cardiac repolarization."
+      },
+      "population": "Otherwise healthy adults with BMI 27.0 to 39.9 kg/m2 and body weight above 70 kg.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Approximately 30 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06200467",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-03-13",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06214741",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "A Phase III, Randomized, Double-blind, Parallel-group, Efficacy and Safety Study of BI 456906 Administered Subcutaneously Compared With Placebo in Chinese Participants With a BMI >=28 kg/m2 or BMI >=24 kg/m2 With at Least One Weight-related Complication",
+      "acronym": "SYNCHRONIZE-CN",
+      "studyFamily": "SYNCHRONIZE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06214741"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0061",
+        "U1111-1295-9567"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06214741",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-04-30"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm Chinese efficacy and safety trial of once-weekly survodutide or placebo."
+      },
+      "population": "Chinese adults with BMI at least 28 kg/m2, or at least 24 kg/m2 with a weight-related complication; participants with or without type 2 diabetes were eligible.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "Primary assessment at Week 52; approximately 76 weeks overall",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06214741",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-04-30",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06309992",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "Multicentre, Randomised, Double-blind, Placebo-controlled, 48-week, Phase III Trial to Evaluate the Efficacy and Safety of Survodutide Administered Subcutaneously in Participants With Overweight or Obesity and Presumed or Confirmed Nonalcoholic Steatohepatitis (NASH)",
+      "acronym": "SYNCHRONIZE-MASLD",
+      "studyFamily": "SYNCHRONIZE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06309992"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0056",
+        "2023-505303-23-00",
+        "U1111-1299-9925"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06309992",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-04-30"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Two-to-one randomization to once-weekly survodutide or placebo, with 24 weeks of dose escalation and 24 weeks of maintenance."
+      },
+      "population": "Adults with obesity, or overweight with an obesity complication, and at-risk MASLD defined by liver steatosis plus evidence of inflammation or fibrosis; type 2 diabetes was permitted.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "United States and Spain"
+      },
+      "overallDuration": "48 weeks, with an optional 4-week extension",
+      "safetySummary": "Gastrointestinal adverse events were most frequent, usually occurred during dose escalation and were generally mild to moderate; treatment discontinuation occurred in 19.9% with survodutide and 4.3% with placebo.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06309992",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-04-30",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-survodutide-nct06745284",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "programId": "boehringer-ingelheim-survodutide-subcutaneous-injection",
+      "officialTitle": "An Active-comparator-controlled, Open-label, Parallel Group Study to Evaluate the Effect of Survodutide on Energy Expenditure and Fatty Acid Oxidation in Subjects With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06745284"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1404-0045",
+        "U1111-1309-3679"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06745284",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-05-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Semaglutide",
+        "description": "Two-arm mechanistic study assessing energy expenditure and fatty-acid oxidation after clinically meaningful weight loss."
+      },
+      "population": "Adults with obesity, BMI 30 to 45 kg/m2, without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Until at least 10% weight loss or up to 36 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06745284",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
       "id": "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
@@ -10178,6 +11106,863 @@
       }
     },
     {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-1",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 1",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-2",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 2",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-3",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 3",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-4",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 4",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-5",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 5",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-6",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 6",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-7",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 7",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-8",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 8",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "placebo",
+      "label": "Part A: Placebo",
+      "intervention": "Single subcutaneous dose of placebo matching BI 3034701"
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-1",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 1",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-2",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 2",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-3",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 3",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-4",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 4",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "placebo",
+      "label": "Part B: Placebo",
+      "intervention": "Multiple subcutaneous doses of placebo matching BI 3034701"
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-1",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 1",
+      "intervention": "BI 3034701 dose and titration strategy 1 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-2",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 2",
+      "intervention": "BI 3034701 dose and titration strategy 2 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-3",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 3",
+      "intervention": "BI 3034701 dose and titration strategy 3 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-4",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 4",
+      "intervention": "BI 3034701 dose and titration strategy 4 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-5",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 5",
+      "intervention": "BI 3034701 dose and titration strategy 5 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-6",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 6",
+      "intervention": "BI 3034701 dose and titration strategy 6 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching BI 3034701 with lifestyle counseling"
+    },
+    {
+      "id": "bi-3034701-nct07693231-active",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07693231",
+      "role": "experimental",
+      "label": "BI 3034701",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in Japanese participants",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07693231-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07693231",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching BI 3034701 in Japanese participants"
+    },
+    {
+      "id": "bi-3034701-nct07754474-low-dose",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "role": "experimental",
+      "label": "Dose Group 1",
+      "intervention": "Low dose of BI 3034701 using an undisclosed titration strategy",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07754474-high-dose",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "role": "experimental",
+      "label": "Dose Group 2",
+      "intervention": "High dose of BI 3034701 using an undisclosed titration strategy",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07754474-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching BI 3034701"
+    },
+    {
+      "id": "survo-03591718-ds1",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 1",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 1",
+      "route": "Subcutaneous",
+      "treatmentDuration": "6 weeks"
+    },
+    {
+      "id": "survo-03591718-ds2",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 2",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 2",
+      "route": "Subcutaneous",
+      "treatmentDuration": "6 weeks"
+    },
+    {
+      "id": "survo-03591718-ds3",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 3",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 3",
+      "route": "Subcutaneous",
+      "treatmentDuration": "6 weeks"
+    },
+    {
+      "id": "survo-03591718-ds4",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 4",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 4",
+      "route": "Subcutaneous",
+      "treatmentDuration": "6 weeks"
+    },
+    {
+      "id": "survo-03591718-ds5",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 5",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 5",
+      "route": "Subcutaneous",
+      "treatmentDuration": "16 weeks"
+    },
+    {
+      "id": "survo-03591718-ds6",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 6",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 6",
+      "route": "Subcutaneous",
+      "treatmentDuration": "16 weeks"
+    },
+    {
+      "id": "survo-03591718-ds7",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "experimental",
+      "label": "BI 456906 dosage schedule 7",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Multiple rising-dose schedule 7",
+      "route": "Subcutaneous",
+      "treatmentDuration": "16 weeks"
+    },
+    {
+      "id": "survo-03591718-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct03591718",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "route": "Subcutaneous"
+    },
+    {
+      "id": "survo-04384081-1-8mg-qw",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "role": "experimental",
+      "label": "BI 456906 1.8 mg once weekly",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Escalated to 1.8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "16 weeks",
+      "analyzedN": 9
+    },
+    {
+      "id": "survo-04384081-4-8mg-qw",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "role": "experimental",
+      "label": "BI 456906 4.8 mg once weekly",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Escalated to 4.8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "16 weeks",
+      "analyzedN": 9
+    },
+    {
+      "id": "survo-04384081-2-4mg-biw",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "role": "experimental",
+      "label": "BI 456906 2.4 mg twice weekly",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Escalated to 2.4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Twice weekly",
+      "treatmentDuration": "16 weeks",
+      "analyzedN": 9
+    },
+    {
+      "id": "survo-04384081-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Matched to active treatment",
+      "treatmentDuration": "16 weeks",
+      "analyzedN": 9
+    },
+    {
+      "id": "survo-04667377-0-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "role": "experimental",
+      "label": "BI 456906 0.6 mg",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "0.6 mg planned maintenance dose",
+      "titration": "0.3 mg Weeks 1-2; 0.6 mg Weeks 3-46",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "46 weeks",
+      "analyzedN": 76
+    },
+    {
+      "id": "survo-04667377-2-4mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "role": "experimental",
+      "label": "BI 456906 2.4 mg",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "2.4 mg planned maintenance dose",
+      "titration": "Escalated from 0.3 mg to 2.4 mg over 20 weeks",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "46 weeks",
+      "analyzedN": 78
+    },
+    {
+      "id": "survo-04667377-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "role": "experimental",
+      "label": "BI 456906 3.6 mg",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "3.6 mg planned maintenance dose",
+      "titration": "Escalated from 0.3 mg to 3.6 mg over 20 weeks",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "46 weeks",
+      "analyzedN": 76
+    },
+    {
+      "id": "survo-04667377-4-8mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "role": "experimental",
+      "label": "BI 456906 4.8 mg",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "4.8 mg planned maintenance dose",
+      "titration": "Escalated from 0.3 mg to 4.8 mg over 20 weeks",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "46 weeks",
+      "analyzedN": 76
+    },
+    {
+      "id": "survo-04667377-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "46 weeks",
+      "analyzedN": 77
+    },
+    {
+      "id": "survo-05202353-survo-liver",
+      "studyId": "boehringer-ingelheim-survodutide-nct05202353",
+      "role": "experimental",
+      "label": "BI 456906, liver PET/CT cohort",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "Up to 17 weeks"
+    },
+    {
+      "id": "survo-05202353-sema-liver",
+      "studyId": "boehringer-ingelheim-survodutide-nct05202353",
+      "role": "active comparator",
+      "label": "Semaglutide, liver PET/CT cohort",
+      "intervention": "Semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "Up to 17 weeks"
+    },
+    {
+      "id": "survo-05202353-survo-pancreas",
+      "studyId": "boehringer-ingelheim-survodutide-nct05202353",
+      "role": "experimental",
+      "label": "BI 456906, pancreas PET/CT cohort",
+      "intervention": "BI 456906",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "Up to 17 weeks"
+    },
+    {
+      "id": "survo-05202353-sema-pancreas",
+      "studyId": "boehringer-ingelheim-survodutide-nct05202353",
+      "role": "active comparator",
+      "label": "Semaglutide, pancreas PET/CT cohort",
+      "intervention": "Semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "Up to 17 weeks"
+    },
+    {
+      "id": "survo-06066515-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "role": "experimental",
+      "label": "Survodutide 3.6 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Dose adjusted up to 3.6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks",
+      "analyzedN": 241
+    },
+    {
+      "id": "survo-06066515-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "role": "experimental",
+      "label": "Survodutide 6.0 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Dose adjusted up to 6.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks",
+      "analyzedN": 242
+    },
+    {
+      "id": "survo-06066515-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks",
+      "analyzedN": 242
+    },
+    {
+      "id": "survo-06066528-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066528",
+      "role": "experimental",
+      "label": "Survodutide 3.6 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Dose adjusted up to 3.6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "survo-06066528-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066528",
+      "role": "experimental",
+      "label": "Survodutide 6.0 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "Dose adjusted up to 6.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "survo-06066528-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066528",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "survo-06077864-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06077864",
+      "role": "experimental",
+      "label": "Survodutide 3.6 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "3.6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Event-driven; up to approximately 114 weeks"
+    },
+    {
+      "id": "survo-06077864-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06077864",
+      "role": "experimental",
+      "label": "Survodutide 6.0 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "6.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Event-driven; up to approximately 114 weeks"
+    },
+    {
+      "id": "survo-06077864-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06077864",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Event-driven; up to approximately 114 weeks"
+    },
+    {
+      "id": "survo-06176365-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06176365",
+      "role": "experimental",
+      "label": "Survodutide 3.6 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "3.6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "survo-06176365-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06176365",
+      "role": "experimental",
+      "label": "Survodutide 6.0 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "6.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "survo-06176365-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06176365",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching survodutide",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "survo-06200467-sequence-a",
+      "studyId": "boehringer-ingelheim-survodutide-nct06200467",
+      "role": "experimental",
+      "label": "Sequence A: R1 then R3 then T then R3",
+      "intervention": "BI 456906, matching placebo, and moxifloxacin placebo",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "route": "Subcutaneous and oral",
+      "treatmentDuration": "Approximately 30 weeks"
+    },
+    {
+      "id": "survo-06200467-sequence-b",
+      "studyId": "boehringer-ingelheim-survodutide-nct06200467",
+      "role": "other",
+      "label": "Sequence B: R1 then R2 then R1 then R3",
+      "intervention": "BI 456906 placebo, moxifloxacin, and moxifloxacin placebo",
+      "route": "Subcutaneous and oral",
+      "treatmentDuration": "Approximately 30 weeks"
+    },
+    {
+      "id": "survo-06200467-sequence-c",
+      "studyId": "boehringer-ingelheim-survodutide-nct06200467",
+      "role": "other",
+      "label": "Sequence C: R1 then R3 then R1 then R2",
+      "intervention": "BI 456906 placebo, moxifloxacin placebo, and moxifloxacin",
+      "route": "Subcutaneous and oral",
+      "treatmentDuration": "Approximately 30 weeks"
+    },
+    {
+      "id": "survo-06214741-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06214741",
+      "role": "experimental",
+      "label": "Survodutide 3.6 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "3.6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Approximately 76 weeks"
+    },
+    {
+      "id": "survo-06214741-4-8mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06214741",
+      "role": "experimental",
+      "label": "Survodutide 4.8 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "4.8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Approximately 76 weeks"
+    },
+    {
+      "id": "survo-06214741-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06214741",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching survodutide",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Approximately 76 weeks"
+    },
+    {
+      "id": "survo-06309992-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "role": "experimental",
+      "label": "Survodutide 6.0 mg",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "dose": "6.0 mg maintenance dose",
+      "titration": "Escalated over 24 weeks; dose reduction permitted to a minimum 2.4 mg maintenance dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks",
+      "analyzedN": 146
+    },
+    {
+      "id": "survo-06309992-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching survodutide",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks",
+      "analyzedN": 70
+    },
+    {
+      "id": "survo-06745284-survo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06745284",
+      "role": "experimental",
+      "label": "Survodutide",
+      "intervention": "Survodutide",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "survodutide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Until at least 10% weight loss or up to 36 weeks"
+    },
+    {
+      "id": "survo-06745284-sema",
+      "studyId": "boehringer-ingelheim-survodutide-nct06745284",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "Until at least 10% weight loss or up to 36 weeks"
+    },
+    {
       "id": "nct07476118-brenipatide",
       "studyId": "eli-lilly-and-company-brenipatide-nct07476118",
       "role": "experimental",
@@ -16237,6 +18022,54 @@
       "role": "primary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 24"
+    },
+    {
+      "id": "survo-04384081-weight-week17",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "name": "Percentage change from baseline in body weight",
+      "role": "exploratory",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 17"
+    },
+    {
+      "id": "survo-04667377-weight-week46",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 46"
+    },
+    {
+      "id": "survo-06066515-weight-week76",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 76"
+    },
+    {
+      "id": "survo-06066515-responder5-week76",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 76"
+    },
+    {
+      "id": "survo-06309992-weight-week48",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48"
+    },
+    {
+      "id": "survo-06309992-liver-fat-responder-week48",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "name": "Participants achieving at least 30% reduction in MRI-PDFF-assessed liver fat content",
+      "role": "co-primary",
+      "domain": "hepatic",
+      "assessmentTimepoint": "Week 48"
     },
     {
       "id": "elora-p2-weight-week48",
@@ -23564,6 +25397,932 @@
             "url": "https://clinicaltrials.gov/study/NCT00500370",
             "sourceType": "trial registry",
             "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04384081-weight-1-8mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "endpointId": "survo-04384081-weight-week17",
+      "armIds": [
+        "survo-04384081-1-8mg-qw"
+      ],
+      "analysisPopulation": "Treated participants (overall)",
+      "result": {
+        "value": "-4.51",
+        "numericValue": -4.51,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/dom.15064",
+            "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-04-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04384081-weight-4-8mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "endpointId": "survo-04384081-weight-week17",
+      "armIds": [
+        "survo-04384081-4-8mg-qw"
+      ],
+      "analysisPopulation": "Treated participants (overall)",
+      "result": {
+        "value": "-11.31",
+        "numericValue": -11.31,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/dom.15064",
+            "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-04-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04384081-weight-2-4mg-biw",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "endpointId": "survo-04384081-weight-week17",
+      "armIds": [
+        "survo-04384081-2-4mg-biw"
+      ],
+      "analysisPopulation": "Treated participants (overall)",
+      "result": {
+        "value": "-8.56",
+        "numericValue": -8.56,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/dom.15064",
+            "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-04-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04384081-weight-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct04384081",
+      "endpointId": "survo-04384081-weight-week17",
+      "armIds": [
+        "survo-04384081-placebo"
+      ],
+      "analysisPopulation": "Treated participants (overall)",
+      "result": {
+        "value": "+1.06",
+        "numericValue": 1.06,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/dom.15064",
+            "title": "A randomized Phase I study of BI 456906 in healthy Japanese men with overweight/obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2023-04-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04667377-weight-0-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "endpointId": "survo-04667377-weight-week46",
+      "armIds": [
+        "survo-04667377-0-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (planned treatment)",
+      "result": {
+        "value": "-6.2",
+        "numericValue": -6.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -8.3 to -4.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/S2213-8587(23)00356-X",
+            "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-02-05",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04667377-weight-2-4mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "endpointId": "survo-04667377-weight-week46",
+      "armIds": [
+        "survo-04667377-2-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (planned treatment)",
+      "result": {
+        "value": "-12.5",
+        "numericValue": -12.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -14.5 to -10.5"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/S2213-8587(23)00356-X",
+            "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-02-05",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04667377-weight-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "endpointId": "survo-04667377-weight-week46",
+      "armIds": [
+        "survo-04667377-3-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (planned treatment)",
+      "result": {
+        "value": "-13.2",
+        "numericValue": -13.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -15.3 to -11.2"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/S2213-8587(23)00356-X",
+            "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-02-05",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04667377-weight-4-8mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "endpointId": "survo-04667377-weight-week46",
+      "armIds": [
+        "survo-04667377-4-8mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (planned treatment)",
+      "result": {
+        "value": "-14.9",
+        "numericValue": -14.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -16.9 to -13.0"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/S2213-8587(23)00356-X",
+            "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-02-05",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-04667377-weight-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct04667377",
+      "endpointId": "survo-04667377-weight-week46",
+      "armIds": [
+        "survo-04667377-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (planned treatment)",
+      "result": {
+        "value": "-2.8",
+        "numericValue": -2.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -4.9 to -0.7"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/S2213-8587(23)00356-X",
+            "title": "Glucagon and GLP-1 receptor dual agonist survodutide for obesity: a randomised, double-blind, placebo-controlled, dose-finding phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-02-05",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-weight-tr-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-weight-week76",
+      "armIds": [
+        "survo-06066515-3-6mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-12.2",
+        "numericValue": -12.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -13.6 to -10.8"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-weight-tr-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-weight-week76",
+      "armIds": [
+        "survo-06066515-6mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-13.0",
+        "numericValue": -13,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -14.4 to -11.6"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-weight-tr-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-weight-week76",
+      "armIds": [
+        "survo-06066515-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-5.4",
+        "numericValue": -5.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -6.9 to -4.0"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-weight-eff-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-weight-week76",
+      "armIds": [
+        "survo-06066515-3-6mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.3",
+        "numericValue": -15.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-weight-eff-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-weight-week76",
+      "armIds": [
+        "survo-06066515-6mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.6",
+        "numericValue": -16.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-weight-eff-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-weight-week76",
+      "armIds": [
+        "survo-06066515-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.2",
+        "numericValue": -3.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-responder5-tr-3-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-responder5-week76",
+      "armIds": [
+        "survo-06066515-3-6mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "72.6",
+        "numericValue": 72.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-responder5-tr-6mg",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-responder5-week76",
+      "armIds": [
+        "survo-06066515-6mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "71.9",
+        "numericValue": 71.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06066515-responder5-tr-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06066515",
+      "endpointId": "survo-06066515-responder5-week76",
+      "armIds": [
+        "survo-06066515-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "46.3",
+        "numericValue": 46.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nejm.org/doi/10.1056/NEJMoa2600751",
+            "title": "Survodutide Once Weekly for the Treatment of Adults with Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-weight-eff-survo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-weight-week48",
+      "armIds": [
+        "survo-06309992-6mg"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.2",
+        "numericValue": -12.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-weight-eff-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-weight-week48",
+      "armIds": [
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-1.0",
+        "numericValue": -1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-weight-eff-etd",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-weight-week48",
+      "armIds": [
+        "survo-06309992-6mg",
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.2",
+        "numericValue": -11.2,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, survodutide minus placebo",
+        "confidenceInterval": "95% CI, -13.4 to -9.0",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-weight-tr-survo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-weight-week48",
+      "armIds": [
+        "survo-06309992-6mg"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-8.7",
+        "numericValue": -8.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-weight-tr-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-weight-week48",
+      "armIds": [
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-1.4",
+        "numericValue": -1.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-weight-tr-etd",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-weight-week48",
+      "armIds": [
+        "survo-06309992-6mg",
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-7.3",
+        "numericValue": -7.3,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, survodutide minus placebo",
+        "confidenceInterval": "95% CI, -9.4 to -5.2",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-liver30-eff-survo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-liver-fat-responder-week48",
+      "armIds": [
+        "survo-06309992-6mg"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "84.2",
+        "numericValue": 84.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=30% reduction in liver fat content"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-liver30-eff-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-liver-fat-responder-week48",
+      "armIds": [
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "24.3",
+        "numericValue": 24.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=30% reduction in liver fat content"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-liver30-eff-or",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-liver-fat-responder-week48",
+      "armIds": [
+        "survo-06309992-6mg",
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "17.3",
+        "numericValue": 17.3,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio, survodutide versus placebo",
+        "confidenceInterval": "95% CI, 7.5 to 39.9",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-liver30-tr-survo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-liver-fat-responder-week48",
+      "armIds": [
+        "survo-06309992-6mg"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "68.5",
+        "numericValue": 68.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=30% reduction in liver fat content"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-liver30-tr-placebo",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-liver-fat-responder-week48",
+      "armIds": [
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "28.6",
+        "numericValue": 28.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=30% reduction in liver fat content"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "survo-06309992-liver30-tr-or",
+      "studyId": "boehringer-ingelheim-survodutide-nct06309992",
+      "endpointId": "survo-06309992-liver-fat-responder-week48",
+      "armIds": [
+        "survo-06309992-6mg",
+        "survo-06309992-placebo"
+      ],
+      "analysisPopulation": "Participants who received at least one dose (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "5.9",
+        "numericValue": 5.9,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio, survodutide versus placebo",
+        "confidenceInterval": "95% CI, 2.9 to 11.9",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41591-026-04479-3",
+            "title": "Survodutide in adults with obesity and metabolic dysfunction-associated steatotic liver disease: SYNCHRONIZE-MASLD",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-08-11"
           }
         ]
       }

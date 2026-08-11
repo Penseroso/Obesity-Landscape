@@ -1,0 +1,522 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "boehringer-ingelheim",
+  "assetId": "bi-3034701",
+  "studies": [
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "Safety, Tolerability and Pharmacokinetics of Single Subcutaneous Doses of BI 3034701 in Healthy Male Volunteers (Part A) and of Multiple Rising Subcutaneous Doses in Otherwise Healthy Male and Female Volunteers With Obesity/Overweight (Part B)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06352437"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0001",
+        "2023-508767-79-00",
+        "U1111-1302-5933"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06352437",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-11-21"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Two-part first-in-human study: eight single-ascending-dose BI 3034701 groups plus placebo in healthy men, followed by four multiple-rising-dose groups plus placebo in otherwise healthy adults with overweight or obesity."
+      },
+      "population": "Part A enrolled healthy men aged 18 to 55 years; Part B enrolled otherwise healthy men and women aged 18 to 65 years with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Part A safety and pharmacokinetic follow-up through 48 days; Part B safety follow-up through 130 days",
+      "safetySummary": "Official sponsor and partner disclosures described the Phase 1 safety and tolerability profile as generally favorable, but did not report dose- or arm-level incidence values.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06352437",
+            "title": "BI 3034701 first-in-human Phase 1 study record (NCT06352437)",
+            "sourceType": "trial registry",
+            "publishedAt": "2025-11-21",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.gubra.dk/mfn_news/boehringer-ingelheim-advances-next-generation-triple-agonist-peptide-for-the-treatment-of-obesity-into-mid-stage-development",
+            "title": "Boehringer Ingelheim advances next-generation triple-agonist peptide for the treatment of obesity into mid-stage development",
+            "sourceType": "partner topline announcement",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/16/3328210/0/en/boehringer-ingelheim-strengthens-obesity-pipeline-as-potential-first-in-class-triple-receptor-agonist-bi-3034701-enters-phase-ii-development.html",
+            "title": "Boehringer Ingelheim strengthens obesity pipeline as BI 3034701 enters Phase II development",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-16",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "A Phase II, Randomised, Double-blind, Parallel-group, 42-week Dose-finding Trial for BI 3034701 Administered Subcutaneously Compared to Placebo in Participants With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07662122"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0002",
+        "U1111-1335-5538"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07662122",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-08-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Seven-arm dose-finding study of six undisclosed BI 3034701 treatment groups and placebo, with lifestyle counseling."
+      },
+      "population": "Adults aged 18 to 74 years with BMI at least 30 kg/m2, or BMI at least 27 kg/m2 with at least one weight-related complication, without diabetes and with a prior unsuccessful dietary weight-loss effort.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "42 weeks of treatment; approximately 10 months of trial participation",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07662122",
+            "title": "BI 3034701 Phase 2 dose-finding study record (NCT07662122)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-08-06",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/16/3328210/0/en/boehringer-ingelheim-strengthens-obesity-pipeline-as-potential-first-in-class-triple-receptor-agonist-bi-3034701-enters-phase-ii-development.html",
+            "title": "Boehringer Ingelheim strengthens obesity pipeline as BI 3034701 enters Phase II development",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-16",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct07693231",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "A Phase I, Single-blinded, Randomised, Placebo-controlled Study to Assess the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Multiple Rising Doses of BI 3034701 in Japanese Male and Female Participants With Obesity/Overweight and Otherwise Healthy (Part 1) and Safety, Tolerability, and Pharmacokinetics of Multiple Rising Doses of BI 3034701 in Japanese Male and Female Healthy Volunteers (Part 2)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07693231"
+        },
+        {
+          "registry": "jRCT",
+          "id": "jRCT2071260055"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0004",
+        "U1111-1334-2043"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07693231",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-24"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Two-part multiple-rising-dose study in Japanese participants, with an overweight/obesity Part 1 and a lower-BMI healthy-volunteer Part 2."
+      },
+      "population": "Japanese adults aged 18 to 64 years; Part 1 enrolls otherwise healthy participants with BMI at least 27 kg/m2, and Part 2 enrolls healthy participants with BMI from 23 to less than 27 kg/m2.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Japan"
+      },
+      "overallDuration": "Part 1 includes 16 weeks of treatment with follow-up through Week 19; Part 2 includes 7 weeks of treatment with follow-up through Week 10",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07693231",
+            "title": "Japanese BI 3034701 multiple-rising-dose Phase 1 study record (NCT07693231)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-07-24",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://jrct.mhlw.go.jp/en-latest-detail/jRCT2071260055",
+            "title": "Japanese BI 3034701 Phase 1 registry record (jRCT2071260055)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-07-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "programId": "boehringer-ingelheim-bi-3034701-subcutaneous-injection",
+      "officialTitle": "A Phase I, Randomized, Single-blind, Parallel-group Trial for BI 3034701 Compared to Placebo in Participants With Overweight / Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07754474"
+        }
+      ],
+      "protocolIdentifiers": [
+        "1507-0026",
+        "U1111-1336-9903",
+        "2026-526090-42-00"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07754474",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-08-10"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Single-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm study comparing two undisclosed BI 3034701 dose and titration strategies with placebo."
+      },
+      "population": "Otherwise healthy adults aged 18 to 74 years with BMI 27.0 to 39.9 kg/m2 and at least one weight-related complication.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Safety follow-up through 113 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07754474",
+            "title": "BI 3034701 Phase 1 dose and titration study record (NCT07754474)",
+            "sourceType": "trial registry",
+            "publishedAt": "2026-08-10",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-1",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 1",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-2",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 2",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-3",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 3",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-4",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 4",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-5",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 5",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-6",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 6",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-7",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 7",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-dose-group-8",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part A: BI 3034701 dose group 8",
+      "intervention": "Single subcutaneous dose of BI 3034701 in healthy men",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-a-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "placebo",
+      "label": "Part A: Placebo",
+      "intervention": "Single subcutaneous dose of placebo matching BI 3034701"
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-1",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 1",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-2",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 2",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-3",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 3",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-dose-group-4",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "experimental",
+      "label": "Part B: BI 3034701 dose group 4",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in adults with overweight or obesity",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct06352437-part-b-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct06352437",
+      "role": "placebo",
+      "label": "Part B: Placebo",
+      "intervention": "Multiple subcutaneous doses of placebo matching BI 3034701"
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-1",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 1",
+      "intervention": "BI 3034701 dose and titration strategy 1 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-2",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 2",
+      "intervention": "BI 3034701 dose and titration strategy 2 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-3",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 3",
+      "intervention": "BI 3034701 dose and titration strategy 3 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-4",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 4",
+      "intervention": "BI 3034701 dose and titration strategy 4 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-5",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 5",
+      "intervention": "BI 3034701 dose and titration strategy 5 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-treatment-group-6",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "experimental",
+      "label": "BI 3034701 treatment group 6",
+      "intervention": "BI 3034701 dose and titration strategy 6 with lifestyle counseling",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07662122-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07662122",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching BI 3034701 with lifestyle counseling"
+    },
+    {
+      "id": "bi-3034701-nct07693231-active",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07693231",
+      "role": "experimental",
+      "label": "BI 3034701",
+      "intervention": "Multiple rising subcutaneous doses of BI 3034701 in Japanese participants",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07693231-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07693231",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching BI 3034701 in Japanese participants"
+    },
+    {
+      "id": "bi-3034701-nct07754474-low-dose",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "role": "experimental",
+      "label": "Dose Group 1",
+      "intervention": "Low dose of BI 3034701 using an undisclosed titration strategy",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07754474-high-dose",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "role": "experimental",
+      "label": "Dose Group 2",
+      "intervention": "High dose of BI 3034701 using an undisclosed titration strategy",
+      "linkedAsset": {
+        "companyId": "boehringer-ingelheim",
+        "assetId": "bi-3034701"
+      }
+    },
+    {
+      "id": "bi-3034701-nct07754474-placebo",
+      "studyId": "boehringer-ingelheim-bi-3034701-nct07754474",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo matching BI 3034701"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

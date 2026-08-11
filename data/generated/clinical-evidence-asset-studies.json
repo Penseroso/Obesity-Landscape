@@ -94,6 +94,36 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "boehringer-ingelheim",
+      "assetId": "bi-3034701",
+      "focalStudyIds": [
+        "boehringer-ingelheim-bi-3034701-nct06352437",
+        "boehringer-ingelheim-bi-3034701-nct07662122",
+        "boehringer-ingelheim-bi-3034701-nct07693231",
+        "boehringer-ingelheim-bi-3034701-nct07754474"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "boehringer-ingelheim",
+      "assetId": "survodutide",
+      "focalStudyIds": [
+        "boehringer-ingelheim-survodutide-nct03591718",
+        "boehringer-ingelheim-survodutide-nct04384081",
+        "boehringer-ingelheim-survodutide-nct04667377",
+        "boehringer-ingelheim-survodutide-nct05202353",
+        "boehringer-ingelheim-survodutide-nct06066515",
+        "boehringer-ingelheim-survodutide-nct06066528",
+        "boehringer-ingelheim-survodutide-nct06077864",
+        "boehringer-ingelheim-survodutide-nct06176365",
+        "boehringer-ingelheim-survodutide-nct06200467",
+        "boehringer-ingelheim-survodutide-nct06214741",
+        "boehringer-ingelheim-survodutide-nct06309992",
+        "boehringer-ingelheim-survodutide-nct06745284"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3298176",
       "focalStudyIds": [
@@ -323,6 +353,8 @@
         "novo-nordisk-semaglutide-select-nct03574597"
       ],
       "linkedStudyIds": [
+        "boehringer-ingelheim-survodutide-nct05202353",
+        "boehringer-ingelheim-survodutide-nct06745284",
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
         "pfizer-pf-07081532-nct05579977",
