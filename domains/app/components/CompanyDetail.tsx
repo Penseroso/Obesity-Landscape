@@ -13,7 +13,7 @@ function clinicalPillLabel(hasClinicalEvidence: boolean) {
 }
 
 const relationshipRoleBadgeClassName =
-  "inline-flex items-center whitespace-nowrap rounded-sm border border-dashed border-border bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground";
+  "inline-flex items-center whitespace-nowrap rounded-full border border-dashed border-border bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground";
 
 function capitalize(text: string): string {
   return text.length > 0 ? text[0].toUpperCase() + text.slice(1) : text;

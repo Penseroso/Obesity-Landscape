@@ -574,7 +574,7 @@ export function PipelineTable({
                             >
                               <span className="min-w-0 truncate">{value}</span>
                               {programIndex === 0 && group.programs.length > 1 ? (
-                                <span className="shrink-0 rounded-sm border border-border bg-muted px-1.5 py-0.5 text-[0.65rem] font-semibold text-muted-foreground">
+                                <span className="shrink-0 rounded-full border border-border bg-muted px-2 py-0.5 text-[0.65rem] font-semibold text-muted-foreground">
                                   {group.programs.length} variants
                                 </span>
                               ) : null}

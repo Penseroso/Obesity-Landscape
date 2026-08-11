@@ -42,10 +42,10 @@ export function Badge({
     <span
       className={
         tone === "accent"
-          ? "whitespace-nowrap rounded-sm border border-border bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground"
+          ? "whitespace-nowrap rounded-full border border-border bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground"
           : tone === "primary"
-            ? "whitespace-nowrap rounded-sm border border-primary/30 bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary"
-            : "whitespace-nowrap rounded-sm border border-border bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground"
+            ? "whitespace-nowrap rounded-full border border-primary/30 bg-primary/15 px-2.5 py-0.5 text-xs font-semibold text-primary"
+            : "whitespace-nowrap rounded-full border border-border bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground"
       }
     >
       {children}
@@ -55,7 +55,7 @@ export function Badge({
 
 function MetricChip({ label, value }: { label?: string; value: string }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-sm border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
+    <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-0.5 text-xs text-muted-foreground">
       {label ? (
         <span className="font-semibold text-foreground">{label}</span>
       ) : null}

@@ -47,7 +47,7 @@ function phaseTierColorClass(phase: string): string {
 
 /** Full class list for a phase badge — kept in one place so both card kinds match. */
 function phaseBadgeClass(phase: string): string {
-  return `rounded border px-1 py-px text-[10px] font-medium leading-none ${phaseTierColorClass(phase)}`;
+  return `rounded-full border px-1.5 py-px text-[10px] font-medium leading-none ${phaseTierColorClass(phase)}`;
 }
 
 /**
@@ -143,7 +143,7 @@ function HeadToHeadEntity({ entity }: { entity: ComparisonEntity }) {
     return (
       <span>
         {entity.label}
-        <span className="ml-1 rounded border border-border px-1 text-[10px] font-normal uppercase tracking-wide text-muted-foreground">
+        <span className="ml-1 rounded-full border border-border bg-muted px-1.5 text-[10px] font-normal uppercase tracking-wide text-muted-foreground">
           external
         </span>
       </span>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StageBadge } from "@/domains/app/components/StageBadge";
 import { formatNullableValue } from "@/domains/app/lib/format";
 import type { PipelineProgram } from "@/domains/company-pipeline/lib/types";
 
@@ -61,9 +62,7 @@ export function MostAdvancedProgramsTable({
                   </Link>
                 </td>
                 <td className="whitespace-nowrap px-4 py-2">
-                  <span className="inline-flex items-center rounded-sm border border-border bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground">
-                    {program.development.stage}
-                  </span>
+                  <StageBadge stage={program.development.stage} />
                 </td>
                 <td className="whitespace-nowrap px-4 py-2 text-muted-foreground">
                   {formatNullableValue(program.administration.route)}
