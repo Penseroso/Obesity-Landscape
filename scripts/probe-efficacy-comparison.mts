@@ -15,6 +15,8 @@ import { readFileSync } from "node:fs";
 import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/read-model";
 import { EFFICACY_OVERVIEW_UNIT } from "@/domains/app/lib/efficacy-comparison/policy";
 import { screenStudy } from "@/domains/app/lib/efficacy-comparison/candidates";
+import { selectRepresentative } from "@/domains/app/lib/efficacy-comparison/representative";
+import { getStudyDetail } from "@/domains/app/lib/clinical-evidence/selectors";
 import { findHeadToHeadGroups } from "@/domains/app/lib/efficacy-comparison/head-to-head";
 import {
   efficacyMechanismFamilies,
@@ -45,17 +47,22 @@ const outcomeById = new Map(aggregate.outcomes.map((outcome) => [outcome.id, out
  * snapshot without relaxing the eligibility policy.
  */
 const REVIEWED_TOTALS = {
-  eligibleUnits: 11,
-  gapUnits: 4,
-  totalUnits: 15,
-  headToHeadStudies: 5,
-  headToHeadGroups: 5,
+  eligibleUnits: 15,
+  gapUnits: 9,
+  totalUnits: 24,
+  headToHeadStudies: 7,
+  headToHeadGroups: 7,
 };
 
 const REVIEWED_GAPS: Record<string, string> = {
   "asset:amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
+  "asset:astrazeneca/cotadutide": "population-with-type-2-diabetes",
+  "asset:astrazeneca/exenatide": "metric-unavailable-percent",
   "asset:novo-nordisk/cagrilintide": "population-diabetes-status-not-specified",
   "asset:novo-nordisk/ubt251": "population-diabetes-status-not-specified",
+  "asset:pfizer/pf-06882961": "population-unclassified",
+  "asset:pfizer/pf-07081532": "population-unclassified",
+  "asset:pfizer/pf-08653944": "population-unclassified",
   "asset:roche/ct-996": "population-mixed-diabetes-status",
 };
 
@@ -85,6 +92,23 @@ const REVIEWED_EVIDENCE: Record<
       "arm-level|participants with reported day 29 body weight data(mad cohort 1 n=7)|",
     treatmentOutcomeIds: ["asc30-102-mad-1-body-weight-day-29"],
     placeboOutcomeIds: [],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
+  "asset:astrazeneca/elecoglipron": {
+    familyId: "glp1-agonist",
+    studyId: "astrazeneca-elecoglipron-nct06579092",
+    endpointId: "vista-body-weight-week26",
+    comparisonGroupKey:
+      "arm-level|participants who followed treatment as directed|efficacy",
+    treatmentOutcomeIds: [
+      "vista-bw26-5mg",
+      "vista-bw26-15mg",
+      "vista-bw26-50mg",
+      "vista-bw26-75mg-weekly",
+      "vista-bw26-75mg-q2w",
+    ],
+    placeboOutcomeIds: ["vista-bw26-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
@@ -122,6 +146,19 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: ["step8-weight-liraglutide"],
     betweenArmOutcomeIds: ["step8-weight-between"],
   },
+  "asset:gan-lee-pharmaceuticals/gzr18": {
+    familyId: "glp1-agonist",
+    studyId: "gan-lee-pharmaceuticals-gzr18-nct06728124",
+    endpointId: "gzr18-06728124-weight-w52",
+    comparisonGroupKey: "arm-level|modified intention to treat population(overall)|",
+    treatmentOutcomeIds: [
+      "gzr18-06728124-weight-24",
+      "gzr18-06728124-weight-48",
+    ],
+    placeboOutcomeIds: ["gzr18-06728124-weight-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
   "asset:eli-lilly-and-company/ly3298176": {
     familyId: "glp1-gip-agonist",
     studyId: "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
@@ -132,6 +169,18 @@ const REVIEWED_EVIDENCE: Record<
     placeboOutcomeIds: [],
     activeComparatorOutcomeIds: ["sm5-weight-sema"],
     betweenArmOutcomeIds: ["sm5-weight-between"],
+  },
+  "global-asset:olatorepatide": {
+    familyId: "glp1-gip-agonist",
+    studyId: "hansoh-pharma-olatorepatide-nct06839664",
+    endpointId: "olatorepatide-nct06839664-body-weight-week-48",
+    comparisonGroupKey: "arm-level|not reported|",
+    treatmentOutcomeIds: [
+      "olatorepatide-nct06839664-15mg-body-weight-week-48",
+    ],
+    placeboOutcomeIds: [],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
   },
   "asset:roche/enicepatide": {
     familyId: "glp1-gip-agonist",
@@ -160,6 +209,19 @@ const REVIEWED_EVIDENCE: Record<
     comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
     treatmentOutcomeIds: ["glory1-weight32-maz4", "glory1-weight32-maz6"],
     placeboOutcomeIds: ["glory1-weight32-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
+  "asset:boehringer-ingelheim/survodutide": {
+    familyId: "glp1-glucagon-agonist",
+    studyId: "boehringer-ingelheim-survodutide-nct06066515",
+    endpointId: "survo-06066515-weight-week76",
+    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment regimen",
+    treatmentOutcomeIds: [
+      "survo-06066515-weight-tr-3-6mg",
+      "survo-06066515-weight-tr-6mg",
+    ],
+    placeboOutcomeIds: ["survo-06066515-weight-tr-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
@@ -404,6 +466,62 @@ for (const { familyId, row } of rows) {
     row.evidence.maturity === row.evidence.groupMaturities[0],
     `${context}: disclosed maturity ${row.evidence.maturity} is not the group best`,
   );
+}
+
+// --- explicit global-asset grouping and priority -------------------------
+
+const olatorepatideRow = rows.find(
+  ({ row }) => row.unitKey === "global-asset:olatorepatide",
+)?.row;
+check(Boolean(olatorepatideRow), "global olatorepatide row is missing");
+if (olatorepatideRow) {
+  check(
+    olatorepatideRow.unitKind === "global-asset",
+    `olatorepatide unit kind ${olatorepatideRow.unitKind}`,
+  );
+  check(
+    olatorepatideRow.evidence.sponsorName ===
+      "Jiangsu Hansoh Pharmaceutical Co., Ltd.",
+    `olatorepatide fallback sponsor ${olatorepatideRow.evidence.sponsorName}`,
+  );
+  check(
+    olatorepatideRow.evidence.studyRegion === "China",
+    `olatorepatide fallback region ${olatorepatideRow.evidence.studyRegion}`,
+  );
+  check(
+    olatorepatideRow.evidence.developmentScope ===
+      "Chinese mainland, Hong Kong, and Macau",
+    `olatorepatide fallback scope ${olatorepatideRow.evidence.developmentScope}`,
+  );
+}
+
+const olatorepatideDetail = getStudyDetail(
+  "hansoh-pharma-olatorepatide-nct06839664",
+);
+check(Boolean(olatorepatideDetail), "olatorepatide priority fixture is missing");
+if (olatorepatideDetail) {
+  const regional = screenStudy(olatorepatideDetail, 0, {
+    evidencePriority: 1,
+    developmentScope: "Regional fixture",
+    sponsorName: "Regional fixture sponsor",
+  });
+  const global = screenStudy(olatorepatideDetail, 1, {
+    evidencePriority: 0,
+    developmentScope: "Global fixture",
+    sponsorName: "Global fixture sponsor",
+  });
+  if (regional.reason === null && global.reason === null) {
+    const winner = selectRepresentative(
+      [...regional.candidates, ...global.candidates],
+      new Map([[olatorepatideDetail.study.id, olatorepatideDetail]]),
+    );
+    check(
+      winner.sponsorName === "Global fixture sponsor",
+      `global evidence priority selected ${winner.sponsorName}`,
+    );
+  } else {
+    failures.push("olatorepatide priority fixture did not produce candidates");
+  }
 }
 
 // --- head-to-head ---------------------------------------------------------

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "olatorepatide",
+    "displayName": "Olatorepatide",
+    "members": [
+      {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide",
+        "evidencePriority": 0,
+        "developmentScope": "Global development excluding Chinese mainland, Hong Kong, and Macau",
+        "sponsorName": "Regeneron Pharmaceuticals, Inc."
+      },
+      {
+        "companyId": "hansoh-pharma",
+        "assetId": "olatorepatide",
+        "evidencePriority": 1,
+        "developmentScope": "Chinese mainland, Hong Kong, and Macau",
+        "sponsorName": "Jiangsu Hansoh Pharmaceutical Co., Ltd."
+      }
+    ]
+  }
+]

@@ -281,6 +281,7 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
             </span>
           </h3>
           <p className="mt-0.5 text-xs text-muted-foreground">
+            {row.unitKind === "global-asset" ? "Selected evidence: " : null}
             <Link
               href={`/companies/${row.companyId}`}
               className={`rounded-sm hover:text-primary hover:underline ${focusRing}`}
@@ -297,6 +298,23 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
               value: evidence.studyTitle,
               href: `/studies/${evidence.studyId}`,
             },
+            {
+              label: "Evidence company",
+              value: row.companyName,
+              href: `/companies/${row.companyId}`,
+            },
+            ...(evidence.sponsorName
+              ? [{ label: "Sponsor", value: evidence.sponsorName }]
+              : []),
+            { label: "Study region", value: evidence.studyRegion },
+            ...(evidence.developmentScope
+              ? [
+                  {
+                    label: "Development scope",
+                    value: evidence.developmentScope,
+                  },
+                ]
+              : []),
             { label: "Endpoint", value: evidence.endpointName },
             { label: "Endpoint role", value: evidence.endpointRole },
             { label: "Timepoint", value: evidence.assessmentTimepoint },

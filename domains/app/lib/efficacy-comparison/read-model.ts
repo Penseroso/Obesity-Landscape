@@ -5,6 +5,10 @@ import {
 } from "@/domains/app/lib/clinical-evidence/selectors";
 import type { StudyDetailView } from "@/domains/app/lib/clinical-evidence/selectors";
 import {
+  getEfficacyGlobalAssetMembership,
+  type EfficacyGlobalAssetGroup,
+} from "@/domains/app/config/efficacy-global-assets";
+import {
   furthestDisposition,
   screenStudy,
   type EfficacyDispositionReason,
@@ -36,7 +40,7 @@ import { selectRepresentative, type RepresentativeEvidence } from "./representat
  * it a screen shows is that screen's presentation policy.
  */
 
-export type EfficacyUnitKind = "asset" | "regimen";
+export type EfficacyUnitKind = "asset" | "global-asset" | "regimen";
 
 export type EfficacyComparisonRow = {
   unitKey: string;
@@ -78,6 +82,7 @@ type UnitAccumulator = {
   companyId: string;
   assetId?: string;
   regimenId?: string;
+  globalAssetGroup?: EfficacyGlobalAssetGroup;
   studyIds: string[];
 };
 
@@ -102,9 +107,14 @@ function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
       detailByStudyId.set(summary.id, detail);
 
       const { study } = detail;
+      const globalMembership = study.regimenId
+        ? undefined
+        : getEfficacyGlobalAssetMembership(study.companyId, study.assetId);
       const key = study.regimenId
         ? `regimen:${study.regimenId}`
-        : `asset:${study.companyId}/${study.assetId}`;
+        : globalMembership
+          ? `global-asset:${globalMembership.group.id}`
+          : `asset:${study.companyId}/${study.assetId}`;
 
       const existing = units.get(key);
       if (existing) {
@@ -112,16 +122,48 @@ function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
         continue;
       }
       units.set(key, {
-        unitKind: study.regimenId ? "regimen" : "asset",
+        unitKind: study.regimenId
+          ? "regimen"
+          : globalMembership
+            ? "global-asset"
+            : "asset",
         companyId: study.companyId,
         assetId: study.regimenId ? undefined : study.assetId,
         regimenId: study.regimenId,
+        globalAssetGroup: globalMembership?.group,
         studyIds: [study.id],
       });
     }
   }
 
   return units;
+}
+
+function resolveGlobalAssetMechanismFamily(group: EfficacyGlobalAssetGroup) {
+  const resolutions = group.members.map((member) =>
+    resolveAssetMechanismFamily(member.companyId, member.assetId),
+  );
+  const disclosed = resolutions.filter(
+    (
+      resolution,
+    ): resolution is Extract<(typeof resolutions)[number], { family: object }> =>
+      resolution.family !== null,
+  );
+
+  if (disclosed.length !== resolutions.length) {
+    if (disclosed.length === 0) return resolutions[0];
+    throw new Error(
+      `Efficacy global asset group "${group.id}" mixes disclosed and undisclosed mechanisms`,
+    );
+  }
+
+  const familyIds = new Set(disclosed.map((resolution) => resolution.family.id));
+  if (familyIds.size !== 1) {
+    throw new Error(
+      `Efficacy global asset group "${group.id}" spans multiple mechanism families`,
+    );
+  }
+  return disclosed[0];
 }
 
 export function getEfficacyComparison(): EfficacyComparisonView {
@@ -156,17 +198,34 @@ export function getEfficacyComparison(): EfficacyComparisonView {
     if (weightBearing.length === 0) continue;
     evidenceBearingUnits += 1;
 
+    const globalPrimaryMember = unit.globalAssetGroup?.members
+      .slice()
+      .sort((a, b) => a.evidencePriority - b.evidencePriority)[0];
     const display =
-      unit.unitKind === "asset"
-        ? getAssetDisplay(unit.companyId, unit.assetId!)
-        : getRegimenDisplay(unit.regimenId!);
+      unit.unitKind === "regimen"
+        ? getRegimenDisplay(unit.regimenId!)
+        : unit.unitKind === "global-asset"
+          ? {
+              ...getAssetDisplay(
+                globalPrimaryMember!.companyId,
+                globalPrimaryMember!.assetId,
+              ),
+              name: unit.globalAssetGroup!.displayName,
+            }
+          : getAssetDisplay(unit.companyId, unit.assetId!);
     const href =
-      unit.unitKind === "asset" ? `/assets/${unit.companyId}/${unit.assetId}` : null;
+      unit.unitKind === "regimen"
+        ? null
+        : unit.unitKind === "global-asset"
+          ? `/assets/${globalPrimaryMember!.companyId}/${globalPrimaryMember!.assetId}`
+          : `/assets/${unit.companyId}/${unit.assetId}`;
 
     const resolution =
-      unit.unitKind === "asset"
-        ? resolveAssetMechanismFamily(unit.companyId, unit.assetId!)
-        : resolveRegimenMechanismFamily(unit.regimenId!);
+      unit.unitKind === "regimen"
+        ? resolveRegimenMechanismFamily(unit.regimenId!)
+        : unit.unitKind === "global-asset"
+          ? resolveGlobalAssetMechanismFamily(unit.globalAssetGroup!)
+          : resolveAssetMechanismFamily(unit.companyId, unit.assetId!);
 
     if (resolution.family === null) {
       gaps.push({
@@ -186,7 +245,12 @@ export function getEfficacyComparison(): EfficacyComparisonView {
     const candidates: EvidenceCandidate[] = [];
     const reasons: EfficacyDispositionReason[] = [];
     weightBearing.forEach((detail, index) => {
-      const screening = screenStudy(detail, index);
+      const globalMember = unit.globalAssetGroup?.members.find(
+        (member) =>
+          member.companyId === detail.study.companyId &&
+          member.assetId === detail.study.assetId,
+      );
+      const screening = screenStudy(detail, index, globalMember);
       if (screening.reason) reasons.push(screening.reason);
       else candidates.push(...screening.candidates);
     });
@@ -203,15 +267,29 @@ export function getEfficacyComparison(): EfficacyComparisonView {
       continue;
     }
 
+    const evidence = selectRepresentative(candidates, detailByStudyId);
+    const evidenceDisplay = getAssetDisplay(
+      evidence.studyCompanyId,
+      evidence.studyAssetId,
+    );
     const row: EfficacyComparisonRow = {
       unitKey,
       unitKind: unit.unitKind,
       name: display.name,
-      companyName: display.companyName,
-      companyId: unit.companyId,
+      companyName:
+        unit.unitKind === "global-asset"
+          ? evidenceDisplay.companyName
+          : display.companyName,
+      companyId:
+        unit.unitKind === "global-asset"
+          ? evidence.studyCompanyId
+          : unit.companyId,
       mechanism: display.mechanism,
-      href,
-      evidence: selectRepresentative(candidates, detailByStudyId),
+      href:
+        unit.unitKind === "global-asset"
+          ? `/assets/${evidence.studyCompanyId}/${evidence.studyAssetId}`
+          : href,
+      evidence,
     };
 
     const list = rowsByFamilyId.get(resolution.family.id);

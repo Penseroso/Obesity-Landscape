@@ -53,6 +53,11 @@ export type EfficacyBetweenArmValue = EfficacyValue & {
 
 export type RepresentativeEvidence = {
   studyId: string;
+  studyCompanyId: string;
+  studyAssetId: string;
+  sponsorName?: string;
+  studyRegion: string;
+  developmentScope?: string;
   studyTitle: string;
   phase: string;
   population: string;
@@ -158,8 +163,9 @@ function toValue(
 /**
  * Ranks candidates and builds the representative evidence for the winner.
  *
- * Keys, in order: phase tier, estimand, analysis population, source completeness,
- * maturity, then curated source order. Maturity sits late deliberately — the
+ * Keys, in order: authored global-development priority, phase tier, endpoint role,
+ * estimand, analysis population, source completeness, maturity, then curated source
+ * order. Maturity sits late deliberately — the
  * contract documents that it conflates finality with venue, so it is too coarse to
  * decide anything more meaningful. Duration and assessment timepoint are **not**
  * keys: both are free text ("Approximately 59 weeks", "Week 68 (48 weeks after
@@ -184,6 +190,7 @@ export function selectRepresentative(
 
   scored.sort(
     (a, b) =>
+      a.candidate.globalEvidencePriority - b.candidate.globalEvidencePriority ||
       a.candidate.phaseTier - b.candidate.phaseTier ||
       a.endpointRoleRank - b.endpointRoleRank ||
       a.estimandRank - b.estimandRank ||
@@ -252,6 +259,9 @@ export function selectRepresentative(
   // ranking's own plumbing (phase *tier* numbers, candidate counts, tie-break
   // order) — that machinery means nothing to a reader outside this codebase.
   const rationale = [
+    ...(candidate.developmentScope
+      ? [`Development scope priority: ${candidate.developmentScope}`]
+      : []),
     `Phase: ${candidate.study.phase}`,
     `Endpoint role: ${candidate.endpoint.role}`,
     `Estimand: ${anchor.estimand ?? "not reported"}`,
@@ -263,6 +273,12 @@ export function selectRepresentative(
 
   return {
     studyId: candidate.study.id,
+    studyCompanyId: candidate.study.companyId,
+    studyAssetId: candidate.study.assetId,
+    sponsorName: candidate.sponsorName,
+    studyRegion:
+      candidate.study.populationProfile?.regionRestriction ?? "Not specified",
+    developmentScope: candidate.developmentScope,
     studyTitle: candidate.study.acronym?.trim() || candidate.study.officialTitle,
     phase: candidate.study.phase,
     population: candidate.study.population,

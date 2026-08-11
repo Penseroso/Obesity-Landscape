@@ -590,26 +590,27 @@ function probeMechanismFamilyRegistry() {
  * drift silently — an authoring edit that quietly moves a unit in or out of the
  * comparison would otherwise pass every validator.
  *
- * The reviewed snapshot below is the accepted 11-of-15 result (ADR-0058).
- * Liraglutide became eligible when its directly reported SCALE percent-change
- * result replaced the formerly stored kg-only result; no eligibility rule was
- * relaxed. SUMMIT also added one body-weight Outcome after the original snapshot,
- * bringing the study counters to 52 total and 1 without an authored profile. Its
- * absence is explicitly dispositioned as unclassified and does not make the
- * tirzepatide unit eligible; other eligible tirzepatide Studies do. Changing this
- * snapshot remains a deliberate review, never a mechanical update to make the
- * probe pass again.
+ * The reviewed snapshot below is the accepted 15-of-24 result (ADR-0064). It
+ * reflects subsequent Clinical Evidence research and the explicit global-asset
+ * grouping introduced by ADR-0063; no population or metric eligibility rule was
+ * relaxed. Changing this snapshot remains a deliberate review, never a mechanical
+ * update to make the probe pass again.
  */
 const efficacyPopulationCoverageSnapshot = {
-  bodyWeightOutcomeStudies: 52,
-  bodyWeightStudiesMissingProfile: 1,
-  evidenceBearingUnits: 15,
-  eligibleUnits: 11,
-  gapUnits: 4,
+  bodyWeightOutcomeStudies: 73,
+  bodyWeightStudiesMissingProfile: 5,
+  evidenceBearingUnits: 24,
+  eligibleUnits: 15,
+  gapUnits: 9,
   gaps: {
+    "amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
+    "astrazeneca/cotadutide": "population-with-type-2-diabetes",
+    "astrazeneca/exenatide": "metric-unavailable-percent",
     "novo-nordisk/cagrilintide": "population-diabetes-status-not-specified",
     "novo-nordisk/ubt251": "population-diabetes-status-not-specified",
-    "amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
+    "pfizer/pf-06882961": "population-unclassified",
+    "pfizer/pf-07081532": "population-unclassified",
+    "pfizer/pf-08653944": "population-unclassified",
     "roche/ct-996": "population-mixed-diabetes-status",
   },
 };
@@ -655,6 +656,36 @@ function getEfficacyStudyExclusion(study, arms, hasPercentArmLevelWeightOutcome)
 
 function probeEfficacyPopulationCoverage() {
   const aggregate = readJson(path.join(generatedDir, "clinical-evidence.json"));
+  const globalAssetGroups = readJson(
+    path.join(root, "domains", "app", "config", "efficacy-global-assets.json"),
+  );
+  assert(Array.isArray(globalAssetGroups), "efficacy global asset registry must be an array");
+  const globalUnitByAsset = new Map();
+  const globalGroupIds = new Set();
+  for (const group of globalAssetGroups) {
+    assert(
+      typeof group.id === "string" && group.id.length > 0 && !globalGroupIds.has(group.id),
+      "efficacy global asset group requires a unique id",
+    );
+    globalGroupIds.add(group.id);
+    assert(
+      Array.isArray(group.members) && group.members.length > 1,
+      `efficacy global asset group "${group.id}" requires at least two members`,
+    );
+    for (const member of group.members) {
+      assert(
+        typeof member.companyId === "string" && member.companyId.length > 0 &&
+          typeof member.assetId === "string" && member.assetId.length > 0,
+        `efficacy global asset group "${group.id}" has an invalid member`,
+      );
+      const assetKey = `${member.companyId}|${member.assetId}`;
+      assert(
+        !globalUnitByAsset.has(assetKey),
+        `efficacy global asset member "${assetKey}" belongs to more than one group`,
+      );
+      globalUnitByAsset.set(assetKey, `global-asset:${group.id}`);
+    }
+  }
 
   const outcomesByEndpoint = new Map();
   for (const outcome of aggregate.outcomes) {
@@ -700,7 +731,9 @@ function probeEfficacyPopulationCoverage() {
 
   const unitStudies = new Map();
   for (const study of weightStudies) {
-    const unit = `${study.companyId}/${study.assetId}`;
+    const unit =
+      globalUnitByAsset.get(`${study.companyId}|${study.assetId}`) ??
+      `${study.companyId}/${study.assetId}`;
     const list = unitStudies.get(unit);
     if (list) list.push(study);
     else unitStudies.set(unit, [study]);

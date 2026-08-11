@@ -111,9 +111,11 @@ JSON, and only these canonical selectors import that loader.
   nowhere and is not an error. A relationship whose `role` describes the
   row's own company (a self-declared role such as a licensee recording
   itself) is excluded from the partnering company's own list. Each
-  partnered-asset row shows the actual stored `relationship.role` text (never
-  a generic "co-developed" label) so a licensee/licensor pairing is not
-  visually conflated with genuine co-development.
+  partnered-asset row shows the actual stored `relationship.role` text and its
+  associated `territories` (never a generic "co-developed" label) so a
+  licensee/licensor pairing and its regional rights are not visually conflated
+  with genuine co-development. A missing territory is disclosed as not
+  specified rather than inferred.
 - **`scopeClass`** (Contract 1.2, ADR-0053) is a filter dimension, a Program
   Register column (configurable, hidden by default), and a Program Detail /
   company-page field. It is never a badge or color-coded status pill — it
@@ -168,10 +170,18 @@ evidence; selection policy lives in that directory's sibling modules, not in the
 Clinical Evidence selectors, which contribute only record-level joins and the
 shared `comparisonGroupKeyOf` primitive.
 
-- The comparison unit is an **asset xor regimen**. Mechanism family comes from the
-  authored registry (ADR-0043); a regimen carries an authored `mechanismFamilyId`.
+- The comparison unit is an **explicit global asset group xor company-local asset
+  xor regimen**. Most assets remain company-local. A reviewed global-asset registry
+  groups only confirmed cross-company identities such as Hansoh/Regeneron
+  olatorepatide; it does not infer identity from a shared name or `assetId`.
+  Mechanism family comes from the authored registry (ADR-0043); every member of a
+  global group must resolve to one family, and a regimen carries an authored
+  `mechanismFamilyId`.
 - Selection operates on **evidence candidates** — one (Study, Endpoint, comparison
-  group) triple — ranked by trial phase tier, endpoint role, estimand, analysis
+  group) triple. Within a global asset group, an authored development-scope priority
+  is applied first (global olatorepatide evidence before Hansoh's regional evidence),
+  with ordinary ranking as fallback when the preferred scope has no eligible result.
+  The remaining keys are trial phase tier, endpoint role, estimand, analysis
   population, source completeness, evidence maturity, then curated source order.
   It is **selection, never calculation**: every rendered figure is a stored
   `result.value` for a stored anchor.
@@ -186,7 +196,7 @@ shared `comparisonGroupKeyOf` primitive.
   exactly, no additional required condition, initial treatment, randomised and
   controlled, and percent change from baseline in body weight. `mixed` and
   `not-specified` are never read as non-diabetic. `regionRestriction` is display
-  only. Coverage is frozen at 11 of 15 units by ADR-0058 and two probes.
+  only. Coverage is frozen at 15 of 24 units by ADR-0064 and two probes.
 - **One arm-level metric.** `kg` and `percentage points` never appear as an overview
   arm-level value, and units are never converted. A stored `between-arm` estimate is
   shown separately, under a **comparator-neutral heading** ("Between-arm estimate, as
@@ -217,6 +227,10 @@ shared `comparisonGroupKeyOf` primitive.
 - **Disclosure**: every fact needed to read a row renders inline, and every row
   links to its Study, its company, and — in the head-to-head list — each
   registry-resolved entity (an unresolved external comparator is flagged, not linked).
+  A global-asset row additionally identifies the selected evidence company, authored
+  sponsor label, Study population region, and development-rights scope; its asset and
+  company links follow the selected evidence rather than a permanently preferred
+  company.
   The selection-rationale disclosure is auxiliary: a button toggled by click, tap,
   Enter, or Space (never hover or focus alone), with disclosure semantics rather than a
   dialog. It adds the rationale only, and the page stays fully usable without it.

@@ -231,23 +231,26 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
             id="company-partnered-assets-heading"
             className="text-xl font-semibold tracking-tight text-foreground"
           >
-            Co-developed &amp; partnered assets ({view.partneredAssets.length})
+            Partnered assets ({view.partneredAssets.length})
           </h2>
           <p className="text-sm text-muted-foreground">
-            Principally developed by another company, with {view.company.name}
-            {" "}
-            named on the record.
+            Programs principally developed by another company, with the exact
+            role and licensed or partnered territory recorded for {" "}
+            {view.company.name}.
           </p>
           <ul className="divide-y divide-border overflow-hidden rounded-md border border-border bg-card shadow-soft">
             {view.partneredAssets.map((asset) => {
               const leadVariant = asset.programVariants[0];
               const mostAdvancedStage = leadVariant?.development.stage;
-              const roles = Array.from(
-                new Set(
-                  asset.programVariants.flatMap(
-                    (variant) => variant.relationshipRoles,
-                  ),
-                ),
+              const relationshipDetails = Array.from(
+                new Map(
+                  asset.programVariants
+                    .flatMap((variant) => variant.relationshipDetails)
+                    .map((detail) => [
+                      `${detail.role}|${detail.territories.join("|")}`,
+                      detail,
+                    ]),
+                ).values(),
               );
               const ownerHref = `/companies/${encodeURIComponent(
                 asset.ownerCompanyId,
@@ -276,9 +279,15 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
                     {mostAdvancedStage ? (
                       <StageBadge stage={mostAdvancedStage} />
                     ) : null}
-                    {roles.map((role) => (
-                      <span key={role} className={relationshipRoleBadgeClassName}>
-                        {capitalize(role)}
+                    {relationshipDetails.map((detail) => (
+                      <span
+                        key={`${detail.role}|${detail.territories.join("|")}`}
+                        className={relationshipRoleBadgeClassName}
+                      >
+                        {capitalize(detail.role)} &middot; {" "}
+                        {detail.territories.length > 0
+                          ? detail.territories.join(", ")
+                          : "Territory not specified"}
                       </span>
                     ))}
                   </span>

@@ -158,8 +158,11 @@ function resolveRelationshipCompanyId(
 }
 
 export type PartneredProgramVariant = CompanyProgramVariant & {
-  /** This company's own role(s) on this row, as stored on its `relationships`. */
-  relationshipRoles: string[];
+  /** This company's own relationship details on this row, preserving role and territory. */
+  relationshipDetails: {
+    role: string;
+    territories: string[];
+  }[];
 };
 
 export type CompanyPartneredAsset = {
@@ -183,25 +186,42 @@ export type CompanyPartneredAsset = {
 export function getPartneredAssets(companyId: string): CompanyPartneredAsset[] {
   const grouped = new Map<
     string,
-    { program: PipelineProgram; roles: string[] }[]
+    {
+      program: PipelineProgram;
+      relationshipDetails: PartneredProgramVariant["relationshipDetails"];
+    }[]
   >();
 
   for (const program of pipelinePrograms) {
     if (program.companyId === companyId) continue;
-    const roles = new Set<string>();
+    const relationshipDetails: PartneredProgramVariant["relationshipDetails"] =
+      [];
     for (const relationship of program.relationships ?? []) {
       if (
         resolveRelationshipCompanyId(relationship, program.companyId) ===
         companyId
       ) {
-        roles.add(relationship.role);
+        const detail = {
+          role: relationship.role,
+          territories: relationship.territories ?? [],
+        };
+        if (
+          !relationshipDetails.some(
+            (existing) =>
+              existing.role === detail.role &&
+              JSON.stringify(existing.territories) ===
+                JSON.stringify(detail.territories),
+          )
+        ) {
+          relationshipDetails.push(detail);
+        }
       }
     }
-    if (roles.size === 0) continue;
+    if (relationshipDetails.length === 0) continue;
 
     const key = `${program.companyId}|${program.assetId}`;
     const list = grouped.get(key) ?? [];
-    list.push({ program, roles: Array.from(roles) });
+    list.push({ program, relationshipDetails });
     grouped.set(key, list);
   }
 
@@ -209,8 +229,11 @@ export function getPartneredAssets(companyId: string): CompanyPartneredAsset[] {
     .map<CompanyPartneredAsset>((entries) => {
       const [first] = entries;
       const sorted = sortProgramVariants(entries.map((entry) => entry.program));
-      const rolesByProgramId = new Map(
-        entries.map((entry) => [entry.program.id, entry.roles]),
+      const relationshipDetailsByProgramId = new Map(
+        entries.map((entry) => [
+          entry.program.id,
+          entry.relationshipDetails,
+        ]),
       );
       return {
         ownerCompanyId: first.program.companyId,
@@ -220,7 +243,8 @@ export function getPartneredAssets(companyId: string): CompanyPartneredAsset[] {
         codeName: first.program.codeName,
         programVariants: sorted.map((program) => ({
           ...toVariant(program),
-          relationshipRoles: rolesByProgramId.get(program.id) ?? [],
+          relationshipDetails:
+            relationshipDetailsByProgramId.get(program.id) ?? [],
         })),
       };
     })

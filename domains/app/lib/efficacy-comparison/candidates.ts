@@ -63,6 +63,10 @@ export const dispositionStages: EfficacyDispositionReason[] = [
 
 export type EvidenceCandidate = {
   study: ClinicalStudyRecord;
+  /** Feature-authored cross-company priority; lower values win first. */
+  globalEvidencePriority: number;
+  developmentScope?: string;
+  sponsorName?: string;
   studyIndex: number;
   endpoint: ClinicalEndpointRecord;
   endpointIndex: number;
@@ -194,6 +198,11 @@ export type StudyScreening =
 export function screenStudy(
   detail: StudyDetailView,
   studyIndex: number,
+  globalContext?: {
+    evidencePriority: number;
+    developmentScope: string;
+    sponsorName: string;
+  },
 ): StudyScreening {
   const { study, arms } = detail;
 
@@ -227,6 +236,9 @@ export function screenStudy(
       if (!hasFocalTreatmentValue(group, arms, detail.analysisGroups)) return;
       candidates.push({
         study,
+        globalEvidencePriority: globalContext?.evidencePriority ?? 0,
+        developmentScope: globalContext?.developmentScope,
+        sponsorName: globalContext?.sponsorName,
         studyIndex,
         endpoint: endpointGroup.endpoint,
         endpointIndex,
