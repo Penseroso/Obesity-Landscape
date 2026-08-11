@@ -1,4 +1,8 @@
-import { getScopeClassEntry, getStageBucketId } from "./constants";
+import {
+  getMechanismFamilyId,
+  getScopeClassEntry,
+  getStageBucketId,
+} from "./constants";
 import type { PipelineProgram, ProgramFilters } from "./types";
 
 export const emptyProgramFilters: ProgramFilters = {
@@ -9,6 +13,7 @@ export const emptyProgramFilters: ProgramFilters = {
   stageBucket: "All",
   status: "All",
   scopeClass: "All",
+  mechanismFamily: "All",
   keyword: "",
 };
 
@@ -39,6 +44,17 @@ export function filterPrograms(
       filters.status === "All" || program.development.status === filters.status;
     const matchesScopeClass =
       filters.scopeClass === "All" || program.scopeClass === filters.scopeClass;
+    // Mirrors the Company × Development Stage Matrix's stageBucket drill-down:
+    // resolved by registry family, not the raw mechanism string, so this
+    // reproduces the Mechanism Mix donut's slice exactly (several raw
+    // mechanism strings can share one family).
+    const matchesMechanismFamily =
+      filters.mechanismFamily === "All" ||
+      (filters.mechanismFamily === "undisclosed"
+        ? program.technical.mechanism === null
+        : program.technical.mechanism !== null &&
+          getMechanismFamilyId(program.technical.mechanism) ===
+            filters.mechanismFamily);
 
     // Keyword search is limited to fields a user can actually see somewhere
     // in the UI (company, asset, code name, mechanism, platform, indication,
@@ -70,6 +86,7 @@ export function filterPrograms(
       matchesStageBucket &&
       matchesStatus &&
       matchesScopeClass &&
+      matchesMechanismFamily &&
       (!keyword || searchable.includes(keyword))
     );
   });

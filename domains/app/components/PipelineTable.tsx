@@ -10,6 +10,7 @@ import {
 } from "@/domains/app/config/program-table";
 import {
   getScopeClassEntry,
+  mechanismFamilyById,
   stageBuckets,
   type StageBucketId,
 } from "@/domains/company-pipeline/lib/constants";
@@ -247,12 +248,18 @@ export function PipelineTable({
     () => searchParams.get("keyword") ?? "",
     [searchParams],
   );
+  const seededMechanismFamily = useMemo<ProgramFilters["mechanismFamily"]>(() => {
+    const param = searchParams.get("mechanismFamily");
+    if (param === "undisclosed") return "undisclosed";
+    return param && mechanismFamilyById.has(param) ? param : "All";
+  }, [searchParams]);
 
   const [filters, setFilters] = useState<ProgramFilters>(() => ({
     ...emptyProgramFilters,
     company: seededCompany,
     stageBucket: seededStageBucket,
     keyword: seededKeyword,
+    mechanismFamily: seededMechanismFamily,
   }));
 
   // Re-apply the seed when the URL's seed actually changes (deep link,
@@ -261,7 +268,7 @@ export function PipelineTable({
   // FilterBar edits (indication/route/exact stage/status, or a keyword typed
   // directly into the box) are never reset. The ref guard skips the no-op
   // case where the seed is unchanged.
-  const seedKey = `${seededCompany}|${seededStageBucket}|${seededKeyword}`;
+  const seedKey = `${seededCompany}|${seededStageBucket}|${seededKeyword}|${seededMechanismFamily}`;
   const lastSeedKeyRef = useRef(seedKey);
   useEffect(() => {
     if (lastSeedKeyRef.current === seedKey) return;
@@ -271,8 +278,9 @@ export function PipelineTable({
       company: seededCompany,
       stageBucket: seededStageBucket,
       keyword: seededKeyword,
+      mechanismFamily: seededMechanismFamily,
     }));
-  }, [seedKey, seededCompany, seededStageBucket, seededKeyword]);
+  }, [seedKey, seededCompany, seededStageBucket, seededKeyword, seededMechanismFamily]);
 
   const [sort, setSort] = useState<ProgramSort | null>(null);
   const [selectedProgram, setSelectedProgram] = useState<PipelineProgram | null>(
@@ -379,6 +387,26 @@ export function PipelineTable({
     );
   };
 
+  const activeMechanismFamilyLabel =
+    filters.mechanismFamily === "All"
+      ? undefined
+      : filters.mechanismFamily === "undisclosed"
+        ? "Mechanism undisclosed"
+        : mechanismFamilyById.get(filters.mechanismFamily)?.label;
+  const clearMechanismFamily = () => {
+    setFilters((prev) => ({ ...prev, mechanismFamily: "All" }));
+    if (typeof window === "undefined" || !window.location.search) return;
+    const params = new URLSearchParams(window.location.search);
+    if (!params.has("mechanismFamily")) return;
+    params.delete("mechanismFamily");
+    const query = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      query ? `${window.location.pathname}?${query}` : window.location.pathname,
+    );
+  };
+
   const toggleSort = (columnId: ProgramTableColumnId) => {
     setSort((current) => ({
       columnId,
@@ -392,20 +420,40 @@ export function PipelineTable({
   return (
     <div className="space-y-4">
       <FilterBar filters={filters} options={options} onChange={setFilters} />
-      {activeStageBucketLabel ? (
+      {activeStageBucketLabel || activeMechanismFamilyLabel ? (
         <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="text-muted-foreground">Stage bucket:</span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-semibold text-foreground">
-            {activeStageBucketLabel}
-            <button
-              type="button"
-              onClick={clearStageBucket}
-              aria-label={`Clear ${activeStageBucketLabel} stage bucket filter`}
-              className="rounded-full text-muted-foreground transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
-            >
-              <span aria-hidden="true">✕</span>
-            </button>
-          </span>
+          {activeStageBucketLabel ? (
+            <>
+              <span className="text-muted-foreground">Stage bucket:</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-semibold text-foreground">
+                {activeStageBucketLabel}
+                <button
+                  type="button"
+                  onClick={clearStageBucket}
+                  aria-label={`Clear ${activeStageBucketLabel} stage bucket filter`}
+                  className="rounded-full text-muted-foreground transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
+                >
+                  <span aria-hidden="true">✕</span>
+                </button>
+              </span>
+            </>
+          ) : null}
+          {activeMechanismFamilyLabel ? (
+            <>
+              <span className="text-muted-foreground">Mechanism:</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-semibold text-foreground">
+                {activeMechanismFamilyLabel}
+                <button
+                  type="button"
+                  onClick={clearMechanismFamily}
+                  aria-label={`Clear ${activeMechanismFamilyLabel} mechanism filter`}
+                  className="rounded-full text-muted-foreground transition hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary"
+                >
+                  <span aria-hidden="true">✕</span>
+                </button>
+              </span>
+            </>
+          ) : null}
         </div>
       ) : null}
       <section className="overflow-hidden rounded-md border border-border bg-card shadow-soft">

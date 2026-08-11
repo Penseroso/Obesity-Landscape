@@ -3,10 +3,13 @@ import {
   developmentStageRank,
   developmentStages,
   developmentStatuses,
+  getMechanismFamilyId,
   getStageBucketId,
+  mechanismFamilyById,
   obesityPurposeQualifyingScopeClasses,
   scopeClasses,
   stageBuckets,
+  type MechanismFamilyComposition,
   type StageBucketId,
 } from "./constants";
 import type {
@@ -164,29 +167,101 @@ export function getRouteDistribution(
     .sort((a, b) => b.count - a.count || a.route.localeCompare(b.route));
 }
 
-export function getMostAdvancedPrograms(
-  programs: PipelineProgram[],
-  limit = 5,
-): PipelineProgram[] {
-  return programs
-    .slice()
-    .sort((a, b) => {
-      const rankDiff =
-        (developmentStageRank[b.development.stage] ?? 0) -
-        (developmentStageRank[a.development.stage] ?? 0);
+export type MechanismMixEntry = {
+  /** Stable identity for list rendering. Never reused across the three kinds below. */
+  key: string;
+  kind: "family" | "other" | "undisclosed";
+  familyId: string | null;
+  label: string;
+  composition: MechanismFamilyComposition | null;
+  count: number;
+  share: number;
+};
 
-      return rankDiff !== 0
-        ? rankDiff
-        : a.assetName.localeCompare(b.assetName);
+/**
+ * Program count by mechanism family (registry-resolved from
+ * `technical.mechanism`), for the Overview's mechanism-mix panel.
+ *
+ * Capped to the `topN` highest-count families (registry `sortRank` as tie
+ * break) plus one "Other mechanisms" aggregate for the rest - the registry
+ * carries several dozen families, most represented by one or two programs, and
+ * listing every one turns the panel into an illegible scroll of slivers.
+ *
+ * A program with an undisclosed mechanism (a real source state, not bad data -
+ * see `resolveMechanismFamilyFromMechanisms` in
+ * `domains/app/lib/efficacy-comparison/mechanism-family.ts`) is never folded
+ * into "Other": that bucket is a disclosure state, not a long-tail mechanism,
+ * so it always renders as its own trailing row when present.
+ */
+export function getMechanismMix(
+  programs: PipelineProgram[],
+  topN = 6,
+): MechanismMixEntry[] {
+  const counts = new Map<string, number>();
+  let undisclosedCount = 0;
+
+  for (const program of programs) {
+    const mechanism = program.technical.mechanism;
+    if (mechanism === null) {
+      undisclosedCount += 1;
+      continue;
+    }
+    const familyId = getMechanismFamilyId(mechanism);
+    counts.set(familyId, (counts.get(familyId) ?? 0) + 1);
+  }
+
+  const total = programs.length || 1;
+
+  const families = Array.from(counts.entries())
+    .map(([familyId, count]) => {
+      const family = mechanismFamilyById.get(familyId)!;
+      return { familyId, label: family.label, composition: family.composition, count, sortRank: family.sortRank };
     })
-    .slice(0, limit);
+    .sort((a, b) => b.count - a.count || a.sortRank - b.sortRank);
+
+  const entries: MechanismMixEntry[] = families.slice(0, topN).map((family) => ({
+    key: family.familyId,
+    kind: "family",
+    familyId: family.familyId,
+    label: family.label,
+    composition: family.composition,
+    count: family.count,
+    share: family.count / total,
+  }));
+
+  const otherCount = families
+    .slice(topN)
+    .reduce((sum, family) => sum + family.count, 0);
+  if (otherCount > 0) {
+    entries.push({
+      key: "other",
+      kind: "other",
+      familyId: null,
+      label: "Other mechanisms",
+      composition: null,
+      count: otherCount,
+      share: otherCount / total,
+    });
+  }
+
+  if (undisclosedCount > 0) {
+    entries.push({
+      key: "undisclosed",
+      kind: "undisclosed",
+      familyId: null,
+      label: "Mechanism undisclosed",
+      composition: null,
+      count: undisclosedCount,
+      share: undisclosedCount / total,
+    });
+  }
+
+  return entries;
 }
 
 /**
  * Program Register default ordering: most advanced development-stage
- * registry rank first, then company name, then asset name. Reuses the
- * same registry rank semantics as getMostAdvancedPrograms - no new
- * maturity calculation.
+ * registry rank first, then company name, then asset name.
  */
 export function sortProgramsForRegister(
   programs: PipelineProgram[],

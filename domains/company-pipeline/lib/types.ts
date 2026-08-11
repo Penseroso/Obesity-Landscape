@@ -216,6 +216,14 @@ export type StageBucketFilter = StageBucketId | "All";
  * non-qualifying class by default would silently drop 43 of 121 current rows. */
 export type ScopeClassFilter = ScopeClass | "All";
 
+/**
+ * Overview mechanism-mix filter. A registry mechanism-family id, the
+ * `"undisclosed"` sentinel (rows whose `technical.mechanism` is null), or
+ * `"All"`. URL-driven only (the Overview's Mechanism Mix drill-down), same
+ * as `StageBucketFilter` - the FilterBar exposes no mechanism control.
+ */
+export type MechanismFamilyFilter = string | "undisclosed" | "All";
+
 export type ProgramFilters = {
   company: string;
   indication: string;
@@ -224,6 +232,7 @@ export type ProgramFilters = {
   stageBucket: StageBucketFilter;
   status: DevelopmentStatusFilter;
   scopeClass: ScopeClassFilter;
+  mechanismFamily: MechanismFamilyFilter;
   keyword: string;
 };
 

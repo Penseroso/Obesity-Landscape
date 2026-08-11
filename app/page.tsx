@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CompanyStageMatrix } from "@/domains/app/components/CompanyStageMatrix";
-import { MostAdvancedProgramsTable } from "@/domains/app/components/MostAdvancedProgramsTable";
+import { MechanismMixPanel } from "@/domains/app/components/MechanismMixPanel";
 import { OverviewMetadataStrip } from "@/domains/app/components/OverviewMetadataStrip";
 import { RouteMixPanel } from "@/domains/app/components/RouteMixPanel";
 import { companies, pipelinePrograms } from "@/domains/company-pipeline/lib/data";
@@ -8,7 +8,7 @@ import {
   getClinicalStageProgramCount,
   getCompanyStageMatrix,
   getLatestUpdateDate,
-  getMostAdvancedPrograms,
+  getMechanismMix,
   getObesityPurposeProgramCount,
   getRouteDistribution,
 } from "@/domains/company-pipeline/lib/selectors";
@@ -27,7 +27,7 @@ export default function OverviewPage() {
   const lastUpdated = getLatestUpdateDate(pipelinePrograms);
   const stageMatrix = getCompanyStageMatrix(companies, pipelinePrograms);
   const routeDistribution = getRouteDistribution(pipelinePrograms);
-  const mostAdvancedPrograms = getMostAdvancedPrograms(pipelinePrograms, 5);
+  const mechanismMix = getMechanismMix(pipelinePrograms);
 
   return (
     <div className="space-y-6 pb-10">
@@ -56,7 +56,7 @@ export default function OverviewPage() {
 
       <section className="grid items-stretch gap-6 md:grid-cols-2">
         <RouteMixPanel entries={routeDistribution} />
-        <MostAdvancedProgramsTable programs={mostAdvancedPrograms} />
+        <MechanismMixPanel entries={mechanismMix} />
       </section>
     </div>
   );
