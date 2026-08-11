@@ -228,10 +228,15 @@ export function PipelineTable({
     }
     return map;
   }, [programs]);
+  const routeSet = useMemo(
+    () => new Set(programs.map((program) => program.administration.route)),
+    [programs],
+  );
 
   // URL-driven filters for the Company × Development Stage Matrix drill-down
   // and the Company Detail asset index. `company` (by companyId), `stageBucket`
-  // (a bucket id), and `keyword` (raw text, e.g. an asset name) are read;
+  // (a bucket id), `route` (exact stored route string, the Route Mix
+  // drill-down), and `keyword` (raw text, e.g. an asset name) are read;
   // unknown or invalid values fall back to "All"/"". Every other filter stays
   // at its default, so a plain /assets visit is unchanged.
   const seededCompany = useMemo(() => {
@@ -244,6 +249,10 @@ export function PipelineTable({
       ? (bucketParam as StageBucketId)
       : "All";
   }, [searchParams]);
+  const seededRoute = useMemo(() => {
+    const routeParam = searchParams.get("route");
+    return routeParam && routeSet.has(routeParam) ? routeParam : "All";
+  }, [searchParams, routeSet]);
   const seededKeyword = useMemo(
     () => searchParams.get("keyword") ?? "",
     [searchParams],
@@ -258,6 +267,7 @@ export function PipelineTable({
     ...emptyProgramFilters,
     company: seededCompany,
     stageBucket: seededStageBucket,
+    route: seededRoute,
     keyword: seededKeyword,
     mechanismFamily: seededMechanismFamily,
   }));
@@ -265,10 +275,10 @@ export function PipelineTable({
   // Re-apply the seed when the URL's seed actually changes (deep link,
   // browser back/forward, chip removal, reset). This overrides ONLY the
   // URL-driven dimensions and merges into the current filters, so manual
-  // FilterBar edits (indication/route/exact stage/status, or a keyword typed
+  // FilterBar edits (indication/exact stage/status, or a keyword typed
   // directly into the box) are never reset. The ref guard skips the no-op
   // case where the seed is unchanged.
-  const seedKey = `${seededCompany}|${seededStageBucket}|${seededKeyword}|${seededMechanismFamily}`;
+  const seedKey = `${seededCompany}|${seededStageBucket}|${seededRoute}|${seededKeyword}|${seededMechanismFamily}`;
   const lastSeedKeyRef = useRef(seedKey);
   useEffect(() => {
     if (lastSeedKeyRef.current === seedKey) return;
@@ -277,10 +287,18 @@ export function PipelineTable({
       ...prev,
       company: seededCompany,
       stageBucket: seededStageBucket,
+      route: seededRoute,
       keyword: seededKeyword,
       mechanismFamily: seededMechanismFamily,
     }));
-  }, [seedKey, seededCompany, seededStageBucket, seededKeyword, seededMechanismFamily]);
+  }, [
+    seedKey,
+    seededCompany,
+    seededStageBucket,
+    seededRoute,
+    seededKeyword,
+    seededMechanismFamily,
+  ]);
 
   const [sort, setSort] = useState<ProgramSort | null>(null);
   const [selectedProgram, setSelectedProgram] = useState<PipelineProgram | null>(
