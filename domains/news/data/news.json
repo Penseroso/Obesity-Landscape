@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-08-11",
+  "windowDays": 30,
+  "coverage": [
+    { "sourceId": "dailypharm", "checkedAt": "2026-08-11", "status": "reviewed" },
+    { "sourceId": "medipana", "checkedAt": "2026-08-11", "status": "reviewed" },
+    {
+      "sourceId": "hitnews",
+      "checkedAt": "2026-08-11",
+      "status": "blocked",
+      "note": "Publication site returned an internal error during review."
+    },
+    { "sourceId": "biospectator", "checkedAt": "2026-08-11", "status": "reviewed" },
+    { "sourceId": "yakup", "checkedAt": "2026-08-11", "status": "reviewed" },
+    { "sourceId": "bosa", "checkedAt": "2026-08-11", "status": "reviewed" },
+    {
+      "sourceId": "endpoints",
+      "checkedAt": "2026-08-11",
+      "status": "blocked",
+      "note": "Publication site returned an internal error during review."
+    },
+    { "sourceId": "stat", "checkedAt": "2026-08-11", "status": "reviewed" },
+    { "sourceId": "fierce-biotech", "checkedAt": "2026-08-11", "status": "reviewed" },
+    { "sourceId": "biopharma-dive", "checkedAt": "2026-08-11", "status": "reviewed" },
+    {
+      "sourceId": "reuters-healthcare-pharmaceuticals",
+      "checkedAt": "2026-08-11",
+      "status": "blocked",
+      "note": "Publication site returned an internal error during review."
+    }
+  ],
+  "stories": [
+    {
+      "id": "2026-07-23-lilly-retatrutide-triumph-2-3-results",
+      "headline": "Lilly reports Phase 3 retatrutide results from TRIUMPH-2 and TRIUMPH-3",
+      "summary": "Fierce Biotech는 비만 또는 과체중 성인을 대상으로 한 리타트루타이드 3상 임상시험 2건의 톱라인 결과와 체중감량 결과를 보도했다.",
+      "category": "clinical-results",
+      "publishedAt": "2026-07-23",
+      "sources": [
+        {
+          "sourceId": "fierce-biotech",
+          "url": "https://www.fiercebiotech.com/biotech/lillys-triple-g-drug-hits-226-weight-loss-cardio-risk-impact-disappoints",
+          "title": "Lilly's triple-G drug hits 22.6% weight loss, but impact on reducing cardio risk is less clear",
+          "publishedAt": "2026-07-23",
+          "checkedAt": "2026-08-11",
+          "contentAccess": "full"
+        }
+      ],
+      "relatedEntities": [
+        { "entityType": "company", "companyId": "eli-lilly-and-company" },
+        { "entityType": "asset", "companyId": "eli-lilly-and-company", "assetId": "ly3437943" },
+        {
+          "entityType": "program",
+          "companyId": "eli-lilly-and-company",
+          "assetId": "ly3437943",
+          "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection"
+        },
+        {
+          "entityType": "study",
+          "companyId": "eli-lilly-and-company",
+          "assetId": "ly3437943",
+          "studyId": "eli-lilly-and-company-retatrutide-triumph-2-nct05929079",
+          "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection"
+        },
+        {
+          "entityType": "study",
+          "companyId": "eli-lilly-and-company",
+          "assetId": "ly3437943",
+          "studyId": "eli-lilly-and-company-retatrutide-triumph-3-nct05882045",
+          "programId": "eli-lilly-and-company-ly3437943-subcutaneous-injection"
+        }
+      ],
+      "canonicalReview": {
+        "status": "review-required",
+        "route": "clinical-evidence",
+        "reviewedAt": "2026-08-11"
+      }
+    },
+    {
+      "id": "2026-07-18-progen-pg-102-high-dose-phase-1",
+      "headline": "ProGen advances PG-102 into a high-dose Phase 1 study",
+      "summary": "데일리팜은 프로젠이 GLP-1/GLP-2 이중작용제 PG-102의 고용량 후속 1상 IND 승인을 받았다고 보도했다. 기존 저용량 연구 이후 추가 체중감량과 위장관 내약성을 확인하려는 개발 진전이다.",
+      "category": "new-candidate",
+      "publishedAt": "2026-07-18",
+      "sources": [
+        {
+          "sourceId": "dailypharm",
+          "url": "https://www.dailypharm.com/user/news/340562",
+          "title": "\"안전하게 많이 뺀다\"…유한 자회사의 고용량 비만 임상 승부수",
+          "publishedAt": "2026-07-18",
+          "checkedAt": "2026-08-11",
+          "contentAccess": "full"
+        }
+      ],
+      "relatedEntities": [],
+      "canonicalReview": {
+        "status": "review-required",
+        "route": "company-pipeline",
+        "reviewedAt": "2026-08-11"
+      }
+    }
+  ]
+}

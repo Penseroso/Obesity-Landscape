@@ -2,7 +2,8 @@
 
 Next.js application and source-based dataset for the competitive
 obesity/incretin development landscape. The repository tracks Company/Pipeline
-records and a separate Clinical Evidence v3 domain.
+records, a separate Clinical Evidence v3 domain, and a rolling non-canonical
+News discovery domain.
 
 Agents start at [`AGENTS.md`](AGENTS.md). Current rules live in the
 [Data Protocol](domains/company-pipeline/docs/README.md), the
@@ -29,6 +30,13 @@ domains/clinical-evidence/data/clinical-evidence/<company-id>/<asset-id>/clinica
   -> domains/clinical-evidence/lib
      + domains/app/lib/clinical-evidence/selectors
   -> company, asset, program, and study UI
+
+News snapshot (30-day rolling window)
+domains/news/data/{sources,news}.json
+  -> npm run data:validate:news
+  -> domains/news/lib
+     + domains/app/lib/news/read-model.ts
+  -> /news
 ```
 
 Editable source data is authoritative. Files under `data/generated/` are
@@ -43,6 +51,7 @@ boundary is defined in the
 - program detail drawer with clinical context;
 - company detail and clinical inventory;
 - asset-level focal and linked study views;
+- Latest News with source-coverage and canonical-review disclosure;
 - Study detail with Arms, AnalysisGroups, Endpoints, Outcomes, and sources.
 
 ## Repository structure
@@ -66,6 +75,8 @@ boundary is defined in the
   types, loading, and Clinical Evidence-owned editable data under
   `domains/clinical-evidence/data/` (source records and fixtures, relocated in
   the post-Module-8 D4 execution module);
+- `domains/news/`: source registry, 30-day rolling reviewed snapshot, validator,
+  and workflow for temporary News discovery data;
 - domain-owned editable data, relocated in the post-Module-8 D4 execution
   module (semantic ownership was decided in Module 7, D4; D3 was resolved by
   retention in Module 8, which removed the earlier relocation precondition):
@@ -96,6 +107,9 @@ npm run data:validate:clinical-evidence
 npm run data:validate:clinical-evidence:generated
 npm run data:validate:clinical-evidence:synthetic
 npm run data:validate:synthetic
+npm run data:validate:news
+npm run data:validate:news:synthetic
+npm run data:probe:news-source-overlap
 ```
 
 The repository has no GitHub Actions CI; workflows report local validation

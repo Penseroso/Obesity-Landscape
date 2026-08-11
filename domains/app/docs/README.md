@@ -17,6 +17,7 @@ boundaries. Historical UI audits are not part of the implementation path.
 | `/` | Portfolio overview and summary views |
 | `/assets` | Searchable/filterable program register |
 | `/efficacy-comparison` | Reported body-weight reduction by mechanism family |
+| `/news` | Rolling reviewed media discovery from the News Core 11 |
 | `/companies/[companyId]` | Company detail and associated clinical inventory |
 | `/assets/[companyId]/[assetId]` | Focal and linked studies for an asset |
 | `/studies/[studyId]` | Study, arms, endpoints, outcomes, and source detail |
@@ -52,6 +53,15 @@ JSON, and only these canonical selectors import that loader.
 ## Data boundaries
 
 - UI reads generated artifacts through typed loaders and selectors.
+- News is the deliberate exception to the generated-artifact rule: `/news`
+  reads the validated `domains/news/data/news.json` snapshot through its sole
+  typed loader. The consumer surface shows only Story date, headline, summary,
+  and source links; operational review and coverage metadata stays internal.
+- `/news` presents Stories in stored newest-first order, at most 10 per page.
+  Additional pages use shareable `?page=N` URLs and ordinary numbered,
+  previous, and next navigation; pagination is hidden when there are 10 or
+  fewer Stories. Invalid or out-of-range page values resolve to page 1. This is
+  a UI policy and does not change News retention or source data.
 - Program-specific clinical retrieval uses explicit `Study.programId`; it does
   not infer a relationship from asset, indication, title, or source URL.
 - Asset views may use the generated focal/linked asset-study projection. Focal

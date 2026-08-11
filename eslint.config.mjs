@@ -28,6 +28,11 @@ const clinicalDataModuleSameDirRestriction = {
   message:
     "Read clinical evidence through @/domains/app/lib/clinical-evidence/selectors, not the raw data layer.",
 };
+const newsSnapshotRestriction = {
+  group: ["**/news/data/news.json", "**/news/data/sources.json"],
+  message:
+    "Import News data only from domains/news/lib/data.ts, then consume it through the Application News read model.",
+};
 
 const eslintConfig = [
   ...nextVitals,
@@ -44,6 +49,7 @@ const eslintConfig = [
           patterns: [
             clinicalGeneratedJsonRestriction,
             clinicalCanonicalDataModuleRestriction,
+            newsSnapshotRestriction,
           ],
         },
       ],
@@ -59,6 +65,7 @@ const eslintConfig = [
           patterns: [
             clinicalCanonicalDataModuleRestriction,
             clinicalDataModuleSameDirRestriction,
+            newsSnapshotRestriction,
           ],
         },
       ],
@@ -71,7 +78,7 @@ const eslintConfig = [
       "no-restricted-imports": [
         "error",
         {
-          patterns: [clinicalGeneratedJsonRestriction],
+          patterns: [clinicalGeneratedJsonRestriction, newsSnapshotRestriction],
         },
       ],
     },
@@ -88,6 +95,22 @@ const eslintConfig = [
             clinicalGeneratedJsonRestriction,
             clinicalCanonicalDataModuleRestriction,
             clinicalDataModuleSameDirRestriction,
+            newsSnapshotRestriction,
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // The canonical News loader alone may import the validated snapshot and registry.
+    files: ["domains/news/lib/data.ts"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            clinicalGeneratedJsonRestriction,
+            clinicalCanonicalDataModuleRestriction,
           ],
         },
       ],

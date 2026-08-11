@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { href: "/", label: "Overview" },
   { href: "/assets", label: "Program Register" },
   { href: "/efficacy-comparison", label: "Efficacy Comparison" },
+  { href: "/news", label: "Latest News" },
 ] as const;
 
 const baseClassName =

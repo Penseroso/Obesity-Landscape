@@ -16,6 +16,7 @@ read only the path for the task. Do not read the full documentation tree.
 | --- | --- | --- |
 | Company/Pipeline research | [`research-workflow.md`](domains/company-pipeline/docs/research-workflow.md), [`Data Protocol`](domains/company-pipeline/docs/README.md), [`entities-and-rows.md`](domains/company-pipeline/docs/entities-and-rows.md), [`source-and-entry-policy.md`](domains/company-pipeline/docs/source-and-entry-policy.md) | Generated-output changes: [`generated-output-contract.md`](domains/company-pipeline/docs/generated-output-contract.md). Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
 | Clinical Evidence research | [`workflow.md`](domains/clinical-evidence/docs/workflow.md) and [`Clinical Evidence Data Contract`](domains/clinical-evidence/docs/README.md) | Unrepresentable case: [`edge-cases.md`](domains/company-pipeline/docs/edge-cases.md). |
+| Latest News research | [`workflow.md`](domains/news/docs/workflow.md) and [`News Data Contract`](domains/news/docs/README.md) | None by default; News does not enter canonical data workflows in v1. |
 | Schema or validator | Relevant type file, relevant contract, and the relevant section of `scripts/data-registry.mjs` | Aggregate/projection change: generated-output contract. Workflow only if operator behavior changes. |
 | UI | [`UI Reference`](domains/app/docs/README.md), then only the relevant route, component, selector, and read-model files | Data contract only when the UI consumes or changes that contract's meaning. |
 | Historical decision review | [`decision-log.md`](domains/company-pipeline/docs/decision-log.md), then the linked current authority | Use [`docs/history/README.md`](docs/history/README.md) only when the compact index is insufficient. |
@@ -41,6 +42,21 @@ Explicit Clinical Evidence intent uses this two-tier rule:
 Broad terms without clinical context, such as earnings results or a
 manufacturing test, remain Company/Pipeline requests. Mentioning an asset does
 not replace the required company name.
+
+Explicit Latest News intent routes to **Latest News research** when the requested
+deliverable is recent media coverage or a news summary. Strong triggers are
+`뉴스`, `news`, `latest news`, `recent news`, `최근 기사`, and `언론 보도`.
+A company name does not change this route when the requested output remains
+news coverage. If the request instead asks to refresh or update canonical
+Company/Pipeline or Clinical Evidence data and merely names a news article as
+an input, use the applicable canonical workflow above. A combined request must
+keep News research and canonical research as separate execution scopes.
+
+Latest News research writes only `domains/news/data/news.json`. It may read
+the checked-out canonical manifests to validate explicit `relatedEntities`, but
+it does not edit Company/Pipeline or Clinical Evidence operating or generated
+data. Conversely, those canonical workflows do not read News as a preflight or
+completion input in v1.
 
 For a Clinical Evidence request, do **not** run Company/Pipeline Research and do
 not edit Company/Pipeline operating data or generated artifacts. Clinical

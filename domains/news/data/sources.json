@@ -1,0 +1,79 @@
+[
+  {
+    "id": "dailypharm",
+    "name": "데일리팜",
+    "region": "domestic",
+    "baseUrl": "https://www.dailypharm.com/",
+    "allowedHosts": ["dailypharm.com"]
+  },
+  {
+    "id": "medipana",
+    "name": "메디파나",
+    "region": "domestic",
+    "baseUrl": "https://www.medipana.com/",
+    "allowedHosts": ["medipana.com"]
+  },
+  {
+    "id": "hitnews",
+    "name": "히트뉴스",
+    "region": "domestic",
+    "baseUrl": "https://www.hitnews.co.kr/",
+    "allowedHosts": ["hitnews.co.kr"]
+  },
+  {
+    "id": "biospectator",
+    "name": "바이오스펙테이터",
+    "region": "domestic",
+    "baseUrl": "https://www.biospectator.com/",
+    "allowedHosts": ["biospectator.com"]
+  },
+  {
+    "id": "yakup",
+    "name": "약업신문",
+    "region": "domestic",
+    "baseUrl": "https://www.yakup.com/",
+    "allowedHosts": ["yakup.com"]
+  },
+  {
+    "id": "bosa",
+    "name": "의학신문",
+    "region": "domestic",
+    "baseUrl": "https://www.bosa.co.kr/",
+    "allowedHosts": ["bosa.co.kr"]
+  },
+  {
+    "id": "endpoints",
+    "name": "Endpoints News",
+    "region": "international",
+    "baseUrl": "https://endpoints.news/",
+    "allowedHosts": ["endpoints.news"]
+  },
+  {
+    "id": "stat",
+    "name": "STAT",
+    "region": "international",
+    "baseUrl": "https://www.statnews.com/",
+    "allowedHosts": ["statnews.com"]
+  },
+  {
+    "id": "fierce-biotech",
+    "name": "Fierce Biotech",
+    "region": "international",
+    "baseUrl": "https://www.fiercebiotech.com/",
+    "allowedHosts": ["fiercebiotech.com"]
+  },
+  {
+    "id": "biopharma-dive",
+    "name": "BioPharma Dive",
+    "region": "international",
+    "baseUrl": "https://www.biopharmadive.com/",
+    "allowedHosts": ["biopharmadive.com"]
+  },
+  {
+    "id": "reuters-healthcare-pharmaceuticals",
+    "name": "Reuters Healthcare & Pharmaceuticals",
+    "region": "international",
+    "baseUrl": "https://www.reuters.com/business/healthcare-pharmaceuticals/",
+    "allowedHosts": ["reuters.com"]
+  }
+]
