@@ -112,14 +112,26 @@ function ValueList({
   values: { value: string; unit: string; label: string; outcomeId: string }[];
 }) {
   return (
-    <ul className="grid grid-cols-[repeat(auto-fit,minmax(9rem,13rem))] gap-x-4 gap-y-2">
-      {values.map((value) => (
-        <li key={value.outcomeId} className="min-w-0 text-sm">
-          <ValueNumber value={value.value} unit={value.unit} />
-          <span className="block text-xs text-muted-foreground">{value.label}</span>
-        </li>
-      ))}
-    </ul>
+    <table className="w-full max-w-md border-collapse text-sm">
+      <thead className="sr-only">
+        <tr>
+          <th scope="col">Dose</th>
+          <th scope="col">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        {values.map((value) => (
+          <tr key={value.outcomeId}>
+            <td className="py-1 pr-4 align-baseline text-xs text-muted-foreground">
+              {value.label}
+            </td>
+            <td className="py-1 text-right align-baseline">
+              <ValueNumber value={value.value} unit={value.unit} />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
@@ -315,26 +327,42 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
               Same-group reference
             </dt>
             <dd className="mt-1.5">
-              <ul className="grid grid-cols-[repeat(auto-fit,minmax(9rem,13rem))] gap-x-4 gap-y-2">
-                {evidence.placeboValues.map((value) => (
-                  <li key={value.outcomeId} className="min-w-0 text-sm">
-                    <span className="font-medium text-card-foreground">Placebo</span>{" "}
-                    <ValueNumber value={value.value} unit={value.unit} />
-                    <span className="block text-xs text-muted-foreground">
-                      Placebo reference
-                    </span>
-                  </li>
-                ))}
-                {evidence.activeComparatorValues.map((value) => (
-                  <li key={value.outcomeId} className="min-w-0 text-sm">
-                    <span className="font-medium text-card-foreground">{value.label}</span>{" "}
-                    <ValueNumber value={value.value} unit={value.unit} />
-                    <span className="block text-xs text-muted-foreground">
-                      Active comparator
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <table className="w-full max-w-md border-collapse text-sm">
+                <thead className="sr-only">
+                  <tr>
+                    <th scope="col">Reference</th>
+                    <th scope="col">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {evidence.placeboValues.map((value) => (
+                    <tr key={value.outcomeId}>
+                      <td className="py-1 pr-4 align-baseline">
+                        <span className="font-medium text-card-foreground">Placebo</span>
+                        <span className="block text-xs text-muted-foreground">
+                          Placebo reference
+                        </span>
+                      </td>
+                      <td className="py-1 text-right align-baseline">
+                        <ValueNumber value={value.value} unit={value.unit} />
+                      </td>
+                    </tr>
+                  ))}
+                  {evidence.activeComparatorValues.map((value) => (
+                    <tr key={value.outcomeId}>
+                      <td className="py-1 pr-4 align-baseline">
+                        <span className="font-medium text-card-foreground">{value.label}</span>
+                        <span className="block text-xs text-muted-foreground">
+                          Active comparator
+                        </span>
+                      </td>
+                      <td className="py-1 text-right align-baseline">
+                        <ValueNumber value={value.value} unit={value.unit} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </dd>
           </div>
         ) : null}
