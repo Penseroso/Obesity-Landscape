@@ -150,7 +150,8 @@
       "linkedStudyIds": [
         "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
         "eli-lilly-and-company-eloralintide-nct06345066",
-        "eli-lilly-and-company-eloralintide-nct06603571"
+        "eli-lilly-and-company-eloralintide-nct06603571",
+        "gan-lee-pharmaceuticals-gzr18-nct06737042"
       ]
     },
     {
@@ -244,6 +245,21 @@
         "eli-lilly-and-company-macupatide-nct07215559",
         "eli-lilly-and-company-macupatide-nct07589608"
       ]
+    },
+    {
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "focalStudyIds": [
+        "gan-lee-pharmaceuticals-gzr18-nct06548945",
+        "gan-lee-pharmaceuticals-gzr18-nct06256536",
+        "gan-lee-pharmaceuticals-gzr18-nct06256562",
+        "gan-lee-pharmaceuticals-gzr18-nct06728124",
+        "gan-lee-pharmaceuticals-gzr18-nct06737042",
+        "gan-lee-pharmaceuticals-gzr18-nct07150975",
+        "gan-lee-pharmaceuticals-gzr18-nct07292441",
+        "gan-lee-pharmaceuticals-gzr18-nct07622810"
+      ],
+      "linkedStudyIds": []
     },
     {
       "companyId": "novo-nordisk",
@@ -356,6 +372,8 @@
         "boehringer-ingelheim-survodutide-nct05202353",
         "boehringer-ingelheim-survodutide-nct06745284",
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
+        "gan-lee-pharmaceuticals-gzr18-nct07150975",
+        "gan-lee-pharmaceuticals-gzr18-nct07622810",
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
         "pfizer-pf-07081532-nct05579977",
         "roche-ct-996-bp45703-nct07112872"

@@ -5334,6 +5334,466 @@
       }
     },
     {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct06548945",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Dose-escalation Phase I Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics (PK/PD) of a Single Dose of GZR18 Injection in Obese/Overweight Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06548945"
+        },
+        {
+          "registry": "China Drug Trials Registry",
+          "id": "CTR20230434"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GL-GLP-CH1017"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06548945",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-08-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Sequential single-dose-escalation study of GZR18 and matched placebo."
+      },
+      "population": "Chinese adults aged 18 to 65 years with BMI at least 26 kg/m2 and stable body weight.",
+      "overallDuration": "50 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06548945",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase Ib/IIa Clinical Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Efficacy of GZR18 Injection in Chinese Obese/Overweight Patients",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06256536"
+        },
+        {
+          "registry": "China Drug Trials Registry",
+          "id": "CTR20221495"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GL-GLP-CH2002"
+      ],
+      "phase": "Phase 1/2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06256536",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-02-22"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-part dose-escalation study evaluating once-weekly and once-every-two-weeks GZR18 regimens."
+      },
+      "population": "Chinese adults aged 18 to 65 years with obesity, or overweight with at least one weight-related condition; Part B enrolled participants with obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "Part A 26 weeks; Part B 35 weeks",
+      "safetySummary": "GZR18 was generally well tolerated; gastrointestinal events were mostly mild to moderate and no investigational-product-related serious adverse events were reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06256536",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "title": "GZR18, a GLP-1 analog with once-weekly or bi-weekly dosing for body weight management: A randomized, placebo-controlled, phase 1b/2a trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Controlled Phase II Clinical Study to Evaluate the Efficacy and Safety of GZR18 Injection in Chinese Obese/Overweight Patients",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06256562"
+        },
+        {
+          "registry": "China Drug Trials Registry",
+          "id": "CTR20231695"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GL-GLP-CH2005"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06256562",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-06-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Six-arm dose-ranging study of five bofanglutide dose/frequency regimens and pooled matched placebo."
+      },
+      "population": "Chinese adults aged 18 to 75 years with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "30 weeks",
+      "safetySummary": "Adverse events were mostly grade 1 or 2 gastrointestinal events. No investigational-product-related serious adverse events were reported; anti-bofanglutide antibodies occurred without neutralizing antibodies or an observed efficacy or safety impact.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06256562",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "title": "Efficacy and safety of bofanglutide, a GLP-1 receptor agonist, in Chinese adults with overweight or obesity: a randomized, double-blind, placebo-controlled phase 2b trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Double-Blind, Parallel, Placebo-Controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of GZR18 Injection in Adult Obese/Overweight Subjects",
+      "acronym": "GRADUAL-1",
+      "studyFamily": "GRADUAL",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06728124"
+        },
+        {
+          "registry": "China Drug Trials Registry",
+          "id": "CTR20244647"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GZR18-BWM-301"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06728124",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-07-31"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Three-arm trial of bofanglutide 24 mg or 48 mg every two weeks versus placebo."
+      },
+      "population": "Chinese adults with obesity, or overweight with at least one weight-related comorbidity, after inadequate weight control with diet and exercise.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks",
+      "safetySummary": "Bofanglutide was generally well tolerated; the most common adverse events were predominantly mild-to-moderate and transient gastrointestinal reactions, with no new safety signals identified.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06728124",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "EFFICACY AND SAFETY OF GZR18 INJECTED EVERY 2 WEEKS (Q2W) IN PARTICIPANTS WITHOUT TYPE 2 DIABETES, WHO HAVE OBESITY OR ARE OVERWEIGHT: A RANDOMIZED, TIRZEPATIDE- AND PLACEBO-CONTROLLED STUDY",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06737042"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GL-GLP-2001"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06737042",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-07-31"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind for bofanglutide and placebo; open-label tirzepatide",
+        "comparator": "Placebo and tirzepatide",
+        "description": "Dose-ranging United States trial of three bofanglutide doses, placebo and open-label tirzepatide."
+      },
+      "population": "Adults aged 18 to 75 years without type 2 diabetes, with BMI at least 30 kg/m2 or at least 27 kg/m2 with a weight-related comorbidity, after inadequate weight loss with lifestyle intervention.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "United States"
+      },
+      "overallDuration": "36 weeks",
+      "safetySummary": "The most common adverse events were gastrointestinal, including nausea, vomiting and diarrhea; events were generally mild and transient and no new safety signals were identified.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06737042",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct07150975",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Open-Label, Parallel-Group Phase III Clinical Study Comparing the Efficacy and Safety of GZR18 Injection and Semaglutide (Wegovy) in Adult Obese or Overweight Subjects",
+      "acronym": "GRADUAL-2",
+      "studyFamily": "GRADUAL",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07150975"
+        },
+        {
+          "registry": "China Drug Trials Registry",
+          "id": "CTR20252970"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GZR18-BWM-302"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07150975",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-31"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Semaglutide",
+        "description": "Three-arm head-to-head trial of two bofanglutide doses and semaglutide 2.4 mg."
+      },
+      "population": "Chinese adults with obesity or overweight after inadequate weight control with diet and exercise; up to 20% may have type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07150975",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.ganlee.com.cn/detail/1615.html",
+            "sourceType": "company press release",
+            "publishedAt": "2025-10-28",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct07292441",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "A Multicenter Extension Study of the Phase 3 Clinical Study of GZR18 Injection for Weight Loss",
+      "acronym": "GRADUAL-3",
+      "studyFamily": "GRADUAL",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07292441"
+        },
+        {
+          "registry": "China Drug Trials Registry",
+          "id": "CTR20254659"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GZR18-BWM-303"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07292441",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-31"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Extension study evaluating three undisclosed once-monthly bofanglutide dose levels and placebo after prior once-every-two-weeks treatment."
+      },
+      "population": "Adults who completed the qualifying original 52-week bofanglutide weight-loss study.",
+      "overallDuration": "24 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07292441",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/once-monthly-glp-1-ra--gan--lee-pharmaceuticals-initiates-phase-3-clinical-study-gradual-3-of-the-first-chinese-once-monthly-glp-1-ra-for-weight-management-302627433.html",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct07622810",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection",
+      "officialTitle": "BALANCE-OBS: A Multiregional, Randomized, Multicenter, Active-Controlled Confirmatory Phase III Study to Evaluate the Efficacy and Safety of Bofanglutide (GZR18) Versus Semaglutide in Latin American Adults With Overweight or Obesity",
+      "acronym": "BALANCE-OBS",
+      "studyFamily": "BALANCE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07622810"
+        }
+      ],
+      "protocolIdentifiers": [
+        "PC-ECI-CM-102-2026"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07622810",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-06-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Semaglutide",
+        "description": "Two-arm confirmatory trial of bofanglutide every two weeks versus once-weekly semaglutide."
+      },
+      "population": "Latin American adults with BMI at least 30 kg/m2, or at least 27 kg/m2 with a weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Latin America"
+      },
+      "overallDuration": "36 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07622810",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
       "id": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
@@ -14291,6 +14751,403 @@
       "dosingFrequency": "Once weekly"
     },
     {
+      "id": "gzr18-06256536-a-active",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "role": "experimental",
+      "label": "Part A GZR18 4.8 mg QW",
+      "intervention": "GZR18",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "Escalated from 0.6 mg to 4.8 mg",
+      "titration": "0.6-1.2-2.4-3.0-3.6-4.2-4.8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks",
+      "analyzedN": 18
+    },
+    {
+      "id": "gzr18-06256536-a-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "role": "placebo",
+      "label": "Part A placebo",
+      "intervention": "Matched placebo",
+      "dose": "Volume-matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "gzr18-06256536-b-qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "role": "experimental",
+      "label": "Part B GZR18 30 mg QW",
+      "intervention": "GZR18",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "Escalated from 1.5 mg to 30 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "35 weeks",
+      "analyzedN": 16
+    },
+    {
+      "id": "gzr18-06256536-b-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "role": "experimental",
+      "label": "Part B GZR18 30 mg Q2W",
+      "intervention": "GZR18",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "Escalated from 1.5 mg to 30 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks after reaching 9 mg",
+      "treatmentDuration": "35 weeks",
+      "analyzedN": 10
+    },
+    {
+      "id": "gzr18-06256536-b-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "role": "placebo",
+      "label": "Part B placebo",
+      "intervention": "Matched placebo",
+      "dose": "Volume-matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Protocol-matched schedule",
+      "treatmentDuration": "35 weeks",
+      "analyzedN": 9
+    },
+    {
+      "id": "gzr18-06256562-12-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "role": "experimental",
+      "label": "Bofanglutide 12 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "12 mg",
+      "titration": "3-6-9-12 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "30 weeks",
+      "analyzedN": 52
+    },
+    {
+      "id": "gzr18-06256562-18-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "role": "experimental",
+      "label": "Bofanglutide 18 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "18 mg",
+      "titration": "3-6-9-12-18 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "30 weeks",
+      "analyzedN": 53
+    },
+    {
+      "id": "gzr18-06256562-24-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "role": "experimental",
+      "label": "Bofanglutide 24 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "24 mg",
+      "titration": "3-6-9-12-18-24 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "30 weeks",
+      "analyzedN": 52
+    },
+    {
+      "id": "gzr18-06256562-48-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "role": "experimental",
+      "label": "Bofanglutide 48 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "48 mg",
+      "titration": "3-6-12-24-36-48 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "30 weeks",
+      "analyzedN": 64
+    },
+    {
+      "id": "gzr18-06256562-24-qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "role": "experimental",
+      "label": "Bofanglutide 24 mg QW",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "24 mg",
+      "titration": "3-6-9-12-15-24 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "30 weeks",
+      "analyzedN": 53
+    },
+    {
+      "id": "gzr18-06256562-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "role": "placebo",
+      "label": "Pooled matched placebo",
+      "intervention": "Matched placebo",
+      "dose": "Volume-matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly or once every 2 weeks",
+      "treatmentDuration": "30 weeks",
+      "analyzedN": 66
+    },
+    {
+      "id": "gzr18-06548945-active",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06548945",
+      "role": "experimental",
+      "label": "GZR18",
+      "intervention": "GZR18 single-dose escalation",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-06548945-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06548945",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo"
+    },
+    {
+      "id": "gzr18-06728124-24",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "role": "experimental",
+      "label": "Bofanglutide 24 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "24 mg",
+      "titration": "3-6-9-12-18-24 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "gzr18-06728124-48",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "role": "experimental",
+      "label": "Bofanglutide 48 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "48 mg",
+      "titration": "3-6-9-12-18-24-36-48 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "gzr18-06728124-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Volume-matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "gzr18-06737042-24",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "role": "experimental",
+      "label": "Bofanglutide 24 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "24 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "gzr18-06737042-36",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "role": "experimental",
+      "label": "Bofanglutide 36 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "36 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "gzr18-06737042-48",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "role": "experimental",
+      "label": "Bofanglutide 48 mg Q2W",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      },
+      "dose": "48 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "gzr18-06737042-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "role": "placebo",
+      "label": "Pooled placebo",
+      "intervention": "Matched placebo",
+      "dose": "Volume-matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once every 2 weeks",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "gzr18-06737042-tirzepatide",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "role": "active comparator",
+      "label": "Tirzepatide 15 mg QW",
+      "intervention": "Tirzepatide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      },
+      "dose": "15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "gzr18-07150975-24",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07150975",
+      "role": "experimental",
+      "label": "GZR18 Dose Level 1 (24 mg Q2W)",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07150975-48",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07150975",
+      "role": "experimental",
+      "label": "GZR18 Dose Level 2 (48 mg Q2W)",
+      "intervention": "Bofanglutide",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07150975-semaglutide",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07150975",
+      "role": "active comparator",
+      "label": "Semaglutide (Wegovy) 2.4 mg QW",
+      "intervention": "Semaglutide",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      }
+    },
+    {
+      "id": "gzr18-07292441-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07292441",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo"
+    },
+    {
+      "id": "gzr18-07292441-dose1",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07292441",
+      "role": "experimental",
+      "label": "GZR18 injection Dose1",
+      "intervention": "Bofanglutide once monthly",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07292441-dose2",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07292441",
+      "role": "experimental",
+      "label": "GZR18 injection Dose2",
+      "intervention": "Bofanglutide once monthly",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07292441-dose3",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07292441",
+      "role": "experimental",
+      "label": "GZR18 injection Dose3",
+      "intervention": "Bofanglutide once monthly",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07622810-bofanglutide",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07622810",
+      "role": "experimental",
+      "label": "Bofanglutide (GZR18)",
+      "intervention": "Bofanglutide 3 mg titrated to 48 mg every 2 weeks",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07622810-semaglutide",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07622810",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide 0.25 mg titrated to 1 mg once weekly",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      }
+    },
+    {
       "id": "amyoral-100",
       "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "role": "experimental",
@@ -18654,6 +19511,102 @@
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Week 60 to Week 112"
+    },
+    {
+      "id": "gzr18-06256536-weight-w26",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26 (Part A)"
+    },
+    {
+      "id": "gzr18-06256536-responder5-w26",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26 (Part A)"
+    },
+    {
+      "id": "gzr18-06256536-weight-w35",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 35 (Part B)"
+    },
+    {
+      "id": "gzr18-06256536-responder5-w35",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 35 (Part B)"
+    },
+    {
+      "id": "gzr18-06256562-weight-w30",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 30"
+    },
+    {
+      "id": "gzr18-06256562-responder5-w30",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 30"
+    },
+    {
+      "id": "gzr18-06256562-sae",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 30"
+    },
+    {
+      "id": "gzr18-06256562-nausea",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 30"
+    },
+    {
+      "id": "gzr18-06256562-vomiting",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 30"
+    },
+    {
+      "id": "gzr18-06728124-weight-w52",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 52"
+    },
+    {
+      "id": "gzr18-06728124-responder5-w52",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 52"
+    },
+    {
+      "id": "gzr18-06737042-weight-w36",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36"
     },
     {
       "id": "amyoral-weight-week12",
@@ -35555,6 +36508,1613 @@
             "url": "https://pubmed.ncbi.nlm.nih.gov/42119587/",
             "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-a-weight-active",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w26",
+      "armIds": [
+        "gzr18-06256536-a-active"
+      ],
+      "analysisPopulation": "Full analysis set (Part A)",
+      "result": {
+        "value": "-9.36",
+        "numericValue": -9.36,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-a-weight-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w26",
+      "armIds": [
+        "gzr18-06256536-a-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part A)",
+      "result": {
+        "value": "6.68",
+        "numericValue": 6.68,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-a-weight-etd",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w26",
+      "armIds": [
+        "gzr18-06256536-a-active",
+        "gzr18-06256536-a-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part A)",
+      "result": {
+        "value": "-16.1",
+        "numericValue": -16.1,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -26.4 to -5.7"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-a-r5-active",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-responder5-w26",
+      "armIds": [
+        "gzr18-06256536-a-active"
+      ],
+      "analysisPopulation": "Full analysis set (Part A)",
+      "result": {
+        "value": "66.7",
+        "numericValue": 66.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-a-r5-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-responder5-w26",
+      "armIds": [
+        "gzr18-06256536-a-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part A)",
+      "result": {
+        "value": "0",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-weight-qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w35",
+      "armIds": [
+        "gzr18-06256536-b-qw"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "-17.8",
+        "numericValue": -17.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-weight-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w35",
+      "armIds": [
+        "gzr18-06256536-b-q2w"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "-12.8",
+        "numericValue": -12.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-weight-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w35",
+      "armIds": [
+        "gzr18-06256536-b-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "0.7",
+        "numericValue": 0.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-weight-etd-qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w35",
+      "armIds": [
+        "gzr18-06256536-b-qw",
+        "gzr18-06256536-b-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "-18.6",
+        "numericValue": -18.6,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -25.5 to -11.6"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-weight-etd-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-weight-w35",
+      "armIds": [
+        "gzr18-06256536-b-q2w",
+        "gzr18-06256536-b-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (Part B)",
+      "result": {
+        "value": "-13.5",
+        "numericValue": -13.5,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -21.0 to -6.0"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-r5-qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-responder5-w35",
+      "armIds": [
+        "gzr18-06256536-b-qw"
+      ],
+      "analysisPopulation": "Completers (Part B)",
+      "result": {
+        "value": "100",
+        "numericValue": 100,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-r5-q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-responder5-w35",
+      "armIds": [
+        "gzr18-06256536-b-q2w"
+      ],
+      "analysisPopulation": "Completers (Part B)",
+      "result": {
+        "value": "71.4",
+        "numericValue": 71.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256536-b-r5-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256536",
+      "endpointId": "gzr18-06256536-responder5-w35",
+      "armIds": [
+        "gzr18-06256536-b-placebo"
+      ],
+      "analysisPopulation": "Completers (Part B)",
+      "result": {
+        "value": "0",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-04-08",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-12q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-12-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-9.75",
+        "numericValue": -9.75,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-r5-12q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-responder5-w30",
+      "armIds": [
+        "gzr18-06256562-12-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "74",
+        "numericValue": 74,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-sae-12q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-sae",
+      "armIds": [
+        "gzr18-06256562-12-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "3.8",
+        "numericValue": 3.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-nausea-12q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-nausea",
+      "armIds": [
+        "gzr18-06256562-12-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "34.6",
+        "numericValue": 34.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-vomiting-12q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-vomiting",
+      "armIds": [
+        "gzr18-06256562-12-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "25",
+        "numericValue": 25,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-18q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-18-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-12.55",
+        "numericValue": -12.55,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-r5-18q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-responder5-w30",
+      "armIds": [
+        "gzr18-06256562-18-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "87.5",
+        "numericValue": 87.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-sae-18q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-sae",
+      "armIds": [
+        "gzr18-06256562-18-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "5.7",
+        "numericValue": 5.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-nausea-18q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-nausea",
+      "armIds": [
+        "gzr18-06256562-18-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "47.2",
+        "numericValue": 47.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-vomiting-18q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-vomiting",
+      "armIds": [
+        "gzr18-06256562-18-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "28.3",
+        "numericValue": 28.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-24q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-24-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-13.66",
+        "numericValue": -13.66,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-r5-24q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-responder5-w30",
+      "armIds": [
+        "gzr18-06256562-24-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "89.1",
+        "numericValue": 89.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-sae-24q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-sae",
+      "armIds": [
+        "gzr18-06256562-24-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "1.9",
+        "numericValue": 1.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-nausea-24q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-nausea",
+      "armIds": [
+        "gzr18-06256562-24-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "48.1",
+        "numericValue": 48.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-vomiting-24q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-vomiting",
+      "armIds": [
+        "gzr18-06256562-24-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "46.2",
+        "numericValue": 46.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-48q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-48-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-16.09",
+        "numericValue": -16.09,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-r5-48q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-responder5-w30",
+      "armIds": [
+        "gzr18-06256562-48-q2w"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "96.8",
+        "numericValue": 96.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-sae-48q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-sae",
+      "armIds": [
+        "gzr18-06256562-48-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "0",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-nausea-48q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-nausea",
+      "armIds": [
+        "gzr18-06256562-48-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "64.1",
+        "numericValue": 64.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-vomiting-48q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-vomiting",
+      "armIds": [
+        "gzr18-06256562-48-q2w"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "62.5",
+        "numericValue": 62.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-24qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-24-qw"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-16.69",
+        "numericValue": -16.69,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-r5-24qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-responder5-w30",
+      "armIds": [
+        "gzr18-06256562-24-qw"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "93",
+        "numericValue": 93,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-sae-24qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-sae",
+      "armIds": [
+        "gzr18-06256562-24-qw"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "3.8",
+        "numericValue": 3.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-nausea-24qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-nausea",
+      "armIds": [
+        "gzr18-06256562-24-qw"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "37.7",
+        "numericValue": 37.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-vomiting-24qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-vomiting",
+      "armIds": [
+        "gzr18-06256562-24-qw"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "52.8",
+        "numericValue": 52.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-1.15",
+        "numericValue": -1.15,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-r5-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-responder5-w30",
+      "armIds": [
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "18.5",
+        "numericValue": 18.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-sae-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-sae",
+      "armIds": [
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "1.5",
+        "numericValue": 1.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-nausea-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-nausea",
+      "armIds": [
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "9.1",
+        "numericValue": 9.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-vomiting-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-vomiting",
+      "armIds": [
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "12.1",
+        "numericValue": 12.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-etd-12q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-12-q2w",
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-8.6",
+        "numericValue": -8.6,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -11.18 to -6.01",
+        "pValue": "<0.001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-etd-18q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-18-q2w",
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-11.39",
+        "numericValue": -11.39,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -13.92 to -8.87",
+        "pValue": "<0.001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-etd-24q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-24-q2w",
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-12.5",
+        "numericValue": -12.5,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -15.07 to -9.94",
+        "pValue": "<0.001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-etd-48q2w",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-48-q2w",
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-14.94",
+        "numericValue": -14.94,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -17.45 to -12.42",
+        "pValue": "<0.001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06256562-weight-etd-24qw",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06256562",
+      "endpointId": "gzr18-06256562-weight-w30",
+      "armIds": [
+        "gzr18-06256562-24-qw",
+        "gzr18-06256562-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-15.54",
+        "numericValue": -15.54,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "resultType": "between-arm",
+        "comparisonType": "Estimated treatment difference, bofanglutide minus placebo",
+        "confidenceInterval": "95% CI, -18.10 to -12.98",
+        "pValue": "<0.001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41392-026-02586-8",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-02-27",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06728124-weight-24",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "endpointId": "gzr18-06728124-weight-w52",
+      "armIds": [
+        "gzr18-06728124-24"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "result": {
+        "value": "-15.12",
+        "numericValue": -15.12,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06728124-weight-48",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "endpointId": "gzr18-06728124-weight-w52",
+      "armIds": [
+        "gzr18-06728124-48"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "result": {
+        "value": "-18.54",
+        "numericValue": -18.54,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06728124-weight-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "endpointId": "gzr18-06728124-weight-w52",
+      "armIds": [
+        "gzr18-06728124-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "result": {
+        "value": "-1.11",
+        "numericValue": -1.11,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06728124-r5-24",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "endpointId": "gzr18-06728124-responder5-w52",
+      "armIds": [
+        "gzr18-06728124-24"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "result": {
+        "value": "91.8",
+        "numericValue": 91.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06728124-r5-48",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06728124",
+      "endpointId": "gzr18-06728124-responder5-w52",
+      "armIds": [
+        "gzr18-06728124-48"
+      ],
+      "analysisPopulation": "Modified intention-to-treat population (overall)",
+      "result": {
+        "value": "98.1",
+        "numericValue": 98.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06737042-weight-48",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "endpointId": "gzr18-06737042-weight-w36",
+      "armIds": [
+        "gzr18-06737042-48"
+      ],
+      "analysisPopulation": "Per-protocol set (overall)",
+      "result": {
+        "value": "-15.18",
+        "numericValue": -15.18,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gzr18-06737042-weight-tirzepatide",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct06737042",
+      "endpointId": "gzr18-06737042-weight-w36",
+      "armIds": [
+        "gzr18-06737042-tirzepatide"
+      ],
+      "analysisPopulation": "Per-protocol set (overall)",
+      "result": {
+        "value": "-16.93",
+        "numericValue": -16.93,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-11",
+        "updatedAt": "2026-08-11",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
+            "sourceType": "company press release",
+            "publishedAt": "2026-06-12",
+            "checkedAt": "2026-08-11"
           }
         ]
       }
