@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { EfficacySelectionDetails } from "@/domains/app/components/EfficacySelectionDetails";
 import { formatNullableValue } from "@/domains/app/lib/format";
@@ -111,9 +112,9 @@ function ValueList({
   values: { value: string; unit: string; label: string; outcomeId: string }[];
 }) {
   return (
-    <ul className="flex flex-wrap gap-x-4 gap-y-1">
+    <ul className="grid grid-cols-[repeat(auto-fit,minmax(9rem,13rem))] gap-x-4 gap-y-2">
       {values.map((value) => (
-        <li key={value.outcomeId} className="text-sm">
+        <li key={value.outcomeId} className="min-w-0 text-sm">
           <ValueNumber value={value.value} unit={value.unit} />
           <span className="block text-xs text-muted-foreground">{value.label}</span>
         </li>
@@ -314,9 +315,9 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
               Same-group reference
             </dt>
             <dd className="mt-1.5">
-              <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
+              <ul className="grid grid-cols-[repeat(auto-fit,minmax(9rem,13rem))] gap-x-4 gap-y-2">
                 {evidence.placeboValues.map((value) => (
-                  <li key={value.outcomeId} className="text-sm">
+                  <li key={value.outcomeId} className="min-w-0 text-sm">
                     <span className="font-medium text-card-foreground">Placebo</span>{" "}
                     <ValueNumber value={value.value} unit={value.unit} />
                     <span className="block text-xs text-muted-foreground">
@@ -325,7 +326,7 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
                   </li>
                 ))}
                 {evidence.activeComparatorValues.map((value) => (
-                  <li key={value.outcomeId} className="text-sm">
+                  <li key={value.outcomeId} className="min-w-0 text-sm">
                     <span className="font-medium text-card-foreground">{value.label}</span>{" "}
                     <ValueNumber value={value.value} unit={value.unit} />
                     <span className="block text-xs text-muted-foreground">
@@ -438,27 +439,22 @@ export function EfficacyComparison({ view }: EfficacyComparisonProps) {
         </section>
       ) : (
         view.families.map((group) => (
-          <section
+          <CollapsibleSection
             key={group.family.id}
             id={`family-${group.family.id}`}
-            className="scroll-mt-20 rounded-md border border-border bg-card shadow-soft"
+            title={group.family.label}
+            subtitle={
+              group.family.composition === "multi-component"
+                ? "Multi-component product"
+                : "Single molecule"
+            }
           >
-            <div className="border-b border-border px-5 py-4">
-              <h2 className="text-base font-semibold text-card-foreground">
-                {group.family.label}
-              </h2>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                {group.family.composition === "multi-component"
-                  ? "Multi-component product"
-                  : "Single molecule"}
-              </p>
-            </div>
             <ul>
               {group.rows.map((row) => (
                 <ComparisonRow key={row.unitKey} row={row} />
               ))}
             </ul>
-          </section>
+          </CollapsibleSection>
         ))
       )}
 
