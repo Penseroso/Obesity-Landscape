@@ -18,7 +18,7 @@ export function LatestNewsFeed({
 }: LatestNewsFeedProps) {
   if (view.stories.length === 0) {
     return (
-      <section className="rounded-lg border border-border bg-card px-5 py-12 text-center shadow-soft">
+      <section className="border-y border-border py-12 text-center">
         <p className="text-sm text-muted-foreground">
           No recent news is available.
         </p>
@@ -28,33 +28,42 @@ export function LatestNewsFeed({
 
   return (
     <div className="space-y-6">
-      <div className="divide-y divide-border rounded-lg border border-border bg-card shadow-soft">
+      <div className="divide-y divide-border border-y border-border">
         {view.stories.map((story) => (
-          <article key={story.id} className="p-5 sm:p-6">
+          <article
+            key={story.id}
+            className="grid gap-2 py-5 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-6 md:py-6"
+          >
             <time
               dateTime={story.publishedAt}
-              className="text-xs font-medium text-muted-foreground"
+              className="pt-0.5 text-xs font-medium tabular-nums text-muted-foreground"
             >
               {story.publishedAt}
             </time>
-            <h2 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
-              {story.headline}
-            </h2>
-            <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">
-              {story.summary}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-              {story.sources.map((source) => (
-                <a
-                  key={`${source.sourceId}:${source.url}`}
-                  href={source.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                >
-                  {source.sourceName}: {source.title}
-                </a>
-              ))}
+            <div className="min-w-0">
+              <h2 className="text-lg font-semibold leading-7 tracking-tight text-foreground">
+                {story.headline}
+              </h2>
+              <p className="mt-2 max-w-5xl text-sm leading-6 text-muted-foreground">
+                {story.summary}
+              </p>
+              <div className="mt-3 flex flex-col items-start gap-1.5">
+                {story.sources.map((source) => (
+                  <a
+                    key={`${source.sourceId}:${source.url}`}
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs leading-5 text-muted-foreground underline-offset-2 hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    <span className="font-semibold text-foreground">
+                      {source.sourceName}
+                    </span>
+                    {`: ${source.title} `}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </article>
         ))}
@@ -68,7 +77,7 @@ export function LatestNewsFeed({
           {currentPage > 1 ? (
             <Link
               href={pageHref(currentPage - 1)}
-              className="rounded-md border border-border bg-card px-3 py-2 text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary"
+              className="px-2 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
             >
               Previous
             </Link>
@@ -80,10 +89,10 @@ export function LatestNewsFeed({
                 key={page}
                 href={pageHref(page)}
                 aria-current={page === currentPage ? "page" : undefined}
-                className={`min-w-10 rounded-md border px-3 py-2 text-center text-sm font-medium ${
+                className={`min-w-8 px-2 py-1.5 text-center text-sm ${
                   page === currentPage
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card text-foreground hover:border-primary/40 hover:text-primary"
+                    ? "font-semibold text-primary underline decoration-2 underline-offset-4"
+                    : "font-medium text-muted-foreground hover:text-primary"
                 }`}
               >
                 {page}
@@ -94,7 +103,7 @@ export function LatestNewsFeed({
           {currentPage < pageCount ? (
             <Link
               href={pageHref(currentPage + 1)}
-              className="rounded-md border border-border bg-card px-3 py-2 text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary"
+              className="px-2 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
             >
               Next
             </Link>

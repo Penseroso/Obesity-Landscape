@@ -31,7 +31,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   };
 
   return (
-    <div className="space-y-6 pb-10">
+    <div className="max-w-7xl space-y-6 pb-10">
       <section>
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
           Media discovery
