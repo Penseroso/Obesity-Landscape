@@ -5347,7 +5347,7 @@
         "registryId": "NCT06256536",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2024-02-22"
+        "statusUpdatedAt": "2024-02-23"
       },
       "design": {
         "randomization": "Randomized",
@@ -5366,13 +5366,13 @@
       "overallDuration": "Part A 26 weeks; Part B 35 weeks",
       "safetySummary": "GZR18 was generally well tolerated; gastrointestinal events were mostly mild to moderate and no investigational-product-related serious adverse events were reported.",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT06256536",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
           },
           {
             "url": "https://doi.org/10.1016/j.xcrm.2026.102743",
@@ -5409,7 +5409,7 @@
         "registryId": "NCT06256562",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2024-06-05"
+        "statusUpdatedAt": "2025-10-01"
       },
       "design": {
         "randomization": "Randomized",
@@ -5428,13 +5428,13 @@
       "overallDuration": "30 weeks",
       "safetySummary": "Adverse events were mostly grade 1 or 2 gastrointestinal events. No investigational-product-related serious adverse events were reported; anti-bofanglutide antibodies occurred without neutralizing antibodies or an observed efficacy or safety impact.",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT06256562",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
           },
           {
             "url": "https://doi.org/10.1038/s41392-026-02586-8",
@@ -5473,7 +5473,7 @@
         "registryId": "NCT06728124",
         "overallStatus": "active-not-recruiting",
         "sourceStatus": "Active, not recruiting",
-        "statusUpdatedAt": "2026-07-31"
+        "statusUpdatedAt": "2025-11-25"
       },
       "design": {
         "randomization": "Randomized",
@@ -5492,13 +5492,13 @@
       "overallDuration": "52 weeks",
       "safetySummary": "Bofanglutide was generally well tolerated; the most common adverse events were predominantly mild-to-moderate and transient gastrointestinal reactions, with no new safety signals identified.",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT06728124",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
           },
           {
             "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
@@ -5530,7 +5530,7 @@
         "registryId": "NCT06737042",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-07-31"
+        "statusUpdatedAt": "2026-07-16"
       },
       "design": {
         "randomization": "Randomized",
@@ -5549,13 +5549,13 @@
       "overallDuration": "36 weeks",
       "safetySummary": "The most common adverse events were gastrointestinal, including nausea, vomiting and diarrhea; events were generally mild and transient and no new safety signals were identified.",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT06737042",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
           },
           {
             "url": "https://www.prnewswire.com/news-releases/gan--lee-pharmaceuticals-achieves-significant-progress-in-its-dual-pipeline-for-metabolic-diseases--weekly-insulin-ludefen-gzr4-meets-primary-endpoint-in-phase-iii-clinical-trial-in-china-bofanglutide-meets-primary-endpoints--302794945.html",
@@ -5593,7 +5593,7 @@
         "registryId": "NCT07150975",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-31"
+        "statusUpdatedAt": "2025-11-25"
       },
       "design": {
         "randomization": "Randomized",
@@ -5611,13 +5611,13 @@
       },
       "overallDuration": "52 weeks",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT07150975",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
           },
           {
             "url": "https://www.ganlee.com.cn/detail/1615.html",
@@ -5655,7 +5655,7 @@
         "registryId": "NCT07292441",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-31"
+        "statusUpdatedAt": "2026-03-11"
       },
       "design": {
         "randomization": "Randomized",
@@ -5666,13 +5666,13 @@
       "population": "Adults who completed the qualifying original 52-week bofanglutide weight-loss study.",
       "overallDuration": "24 weeks",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT07292441",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
           },
           {
             "url": "https://www.prnewswire.com/news-releases/once-monthly-glp-1-ra--gan--lee-pharmaceuticals-initiates-phase-3-clinical-study-gradual-3-of-the-first-chinese-once-monthly-glp-1-ra-for-weight-management-302627433.html",
@@ -5706,7 +5706,7 @@
         "registryId": "NCT07622810",
         "overallStatus": "not-yet-recruiting",
         "sourceStatus": "Not yet recruiting",
-        "statusUpdatedAt": "2026-06-05"
+        "statusUpdatedAt": "2026-06-03"
       },
       "design": {
         "randomization": "Randomized",
@@ -5724,13 +5724,113 @@
       },
       "overallDuration": "36 weeks of treatment",
       "metadata": {
-        "lastVerifiedAt": "2026-08-11",
-        "updatedAt": "2026-08-11",
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT07622810",
             "sourceType": "trial registry",
-            "checkedAt": "2026-08-11"
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct07493057",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-obstructive-sleep-apnea",
+      "officialTitle": "A Multicenter, Randomized, Double-Blind, Parallel, Placebo-Controlled Phase 3 Study to Evaluate the Efficacy and Safety of GZR18 Injection in Obese Subjects With Moderate to Severe Obstructive Sleep Apnea（OSA） Not Treated With Positive Airway Pressure（PAP）",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07493057"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GZR18-OSA-301"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07493057",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-03-27"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm parallel-group trial of GZR18 injection versus placebo in participants not receiving PAP therapy."
+      },
+      "population": "Chinese adults with BMI at least 28 kg/m2 and moderate-to-severe obstructive sleep apnea who are unable or unwilling to receive positive airway pressure therapy, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07493057",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gan-lee-pharmaceuticals-gzr18-nct07501832",
+      "companyId": "gan-lee-pharmaceuticals",
+      "assetId": "gzr18",
+      "programId": "gan-lee-pharmaceuticals-gzr18-subcutaneous-injection-obstructive-sleep-apnea",
+      "officialTitle": "A Multicenter, Randomized, Double-Blind, Parallel-Group, Placebo-Controlled Phase III Clinical Trial to Evaluate the Efficacy and Safety of GZR18 Injection in Obese Subjects With Moderate to Severe Obstructive Sleep Apnea Receiving Positive Airway Pressure (PAP) Therapy",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07501832"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GZR18-OSA-302"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07501832",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-04-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-arm parallel-group trial of GZR18 injection versus placebo in participants continuing PAP therapy."
+      },
+      "population": "Chinese adults with BMI at least 28 kg/m2 and moderate-to-severe obstructive sleep apnea receiving continuous positive airway pressure therapy, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07501832",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-12"
           }
         ]
       }
@@ -15124,6 +15224,42 @@
         "companyId": "gan-lee-pharmaceuticals",
         "assetId": "gzr18"
       }
+    },
+    {
+      "id": "gzr18-07493057-active",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07493057",
+      "role": "experimental",
+      "label": "GZR18 injection",
+      "intervention": "GZR18 injection, subcutaneous administration",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07493057-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07493057",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo, subcutaneous administration"
+    },
+    {
+      "id": "gzr18-07501832-active",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07501832",
+      "role": "experimental",
+      "label": "GZR18 injection",
+      "intervention": "GZR18 injection, subcutaneous administration",
+      "linkedAsset": {
+        "companyId": "gan-lee-pharmaceuticals",
+        "assetId": "gzr18"
+      }
+    },
+    {
+      "id": "gzr18-07501832-placebo",
+      "studyId": "gan-lee-pharmaceuticals-gzr18-nct07501832",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Placebo, subcutaneous administration"
     },
     {
       "id": "gzr18-07622810-bofanglutide",
