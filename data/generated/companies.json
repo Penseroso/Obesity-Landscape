@@ -124,7 +124,10 @@
       "url": "https://en.innoventbio.com/",
       "checkedAt": "2026-08-12"
     },
-    "officialPipeline": null
+    "officialPipeline": {
+      "url": "https://en.innoventbio.com/ScienceAndProducts/Pipeline",
+      "checkedAt": "2026-08-12"
+    }
   },
   {
     "id": "kailera-therapeutics",

@@ -5110,11 +5110,19 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Preclinical",
-      "status": "Unknown",
-      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stage": "CTA submitted",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
       "stageOperationalState": "Not separately confirmed"
     },
+    "regulatoryStates": [
+      {
+        "state": "CTA submitted",
+        "jurisdiction": "China",
+        "authority": "Center for Drug Evaluation (CDE), National Medical Products Administration (NMPA)",
+        "date": "2026-07-14"
+      }
+    ],
     "metadata": {
       "lastVerifiedAt": "2026-08-12",
       "updatedAt": "2026-08-12",
@@ -5131,6 +5139,12 @@
           "title": "IBI3040, a Novel Amylin Analog, Induces Superior Weight Loss in Preclinical Models",
           "sourceType": "conference abstract",
           "publishedAt": "2026-06",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.cde.org.cn/main/xxgk/listpage/9f9c74c73e0f8f56a8bfbc646055026d",
+          "title": "CDE Accepted Drug Application Information - IBI3040 (CXHL2600710)",
+          "sourceType": "regulatory database",
           "checkedAt": "2026-08-12"
         }
       ]
@@ -5157,11 +5171,19 @@
       "Type 2 diabetes mellitus"
     ],
     "development": {
-      "stage": "IND-enabling",
-      "status": "Unknown",
-      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stage": "CTA submitted",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
       "stageOperationalState": "Not separately confirmed"
     },
+    "regulatoryStates": [
+      {
+        "state": "CTA submitted",
+        "jurisdiction": "China",
+        "authority": "Center for Drug Evaluation (CDE), National Medical Products Administration (NMPA)",
+        "date": "2026-07-21"
+      }
+    ],
     "metadata": {
       "lastVerifiedAt": "2026-08-12",
       "updatedAt": "2026-08-12",
@@ -5178,6 +5200,12 @@
           "title": "Innovent to Present Multiple Clinical and Preclinical Results at the 2026 ADA Scientific Sessions",
           "sourceType": "company press release",
           "publishedAt": "2026-05-13",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.cde.org.cn/main/xxgk/listpage/9f9c74c73e0f8f56a8bfbc646055026d",
+          "title": "CDE Accepted Drug Application Information - IBI3042 Clinical Trial Applications",
+          "sourceType": "regulatory database",
           "checkedAt": "2026-08-12"
         }
       ]
@@ -5203,11 +5231,19 @@
       "Obesity"
     ],
     "development": {
-      "stage": "IND-enabling",
-      "status": "Unknown",
-      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stage": "CTA submitted",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
       "stageOperationalState": "Not separately confirmed"
     },
+    "regulatoryStates": [
+      {
+        "state": "CTA submitted",
+        "jurisdiction": "China",
+        "authority": "Center for Drug Evaluation (CDE), National Medical Products Administration (NMPA)",
+        "date": "2026-07-24"
+      }
+    ],
     "metadata": {
       "lastVerifiedAt": "2026-08-12",
       "updatedAt": "2026-08-12",
@@ -5224,6 +5260,12 @@
           "title": "Innovent to Present Multiple Clinical and Preclinical Results at the 2026 ADA Scientific Sessions",
           "sourceType": "company press release",
           "publishedAt": "2026-05-13",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.cde.org.cn/main/xxgk/listpage/9f9c74c73e0f8f56a8bfbc646055026d",
+          "title": "CDE Accepted Drug Application Information - IBI3046 Injection Clinical Trial Application",
+          "sourceType": "regulatory database",
           "checkedAt": "2026-08-12"
         }
       ]
@@ -5271,6 +5313,12 @@
         "jurisdiction": "China",
         "authority": "National Medical Products Administration (NMPA)",
         "date": "2025-06-27"
+      },
+      {
+        "state": "NDA submitted",
+        "jurisdiction": "China",
+        "authority": "Center for Drug Evaluation (CDE), National Medical Products Administration (NMPA)",
+        "date": "2025-11-25"
       }
     ],
     "relationships": [
@@ -5328,6 +5376,13 @@
           "title": "Innovent Announces Mazdutide Received NMPA Approval for Chronic Weight Management",
           "sourceType": "company press release",
           "publishedAt": "2025-06-27",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1125/2025112500387.pdf",
+          "title": "Mazdutide 9 mg Supplementary Application Accepted for Review by China's National Medical Products Administration",
+          "sourceType": "regulatory filing",
+          "publishedAt": "2025-11-25",
           "checkedAt": "2026-08-12"
         },
         {
