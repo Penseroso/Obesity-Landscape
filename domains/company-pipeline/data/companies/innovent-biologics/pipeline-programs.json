@@ -1,0 +1,331 @@
+[
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection",
+    "assetId": "mazdutide",
+    "companyId": "innovent-biologics",
+    "assetName": "Mazdutide",
+    "codeName": "IBI362",
+    "aliases": [
+      { "type": "development-code", "value": "LY3305677" },
+      { "type": "development-code", "value": "OXM3" }
+    ],
+    "technical": {
+      "mechanism": "GLP-1 and glucagon receptor agonist",
+      "platform": "Oxyntomodulin analog"
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": ["Obesity", "Overweight"],
+    "development": {
+      "stage": "Approved",
+      "status": "Active",
+      "stageBasis": "Official regulatory-development milestone",
+      "stageOperationalState": "Initiated or active"
+    },
+    "regulatoryStates": [
+      {
+        "state": "NDA approved",
+        "jurisdiction": "China",
+        "authority": "National Medical Products Administration (NMPA)",
+        "date": "2025-06-27"
+      }
+    ],
+    "relationships": [
+      {
+        "externalCompanyName": "Eli Lilly and Company",
+        "role": "originator",
+        "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"]
+      },
+      {
+        "externalCompanyName": "Eli Lilly and Company",
+        "role": "licensor",
+        "territories": ["China"],
+        "rights": ["development", "commercialization"],
+        "effectiveDate": "2019-08-22",
+        "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"]
+      },
+      {
+        "companyId": "innovent-biologics",
+        "role": "regional rights holder",
+        "territories": ["China"],
+        "rights": ["development", "commercialization"],
+        "effectiveDate": "2019-08-22",
+        "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-12",
+      "updatedAt": "2026-08-12",
+      "sources": [
+        {
+          "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf",
+          "title": "Innovent Biologics, Inc. Annual Report 2025",
+          "sourceType": "regulatory filing",
+          "publishedAt": "2026-04-28",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=546",
+          "title": "Innovent Announces Mazdutide Received NMPA Approval for Chronic Weight Management",
+          "sourceType": "company press release",
+          "publishedAt": "2025-06-27",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06164873",
+          "title": "A Study of IBI362 9 mg in Chinese Adults With Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07000955",
+          "title": "Tolerance and Pharmacokinetic Study of IBI362 15 mg in Patients With Moderate to Severe Obesity",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-08-12"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "mazdutide",
+    "companyId": "innovent-biologics",
+    "assetName": "Mazdutide",
+    "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": { "stage": "Approved", "status": "Active", "stageBasis": "Official regulatory-development milestone", "stageOperationalState": "Not separately confirmed" },
+    "regulatoryStates": [{ "state": "NDA approved", "jurisdiction": "China", "authority": "National Medical Products Administration (NMPA)", "date": "2025-09-19" }],
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12",
+      "sources": [
+        { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+        { "url": "https://www.prnewswire.com/news-releases/innovent-announces-mazdutide-received-approval-from-chinas-nmpa-for-glycemic-control-in-adults-with-type-2-diabetes-302561434.html", "title": "Innovent Announces Mazdutide Received Approval From China's NMPA for Glycemic Control in Adults With Type 2 Diabetes", "sourceType": "company press release", "publishedAt": "2025-09-19", "checkedAt": "2026-08-12" }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes-with-obesity",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Type 2 diabetes mellitus with obesity"],
+    "development": { "stage": "Phase 3", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Completed" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT06184568", "title": "A Study Comparing IBI362 vs Semaglutide in Chinese Adults With Early Type 2 Diabetes and Obesity", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-osa",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Obstructive sleep apnea"],
+    "development": { "stage": "Phase 3", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT06931028", "title": "A Study of IBI362 in Chinese Subjects With Obstructive Sleep Apnea and BMI at Least 28 kg/m2", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-mafld",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Metabolic dysfunction-associated fatty liver disease"],
+    "development": { "stage": "Phase 3", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT06884293", "title": "A Study Comparing IBI362 vs Semaglutide in Chinese Overweight or Obese Adults With MAFLD", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-adolescent-obesity",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 3", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT07255209", "title": "A Study of IBI362 in Chinese Adolescents With Obesity or Overweight", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-obesity-with-hypertension",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Hypertension"],
+    "development": { "stage": "Phase 3", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT07469800", "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight or Obesity", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-mash",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Metabolic dysfunction-associated steatohepatitis"],
+    "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT06937749", "title": "A Study of IBI362 in Participants With Metabolic Dysfunction-Associated Steatohepatitis", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "metabolic-adjacent"
+  },
+  {
+    "id": "innovent-biologics-mazdutide-subcutaneous-injection-hfpef-with-obesity",
+    "assetId": "mazdutide", "companyId": "innovent-biologics", "assetName": "Mazdutide", "codeName": "IBI362",
+    "aliases": [{ "type": "development-code", "value": "LY3305677" }, { "type": "development-code", "value": "OXM3" }],
+    "technical": { "mechanism": "GLP-1 and glucagon receptor agonist", "platform": "Oxyntomodulin analog" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": "Once weekly" },
+    "indications": ["Heart failure with preserved or mildly reduced ejection fraction"],
+    "development": { "stage": "Phase 2", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "relationships": [
+      { "externalCompanyName": "Eli Lilly and Company", "role": "originator", "sourceUrls": ["https://www.prnewswire.com/news-releases/innovent-enters-a-licensing-agreement-with-lilly-to-develop--commercialize-a-novel-diabetes-medicine-in-china-300905146.html"] },
+      { "externalCompanyName": "Eli Lilly and Company", "role": "licensor", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] },
+      { "companyId": "innovent-biologics", "role": "regional rights holder", "territories": ["China"], "rights": ["development", "commercialization"], "effectiveDate": "2019-08-22", "sourceUrls": ["https://investor.innoventbio.com/media/1109/exclusive.pdf"] }
+    ],
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT06862908", "title": "A Study of IBI362 in Subjects With HFpEF or HFmrEF Combined With Obesity", "sourceType": "trial registry", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "innovent-biologics-ibi3032-oral-tablet",
+    "assetId": "ibi3032", "companyId": "innovent-biologics", "assetName": "IBI3032", "codeName": null,
+    "technical": { "mechanism": "Non-peptide GLP-1 receptor agonist", "platform": "Small molecule" },
+    "administration": { "route": "Oral", "dosageForm": "Tablet", "dosingInterval": "Once daily" },
+    "indications": ["Obesity", "Overweight", "Type 2 diabetes mellitus"],
+    "development": { "stage": "Phase 1", "status": "Active", "stageBasis": "Operational evidence", "stageOperationalState": "Initiated or active" },
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://clinicaltrials.gov/study/NCT07170319", "title": "A Study of IBI3032 in Chinese Participants With Overweight or Obesity", "sourceType": "trial registry", "checkedAt": "2026-08-12" },
+      { "url": "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=591", "title": "Innovent to Present Multiple Clinical and Preclinical Results at the 2026 ADA Scientific Sessions", "sourceType": "company press release", "publishedAt": "2026-05-13", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-ibi3042-oral-undisclosed",
+    "assetId": "ibi3042", "companyId": "innovent-biologics", "assetName": "IBI3042", "codeName": null,
+    "technical": { "mechanism": "Non-peptide GLP-1 receptor agonist", "platform": "Small molecule" },
+    "administration": { "route": "Oral", "dosageForm": "Undisclosed", "dosingInterval": "Once weekly" },
+    "indications": ["Obesity", "Type 2 diabetes mellitus"],
+    "development": { "stage": "IND-enabling", "status": "Unknown", "stageBasis": "Sponsor-declared current pipeline stage", "stageOperationalState": "Not separately confirmed" },
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=591", "title": "Innovent to Present Multiple Clinical and Preclinical Results at the 2026 ADA Scientific Sessions", "sourceType": "company press release", "publishedAt": "2026-05-13", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-ibi3040-undisclosed-undisclosed",
+    "assetId": "ibi3040", "companyId": "innovent-biologics", "assetName": "IBI3040", "codeName": null,
+    "technical": { "mechanism": "Dual amylin and calcitonin receptor agonist", "platform": "Amylin analog" },
+    "administration": { "route": "Undisclosed", "dosageForm": "Undisclosed", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "Preclinical", "status": "Unknown", "stageBasis": "Sponsor-declared current pipeline stage", "stageOperationalState": "Not separately confirmed" },
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=591", "title": "Innovent to Present Multiple Clinical and Preclinical Results at the 2026 ADA Scientific Sessions", "sourceType": "company press release", "publishedAt": "2026-05-13", "checkedAt": "2026-08-12" },
+      { "url": "https://diabetesjournals.org/diabetes/article/75/Supplement_1/3077-LB/167456/3077-LB-IBI3040-a-Novel-Amylin-Analog-Induces", "title": "IBI3040, a Novel Amylin Analog, Induces Superior Weight Loss in Preclinical Models", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-ibi3046-undisclosed-undisclosed",
+    "assetId": "ibi3046", "companyId": "innovent-biologics", "assetName": "IBI3046", "codeName": null,
+    "technical": { "mechanism": "INHBE-targeting siRNA", "platform": "Small interfering RNA" },
+    "administration": { "route": "Undisclosed", "dosageForm": "Undisclosed", "dosingInterval": null },
+    "indications": ["Obesity"],
+    "development": { "stage": "IND-enabling", "status": "Unknown", "stageBasis": "Sponsor-declared current pipeline stage", "stageOperationalState": "Not separately confirmed" },
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://en.innoventbio.com/InvestorsAndMedia/PressReleaseDetail?key=591", "title": "Innovent to Present Multiple Clinical and Preclinical Results at the 2026 ADA Scientific Sessions", "sourceType": "company press release", "publishedAt": "2026-05-13", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-ibi3012-subcutaneous-injection",
+    "assetId": "ibi3012", "companyId": "innovent-biologics", "assetName": "IBI3012", "codeName": null,
+    "technical": { "mechanism": "GIP receptor inhibitory antibody conjugated to GLP-1/glucagon dual receptor agonist peptide", "platform": "Antibody-peptide conjugate" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity", "Type 2 diabetes mellitus", "Metabolic dysfunction-associated steatohepatitis"],
+    "development": { "stage": "IND-enabling", "status": "Unknown", "stageBasis": "Sponsor-declared current pipeline stage", "stageOperationalState": "Not separately confirmed" },
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://investor.innoventbio.com/media/1307/innovent-biologics_2024-annual-results-presentation.pdf", "title": "Innovent Biologics 2024 Annual Results Presentation", "sourceType": "company investor presentation", "publishedAt": "2025-03-27", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "innovent-biologics-ibi3030-subcutaneous-injection",
+    "assetId": "ibi3030", "companyId": "innovent-biologics", "assetName": "IBI3030", "codeName": null,
+    "technical": { "mechanism": "PCSK9 inhibitory antibody conjugated to GLP-1/GIP/glucagon triple receptor agonist peptide", "platform": "Antibody-peptide conjugate" },
+    "administration": { "route": "Subcutaneous", "dosageForm": "Injection", "dosingInterval": null },
+    "indications": ["Obesity", "Type 2 diabetes mellitus", "Hyperlipidemia"],
+    "development": { "stage": "IND-enabling", "status": "Unknown", "stageBasis": "Sponsor-declared current pipeline stage", "stageOperationalState": "Not separately confirmed" },
+    "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [
+      { "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042805171.pdf", "title": "Innovent Biologics, Inc. Annual Report 2025", "sourceType": "regulatory filing", "publishedAt": "2026-04-28", "checkedAt": "2026-08-12" },
+      { "url": "https://investor.innoventbio.com/media/1307/innovent-biologics_2024-annual-results-presentation.pdf", "title": "Innovent Biologics 2024 Annual Results Presentation", "sourceType": "company investor presentation", "publishedAt": "2025-03-27", "checkedAt": "2026-08-12" }
+    ] },
+    "scopeClass": "obesity-treatment"
+  }
+]

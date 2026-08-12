@@ -43,6 +43,20 @@
     "mechanisms": ["GLP-1R agonist/GIPR antagonist"]
   },
   {
+    "id": "glp1-glucagon-agonist-gip-antagonist",
+    "label": "GLP-1 / glucagon receptor agonist / GIP receptor antagonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" },
+      { "target": "GIPR", "action": "antagonist" }
+    ],
+    "sortRank": 35,
+    "mechanisms": [
+      "GIP receptor inhibitory antibody conjugated to GLP-1/glucagon dual receptor agonist peptide"
+    ]
+  },
+  {
     "id": "glp1-glucagon-agonist",
     "label": "GLP-1 / glucagon receptor agonist",
     "composition": "single-molecule",
@@ -458,6 +472,21 @@
     "mechanisms": []
   },
   {
+    "id": "glp1-gip-glucagon-plus-pcsk9-combination",
+    "label": "GLP-1 / GIP / glucagon receptor agonist plus PCSK9 inhibition",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" },
+      { "target": "PCSK9", "action": "inhibitor" }
+    ],
+    "sortRank": 307,
+    "mechanisms": [
+      "PCSK9 inhibitory antibody conjugated to GLP-1/GIP/glucagon triple receptor agonist peptide"
+    ]
+  },
+  {
     "id": "glp1-gip-plus-il17a-combination",
     "label": "GLP-1 / GIP receptor agonist plus IL-17A antagonist",
     "composition": "multi-component",
@@ -516,5 +545,13 @@
     ],
     "sortRank": 350,
     "mechanisms": ["GIP/GLP-1-preferring triple agonist plus CRF2 receptor agonist"]
+  },
+  {
+    "id": "inhbe-silencer",
+    "label": "INHBE gene silencer",
+    "composition": "single-molecule",
+    "targets": [{ "target": "INHBE", "action": "silencer" }],
+    "sortRank": 360,
+    "mechanisms": ["INHBE-targeting siRNA"]
   }
 ]

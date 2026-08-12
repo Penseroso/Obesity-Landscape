@@ -117,6 +117,16 @@
     }
   },
   {
+    "id": "innovent-biologics",
+    "name": "Innovent Biologics, Inc.",
+    "headquartersCountry": "China",
+    "officialWebsite": {
+      "url": "https://en.innoventbio.com/",
+      "checkedAt": "2026-08-12"
+    },
+    "officialPipeline": null
+  },
+  {
     "id": "kailera-therapeutics",
     "name": "Kailera Therapeutics, Inc.",
     "headquartersCountry": "United States",
