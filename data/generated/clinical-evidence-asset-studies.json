@@ -316,7 +316,8 @@
       "linkedStudyIds": [
         "astrazeneca-cotadutide-nct03235050",
         "novo-nordisk-cagrilintide-phase2-nct03856047",
-        "novo-nordisk-semaglutide-step-8-nct04074161"
+        "novo-nordisk-semaglutide-step-8-nct04074161",
+        "sciwind-biosciences-ecnoglutide-nct05111912"
       ]
     },
     {
@@ -386,7 +387,8 @@
         "gan-lee-pharmaceuticals-gzr18-nct07622810",
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
         "pfizer-pf-07081532-nct05579977",
-        "roche-ct-996-bp45703-nct07112872"
+        "roche-ct-996-bp45703-nct07112872",
+        "sciwind-biosciences-ecnoglutide-nct07073417"
       ]
     },
     {
@@ -482,6 +484,22 @@
         "roche-enicepatide-enith1-nct07351045",
         "roche-enicepatide-enith2-nct07351058",
         "roche-enicepatide-ct388-101-nct04838405"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "sciwind-biosciences",
+      "assetId": "ecnoglutide",
+      "focalStudyIds": [
+        "sciwind-biosciences-ecnoglutide-ctr20213434",
+        "sciwind-biosciences-ecnoglutide-nct05111912",
+        "sciwind-biosciences-ecnoglutide-nct05813795",
+        "sciwind-biosciences-ecnoglutide-nct07073417",
+        "sciwind-biosciences-ecnoglutide-nct07143227",
+        "sciwind-biosciences-ecnoglutide-nct07243171",
+        "sciwind-biosciences-ecnoglutide-nct07387094",
+        "sciwind-biosciences-ecnoglutide-nct07434050",
+        "sciwind-biosciences-ecnoglutide-nct07734311"
       ],
       "linkedStudyIds": []
     },

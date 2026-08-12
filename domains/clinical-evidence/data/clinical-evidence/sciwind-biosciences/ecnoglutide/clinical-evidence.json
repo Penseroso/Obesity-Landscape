@@ -1,0 +1,292 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "sciwind-biosciences",
+  "assetId": "ecnoglutide",
+  "studies": [
+    {
+      "id": "sciwind-biosciences-ecnoglutide-ctr20213434",
+      "companyId": "sciwind-biosciences",
+      "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
+      "officialTitle": "A Phase 1c Study of XW003 in Chinese Adults With Overweight or Obesity",
+      "registryIdentifiers": [{ "registry": "China Drug Trials Registry", "id": "CTR20213434" }],
+      "protocolIdentifiers": ["SCW0502-1014"],
+      "phase": "Phase 1c",
+      "registryStatus": {
+        "registry": "China Drug Trials Registry",
+        "registryId": "CTR20213434",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "进行中（尚未招募）",
+        "statusUpdatedAt": "2021-12-31"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind through Week 14; open-label active-treatment extension",
+        "comparator": "Placebo",
+        "description": "Two once-weekly ecnoglutide dose groups and placebo were evaluated through Week 14; active-treatment participants continued through Week 26."
+      },
+      "population": "Chinese adults with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "26 weeks",
+      "safetySummary": "No drug-related serious adverse event or grade 3 or higher adverse event was reported; one serious treatment-emergent acute appendicitis event in the 2.4 mg group was assessed as unrelated.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          { "url": "https://www.changbaicao.cn/trialsdetail-id-290.html", "title": "CTR20213434 registry record", "sourceType": "trial registry mirror", "checkedAt": "2026-08-12" },
+          { "url": "https://doi.org/10.2337/db23-756-P", "title": "Efficacy and Safety of Ecnoglutide (XW003) in Chinese Adults with Overweight or Obesity", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" },
+          { "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "title": "SCW0502-1014 ADA 2023 poster", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }
+        ]
+      }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct05111912",
+      "companyId": "sciwind-biosciences",
+      "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
+      "officialTitle": "A Phase 2, Open-label, Randomised, Dose-Finding Study of XW003, Once-Weekly Human Glucagon-Like Peptide 1 Analogue, Compared With Once-Daily Liraglutide 3 mg in Adult Participants With Obesity",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT05111912" }],
+      "protocolIdentifiers": ["SCW0502-1121"],
+      "phase": "Phase 2",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT05111912", "overallStatus": "completed", "sourceStatus": "Completed", "statusUpdatedAt": "2023-08-21" },
+      "design": { "randomization": "Randomized", "masking": "Open-label", "comparator": "Active comparator", "description": "Four-arm dose-finding study of three once-weekly ecnoglutide target doses versus once-daily liraglutide 3 mg." },
+      "population": "Adults with obesity in Australia and New Zealand.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "without-type-2-diabetes", "requiresAdditionalCondition": false, "treatmentContext": "initial-treatment" },
+      "overallDuration": "26 weeks",
+      "safetySummary": "Treatment-emergent adverse events occurred in 93.5% of pooled ecnoglutide participants and 98.0% of liraglutide participants; gastrointestinal events were mostly mild or moderate. Two treatment-related serious acute cholecystitis events occurred, one with ecnoglutide 1.2 mg and one with liraglutide.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12",
+        "sources": [
+          { "url": "https://clinicaltrials.gov/study/NCT05111912", "title": "SCW0502-1121 study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" },
+          { "url": "https://doi.org/10.2337/db23-79-LB", "title": "Efficacy and Safety of Ecnoglutide versus Liraglutide in Adults with Obesity", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" },
+          { "url": "https://static1.squarespace.com/static/611008352d4cdc6ceb04d4a7/t/649d60c9a26f6336e30f00ec/1688035529450/Poster_Late%2Bbreaker_XW003%2BPh2%2Bobesity%2BAustNZ%2B%28SCW0502-1121_%29_ADA%2B2023_submitted.pdf", "title": "SCW0502-1121 ADA 2023 poster", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }
+        ]
+      }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct05813795",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Multi-center, Randomized, Double-Blind and Placebo-controlled Study to Evaluate the Efficacy and Safety of XW003 in Adults With Overweight or Obesity (SLIMMER)",
+      "acronym": "SLIMMER", "studyFamily": "SLIMMER",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT05813795" }, { "registry": "China Drug Trials Registry", "id": "CTR20230745" }],
+      "protocolIdentifiers": ["SCW0502-1131"], "phase": "Phase 3",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT05813795", "overallStatus": "completed", "sourceStatus": "Completed", "statusUpdatedAt": "2025-04-30" },
+      "design": { "randomization": "Randomized", "masking": "Triple-blind", "comparator": "Placebo", "description": "Three ecnoglutide dose cohorts, each with a protocol-defined matching placebo arm; the efficacy publication pooled the three placebo arms." },
+      "population": "Chinese adults with overweight or obesity, without diabetes.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "without-type-2-diabetes", "requiresAdditionalCondition": false, "treatmentContext": "initial-treatment", "regionRestriction": "China" },
+      "overallDuration": "48 weeks",
+      "safetySummary": "Treatment-emergent adverse events occurred in 93% of participants in each ecnoglutide dose group and 84% of pooled placebo participants; gastrointestinal events were generally mild or moderate, and 10 ecnoglutide participants discontinued because of adverse events.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12",
+        "sources": [
+          { "url": "https://clinicaltrials.gov/study/NCT05813795", "title": "SLIMMER study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" },
+          { "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "title": "Efficacy and safety of a biased GLP-1 receptor agonist ecnoglutide in adults with overweight or obesity", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" },
+          { "url": "https://pubmed.ncbi.nlm.nih.gov/40555243/", "title": "SLIMMER publication index record", "sourceType": "literature index", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" },
+          { "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "title": "Hangzhou Sciwind Biosciences application proof", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }
+        ]
+      }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct07073417",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Open-label, Treatment Switching Phase II Study to Evaluate the Efficacy and Safety of XW003 Injection and Semaglutide Injection in Chinese Adults With Obesity",
+      "acronym": "SLIMMER-UP-SWITCH", "studyFamily": "SLIMMER",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT07073417" }, { "registry": "China Drug Trials Registry", "id": "CTR20252734" }],
+      "protocolIdentifiers": ["SCW0502-1122"], "phase": "Phase 2",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT07073417", "overallStatus": "active-not-recruiting", "sourceStatus": "Active, not recruiting", "statusUpdatedAt": "2026-04-13" },
+      "design": { "randomization": "Randomized", "masking": "Open-label", "comparator": "Active comparator", "description": "Treatment-switching comparison of once-weekly ecnoglutide and semaglutide, including dose escalation, core treatment and extension periods." },
+      "population": "Chinese adults with obesity.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "without-type-2-diabetes", "requiresAdditionalCondition": false, "treatmentContext": "randomized-withdrawal-or-switch", "regionRestriction": "China" },
+      "overallDuration": "60 weeks",
+      "safetySummary": "At Week 20, both treatments were reported as well tolerated and gastrointestinal events were predominantly mild or moderate; nausea occurred in 13.4% versus 21.0% and vomiting in 11.0% versus 12.3% with ecnoglutide versus semaglutide.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12",
+        "sources": [
+          { "url": "https://clinicaltrials.gov/study/NCT07073417", "title": "SLIMMER-UP-SWITCH study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" },
+          { "url": "https://doi.org/10.2337/db26-2849-LB", "title": "Ecnoglutide versus Semaglutide in Chinese Adults with Obesity", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }
+        ]
+      }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct07143227",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-adolescent-obesity",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase Ib Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Multiple Dosing of XW003 Injection in Chinese Adolescents With Obesity",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT07143227" }, { "registry": "China Drug Trials Registry", "id": "CTR20253165" }],
+      "protocolIdentifiers": ["SCW0502-1111"], "phase": "Phase 1b",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT07143227", "overallStatus": "completed", "sourceStatus": "Completed", "statusUpdatedAt": "2026-05-20" },
+      "design": { "randomization": "Randomized", "masking": "Double-blind", "comparator": "Placebo", "description": "Three multiple-dose ecnoglutide cohorts and matching placebo." },
+      "population": "Chinese adolescents with obesity.",
+      "populationProfile": { "ageGroup": "adolescent", "diabetesStatus": "not-specified", "requiresAdditionalCondition": false, "treatmentContext": "initial-treatment", "regionRestriction": "China" },
+      "overallDuration": "20 weeks",
+      "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://clinicaltrials.gov/study/NCT07143227", "title": "SCW0502-1111 study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" }] }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct07243171",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-oral-tablets",
+      "officialTitle": "A Multicenter, Multiple-dose Escalation, Randomized, Double-blind, Placebo-controlled Phase Ib/IIa Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Oral Ecnoglutide Tablets in Chinese Participants With Overweight or Obesity",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT07243171" }],
+      "protocolIdentifiers": ["SCW0503-1012"], "phase": "Phase 1b/Phase 2a",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT07243171", "overallStatus": "recruiting", "sourceStatus": "Recruiting", "statusUpdatedAt": "2026-01-28" },
+      "design": { "randomization": "Randomized", "masking": "Quadruple-blind", "comparator": "Placebo", "description": "Four multiple-dose oral ecnoglutide cohorts using once-daily or once-weekly dosing and two frequency-matched placebo cohorts." },
+      "population": "Chinese adults with overweight or obesity.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "not-specified", "requiresAdditionalCondition": false, "treatmentContext": "initial-treatment", "regionRestriction": "China" },
+      "overallDuration": "Up to 204 days",
+      "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://clinicaltrials.gov/study/NCT07243171", "title": "SCW0503-1012 study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" }] }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct07387094",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-osa",
+      "officialTitle": "A Multi-center, Randomized, Double-blind, Placebo-controlled Phase III Study to Assess the Efficacy and Safety of XW003 Injections in Obese Participants With Obstructive Sleep Apnea But Not Receive Positive Airway Pressure Therapy",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT07387094" }],
+      "protocolIdentifiers": ["SCW0502-5031"], "phase": "Phase 3",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT07387094", "overallStatus": "recruiting", "sourceStatus": "Recruiting", "statusUpdatedAt": "2026-04-14" },
+      "design": { "randomization": "Randomized", "masking": "Double-blind", "comparator": "Placebo", "description": "Once-weekly ecnoglutide or matching placebo in participants not receiving positive airway pressure therapy." },
+      "population": "Adults with obesity and obstructive sleep apnea who are not receiving positive airway pressure therapy.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "not-specified", "requiresAdditionalCondition": true, "treatmentContext": "initial-treatment" },
+      "overallDuration": "48 weeks",
+      "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://clinicaltrials.gov/study/NCT07387094", "title": "SCW0502-5031 study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" }] }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct07434050",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection-osa",
+      "officialTitle": "A Multi-center, Randomized, Double-blind, Placebo-controlled Phase III Study to Assess the Efficacy and Safety of XW003 Injections in Obese Participants With Obstructive Sleep Apnea Receiving Positive Airway Pressure Therapy",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT07434050" }],
+      "protocolIdentifiers": ["SCW0502-5032"], "phase": "Phase 3",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT07434050", "overallStatus": "recruiting", "sourceStatus": "Recruiting", "statusUpdatedAt": "2026-04-13" },
+      "design": { "randomization": "Randomized", "masking": "Double-blind", "comparator": "Placebo", "description": "Once-weekly ecnoglutide or matching placebo in participants receiving positive airway pressure therapy." },
+      "population": "Adults with obesity and obstructive sleep apnea who are receiving positive airway pressure therapy.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "not-specified", "requiresAdditionalCondition": true, "treatmentContext": "initial-treatment" },
+      "overallDuration": "48 weeks",
+      "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://clinicaltrials.gov/study/NCT07434050", "title": "SCW0502-5032 study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" }] }
+    },
+    {
+      "id": "sciwind-biosciences-ecnoglutide-nct07734311",
+      "companyId": "sciwind-biosciences", "assetId": "ecnoglutide",
+      "programId": "sciwind-biosciences-ecnoglutide-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Study to Evaluate the Efficacy and Safety of Ecnoglutide Injection in Obese Participants With Knee Osteoarthritis (KOA)",
+      "registryIdentifiers": [{ "registry": "ClinicalTrials.gov", "id": "NCT07734311" }],
+      "protocolIdentifiers": ["SCW0502-6031"], "phase": "Phase 3",
+      "registryStatus": { "registry": "ClinicalTrials.gov", "registryId": "NCT07734311", "overallStatus": "not-yet-recruiting", "sourceStatus": "Not yet recruiting", "statusUpdatedAt": "2026-07-29" },
+      "design": { "randomization": "Randomized", "masking": "Double-blind", "comparator": "Placebo", "description": "Once-weekly ecnoglutide or matching placebo with co-primary knee-pain and body-weight objectives." },
+      "population": "Adults with obesity and knee osteoarthritis.",
+      "populationProfile": { "ageGroup": "adult", "diabetesStatus": "not-specified", "requiresAdditionalCondition": true, "treatmentContext": "initial-treatment" },
+      "overallDuration": "68 weeks",
+      "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://clinicaltrials.gov/study/NCT07734311", "title": "SCW0502-6031 study record", "sourceType": "trial registry", "checkedAt": "2026-08-12" }] }
+    }
+  ],
+  "arms": [
+    { "id": "ecno-1014-18", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "role": "experimental", "label": "Ecnoglutide 1.8 mg", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "1.8 mg", "titration": "Dose escalation", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "26 weeks" },
+    { "id": "ecno-1014-24", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "role": "experimental", "label": "Ecnoglutide 2.4 mg", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "2.4 mg", "titration": "Dose escalation", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "26 weeks" },
+    { "id": "ecno-1014-placebo", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "role": "placebo", "label": "Placebo", "intervention": "Matching placebo injection", "dose": "Matching placebo", "titration": "Dose-volume matched", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "14 weeks" },
+
+    { "id": "ecno-1121-12", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "role": "experimental", "label": "Cohort A: ecnoglutide 1.2 mg", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "1.2 mg target dose", "titration": "Started at 0.2 mg and up-titrated", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "26 weeks" },
+    { "id": "ecno-1121-18", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "role": "experimental", "label": "Cohort B: ecnoglutide 1.8 mg", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "1.8 mg target dose", "titration": "Started at 0.2 mg and up-titrated", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "26 weeks" },
+    { "id": "ecno-1121-24", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "role": "experimental", "label": "Cohort C: ecnoglutide 2.4 mg", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "2.4 mg target dose", "titration": "Started at 0.2 mg and up-titrated", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "26 weeks" },
+    { "id": "ecno-1121-lira", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "role": "active comparator", "label": "Cohort D: liraglutide 3.0 mg", "intervention": "Liraglutide injection", "linkedAsset": { "companyId": "novo-nordisk", "assetId": "liraglutide" }, "dose": "3.0 mg target dose", "titration": "Started at 0.6 mg and up-titrated over 4 weeks", "route": "Subcutaneous", "dosingFrequency": "Once daily", "treatmentDuration": "26 weeks" },
+
+    { "id": "ecno-1131-low", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "role": "experimental", "label": "C1: ecnoglutide low dose", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "1.2 mg", "titration": "Dose escalation", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks", "analyzedN": 166 },
+    { "id": "ecno-1131-placebo-low", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "role": "placebo", "label": "C1: matching placebo", "intervention": "Matching placebo injection", "dose": "Volume-matched placebo for low-dose cohort", "titration": "Dose-volume matched", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+    { "id": "ecno-1131-medium", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "role": "experimental", "label": "C2: ecnoglutide medium dose", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "1.8 mg", "titration": "Dose escalation", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks", "analyzedN": 166 },
+    { "id": "ecno-1131-placebo-medium", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "role": "placebo", "label": "C2: matching placebo", "intervention": "Matching placebo injection", "dose": "Volume-matched placebo for medium-dose cohort", "titration": "Dose-volume matched", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+    { "id": "ecno-1131-high", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "role": "experimental", "label": "C3: ecnoglutide high dose", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "2.4 mg", "titration": "Dose escalation", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks", "analyzedN": 167 },
+    { "id": "ecno-1131-placebo-high", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "role": "placebo", "label": "C3: matching placebo", "intervention": "Matching placebo injection", "dose": "Volume-matched placebo for high-dose cohort", "titration": "Dose-volume matched", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+
+    { "id": "ecno-1122-ecno", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "role": "experimental", "label": "Ecnoglutide", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "dose": "2.4 mg maintenance dose", "titration": "Dose escalation before maintenance", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "60 weeks" },
+    { "id": "ecno-1122-sema", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "role": "active comparator", "label": "Semaglutide", "intervention": "Semaglutide injection", "linkedAsset": { "companyId": "novo-nordisk", "assetId": "semaglutide" }, "dose": "2.4 mg maintenance dose", "titration": "Dose escalation before maintenance", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "60 weeks" },
+
+    { "id": "ecno-1111-dose1", "studyId": "sciwind-biosciences-ecnoglutide-nct07143227", "role": "experimental", "label": "XW003 Dose 1", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "20 weeks" },
+    { "id": "ecno-1111-dose2", "studyId": "sciwind-biosciences-ecnoglutide-nct07143227", "role": "experimental", "label": "XW003 Dose 2", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "20 weeks" },
+    { "id": "ecno-1111-dose3", "studyId": "sciwind-biosciences-ecnoglutide-nct07143227", "role": "experimental", "label": "XW003 Dose 3", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "20 weeks" },
+    { "id": "ecno-1111-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct07143227", "role": "placebo", "label": "Placebo", "intervention": "Matching placebo injection", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "20 weeks" },
+
+    { "id": "ecno-1012-oral1", "studyId": "sciwind-biosciences-ecnoglutide-nct07243171", "role": "experimental", "label": "Oral ecnoglutide dose 1", "intervention": "Ecnoglutide tablets", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Oral", "dosingFrequency": "Once daily", "treatmentDuration": "Up to 3 weeks" },
+    { "id": "ecno-1012-oral2", "studyId": "sciwind-biosciences-ecnoglutide-nct07243171", "role": "experimental", "label": "Oral ecnoglutide dose 2", "intervention": "Ecnoglutide tablets", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Oral", "dosingFrequency": "Once daily", "treatmentDuration": "Up to 4 weeks" },
+    { "id": "ecno-1012-oral3", "studyId": "sciwind-biosciences-ecnoglutide-nct07243171", "role": "experimental", "label": "Oral ecnoglutide dose 3", "intervention": "Ecnoglutide tablets", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Oral", "dosingFrequency": "Once weekly", "treatmentDuration": "Up to 24 weeks" },
+    { "id": "ecno-1012-oral4", "studyId": "sciwind-biosciences-ecnoglutide-nct07243171", "role": "experimental", "label": "Oral ecnoglutide dose 4", "intervention": "Ecnoglutide tablets", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Oral", "dosingFrequency": "Once weekly", "treatmentDuration": "Up to 24 weeks" },
+    { "id": "ecno-1012-placebo-daily", "studyId": "sciwind-biosciences-ecnoglutide-nct07243171", "role": "placebo", "label": "Once-daily placebo", "intervention": "Matching placebo tablets", "route": "Oral", "dosingFrequency": "Once daily" },
+    { "id": "ecno-1012-placebo-weekly", "studyId": "sciwind-biosciences-ecnoglutide-nct07243171", "role": "placebo", "label": "Once-weekly placebo", "intervention": "Matching placebo tablets", "route": "Oral", "dosingFrequency": "Once weekly", "treatmentDuration": "Up to 24 weeks" },
+
+    { "id": "ecno-5031-active", "studyId": "sciwind-biosciences-ecnoglutide-nct07387094", "role": "experimental", "label": "XW003 injection", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+    { "id": "ecno-5031-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct07387094", "role": "placebo", "label": "Placebo", "intervention": "Matching placebo injection", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+    { "id": "ecno-5032-active", "studyId": "sciwind-biosciences-ecnoglutide-nct07434050", "role": "experimental", "label": "XW003 injection", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+    { "id": "ecno-5032-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct07434050", "role": "placebo", "label": "Placebo", "intervention": "Matching placebo injection", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "48 weeks" },
+    { "id": "ecno-6031-active", "studyId": "sciwind-biosciences-ecnoglutide-nct07734311", "role": "experimental", "label": "Ecnoglutide injection", "intervention": "Ecnoglutide injection", "linkedAsset": { "companyId": "sciwind-biosciences", "assetId": "ecnoglutide" }, "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "68 weeks" },
+    { "id": "ecno-6031-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct07734311", "role": "placebo", "label": "Placebo", "intervention": "Matching placebo injection", "route": "Subcutaneous", "dosingFrequency": "Once weekly", "treatmentDuration": "68 weeks" }
+  ],
+  "analysisGroups": [
+    { "id": "ecno-1131-pooled-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "kind": "pooled", "label": "Pooled placebo", "memberArmIds": ["ecno-1131-placebo-low", "ecno-1131-placebo-medium", "ecno-1131-placebo-high"], "description": "Source-reported pooled placebo analysis group across the three dose cohorts.", "analyzedN": 165 }
+  ],
+  "endpoints": [
+    { "id": "ecno-1014-weight-w14", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "name": "Percent change from baseline in body weight", "role": "secondary", "domain": "body weight", "assessmentTimepoint": "Week 14" },
+    { "id": "ecno-1014-weight-w26", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "name": "Percent change from baseline in body weight", "role": "secondary", "domain": "body weight", "assessmentTimepoint": "Week 26" },
+    { "id": "ecno-1014-responder5-w26", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "name": "Participants achieving at least 5% body-weight reduction", "role": "secondary", "domain": "body weight", "assessmentTimepoint": "Week 26" },
+    { "id": "ecno-1014-serious-teae", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "name": "Participants with serious treatment-emergent adverse events", "role": "safety", "domain": "safety", "assessmentTimepoint": "Through Week 26" },
+
+    { "id": "ecno-1121-weight-w26", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "name": "Percent change from baseline in body weight", "role": "primary", "domain": "body weight", "assessmentTimepoint": "Week 26" },
+
+    { "id": "ecno-1131-weight-w40", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "name": "Percent change from baseline in body weight", "role": "co-primary", "domain": "body weight", "assessmentTimepoint": "Week 40" },
+    { "id": "ecno-1131-responder5-w40", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "name": "Participants achieving at least 5% body-weight reduction", "role": "co-primary", "domain": "body weight", "assessmentTimepoint": "Week 40" },
+    { "id": "ecno-1131-weight-w48", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "name": "Percent change from baseline in body weight", "role": "secondary", "domain": "body weight", "assessmentTimepoint": "Week 48" },
+    { "id": "ecno-1131-responder5-w48", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "name": "Participants achieving at least 5% body-weight reduction", "role": "secondary", "domain": "body weight", "assessmentTimepoint": "Week 48" },
+
+    { "id": "ecno-1122-weight-w20", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "name": "Percent change from baseline in body weight", "role": "secondary", "domain": "body weight", "assessmentTimepoint": "Week 20 interim analysis" },
+    { "id": "ecno-1122-nausea-w20", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "name": "Participants with nausea", "role": "safety", "domain": "safety", "assessmentTimepoint": "Through Week 20" },
+    { "id": "ecno-1122-vomiting-w20", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "name": "Participants with vomiting", "role": "safety", "domain": "safety", "assessmentTimepoint": "Through Week 20" }
+  ],
+  "outcomes": [
+    { "id": "ecno-1014-weight14-18", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w14", "armIds": ["ecno-1014-18"], "analysisPopulation": "Full analysis set", "result": { "value": "-9.51 ± 0.61", "numericValue": -9.51, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-weight14-24", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w14", "armIds": ["ecno-1014-24"], "analysisPopulation": "Full analysis set", "result": { "value": "-8.91 ± 0.66", "numericValue": -8.91, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-weight14-placebo", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w14", "armIds": ["ecno-1014-placebo"], "analysisPopulation": "Full analysis set", "result": { "value": "-0.87 ± 0.96", "numericValue": -0.87, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-etd14-18", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w14", "armIds": ["ecno-1014-18", "ecno-1014-placebo"], "analysisPopulation": "Full analysis set", "result": { "value": "-8.64", "numericValue": -8.64, "unit": "percentage points", "effectMeasure": "Least-squares mean treatment difference", "resultType": "between-arm", "comparisonType": "Ecnoglutide 1.8 mg minus placebo", "confidenceInterval": "95% CI, -10.86 to -6.42", "pValue": "<0.0001" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-etd14-24", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w14", "armIds": ["ecno-1014-24", "ecno-1014-placebo"], "analysisPopulation": "Full analysis set", "result": { "value": "-8.05", "numericValue": -8.05, "unit": "percentage points", "effectMeasure": "Least-squares mean treatment difference", "resultType": "between-arm", "comparisonType": "Ecnoglutide 2.4 mg minus placebo", "confidenceInterval": "95% CI, -10.32 to -5.77", "pValue": "<0.0001" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-weight26-18", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w26", "armIds": ["ecno-1014-18"], "analysisPopulation": "Week 26 evaluable participants", "result": { "value": "-15.00", "numericValue": -15, "unit": "percent", "resultType": "arm-level", "confidenceInterval": "95% CI, -16.77 to -13.24" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-weight26-24", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-weight-w26", "armIds": ["ecno-1014-24"], "analysisPopulation": "Week 26 evaluable participants", "result": { "value": "-13.18", "numericValue": -13.18, "unit": "percent", "resultType": "arm-level", "confidenceInterval": "95% CI, -15.29 to -11.06" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-r5-18", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-responder5-w26", "armIds": ["ecno-1014-18"], "analysisPopulation": "Week 26 evaluable participants", "result": { "value": "94.7", "numericValue": 94.7, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-756-P", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-r5-24", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-responder5-w26", "armIds": ["ecno-1014-24"], "analysisPopulation": "Week 26 evaluable participants", "result": { "value": "100", "numericValue": 100, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-756-P", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-sae-18", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-serious-teae", "armIds": ["ecno-1014-18"], "analysisPopulation": "Safety population", "result": { "value": "0", "numericValue": 0, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-sae-24", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-serious-teae", "armIds": ["ecno-1014-24"], "analysisPopulation": "Safety population", "result": { "value": "4.8", "numericValue": 4.8, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1014-sae-placebo", "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434", "endpointId": "ecno-1014-serious-teae", "armIds": ["ecno-1014-placebo"], "analysisPopulation": "Safety population", "result": { "value": "0", "numericValue": 0, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.sciwindbio.com/s/Poster_XW003-Ph1c-obesity-China-SCW0502-1014_ADA-2023_sumbitted.pdf", "sourceType": "official scientific presentation", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+
+    { "id": "ecno-1121-weight-12", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "endpointId": "ecno-1121-weight-w26", "armIds": ["ecno-1121-12"], "analysisPopulation": "Full analysis set", "result": { "value": "-11.5", "numericValue": -11.5, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-79-LB", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1121-weight-18", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "endpointId": "ecno-1121-weight-w26", "armIds": ["ecno-1121-18"], "analysisPopulation": "Full analysis set", "result": { "value": "-11.2", "numericValue": -11.2, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-79-LB", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1121-weight-24", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "endpointId": "ecno-1121-weight-w26", "armIds": ["ecno-1121-24"], "analysisPopulation": "Full analysis set", "result": { "value": "-14.7", "numericValue": -14.7, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-79-LB", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1121-weight-lira", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "endpointId": "ecno-1121-weight-w26", "armIds": ["ecno-1121-lira"], "analysisPopulation": "Full analysis set", "result": { "value": "-8.8", "numericValue": -8.8, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-79-LB", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1121-etd-24-lira", "studyId": "sciwind-biosciences-ecnoglutide-nct05111912", "endpointId": "ecno-1121-weight-w26", "armIds": ["ecno-1121-24", "ecno-1121-lira"], "analysisPopulation": "Full analysis set", "result": { "value": "-5.9", "numericValue": -5.9, "unit": "percentage points", "effectMeasure": "Least-squares mean treatment difference", "resultType": "between-arm", "comparisonType": "Ecnoglutide 2.4 mg minus liraglutide 3.0 mg", "confidenceInterval": "95% CI, -10.4 to -1.5", "pValue": "<0.001" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db23-79-LB", "sourceType": "conference abstract", "publishedAt": "2023-06", "checkedAt": "2026-08-12" }] } },
+
+    { "id": "ecno-1131-weight40-low", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w40", "armIds": ["ecno-1131-low"], "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "-9.1 (SE 0.8)", "numericValue": -9.1, "unit": "percent", "resultType": "arm-level" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight40-medium", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w40", "armIds": ["ecno-1131-medium"], "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "-10.9 (SE 0.9)", "numericValue": -10.9, "unit": "percent", "resultType": "arm-level" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight40-high", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w40", "armIds": ["ecno-1131-high"], "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "-13.2 (SE 0.8)", "numericValue": -13.2, "unit": "percent", "resultType": "arm-level" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight40-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w40", "analysisGroupId": "ecno-1131-pooled-placebo", "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "0.1 (SE 0.8)", "numericValue": 0.1, "unit": "percent", "resultType": "arm-level" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w40-low", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w40", "armIds": ["ecno-1131-low"], "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "77", "numericValue": 77, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w40-medium", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w40", "armIds": ["ecno-1131-medium"], "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "84", "numericValue": 84, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w40-high", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w40", "armIds": ["ecno-1131-high"], "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "87", "numericValue": 87, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w40-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w40", "analysisGroupId": "ecno-1131-pooled-placebo", "analysisPopulation": "Full analysis set", "estimand": "Treatment-policy estimand", "result": { "value": "16", "numericValue": 16, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "peer-reviewed publication", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.1016/S2213-8587(25)00141-X", "sourceType": "peer-reviewed publication", "publishedAt": "2025-06-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight48-low", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w48", "armIds": ["ecno-1131-low"], "analysisPopulation": "Full analysis set", "result": { "value": "-9.9 (SE 0.4)", "numericValue": -9.9, "unit": "percent", "resultType": "arm-level" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight48-medium", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w48", "armIds": ["ecno-1131-medium"], "analysisPopulation": "Full analysis set", "result": { "value": "-13.3 (SE 0.4)", "numericValue": -13.3, "unit": "percent", "resultType": "arm-level" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight48-high", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w48", "armIds": ["ecno-1131-high"], "analysisPopulation": "Full analysis set", "result": { "value": "-15.4 (SE 0.4)", "numericValue": -15.4, "unit": "percent", "resultType": "arm-level" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-weight48-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-weight-w48", "analysisGroupId": "ecno-1131-pooled-placebo", "analysisPopulation": "Full analysis set", "result": { "value": "-0.3 (SE 0.3)", "numericValue": -0.3, "unit": "percent", "resultType": "arm-level" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w48-low", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w48", "armIds": ["ecno-1131-low"], "analysisPopulation": "Full analysis set", "result": { "value": "77.7 (129/166)", "numericValue": 77.7, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w48-medium", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w48", "armIds": ["ecno-1131-medium"], "analysisPopulation": "Full analysis set", "result": { "value": "89.2 (148/166)", "numericValue": 89.2, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w48-high", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w48", "armIds": ["ecno-1131-high"], "analysisPopulation": "Full analysis set", "result": { "value": "92.8 (155/167)", "numericValue": 92.8, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1131-r5w48-placebo", "studyId": "sciwind-biosciences-ecnoglutide-nct05813795", "endpointId": "ecno-1131-responder5-w48", "analysisGroupId": "ecno-1131-pooled-placebo", "analysisPopulation": "Full analysis set", "result": { "value": "13.9 (23/165)", "numericValue": 13.9, "unit": "percent", "resultType": "arm-level", "responderThreshold": ">=5%" }, "maturity": "final", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://www.hkexnews.hk/app/sehk/2026/108322/documents/sehk26032301281.pdf", "sourceType": "official regulatory filing", "publishedAt": "2026-03-23", "checkedAt": "2026-08-12" }] } },
+
+    { "id": "ecno-1122-weight-ecno", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "endpointId": "ecno-1122-weight-w20", "armIds": ["ecno-1122-ecno"], "analysisPopulation": "All enrolled participants", "result": { "value": "-12.8", "numericValue": -12.8, "unit": "percent", "resultType": "arm-level", "confidenceInterval": "95% CI, -13.7 to -11.8" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db26-2849-LB", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1122-weight-sema", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "endpointId": "ecno-1122-weight-w20", "armIds": ["ecno-1122-sema"], "analysisPopulation": "All enrolled participants", "result": { "value": "-9.5", "numericValue": -9.5, "unit": "percent", "resultType": "arm-level", "confidenceInterval": "95% CI, -10.4 to -8.5" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db26-2849-LB", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1122-nausea-ecno", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "endpointId": "ecno-1122-nausea-w20", "armIds": ["ecno-1122-ecno"], "analysisPopulation": "Safety population", "result": { "value": "13.4", "numericValue": 13.4, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db26-2849-LB", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1122-nausea-sema", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "endpointId": "ecno-1122-nausea-w20", "armIds": ["ecno-1122-sema"], "analysisPopulation": "Safety population", "result": { "value": "21.0", "numericValue": 21, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db26-2849-LB", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1122-vomiting-ecno", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "endpointId": "ecno-1122-vomiting-w20", "armIds": ["ecno-1122-ecno"], "analysisPopulation": "Safety population", "result": { "value": "11.0", "numericValue": 11, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db26-2849-LB", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }] } },
+    { "id": "ecno-1122-vomiting-sema", "studyId": "sciwind-biosciences-ecnoglutide-nct07073417", "endpointId": "ecno-1122-vomiting-w20", "armIds": ["ecno-1122-sema"], "analysisPopulation": "Safety population", "result": { "value": "12.3", "numericValue": 12.3, "unit": "percent", "resultType": "arm-level" }, "maturity": "conference result", "metadata": { "lastVerifiedAt": "2026-08-12", "updatedAt": "2026-08-12", "sources": [{ "url": "https://doi.org/10.2337/db26-2849-LB", "sourceType": "conference abstract", "publishedAt": "2026-06", "checkedAt": "2026-08-12" }] } }
+  ]
+}
