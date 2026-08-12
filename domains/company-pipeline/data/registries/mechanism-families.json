@@ -210,8 +210,22 @@
     "targets": [{ "target": "CRF2R", "action": "agonist" }],
     "sortRank": 135,
     "mechanisms": [
-      "Corticotropin-releasing factor 2 (CRF2) receptor selective urocortin-2 (UCN2) analog with a long-acting technology"
+      "Corticotropin-releasing factor 2 (CRF2) receptor selective urocortin-2 (UCN2) analog with a long-acting technology",
+      "Corticotropin-releasing factor 2 receptor (CRF2) peptide agonist"
     ]
+  },
+  {
+    "id": "glp1-gip-glucagon-crf2-agonist",
+    "label": "GLP-1 / GIP / glucagon / CRF2 receptor agonist",
+    "composition": "single-molecule",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" },
+      { "target": "CRF2R", "action": "agonist" }
+    ],
+    "sortRank": 137,
+    "mechanisms": ["CRF2 agonist-incretin mimetic conjugate"]
   },
   {
     "id": "leptin-receptor-agonist",
@@ -490,5 +504,18 @@
     ],
     "sortRank": 340,
     "mechanisms": []
+  },
+  {
+    "id": "glp1-gip-glucagon-plus-crf2-combination",
+    "label": "GLP-1 / GIP / glucagon receptor agonist plus CRF2 receptor agonist",
+    "composition": "multi-component",
+    "targets": [
+      { "target": "GLP-1R", "action": "agonist" },
+      { "target": "GIPR", "action": "agonist" },
+      { "target": "GCGR", "action": "agonist" },
+      { "target": "CRF2R", "action": "agonist" }
+    ],
+    "sortRank": 350,
+    "mechanisms": ["GIP/GLP-1-preferring triple agonist plus CRF2 receptor agonist"]
   }
 ]

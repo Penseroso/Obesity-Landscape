@@ -1,0 +1,205 @@
+[
+  {
+    "id": "neurocrine-biosciences-nbip-2118-subcutaneous-injection",
+    "assetId": "nbip-2118",
+    "companyId": "neurocrine-biosciences",
+    "assetName": "NBIP-2118",
+    "codeName": null,
+    "technical": {
+      "mechanism": "Corticotropin-releasing factor 2 receptor (CRF2) peptide agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-12",
+      "updatedAt": "2026-08-12",
+      "sources": [
+        {
+          "url": "https://www.neurocrine.com/pipeline/",
+          "title": "Neurocrine Biosciences Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000037/nbix-20260630.htm",
+          "title": "Neurocrine Biosciences Quarterly Report for the Quarter Ended June 30, 2026",
+          "sourceType": "regulatory filing",
+          "publishedAt": "2026-07-31",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.neurocrine.com/documents/115/NBIX_RD_Day_Presentation_12.16.25.pdf",
+          "title": "Neurocrine Biosciences R&D Day 2025",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2025-12-16",
+          "checkedAt": "2026-08-12"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "neurocrine-biosciences-nbip-1968-nbip-2118-coformulation-undisclosed-undisclosed",
+    "assetId": "nbip-1968-nbip-2118-coformulation",
+    "companyId": "neurocrine-biosciences",
+    "assetType": "co-formulation",
+    "assetName": "NBIP-1968 + NBIP-2118 co-formulation",
+    "codeName": null,
+    "components": [
+      {
+        "assetName": "NBIP-1968",
+        "role": "GIP/GLP-1-preferring triple agonist with light glucagon receptor activity"
+      },
+      {
+        "assetId": "nbip-2118",
+        "role": "CRF2 receptor agonist"
+      }
+    ],
+    "technical": {
+      "mechanism": "GIP/GLP-1-preferring triple agonist plus CRF2 receptor agonist",
+      "platform": "Mix-and-match co-formulation"
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Phase 1",
+      "status": "Active",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-12",
+      "updatedAt": "2026-08-12",
+      "sources": [
+        {
+          "url": "https://www.neurocrine.com/pipeline/",
+          "title": "Neurocrine Biosciences Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.neurocrine.com/documents/139/NBIX_Q1_2026_Earnings_Presentation_Final_05.05.26.pdf",
+          "title": "Neurocrine Biosciences Q1 2026 Earnings Presentation",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2026-05-05",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.neurocrine.com/documents/115/NBIX_RD_Day_Presentation_12.16.25.pdf",
+          "title": "Neurocrine Biosciences R&D Day 2025",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2025-12-16",
+          "checkedAt": "2026-08-12"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "neurocrine-biosciences-tgu-undisclosed-undisclosed",
+    "assetId": "tgu",
+    "companyId": "neurocrine-biosciences",
+    "assetName": "TGU",
+    "codeName": null,
+    "technical": {
+      "mechanism": "CRF2 agonist-incretin mimetic conjugate",
+      "platform": "Single-molecule peptide conjugate"
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": null
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Unknown",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-12",
+      "updatedAt": "2026-08-12",
+      "sources": [
+        {
+          "url": "https://www.neurocrine.com/documents/115/NBIX_RD_Day_Presentation_12.16.25.pdf",
+          "title": "Neurocrine Biosciences R&D Day 2025",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2025-12-16",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.neurocrine.com/pipeline/",
+          "title": "Neurocrine Biosciences Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-12"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "neurocrine-biosciences-tgfc-undisclosed-undisclosed",
+    "assetId": "tgfc",
+    "companyId": "neurocrine-biosciences",
+    "assetName": "TGFc",
+    "codeName": null,
+    "technical": {
+      "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
+      "platform": "Fc conjugation"
+    },
+    "administration": {
+      "route": "Undisclosed",
+      "dosageForm": "Undisclosed",
+      "dosingInterval": "Once monthly"
+    },
+    "indications": [
+      "Obesity"
+    ],
+    "development": {
+      "stage": "Preclinical",
+      "status": "Unknown",
+      "stageOperationalState": "Not separately confirmed"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-08-12",
+      "updatedAt": "2026-08-12",
+      "sources": [
+        {
+          "url": "https://www.neurocrine.com/documents/115/NBIX_RD_Day_Presentation_12.16.25.pdf",
+          "title": "Neurocrine Biosciences R&D Day 2025",
+          "sourceType": "company investor presentation",
+          "publishedAt": "2025-12-16",
+          "checkedAt": "2026-08-12"
+        },
+        {
+          "url": "https://www.neurocrine.com/pipeline/",
+          "title": "Neurocrine Biosciences Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-12"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  }
+]
