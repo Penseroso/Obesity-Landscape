@@ -18779,7 +18779,7 @@
       "studyId": "regeneron-mibavademab-nct03530514",
       "role": "experimental",
       "label": "Part B repeated-dose mibavademab",
-      "intervention": "Mibavademab 15 mg/kg IV loading dose followed by 10 mg/kg IV at Weeks 4, 7, and 10",
+      "intervention": "Mibavademab 15 mg/kg IV loading dose followed by 10 mg/kg IV every 3 weeks",
       "linkedAsset": {
         "companyId": "regeneron",
         "assetId": "mibavademab"
