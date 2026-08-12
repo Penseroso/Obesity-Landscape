@@ -446,6 +446,24 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "regeneron",
+      "assetId": "mibavademab",
+      "focalStudyIds": [
+        "regeneron-mibavademab-nct03530514",
+        "regeneron-mibavademab-nct07220772"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "regeneron",
+      "assetId": "olatorepatide",
+      "focalStudyIds": [
+        "regeneron-olatorepatide-nct07431086",
+        "regeneron-olatorepatide-nct07685808"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "roche",
       "assetId": "ct-996",
       "focalStudyIds": [

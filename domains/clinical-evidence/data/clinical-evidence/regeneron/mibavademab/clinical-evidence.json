@@ -1,0 +1,421 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "regeneron",
+  "assetId": "mibavademab",
+  "studies": [
+    {
+      "id": "regeneron-mibavademab-nct03530514",
+      "companyId": "regeneron",
+      "assetId": "mibavademab",
+      "programId": "regeneron-mibavademab-subcutaneous-injection",
+      "officialTitle": "A Phase 1 Randomized, Double-Blind, Placebo-Controlled, 2-Part Study to Assess the Safety and Tolerability, Pharmacokinetics, And Pharmacodynamics of Single and Multiple Doses of REGN4461 in Healthy Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT03530514"
+        }
+      ],
+      "protocolIdentifiers": [
+        "R4461-HV-1794"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT03530514",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2020-03-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-blind",
+        "comparator": "Placebo",
+        "description": "Two-part first-in-human study: Part A evaluated seven single ascending intravenous or subcutaneous dose configurations; Part B evaluated repeated intravenous mibavademab versus placebo in four baseline-leptin and BMI cohorts."
+      },
+      "population": "Part A enrolled healthy lean or overweight adults; Part B enrolled healthy adults with overweight or obesity, stratified by BMI, sex, and baseline leptin concentration, without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "Belgium"
+      },
+      "overallDuration": "Part A up to 16 weeks; Part B up to 27 weeks",
+      "safetySummary": "Mibavademab was generally well tolerated; most adverse events were mild or moderate, and no treatment-emergent anti-drug antibodies were observed in participants receiving repeated mibavademab doses.",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT03530514",
+            "title": "A Study to Examine the Safety, Tolerability and Biological Effects of REGN4461 in Healthy Volunteers",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-12"
+          },
+          {
+            "url": "https://doi.org/10.1111/cts.13762",
+            "title": "Pharmacokinetics and pharmacodynamics of mibavademab (a leptin receptor agonist): Results from a first-in-human phase I study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-09",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "regeneron-mibavademab-nct07220772",
+      "companyId": "regeneron",
+      "assetId": "mibavademab",
+      "programId": "regeneron-mibavademab-subcutaneous-injection",
+      "officialTitle": "An Open-Label Study of Mibavademab (REGN4461), a Leptin Receptor Agonist, for the Treatment of Monogenic Obesity Due to Biallelic Loss of Function Variants of the LEP Gene",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07220772"
+        }
+      ],
+      "protocolIdentifiers": [
+        "R4461-MOB-2471"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07220772",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-03-10"
+      },
+      "design": {
+        "randomization": "Not applicable",
+        "masking": "Open-label",
+        "comparator": "None",
+        "description": "Single-group study of mibavademab in participants with monogenic obesity caused by biallelic loss-of-function LEP variants."
+      },
+      "population": "Children and adults aged at least 2 years with class 2 or greater monogenic obesity due to documented biallelic loss-of-function variants of the LEP gene.",
+      "overallDuration": "Through Week 65",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07220772",
+            "title": "A Study Evaluating Mibavademab Treatment of Obesity Due to Leptin (LEP) Gene Mutations in Children, Adolescents and Adults",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "mibavademab-nct03530514-part-a-0-3mgkg-iv",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 0.3 mg/kg IV",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "0.3 mg/kg",
+      "route": "Intravenous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-1mgkg-iv",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 1 mg/kg IV",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "1 mg/kg",
+      "route": "Intravenous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-3mgkg-iv",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 3 mg/kg IV",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "3 mg/kg",
+      "route": "Intravenous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-10mgkg-iv",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 10 mg/kg IV",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "10 mg/kg",
+      "route": "Intravenous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-30mgkg-iv",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 30 mg/kg IV",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "30 mg/kg",
+      "route": "Intravenous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-300mg-sc",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 300 mg SC",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "300 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-600mg-sc",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part A mibavademab 600 mg SC",
+      "intervention": "Mibavademab single ascending dose",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "600 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-placebo-iv",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "placebo",
+      "label": "Part A IV placebo",
+      "intervention": "Matching placebo for intravenous mibavademab",
+      "dose": "Matching placebo",
+      "route": "Intravenous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-a-placebo-sc",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "placebo",
+      "label": "Part A SC placebo",
+      "intervention": "Matching placebo for subcutaneous mibavademab",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose",
+      "treatmentDuration": "Single dose"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-b-active",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "experimental",
+      "label": "Part B repeated-dose mibavademab",
+      "intervention": "Mibavademab 15 mg/kg IV loading dose followed by 10 mg/kg IV at Weeks 4, 7, and 10",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      },
+      "dose": "15 mg/kg loading dose; 10 mg/kg subsequent doses",
+      "route": "Intravenous",
+      "dosingFrequency": "Loading dose followed by dosing every 3 weeks",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "mibavademab-nct03530514-part-b-placebo",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "role": "placebo",
+      "label": "Part B repeated-dose placebo",
+      "intervention": "Matching intravenous placebo on the Part B mibavademab schedule",
+      "dose": "Matching placebo",
+      "route": "Intravenous",
+      "dosingFrequency": "Loading dose followed by dosing every 3 weeks",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "mibavademab-nct07220772-active",
+      "studyId": "regeneron-mibavademab-nct07220772",
+      "role": "experimental",
+      "label": "Mibavademab",
+      "intervention": "Mibavademab administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "mibavademab"
+      }
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "mibavademab-nct03530514-weight-week12",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "name": "Percent change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "mibavademab-nct03530514-weight-cohort1-lsmd",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "endpointId": "mibavademab-nct03530514-weight-week12",
+      "armIds": [
+        "mibavademab-nct03530514-part-b-active",
+        "mibavademab-nct03530514-part-b-placebo"
+      ],
+      "analysisPopulation": "Cohort 1: men with baseline leptin below 5 ng/mL and BMI 28-40 kg/m2",
+      "result": {
+        "value": "-3.1",
+        "numericValue": -3.1,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, mibavademab minus placebo",
+        "pValue": "0.017"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/cts.13762",
+            "title": "Pharmacokinetics and pharmacodynamics of mibavademab (a leptin receptor agonist): Results from a first-in-human phase I study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-09",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mibavademab-nct03530514-weight-cohort2-lsmd",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "endpointId": "mibavademab-nct03530514-weight-week12",
+      "armIds": [
+        "mibavademab-nct03530514-part-b-active",
+        "mibavademab-nct03530514-part-b-placebo"
+      ],
+      "analysisPopulation": "Cohort 2: men with baseline leptin below 5 ng/mL and BMI 25-28 kg/m2",
+      "result": {
+        "value": "-3.1",
+        "numericValue": -3.1,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, mibavademab minus placebo",
+        "pValue": "0.004"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/cts.13762",
+            "title": "Pharmacokinetics and pharmacodynamics of mibavademab (a leptin receptor agonist): Results from a first-in-human phase I study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-09",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mibavademab-nct03530514-weight-cohort3-lsmd",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "endpointId": "mibavademab-nct03530514-weight-week12",
+      "armIds": [
+        "mibavademab-nct03530514-part-b-active",
+        "mibavademab-nct03530514-part-b-placebo"
+      ],
+      "analysisPopulation": "Cohort 3: men with baseline leptin 5-8 ng/mL and BMI 28-40 kg/m2",
+      "result": {
+        "value": "-2.0",
+        "numericValue": -2.0,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, mibavademab minus placebo",
+        "pValue": "0.056"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/cts.13762",
+            "title": "Pharmacokinetics and pharmacodynamics of mibavademab (a leptin receptor agonist): Results from a first-in-human phase I study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-09",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mibavademab-nct03530514-weight-cohort4-lsmd",
+      "studyId": "regeneron-mibavademab-nct03530514",
+      "endpointId": "mibavademab-nct03530514-weight-week12",
+      "armIds": [
+        "mibavademab-nct03530514-part-b-active",
+        "mibavademab-nct03530514-part-b-placebo"
+      ],
+      "analysisPopulation": "Cohort 4: women with baseline leptin 5-24 ng/mL and BMI 28-40 kg/m2",
+      "result": {
+        "value": "-0.1",
+        "numericValue": -0.1,
+        "unit": "percentage points",
+        "effectMeasure": "Least-squares mean difference",
+        "resultType": "between-arm",
+        "comparisonType": "Least-squares mean difference, mibavademab minus placebo",
+        "pValue": "0.957"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1111/cts.13762",
+            "title": "Pharmacokinetics and pharmacodynamics of mibavademab (a leptin receptor agonist): Results from a first-in-human phase I study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2024-04-09",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "regeneron",
+  "assetId": "olatorepatide",
+  "studies": [
+    {
+      "id": "regeneron-olatorepatide-nct07431086",
+      "companyId": "regeneron",
+      "assetId": "olatorepatide",
+      "programId": "regeneron-olatorepatide-subcutaneous-injection",
+      "officialTitle": "A Phase 2, Double-Blind, Placebo-Controlled Study to Assess the Pharmacokinetics, Safety, Tolerability, and Efficacy of Olatorepatide, a GLP-1/GIP Receptor Agonist, in Participants Living With Overweight or Obesity in the US",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07431086"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HS-20094-OB-2569"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07431086",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-06-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Two protocol cohorts, each assigning participants to olatorepatide or placebo. The subgroup cohort includes additional pharmacodynamic assessments."
+      },
+      "population": "Adults aged 18 to 65 years in the United States with BMI at least 27 but below 45 kg/m2 and overweight or obesity, without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "United States"
+      },
+      "overallDuration": "Up to approximately 30 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07431086",
+            "title": "Study of Olatorepatide in Adult Participants Living With Overweight or Obesity in the US",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "regeneron-olatorepatide-nct07685808",
+      "companyId": "regeneron",
+      "assetId": "olatorepatide",
+      "programId": "regeneron-olatorepatide-subcutaneous-injection",
+      "officialTitle": "A Phase 2, Randomized, Placebo-Controlled Study to Assess the Safety, Tolerability, Pharmacokinetics, and Efficacy of Olatorepatide, a GLP-1/GIP Receptor Agonist, With Different Doses and Drug-Titration Algorithms in Participants Living With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07685808"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HS-20094-OB-25106"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07685808",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-07-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo",
+        "description": "Six-arm dose- and titration-ranging study of five olatorepatide configurations and matching placebo."
+      },
+      "population": "Adults with BMI at least 30 kg/m2, or at least 27 kg/m2 with a weight-related comorbidity, without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Up to approximately 60 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-12",
+        "updatedAt": "2026-08-12",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07685808",
+            "title": "Study of Olatorepatide in Adult Participants Living With Overweight or Obesity Without Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "olatorepatide-nct07431086-active",
+      "studyId": "regeneron-olatorepatide-nct07431086",
+      "role": "experimental",
+      "label": "Olatorepatide",
+      "intervention": "Olatorepatide administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide"
+      }
+    },
+    {
+      "id": "olatorepatide-nct07431086-placebo",
+      "studyId": "regeneron-olatorepatide-nct07431086",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered per protocol"
+    },
+    {
+      "id": "olatorepatide-nct07685808-arm1",
+      "studyId": "regeneron-olatorepatide-nct07685808",
+      "role": "experimental",
+      "label": "Olatorepatide arm 1",
+      "intervention": "Olatorepatide administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide"
+      }
+    },
+    {
+      "id": "olatorepatide-nct07685808-arm2",
+      "studyId": "regeneron-olatorepatide-nct07685808",
+      "role": "experimental",
+      "label": "Olatorepatide arm 2",
+      "intervention": "Olatorepatide administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide"
+      }
+    },
+    {
+      "id": "olatorepatide-nct07685808-arm3",
+      "studyId": "regeneron-olatorepatide-nct07685808",
+      "role": "experimental",
+      "label": "Olatorepatide arm 3",
+      "intervention": "Olatorepatide administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide"
+      }
+    },
+    {
+      "id": "olatorepatide-nct07685808-arm4",
+      "studyId": "regeneron-olatorepatide-nct07685808",
+      "role": "experimental",
+      "label": "Olatorepatide arm 4",
+      "intervention": "Olatorepatide administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide"
+      }
+    },
+    {
+      "id": "olatorepatide-nct07685808-arm5",
+      "studyId": "regeneron-olatorepatide-nct07685808",
+      "role": "experimental",
+      "label": "Olatorepatide arm 5",
+      "intervention": "Olatorepatide administered per protocol",
+      "linkedAsset": {
+        "companyId": "regeneron",
+        "assetId": "olatorepatide"
+      }
+    },
+    {
+      "id": "olatorepatide-nct07685808-placebo",
+      "studyId": "regeneron-olatorepatide-nct07685808",
+      "role": "placebo",
+      "label": "Matching Placebo arm 6",
+      "intervention": "Matching placebo administered per protocol"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}
