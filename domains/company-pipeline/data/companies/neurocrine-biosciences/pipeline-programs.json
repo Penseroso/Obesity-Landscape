@@ -171,7 +171,7 @@
     "administration": {
       "route": "Undisclosed",
       "dosageForm": "Undisclosed",
-      "dosingInterval": "Once monthly"
+      "dosingInterval": "Once monthly or less frequent"
     },
     "indications": [
       "Obesity"

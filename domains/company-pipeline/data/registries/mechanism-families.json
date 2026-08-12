@@ -215,13 +215,12 @@
     ]
   },
   {
-    "id": "glp1-gip-glucagon-crf2-agonist",
-    "label": "GLP-1 / GIP / glucagon / CRF2 receptor agonist",
+    "id": "glp1-gip-crf2-agonist",
+    "label": "GLP-1 / GIP / CRF2 receptor agonist",
     "composition": "single-molecule",
     "targets": [
       { "target": "GLP-1R", "action": "agonist" },
       { "target": "GIPR", "action": "agonist" },
-      { "target": "GCGR", "action": "agonist" },
       { "target": "CRF2R", "action": "agonist" }
     ],
     "sortRank": 137,
