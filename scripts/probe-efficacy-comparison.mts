@@ -34,11 +34,18 @@ type StoredOutcome = {
   result: { value: string; unit: string; resultType: string };
 };
 
+type StoredArm = {
+  id: string;
+  dose?: string;
+  titration?: string;
+};
+
 const aggregate = JSON.parse(
   readFileSync("data/generated/clinical-evidence.json", "utf8"),
-) as { outcomes: StoredOutcome[] };
+) as { outcomes: StoredOutcome[]; arms: StoredArm[] };
 
 const outcomeById = new Map(aggregate.outcomes.map((outcome) => [outcome.id, outcome]));
+const armById = new Map(aggregate.arms.map((arm) => [arm.id, arm]));
 
 /**
  * The reviewed gate, refreshed to ADR-0065's 17-of-30 (from ADR-0064's 15-of-24).
@@ -607,7 +614,9 @@ for (const { familyId, row } of rows) {
   // --- chart-only dose series (chart-evidence.ts) -------------------------
   // Generic, every row: the Overview table's `evidence` above is completely
   // unaffected by any of this — these checks are additive.
-  const doseSeenAt = new Map<string, number>();
+  const outcomeIdSeenAt = new Map<string, number>();
+  const armIdsByDose = new Map<string, Set<string>>();
+  const studiesByDose = new Map<string, Set<string>>();
   row.chartDoseSeries.forEach((point, index) => {
     checkStoredValue(`${context} chartDoseSeries[${index}]`, point);
     check(
@@ -629,12 +638,55 @@ for (const { familyId, row } of rows) {
       point.doseSchedule === undefined || point.doseSchedule !== point.dose,
       `${context} chartDoseSeries[${index}]: doseSchedule "${point.doseSchedule}" must be omitted, not set equal to the already-resolved dose`,
     );
+    // The resolved dose is a chart-positioning key only, never an
+    // evidence-identity key: distinct same-Study arms that resolve to one
+    // dose (retatrutide's starting-dose variants, eloralintide's plain 9 mg
+    // vs its two escalation-to-9-mg arms) must all survive, so a dose
+    // repeating is only ever invalid when it repeats *within one outcome id*
+    // — checked next — never merely by appearing more than once.
     check(
-      !doseSeenAt.has(point.dose),
-      `${context}: dose "${point.dose}" appears twice in chartDoseSeries (indices ${doseSeenAt.get(point.dose)} and ${index}) — the per-dose tie-break must leave exactly one winner per dose`,
+      !outcomeIdSeenAt.has(point.outcomeId),
+      `${context}: outcomeId "${point.outcomeId}" appears twice in chartDoseSeries (indices ${outcomeIdSeenAt.get(point.outcomeId)} and ${index})`,
     );
-    doseSeenAt.set(point.dose, index);
+    outcomeIdSeenAt.set(point.outcomeId, index);
+
+    const storedArm = armById.get(point.armId);
+    check(Boolean(storedArm), `${context}: armId "${point.armId}" is not in the aggregate`);
+    if (storedArm) {
+      check(
+        point.titration === (storedArm.titration?.trim() || undefined),
+        `${context}: armId "${point.armId}" did not preserve its authored titration`,
+      );
+      const storedDose = storedArm.dose?.trim();
+      check(
+        point.doseSchedule ===
+          (storedDose && storedDose !== point.dose ? storedDose : undefined),
+        `${context}: armId "${point.armId}" did not preserve its authored dose text`,
+      );
+    }
+
+    const armIds = armIdsByDose.get(point.dose) ?? new Set<string>();
+    check(
+      !armIds.has(point.armId),
+      `${context}: armId "${point.armId}" appears more than once at dose "${point.dose}"`,
+    );
+    armIds.add(point.armId);
+    armIdsByDose.set(point.dose, armIds);
+
+    const studies = studiesByDose.get(point.dose) ?? new Set<string>();
+    studies.add(point.studyId);
+    studiesByDose.set(point.dose, studies);
   });
+  for (const [dose, studies] of studiesByDose) {
+    // A genuine cross-Study collision must still resolve to exactly one
+    // Study per dose — same-Study arms are never dropped, but two different
+    // Studies both surviving at the same dose would mean the cross-Study
+    // tie-break failed to pick a single winner.
+    check(
+      studies.size === 1,
+      `${context}: dose "${dose}" is reported by ${studies.size} different Studies (${[...studies].join(", ")}) — the cross-Study tie-break must leave exactly one winning Study per dose`,
+    );
+  }
 
   const reviewedChart = REVIEWED_CHART_EVIDENCE[row.unitKey];
   if (reviewedChart) {
@@ -662,6 +714,39 @@ for (const { familyId, row } of rows) {
       `${context}: unexpectedly has zero chart-eligible dose points and is not in REVIEWED_ZERO_CHART_ROWS — a selected, eligible Overview row must never silently render an empty chart; investigate whether this is a genuine new case (add it to that allowlist with its reason) or a regression in resolveNominalDose/buildChartDoseSeries`,
     );
   }
+}
+
+// Live same-final-dose regression cases. These pin the intended distinction:
+// one winning evidence candidate per dose, but every source-authored Arm in
+// that candidate survives with the full dose/titration needed by the tooltip.
+const retatrutideChart = rows.find(
+  ({ row }) =>
+    row.unitKey ===
+    "asset:eli-lilly-and-company/ly3437943/eli-lilly-and-company-ly3437943-subcutaneous-injection",
+)?.row.chartDoseSeries;
+check(Boolean(retatrutideChart), "retatrutide chart series is missing");
+if (retatrutideChart) {
+  const fourMg = retatrutideChart.filter((point) => point.dose === "4 mg");
+  check(
+    fourMg.map((point) => point.armId).sort().join(",") ===
+      "reta-p2-4mg-start2,reta-p2-4mg-start4",
+    `retatrutide 4 mg must preserve both starting-dose Arms, got ${JSON.stringify(fourMg.map((point) => point.armId))}`,
+  );
+}
+
+const eloralintideChart = rows.find(
+  ({ row }) =>
+    row.unitKey ===
+    "asset:eli-lilly-and-company/ly3841136/eli-lilly-and-company-ly3841136-subcutaneous-injection",
+)?.row.chartDoseSeries;
+check(Boolean(eloralintideChart), "eloralintide chart series is missing");
+if (eloralintideChart) {
+  const nineMg = eloralintideChart.filter((point) => point.dose === "9 mg");
+  check(
+    nineMg.map((point) => point.armId).sort().join(",") ===
+      "elora-p2-3to9,elora-p2-6to9,elora-p2-9mg",
+    `eloralintide 9 mg must preserve fixed, 6→9, and 3→9 Arms, got ${JSON.stringify(nineMg.map((point) => point.armId))}`,
+  );
 }
 
 // --- explicit global-asset grouping and priority -------------------------
@@ -936,7 +1021,9 @@ console.log(
 // between an experimental and a registry-linked active-comparator arm of
 // this unit's own asset is resolved by the reused evidence ranking with
 // experimental preferred; and a registry-linked active-comparator arm at a
-// dose no experimental arm reports is included on its own.
+// dose no experimental arm reports is included on its own. Same-Study arms
+// resolving to the same dose remain distinct: dose positions bars but never
+// replaces Outcome identity.
 
 function syntheticChartDoseStudy(): StudyDetailView {
   const study = {
@@ -1047,15 +1134,18 @@ function syntheticChartDoseStudy(): StudyDetailView {
     const series = buildChartDoseSeries(screening.candidates, detailByStudyId, [
       { companyId: "fixture-co", assetId: "alpha" },
     ]);
+    const tenMg = series.filter((point) => point.dose === "10 mg");
     const byDose = new Map(series.map((point) => [point.dose, point]));
 
     check(
-      byDose.get("10 mg")?.outcomeId === "chart-exp-10mg",
-      `same-dose tie-break: expected the experimental arm's outcome to win "10 mg", got ${byDose.get("10 mg")?.outcomeId}`,
+      tenMg.map((point) => point.outcomeId).sort().join(",") ===
+        "chart-ac-same-dose,chart-exp-10mg",
+      `same-Study same-dose arms must both survive, got ${JSON.stringify(tenMg.map((point) => point.outcomeId))}`,
     );
     check(
-      byDose.get("10 mg")?.sourceRole === "experimental",
-      `same-dose tie-break: winning "10 mg" point should be sourceRole experimental, got ${byDose.get("10 mg")?.sourceRole}`,
+      tenMg.some((point) => point.sourceRole === "experimental") &&
+        tenMg.some((point) => point.sourceRole === "active-comparator"),
+      `same-Study same-dose arms must preserve their source roles, got ${JSON.stringify(tenMg.map((point) => point.sourceRole))}`,
     );
     check(
       byDose.get("3 mg")?.outcomeId === "chart-ac-unique-dose" &&
@@ -1070,7 +1160,7 @@ function syntheticChartDoseStudy(): StudyDetailView {
       series.every((point) => point.dose !== "1.7 mg" && point.dose !== "2.4 mg"),
       `an ambiguous "1.7 mg or 2.4 mg maximum tolerated dose" arm must never be split or admitted as a single dose`,
     );
-    check(series.length === 2, `expected exactly 2 chart dose points (10 mg, 3 mg), got ${series.length}: ${JSON.stringify(series.map((p) => p.dose))}`);
+    check(series.length === 3, `expected exactly 3 chart dose points (10 mg x2, 3 mg), got ${series.length}: ${JSON.stringify(series.map((p) => p.dose))}`);
   }
 }
 check(
@@ -1098,7 +1188,7 @@ check(
   resolveNominalDose("2.4 mg during randomized maintenance period") === "2.4 mg",
   "resolveNominalDose must accept a single dose with non-ambiguous surrounding context",
 );
-console.log("  synthetic chart-dose series: MTD alternative excluded, escalation schedules resolve to their final step, external comparator excluded, same-dose tie-break prefers experimental, unique active-comparator dose included");
+console.log("  synthetic chart-dose series: MTD alternative excluded, escalation schedules resolve to their final step, external comparator excluded, same-Study same-dose arms preserved, unique active-comparator dose included");
 
 // --- synthetic: mechanism-family resolution compares families, not wording -
 //

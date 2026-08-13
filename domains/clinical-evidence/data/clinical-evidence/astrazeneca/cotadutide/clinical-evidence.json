@@ -1142,12 +1142,12 @@
        ],
        "analysisPopulation": "Per-protocol population",
        "result": {
+         "responderThreshold": "At least 5% body weight loss",
          "value": "40%",
          "numericValue": 40,
          "unit": "percent",
          "resultType": "arm-level"
        },
-       "responderThreshold": "At least 5% body weight loss",
        "maturity": "peer-reviewed publication",
        "metadata": {
          "lastVerifiedAt": "2026-08-10",
@@ -1172,12 +1172,12 @@
         ],
         "analysisPopulation": "Per-protocol population",
         "result": {
+          "responderThreshold": "At least 5% body weight loss",
           "value": "30%",
           "numericValue": 30,
           "unit": "percent",
           "resultType": "arm-level"
         },
-        "responderThreshold": "At least 5% body weight loss",
         "maturity": "peer-reviewed publication",
         "metadata": {
           "lastVerifiedAt": "2026-08-10",
@@ -1202,12 +1202,12 @@
          ],
          "analysisPopulation": "Per-protocol population",
          "result": {
+           "responderThreshold": "At least 5% body weight loss",
            "value": "47%",
            "numericValue": 47,
            "unit": "percent",
            "resultType": "arm-level"
          },
-         "responderThreshold": "At least 5% body weight loss",
          "maturity": "peer-reviewed publication",
          "metadata": {
            "lastVerifiedAt": "2026-08-10",
@@ -1232,12 +1232,12 @@
           ],
           "analysisPopulation": "Per-protocol population",
           "result": {
+            "responderThreshold": "At least 5% body weight loss",
             "value": "31%",
             "numericValue": 31,
             "unit": "percent",
             "resultType": "arm-level"
           },
-          "responderThreshold": "At least 5% body weight loss",
           "maturity": "peer-reviewed publication",
           "metadata": {
             "lastVerifiedAt": "2026-08-10",
@@ -1262,12 +1262,12 @@
            ],
            "analysisPopulation": "Per-protocol population",
            "result": {
+             "responderThreshold": "At least 5% body weight loss",
              "value": "10%",
              "numericValue": 10,
              "unit": "percent",
              "resultType": "arm-level"
            },
-           "responderThreshold": "At least 5% body weight loss",
            "maturity": "peer-reviewed publication",
            "metadata": {
              "lastVerifiedAt": "2026-08-10",
@@ -1354,12 +1354,12 @@
       ],
       "analysisPopulation": "Participants in the Phase 2a portion who completed the study",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "41%",
         "numericValue": 41,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",

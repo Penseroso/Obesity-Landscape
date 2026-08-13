@@ -44,6 +44,14 @@ export type ChartDosePoint = {
    * Never itself parsed or rewritten.
    */
   doseSchedule?: string;
+  /**
+   * The arm's full, verbatim titration text. This stays separate from the
+   * resolved dose so same-dose arms can be disambiguated on the chart while
+   * the tooltip preserves the complete authored schedule.
+   */
+  titration?: string;
+  /** Protocol Arm identity; distinct arms may share one resolved dose. */
+  armId: string;
   outcomeId: string;
   value: string;
   unit: string;
@@ -175,29 +183,50 @@ function resolveChartRole(
  * eligibility gate beyond the dose check above; it only widens *which arm
  * role* within an already-eligible candidate may supply a point.
  *
- * When more than one point lands on the same exact dose text, the winner is
- * chosen by `compareScoredCandidates` — the page's one evidence ranking,
- * reused unmodified — with source role (experimental before active
- * comparator) as one further, chart-local tie-break after it.
+ * **The resolved dose is a chart-positioning key, never an evidence-identity
+ * key.** `resolveNominalDose` deliberately reduces a deterministic escalation
+ * schedule to its final step so it can be placed on a dose axis at all — but
+ * two arms that both happen to reach the same final step are not the same
+ * evidence. Retatrutide's `"4 mg (2 mg starting dose)"` and `"4 mg (4 mg
+ * starting dose)"` are two distinct, separately source-authored Outcomes in
+ * the *same* Study testing whether the ramp schedule itself matters;
+ * eloralintide's plain `"9 mg"` arm and its two `"X mg escalating to 9 mg"`
+ * arms are three distinct Outcomes. Collapsing same-Study arms that resolve
+ * to one dose would silently discard exactly the comparison those arms
+ * exist to support, so **every arm from the same Study is kept**, however
+ * many resolve to the same dose.
+ *
+ * `compareScoredCandidates` — the page's one evidence ranking, reused
+ * unmodified — instead chooses one evidence candidate (Study, Endpoint,
+ * comparison group) for a resolved dose. This prevents the same protocol Arm
+ * from appearing again through a second timepoint or estimand, while every
+ * distinct arm in the winning candidate survives. Source role is a final
+ * chart-local tie-break between otherwise equal candidates.
  */
 export function buildChartDoseSeries(
   candidates: EvidenceCandidate[],
   detailByStudyId: Map<string, StudyDetailView>,
   unitAssets: ChartUnitAsset[],
 ): ChartDosePoint[] {
-  type Candidate = {
+  type Entry = {
     point: ChartDosePoint;
     rank: ScoredCandidate;
     roleRank: number;
+    candidateKey: string;
   };
 
-  const byDose = new Map<string, Candidate[]>();
+  const byDose = new Map<string, Entry[]>();
 
   for (const candidate of candidates) {
     const detail = detailByStudyId.get(candidate.study.id);
     if (!detail) continue;
     const armById = new Map(detail.arms.map((arm) => [arm.id, arm]));
     const rank = scoreCandidate(candidate);
+    const candidateKey = [
+      candidate.study.id,
+      candidate.endpoint.id,
+      candidate.comparisonGroupKey,
+    ].join("\u0000");
 
     for (const view of candidate.group) {
       const { outcome } = view;
@@ -216,6 +245,8 @@ export function buildChartDoseSeries(
       const point: ChartDosePoint = {
         dose: resolvedDose,
         doseSchedule: resolvedDose === arm.dose.trim() ? undefined : arm.dose.trim(),
+        titration: arm.titration?.trim() || undefined,
+        armId: arm.id,
         outcomeId: outcome.id,
         value: outcome.result.value,
         unit: outcome.result.unit,
@@ -238,17 +269,40 @@ export function buildChartDoseSeries(
         // comparator's — it is the trial's own headline result for that
         // dose, not a value it happened to also report.
         roleRank: sourceRole === "experimental" ? 0 : 1,
+        candidateKey,
       });
       byDose.set(point.dose, list);
     }
   }
 
-  const winners = Array.from(byDose.values()).map((points) => {
-    points.sort(
-      (a, b) => compareScoredCandidates(a.rank, b.rank) || a.roleRank - b.roleRank,
+  const winners: ChartDosePoint[] = [];
+  for (const entries of byDose.values()) {
+    const byCandidate = new Map<string, Entry[]>();
+    for (const entry of entries) {
+      const list = byCandidate.get(entry.candidateKey) ?? [];
+      list.push(entry);
+      byCandidate.set(entry.candidateKey, list);
+    }
+
+    if (byCandidate.size === 1) {
+      // Every entry belongs to one evidence candidate, so each is a distinct
+      // protocol Arm in that candidate and all survive.
+      winners.push(...entries.map((entry) => entry.point));
+      continue;
+    }
+
+    // Rank evidence candidates, then keep every same-dose Arm from the winner.
+    const candidatesAtDose = Array.from(byCandidate.values()).map((candidateEntries) => {
+      const [best] = candidateEntries.slice().sort((a, b) => a.roleRank - b.roleRank);
+      return { best, candidateEntries };
+    });
+    candidatesAtDose.sort(
+      (a, b) =>
+        compareScoredCandidates(a.best.rank, b.best.rank) ||
+        a.best.roleRank - b.best.roleRank,
     );
-    return points[0].point;
-  });
+    winners.push(...candidatesAtDose[0].candidateEntries.map((entry) => entry.point));
+  }
 
   return winners.sort((a, b) => {
     const aNum = Number.parseFloat(a.dose.match(/\d+(\.\d+)?/)?.[0] ?? "");
@@ -256,6 +310,6 @@ export function buildChartDoseSeries(
     if (Number.isFinite(aNum) && Number.isFinite(bNum) && aNum !== bNum) {
       return aNum - bNum;
     }
-    return a.dose.localeCompare(b.dose);
+    return a.dose.localeCompare(b.dose) || a.outcomeId.localeCompare(b.outcomeId);
   });
 }

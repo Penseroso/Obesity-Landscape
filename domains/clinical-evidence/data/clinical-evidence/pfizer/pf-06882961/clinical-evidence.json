@@ -2374,12 +2374,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "6 participants",
         "numericValue": 6,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2403,12 +2403,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "16 participants",
         "numericValue": 16,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2432,12 +2432,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "15 participants",
         "numericValue": 15,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2461,12 +2461,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "17 participants",
         "numericValue": 17,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2490,12 +2490,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "12 participants",
         "numericValue": 12,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2519,12 +2519,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "15 participants",
         "numericValue": 15,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2548,12 +2548,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "6 participants",
         "numericValue": 6,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2577,12 +2577,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "12 participants",
         "numericValue": 12,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2606,12 +2606,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "8 participants",
         "numericValue": 8,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2635,12 +2635,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "0 participants",
         "numericValue": 0,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2664,12 +2664,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "9 participants",
         "numericValue": 9,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2693,12 +2693,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "11 participants",
         "numericValue": 11,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -2722,12 +2722,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "10 participants",
         "numericValue": 10,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",

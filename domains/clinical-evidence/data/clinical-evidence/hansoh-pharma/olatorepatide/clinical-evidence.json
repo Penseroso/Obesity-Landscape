@@ -345,12 +345,12 @@
       ],
       "analysisPopulation": "Not reported",
       "result": {
+        "responderThreshold": "At least 5% body weight reduction from baseline",
         "value": "97.2%",
         "numericValue": 97.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight reduction from baseline",
       "maturity": "topline",
       "metadata": {
         "lastVerifiedAt": "2026-08-11",

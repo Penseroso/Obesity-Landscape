@@ -3032,8 +3032,7 @@
       "armIds": ["sm3-tirz"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 5% body-weight reduction from randomization",
-      "result": {"value": "87.5", "numericValue": 87.5, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 5% body-weight reduction from randomization", "value": "87.5", "numericValue": 87.5, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3044,8 +3043,7 @@
       "armIds": ["sm3-placebo"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 5% body-weight reduction from randomization",
-      "result": {"value": "16.5", "numericValue": 16.5, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 5% body-weight reduction from randomization", "value": "16.5", "numericValue": 16.5, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3056,8 +3054,7 @@
       "armIds": ["sm3-tirz"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 10% body-weight reduction from randomization",
-      "result": {"value": "76.7", "numericValue": 76.7, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 10% body-weight reduction from randomization", "value": "76.7", "numericValue": 76.7, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3068,8 +3065,7 @@
       "armIds": ["sm3-placebo"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 10% body-weight reduction from randomization",
-      "result": {"value": "8.9", "numericValue": 8.9, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 10% body-weight reduction from randomization", "value": "8.9", "numericValue": 8.9, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3080,8 +3076,7 @@
       "armIds": ["sm3-tirz"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 15% body-weight reduction from randomization",
-      "result": {"value": "65.4", "numericValue": 65.4, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 15% body-weight reduction from randomization", "value": "65.4", "numericValue": 65.4, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3092,8 +3087,7 @@
       "armIds": ["sm3-placebo"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 15% body-weight reduction from randomization",
-      "result": {"value": "4.2", "numericValue": 4.2, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 15% body-weight reduction from randomization", "value": "4.2", "numericValue": 4.2, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3104,8 +3098,7 @@
       "armIds": ["sm3-tirz"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 20% body-weight reduction from randomization",
-      "result": {"value": "44.7", "numericValue": 44.7, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 20% body-weight reduction from randomization", "value": "44.7", "numericValue": 44.7, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },
@@ -3116,8 +3109,7 @@
       "armIds": ["sm3-placebo"],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 20% body-weight reduction from randomization",
-      "result": {"value": "2.2", "numericValue": 2.2, "unit": "percent", "resultType": "arm-level"},
+      "result": {"responderThreshold": "At least 20% body-weight reduction from randomization", "value": "2.2", "numericValue": 2.2, "unit": "percent", "resultType": "arm-level"},
       "maturity": "peer-reviewed publication",
       "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
     },

@@ -258,6 +258,11 @@ shared `comparisonGroupKeyOf` primitive.
   caption, not tooltip-only text, so two bars of equal height from trials of
   different length are never allowed to read as equivalent. Color encodes
   program identity (hue) and dose (lightness, lighter for a lower dose); the
+  resolved nominal dose is only a positioning key, so distinct source-authored
+  Arms that reach the same final dose remain separate bars and their permanent
+  labels express an escalation configuration with an arrow (for example
+  `9 mg`, `6→9 mg`, `3→9 mg`; never a rewritten `start X mg` label). The
+  tooltip preserves the full authored dose and escalation regimen text. The
   chart carries no separate "not a ranking" caption because the duration/hue
   encoding already keeps each bar tied to its own trial. Both dialogs share the
   hand-rolled `Modal` primitive (portal, focus trap, Escape, scroll lock) rather

@@ -21,7 +21,7 @@ const BAR_WIDTH = 40;
 const WITHIN_GROUP_GAP = 8;
 const BETWEEN_GROUP_GAP = 40;
 const MIN_PLOT_HEIGHT = 160;
-const DOSE_LABEL_HEIGHT = 20;
+const DOSE_LABEL_HEIGHT = 30;
 // Bar-local Study/timepoint provenance, two short lines per bar (not per
 // group): once a program's bars can come from more than one Study — the
 // chart-only dose series in `chart-evidence.ts` deliberately widens beyond
@@ -158,6 +158,8 @@ type ChartSlot = {
   /** The arm's stored `dose` text, when the read model resolved one and it
    * says more than `doseLabel` already does — shown in the tooltip only. */
   doseDetail: string | null;
+  /** Full authored titration, shown in the tooltip. */
+  titration: string | null;
   doseAxisLabel: string;
   doseRaw: string;
   doseNumeric: number;
@@ -165,6 +167,57 @@ type ChartSlot = {
   doseIndex: number;
   doseCount: number;
 };
+
+/**
+ * A compact, presentation-only qualifier for bars whose resolved nominal dose
+ * collides with another arm in the same program. Full authored text remains in
+ * the tooltip; this extracts only enough to keep the permanent bar labels
+ * distinct ("4 mg · start 2 mg" versus "4 mg · start 4 mg").
+ */
+function escalationAxisLabel(point: {
+  label: string;
+  dose?: string;
+  doseSchedule?: string;
+  titration?: string;
+}): string | null {
+  for (const text of [point.titration, point.doseSchedule, point.label]) {
+    if (!text) continue;
+    const startingDose = text.match(
+      /(\d+(?:\.\d+)?)\s*(mg|mcg|µg|g|mL|IU|units?)\s+starting dose/i,
+    );
+    if (startingDose && point.dose) {
+      const finalDose = point.dose.match(
+        /^(\d+(?:\.\d+)?)\s*(mg|mcg|µg|g|mL|IU|units?)$/i,
+      );
+      if (finalDose) {
+        if (
+          startingDose[1] === finalDose[1] &&
+          startingDose[2].toLowerCase() === finalDose[2].toLowerCase()
+        ) {
+          return point.dose;
+        }
+        return startingDose[2].toLowerCase() === finalDose[2].toLowerCase()
+          ? `${startingDose[1]}→${point.dose}`
+          : `${startingDose[1]} ${startingDose[2]}→${point.dose}`;
+      }
+    }
+
+    const escalationStart = text.match(
+      /^(\d+(?:\.\d+)?)\s*(mg|mcg|µg|g|mL|IU|units?)\s+(?:escalat(?:ing|ed)|to)\b/i,
+    );
+    if (escalationStart && point.dose) {
+      const finalDose = point.dose.match(
+        /^(\d+(?:\.\d+)?)\s*(mg|mcg|µg|g|mL|IU|units?)$/i,
+      );
+      if (finalDose) {
+        return escalationStart[2].toLowerCase() === finalDose[2].toLowerCase()
+          ? `${escalationStart[1]}→${point.dose}`
+          : `${escalationStart[1]} ${escalationStart[2]}→${point.dose}`;
+      }
+    }
+  }
+  return null;
+}
 
 /** One bar per dose, in the page's own dose-ascending order — no clustering by
  * program in the data itself; grouping is a presentation cue (color, fixed
@@ -184,6 +237,8 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         outcomeId: point.outcomeId,
         label: point.label,
         dose: point.dose as string | undefined,
+        doseSchedule: point.doseSchedule,
+        titration: point.titration,
         raw: point.value,
         numeric: parsePercent(point.value),
         studyTitle: point.studyTitle,
@@ -194,6 +249,14 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
       .filter(
         (dose): dose is typeof dose & { numeric: number } => dose.numeric !== null,
       );
+
+    const doseCounts = new Map<string, number>();
+    const escalationLabels = new Map<string, string | null>();
+    for (const dose of doses) {
+      if (!dose.dose) continue;
+      doseCounts.set(dose.dose, (doseCounts.get(dose.dose) ?? 0) + 1);
+      escalationLabels.set(dose.outcomeId, escalationAxisLabel(dose));
+    }
 
     doses.forEach((dose, doseIndex) => {
       slots.push({
@@ -206,11 +269,17 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         sourceRole: dose.sourceRole,
         doseLabel: dose.label,
         doseDetail:
-          dose.dose && !dose.label.toLowerCase().includes(dose.dose.toLowerCase())
+          dose.doseSchedule ??
+          (dose.dose && !dose.label.toLowerCase().includes(dose.dose.toLowerCase())
             ? dose.dose
-            : null,
+            : null),
+        titration:
+          dose.titration ??
+          (escalationLabels.get(dose.outcomeId) ? dose.doseSchedule ?? null : null),
         doseAxisLabel:
-          extractDoseAxisLabel(dose.dose ?? dose.label) ?? `Dose ${doseIndex + 1}`,
+          dose.dose && (doseCounts.get(dose.dose) ?? 0) > 1
+            ? escalationLabels.get(dose.outcomeId) ?? dose.dose
+            : extractDoseAxisLabel(dose.dose ?? dose.label) ?? `Dose ${doseIndex + 1}`,
         doseRaw: dose.raw,
         doseNumeric: dose.numeric,
         programIndex,
@@ -390,13 +459,18 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
               return (
                 <div key={slot.key}>
                   <div
-                    className="absolute text-center text-[9px] font-medium text-card-foreground"
-                    style={{ left: Y_AXIS_WIDTH + slot.x, width: BAR_WIDTH, top: DOSE_LABEL_HEIGHT - 14 }}
+                    className="absolute flex items-end justify-center text-center text-[9px] font-medium leading-tight text-card-foreground"
+                    style={{
+                      left: Y_AXIS_WIDTH + slot.x - 4,
+                      width: BAR_WIDTH + 8,
+                      top: 0,
+                      height: DOSE_LABEL_HEIGHT - 3,
+                    }}
                   >
                     {slot.doseAxisLabel}
                   </div>
                   <div
-                    title={`${slot.program} (${slot.companyName})\n${[shortStudyTitle(slot.studyTitle), slot.phase, slot.timepoint].filter(Boolean).join(" · ")}\n${slot.doseLabel}${slot.doseDetail ? ` (${slot.doseDetail})` : ""}${slot.sourceRole === "active-comparator" ? " · Active comparator" : ""}: ${formatPercent(slot.doseRaw)}`}
+                    title={`${slot.program} (${slot.companyName})\n${[shortStudyTitle(slot.studyTitle), slot.phase, slot.timepoint].filter(Boolean).join(" · ")}\n${slot.doseLabel}${slot.doseDetail ? `\nDose: ${slot.doseDetail}` : ""}${slot.titration ? `\nTitration regimen: ${slot.titration}` : ""}${slot.sourceRole === "active-comparator" ? "\nActive comparator" : ""}\nResult: ${formatPercent(slot.doseRaw)}`}
                     className="absolute rounded-t-sm"
                     style={{
                       left: Y_AXIS_WIDTH + slot.x,

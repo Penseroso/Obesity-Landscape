@@ -2199,6 +2199,10 @@ function validateClinicalOutcomeResult(result, context, isAnalysisGroupAnchored)
 
 function validateClinicalOutcome(outcome, context) {
   assert(isObject(outcome), `${context}: outcome must be an object`);
+  assert(
+    outcome.responderThreshold === undefined,
+    `${context}: responderThreshold belongs inside result, not at the Outcome top level`,
+  );
   assert(isNonEmptyString(outcome.id), `${context}: id is required`);
   assert(isNonEmptyString(outcome.studyId), `${context}: studyId is required`);
   assert(isNonEmptyString(outcome.endpointId), `${context}: endpointId is required`);
@@ -3268,6 +3272,12 @@ function validateClinicalEvidenceSyntheticFixtures() {
         (outcome) => outcome.result.resultType === "between-arm",
       );
       betweenArm.result.responderThreshold = ">=5%";
+    }],
+    ["responder-threshold-at-outcome-level-rejected", /belongs inside result/, (fixture) => {
+      const armLevel = fixture.outcomes.find(
+        (outcome) => outcome.result.resultType === "arm-level",
+      );
+      armLevel.responderThreshold = ">=5%";
     }],
     ["cross-study-arm", /belongs to another study/, (fixture) => {
       fixture.studies.push(secondStudy);

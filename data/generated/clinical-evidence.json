@@ -25973,12 +25973,12 @@
       ],
       "analysisPopulation": "Participants in the Phase 2a portion who completed the study",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "41%",
         "numericValue": 41,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -26332,12 +26332,12 @@
       ],
       "analysisPopulation": "Per-protocol population",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "40%",
         "numericValue": 40,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -26362,12 +26362,12 @@
       ],
       "analysisPopulation": "Per-protocol population",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "30%",
         "numericValue": 30,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -26392,12 +26392,12 @@
       ],
       "analysisPopulation": "Per-protocol population",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "47%",
         "numericValue": 47,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -26422,12 +26422,12 @@
       ],
       "analysisPopulation": "Per-protocol population",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "31%",
         "numericValue": 31,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -26452,12 +26452,12 @@
       ],
       "analysisPopulation": "Per-protocol population",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "10%",
         "numericValue": 10,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "peer-reviewed publication",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -36406,8 +36406,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 5% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction from randomization",
         "value": "87.5",
         "numericValue": 87.5,
         "unit": "percent",
@@ -36435,8 +36435,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 5% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction from randomization",
         "value": "16.5",
         "numericValue": 16.5,
         "unit": "percent",
@@ -36464,8 +36464,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 10% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction from randomization",
         "value": "76.7",
         "numericValue": 76.7,
         "unit": "percent",
@@ -36493,8 +36493,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 10% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction from randomization",
         "value": "8.9",
         "numericValue": 8.9,
         "unit": "percent",
@@ -36522,8 +36522,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 15% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction from randomization",
         "value": "65.4",
         "numericValue": 65.4,
         "unit": "percent",
@@ -36551,8 +36551,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 15% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction from randomization",
         "value": "4.2",
         "numericValue": 4.2,
         "unit": "percent",
@@ -36580,8 +36580,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 20% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction from randomization",
         "value": "44.7",
         "numericValue": 44.7,
         "unit": "percent",
@@ -36609,8 +36609,8 @@
       ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "responderThreshold": "At least 20% body-weight reduction from randomization",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction from randomization",
         "value": "2.2",
         "numericValue": 2.2,
         "unit": "percent",
@@ -39870,12 +39870,12 @@
       ],
       "analysisPopulation": "Not reported",
       "result": {
+        "responderThreshold": "At least 5% body weight reduction from baseline",
         "value": "97.2%",
         "numericValue": 97.2,
         "unit": "percent",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight reduction from baseline",
       "maturity": "topline",
       "metadata": {
         "lastVerifiedAt": "2026-08-11",
@@ -44669,8 +44669,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "84.3",
         "numericValue": 84.3,
         "unit": "percent",
@@ -44698,8 +44698,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "17.2",
         "numericValue": 17.2,
         "unit": "percent",
@@ -44727,8 +44727,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "65.4",
         "numericValue": 65.4,
         "unit": "percent",
@@ -44756,8 +44756,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "9.4",
         "numericValue": 9.4,
         "unit": "percent",
@@ -44841,8 +44841,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "47.2",
         "numericValue": 47.2,
         "unit": "percent",
@@ -44870,8 +44870,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "0",
         "numericValue": 0,
         "unit": "percent",
@@ -44899,8 +44899,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "32.3",
         "numericValue": 32.3,
         "unit": "percent",
@@ -44928,8 +44928,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "0",
         "numericValue": 0,
         "unit": "percent",
@@ -45175,8 +45175,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "79.2",
         "numericValue": 79.2,
         "unit": "percent",
@@ -45204,8 +45204,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "31.1",
         "numericValue": 31.1,
         "unit": "percent",
@@ -45233,8 +45233,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "63.0",
         "numericValue": 63,
         "unit": "percent",
@@ -45262,8 +45262,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "14.4",
         "numericValue": 14.4,
         "unit": "percent",
@@ -45291,8 +45291,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "50.0",
         "numericValue": 50,
         "unit": "percent",
@@ -45320,8 +45320,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "5.6",
         "numericValue": 5.6,
         "unit": "percent",
@@ -45349,8 +45349,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "29.7",
         "numericValue": 29.7,
         "unit": "percent",
@@ -45378,8 +45378,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "3.3",
         "numericValue": 3.3,
         "unit": "percent",
@@ -47966,8 +47966,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "77.1",
         "numericValue": 77.1,
         "unit": "percent",
@@ -47995,8 +47995,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "34.4",
         "numericValue": 34.4,
         "unit": "percent",
@@ -48024,8 +48024,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "61.8",
         "numericValue": 61.8,
         "unit": "percent",
@@ -48053,8 +48053,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "13.3",
         "numericValue": 13.3,
         "unit": "percent",
@@ -48082,8 +48082,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "52.1",
         "numericValue": 52.1,
         "unit": "percent",
@@ -48111,8 +48111,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "7.0",
         "numericValue": 7,
         "unit": "percent",
@@ -48140,8 +48140,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "36.1",
         "numericValue": 36.1,
         "unit": "percent",
@@ -48169,8 +48169,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "2.3",
         "numericValue": 2.3,
         "unit": "percent",
@@ -50031,8 +50031,8 @@
         "step-hfpef-dm-semaglutide"
       ],
       "analysisPopulation": "Intention-to-treat (overall)",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "51.4",
         "numericValue": 51.4,
         "unit": "percent",
@@ -50059,8 +50059,8 @@
         "step-hfpef-dm-placebo"
       ],
       "analysisPopulation": "Intention-to-treat (overall)",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "10.4",
         "numericValue": 10.4,
         "unit": "percent",
@@ -50087,8 +50087,8 @@
         "step-hfpef-dm-semaglutide"
       ],
       "analysisPopulation": "Intention-to-treat (overall)",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "22.4",
         "numericValue": 22.4,
         "unit": "percent",
@@ -50115,8 +50115,8 @@
         "step-hfpef-dm-placebo"
       ],
       "analysisPopulation": "Intention-to-treat (overall)",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "4.0",
         "numericValue": 4,
         "unit": "percent",
@@ -50143,8 +50143,8 @@
         "step-hfpef-dm-semaglutide"
       ],
       "analysisPopulation": "Intention-to-treat (overall)",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "7.3",
         "numericValue": 7.3,
         "unit": "percent",
@@ -50171,8 +50171,8 @@
         "step-hfpef-dm-placebo"
       ],
       "analysisPopulation": "Intention-to-treat (overall)",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "1.8",
         "numericValue": 1.8,
         "unit": "percent",
@@ -50536,8 +50536,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "73",
         "numericValue": 73,
         "unit": "percent",
@@ -50565,8 +50565,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "18",
         "numericValue": 18,
         "unit": "percent",
@@ -50594,8 +50594,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "62",
         "numericValue": 62,
         "unit": "percent",
@@ -50623,8 +50623,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "8",
         "numericValue": 8,
         "unit": "percent",
@@ -50652,8 +50652,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "53",
         "numericValue": 53,
         "unit": "percent",
@@ -50681,8 +50681,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "5",
         "numericValue": 5,
         "unit": "percent",
@@ -50710,8 +50710,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "37",
         "numericValue": 37,
         "unit": "percent",
@@ -50739,8 +50739,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "3",
         "numericValue": 3,
         "unit": "percent",
@@ -51014,8 +51014,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "90.7",
         "numericValue": 90.7,
         "unit": "percent",
@@ -51043,8 +51043,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "89.9",
         "numericValue": 89.9,
         "unit": "percent",
@@ -51072,8 +51072,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "36.8",
         "numericValue": 36.8,
         "unit": "percent",
@@ -51101,8 +51101,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "82.4",
         "numericValue": 82.4,
         "unit": "percent",
@@ -51130,8 +51130,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "75.1",
         "numericValue": 75.1,
         "unit": "percent",
@@ -51159,8 +51159,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "20.5",
         "numericValue": 20.5,
         "unit": "percent",
@@ -51188,8 +51188,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "66.5",
         "numericValue": 66.5,
         "unit": "percent",
@@ -51217,8 +51217,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "54.5",
         "numericValue": 54.5,
         "unit": "percent",
@@ -51246,8 +51246,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "7.6",
         "numericValue": 7.6,
         "unit": "percent",
@@ -51275,8 +51275,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "47.7",
         "numericValue": 47.7,
         "unit": "percent",
@@ -51304,8 +51304,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "33.3",
         "numericValue": 33.3,
         "unit": "percent",
@@ -51333,8 +51333,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "2.9",
         "numericValue": 2.9,
         "unit": "percent",
@@ -51362,8 +51362,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 25% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 25% body-weight reduction",
         "value": "31.2",
         "numericValue": 31.2,
         "unit": "percent",
@@ -51391,8 +51391,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 25% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 25% body-weight reduction",
         "value": "15.3",
         "numericValue": 15.3,
         "unit": "percent",
@@ -51420,8 +51420,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 25% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 25% body-weight reduction",
         "value": "0",
         "numericValue": 0,
         "unit": "percent",
@@ -51776,8 +51776,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "86.3",
         "numericValue": 86.3,
         "unit": "percent",
@@ -51805,8 +51805,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "75.3",
         "numericValue": 75.3,
         "unit": "percent",
@@ -51834,8 +51834,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 5% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 5% body-weight reduction",
         "value": "34.7",
         "numericValue": 34.7,
         "unit": "percent",
@@ -51863,8 +51863,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "62.9",
         "numericValue": 62.9,
         "unit": "percent",
@@ -51892,8 +51892,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "51.5",
         "numericValue": 51.5,
         "unit": "percent",
@@ -51921,8 +51921,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 10% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 10% body-weight reduction",
         "value": "11.6",
         "numericValue": 11.6,
         "unit": "percent",
@@ -51950,8 +51950,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "41.2",
         "numericValue": 41.2,
         "unit": "percent",
@@ -51979,8 +51979,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "28.9",
         "numericValue": 28.9,
         "unit": "percent",
@@ -52008,8 +52008,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 15% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 15% body-weight reduction",
         "value": "7.4",
         "numericValue": 7.4,
         "unit": "percent",
@@ -52037,8 +52037,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "21.3",
         "numericValue": 21.3,
         "unit": "percent",
@@ -52066,8 +52066,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "14.4",
         "numericValue": 14.4,
         "unit": "percent",
@@ -52095,8 +52095,8 @@
       ],
       "analysisPopulation": "Full analysis set (overall)",
       "estimand": "Treatment policy estimand",
-      "responderThreshold": "At least 20% body-weight reduction",
       "result": {
+        "responderThreshold": "At least 20% body-weight reduction",
         "value": "2.1",
         "numericValue": 2.1,
         "unit": "percent",
@@ -54353,12 +54353,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "6 participants",
         "numericValue": 6,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54382,12 +54382,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "16 participants",
         "numericValue": 16,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54411,12 +54411,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "15 participants",
         "numericValue": 15,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54440,12 +54440,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "17 participants",
         "numericValue": 17,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54469,12 +54469,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "12 participants",
         "numericValue": 12,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54498,12 +54498,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "15 participants",
         "numericValue": 15,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54527,12 +54527,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "6 participants",
         "numericValue": 6,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54556,12 +54556,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "12 participants",
         "numericValue": 12,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54585,12 +54585,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "8 participants",
         "numericValue": 8,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54614,12 +54614,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "0 participants",
         "numericValue": 0,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54643,12 +54643,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "9 participants",
         "numericValue": 9,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54672,12 +54672,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "11 participants",
         "numericValue": 11,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
@@ -54701,12 +54701,12 @@
       ],
       "analysisPopulation": "Estimand Set 1: all randomized participants who took at least one dose; the analyzed count is the number evaluable for this outcome.",
       "result": {
+        "responderThreshold": "At least 5% body weight loss",
         "value": "10 participants",
         "numericValue": 10,
         "unit": "participants",
         "resultType": "arm-level"
       },
-      "responderThreshold": "At least 5% body weight loss",
       "maturity": "registry result",
       "metadata": {
         "lastVerifiedAt": "2026-08-10",
