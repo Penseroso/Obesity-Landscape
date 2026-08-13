@@ -11,7 +11,6 @@ export const emptyProgramFilters: ProgramFilters = {
   route: "All",
   stage: "All",
   stageBucket: "All",
-  status: "All",
   scopeClass: "All",
   mechanismFamily: "All",
   keyword: "",
@@ -40,8 +39,6 @@ export function filterPrograms(
     const matchesStageBucket =
       filters.stageBucket === "All" ||
       getStageBucketId(program.development.stage) === filters.stageBucket;
-    const matchesStatus =
-      filters.status === "All" || program.development.status === filters.status;
     const matchesScopeClass =
       filters.scopeClass === "All" || program.scopeClass === filters.scopeClass;
     // Mirrors the Company × Development Stage Matrix's stageBucket drill-down:
@@ -84,7 +81,6 @@ export function filterPrograms(
       matchesRoute &&
       matchesStage &&
       matchesStageBucket &&
-      matchesStatus &&
       matchesScopeClass &&
       matchesMechanismFamily &&
       (!keyword || searchable.includes(keyword))

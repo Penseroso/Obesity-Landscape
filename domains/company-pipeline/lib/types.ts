@@ -203,7 +203,6 @@ export type CompanySummary = {
 };
 
 export type DevelopmentStageFilter = DevelopmentStage | "All";
-export type DevelopmentStatusFilter = DevelopmentStatus | "All";
 /**
  * Overview stage-bucket filter. Coarser than `stage` (a single stage label):
  * a bucket such as `phase-1` aggregates several labels. URL-driven only (the
@@ -230,7 +229,6 @@ export type ProgramFilters = {
   route: string;
   stage: DevelopmentStageFilter;
   stageBucket: StageBucketFilter;
-  status: DevelopmentStatusFilter;
   scopeClass: ScopeClassFilter;
   mechanismFamily: MechanismFamilyFilter;
   keyword: string;
@@ -241,7 +239,6 @@ export type ProgramFilterOptions = {
   indications: string[];
   routes: string[];
   stages: string[];
-  statuses: string[];
   /** value = registry id (matches `program.scopeClass`), label = registry display label. */
   scopeClasses: { value: ScopeClass; label: string }[];
 };

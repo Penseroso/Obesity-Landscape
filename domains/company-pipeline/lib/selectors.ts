@@ -1,7 +1,6 @@
 import {
   developmentStageRank,
   developmentStages,
-  developmentStatuses,
   getMechanismFamilyId,
   getStageBucketId,
   mechanismFamilyById,
@@ -71,9 +70,6 @@ export function getProgramFilterOptions(
     routes: uniqueSorted(programs.map((program) => program.administration.route)),
     stages: developmentStages.filter((stage) =>
       programs.some((program) => program.development.stage === stage),
-    ),
-    statuses: developmentStatuses.filter((status) =>
-      programs.some((program) => program.development.status === status),
     ),
     scopeClasses: scopeClasses
       .filter((entry) =>
