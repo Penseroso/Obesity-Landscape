@@ -590,28 +590,46 @@ function probeMechanismFamilyRegistry() {
  * drift silently — an authoring edit that quietly moves a unit in or out of the
  * comparison would otherwise pass every validator.
  *
- * The reviewed snapshot below is the accepted 15-of-24 result (ADR-0064). It
- * reflects subsequent Clinical Evidence research and the explicit global-asset
- * grouping introduced by ADR-0063; no population or metric eligibility rule was
- * relaxed. Changing this snapshot remains a deliberate review, never a mechanical
- * update to make the probe pass again.
+ * The reviewed snapshot below is the accepted 17-of-30 result (ADR-0065),
+ * superseding ADR-0064's 15-of-24. Two independent causes moved the counts:
+ * subsequent Clinical Evidence research added body-weight studies (73 → 78),
+ * and the unit key now also splits a company-local asset by `programId` (see
+ * the comment above `unitStudies`), which is what raised evidenceBearingUnits
+ * from 24 to 30 — Novo Nordisk semaglutide, Ascletis Pharma ASC30, Novo Nordisk
+ * amycretin, and Sciwind Biosciences ecnoglutide each split into a separate
+ * unit per route/dosage-form Program. No population or metric eligibility rule
+ * was relaxed. Changing this snapshot remains a deliberate review, never a
+ * mechanical update to make the probe pass again.
  */
 const efficacyPopulationCoverageSnapshot = {
-  bodyWeightOutcomeStudies: 73,
+  bodyWeightOutcomeStudies: 78,
   bodyWeightStudiesMissingProfile: 5,
-  evidenceBearingUnits: 24,
-  eligibleUnits: 15,
-  gapUnits: 9,
+  evidenceBearingUnits: 30,
+  eligibleUnits: 17,
+  gapUnits: 13,
   gaps: {
-    "amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
-    "astrazeneca/cotadutide": "population-with-type-2-diabetes",
-    "astrazeneca/exenatide": "metric-unavailable-percent",
-    "novo-nordisk/cagrilintide": "population-diabetes-status-not-specified",
-    "novo-nordisk/ubt251": "population-diabetes-status-not-specified",
-    "pfizer/pf-06882961": "population-unclassified",
-    "pfizer/pf-07081532": "population-unclassified",
-    "pfizer/pf-08653944": "population-unclassified",
-    "roche/ct-996": "population-mixed-diabetes-status",
+    "amgen/maridebart-cafraglutide/amgen-maridebart-cafraglutide-subcutaneous-injection":
+      "population-mixed-diabetes-status",
+    "ascletis-pharma/asc30/ascletis-pharma-asc30-subcutaneous-depot-injection":
+      "metric-unavailable-percent",
+    "astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes":
+      "population-with-type-2-diabetes",
+    "astrazeneca/exenatide/astrazeneca-exenatide-subcutaneous-injection-obesity":
+      "metric-unavailable-percent",
+    "eli-lilly-and-company/ly3437943/eli-lilly-and-company-ly3437943-subcutaneous-injection-oa":
+      "population-requires-additional-condition",
+    "novo-nordisk/amycretin/novo-nordisk-amycretin-subcutaneous-injection":
+      "population-diabetes-status-not-specified",
+    "novo-nordisk/cagrilintide/novo-nordisk-cagrilintide-subcutaneous-injection":
+      "population-diabetes-status-not-specified",
+    "novo-nordisk/ubt251/novo-nordisk-ubt251-subcutaneous-injection":
+      "population-diabetes-status-not-specified",
+    "pfizer/pf-06882961/pfizer-pf-06882961-oral-tablets": "population-unclassified",
+    "pfizer/pf-07081532/pfizer-pf-07081532-oral-tablets": "population-unclassified",
+    "pfizer/pf-08653944/pfizer-pf-08653944-subcutaneous-injection": "population-unclassified",
+    "regeneron/mibavademab/regeneron-mibavademab-subcutaneous-injection":
+      "metric-unavailable-percent",
+    "roche/ct-996/roche-ct-996-oral-capsule": "population-mixed-diabetes-status",
   },
 };
 
@@ -731,9 +749,15 @@ function probeEfficacyPopulationCoverage() {
 
   const unitStudies = new Map();
   for (const study of weightStudies) {
+    // Kept in sync with collectUnits' key on the TS read-model side
+    // (domains/app/lib/efficacy-comparison/read-model.ts): a company-local unit
+    // also splits by programId, since Entities and Rows defines programId as
+    // company + asset + route + dosage form, and two Programs under one molecule
+    // (e.g. semaglutide's subcutaneous-injection and oral-tablet Programs) are
+    // pharmacologically distinct products that must not share one comparison unit.
     const unit =
       globalUnitByAsset.get(`${study.companyId}|${study.assetId}`) ??
-      `${study.companyId}/${study.assetId}`;
+      `${study.companyId}/${study.assetId}/${study.programId}`;
     const list = unitStudies.get(unit);
     if (list) list.push(study);
     else unitStudies.set(unit, [study]);

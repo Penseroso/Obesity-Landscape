@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection";
+import { EfficacyCompareLauncher } from "@/domains/app/components/EfficacyCompareLauncher";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { EfficacySelectionDetails } from "@/domains/app/components/EfficacySelectionDetails";
 import { formatNullableValue } from "@/domains/app/lib/format";
@@ -439,17 +440,20 @@ export function EfficacyComparison({ view }: EfficacyComparisonProps) {
 
   return (
     <div className="space-y-6 pb-10">
-      <section>
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          Clinical evidence
-        </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Efficacy Comparison
-        </h1>
-        <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-          Reported body-weight reduction by mechanism family, for assets and
-          registered combination products with a recorded percent-change result.
-        </p>
+      <section className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            Clinical evidence
+          </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            Efficacy Comparison
+          </h1>
+          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+            Reported body-weight reduction by mechanism family, for assets and
+            registered combination products with a recorded percent-change result.
+          </p>
+        </div>
+        {rowCount > 0 ? <EfficacyCompareLauncher families={view.families} /> : null}
       </section>
 
       {rowCount > 0 ? (

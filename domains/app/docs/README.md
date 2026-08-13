@@ -177,6 +177,16 @@ shared `comparisonGroupKeyOf` primitive.
   Mechanism family comes from the authored registry (ADR-0043); every member of a
   global group must resolve to one family, and a regimen carries an authored
   `mechanismFamilyId`.
+- **A company-local asset further splits by `study.programId`.** Entities and Rows
+  defines `programId` as company + asset + route + dosage form, so two Studies under
+  the same molecule but different Programs — Novo Nordisk's subcutaneous-injection
+  and oral-tablet semaglutide, each with its own dose range and its own trial family
+  — are pharmacologically distinct products; merging them would let the page's
+  single-winner selection silently drop an entire route's evidence. The split row's
+  name carries the disambiguating `(route · dosage form)` suffix only when the asset
+  genuinely has more than one variant (`getAssetDisplay` in `mechanism-family.ts`) —
+  an ordinary single-route asset's display is unchanged. Global-asset-group and
+  regimen units are unaffected; they already carry their own explicit identity.
 - Selection operates on **evidence candidates** — one (Study, Endpoint, comparison
   group) triple. Within a global asset group, an authored development-scope priority
   is applied first (global olatorepatide evidence before Hansoh's regional evidence),
@@ -196,7 +206,7 @@ shared `comparisonGroupKeyOf` primitive.
   exactly, no additional required condition, initial treatment, randomised and
   controlled, and percent change from baseline in body weight. `mixed` and
   `not-specified` are never read as non-diabetic. `regionRestriction` is display
-  only. Coverage is frozen at 15 of 24 units by ADR-0064 and two probes.
+  only. Coverage is frozen at 17 of 30 units by ADR-0065 and two probes.
 - **One arm-level metric.** `kg` and `percentage points` never appear as an overview
   arm-level value, and units are never converted. A stored `between-arm` estimate is
   shown separately, under a **comparator-neutral heading** ("Between-arm estimate, as
@@ -234,6 +244,24 @@ shared `comparisonGroupKeyOf` primitive.
   The selection-rationale disclosure is auxiliary: a button toggled by click, tap,
   Enter, or Space (never hover or focus alone), with disclosure semantics rather than a
   dialog. It adds the rationale only, and the page stays fully usable without it.
+- **Compare programs** (`EfficacyCompareLauncher`) is a presentation-only overlay on
+  top of the same `view.families` rows — it adds no read-model logic and never
+  reorders, filters, or recalculates a row. A picker dialog (`EfficacyProgramPicker`)
+  lists every row in the page's own family/curated order, capped at three
+  selections; its own Compare action swaps to a chart dialog
+  (`EfficacyCompareChart`) with a grouped vertical bar per selected unit's doses.
+  Bar height is the only derived number in the feature — parsed from the stored
+  percent-change string solely to size the bar — and every other rendered value
+  (legend, axis caption, tooltip, screen-reader fallback list) shows that string
+  verbatim. Each program's timepoint/duration renders as a permanent x-axis
+  caption, not tooltip-only text, so two bars of equal height from trials of
+  different length are never allowed to read as equivalent. Color encodes
+  program identity (hue) and dose (lightness, lighter for a lower dose); the
+  chart carries no separate "not a ranking" caption because the duration/hue
+  encoding already keeps each bar tied to its own trial. Both dialogs share the
+  hand-rolled `Modal` primitive (portal, focus trap, Escape, scroll lock) rather
+  than `ProgramDetailDrawer`'s side-drawer variant, since neither needs a slide
+  transition.
 
 ## Change boundary
 

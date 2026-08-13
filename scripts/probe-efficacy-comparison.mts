@@ -37,33 +37,52 @@ const aggregate = JSON.parse(
 const outcomeById = new Map(aggregate.outcomes.map((outcome) => [outcome.id, outcome]));
 
 /**
- * The reviewed gate. `novo-nordisk/liraglutide` moved from a gap to an eligible row
- * (10/5 -> 11/4): its SCALE Obesity and Prediabetes result at
- * `scaleobesity-weight-lira30` was corrected from a stored `kg` value to a directly
- * reported `percent` value in the "Backfill clinical efficacy and safety evidence"
- * change, which is exactly the metric this overview requires — confirmed against the
- * source publication, not assumed. ADR-0058 reviewed the same change for
- * `data:probe:efficacy-population-coverage` and synchronized its separately frozen
- * snapshot without relaxing the eligibility policy.
+ * The reviewed gate, refreshed to ADR-0065's 17-of-30 (from ADR-0064's 15-of-24).
+ * A company-local unit now also splits by `programId` — Entities and Rows defines
+ * `programId` as company + asset + route + dosage form, and the read model's
+ * `collectUnits` previously merged Studies across an asset's Programs even when
+ * they were pharmacologically distinct products (Novo Nordisk's subcutaneous-
+ * injection and oral-tablet semaglutide, each with its own dose range and its own
+ * trial family), letting the single-winner selection silently drop an entire
+ * route's evidence. Four assets split into two units each: `novo-nordisk/
+ * semaglutide`, `ascletis-pharma/asc30`, `novo-nordisk/amycretin`, and `sciwind-
+ * biosciences/ecnoglutide`. Subsequent Clinical Evidence research also added
+ * body-weight studies independent of this change. No population, design, or
+ * metric eligibility rule was relaxed. ADR-0058 reviewed a comparable change for
+ * `data:probe:efficacy-population-coverage` and synchronized its separately
+ * frozen snapshot the same way.
  */
 const REVIEWED_TOTALS = {
-  eligibleUnits: 15,
-  gapUnits: 9,
-  totalUnits: 24,
-  headToHeadStudies: 7,
-  headToHeadGroups: 7,
+  eligibleUnits: 17,
+  gapUnits: 13,
+  totalUnits: 30,
+  headToHeadStudies: 9,
+  headToHeadGroups: 9,
 };
 
 const REVIEWED_GAPS: Record<string, string> = {
-  "asset:amgen/maridebart-cafraglutide": "population-mixed-diabetes-status",
-  "asset:astrazeneca/cotadutide": "population-with-type-2-diabetes",
-  "asset:astrazeneca/exenatide": "metric-unavailable-percent",
-  "asset:novo-nordisk/cagrilintide": "population-diabetes-status-not-specified",
-  "asset:novo-nordisk/ubt251": "population-diabetes-status-not-specified",
-  "asset:pfizer/pf-06882961": "population-unclassified",
-  "asset:pfizer/pf-07081532": "population-unclassified",
-  "asset:pfizer/pf-08653944": "population-unclassified",
-  "asset:roche/ct-996": "population-mixed-diabetes-status",
+  "asset:amgen/maridebart-cafraglutide/amgen-maridebart-cafraglutide-subcutaneous-injection":
+    "population-mixed-diabetes-status",
+  "asset:ascletis-pharma/asc30/ascletis-pharma-asc30-subcutaneous-depot-injection":
+    "metric-unavailable-percent",
+  "asset:astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes":
+    "population-with-type-2-diabetes",
+  "asset:astrazeneca/exenatide/astrazeneca-exenatide-subcutaneous-injection-obesity":
+    "metric-unavailable-percent",
+  "asset:eli-lilly-and-company/ly3437943/eli-lilly-and-company-ly3437943-subcutaneous-injection-oa":
+    "population-requires-additional-condition",
+  "asset:novo-nordisk/amycretin/novo-nordisk-amycretin-subcutaneous-injection":
+    "population-diabetes-status-not-specified",
+  "asset:novo-nordisk/cagrilintide/novo-nordisk-cagrilintide-subcutaneous-injection":
+    "population-diabetes-status-not-specified",
+  "asset:novo-nordisk/ubt251/novo-nordisk-ubt251-subcutaneous-injection":
+    "population-diabetes-status-not-specified",
+  "asset:pfizer/pf-06882961/pfizer-pf-06882961-oral-tablets": "population-unclassified",
+  "asset:pfizer/pf-07081532/pfizer-pf-07081532-oral-tablets": "population-unclassified",
+  "asset:pfizer/pf-08653944/pfizer-pf-08653944-subcutaneous-injection": "population-unclassified",
+  "asset:regeneron/mibavademab/regeneron-mibavademab-subcutaneous-injection":
+    "metric-unavailable-percent",
+  "asset:roche/ct-996/roche-ct-996-oral-capsule": "population-mixed-diabetes-status",
 };
 
 /**
@@ -84,7 +103,7 @@ const REVIEWED_EVIDENCE: Record<
     betweenArmOutcomeIds: string[];
   }
 > = {
-  "asset:ascletis-pharma/asc30": {
+  "asset:ascletis-pharma/asc30/ascletis-pharma-asc30-oral-tablets": {
     familyId: "glp1-agonist",
     studyId: "ascletis-pharma-asc30-nct06680440",
     endpointId: "asc30-102-body-weight-percent-change-day-29",
@@ -95,7 +114,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:astrazeneca/elecoglipron": {
+  "asset:astrazeneca/elecoglipron/astrazeneca-elecoglipron-oral-tablets": {
     familyId: "glp1-agonist",
     studyId: "astrazeneca-elecoglipron-nct06579092",
     endpointId: "vista-body-weight-week26",
@@ -112,7 +131,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:eli-lilly-and-company/ly3502970": {
+  "asset:eli-lilly-and-company/ly3502970/eli-lilly-and-company-ly3502970-oral-tablets": {
     familyId: "glp1-agonist",
     studyId: "eli-lilly-and-company-orforglipron-attain-1-nct05869903",
     endpointId: "attain1-weight-week72",
@@ -126,7 +145,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:novo-nordisk/liraglutide": {
+  "asset:novo-nordisk/liraglutide/novo-nordisk-liraglutide-subcutaneous-injection": {
     familyId: "glp1-agonist",
     studyId: "novo-nordisk-liraglutide-scale-obesity-nct01272219",
     endpointId: "scaleobesity-weight-week56",
@@ -136,7 +155,10 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:novo-nordisk/semaglutide": {
+  // Route split (ADR-0065): subcutaneous and oral semaglutide were one merged unit
+  // before, which silently hid the oral (OASIS) evidence behind STEP 8's win. Each
+  // route is now its own unit, ranked independently within its own Programs.
+  "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-subcutaneous-injection": {
     familyId: "glp1-agonist",
     studyId: "novo-nordisk-semaglutide-step-8-nct04074161",
     endpointId: "step8-weight-week68",
@@ -146,7 +168,17 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: ["step8-weight-liraglutide"],
     betweenArmOutcomeIds: ["step8-weight-between"],
   },
-  "asset:gan-lee-pharmaceuticals/gzr18": {
+  "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-oral-tablets": {
+    familyId: "glp1-agonist",
+    studyId: "novo-nordisk-semaglutide-oasis-4-nct05564117",
+    endpointId: "oasis4-weight-week64",
+    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
+    treatmentOutcomeIds: ["oasis4-weight-sema25"],
+    placeboOutcomeIds: ["oasis4-weight-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
+  "asset:gan-lee-pharmaceuticals/gzr18/gan-lee-pharmaceuticals-gzr18-subcutaneous-injection": {
     familyId: "glp1-agonist",
     studyId: "gan-lee-pharmaceuticals-gzr18-nct06728124",
     endpointId: "gzr18-06728124-weight-w52",
@@ -159,7 +191,21 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:eli-lilly-and-company/ly3298176": {
+  "asset:sciwind-biosciences/ecnoglutide/sciwind-biosciences-ecnoglutide-subcutaneous-injection": {
+    familyId: "glp1-agonist",
+    studyId: "sciwind-biosciences-ecnoglutide-nct05813795",
+    endpointId: "ecno-1131-weight-w40",
+    comparisonGroupKey: "arm-level|full analysis set|treatment policy",
+    treatmentOutcomeIds: [
+      "ecno-1131-weight40-low",
+      "ecno-1131-weight40-medium",
+      "ecno-1131-weight40-high",
+    ],
+    placeboOutcomeIds: ["ecno-1131-weight40-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
+  "asset:eli-lilly-and-company/ly3298176/eli-lilly-and-company-ly3298176-subcutaneous-injection": {
     familyId: "glp1-gip-agonist",
     studyId: "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
     endpointId: "sm5-weight-week72",
@@ -182,7 +228,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:roche/enicepatide": {
+  "asset:roche/enicepatide/roche-enicepatide-subcutaneous-injection": {
     familyId: "glp1-gip-agonist",
     studyId: "roche-enicepatide-ct388-103-nct06525935",
     endpointId: "en103-weight-w48",
@@ -198,7 +244,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: ["en103-weight-efficacy"],
   },
-  "asset:eli-lilly-and-company/ly3305677": {
+  "asset:eli-lilly-and-company/ly3305677/eli-lilly-and-company-ly3305677-subcutaneous-injection": {
     familyId: "glp1-glucagon-agonist",
     studyId: "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
     // Week 32 (co-primary) beats week 48 (secondary) under getEndpointRoleRank: GLORY-1's
@@ -212,7 +258,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:boehringer-ingelheim/survodutide": {
+  "asset:boehringer-ingelheim/survodutide/boehringer-ingelheim-survodutide-subcutaneous-injection": {
     familyId: "glp1-glucagon-agonist",
     studyId: "boehringer-ingelheim-survodutide-nct06066515",
     endpointId: "survo-06066515-weight-week76",
@@ -225,7 +271,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:eli-lilly-and-company/ly3437943": {
+  "asset:eli-lilly-and-company/ly3437943/eli-lilly-and-company-ly3437943-subcutaneous-injection": {
     familyId: "glp1-gip-glucagon-agonist",
     studyId: "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
     endpointId: "reta-p2-weight-week24",
@@ -251,7 +297,7 @@ const REVIEWED_EVIDENCE: Record<
       "reta-p2-weight24-vs-placebo-12mg",
     ],
   },
-  "asset:eli-lilly-and-company/ly3841136": {
+  "asset:eli-lilly-and-company/ly3841136/eli-lilly-and-company-ly3841136-subcutaneous-injection": {
     familyId: "amylin-agonist",
     studyId: "eli-lilly-and-company-eloralintide-phase-2-nct06230523",
     endpointId: "elora-p2-weight-week48",
@@ -268,7 +314,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:novo-nordisk/amycretin": {
+  "asset:novo-nordisk/amycretin/novo-nordisk-amycretin-oral-tablets": {
     familyId: "glp1-amylin-agonist",
     studyId: "novo-nordisk-amycretin-oral-phase1-nct05369390",
     endpointId: "amyoral-weight-week12",
@@ -284,7 +330,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
-  "asset:novo-nordisk/cagrisema": {
+  "asset:novo-nordisk/cagrisema/novo-nordisk-cagrisema-subcutaneous-injection": {
     familyId: "amylin-plus-glp1-combination",
     studyId: "novo-nordisk-cagrisema-redefine-4-nct06131437",
     endpointId: "redefine4-weight-week84",

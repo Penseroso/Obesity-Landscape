@@ -81,6 +81,8 @@ type UnitAccumulator = {
   unitKind: EfficacyUnitKind;
   companyId: string;
   assetId?: string;
+  /** Set only for a plain "asset" unit — see the key comment below. */
+  programId?: string;
   regimenId?: string;
   globalAssetGroup?: EfficacyGlobalAssetGroup;
   studyIds: string[];
@@ -93,6 +95,17 @@ type UnitAccumulator = {
  * unit otherwise — the focal asset/regimen split the Clinical Evidence contract
  * already enforces. Without this, a regimen-mapped Study would be counted under the
  * component asset it happens to be stored beneath.
+ *
+ * A plain asset unit further keys on `study.programId`. The Entities and Rows
+ * contract defines `programId` as the stable combination of company, asset, route,
+ * and dosage form — so two Studies under the same molecule but different Programs
+ * (Novo Nordisk's subcutaneous-injection and oral-tablet semaglutide, each with its
+ * own dose range and its own trials) are pharmacologically distinct products and
+ * must never merge into one cross-trial row, which would let the page's single-
+ * winner selection silently drop an entire route's evidence. A Study with no
+ * `programId` (unmapped) still groups consistently: every such Study coerces to the
+ * same `undefined` key segment. Global-asset-group and regimen units are unaffected
+ * — they already carry their own explicit identity.
  */
 function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
   const units = new Map<string, UnitAccumulator>();
@@ -114,7 +127,7 @@ function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
         ? `regimen:${study.regimenId}`
         : globalMembership
           ? `global-asset:${globalMembership.group.id}`
-          : `asset:${study.companyId}/${study.assetId}`;
+          : `asset:${study.companyId}/${study.assetId}/${study.programId}`;
 
       const existing = units.get(key);
       if (existing) {
@@ -129,6 +142,7 @@ function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
             : "asset",
         companyId: study.companyId,
         assetId: study.regimenId ? undefined : study.assetId,
+        programId: study.regimenId || globalMembership ? undefined : study.programId,
         regimenId: study.regimenId,
         globalAssetGroup: globalMembership?.group,
         studyIds: [study.id],
@@ -212,7 +226,7 @@ export function getEfficacyComparison(): EfficacyComparisonView {
               ),
               name: unit.globalAssetGroup!.displayName,
             }
-          : getAssetDisplay(unit.companyId, unit.assetId!);
+          : getAssetDisplay(unit.companyId, unit.assetId!, unit.programId);
     const href =
       unit.unitKind === "regimen"
         ? null

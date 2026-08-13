@@ -148,15 +148,45 @@ export function getRegimenDisplay(regimenId: string): EfficacyUnitDisplay {
   };
 }
 
+/**
+ * True when this asset's Program rows span more than one (route, dosage form)
+ * pair — e.g. Novo Nordisk semaglutide's subcutaneous-injection and oral-tablet
+ * Programs. Drives the display disambiguation below; an asset with a single
+ * route is unaffected.
+ */
+function hasMultipleRouteVariants(programs: typeof pipelinePrograms | undefined): boolean {
+  if (!programs) return false;
+  const variants = new Set(
+    programs.map((program) => `${program.administration.route}|${program.administration.dosageForm}`),
+  );
+  return variants.size > 1;
+}
+
+/**
+ * `programId`, when given, selects the specific Program row a comparison unit's
+ * Studies actually cite — required because `assetName` alone is identical across
+ * an asset's Programs (Company/Pipeline stores no brand name), so a unit split by
+ * route (see `read-model.ts`'s `collectUnits`) would otherwise render two rows
+ * with the exact same label. The route/dosage-form suffix is added only when the
+ * asset genuinely has more than one variant, so an ordinary single-route asset's
+ * display is unchanged.
+ */
 export function getAssetDisplay(
   companyId: string,
   assetId: string,
+  programId?: string,
 ): EfficacyUnitDisplay {
   const programs = programsByAssetKey.get(`${companyId}|${assetId}`);
-  const program = programs?.[0];
+  const program =
+    (programId ? programs?.find((candidate) => candidate.id === programId) : undefined) ??
+    programs?.[0];
   const mechanism = program?.technical.mechanism ?? null;
+  const name =
+    program && hasMultipleRouteVariants(programs)
+      ? `${program.assetName} (${program.administration.route} · ${program.administration.dosageForm})`
+      : (program?.assetName ?? assetId);
   return {
-    name: program?.assetName ?? assetId,
+    name,
     companyName: program?.company?.name ?? companyId,
     mechanism,
     mechanismFamilyId: mechanism === null ? null : getMechanismFamilyId(mechanism),
