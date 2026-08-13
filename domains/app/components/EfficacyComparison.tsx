@@ -80,6 +80,24 @@ function shortFamilyLabel(label: string): string {
 }
 
 /**
+ * Splits a trailing parenthetical off a stored value string ("-9.1 (SE 0.8)" →
+ * main "-9.1", annotation "(SE 0.8)"). Display-only: the stored string is never
+ * rewritten, this only decides which part renders as the bold headline figure
+ * and which renders as a smaller, muted qualifier alongside it. Some sources
+ * report a precision figure (standard error) inline with no dedicated field
+ * for it in the Clinical Evidence contract, so it rides in `value` itself —
+ * without this split, rows with and without a source-reported qualifier read
+ * at inconsistent visual weight for no clinical reason.
+ */
+function splitTrailingAnnotation(value: string): { main: string; annotation: string | null } {
+  const match = value.match(/^(.*?)\s*(\([^()]*\))\s*$/);
+  if (!match) {
+    return { main: value, annotation: null };
+  }
+  return { main: match[1], annotation: match[2] };
+}
+
+/**
  * A stored figure with its unit. The page's shared metric is percent change from
  * baseline, so its unit reads as a "%" glyph fused to the number ("−15.0%") rather
  * than the spelled word repeated down a dose list. Any other unit — a between-arm
@@ -92,17 +110,30 @@ function shortFamilyLabel(label: string): string {
  * rewritten — a "%" already in the source is left exactly as stored.
  */
 function ValueNumber({ value, unit }: { value: string; unit: string }) {
+  const { main, annotation } = splitTrailingAnnotation(value);
   if (unit === "percent") {
     return (
-      <span className="font-semibold tabular-nums text-foreground">
-        {value.includes("%") ? value : `${value}%`}
-      </span>
+      <>
+        <span className="font-semibold tabular-nums text-foreground">
+          {main.includes("%") ? main : `${main}%`}
+        </span>
+        {annotation ? (
+          <span className="ml-1 text-[11px] font-normal text-muted-foreground">
+            {annotation}
+          </span>
+        ) : null}
+      </>
     );
   }
   return (
     <>
-      <span className="font-semibold tabular-nums text-foreground">{value}</span>{" "}
+      <span className="font-semibold tabular-nums text-foreground">{main}</span>{" "}
       <span className="text-muted-foreground">{unit}</span>
+      {annotation ? (
+        <span className="ml-1 text-[11px] font-normal text-muted-foreground">
+          {annotation}
+        </span>
+      ) : null}
     </>
   );
 }

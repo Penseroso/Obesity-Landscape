@@ -66,8 +66,27 @@ function parsePercent(raw: string): number | null {
   return Number.isFinite(value) ? value : null;
 }
 
+// Some sources report a precision figure (standard error) inline with no
+// dedicated field for it, e.g. "-9.1 (SE 0.8)" — appending "%" naively would
+// land it after the parenthetical ("-9.1 (SE 0.8)%"). Splitting it off first
+// keeps the glyph on the number itself; the stored string is never rewritten,
+// only reassembled in the same two pieces.
 function formatPercent(raw: string): string {
-  return raw.includes("%") ? raw : `${raw}%`;
+  const match = raw.match(/^(.*?)\s*(\([^()]*\))\s*$/);
+  const [main, annotation] = match ? [match[1], match[2]] : [raw, null];
+  const withGlyph = main.includes("%") ? main : `${main}%`;
+  return annotation ? `${withGlyph} ${annotation}` : withGlyph;
+}
+
+// `studyTitle` is the Study's short acronym when one is authored ("STEP 1",
+// "SURMOUNT-1"), falling back to the full official title when it isn't —
+// common for an early-phase Study with no public trial name yet. A length
+// threshold, not a phase check: acronym-less Studies aren't only Phase 1/2,
+// and an authored acronym is reliably short regardless of phase.
+const STUDY_TITLE_SHORT_MAX = 24;
+
+function shortStudyTitle(studyTitle: string): string | null {
+  return studyTitle.length <= STUDY_TITLE_SHORT_MAX ? studyTitle : null;
 }
 
 // Matches a leading numeric dose expression with its unit, e.g. "5 mg",
@@ -114,6 +133,7 @@ type ChartSlot = {
   program: string;
   companyName: string;
   phase: string;
+  studyTitle: string;
   timepoint: string;
   doseLabel: string;
   /** The arm's stored `dose` text, when the read model resolved one and it
@@ -160,6 +180,7 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         program: row.name,
         companyName: row.companyName,
         phase: row.evidence.phase,
+        studyTitle: row.evidence.studyTitle,
         timepoint: row.evidence.assessmentTimepoint,
         doseLabel: dose.label,
         doseDetail:
@@ -315,7 +336,7 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                     {slot.doseAxisLabel}
                   </div>
                   <div
-                    title={`${slot.program} (${slot.companyName})\n${slot.phase} · ${slot.timepoint}\n${slot.doseLabel}${slot.doseDetail ? ` (${slot.doseDetail})` : ""}: ${formatPercent(slot.doseRaw)}`}
+                    title={`${slot.program} (${slot.companyName})\n${[shortStudyTitle(slot.studyTitle), slot.phase, slot.timepoint].filter(Boolean).join(" · ")}\n${slot.doseLabel}${slot.doseDetail ? ` (${slot.doseDetail})` : ""}: ${formatPercent(slot.doseRaw)}`}
                     className="absolute rounded-t-sm"
                     style={{
                       left: Y_AXIS_WIDTH + slot.x,
@@ -355,7 +376,8 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
       <ul className="sr-only">
         {rows.map((row) => (
           <li key={row.unitKey}>
-            {row.name} ({row.companyName}), {row.evidence.phase}, {row.evidence.assessmentTimepoint}:{" "}
+            {row.name} ({row.companyName}), {row.evidence.studyTitle}, {row.evidence.phase},{" "}
+            {row.evidence.assessmentTimepoint}:{" "}
             {row.evidence.treatmentValues
               .map(
                 (value) =>
