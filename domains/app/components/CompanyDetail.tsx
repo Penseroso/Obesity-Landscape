@@ -19,6 +19,21 @@ function capitalize(text: string): string {
   return text.length > 0 ? text[0].toUpperCase() + text.slice(1) : text;
 }
 
+function formatOwnRelationshipLabel(role: string, counterpartyName: string): string {
+  switch (role) {
+    case "licensor":
+      return `Licensed from ${counterpartyName}`;
+    case "licensee":
+      return `Licensed to ${counterpartyName}`;
+    case "co-developer":
+      return `Co-developed with ${counterpartyName}`;
+    case "originator":
+      return `Originated by ${counterpartyName}`;
+    default:
+      return `${capitalize(role)}: ${counterpartyName}`;
+  }
+}
+
 export function CompanyDetail({ view }: { view: CompanyDetailView }) {
   const stageCounts = new Map<string, number>(
     stageBuckets.map((bucket) => [bucket.id, 0]),
@@ -168,29 +183,61 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
               const assetHref = `${registerHref}&keyword=${encodeURIComponent(
                 asset.assetName,
               )}`;
+              const relationshipBadges = Array.from(
+                new Map(
+                  asset.programVariants
+                    .flatMap((variant) => variant.relationshipBadges)
+                    .map((detail) => [
+                      `${detail.role}|${detail.counterpartyName}|${detail.territories.join("|")}`,
+                      detail,
+                    ]),
+                ).values(),
+              );
               return (
                 <li
                   key={`${asset.companyId}|${asset.assetId}`}
                   className="flex flex-col gap-3 p-5 transition hover:bg-accent/20 sm:flex-row sm:items-center sm:justify-between"
                 >
-                  <Link
-                    href={assetHref}
-                    className="rounded-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                  >
-                    <span className="text-base font-semibold text-primary">
-                      {asset.assetName}
-                    </span>
-                    {asset.codeName || mechanism ? (
-                      <span className="block text-xs text-muted-foreground">
-                        {[
-                          asset.codeName ? `Code ${asset.codeName}` : null,
-                          mechanism,
-                        ]
-                          .filter(Boolean)
-                          .join(" · ")}
+                  <div>
+                    <Link
+                      href={assetHref}
+                      className="rounded-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    >
+                      <span className="text-base font-semibold text-primary">
+                        {asset.assetName}
                       </span>
-                    ) : null}
-                  </Link>
+                      {asset.codeName || mechanism ? (
+                        <span className="block text-xs text-muted-foreground">
+                          {[
+                            asset.codeName ? `Code ${asset.codeName}` : null,
+                            mechanism,
+                          ]
+                            .filter(Boolean)
+                            .join(" · ")}
+                        </span>
+                      ) : null}
+                    </Link>
+                    {relationshipBadges.map((detail) => (
+                      <span
+                        key={`${detail.role}|${detail.counterpartyName}|${detail.territories.join("|")}`}
+                        className="block text-xs text-muted-foreground"
+                      >
+                        {detail.counterpartyCompanyId ? (
+                          <Link
+                            href={`/companies/${encodeURIComponent(detail.counterpartyCompanyId)}`}
+                            className="rounded-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                          >
+                            {formatOwnRelationshipLabel(detail.role, detail.counterpartyName)}
+                          </Link>
+                        ) : (
+                          formatOwnRelationshipLabel(detail.role, detail.counterpartyName)
+                        )}
+                        {detail.territories.length > 0
+                          ? ` · ${detail.territories.join(", ")}`
+                          : ""}
+                      </span>
+                    ))}
+                  </div>
                   <span className="flex flex-wrap items-center gap-3">
                     {mostAdvancedStage ? (
                       <StageBadge stage={mostAdvancedStage} />

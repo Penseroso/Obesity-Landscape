@@ -20,13 +20,30 @@ export type CompanyProgramVariant = {
   scopeClass: ScopeClass;
 };
 
+/**
+ * A relationship on this company's own row, pointing at the other party
+ * (never a self-declared entry - e.g. Eli Lilly recording itself as
+ * `licensee`, which is excluded). `counterpartyCompanyId` is set only when
+ * the other party is itself a company tracked in this dataset.
+ */
+export type OwnRelationshipDetail = {
+  role: string;
+  counterpartyCompanyId?: string;
+  counterpartyName: string;
+  territories: string[];
+};
+
+export type OwnProgramVariant = CompanyProgramVariant & {
+  relationshipBadges: OwnRelationshipDetail[];
+};
+
 export type CompanyPortfolioAsset = {
   companyId: string;
   assetId: string;
   assetName: string;
   codeName: string | null;
   aliases?: AssetAlias[];
-  programVariants: CompanyProgramVariant[];
+  programVariants: OwnProgramVariant[];
 };
 
 export type CompanyPortfolioView = {
@@ -91,7 +108,10 @@ export function getCompanyPortfolio(
         assetName: first.assetName,
         codeName: first.codeName,
         aliases: first.aliases,
-        programVariants: sortProgramVariants(programs).map(toVariant),
+        programVariants: sortProgramVariants(programs).map((program) => ({
+          ...toVariant(program),
+          relationshipBadges: deriveOwnRelationshipDetails(program),
+        })),
       };
     })
     .sort(
@@ -155,6 +175,77 @@ function resolveRelationshipCompanyId(
     if (resolved && resolved !== ownCompanyId) return resolved;
   }
   return undefined;
+}
+
+/**
+ * Resolves a stored `CompanyRelationship` on a program to the *other* party,
+ * for display on that row's own (in-scope) company page - the complement of
+ * `resolveRelationshipCompanyId`, which instead tests whether a relationship
+ * points at one specific target company. Returns `undefined` only for a
+ * self-declared entry (the row's own company naming itself, e.g. a licensee
+ * recording its own `licensee` role). An `externalCompanyName` that does not
+ * resolve to a tracked company (e.g. an untracked originator like Carmot
+ * Therapeutics) is still returned, using the raw stored name with no
+ * `companyId` to link to.
+ */
+function resolveRelationshipCounterparty(
+  relationship: CompanyRelationship,
+  ownCompanyId: string,
+): { companyId?: string; name: string } | undefined {
+  if (relationship.companyId) {
+    if (relationship.companyId === ownCompanyId) return undefined;
+    const company = companies.find((c) => c.id === relationship.companyId);
+    return {
+      companyId: relationship.companyId,
+      name: company?.name ?? relationship.companyId,
+    };
+  }
+  if (relationship.externalCompanyName) {
+    const resolvedId = companyIdByNormalizedName.get(
+      normalizeCompanyName(relationship.externalCompanyName),
+    );
+    if (resolvedId === ownCompanyId) return undefined;
+    if (resolvedId) {
+      const company = companies.find((c) => c.id === resolvedId);
+      return {
+        companyId: resolvedId,
+        name: company?.name ?? relationship.externalCompanyName,
+      };
+    }
+    return { name: relationship.externalCompanyName };
+  }
+  return undefined;
+}
+
+function deriveOwnRelationshipDetails(
+  program: PipelineProgram,
+): OwnRelationshipDetail[] {
+  const details: OwnRelationshipDetail[] = [];
+  for (const relationship of program.relationships ?? []) {
+    const counterparty = resolveRelationshipCounterparty(
+      relationship,
+      program.companyId,
+    );
+    if (!counterparty) continue;
+    const detail: OwnRelationshipDetail = {
+      role: relationship.role,
+      counterpartyCompanyId: counterparty.companyId,
+      counterpartyName: counterparty.name,
+      territories: relationship.territories ?? [],
+    };
+    if (
+      !details.some(
+        (existing) =>
+          existing.role === detail.role &&
+          existing.counterpartyName === detail.counterpartyName &&
+          JSON.stringify(existing.territories) ===
+            JSON.stringify(detail.territories),
+      )
+    ) {
+      details.push(detail);
+    }
+  }
+  return details;
 }
 
 export type PartneredProgramVariant = CompanyProgramVariant & {
