@@ -29,7 +29,21 @@ export type ChartSourceRole = "experimental" | "active-comparator";
 
 /** One dose's chart-eligible evidence, with the provenance a tooltip needs. */
 export type ChartDosePoint = {
+  /**
+   * Resolved nominal dose: the final, highest-administered step for a
+   * deterministic escalation schedule, or the arm's `dose` text verbatim
+   * when it already named exactly one amount. This is the exact-match
+   * bucket key and the axis label — see `resolveNominalDose`.
+   */
   dose: string;
+  /**
+   * The arm's full, verbatim `dose` text, set only when it differs from
+   * `dose` above (i.e. `dose` was resolved from a multi-step schedule) — so
+   * a bar showing "20 mg" still discloses the full "2 mg, 5 mg, 10 mg, and
+   * 20 mg" schedule it was reduced from, rather than silently dropping it.
+   * Never itself parsed or rewritten.
+   */
+  doseSchedule?: string;
   outcomeId: string;
   value: string;
   unit: string;
@@ -61,39 +75,81 @@ export type ChartDosePoint = {
 export type ChartUnitAsset = { companyId: string; assetId: string };
 
 /**
- * Conservative "one explicit nominal dose" gate.
+ * Conservative dose resolution: returns the arm's resolved nominal dose, or
+ * `null` when the text cannot be conservatively attributed to one.
  *
  * `EfficacyValue.dose !== undefined` (the existing table-side signal) proves
  * only that the Outcome anchors to exactly one arm — it does **not** prove
  * that arm's `dose` text names a single administered amount. A single arm
- * can still carry an ambiguous range or a maximum-tolerated-dose alternative
- * verbatim, e.g. `"1.7 mg or 2.4 mg maximum tolerated dose"` (live in the
- * dataset: SURMOUNT-5's semaglutide active-comparator arm) or `"10 mg or 15
- * mg maximum tolerated dose"` (its own tirzepatide arm). Admitting either as
- * "2.4 mg" or "15 mg" would be an inference this dataset's Study-level
- * dose text was never authored to support.
+ * can still carry a genuinely **individualized, uncertain** alternative —
+ * e.g. `"1.7 mg or 2.4 mg maximum tolerated dose"` (live in the dataset:
+ * SURMOUNT-5's semaglutide active-comparator arm), where which dose a given
+ * participant actually received varies by tolerability and is not fixed by
+ * protocol. That is never resolvable, so it is rejected outright, regardless
+ * of number count.
  *
- * Two independent, deliberately simple checks — never a full parser:
- * - no ambiguity marker (an alternative-dose or ceiling phrase);
- * - exactly one numeric token in the whole string, so a range ("X to Y"),
- *   an alternative ("X or Y"), or a titration/cohort list ("2/5/10/20 mg")
- *   fails even without matching a marker word.
+ * A **deterministic escalation schedule** is different: every participant in
+ * the arm follows the same protocol-defined steps to the same final,
+ * highest-administered dose (`"2 mg, 5 mg, 10 mg, and 20 mg"`, live for
+ * ASC30's MAD cohort; `"6 mg escalating to 9 mg"`, live for eloralintide).
+ * That final step is resolved and used, mirroring this codebase's own
+ * existing precedent for exactly this shape in `extractDoseAxisLabel`
+ * (`EfficacyCompareChart.tsx`), which already reduces a slash-joined
+ * escalation to its highest step for axis-label purposes. The full schedule
+ * is preserved verbatim in `ChartDosePoint.doseSchedule` so a bar reading
+ * "20 mg" still discloses, on hover, that it reflects a ramp through lower
+ * doses first — never silently presented as if the arm were dosed at 20 mg
+ * from day one.
  *
- * A dose that passes both is grouped by its **exact, verbatim** text — never
- * parsed, reformatted, or reduced further — matching this codebase's
- * existing exact-string-only precedent for other free-text fields (see
- * `entities-and-rows.md#mechanism-family`).
+ * Checks, never a full parser:
+ * - reject outright on an individualized/uncertain-alternative marker ("or",
+ *   "maximum tolerated dose", "MTD", "up to") — applied first and
+ *   unconditionally, so nothing below ever overrides it;
+ * - otherwise, two narrow, explicit shapes that name exactly one
+ *   configuration despite carrying more than one number:
+ *   - **combination**: two or more named components each at their own fixed
+ *     amount, joined by "plus" (`"Cagrilintide 2.4 mg plus semaglutide
+ *     2.4 mg"`, live for CagriSema) — accepted, verbatim, only when every
+ *     `"plus"`-separated segment independently carries exactly one number;
+ *   - **split/multiplier**: a small integer count of one fixed amount
+ *     (`"2 x 25 mg"`, live for amycretin's split-tablet MAD cohort) —
+ *     accepted verbatim;
+ * - otherwise, every `number+unit` token in the string (`"20 mg"`, `"9 mg"`)
+ *   is extracted; one token resolves to itself, two or more resolve to the
+ *   **last** (a deterministic schedule's final step, per the ASC30/
+ *   eloralintide precedent above) — this also transparently covers a
+ *   compact slash-joined list (`"2/5/10/20 mg"`) with no special-casing,
+ *   since only its trailing number carries an adjacent unit.
+ *
+ * A resolved dose is grouped by its **exact** resolved text — never parsed,
+ * reformatted, or reduced further beyond the one step above — matching this
+ * codebase's existing exact-string-only precedent for other free-text
+ * fields (see `entities-and-rows.md#mechanism-family`).
  */
-const DOSE_AMBIGUITY_MARKERS =
-  /\bor\b|\bmaximum tolerated\b|\bmtd\b|\bup to\b|titrat|escalat|\brange\b/i;
+const DOSE_UNCERTAINTY_MARKERS = /\bor\b|\bmaximum tolerated\b|\bmtd\b|\bup to\b/i;
 
-export function isSingleNominalDose(doseText: string): boolean {
+const SPLIT_DOSE_PATTERN =
+  /^\d+\s*[x×]\s*\d+(\.\d+)?\s*(mg|mcg|µg|g|mL|IU|units?)\b/i;
+
+const DOSE_TOKEN_PATTERN = /\d+(?:\.\d+)?\s*(?:mg|mcg|µg|g|mL|IU|units?)\b/gi;
+
+function isCombinationDose(trimmed: string): boolean {
+  const segments = trimmed.split(/\bplus\b/i);
+  if (segments.length < 2) return false;
+  return segments.every(
+    (segment) => (segment.match(/\d+(\.\d+)?/g) ?? []).length === 1,
+  );
+}
+
+export function resolveNominalDose(doseText: string): string | null {
   const trimmed = doseText.trim();
-  if (trimmed.length === 0) return false;
-  if (DOSE_AMBIGUITY_MARKERS.test(trimmed)) return false;
-  if (trimmed.includes("/")) return false;
-  const numbers = trimmed.match(/\d+(\.\d+)?/g) ?? [];
-  return numbers.length === 1;
+  if (trimmed.length === 0) return null;
+  if (DOSE_UNCERTAINTY_MARKERS.test(trimmed)) return null;
+  if (isCombinationDose(trimmed)) return trimmed;
+  if (SPLIT_DOSE_PATTERN.test(trimmed)) return trimmed;
+  const tokens = trimmed.match(DOSE_TOKEN_PATTERN) ?? [];
+  if (tokens.length === 0) return null;
+  return tokens[tokens.length - 1].trim();
 }
 
 function resolveChartRole(
@@ -154,10 +210,12 @@ export function buildChartDoseSeries(
       const sourceRole = resolveChartRole(arm, unitAssets);
       if (!sourceRole) continue;
 
-      if (!isSingleNominalDose(arm.dose)) continue;
+      const resolvedDose = resolveNominalDose(arm.dose);
+      if (!resolvedDose) continue;
 
       const point: ChartDosePoint = {
-        dose: arm.dose.trim(),
+        dose: resolvedDose,
+        doseSchedule: resolvedDose === arm.dose.trim() ? undefined : arm.dose.trim(),
         outcomeId: outcome.id,
         value: outcome.result.value,
         unit: outcome.result.unit,

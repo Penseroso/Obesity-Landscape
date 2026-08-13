@@ -22,16 +22,20 @@ const WITHIN_GROUP_GAP = 8;
 const BETWEEN_GROUP_GAP = 40;
 const MIN_PLOT_HEIGHT = 160;
 const DOSE_LABEL_HEIGHT = 20;
-// Bar-local Study/timepoint provenance, one line per bar (not per group): once
-// a program's bars can come from more than one Study — the chart-only dose
-// series in `chart-evidence.ts` deliberately widens beyond the Overview
-// table's single representative Study — a shared per-group timepoint caption
-// would misstate the bars it doesn't belong to. The existing tooltip already
+// Bar-local Study/timepoint provenance, two short lines per bar (not per
+// group): once a program's bars can come from more than one Study — the
+// chart-only dose series in `chart-evidence.ts` deliberately widens beyond
+// the Overview table's single representative Study — a shared per-group
+// caption would misstate the bars it doesn't belong to, and cross-trial
+// aggregation must be legible without hovering. The existing tooltip already
 // carries full per-bar provenance; this is the permanent (non-hover) half of
-// it, since a duration/timepoint difference must never be tooltip-only (see
-// the page's own disclosure rule: two bars of equal height from trials of
-// different length must never read as equivalent).
-const BAR_PROVENANCE_HEIGHT = 16;
+// it: the Study's short acronym (when one is authored and short enough to
+// fit; a long official title stays tooltip-only, same threshold as
+// `shortStudyTitle` already uses elsewhere) above its timepoint, since a
+// duration/timepoint difference must never be tooltip-only (see the page's
+// own disclosure rule: two bars of equal height from trials of different
+// length must never read as equivalent).
+const BAR_PROVENANCE_HEIGHT = 28;
 /** Per-group program-name label only now — timepoint moved to per-bar above. */
 const GROUP_LABEL_HEIGHT = 24;
 const Y_AXIS_WIDTH = 40;
@@ -160,7 +164,6 @@ type ChartSlot = {
   programIndex: number;
   doseIndex: number;
   doseCount: number;
-  isGroupStart: boolean;
 };
 
 /** One bar per dose, in the page's own dose-ascending order — no clustering by
@@ -213,7 +216,6 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         programIndex,
         doseIndex,
         doseCount: doses.length,
-        isGroupStart: doseIndex === 0,
       });
     });
   });
@@ -223,39 +225,70 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
 type PositionedSlot = ChartSlot & { x: number; groupX: number; groupWidth: number };
 
 /**
+ * One program's horizontal slot, whether or not it produced any bars. No
+ * selected program currently has zero chart-eligible doses — `resolveNominalDose`
+ * (`chart-evidence.ts`) resolves a deterministic escalation schedule to its
+ * final step rather than rejecting it, which is what previously left ASC30's
+ * only Overview evidence ("2 mg, 5 mg, 10 mg, and 20 mg") with none. A row
+ * can still legitimately end up with zero points in the future — e.g. every
+ * one of its arms reporting a genuinely individualized/uncertain alternative
+ * ("X mg or Y mg maximum tolerated dose") rather than a fixed schedule — and
+ * that case must render as a disclosed, explicit empty state in its own
+ * reserved slot, never as a silently missing group the reader could mistake
+ * for a rendering bug. `probe-efficacy-comparison.mts` fails loud if any
+ * currently-selected row unexpectedly becomes zero-bar and is not on its
+ * reviewed allowlist.
+ */
+type PositionedGroup = {
+  programIndex: number;
+  program: string;
+  groupX: number;
+  groupWidth: number;
+  isEmpty: boolean;
+};
+
+/**
  * Assigns each bar a fixed pixel x — tight within a program, wider between
  * programs — instead of an even band scale. A program's bars are centered
  * within its own slot, which is at least `MIN_GROUP_WIDTH` wide even if its
- * bar cluster is narrower, so the group-header label below never truncates.
+ * bar cluster is narrower (or empty), so the group-header label below never
+ * truncates. Iterates every selected row by index — not just the program
+ * indices present in `slots` — so a zero-dose program still gets a
+ * positioned, empty group rather than disappearing from the layout.
  */
-function layoutSlots(slots: ChartSlot[]): { positioned: PositionedSlot[]; totalWidth: number } {
+function layoutSlots(
+  slots: ChartSlot[],
+  rows: EfficacyComparisonRow[],
+): { positioned: PositionedSlot[]; groups: PositionedGroup[]; totalWidth: number } {
   let x = 0;
   const positioned: PositionedSlot[] = [];
-  let i = 0;
-  while (i < slots.length) {
-    const { programIndex } = slots[i];
-    let j = i;
-    while (j < slots.length && slots[j].programIndex === programIndex) {
-      j += 1;
-    }
-    const doseCount = j - i;
-    const naturalWidth = doseCount * BAR_WIDTH + (doseCount - 1) * WITHIN_GROUP_GAP;
+  const groups: PositionedGroup[] = [];
+  rows.forEach((row, programIndex) => {
+    const groupSlots = slots.filter((slot) => slot.programIndex === programIndex);
+    const doseCount = groupSlots.length;
+    const naturalWidth =
+      doseCount > 0 ? doseCount * BAR_WIDTH + (doseCount - 1) * WITHIN_GROUP_GAP : 0;
     const groupWidth = Math.max(naturalWidth, MIN_GROUP_WIDTH);
     const barOffset = (groupWidth - naturalWidth) / 2;
 
-    if (i > 0) {
+    if (programIndex > 0) {
       x += BETWEEN_GROUP_GAP;
     }
     const groupX = x;
-    for (let k = i; k < j; k += 1) {
-      const withinIndex = k - i;
+    groupSlots.forEach((slot, withinIndex) => {
       const barX = groupX + barOffset + withinIndex * (BAR_WIDTH + WITHIN_GROUP_GAP);
-      positioned.push({ ...slots[k], x: barX, groupX, groupWidth });
-    }
+      positioned.push({ ...slot, x: barX, groupX, groupWidth });
+    });
+    groups.push({
+      programIndex,
+      program: row.name,
+      groupX,
+      groupWidth,
+      isEmpty: doseCount === 0,
+    });
     x = groupX + groupWidth;
-    i = j;
-  }
-  return { positioned, totalWidth: x };
+  });
+  return { positioned, groups, totalWidth: x };
 }
 
 /** A "nice" round step (1/2/5 × a power of ten) for ~4 y-axis gridlines. */
@@ -272,7 +305,10 @@ function niceStep(maxAbs: number, targetTicks = 4): number {
 
 export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProps) {
   const slots = useMemo(() => buildChartSlots(rows), [rows]);
-  const { positioned, totalWidth } = useMemo(() => layoutSlots(slots), [slots]);
+  const { positioned, groups, totalWidth } = useMemo(
+    () => layoutSlots(slots, rows),
+    [slots, rows],
+  );
 
   const { domainMin, ticks } = useMemo(() => {
     const magnitudes = slots.map((slot) => Math.abs(slot.doseNumeric));
@@ -382,27 +418,57 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                       top: DOSE_LABEL_HEIGHT + plotHeight + 3,
                     }}
                   >
+                    {shortStudyTitle(slot.studyTitle) ? (
+                      <p className="truncate text-[8px] font-medium leading-tight text-card-foreground">
+                        {shortStudyTitle(slot.studyTitle)}
+                      </p>
+                    ) : null}
                     <p className="truncate text-[8px] leading-tight text-muted-foreground">
                       {slot.timepoint}
                     </p>
                   </div>
-                  {slot.isGroupStart ? (
-                    <div
-                      className="absolute text-center"
-                      style={{
-                        left: Y_AXIS_WIDTH + slot.groupX,
-                        width: slot.groupWidth,
-                        top: DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + 3,
-                      }}
-                    >
-                      <p className="truncate text-[10px] font-semibold text-card-foreground">
-                        {slot.program}
-                      </p>
-                    </div>
-                  ) : null}
                 </div>
               );
             })}
+
+            {/* Program-name label and, for a program with no chart-eligible
+                dose, an explicit empty-state notice — both keyed off `groups`
+                rather than `positioned` so a zero-dose program still gets its
+                reserved slot and a disclosed reason, never a silent gap a
+                reader could mistake for a rendering bug. */}
+            {groups.map((group) => (
+              <div key={group.programIndex}>
+                <div
+                  className="absolute text-center"
+                  style={{
+                    left: Y_AXIS_WIDTH + group.groupX,
+                    width: group.groupWidth,
+                    top: DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + 3,
+                  }}
+                >
+                  <p className="truncate text-[10px] font-semibold text-card-foreground">
+                    {group.program}
+                  </p>
+                </div>
+                {group.isEmpty ? (
+                  <div
+                    className="absolute text-center"
+                    style={{
+                      left: Y_AXIS_WIDTH + group.groupX,
+                      width: group.groupWidth,
+                      top: DOSE_LABEL_HEIGHT,
+                    }}
+                  >
+                    <p
+                      className="px-1 text-[9px] italic leading-tight text-muted-foreground"
+                      title="Every dose this program reports is a range, escalation schedule, or pooled group rather than one explicit nominal dose, so none can be safely charted. See the Study for its full results."
+                    >
+                      No single-dose result to chart — see Study
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            ))}
 
             <div
               className="absolute border-t border-border"
@@ -416,14 +482,16 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
         {rows.map((row) => (
           <li key={row.unitKey}>
             {row.name} ({row.companyName}):{" "}
-            {row.chartDoseSeries
-              .map(
-                (point) =>
-                  `${point.label}${point.dose ? ` (${point.dose})` : ""} ${formatPercent(point.value)} — ` +
-                  `${point.studyTitle}, ${point.phase}, ${point.assessmentTimepoint}` +
-                  (point.sourceRole === "active-comparator" ? " (active comparator)" : ""),
-              )
-              .join("; ")}
+            {row.chartDoseSeries.length === 0
+              ? "No single-dose result to chart — every reported dose is a range, escalation schedule, or pooled group; see the Study for its full results."
+              : row.chartDoseSeries
+                  .map(
+                    (point) =>
+                      `${point.label}${point.dose ? ` (${point.dose})` : ""} ${formatPercent(point.value)} — ` +
+                      `${point.studyTitle}, ${point.phase}, ${point.assessmentTimepoint}` +
+                      (point.sourceRole === "active-comparator" ? " (active comparator)" : ""),
+                  )
+                  .join("; ")}
           </li>
         ))}
       </ul>

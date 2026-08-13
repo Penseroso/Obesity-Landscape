@@ -18,7 +18,7 @@ import { screenStudy } from "@/domains/app/lib/efficacy-comparison/candidates";
 import { selectRepresentative } from "@/domains/app/lib/efficacy-comparison/representative";
 import {
   buildChartDoseSeries,
-  isSingleNominalDose,
+  resolveNominalDose,
 } from "@/domains/app/lib/efficacy-comparison/chart-evidence";
 import { getStudyDetail } from "@/domains/app/lib/clinical-evidence/selectors";
 import { findHeadToHeadGroups } from "@/domains/app/lib/efficacy-comparison/head-to-head";
@@ -163,11 +163,19 @@ const REVIEWED_EVIDENCE: Record<
   // before, which silently hid the oral (OASIS) evidence behind STEP 8's win. Each
   // route is now its own unit, ranked independently within its own Programs.
   // Endpoint-role tier merge (ADR-0066): STEP 1 (co-primary, placebo-controlled)
-  // now beats STEP 8 (primary, head-to-head vs liraglutide) once primary and
-  // co-primary tie — the deciding key below that is estimand: STEP 1's outcome
-  // states "Treatment policy estimand" (rank 0) while STEP 8's outcome has none
-  // recorded (unranked, last). STEP 8 remains the representative row's Head-to-
-  // head entry independent of this — see `findHeadToHeadGroups`.
+  // and STEP 8 (primary, head-to-head vs liraglutide) tie on every ranking key
+  // through maturity — both are Phase 3, both hit the merged primary/co-primary
+  // tier, and both now carry "Treatment policy estimand" (STEP 8's was
+  // backfilled after this note was first written; it previously had none, which
+  // is what used to decide this). The winner is decided by the last, curated-
+  // order tie-break (`studyIndex`): STEP 1 is declared earlier in
+  // novo-nordisk/semaglutide/clinical-evidence.json. This is a deliberate,
+  // generic fallback (see `representative.ts`'s own doc comment) applied
+  // identically to every unit, not a rule specific to STEP 1 or STEP 8 - it
+  // will track array order if that order ever changes, and reviewers changing
+  // it should update this note alongside the reviewed value below. STEP 8
+  // remains the representative row's Head-to-head entry independent of this —
+  // see `findHeadToHeadGroups`.
   "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-subcutaneous-injection": {
     familyId: "glp1-agonist",
     studyId: "novo-nordisk-semaglutide-step-1-nct03548935",
@@ -407,6 +415,24 @@ const REVIEWED_CHART_EVIDENCE: Record<
   ],
 };
 
+/**
+ * Coverage check for a selected, eligible Overview row that unexpectedly
+ * renders a zero-bar chart. Currently empty: every one of today's 17
+ * eligible rows resolves to at least one chart-eligible dose point (see
+ * `resolveNominalDose`) — an earlier draft of this feature left ASC30 with
+ * none, since its only Overview evidence is a deterministic escalation
+ * schedule ("2 mg, 5 mg, 10 mg, and 20 mg") that a stricter, now-superseded
+ * gate rejected outright instead of resolving to its final step.
+ *
+ * Deliberately an explicit, reviewed allowlist rather than silently
+ * asserting `chartDoseSeries.length > 0` for every row: a row can still
+ * legitimately end up with zero points (e.g. every arm reporting a genuinely
+ * individualized/uncertain alternative), and when that happens it must be
+ * reviewed and added here with its reason, not left to make this check
+ * quietly stop meaning anything.
+ */
+const REVIEWED_ZERO_CHART_ROWS: Record<string, string> = {};
+
 const failures: string[] = [];
 const check = (condition: boolean, message: string) => {
   if (!condition) failures.push(message);
@@ -592,9 +618,16 @@ for (const { familyId, row } of rows) {
       point.sourceRole === "experimental" || point.sourceRole === "active-comparator",
       `${context} chartDoseSeries[${index}]: sourceRole "${point.sourceRole}"`,
     );
+    // point.dose is already resolved (see resolveNominalDose), so resolving
+    // it again must be a no-op — proves the stored bucket key is stable and
+    // was not left as an unresolved multi-step schedule.
     check(
-      isSingleNominalDose(point.dose),
-      `${context} chartDoseSeries[${index}]: dose "${point.dose}" is not a single nominal dose`,
+      resolveNominalDose(point.dose) === point.dose,
+      `${context} chartDoseSeries[${index}]: dose "${point.dose}" is not already a resolved single nominal dose`,
+    );
+    check(
+      point.doseSchedule === undefined || point.doseSchedule !== point.dose,
+      `${context} chartDoseSeries[${index}]: doseSchedule "${point.doseSchedule}" must be omitted, not set equal to the already-resolved dose`,
     );
     check(
       !doseSeenAt.has(point.dose),
@@ -614,6 +647,19 @@ for (const { familyId, row } of rows) {
     check(
       JSON.stringify(actualChart) === JSON.stringify(reviewedChart),
       `${context}: chartDoseSeries ${JSON.stringify(actualChart)} != reviewed ${JSON.stringify(reviewedChart)}`,
+    );
+  }
+
+  const reviewedZeroReason = REVIEWED_ZERO_CHART_ROWS[row.unitKey];
+  if (reviewedZeroReason) {
+    check(
+      row.chartDoseSeries.length === 0,
+      `${context}: reviewed as an expected zero-bar row (${reviewedZeroReason}) but now has ${row.chartDoseSeries.length} chart point(s) — this row's evidence changed; remove it from REVIEWED_ZERO_CHART_ROWS rather than leaving a stale reason on record`,
+    );
+  } else {
+    check(
+      row.chartDoseSeries.length > 0,
+      `${context}: unexpectedly has zero chart-eligible dose points and is not in REVIEWED_ZERO_CHART_ROWS — a selected, eligible Overview row must never silently render an empty chart; investigate whether this is a genuine new case (add it to that allowlist with its reason) or a regression in resolveNominalDose/buildChartDoseSeries`,
     );
   }
 }
@@ -1028,19 +1074,31 @@ function syntheticChartDoseStudy(): StudyDetailView {
   }
 }
 check(
-  !isSingleNominalDose("1.7 mg or 2.4 mg maximum tolerated dose"),
-  "isSingleNominalDose must reject the live SURMOUNT-5-shaped MTD alternative",
+  resolveNominalDose("1.7 mg or 2.4 mg maximum tolerated dose") === null,
+  "resolveNominalDose must reject the live SURMOUNT-5-shaped MTD alternative (individualized, not a fixed schedule) outright, regardless of number count",
 );
 check(
-  !isSingleNominalDose("2/5/10/20 mg"),
-  "isSingleNominalDose must reject a slash-separated titration cohort list",
+  resolveNominalDose("10 mg or 15 mg maximum tolerated dose") === null,
+  "resolveNominalDose must reject an MTD alternative even when neither candidate dose repeats",
 );
-check(isSingleNominalDose("2.4 mg"), "isSingleNominalDose must accept a plain single dose");
 check(
-  isSingleNominalDose("2.4 mg during randomized maintenance period"),
-  "isSingleNominalDose must accept a single dose with non-ambiguous surrounding context",
+  resolveNominalDose("2/5/10/20 mg") === "20 mg",
+  `resolveNominalDose must resolve a slash-separated deterministic escalation cohort (live: ASC30's MAD cohort) to its final, highest step, got ${JSON.stringify(resolveNominalDose("2/5/10/20 mg"))}`,
 );
-console.log("  synthetic chart-dose series: MTD/range excluded, external comparator excluded, same-dose tie-break prefers experimental, unique active-comparator dose included");
+check(
+  resolveNominalDose("2 mg, 5 mg, 10 mg, and 20 mg") === "20 mg",
+  `resolveNominalDose must resolve a comma-separated deterministic escalation list (ASC30's actual stored dose text) to its final step, got ${JSON.stringify(resolveNominalDose("2 mg, 5 mg, 10 mg, and 20 mg"))}`,
+);
+check(
+  resolveNominalDose("6 mg escalating to 9 mg") === "9 mg",
+  `resolveNominalDose must resolve an "X escalating to Y" schedule (live: eloralintide) to its final step, got ${JSON.stringify(resolveNominalDose("6 mg escalating to 9 mg"))}`,
+);
+check(resolveNominalDose("2.4 mg") === "2.4 mg", "resolveNominalDose must accept a plain single dose verbatim");
+check(
+  resolveNominalDose("2.4 mg during randomized maintenance period") === "2.4 mg",
+  "resolveNominalDose must accept a single dose with non-ambiguous surrounding context",
+);
+console.log("  synthetic chart-dose series: MTD alternative excluded, escalation schedules resolve to their final step, external comparator excluded, same-dose tie-break prefers experimental, unique active-comparator dose included");
 
 // --- synthetic: mechanism-family resolution compares families, not wording -
 //
