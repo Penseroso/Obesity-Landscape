@@ -158,15 +158,21 @@ const REVIEWED_EVIDENCE: Record<
   // Route split (ADR-0065): subcutaneous and oral semaglutide were one merged unit
   // before, which silently hid the oral (OASIS) evidence behind STEP 8's win. Each
   // route is now its own unit, ranked independently within its own Programs.
+  // Endpoint-role tier merge (ADR-0066): STEP 1 (co-primary, placebo-controlled)
+  // now beats STEP 8 (primary, head-to-head vs liraglutide) once primary and
+  // co-primary tie — the deciding key below that is estimand: STEP 1's outcome
+  // states "Treatment policy estimand" (rank 0) while STEP 8's outcome has none
+  // recorded (unranked, last). STEP 8 remains the representative row's Head-to-
+  // head entry independent of this — see `findHeadToHeadGroups`.
   "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-subcutaneous-injection": {
     familyId: "glp1-agonist",
-    studyId: "novo-nordisk-semaglutide-step-8-nct04074161",
-    endpointId: "step8-weight-week68",
-    comparisonGroupKey: "arm-level|full analysis set(overall)|",
-    treatmentOutcomeIds: ["step8-weight-semaglutide"],
-    placeboOutcomeIds: [],
-    activeComparatorOutcomeIds: ["step8-weight-liraglutide"],
-    betweenArmOutcomeIds: ["step8-weight-between"],
+    studyId: "novo-nordisk-semaglutide-step-1-nct03548935",
+    endpointId: "step1-weight-week68",
+    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
+    treatmentOutcomeIds: ["step1-weight-sema24"],
+    placeboOutcomeIds: ["step1-weight-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
   },
   "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-oral-tablets": {
     familyId: "glp1-agonist",
@@ -205,16 +211,23 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  // Endpoint-role tier merge (ADR-0066): SURMOUNT-1 (co-primary, placebo-
+  // controlled) now beats SURMOUNT-5 (primary, head-to-head vs semaglutide) —
+  // same pattern as semaglutide's STEP 1 / STEP 8 above.
   "asset:eli-lilly-and-company/ly3298176/eli-lilly-and-company-ly3298176-subcutaneous-injection": {
     familyId: "glp1-gip-agonist",
-    studyId: "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
-    endpointId: "sm5-weight-week72",
+    studyId: "eli-lilly-and-company-tirzepatide-surmount-1-nct04184622",
+    endpointId: "sm1-weight-week72",
     comparisonGroupKey:
-      "arm-level|full analysis set(overall)|modified treatment regimen",
-    treatmentOutcomeIds: ["sm5-weight-tirz"],
-    placeboOutcomeIds: [],
-    activeComparatorOutcomeIds: ["sm5-weight-sema"],
-    betweenArmOutcomeIds: ["sm5-weight-between"],
+      "arm-level|modified intention to treat(overall)|treatment regimen",
+    treatmentOutcomeIds: [
+      "sm1-weight-tirz5",
+      "sm1-weight-tirz10",
+      "sm1-weight-tirz15",
+    ],
+    placeboOutcomeIds: ["sm1-weight-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
   },
   "global-asset:olatorepatide": {
     familyId: "glp1-gip-agonist",
@@ -330,14 +343,20 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  // Endpoint-role tier merge (ADR-0066): REDEFINE 1 (co-primary, placebo-
+  // controlled) now beats REDEFINE 4 (primary, head-to-head vs tirzepatide) —
+  // same pattern as above.
   "asset:novo-nordisk/cagrisema/novo-nordisk-cagrisema-subcutaneous-injection": {
     familyId: "amylin-plus-glp1-combination",
-    studyId: "novo-nordisk-cagrisema-redefine-4-nct06131437",
-    endpointId: "redefine4-weight-week84",
-    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment regimen",
-    treatmentOutcomeIds: ["redefine4-weight-cagrisema"],
-    placeboOutcomeIds: [],
-    activeComparatorOutcomeIds: ["redefine4-weight-tirzepatide"],
+    studyId: "novo-nordisk-cagrisema-redefine-1-nct05567796",
+    endpointId: "redefine1-weight-week68",
+    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
+    treatmentOutcomeIds: ["redefine1-weight-cagrisema"],
+    placeboOutcomeIds: ["redefine1-weight-placebo"],
+    activeComparatorOutcomeIds: [
+      "redefine1-weight-cagrilintide",
+      "redefine1-weight-semaglutide",
+    ],
     betweenArmOutcomeIds: [],
   },
 };

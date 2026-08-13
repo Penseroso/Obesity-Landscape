@@ -36,6 +36,16 @@ export type EfficacyValue = {
   unit: string;
   /** Arm label, or analysis-group label for a group-anchored Outcome. */
   label: string;
+  /**
+   * The single arm's stored `dose`, when the Outcome anchors to exactly one arm.
+   * `label` sometimes carries no dose at all — a titration arm may be labelled
+   * "Semaglutide maximum tolerated dose" with the actual range ("1.7 mg or 2.4
+   * mg maximum tolerated dose") stored only in the arm's own `dose` field. Never
+   * set for a group-anchored Outcome or one spanning multiple arms: with more
+   * than one arm in play, "the dose" is ambiguous and this stays unset rather
+   * than guessing or concatenating.
+   */
+  dose?: string;
   armRole: ClinicalArmRole;
   outcomeId: string;
   resultType: "arm-level" | "between-arm";
@@ -142,15 +152,20 @@ function toValue(
   detail: StudyDetailView,
   armById: Map<string, ArmView>,
 ): EfficacyValue {
+  const armIds = view.outcome.armIds ?? [];
   const label = view.groupLabel
     ? view.groupLabel
-    : (view.outcome.armIds ?? [])
-        .map((armId) => armById.get(armId)?.label ?? armId)
-        .join(" / ");
+    : armIds.map((armId) => armById.get(armId)?.label ?? armId).join(" / ");
+  const dose = view.groupLabel
+    ? undefined
+    : armIds.length === 1
+      ? armById.get(armIds[0])?.dose
+      : undefined;
   return {
     value: view.outcome.result.value,
     unit: view.outcome.result.unit,
     label,
+    dose,
     armRole: resolveArmRole(view, detail),
     outcomeId: view.outcome.id,
     resultType: view.outcome.result.resultType,

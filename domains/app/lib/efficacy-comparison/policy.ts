@@ -50,20 +50,27 @@ export function getEfficacyPhaseTier(phase: string): EfficacyPhaseTier | null {
 }
 
 /**
- * Endpoint-role preference.
+ * Endpoint-role preference, in tiers. `primary` and `co-primary` share the top
+ * tier deliberately (ADR-0066): a trial that names weight change as one of two
+ * co-primary endpoints (STEP 1 pairs it with a ≥5%-responder co-primary,
+ * SURMOUNT-1 does the same) is not a weaker source on that endpoint than a
+ * trial that names weight change its sole primary — both are the trial's own
+ * prespecified confirmatory endpoint for the same metric. Ranking them apart
+ * let a co-primary-designed placebo-controlled trial systematically lose to an
+ * unrelated primary-only trial for the same asset (STEP 8, SURMOUNT-5) even
+ * when every other ranking key tied, which is not evidentiary superiority.
  *
  * Feature-local rather than reused from the Clinical Evidence selectors: this page
  * ranks candidates across studies, where the asset table only orders endpoint
  * sections within one study. Without this key a study's secondary weight endpoint
  * could outrank its prespecified primary purely on a later tie-breaker.
  */
-const endpointRoleOrder: ClinicalEndpointRole[] = [
-  "primary",
-  "co-primary",
-  "key-secondary",
-  "secondary",
-  "exploratory",
-  "other",
+const endpointRoleTiers: ClinicalEndpointRole[][] = [
+  ["primary", "co-primary"],
+  ["key-secondary"],
+  ["secondary"],
+  ["exploratory"],
+  ["other"],
 ];
 
 /**
@@ -76,8 +83,8 @@ export function isOverviewEligibleEndpointRole(role: ClinicalEndpointRole): bool
 }
 
 export function getEndpointRoleRank(role: ClinicalEndpointRole): number {
-  const index = endpointRoleOrder.indexOf(role);
-  return index === -1 ? endpointRoleOrder.length : index;
+  const index = endpointRoleTiers.findIndex((tier) => tier.includes(role));
+  return index === -1 ? endpointRoleTiers.length : index;
 }
 
 /**

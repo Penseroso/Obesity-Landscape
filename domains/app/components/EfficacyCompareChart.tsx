@@ -76,12 +76,16 @@ function formatPercent(raw: string): string {
 const DOSE_PATTERN = /\d[\d.\/]*\s*(?:mg|mcg|µg|g|mL|IU|units?)\b/i;
 
 /**
- * Axis-only extraction of the numeric dose + unit from a stored arm label
- * ("Elecoglipron 75 mg, weekly escalation" → "75 mg"). Returns null when the
- * label carries no such pattern at all (e.g. "Tirzepatide maximum tolerated
- * dose") rather than showing descriptive text the axis has no room for; the
- * caller falls back to an ordinal "Dose N" in that case. The full label is
- * untouched everywhere else (tooltip, screen-reader list).
+ * Axis-only extraction of the numeric dose + unit from stored arm text
+ * ("Elecoglipron 75 mg, weekly escalation" → "75 mg"). The caller passes the
+ * arm's `dose` field first when the read model resolved one (see
+ * `EfficacyValue.dose`) and only falls back to `label` when it didn't — a
+ * titration arm is often labelled with no number at all ("Semaglutide maximum
+ * tolerated dose"), while the numeric range lives in `dose` ("1.7 mg or 2.4 mg
+ * maximum tolerated dose"); this reads the first number in that range rather
+ * than showing nothing. Returns null when neither carries any such pattern,
+ * and the caller falls back to an ordinal "Dose N" in that case. The full
+ * label is untouched everywhere else (tooltip, screen-reader list).
  *
  * A slash-separated match ("2/5/10/20 mg", ASC30's MAD cohort) is a
  * titration schedule, not one dose — the axis shows only the final,
@@ -112,6 +116,9 @@ type ChartSlot = {
   phase: string;
   timepoint: string;
   doseLabel: string;
+  /** The arm's stored `dose` text, when the read model resolved one and it
+   * says more than `doseLabel` already does — shown in the tooltip only. */
+  doseDetail: string | null;
   doseAxisLabel: string;
   doseRaw: string;
   doseNumeric: number;
@@ -131,12 +138,20 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
       .map((value) => ({
         outcomeId: value.outcomeId,
         label: value.label,
+        dose: value.dose,
         raw: value.value,
         numeric: parsePercent(value.value),
       }))
       .filter(
-        (dose): dose is { outcomeId: string; label: string; raw: string; numeric: number } =>
-          dose.numeric !== null,
+        (
+          dose,
+        ): dose is {
+          outcomeId: string;
+          label: string;
+          dose: string | undefined;
+          raw: string;
+          numeric: number;
+        } => dose.numeric !== null,
       );
 
     doses.forEach((dose, doseIndex) => {
@@ -147,7 +162,12 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         phase: row.evidence.phase,
         timepoint: row.evidence.assessmentTimepoint,
         doseLabel: dose.label,
-        doseAxisLabel: extractDoseAxisLabel(dose.label) ?? `Dose ${doseIndex + 1}`,
+        doseDetail:
+          dose.dose && !dose.label.toLowerCase().includes(dose.dose.toLowerCase())
+            ? dose.dose
+            : null,
+        doseAxisLabel:
+          extractDoseAxisLabel(dose.dose ?? dose.label) ?? `Dose ${doseIndex + 1}`,
         doseRaw: dose.raw,
         doseNumeric: dose.numeric,
         programIndex,
@@ -295,7 +315,7 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                     {slot.doseAxisLabel}
                   </div>
                   <div
-                    title={`${slot.program} (${slot.companyName})\n${slot.phase} · ${slot.timepoint}\n${slot.doseLabel}: ${formatPercent(slot.doseRaw)}`}
+                    title={`${slot.program} (${slot.companyName})\n${slot.phase} · ${slot.timepoint}\n${slot.doseLabel}${slot.doseDetail ? ` (${slot.doseDetail})` : ""}: ${formatPercent(slot.doseRaw)}`}
                     className="absolute rounded-t-sm"
                     style={{
                       left: Y_AXIS_WIDTH + slot.x,
@@ -337,7 +357,10 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
           <li key={row.unitKey}>
             {row.name} ({row.companyName}), {row.evidence.phase}, {row.evidence.assessmentTimepoint}:{" "}
             {row.evidence.treatmentValues
-              .map((value) => `${value.label} ${formatPercent(value.value)}`)
+              .map(
+                (value) =>
+                  `${value.label}${value.dose ? ` (${value.dose})` : ""} ${formatPercent(value.value)}`,
+              )
               .join(", ")}
           </li>
         ))}

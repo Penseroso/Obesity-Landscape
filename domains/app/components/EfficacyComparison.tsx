@@ -107,10 +107,25 @@ function ValueNumber({ value, unit }: { value: string; unit: string }) {
   );
 }
 
+/**
+ * A stored arm's `dose`, shown only when it adds information `label` doesn't
+ * already carry — a titration arm may be labelled "Semaglutide maximum
+ * tolerated dose" with the actual range only in `dose`, while an ordinary
+ * dose-named arm ("Elecoglipron 5 mg") already contains it. A plain substring
+ * check, not a data judgment: it never hides a dose that isn't textually
+ * present in the label already shown beside it.
+ */
+function DoseCaption({ label, dose }: { label: string; dose?: string }) {
+  if (!dose || label.toLowerCase().includes(dose.toLowerCase())) {
+    return null;
+  }
+  return <span className="block text-[11px] text-muted-foreground">{dose}</span>;
+}
+
 function ValueList({
   values,
 }: {
-  values: { value: string; unit: string; label: string; outcomeId: string }[];
+  values: { value: string; unit: string; label: string; dose?: string; outcomeId: string }[];
 }) {
   return (
     <table className="w-full max-w-md border-collapse text-sm">
@@ -125,6 +140,7 @@ function ValueList({
           <tr key={value.outcomeId}>
             <td className="py-1 pr-4 align-baseline text-xs text-muted-foreground">
               {value.label}
+              <DoseCaption label={value.label} dose={value.dose} />
             </td>
             <td className="py-1 text-right align-baseline">
               <ValueNumber value={value.value} unit={value.unit} />
@@ -374,6 +390,7 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
                         <span className="block text-xs text-muted-foreground">
                           Active comparator
                         </span>
+                        <DoseCaption label={value.label} dose={value.dose} />
                       </td>
                       <td className="py-1 text-right align-baseline">
                         <ValueNumber value={value.value} unit={value.unit} />
