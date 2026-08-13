@@ -18,7 +18,7 @@
       "dosageForm": "Injection",
       "dosingInterval": "Once weekly"
     },
-    "indications": ["Obesity"],
+    "indications": ["Obesity", "Type 2 diabetes mellitus"],
     "development": {
       "stage": "Phase 3",
       "status": "Active",
@@ -81,88 +81,5 @@
       ]
     },
     "scopeClass": "obesity-treatment"
-  },
-  {
-    "id": "chugai-pharmaceutical-enicepatide-subcutaneous-injection-type-2-diabetes",
-    "assetId": "enicepatide",
-    "companyId": "chugai-pharmaceutical",
-    "assetName": "Enicepatide",
-    "codeName": "RO7795068",
-    "aliases": [
-      { "type": "development-code", "value": "CT-388" },
-      { "type": "development-code", "value": "RG6640" }
-    ],
-    "technical": {
-      "mechanism": "GLP-1/GIP receptor agonist",
-      "platform": null
-    },
-    "administration": {
-      "route": "Subcutaneous",
-      "dosageForm": "Injection",
-      "dosingInterval": "Once weekly"
-    },
-    "indications": ["Type 2 diabetes mellitus"],
-    "development": {
-      "stage": "Phase 3",
-      "status": "Active",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
-    },
-    "relationships": [
-      {
-        "externalCompanyName": "Carmot Therapeutics, Inc.",
-        "role": "originator",
-        "rights": ["discovered and developed CT-388 prior to Roche's 2024 acquisition of Carmot"],
-        "sourceUrls": ["https://www.roche.com/media/releases/med-cor-2023-12-04"]
-      },
-      {
-        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
-        "role": "licensor",
-        "territories": ["Japan"],
-        "rights": ["development", "commercialization"],
-        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
-      },
-      {
-        "companyId": "chugai-pharmaceutical",
-        "role": "licensee",
-        "territories": ["Japan"],
-        "rights": ["development", "commercialization"],
-        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
-      }
-    ],
-    "metadata": {
-      "lastVerifiedAt": "2026-08-13",
-      "updatedAt": "2026-08-13",
-      "sources": [
-        {
-          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
-          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
-          "sourceType": "company press release",
-          "publishedAt": "2025-10-10",
-          "checkedAt": "2026-08-13"
-        },
-        {
-          "url": "https://www.chugai-pharm.co.jp/english/ir/product/pipeline.html",
-          "title": "Chugai Development Pipeline",
-          "sourceType": "company pipeline page",
-          "checkedAt": "2026-08-13"
-        },
-        {
-          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-chugai-posts-strong-h1-2026-growth-shares-rise-93CH-4812177",
-          "title": "Chugai Pharmaceutical Q2 FY2026 earnings call transcript",
-          "sourceType": "earnings call transcript",
-          "publishedAt": "2026-07-24",
-          "checkedAt": "2026-08-13"
-        },
-        {
-          "url": "https://www.roche.com/media/releases/med-cor-2023-12-04",
-          "title": "Roche enters into a definitive merger agreement to acquire Carmot Therapeutics, including three clinical stage assets with best-in-class potential in obesity and diabetes",
-          "sourceType": "company press release",
-          "publishedAt": "2023-12-04",
-          "checkedAt": "2026-08-13"
-        }
-      ]
-    },
-    "scopeClass": "obesity-comorbidity"
   }
 ]
