@@ -2149,18 +2149,20 @@
       "Obesity"
     ],
     "development": {
-      "stage": "Unknown",
-      "status": "Planned"
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
     },
     "relationships": [
       {
-        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "externalCompanyName": "Carmot Therapeutics, Inc.",
         "role": "originator",
         "rights": [
-          "discovered and developed CT-388 prior to the Japan license"
+          "discovered and developed CT-388 prior to Roche's 2024 acquisition of Carmot"
         ],
         "sourceUrls": [
-          "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"
+          "https://www.roche.com/media/releases/med-cor-2023-12-04"
         ]
       },
       {
@@ -2207,6 +2209,20 @@
           "url": "https://www.chugai-pharm.co.jp/english/ir/product/pipeline.html",
           "title": "Chugai Development Pipeline",
           "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-chugai-posts-strong-h1-2026-growth-shares-rise-93CH-4812177",
+          "title": "Chugai Pharmaceutical Q2 FY2026 earnings call transcript",
+          "sourceType": "earnings call transcript",
+          "publishedAt": "2026-07-24",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2023-12-04",
+          "title": "Roche enters into a definitive merger agreement to acquire Carmot Therapeutics, including three clinical stage assets with best-in-class potential in obesity and diabetes",
+          "sourceType": "company press release",
+          "publishedAt": "2023-12-04",
           "checkedAt": "2026-08-13"
         }
       ]
@@ -2242,18 +2258,20 @@
       "Type 2 diabetes mellitus"
     ],
     "development": {
-      "stage": "Unknown",
-      "status": "Planned"
+      "stage": "Phase 3",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Initiated or active"
     },
     "relationships": [
       {
-        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "externalCompanyName": "Carmot Therapeutics, Inc.",
         "role": "originator",
         "rights": [
-          "discovered and developed CT-388 prior to the Japan license"
+          "discovered and developed CT-388 prior to Roche's 2024 acquisition of Carmot"
         ],
         "sourceUrls": [
-          "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"
+          "https://www.roche.com/media/releases/med-cor-2023-12-04"
         ]
       },
       {
@@ -2301,10 +2319,24 @@
           "title": "Chugai Development Pipeline",
           "sourceType": "company pipeline page",
           "checkedAt": "2026-08-13"
+        },
+        {
+          "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-chugai-posts-strong-h1-2026-growth-shares-rise-93CH-4812177",
+          "title": "Chugai Pharmaceutical Q2 FY2026 earnings call transcript",
+          "sourceType": "earnings call transcript",
+          "publishedAt": "2026-07-24",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2023-12-04",
+          "title": "Roche enters into a definitive merger agreement to acquire Carmot Therapeutics, including three clinical stage assets with best-in-class potential in obesity and diabetes",
+          "sourceType": "company press release",
+          "publishedAt": "2023-12-04",
+          "checkedAt": "2026-08-13"
         }
       ]
     },
-    "scopeClass": "metabolic-adjacent"
+    "scopeClass": "obesity-comorbidity"
   },
   {
     "id": "eli-lilly-and-company-ly3298176-subcutaneous-injection",
