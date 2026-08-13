@@ -48983,6 +48983,7 @@
         "step8-semaglutide"
       ],
       "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
       "result": {
         "value": "-15.8",
         "numericValue": -15.8,
@@ -48992,13 +48993,13 @@
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-24",
-        "updatedAt": "2026-07-24",
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
         "sources": [
           {
             "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-24"
+            "checkedAt": "2026-08-13"
           }
         ]
       }
@@ -49011,6 +49012,7 @@
         "step8-liraglutide"
       ],
       "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
       "result": {
         "value": "-6.4",
         "numericValue": -6.4,
@@ -49020,13 +49022,13 @@
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-24",
-        "updatedAt": "2026-07-24",
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
         "sources": [
           {
             "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-24"
+            "checkedAt": "2026-08-13"
           }
         ]
       }
@@ -49037,6 +49039,7 @@
       "endpointId": "step8-weight-week68",
       "analysisGroupId": "step8-pooled-placebo",
       "analysisPopulation": "Full analysis set (pooled placebo)",
+      "estimand": "Treatment policy estimand",
       "result": {
         "value": "-1.9",
         "numericValue": -1.9,
@@ -49045,13 +49048,13 @@
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-24",
-        "updatedAt": "2026-07-24",
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
         "sources": [
           {
             "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-24"
+            "checkedAt": "2026-08-13"
           }
         ]
       }
@@ -49065,6 +49068,7 @@
         "step8-liraglutide"
       ],
       "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment policy estimand",
       "result": {
         "value": "-9.4",
         "numericValue": -9.4,
@@ -49077,13 +49081,135 @@
       },
       "maturity": "peer-reviewed publication",
       "metadata": {
-        "lastVerifiedAt": "2026-07-24",
-        "updatedAt": "2026-07-24",
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
         "sources": [
           {
             "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
             "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-07-24"
+            "checkedAt": "2026-08-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step8-weight-trial-product-semaglutide",
+      "studyId": "novo-nordisk-semaglutide-step-8-nct04074161",
+      "endpointId": "step8-weight-week68",
+      "armIds": [
+        "step8-semaglutide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-17.1",
+        "numericValue": -17.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI -18.7 to -15.4"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
+        "sources": [
+          {
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
+            "title": "STEP 8 study — Supplement 3, eTable 4 (Trial Product Estimand)",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-08-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step8-weight-trial-product-liraglutide",
+      "studyId": "novo-nordisk-semaglutide-step-8-nct04074161",
+      "endpointId": "step8-weight-week68",
+      "armIds": [
+        "step8-liraglutide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-6.6",
+        "numericValue": -6.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI -8.3 to -4.9"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
+        "sources": [
+          {
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
+            "title": "STEP 8 study — Supplement 3, eTable 4 (Trial Product Estimand)",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-08-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step8-weight-trial-product-pooled-placebo",
+      "studyId": "novo-nordisk-semaglutide-step-8-nct04074161",
+      "endpointId": "step8-weight-week68",
+      "analysisGroupId": "step8-pooled-placebo",
+      "analysisPopulation": "Full analysis set (pooled placebo)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-1.8",
+        "numericValue": -1.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI -3.8 to 0.2"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
+        "sources": [
+          {
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
+            "title": "STEP 8 study — Supplement 3, eTable 5 (Trial Product Estimand)",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-08-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step8-weight-trial-product-between",
+      "studyId": "novo-nordisk-semaglutide-step-8-nct04074161",
+      "endpointId": "step8-weight-week68",
+      "armIds": [
+        "step8-semaglutide",
+        "step8-liraglutide"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Trial product estimand",
+      "result": {
+        "value": "-10.5",
+        "numericValue": -10.5,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Treatment difference",
+        "comparisonType": "Treatment difference, semaglutide minus liraglutide",
+        "confidenceInterval": "95% CI -12.8 to -8.1",
+        "pValue": "<.001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-13",
+        "updatedAt": "2026-08-13",
+        "sources": [
+          {
+            "url": "https://jamanetwork.com/journals/jama/fullarticle/2787907",
+            "title": "STEP 8 study — Supplement 3, eTable 4 (Trial Product Estimand)",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-08-13"
           }
         ]
       }
