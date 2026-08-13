@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Modal } from "@/domains/app/components/Modal";
+import type { ChartSourceRole } from "@/domains/app/lib/efficacy-comparison/chart-evidence";
 import type { EfficacyComparisonRow } from "@/domains/app/lib/efficacy-comparison/read-model";
 
 type EfficacyCompareChartProps = {
@@ -21,7 +22,18 @@ const WITHIN_GROUP_GAP = 8;
 const BETWEEN_GROUP_GAP = 40;
 const MIN_PLOT_HEIGHT = 160;
 const DOSE_LABEL_HEIGHT = 20;
-const GROUP_LABEL_HEIGHT = 40;
+// Bar-local Study/timepoint provenance, one line per bar (not per group): once
+// a program's bars can come from more than one Study — the chart-only dose
+// series in `chart-evidence.ts` deliberately widens beyond the Overview
+// table's single representative Study — a shared per-group timepoint caption
+// would misstate the bars it doesn't belong to. The existing tooltip already
+// carries full per-bar provenance; this is the permanent (non-hover) half of
+// it, since a duration/timepoint difference must never be tooltip-only (see
+// the page's own disclosure rule: two bars of equal height from trials of
+// different length must never read as equivalent).
+const BAR_PROVENANCE_HEIGHT = 16;
+/** Per-group program-name label only now — timepoint moved to per-bar above. */
+const GROUP_LABEL_HEIGHT = 24;
 const Y_AXIS_WIDTH = 40;
 // Floor for a program's horizontal slot so its group-header label (program
 // name + timepoint) always has room, even when that program has only one or
@@ -132,9 +144,12 @@ type ChartSlot = {
   key: string;
   program: string;
   companyName: string;
+  /** Bar-local, never shared across a program's other bars — see
+   * `BAR_PROVENANCE_HEIGHT`'s comment. */
   phase: string;
   studyTitle: string;
   timepoint: string;
+  sourceRole: ChartSourceRole;
   doseLabel: string;
   /** The arm's stored `dose` text, when the read model resolved one and it
    * says more than `doseLabel` already does — shown in the tooltip only. */
@@ -150,28 +165,31 @@ type ChartSlot = {
 
 /** One bar per dose, in the page's own dose-ascending order — no clustering by
  * program in the data itself; grouping is a presentation cue (color, fixed
- * gap, group-header label) layered on a flat, one-bar-per-slot array. */
+ * gap, group-header label) layered on a flat, one-bar-per-slot array.
+ *
+ * Sourced from `row.chartDoseSeries`, not `row.evidence.treatmentValues`: the
+ * Overview table's single representative Study is unaffected by this feature,
+ * but the chart draws on every eligible Study's dose evidence for the unit
+ * (`chart-evidence.ts`), so a program's bars here may span more than one
+ * Study — hence each slot below carries its own Study/phase/timepoint rather
+ * than one shared per program. */
 function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
   const slots: ChartSlot[] = [];
   rows.forEach((row, programIndex) => {
-    const doses = row.evidence.treatmentValues
-      .map((value) => ({
-        outcomeId: value.outcomeId,
-        label: value.label,
-        dose: value.dose,
-        raw: value.value,
-        numeric: parsePercent(value.value),
+    const doses = row.chartDoseSeries
+      .map((point) => ({
+        outcomeId: point.outcomeId,
+        label: point.label,
+        dose: point.dose as string | undefined,
+        raw: point.value,
+        numeric: parsePercent(point.value),
+        studyTitle: point.studyTitle,
+        phase: point.phase,
+        timepoint: point.assessmentTimepoint,
+        sourceRole: point.sourceRole,
       }))
       .filter(
-        (
-          dose,
-        ): dose is {
-          outcomeId: string;
-          label: string;
-          dose: string | undefined;
-          raw: string;
-          numeric: number;
-        } => dose.numeric !== null,
+        (dose): dose is typeof dose & { numeric: number } => dose.numeric !== null,
       );
 
     doses.forEach((dose, doseIndex) => {
@@ -179,9 +197,10 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         key: dose.outcomeId,
         program: row.name,
         companyName: row.companyName,
-        phase: row.evidence.phase,
-        studyTitle: row.evidence.studyTitle,
-        timepoint: row.evidence.assessmentTimepoint,
+        phase: dose.phase,
+        studyTitle: dose.studyTitle,
+        timepoint: dose.timepoint,
+        sourceRole: dose.sourceRole,
         doseLabel: dose.label,
         doseDetail:
           dose.dose && !dose.label.toLowerCase().includes(dose.dose.toLowerCase())
@@ -277,7 +296,11 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
       return;
     }
     const updateHeight = () => {
-      const available = element.clientHeight - DOSE_LABEL_HEIGHT - GROUP_LABEL_HEIGHT;
+      const available =
+        element.clientHeight -
+        DOSE_LABEL_HEIGHT -
+        BAR_PROVENANCE_HEIGHT -
+        GROUP_LABEL_HEIGHT;
       setPlotHeight(Math.max(available, MIN_PLOT_HEIGHT));
     };
     updateHeight();
@@ -307,7 +330,8 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
             className="relative"
             style={{
               width: Y_AXIS_WIDTH + totalWidth + 8,
-              height: DOSE_LABEL_HEIGHT + plotHeight + GROUP_LABEL_HEIGHT,
+              height:
+                DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + GROUP_LABEL_HEIGHT,
             }}
           >
             {ticks.map((tick) => {
@@ -336,7 +360,7 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                     {slot.doseAxisLabel}
                   </div>
                   <div
-                    title={`${slot.program} (${slot.companyName})\n${[shortStudyTitle(slot.studyTitle), slot.phase, slot.timepoint].filter(Boolean).join(" · ")}\n${slot.doseLabel}${slot.doseDetail ? ` (${slot.doseDetail})` : ""}: ${formatPercent(slot.doseRaw)}`}
+                    title={`${slot.program} (${slot.companyName})\n${[shortStudyTitle(slot.studyTitle), slot.phase, slot.timepoint].filter(Boolean).join(" · ")}\n${slot.doseLabel}${slot.doseDetail ? ` (${slot.doseDetail})` : ""}${slot.sourceRole === "active-comparator" ? " · Active comparator" : ""}: ${formatPercent(slot.doseRaw)}`}
                     className="absolute rounded-t-sm"
                     style={{
                       left: Y_AXIS_WIDTH + slot.x,
@@ -346,19 +370,34 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                       backgroundColor: doseColor(slot.programIndex, slot.doseIndex, slot.doseCount),
                     }}
                   />
+                  {/* Bar-local, every bar — not just the group start — since a
+                      program's bars may now come from different Studies with
+                      different timepoints. Permanent, not tooltip-only: see
+                      BAR_PROVENANCE_HEIGHT's comment. */}
+                  <div
+                    className="absolute text-center"
+                    style={{
+                      left: Y_AXIS_WIDTH + slot.x,
+                      width: BAR_WIDTH,
+                      top: DOSE_LABEL_HEIGHT + plotHeight + 3,
+                    }}
+                  >
+                    <p className="truncate text-[8px] leading-tight text-muted-foreground">
+                      {slot.timepoint}
+                    </p>
+                  </div>
                   {slot.isGroupStart ? (
                     <div
                       className="absolute text-center"
                       style={{
                         left: Y_AXIS_WIDTH + slot.groupX,
                         width: slot.groupWidth,
-                        top: DOSE_LABEL_HEIGHT + plotHeight + 6,
+                        top: DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + 3,
                       }}
                     >
                       <p className="truncate text-[10px] font-semibold text-card-foreground">
                         {slot.program}
                       </p>
-                      <p className="truncate text-[9px] text-muted-foreground">{slot.timepoint}</p>
                     </div>
                   ) : null}
                 </div>
@@ -376,14 +415,15 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
       <ul className="sr-only">
         {rows.map((row) => (
           <li key={row.unitKey}>
-            {row.name} ({row.companyName}), {row.evidence.studyTitle}, {row.evidence.phase},{" "}
-            {row.evidence.assessmentTimepoint}:{" "}
-            {row.evidence.treatmentValues
+            {row.name} ({row.companyName}):{" "}
+            {row.chartDoseSeries
               .map(
-                (value) =>
-                  `${value.label}${value.dose ? ` (${value.dose})` : ""} ${formatPercent(value.value)}`,
+                (point) =>
+                  `${point.label}${point.dose ? ` (${point.dose})` : ""} ${formatPercent(point.value)} — ` +
+                  `${point.studyTitle}, ${point.phase}, ${point.assessmentTimepoint}` +
+                  (point.sourceRole === "active-comparator" ? " (active comparator)" : ""),
               )
-              .join(", ")}
+              .join("; ")}
           </li>
         ))}
       </ul>

@@ -118,6 +118,61 @@ function countSources(group: OutcomeView[]): number {
   return urls.size;
 }
 
+export type ScoredCandidate = {
+  candidate: EvidenceCandidate;
+  endpointRoleRank: number;
+  estimandRank: number;
+  populationRank: number;
+  sourceCount: number;
+  maturityRank: number;
+};
+
+/**
+ * Scores one candidate against the page's fixed ranking keys (see
+ * `selectRepresentative`'s own doc comment for the full, ordered list and
+ * rationale). Exported so other selection surfaces that need the *same*
+ * evidence ranking — for example the chart's per-dose tie-break in
+ * `chart-evidence.ts`, when more than one candidate reports the same
+ * explicit dose — reuse it exactly rather than re-deriving a second ranking
+ * policy that could drift from this one.
+ */
+export function scoreCandidate(candidate: EvidenceCandidate): ScoredCandidate {
+  return {
+    candidate,
+    endpointRoleRank: getEndpointRoleRank(candidate.endpoint.role),
+    estimandRank: getEstimandRank(candidate.group[0].outcome.estimand),
+    populationRank: getAnalysisPopulationRank(
+      candidate.group[0].outcome.analysisPopulation,
+    ),
+    sourceCount: countSources(candidate.group),
+    maturityRank: getBestMaturityRank(
+      candidate.group.map((view) => view.outcome.maturity),
+    ),
+  };
+}
+
+/**
+ * Orders two scored candidates by the page's fixed ranking keys, best first.
+ * This is the **entire** winner-selection policy — extracted verbatim from
+ * `selectRepresentative`'s sort so it can be reused unmodified. Changing this
+ * function changes what `selectRepresentative` picks; do not fork it for a
+ * second call site.
+ */
+export function compareScoredCandidates(a: ScoredCandidate, b: ScoredCandidate): number {
+  return (
+    a.candidate.globalEvidencePriority - b.candidate.globalEvidencePriority ||
+    a.candidate.phaseTier - b.candidate.phaseTier ||
+    a.endpointRoleRank - b.endpointRoleRank ||
+    a.estimandRank - b.estimandRank ||
+    a.populationRank - b.populationRank ||
+    b.sourceCount - a.sourceCount ||
+    a.maturityRank - b.maturityRank ||
+    a.candidate.studyIndex - b.candidate.studyIndex ||
+    a.candidate.endpointIndex - b.candidate.endpointIndex ||
+    a.candidate.groupIndex - b.candidate.groupIndex
+  );
+}
+
 /**
  * Resolves the arm role behind an Outcome.
  *
@@ -190,32 +245,8 @@ export function selectRepresentative(
   candidates: EvidenceCandidate[],
   detailByStudyId: Map<string, StudyDetailView>,
 ): RepresentativeEvidence {
-  const scored = candidates.map((candidate) => ({
-    candidate,
-    endpointRoleRank: getEndpointRoleRank(candidate.endpoint.role),
-    estimandRank: getEstimandRank(candidate.group[0].outcome.estimand),
-    populationRank: getAnalysisPopulationRank(
-      candidate.group[0].outcome.analysisPopulation,
-    ),
-    sourceCount: countSources(candidate.group),
-    maturityRank: getBestMaturityRank(
-      candidate.group.map((view) => view.outcome.maturity),
-    ),
-  }));
-
-  scored.sort(
-    (a, b) =>
-      a.candidate.globalEvidencePriority - b.candidate.globalEvidencePriority ||
-      a.candidate.phaseTier - b.candidate.phaseTier ||
-      a.endpointRoleRank - b.endpointRoleRank ||
-      a.estimandRank - b.estimandRank ||
-      a.populationRank - b.populationRank ||
-      b.sourceCount - a.sourceCount ||
-      a.maturityRank - b.maturityRank ||
-      a.candidate.studyIndex - b.candidate.studyIndex ||
-      a.candidate.endpointIndex - b.candidate.endpointIndex ||
-      a.candidate.groupIndex - b.candidate.groupIndex,
-  );
+  const scored = candidates.map(scoreCandidate);
+  scored.sort(compareScoredCandidates);
 
   const winner = scored[0];
   const { candidate } = winner;

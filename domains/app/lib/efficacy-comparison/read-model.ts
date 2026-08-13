@@ -14,6 +14,11 @@ import {
   type EfficacyDispositionReason,
   type EvidenceCandidate,
 } from "./candidates";
+import {
+  buildChartDoseSeries,
+  type ChartDosePoint,
+  type ChartUnitAsset,
+} from "./chart-evidence";
 import { findHeadToHeadGroups, type HeadToHeadGroup } from "./head-to-head";
 import {
   efficacyMechanismFamilies,
@@ -54,6 +59,13 @@ export type EfficacyComparisonRow = {
   /** Asset route; regimens have no detail route today. */
   href: string | null;
   evidence: RepresentativeEvidence;
+  /**
+   * Chart-only dose evidence, gathered across every eligible candidate for
+   * this unit — not just `evidence`'s single winner. Additive: the Overview
+   * table never reads this field, and `evidence` above is unaffected by it.
+   * See `chart-evidence.ts`.
+   */
+  chartDoseSeries: ChartDosePoint[];
 };
 
 export type EfficacyFamilyGroup = {
@@ -286,6 +298,26 @@ export function getEfficacyComparison(): EfficacyComparisonView {
       evidence.studyCompanyId,
       evidence.studyAssetId,
     );
+
+    // Chart-only widening target: which asset(s) a registry-linked active
+    // comparator arm must resolve to for its evidence to count as this
+    // unit's own. A regimen has no single asset identity to match against,
+    // so it gets none — see `chart-evidence.ts`.
+    const chartUnitAssets: ChartUnitAsset[] =
+      unit.unitKind === "regimen"
+        ? []
+        : unit.unitKind === "global-asset"
+          ? unit.globalAssetGroup!.members.map((member) => ({
+              companyId: member.companyId,
+              assetId: member.assetId,
+            }))
+          : [{ companyId: unit.companyId, assetId: unit.assetId! }];
+    const chartDoseSeries = buildChartDoseSeries(
+      candidates,
+      detailByStudyId,
+      chartUnitAssets,
+    );
+
     const row: EfficacyComparisonRow = {
       unitKey,
       unitKind: unit.unitKind,
@@ -304,6 +336,7 @@ export function getEfficacyComparison(): EfficacyComparisonView {
           ? `/assets/${evidence.studyCompanyId}/${evidence.studyAssetId}`
           : href,
       evidence,
+      chartDoseSeries,
     };
 
     const list = rowsByFamilyId.get(resolution.family.id);

@@ -16,6 +16,10 @@ import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/rea
 import { EFFICACY_OVERVIEW_UNIT } from "@/domains/app/lib/efficacy-comparison/policy";
 import { screenStudy } from "@/domains/app/lib/efficacy-comparison/candidates";
 import { selectRepresentative } from "@/domains/app/lib/efficacy-comparison/representative";
+import {
+  buildChartDoseSeries,
+  isSingleNominalDose,
+} from "@/domains/app/lib/efficacy-comparison/chart-evidence";
 import { getStudyDetail } from "@/domains/app/lib/clinical-evidence/selectors";
 import { findHeadToHeadGroups } from "@/domains/app/lib/efficacy-comparison/head-to-head";
 import {
@@ -361,6 +365,48 @@ const REVIEWED_EVIDENCE: Record<
   },
 };
 
+/**
+ * Reviewed chart-only dose evidence (`chart-evidence.ts`) for the two units
+ * where it currently differs from the Overview table's single representative
+ * Study. Every other unit's `chartDoseSeries` is checked only generically
+ * below (valid, stored, non-ambiguous) — most units have exactly one
+ * eligible Study today, so their chart series trivially matches their table
+ * row and does not need its own reviewed snapshot.
+ */
+const REVIEWED_CHART_EVIDENCE: Record<
+  string,
+  { dose: string; sourceRole: string; studyId: string; outcomeId: string }[]
+> = {
+  "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-subcutaneous-injection": [
+    {
+      dose: "2.4 mg",
+      sourceRole: "experimental",
+      studyId: "novo-nordisk-semaglutide-step-1-nct03548935",
+      outcomeId: "step1-weight-sema24",
+    },
+    {
+      dose: "7.2 mg",
+      sourceRole: "experimental",
+      studyId: "novo-nordisk-semaglutide-step-up-nct05646706",
+      outcomeId: "stepup-weight-sema72",
+    },
+  ],
+  "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-oral-tablets": [
+    {
+      dose: "25 mg",
+      sourceRole: "experimental",
+      studyId: "novo-nordisk-semaglutide-oasis-4-nct05564117",
+      outcomeId: "oasis4-weight-sema25",
+    },
+    {
+      dose: "50 mg",
+      sourceRole: "experimental",
+      studyId: "novo-nordisk-semaglutide-oasis-1-nct05035095",
+      outcomeId: "oasis1-weight-treatment-policy-semaglutide",
+    },
+  ],
+};
+
 const failures: string[] = [];
 const check = (condition: boolean, message: string) => {
   if (!condition) failures.push(message);
@@ -531,6 +577,45 @@ for (const { familyId, row } of rows) {
     row.evidence.maturity === row.evidence.groupMaturities[0],
     `${context}: disclosed maturity ${row.evidence.maturity} is not the group best`,
   );
+
+  // --- chart-only dose series (chart-evidence.ts) -------------------------
+  // Generic, every row: the Overview table's `evidence` above is completely
+  // unaffected by any of this — these checks are additive.
+  const doseSeenAt = new Map<string, number>();
+  row.chartDoseSeries.forEach((point, index) => {
+    checkStoredValue(`${context} chartDoseSeries[${index}]`, point);
+    check(
+      point.unit === EFFICACY_OVERVIEW_UNIT,
+      `${context} chartDoseSeries[${index}]: unit "${point.unit}"`,
+    );
+    check(
+      point.sourceRole === "experimental" || point.sourceRole === "active-comparator",
+      `${context} chartDoseSeries[${index}]: sourceRole "${point.sourceRole}"`,
+    );
+    check(
+      isSingleNominalDose(point.dose),
+      `${context} chartDoseSeries[${index}]: dose "${point.dose}" is not a single nominal dose`,
+    );
+    check(
+      !doseSeenAt.has(point.dose),
+      `${context}: dose "${point.dose}" appears twice in chartDoseSeries (indices ${doseSeenAt.get(point.dose)} and ${index}) — the per-dose tie-break must leave exactly one winner per dose`,
+    );
+    doseSeenAt.set(point.dose, index);
+  });
+
+  const reviewedChart = REVIEWED_CHART_EVIDENCE[row.unitKey];
+  if (reviewedChart) {
+    const actualChart = row.chartDoseSeries.map((point) => ({
+      dose: point.dose,
+      sourceRole: point.sourceRole,
+      studyId: point.studyId,
+      outcomeId: point.outcomeId,
+    }));
+    check(
+      JSON.stringify(actualChart) === JSON.stringify(reviewedChart),
+      `${context}: chartDoseSeries ${JSON.stringify(actualChart)} != reviewed ${JSON.stringify(reviewedChart)}`,
+    );
+  }
 }
 
 // --- explicit global-asset grouping and priority -------------------------
@@ -793,6 +878,169 @@ check(
 console.log(
   "  synthetic responder-proportion outcome: excluded from overview and head-to-head",
 );
+
+// --- synthetic: chart-only dose series (chart-evidence.ts) -----------------
+//
+// One synthetic Study standing in for "this unit's own Study" pins four
+// mechanics at once, none of which have — or need — a live dataset example
+// for all of them simultaneously: an ambiguous single-arm dose is excluded
+// regardless of arm role (mirrors the live SURMOUNT-5 semaglutide MTD arm,
+// checked separately above via the real dataset); an active-comparator arm
+// linked to a *different* unit's asset is excluded; a same-dose collision
+// between an experimental and a registry-linked active-comparator arm of
+// this unit's own asset is resolved by the reused evidence ranking with
+// experimental preferred; and a registry-linked active-comparator arm at a
+// dose no experimental arm reports is included on its own.
+
+function syntheticChartDoseStudy(): StudyDetailView {
+  const study = {
+    id: "synthetic-chart-dose",
+    companyId: "fixture-co",
+    assetId: "alpha",
+    officialTitle: "Synthetic chart-dose-series study",
+    phase: "Phase 3",
+    design: { randomization: "Randomized", masking: "Double-blind", comparator: "Placebo" },
+    population: "Adults with obesity, without diabetes.",
+    populationProfile: {
+      ageGroup: "adult",
+      diabetesStatus: "without-type-2-diabetes",
+      requiresAdditionalCondition: false,
+      treatmentContext: "initial-treatment",
+    },
+  };
+  const arms = [
+    { id: "exp-10mg", studyId: study.id, role: "experimental", label: "Alpha 10 mg", intervention: "Alpha", dose: "10 mg" },
+    { id: "placebo", studyId: study.id, role: "placebo", label: "Placebo", intervention: "Placebo" },
+    {
+      id: "ac-same-dose",
+      studyId: study.id,
+      role: "active comparator",
+      label: "Alpha 10 mg (arm B)",
+      intervention: "Alpha",
+      linkedAssetRef: { companyId: "fixture-co", assetId: "alpha" },
+      dose: "10 mg",
+    },
+    {
+      id: "ac-unique-dose",
+      studyId: study.id,
+      role: "active comparator",
+      label: "Alpha 3 mg",
+      intervention: "Alpha",
+      linkedAssetRef: { companyId: "fixture-co", assetId: "alpha" },
+      dose: "3 mg",
+    },
+    {
+      id: "ac-external",
+      studyId: study.id,
+      role: "active comparator",
+      label: "Beta 5 mg",
+      intervention: "Beta",
+      linkedAssetRef: { companyId: "fixture-co", assetId: "beta" },
+      dose: "5 mg",
+    },
+    {
+      id: "ac-ambiguous",
+      studyId: study.id,
+      role: "active comparator",
+      label: "Alpha maximum tolerated dose",
+      intervention: "Alpha",
+      linkedAssetRef: { companyId: "fixture-co", assetId: "alpha" },
+      dose: "1.7 mg or 2.4 mg maximum tolerated dose",
+    },
+  ];
+  const endpoint = {
+    id: "e1",
+    studyId: study.id,
+    name: "Percentage change from baseline in body weight",
+    role: "primary",
+    domain: "body weight",
+    assessmentTimepoint: "Week 24",
+  };
+  const mk = (id: string, armId: string, value: string) => ({
+    outcome: {
+      id,
+      studyId: study.id,
+      endpointId: "e1",
+      armIds: [armId],
+      analysisPopulation: "Full analysis set (overall)",
+      estimand: "Treatment policy estimand",
+      result: { value, numericValue: Number(value), unit: "percent", resultType: "arm-level" },
+      maturity: "peer-reviewed publication",
+      metadata: { lastVerifiedAt: "2026-08-13", updatedAt: "2026-08-13", sources: [] },
+    },
+    endpoint,
+    armLabels: [],
+  });
+  return {
+    study,
+    asset: { companyId: "fixture-co", assetId: "alpha", assetName: "Alpha" },
+    arms,
+    analysisGroups: [],
+    endpointGroups: [
+      {
+        endpoint,
+        outcomes: [
+          mk("chart-exp-10mg", "exp-10mg", "-10.0"),
+          mk("chart-ac-same-dose", "ac-same-dose", "-9.5"),
+          mk("chart-ac-unique-dose", "ac-unique-dose", "-4.0"),
+          mk("chart-ac-external", "ac-external", "-3.0"),
+          mk("chart-ac-ambiguous", "ac-ambiguous", "-11.0"),
+        ],
+      },
+    ],
+    linkedFromAssets: [],
+  } as unknown as StudyDetailView;
+}
+
+{
+  const detail = syntheticChartDoseStudy();
+  const screening = screenStudy(detail, 0);
+  check(screening.reason === null, `synthetic chart-dose study should be eligible, got ${screening.reason}`);
+  if (screening.reason === null) {
+    const detailByStudyId = new Map([[detail.study.id, detail]]);
+    const series = buildChartDoseSeries(screening.candidates, detailByStudyId, [
+      { companyId: "fixture-co", assetId: "alpha" },
+    ]);
+    const byDose = new Map(series.map((point) => [point.dose, point]));
+
+    check(
+      byDose.get("10 mg")?.outcomeId === "chart-exp-10mg",
+      `same-dose tie-break: expected the experimental arm's outcome to win "10 mg", got ${byDose.get("10 mg")?.outcomeId}`,
+    );
+    check(
+      byDose.get("10 mg")?.sourceRole === "experimental",
+      `same-dose tie-break: winning "10 mg" point should be sourceRole experimental, got ${byDose.get("10 mg")?.sourceRole}`,
+    );
+    check(
+      byDose.get("3 mg")?.outcomeId === "chart-ac-unique-dose" &&
+        byDose.get("3 mg")?.sourceRole === "active-comparator",
+      `registry-linked active-comparator arm at a dose no experimental arm reports should be included with sourceRole preserved, got ${JSON.stringify(byDose.get("3 mg"))}`,
+    );
+    check(
+      !byDose.has("5 mg"),
+      `an active-comparator arm linked to a different unit's asset must not be admitted, got ${JSON.stringify(byDose.get("5 mg"))}`,
+    );
+    check(
+      series.every((point) => point.dose !== "1.7 mg" && point.dose !== "2.4 mg"),
+      `an ambiguous "1.7 mg or 2.4 mg maximum tolerated dose" arm must never be split or admitted as a single dose`,
+    );
+    check(series.length === 2, `expected exactly 2 chart dose points (10 mg, 3 mg), got ${series.length}: ${JSON.stringify(series.map((p) => p.dose))}`);
+  }
+}
+check(
+  !isSingleNominalDose("1.7 mg or 2.4 mg maximum tolerated dose"),
+  "isSingleNominalDose must reject the live SURMOUNT-5-shaped MTD alternative",
+);
+check(
+  !isSingleNominalDose("2/5/10/20 mg"),
+  "isSingleNominalDose must reject a slash-separated titration cohort list",
+);
+check(isSingleNominalDose("2.4 mg"), "isSingleNominalDose must accept a plain single dose");
+check(
+  isSingleNominalDose("2.4 mg during randomized maintenance period"),
+  "isSingleNominalDose must accept a single dose with non-ambiguous surrounding context",
+);
+console.log("  synthetic chart-dose series: MTD/range excluded, external comparator excluded, same-dose tie-break prefers experimental, unique active-comparator dose included");
 
 // --- synthetic: mechanism-family resolution compares families, not wording -
 //
