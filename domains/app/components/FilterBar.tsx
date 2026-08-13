@@ -56,7 +56,7 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
 
   return (
     <section className="rounded-md border border-border bg-card p-4 shadow-soft">
-      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
+      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-7">
         <label className="flex min-w-0 flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground xl:col-span-2">
           Keyword
           <input
