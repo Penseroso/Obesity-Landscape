@@ -65,6 +65,19 @@
     }
   },
   {
+    "id": "chugai-pharmaceutical",
+    "name": "Chugai Pharmaceutical Co., Ltd.",
+    "headquartersCountry": "Japan",
+    "officialWebsite": {
+      "url": "https://www.chugai-pharm.co.jp/english/",
+      "checkedAt": "2026-08-13"
+    },
+    "officialPipeline": {
+      "url": "https://www.chugai-pharm.co.jp/english/ir/product/pipeline.html",
+      "checkedAt": "2026-08-13"
+    }
+  },
+  {
     "id": "eli-lilly-and-company",
     "name": "Eli Lilly and Company",
     "headquartersCountry": "United States",

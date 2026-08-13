@@ -1,0 +1,136 @@
+[
+  {
+    "id": "chugai-pharmaceutical-enicepatide-subcutaneous-injection",
+    "assetId": "enicepatide",
+    "companyId": "chugai-pharmaceutical",
+    "assetName": "Enicepatide",
+    "codeName": "RO7795068",
+    "aliases": [
+      { "type": "development-code", "value": "CT-388" },
+      { "type": "development-code", "value": "RG6640" }
+    ],
+    "technical": {
+      "mechanism": "GLP-1/GIP receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": ["Obesity"],
+    "development": {
+      "stage": "Unknown",
+      "status": "Planned"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "role": "originator",
+        "rights": ["discovered and developed CT-388 prior to the Japan license"],
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      },
+      {
+        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "role": "licensor",
+        "territories": ["Japan"],
+        "rights": ["development", "commercialization"],
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      },
+      {
+        "companyId": "chugai-pharmaceutical",
+        "role": "licensee",
+        "territories": ["Japan"],
+        "rights": ["development", "commercialization"],
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-13",
+      "updatedAt": "2026-08-13",
+      "sources": [
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
+          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-10",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/ir/product/pipeline.html",
+          "title": "Chugai Development Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "chugai-pharmaceutical-enicepatide-subcutaneous-injection-type-2-diabetes",
+    "assetId": "enicepatide",
+    "companyId": "chugai-pharmaceutical",
+    "assetName": "Enicepatide",
+    "codeName": "RO7795068",
+    "aliases": [
+      { "type": "development-code", "value": "CT-388" },
+      { "type": "development-code", "value": "RG6640" }
+    ],
+    "technical": {
+      "mechanism": "GLP-1/GIP receptor agonist",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": ["Type 2 diabetes mellitus"],
+    "development": {
+      "stage": "Unknown",
+      "status": "Planned"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "role": "originator",
+        "rights": ["discovered and developed CT-388 prior to the Japan license"],
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      },
+      {
+        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "role": "licensor",
+        "territories": ["Japan"],
+        "rights": ["development", "commercialization"],
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      },
+      {
+        "companyId": "chugai-pharmaceutical",
+        "role": "licensee",
+        "territories": ["Japan"],
+        "rights": ["development", "commercialization"],
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-08-13",
+      "updatedAt": "2026-08-13",
+      "sources": [
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
+          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-10",
+          "checkedAt": "2026-08-13"
+        },
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/ir/product/pipeline.html",
+          "title": "Chugai Development Pipeline",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-08-13"
+        }
+      ]
+    },
+    "scopeClass": "metabolic-adjacent"
+  }
+]
