@@ -496,9 +496,8 @@ export function EfficacyComparison({ view }: EfficacyComparisonProps) {
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Efficacy Comparison
           </h1>
-          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-            Reported body-weight reduction by mechanism family, for assets and
-            registered combination products with a recorded percent-change result.
+          <p className="mt-2 max-w-none text-sm text-muted-foreground">
+            Reported body-weight reduction by mechanism family, for assets and registered combination products with a recorded percent-change result.
           </p>
         </div>
         {rowCount > 0 ? <EfficacyCompareLauncher families={view.families} /> : null}
