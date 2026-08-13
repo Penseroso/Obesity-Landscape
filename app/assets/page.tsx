@@ -44,7 +44,7 @@ export default function AssetsPage() {
           Program Register
         </h1>
         <p className="mt-3 max-w-none text-sm leading-6 text-muted-foreground">
-          A searchable register of obesity landscape development programs. Filter by company, indication, route, development stage, and scope class.
+          A searchable register of obesity landscape development programs.
         </p>
       </section>
       {/* PipelineTable reads drill-down filters from the URL via
