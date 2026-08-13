@@ -247,8 +247,9 @@ shared `comparisonGroupKeyOf` primitive.
 - **Compare programs** (`EfficacyCompareLauncher`) is a presentation-only overlay on
   top of the same `view.families` rows — it adds no read-model logic and never
   reorders, filters, or recalculates a row. A picker dialog (`EfficacyProgramPicker`)
-  lists every row in the page's own family/curated order, capped at three
-  selections; its own Compare action swaps to a chart dialog
+  lists every row in the page's own family/curated order, capped at
+  `EFFICACY_COMPARE_MAX_SELECTION` (currently five) selections; its own Compare
+  action swaps to a chart dialog
   (`EfficacyCompareChart`) with a grouped vertical bar per selected unit's doses.
   Bar height is the only derived number in the feature — parsed from the stored
   percent-change string solely to size the bar — and every other rendered value
