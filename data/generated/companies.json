@@ -130,6 +130,19 @@
     }
   },
   {
+    "id": "jiangsu-hengrui-pharmaceuticals",
+    "name": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+    "headquartersCountry": "China",
+    "officialWebsite": {
+      "url": "https://www.hengrui.com/en/",
+      "checkedAt": "2026-08-13"
+    },
+    "officialPipeline": {
+      "url": "https://www.hengrui.com/en/rad/pipeline.html",
+      "checkedAt": "2026-08-13"
+    }
+  },
+  {
     "id": "kailera-therapeutics",
     "name": "Kailera Therapeutics, Inc.",
     "headquartersCountry": "United States",
