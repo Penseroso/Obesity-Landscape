@@ -581,7 +581,7 @@ export function PipelineTable({
                 })}
               </tr>
             </thead>
-            {displayedGroups.map((group, groupIndex) => (
+            {displayedGroups.map((group) => (
               <tbody
                 key={group.key}
                 aria-label={`${group.programs[0].assetName} program variants`}
@@ -606,17 +606,17 @@ export function PipelineTable({
                         );
                       if (trigger) openProgram(program, trigger);
                     }}
-                    className={`cursor-pointer border-t border-border/70 transition first:border-t-0 hover:bg-accent/45 ${
-                      groupIndex % 2 === 0 ? "bg-card" : "bg-muted/20"
-                    }`}
+                    className="cursor-pointer border-t border-border/70 bg-card transition first:border-t-0 hover:bg-accent/45"
                   >
-                    {visibleColumns.map((column) => {
+                    {visibleColumns.map((column, columnIndex) => {
                       const value = getProgramCellValue(program, column.id);
 
                       return (
                         <td
                           key={column.id}
-                          className="overflow-hidden px-3 py-2.5 text-muted-foreground"
+                          className={`overflow-hidden px-3 py-2.5 text-muted-foreground ${
+                            columnIndex === 0 ? "border-l-2 border-l-primary/50" : ""
+                          }`}
                         >
                           {column.id === "company" ? (
                             <Link

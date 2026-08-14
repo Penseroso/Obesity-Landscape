@@ -123,9 +123,19 @@ function PrimaryFinding({ finding }: { finding: PrimaryFindingView | null }) {
   );
 }
 
-export function StudyTable({ studies }: { studies: StudySummaryView[] }) {
+export function StudyTable({
+  studies,
+  embedded = false,
+}: {
+  studies: StudySummaryView[];
+  embedded?: boolean;
+}) {
   return (
-    <div className="overflow-x-auto rounded-md border border-border bg-card shadow-soft">
+    <div
+      className={`overflow-x-auto bg-card ${
+        embedded ? "" : "rounded-md border border-border shadow-soft"
+      }`}
+    >
       {/*
         Fixed layout, not auto: a Study with no acronym falls back to its full official
         title, and under auto layout that one cell would take the width from every other
@@ -142,7 +152,7 @@ export function StudyTable({ studies }: { studies: StudySummaryView[] }) {
           <col className="w-[9%]" />
           <col className="w-[34%]" />
         </colgroup>
-        <thead className="bg-muted/70 text-xs uppercase tracking-[0.12em] text-muted-foreground">
+        <thead className="bg-muted/35 text-xs uppercase tracking-[0.12em] text-muted-foreground">
           <tr>
             <th className="px-4 py-2 font-semibold">Study</th>
             <th className="px-4 py-2 font-semibold">Phase</th>

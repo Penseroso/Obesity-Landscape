@@ -3,6 +3,7 @@ import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection"
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
 import { stageCountChipClassName } from "@/domains/app/components/StageCountChip";
+import { buttonVariants } from "@/domains/app/components/ui/Button";
 import type { CompanyDetailView } from "@/domains/app/lib/company-detail/read-model";
 import {
   getStageBucketId,
@@ -12,9 +13,6 @@ import {
 function clinicalPillLabel(hasClinicalEvidence: boolean) {
   return hasClinicalEvidence ? "Clinical evidence" : "Studies recorded";
 }
-
-const relationshipRoleBadgeClassName =
-  "inline-flex items-center whitespace-nowrap rounded-full border border-dashed border-border bg-muted px-2.5 py-1 text-xs font-semibold text-muted-foreground";
 
 function capitalize(text: string): string {
   return text.length > 0 ? text[0].toUpperCase() + text.slice(1) : text;
@@ -84,7 +82,7 @@ export function CompanyDetail({
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Checked ${view.company.officialWebsite.checkedAt}`}
-                className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-2 text-sm font-medium text-foreground transition hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className={buttonVariants({ variant: "outline" })}
               >
                 Official website
                 <span aria-hidden="true">&#8599;</span>
@@ -96,7 +94,7 @@ export function CompanyDetail({
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Checked ${view.company.officialPipeline.checkedAt}`}
-                className="inline-flex items-center gap-1.5 rounded-md border border-primary bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className={buttonVariants({ variant: "primary" })}
               >
                 Official pipeline
                 <span aria-hidden="true">&#8599;</span>
@@ -307,7 +305,7 @@ export function CompanyDetail({
             role and licensed or partnered territory recorded for {" "}
             {view.company.name}.
           </p>
-          <ul className="divide-y divide-border overflow-hidden rounded-md border border-border bg-card shadow-soft">
+          <ul className="grid gap-4 md:grid-cols-2">
             {view.partneredAssets.map((asset) => {
               const leadVariant = asset.programVariants[0];
               const mostAdvancedStage = leadVariant?.development.stage;
@@ -327,13 +325,13 @@ export function CompanyDetail({
               return (
                 <li
                   key={`${asset.ownerCompanyId}|${asset.assetId}`}
-                  className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between"
+                  className="flex min-h-44 flex-col justify-between gap-5 rounded-md border border-border bg-card p-5 shadow-soft"
                 >
                   <div>
                     <span className="text-base font-semibold text-card-foreground">
                       {asset.assetName}
                     </span>
-                    <span className="block text-xs text-muted-foreground">
+                    <span className="mt-1 block text-xs text-muted-foreground">
                       Developed by{" "}
                       <Link
                         href={ownerHref}
@@ -344,22 +342,27 @@ export function CompanyDetail({
                       {asset.codeName ? ` · Code ${asset.codeName}` : null}
                     </span>
                   </div>
-                  <span className="flex flex-wrap items-center gap-3">
+                  <div className="space-y-3 border-t border-border pt-4">
+                    <div className="flex flex-wrap items-center gap-3">
                     {mostAdvancedStage ? (
                       <StageBadge stage={mostAdvancedStage} />
                     ) : null}
+                    </div>
                     {relationshipDetails.map((detail) => (
-                      <span
+                      <p
                         key={`${detail.role}|${detail.territories.join("|")}`}
-                        className={relationshipRoleBadgeClassName}
+                        className="text-sm leading-6 text-muted-foreground"
                       >
-                        {capitalize(detail.role)} &middot; {" "}
+                        <span className="font-medium text-foreground">
+                          {capitalize(detail.role)}
+                        </span>
+                        {" · "}
                         {detail.territories.length > 0
                           ? detail.territories.join(", ")
                           : "Territory not specified"}
-                      </span>
+                      </p>
                     ))}
-                  </span>
+                  </div>
                 </li>
               );
             })}

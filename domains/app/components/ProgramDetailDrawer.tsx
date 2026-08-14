@@ -29,12 +29,29 @@ const DRAWER_TRANSITION_MS = 240;
 
 function DetailRow({ label, value }: { label: string; value?: string | null }) {
   return (
-    <div className="grid gap-1 border-b border-border py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
+    <div className="grid gap-1 border-b border-border px-4 py-3 last:border-b-0 sm:grid-cols-[10rem_1fr] sm:gap-4">
       <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         {label}
       </dt>
       <dd className="text-sm text-foreground">{formatNullableValue(value)}</dd>
     </div>
+  );
+}
+
+function DetailGroup({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="overflow-hidden rounded-md border border-border bg-card">
+      <h3 className="border-b border-border bg-muted/40 px-4 py-3 text-sm font-semibold text-foreground">
+        {title}
+      </h3>
+      <dl>{children}</dl>
+    </section>
   );
 }
 
@@ -251,8 +268,8 @@ export function ProgramDetailDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={headingId}
-        className={`absolute inset-y-0 right-0 m-0 flex h-dvh w-full max-w-2xl flex-col border-l border-border bg-card p-0 shadow-soft transition-opacity duration-[240ms] ease-out motion-reduce:transition-none ${
-          isOpen ? "opacity-100" : "opacity-0"
+        className={`absolute inset-y-0 right-0 m-0 flex h-dvh w-full max-w-2xl flex-col border-l border-border bg-card p-0 shadow-soft transition-[transform,opacity] duration-[240ms] ease-out motion-reduce:transition-none ${
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
       >
         <div className="border-b border-border px-6 py-5">
@@ -292,8 +309,9 @@ export function ProgramDetailDrawer({
             clinicalPreview={renderedClinicalPreview}
             clinicalContext={renderedClinicalContext}
           />
-          <dl>
-            <div className="grid gap-1 border-b border-border py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
+          <div className="space-y-5">
+            <DetailGroup title="Identity">
+            <div className="grid gap-1 border-b border-border px-4 py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
               <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 Company
               </dt>
@@ -313,6 +331,17 @@ export function ProgramDetailDrawer({
             <DetailRow label="Mechanism" value={renderedProgram.technical.mechanism} />
             <DetailRow label="Platform" value={renderedProgram.technical.platform} />
             <DetailRow
+              label="Indications"
+              value={formatInlineValues(renderedProgram.indications)}
+            />
+            <DetailRow
+              label="Scope class"
+              value={getScopeClassEntry(renderedProgram.scopeClass).label}
+            />
+            </DetailGroup>
+
+            <DetailGroup title="Administration">
+            <DetailRow
               label="Route"
               value={renderedProgram.administration.route}
             />
@@ -324,22 +353,20 @@ export function ProgramDetailDrawer({
               label="Interval"
               value={renderedProgram.administration.dosingInterval}
             />
-            <DetailRow
-              label="Indications"
-              value={formatInlineValues(renderedProgram.indications)}
-            />
-            <DetailRow
-              label="Scope class"
-              value={getScopeClassEntry(renderedProgram.scopeClass).label}
-            />
+            </DetailGroup>
+
+            <DetailGroup title="Clinical status">
             <DetailRow label="Stage" value={renderedProgram.development.stage} />
             <DetailRow label="Status" value={renderedProgram.development.status} />
+            </DetailGroup>
+
+            <DetailGroup title="Record metadata">
             <DetailRow
               label="Last verified"
               value={renderedProgram.metadata.lastVerifiedAt}
             />
             <DetailRow label="Updated" value={renderedProgram.metadata.updatedAt} />
-            <div className="grid gap-1 border-b border-border py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
+            <div className="grid gap-1 px-4 py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
               <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 Sources
               </dt>
@@ -347,7 +374,8 @@ export function ProgramDetailDrawer({
                 <SourceList sources={renderedProgram.metadata.sources} emptyLabel="N/A" />
               </dd>
             </div>
-          </dl>
+            </DetailGroup>
+          </div>
         </div>
       </aside>
     </div>,

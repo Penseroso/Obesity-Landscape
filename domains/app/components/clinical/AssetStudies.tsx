@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StudyTable } from "@/domains/app/components/clinical/StudyTable";
+import { buttonVariants } from "@/domains/app/components/ui/Button";
 import type {
   AssetStudiesView,
   StudyFamilyGroupView,
@@ -17,7 +18,7 @@ function StudySection({
 }) {
   return (
     <section className="space-y-3">
-      <h2 className="text-base font-semibold text-foreground">
+      <h2 className="text-xl font-semibold tracking-tight text-foreground">
         {title}
         <span className="ml-2 text-sm font-normal text-muted-foreground">
           {count}
@@ -37,8 +38,11 @@ function FamilyGroups({ groups }: { groups: StudyFamilyGroupView[] }) {
   return (
     <div className="space-y-5">
       {groups.map((group) => (
-        <section key={group.family ?? "__unclassified"} className="space-y-2">
-          <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <section
+          key={group.family ?? "__unclassified"}
+          className="overflow-hidden rounded-md border border-border bg-card shadow-soft"
+        >
+          <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border bg-muted/20 px-4 py-3">
             <h3 className="text-sm font-semibold text-foreground">
               {group.family ?? "Other studies"}
             </h3>
@@ -47,7 +51,7 @@ function FamilyGroups({ groups }: { groups: StudyFamilyGroupView[] }) {
               {group.studies.length === 1 ? "study" : "studies"}
             </span>
           </div>
-          <StudyTable studies={group.studies} />
+          <StudyTable studies={group.studies} embedded />
         </section>
       ))}
     </div>
@@ -93,7 +97,7 @@ export function AssetStudies({
         {compareUnitKey ? (
           <Link
             href={`/efficacy-comparison?unit=${encodeURIComponent(compareUnitKey)}&open=1`}
-            className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-card px-3.5 py-2 text-sm font-semibold text-card-foreground shadow-soft transition hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className={buttonVariants({ variant: "outline" })}
           >
             Compare efficacy
           </Link>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buttonVariants } from "@/domains/app/components/ui/Button";
 import type { LatestNewsView } from "@/domains/app/lib/news/read-model";
 
 function pageHref(page: number) {
@@ -77,7 +78,7 @@ export function LatestNewsFeed({
           {currentPage > 1 ? (
             <Link
               href={pageHref(currentPage - 1)}
-              className="px-2 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
             >
               Previous
             </Link>
@@ -89,11 +90,11 @@ export function LatestNewsFeed({
                 key={page}
                 href={pageHref(page)}
                 aria-current={page === currentPage ? "page" : undefined}
-                className={`min-w-8 px-2 py-1.5 text-center text-sm ${
-                  page === currentPage
-                    ? "font-semibold text-primary underline decoration-2 underline-offset-4"
-                    : "font-medium text-muted-foreground hover:text-primary"
-                }`}
+                className={buttonVariants({
+                  variant: page === currentPage ? "primary" : "ghost",
+                  size: "sm",
+                  className: "min-w-9 px-2",
+                })}
               >
                 {page}
               </Link>
@@ -103,7 +104,7 @@ export function LatestNewsFeed({
           {currentPage < pageCount ? (
             <Link
               href={pageHref(currentPage + 1)}
-              className="px-2 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
+              className={buttonVariants({ variant: "ghost", size: "sm" })}
             >
               Next
             </Link>

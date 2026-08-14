@@ -14,12 +14,29 @@ function formatCount(count?: number): string {
 
 function MetaRow({ label, value }: { label: string; value?: string | null }) {
   return (
-    <div className="grid gap-1 border-b border-border py-3 sm:grid-cols-[12rem_1fr] sm:gap-4">
+    <div className="grid gap-1 border-b border-border px-4 py-3 last:border-b-0 sm:grid-cols-[12rem_1fr] sm:gap-4">
       <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         {label}
       </dt>
       <dd className="text-sm text-foreground">{formatNullableValue(value)}</dd>
     </div>
+  );
+}
+
+function MetaGroup({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="overflow-hidden rounded-md border border-border bg-card">
+      <h3 className="border-b border-border bg-muted/40 px-4 py-3 text-sm font-semibold text-foreground">
+        {title}
+      </h3>
+      <dl>{children}</dl>
+    </section>
   );
 }
 
@@ -278,8 +295,12 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
 
       <StudySectionNav hasAnalysisGroups={analysisGroups.length > 0} />
 
-      <section id="overview" className="scroll-mt-20">
-        <dl>
+      <section id="overview" className="space-y-3 scroll-mt-20">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground">
+          Overview
+        </h2>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <MetaGroup title="Registry & population">
           <MetaRow
             label="Registry ID"
             value={study.registryIdentifiers
@@ -291,14 +312,19 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
             value={study.registryStatus.statusUpdatedAt}
           />
           <MetaRow label="Population" value={study.population} />
+          </MetaGroup>
+          <MetaGroup title="Design">
           <MetaRow label="Randomization" value={study.design.randomization} />
           <MetaRow label="Masking" value={study.design.masking} />
           <MetaRow label="Comparator" value={study.design.comparator} />
           <MetaRow label="Design" value={study.design.description} />
+          </MetaGroup>
+          <MetaGroup title="Duration & safety">
           <MetaRow label="Overall duration" value={study.overallDuration} />
           <MetaRow label="Follow-up" value={study.followUpDuration} />
           <MetaRow label="Safety summary" value={study.safetySummary} />
-        </dl>
+          </MetaGroup>
+        </div>
       </section>
 
       <section id="arms" className="space-y-3 scroll-mt-20">

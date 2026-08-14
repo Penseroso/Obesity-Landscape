@@ -55,17 +55,19 @@ export function FilterBar({ filters, options, onChange }: FilterBarProps) {
   };
 
   return (
-    <section className="rounded-md border border-border bg-card p-4 shadow-soft">
-      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-7">
-        <label className="flex min-w-0 flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground xl:col-span-2">
-          Keyword
+    <section className="overflow-hidden rounded-md border border-border bg-card shadow-soft">
+      <div className="border-b border-border px-4 py-4 sm:px-5">
+        <label className="flex min-w-0 flex-col gap-2 text-sm font-semibold text-foreground">
+          Search programs
           <input
             value={filters.keyword}
             onChange={(event) => update({ keyword: event.target.value })}
             placeholder="Search company, asset, mechanism, indication"
-            className="h-9 rounded-md border border-border bg-card px-3 text-sm font-normal normal-case tracking-normal text-foreground outline-none transition placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
+            className="h-12 rounded-md border border-border bg-background px-4 text-base font-normal text-foreground outline-none transition placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
           />
         </label>
+      </div>
+      <div className="grid gap-3 bg-muted/25 px-4 py-4 md:grid-cols-2 xl:grid-cols-6 sm:px-5">
         <SelectFilter
           label="Company"
           allLabel="All companies"
