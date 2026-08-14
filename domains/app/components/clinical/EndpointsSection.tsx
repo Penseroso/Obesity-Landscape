@@ -1,7 +1,8 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
-import { Badge, OutcomeResult } from "@/domains/app/components/clinical/OutcomeResult";
+import { OutcomeResult } from "@/domains/app/components/clinical/OutcomeResult";
+import { Badge } from "@/domains/app/components/ui/Badge";
 import type { EndpointGroupView } from "@/domains/app/lib/clinical-evidence/selectors";
 import type { ClinicalEndpointRole } from "@/domains/clinical-evidence/lib/types";
 

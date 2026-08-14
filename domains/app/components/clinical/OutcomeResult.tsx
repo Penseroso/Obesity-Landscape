@@ -1,3 +1,4 @@
+import { Badge } from "@/domains/app/components/ui/Badge";
 import type { OutcomeView } from "@/domains/app/lib/clinical-evidence/selectors";
 
 /**
@@ -30,28 +31,6 @@ const groupKindLabel: Record<string, string> = {
   "starting-dose-subgroup": "Starting-dose subgroup",
   other: "Analysis group",
 };
-
-export function Badge({
-  children,
-  tone = "muted",
-}: {
-  children: React.ReactNode;
-  tone?: "muted" | "accent" | "primary";
-}) {
-  return (
-    <span
-      className={
-        tone === "accent"
-          ? "whitespace-nowrap rounded-full border border-border bg-accent px-2.5 py-0.5 text-xs font-semibold text-accent-foreground"
-          : tone === "primary"
-            ? "whitespace-nowrap rounded-full border border-primary/30 bg-primary/15 px-2.5 py-0.5 text-xs font-semibold text-primary"
-            : "whitespace-nowrap rounded-full border border-border bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground"
-      }
-    >
-      {children}
-    </span>
-  );
-}
 
 function MetricChip({ label, value }: { label?: string; value: string }) {
   return (

@@ -28,8 +28,13 @@ const config: Config = {
         primary: "hsl(var(--primary))",
         "primary-foreground": "hsl(var(--primary-foreground))",
       },
+      borderRadius: {
+        DEFAULT: "var(--radius)",
+      },
       boxShadow: {
-        soft: "0 18px 45px rgba(28, 20, 12, 0.07)",
+        xs: "var(--shadow-xs)",
+        soft: "var(--shadow-soft)",
+        lg: "var(--shadow-lg)",
       },
     },
   },

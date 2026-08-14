@@ -2,18 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Neutral background/card/muted/accent values below were chosen after a
+ * two-option screenshot comparison (redesign plan §2, Stage 1 gate):
+ * genuinely neutral (near-zero saturation, "Option B") over a warmed
+ * Stone-like neutral ("Option A") - the warm terracotta --primary reads
+ * more clearly against a neutral base, and it removes the "sallow cream"
+ * quality the original warm-beige tokens had.
+ */
+
+/*
+ * Heading scale (documented convention, not enforced by a component):
+ *   display        (hero only)       text-4xl sm:text-5xl font-semibold tracking-tight
+ *   page-H1                          text-3xl sm:text-4xl font-semibold tracking-tight
+ *   section-H2     (major section)   text-xl font-semibold tracking-tight
+ *   subsection-H3  (card/group)      text-base font-semibold
+ */
+
 :root {
-  --background: 32 22% 96%;
+  /* Genuinely neutral (Zinc/Slate-like) base, --card lighter/less
+   * saturated than --background so cards read as raised above the page. */
+  --background: 30 4% 97%;
   --foreground: 20 16% 14%;
-  --card: 36 35% 98%;
+  --card: 30 5% 99%;
   --card-foreground: 20 16% 14%;
-  --muted: 32 16% 92%;
+  --muted: 30 4% 93%;
   --muted-foreground: 25 9% 38%;
-  --border: 30 15% 84%;
-  --accent: 22 55% 93%;
+  --border: 30 5% 84%;
+  --accent: 22 10% 92%;
   --accent-foreground: 16 58% 27%;
   --primary: 17 72% 40%;
   --primary-foreground: 40 40% 98%;
+
+  --radius: 0.375rem;
+  --shadow-xs: 0 2px 6px rgba(28, 20, 12, 0.06);
+  --shadow-soft: 0 18px 45px rgba(28, 20, 12, 0.07);
+  --shadow-lg: 0 28px 70px rgba(28, 20, 12, 0.14);
 }
 
 * {

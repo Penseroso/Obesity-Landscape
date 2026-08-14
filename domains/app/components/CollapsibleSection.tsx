@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { useId, useState } from "react";
 
 type CollapsibleSectionProps = {
@@ -47,8 +48,12 @@ export function CollapsibleSection({
           aria-controls={bodyId}
           className="flex w-full items-start gap-2 rounded-t-md px-5 py-4 text-left transition hover:bg-muted/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          <span aria-hidden="true" className="mt-1 shrink-0 text-xs text-muted-foreground">
-            {open ? "▾" : "▸"}
+          <span aria-hidden="true" className="mt-1 shrink-0 text-muted-foreground">
+            {open ? (
+              <ChevronDown className="h-4 w-4" />
+            ) : (
+              <ChevronRight className="h-4 w-4" />
+            )}
           </span>
           <span className="min-w-0">
             <span className="block text-base font-semibold text-card-foreground">
