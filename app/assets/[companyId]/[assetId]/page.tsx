@@ -5,6 +5,7 @@ import {
   getAssetStudies,
   listClinicalAssetKeys,
 } from "@/domains/app/lib/clinical-evidence/selectors";
+import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/read-model";
 
 type AssetPageProps = {
   params: Promise<{ companyId: string; assetId: string }>;
@@ -31,5 +32,14 @@ export default async function AssetPage({ params }: AssetPageProps) {
   if (!view) {
     notFound();
   }
-  return <AssetStudies view={view} />;
+
+  // Presentation-only: this asset is Compare-eligible only if it already has
+  // a row (never a gap) in the same getEfficacyComparison() output the
+  // comparison page itself renders.
+  const assetHref = `/assets/${companyId}/${assetId}`;
+  const compareUnitKey = getEfficacyComparison()
+    .families.flatMap((group) => group.rows)
+    .find((row) => row.href === assetHref)?.unitKey;
+
+  return <AssetStudies view={view} compareUnitKey={compareUnitKey} />;
 }

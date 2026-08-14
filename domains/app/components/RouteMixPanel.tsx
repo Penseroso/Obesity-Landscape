@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CollapsibleSection } from "./CollapsibleSection";
 import { DistributionBar } from "./DistributionBar";
 import type { RouteDistributionEntry } from "@/domains/company-pipeline/lib/selectors";
 
@@ -8,16 +9,13 @@ type RouteMixPanelProps = {
 
 export function RouteMixPanel({ entries }: RouteMixPanelProps) {
   return (
-    <section className="flex h-full min-w-0 flex-col rounded-md border border-border bg-card shadow-soft">
-      <div className="border-b border-border px-5 py-4">
-        <h2 className="text-base font-semibold text-card-foreground">
-          Route Mix
-        </h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Programs by administration route.
-        </p>
-      </div>
-      <div className="flex flex-1 flex-col justify-center space-y-1.5 px-5 py-4">
+    <CollapsibleSection
+      id="route-mix"
+      title="Route Mix"
+      subtitle="Programs by administration route."
+      defaultOpen={false}
+    >
+      <div className="flex flex-col justify-center space-y-1.5 px-5 py-4">
         {entries.length > 0 ? (
           entries.map((entry) => (
             // Drill-down: Program Register filtered to this exact route
@@ -46,6 +44,6 @@ export function RouteMixPanel({ entries }: RouteMixPanelProps) {
           <p className="text-sm text-muted-foreground">No programs to display.</p>
         )}
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

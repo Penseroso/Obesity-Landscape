@@ -16,6 +16,15 @@ import { getEfficacyPhaseTier } from "@/domains/app/lib/efficacy-comparison/poli
 
 type EfficacyComparisonProps = {
   view: EfficacyComparisonView;
+  /**
+   * Deep-link seed from `?unit=`, already validated by the page against
+   * `view.families[].rows` (never `view.gaps`) - see
+   * `app/efficacy-comparison/page.tsx`. Threaded straight through to the
+   * launcher; this component adds no selection logic of its own.
+   */
+  initialSelectedUnitKey?: string;
+  /** Deep-link seed from `?open=1` - opens the picker with that unit pre-checked. */
+  initialOpen?: boolean;
 };
 
 const focusRing =
@@ -480,7 +489,11 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
  *   A trial that compared two products directly is reported in the Head-to-head
  *   section, not as a cross-trial row.
  */
-export function EfficacyComparison({ view }: EfficacyComparisonProps) {
+export function EfficacyComparison({
+  view,
+  initialSelectedUnitKey,
+  initialOpen,
+}: EfficacyComparisonProps) {
   const rowCount = view.families.reduce(
     (total, group) => total + group.rows.length,
     0,
@@ -500,7 +513,15 @@ export function EfficacyComparison({ view }: EfficacyComparisonProps) {
             Reported body-weight reduction by mechanism family, for assets and registered combination products with a recorded percent-change result.
           </p>
         </div>
-        {rowCount > 0 ? <EfficacyCompareLauncher families={view.families} /> : null}
+        {rowCount > 0 ? (
+          <EfficacyCompareLauncher
+            families={view.families}
+            initialSelectedUnitKeys={
+              initialSelectedUnitKey ? [initialSelectedUnitKey] : undefined
+            }
+            initialOpen={initialOpen}
+          />
+        ) : null}
       </section>
 
       {rowCount > 0 ? (

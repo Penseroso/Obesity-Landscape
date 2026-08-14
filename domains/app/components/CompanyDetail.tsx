@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
 import { stageCountChipClassName } from "@/domains/app/components/StageCountChip";
@@ -34,7 +35,14 @@ function formatOwnRelationshipLabel(role: string, counterpartyName: string): str
   }
 }
 
-export function CompanyDetail({ view }: { view: CompanyDetailView }) {
+export function CompanyDetail({
+  view,
+  compareUnitKeyByAsset,
+}: {
+  view: CompanyDetailView;
+  /** Asset `companyId|assetId` -> Efficacy Comparison `unitKey`, eligible rows only. */
+  compareUnitKeyByAsset: Map<string, string>;
+}) {
   const stageCounts = new Map<string, number>(
     stageBuckets.map((bucket) => [bucket.id, 0]),
   );
@@ -98,12 +106,11 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
         ) : null}
       </section>
 
-      <section className="rounded-md border border-border bg-card shadow-soft">
-        <div className="border-b border-border px-5 py-4">
-          <h2 className="text-sm font-semibold tracking-tight text-card-foreground">
-            Development stage distribution
-          </h2>
-        </div>
+      <CollapsibleSection
+        id="stage-distribution"
+        title="Development stage distribution"
+        defaultOpen={false}
+      >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4">
           {stageBuckets.map((bucket) => {
             const count = stageCounts.get(bucket.id) ?? 0;
@@ -148,7 +155,7 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
             View all in Program Register &rarr;
           </Link>
         </div>
-      </section>
+      </CollapsibleSection>
 
       {view.assets.length === 0 ? (
         <EmptyState
@@ -183,6 +190,9 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
               const assetHref = `${registerHref}&keyword=${encodeURIComponent(
                 asset.assetName,
               )}`;
+              const compareUnitKey = compareUnitKeyByAsset.get(
+                `${asset.companyId}|${asset.assetId}`,
+              );
               const relationshipBadges = Array.from(
                 new Map(
                   asset.programVariants
@@ -259,6 +269,18 @@ export function CompanyDetail({ view }: { view: CompanyDetailView }) {
                           }`}
                         />
                         {clinicalPillLabel(asset.clinical.hasClinicalEvidence)}
+                      </Link>
+                    ) : null}
+                    {compareUnitKey ? (
+                      <Link
+                        href={`/efficacy-comparison?unit=${encodeURIComponent(compareUnitKey)}&open=1`}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary hover:bg-accent/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="h-1.5 w-1.5 rounded-full bg-primary"
+                        />
+                        Compare
                       </Link>
                     ) : null}
                   </span>

@@ -16,6 +16,13 @@ type CollapsibleSectionProps = {
  * EndpointsSection already uses for its per-endpoint accordions. Open by
  * default so a first visit still shows every group's data — collapsing is a
  * scan-reduction aid, never how content becomes reachable.
+ *
+ * This does not apply to primary navigation surfaces where every populated
+ * cell/row is itself a drill-down link (e.g. `CompanyStageMatrix`) — those
+ * must stay fully visible, not wrapped in this component. `defaultOpen={false}`
+ * is only appropriate for genuinely secondary/summary panels (e.g.
+ * `RouteMixPanel`, `MechanismMixPanel`) where the same links remain reachable
+ * one click away.
  */
 export function CollapsibleSection({
   id,

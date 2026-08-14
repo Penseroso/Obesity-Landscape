@@ -10,6 +10,16 @@ import type {
 
 type EfficacyCompareLauncherProps = {
   families: EfficacyFamilyGroup[];
+  /**
+   * Optional deep-link seed (e.g. from `?unit=` on `/efficacy-comparison`).
+   * Used only to initialize state on mount - the caller is responsible for
+   * validating these against `families` before passing them in. Plain usage
+   * with no deep link (e.g. the Overview launcher) omits this entirely and
+   * behaves exactly as before.
+   */
+  initialSelectedUnitKeys?: string[];
+  /** Opens the picker immediately on mount instead of requiring a click. */
+  initialOpen?: boolean;
 };
 
 type Mode = "closed" | "picker" | "chart";
@@ -19,9 +29,15 @@ type Mode = "closed" | "picker" | "chart";
  * program picker, whose own Compare action swaps to the chart modal. Selection
  * state lives here so it survives switching between the two modals.
  */
-export function EfficacyCompareLauncher({ families }: EfficacyCompareLauncherProps) {
-  const [mode, setMode] = useState<Mode>("closed");
-  const [selected, setSelected] = useState<Set<string>>(new Set());
+export function EfficacyCompareLauncher({
+  families,
+  initialSelectedUnitKeys,
+  initialOpen,
+}: EfficacyCompareLauncherProps) {
+  const [mode, setMode] = useState<Mode>(initialOpen ? "picker" : "closed");
+  const [selected, setSelected] = useState<Set<string>>(
+    () => new Set(initialSelectedUnitKeys ?? []),
+  );
 
   const allRows = useMemo(() => families.flatMap((group) => group.rows), [families]);
   const selectedRows = useMemo<EfficacyComparisonRow[]>(

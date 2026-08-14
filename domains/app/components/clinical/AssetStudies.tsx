@@ -54,33 +54,50 @@ function FamilyGroups({ groups }: { groups: StudyFamilyGroupView[] }) {
   );
 }
 
-export function AssetStudies({ view }: { view: AssetStudiesView }) {
+export function AssetStudies({
+  view,
+  compareUnitKey,
+}: {
+  view: AssetStudiesView;
+  /** Efficacy Comparison unitKey, set only when this asset already has an eligible row. */
+  compareUnitKey?: string;
+}) {
   const totalStudies = view.focalStudies.length + view.linkedStudies.length;
   const hasStudies = totalStudies > 0;
 
   return (
     <div className="space-y-6 pb-10">
-      <section>
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          Clinical evidence
-        </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          {view.assetName}
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+      <section className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            Clinical evidence
+          </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+            {view.assetName}
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            <Link
+              href={`/companies/${view.companyId}`}
+              className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              {view.companyName ?? view.companyId}
+            </Link>
+            {hasStudies ? (
+              <>
+                {" · "}
+                {totalStudies} {totalStudies === 1 ? "study" : "studies"}
+              </>
+            ) : null}
+          </p>
+        </div>
+        {compareUnitKey ? (
           <Link
-            href={`/companies/${view.companyId}`}
-            className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            href={`/efficacy-comparison?unit=${encodeURIComponent(compareUnitKey)}&open=1`}
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-card px-3.5 py-2 text-sm font-semibold text-card-foreground shadow-soft transition hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            {view.companyName ?? view.companyId}
+            Compare efficacy
           </Link>
-          {hasStudies ? (
-            <>
-              {" · "}
-              {totalStudies} {totalStudies === 1 ? "study" : "studies"}
-            </>
-          ) : null}
-        </p>
+        ) : null}
       </section>
 
       {hasStudies ? (

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { CompanyStageMatrix } from "@/domains/app/components/CompanyStageMatrix";
+import { EfficacyCompareLauncher } from "@/domains/app/components/EfficacyCompareLauncher";
 import { MechanismMixPanel } from "@/domains/app/components/MechanismMixPanel";
 import { OverviewMetadataStrip } from "@/domains/app/components/OverviewMetadataStrip";
 import { RouteMixPanel } from "@/domains/app/components/RouteMixPanel";
+import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/read-model";
 import { companies, pipelinePrograms } from "@/domains/company-pipeline/lib/data";
 import {
   getCompanyStageMatrix,
@@ -26,6 +28,7 @@ export default function OverviewPage() {
   const stageMatrix = getCompanyStageMatrix(companies, pipelinePrograms);
   const routeDistribution = getRouteDistribution(pipelinePrograms);
   const mechanismMix = getMechanismMix(pipelinePrograms);
+  const efficacyComparison = getEfficacyComparison();
 
   return (
     <div className="space-y-6 pb-10">
@@ -47,6 +50,19 @@ export default function OverviewPage() {
         obesityPurposeProgramCount={obesityPurposePrograms}
         lastUpdated={lastUpdated}
       />
+
+      {efficacyComparison.totalUnits > 0 ? (
+        <section className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-border bg-card px-5 py-4 shadow-soft">
+          <p className="text-sm text-card-foreground">
+            Compare reported body-weight reduction across{" "}
+            <span className="font-semibold tabular-nums text-primary">
+              {efficacyComparison.totalUnits}
+            </span>{" "}
+            eligible programs.
+          </p>
+          <EfficacyCompareLauncher families={efficacyComparison.families} />
+        </section>
+      ) : null}
 
       <CompanyStageMatrix matrix={stageMatrix} />
 

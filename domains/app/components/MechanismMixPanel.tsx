@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { CollapsibleSection } from "./CollapsibleSection";
 import type { MechanismMixEntry } from "@/domains/company-pipeline/lib/selectors";
 import { donutWedgePath, layoutDonutSlices } from "@/domains/app/lib/donut-geometry";
 
@@ -81,17 +82,14 @@ export function MechanismMixPanel({ entries }: MechanismMixPanelProps) {
   const clear = () => setActiveKey(null);
 
   return (
-    <section className="flex h-full min-w-0 flex-col rounded-md border border-border bg-card shadow-soft">
-      <div className="border-b border-border px-5 py-4">
-        <h2 className="text-base font-semibold text-card-foreground">
-          Mechanism Mix
-        </h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Programs by mechanism family.
-        </p>
-      </div>
+    <CollapsibleSection
+      id="mechanism-mix"
+      title="Mechanism Mix"
+      subtitle="Programs by mechanism family."
+      defaultOpen={false}
+    >
       {segments.length > 0 ? (
-        <div className="flex flex-1 flex-col items-center gap-3 px-5 py-4">
+        <div className="flex flex-col items-center gap-3 px-5 py-4">
           <div className="relative">
             <svg
               width={SIZE}
@@ -205,10 +203,10 @@ export function MechanismMixPanel({ entries }: MechanismMixPanelProps) {
           </ul>
         </div>
       ) : (
-        <p className="flex-1 px-5 py-10 text-center text-sm text-muted-foreground">
+        <p className="px-5 py-10 text-center text-sm text-muted-foreground">
           No programs to display.
         </p>
       )}
-    </section>
+    </CollapsibleSection>
   );
 }

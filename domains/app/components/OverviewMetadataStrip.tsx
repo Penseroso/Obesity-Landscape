@@ -13,30 +13,12 @@ type OverviewMetadataStripProps = {
   lastUpdated?: string;
 };
 
-function MetadataItem({
-  value,
-  label,
-  first,
-}: {
-  value: string | number;
-  label: string;
-  first?: boolean;
-}) {
+function Stat({ value, label }: { value: string | number; label: string }) {
   return (
-    <div
-      className={
-        first
-          ? "flex-1 min-w-[130px] px-5 py-4 first:pl-0"
-          : "flex-1 min-w-[130px] border-l border-border px-5 py-4"
-      }
-    >
-      <div className="text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-        {label}
-      </div>
-      <div className="mt-1.5 text-[28px] font-bold leading-none tracking-tight text-foreground">
-        {value}
-      </div>
-    </div>
+    <>
+      <span className="font-semibold tabular-nums text-primary">{value}</span>{" "}
+      {label}
+    </>
   );
 }
 
@@ -47,30 +29,28 @@ export function OverviewMetadataStrip({
   lastUpdated,
 }: OverviewMetadataStripProps) {
   return (
-    <div>
+    <p className="flex flex-wrap items-baseline gap-x-1.5 text-sm text-muted-foreground">
+      <Stat
+        value={companyCount}
+        label={companyCount === 1 ? "company" : "companies"}
+      />
+      <span aria-hidden="true">&middot;</span>
+      <Stat
+        value={programCount}
+        label={programCount === 1 ? "program" : "programs"}
+      />
+      <span aria-hidden="true">&middot;</span>
+      <Stat
+        value={`${obesityPurposeProgramCount} of ${programCount}`}
+        label="obesity-purpose"
+      />
       {lastUpdated ? (
-        // Provenance metadata, not a KPI - kept outside the card entirely
-        // rather than sharing the tile row, where it floated at an
-        // ambiguous mid-height next to the two-line tiles.
-        <p className="mb-1.5 text-right text-xs text-muted-foreground">
+        // Provenance metadata, not a KPI - kept as a trailing clause rather
+        // than sharing tile chrome with the counts above.
+        <span className="ml-auto text-xs text-muted-foreground">
           Updated {lastUpdated}
-        </p>
+        </span>
       ) : null}
-      <div className="flex flex-wrap items-stretch rounded-md border border-border bg-card px-4 shadow-soft">
-        <MetadataItem
-          first
-          value={companyCount}
-          label={companyCount === 1 ? "Company" : "Companies"}
-        />
-        <MetadataItem
-          value={programCount}
-          label={programCount === 1 ? "Program" : "Programs"}
-        />
-        <MetadataItem
-          value={`${obesityPurposeProgramCount} of ${programCount}`}
-          label="Obesity-purpose"
-        />
-      </div>
-    </div>
+    </p>
   );
 }
