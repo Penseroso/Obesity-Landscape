@@ -60,8 +60,14 @@ export function EfficacyProgramPicker({
                         onChange={() => onToggle(row.unitKey)}
                         className="h-4 w-4 shrink-0 rounded border-border text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                       />
-                      <span className="text-card-foreground">{row.name}</span>
-                      <span className="text-xs text-muted-foreground">{row.companyName}</span>
+                      <span className="min-w-0">
+                        <span className="block leading-5 text-card-foreground">
+                          {row.name}
+                        </span>
+                        <span className="block text-xs leading-4 text-muted-foreground">
+                          {row.companyName}
+                        </span>
+                      </span>
                     </label>
                   </li>
                 );

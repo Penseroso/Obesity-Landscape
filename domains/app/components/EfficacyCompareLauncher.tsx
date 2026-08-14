@@ -86,7 +86,11 @@ export function EfficacyCompareLauncher({
       ) : null}
 
       {mode === "chart" ? (
-        <EfficacyCompareChart rows={selectedRows} onClose={() => setMode("closed")} />
+        <EfficacyCompareChart
+          rows={selectedRows}
+          onEdit={() => setMode("picker")}
+          onClose={() => setMode("closed")}
+        />
       ) : null}
     </>
   );

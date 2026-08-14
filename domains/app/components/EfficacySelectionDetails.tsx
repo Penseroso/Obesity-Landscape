@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { FocusEvent } from "react";
 
 type EfficacySelectionDetailsProps = {
@@ -39,7 +40,13 @@ export function EfficacySelectionDetails({
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
+  const [panelPosition, setPanelPosition] = useState<{
+    left: number;
+    top: number;
+    width: number;
+  } | null>(null);
   // Set fresh on every pointerdown while open (see effect below) — recorded so the
   // blur handler can tell an internal click, which moves focus off the trigger with
   // no in-panel element to catch it, from a real outside interaction.
@@ -52,7 +59,8 @@ export function EfficacySelectionDetails({
 
     const handlePointerDown = (event: PointerEvent) => {
       const isInside = Boolean(
-        containerRef.current && containerRef.current.contains(event.target as Node),
+        (containerRef.current && containerRef.current.contains(event.target as Node)) ||
+          (panelRef.current && panelRef.current.contains(event.target as Node)),
       );
       pointerDownInsideRef.current = isInside;
       if (!isInside) {
@@ -74,6 +82,44 @@ export function EfficacySelectionDetails({
     };
   }, [open]);
 
+  useLayoutEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const updatePosition = () => {
+      const button = buttonRef.current;
+      const panel = panelRef.current;
+      if (!button || !panel) return;
+
+      const viewportGutter = 20;
+      const gap = 8;
+      const buttonRect = button.getBoundingClientRect();
+      const width = Math.min(416, window.innerWidth - viewportGutter * 2);
+      const left = Math.min(
+        Math.max(buttonRect.right - width, viewportGutter),
+        window.innerWidth - width - viewportGutter,
+      );
+      const panelHeight = panel.getBoundingClientRect().height;
+      const fitsBelow =
+        buttonRect.bottom + gap + panelHeight <=
+        window.innerHeight - viewportGutter;
+      const top = fitsBelow
+        ? buttonRect.bottom + gap
+        : Math.max(viewportGutter, buttonRect.top - gap - panelHeight);
+
+      setPanelPosition({ left, top, width });
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, true);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [open]);
+
   // Close once focus lands outside the component entirely — tabbing past the trigger,
   // not moving between the trigger and its own panel. A click on non-focusable panel
   // content (plain text, not a link) still blurs the trigger with `relatedTarget`
@@ -84,7 +130,11 @@ export function EfficacySelectionDetails({
       pointerDownInsideRef.current = false;
       return;
     }
-    if (!containerRef.current?.contains(event.relatedTarget as Node | null)) {
+    const nextTarget = event.relatedTarget as Node | null;
+    if (
+      !containerRef.current?.contains(nextTarget) &&
+      !panelRef.current?.contains(nextTarget)
+    ) {
       setOpen(false);
     }
   };
@@ -104,10 +154,16 @@ export function EfficacySelectionDetails({
         <span aria-hidden="true">ⓘ</span>
       </button>
 
-      {open ? (
+      {open && typeof document !== "undefined" ? createPortal(
         <div
+          ref={panelRef}
           id={panelId}
-          className="absolute right-0 z-20 mt-2 w-[min(26rem,calc(100vw-2.5rem))] rounded-md border border-border bg-card p-3 text-left shadow-soft"
+          className="fixed z-[60] max-h-[calc(100vh-2.5rem)] overflow-y-auto rounded-md border border-border bg-card p-3 text-left shadow-soft"
+          style={
+            panelPosition
+              ? panelPosition
+              : { left: 0, top: 0, width: 416, visibility: "hidden" }
+          }
         >
           <dl className="space-y-1 text-xs">
             {facts.map((fact) => (
@@ -130,7 +186,8 @@ export function EfficacySelectionDetails({
               </div>
             ))}
           </dl>
-        </div>
+        </div>,
+        document.body,
       ) : null}
     </div>
   );

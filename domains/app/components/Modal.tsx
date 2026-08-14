@@ -23,6 +23,10 @@ type ModalProps = {
    * panel that should track the viewport rather than its content or a fixed
    * cap; content narrower or shorter than the panel just sits inside it. */
   sizeClassName?: string;
+  /** Optional geometry derived by the caller from its rendered content. */
+  panelStyle?: React.CSSProperties;
+  /** Optional secondary action rendered beside the dialog title. */
+  headerActions?: React.ReactNode;
 };
 
 /**
@@ -38,13 +42,14 @@ export function Modal({
   maxWidthClassName = "max-w-lg",
   fitContent = false,
   sizeClassName,
+  panelStyle,
+  headerActions,
 }: ModalProps) {
   const panelRef = useRef<HTMLDivElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const headingId = useId();
 
   useEffect(() => {
-    closeButtonRef.current?.focus();
+    panelRef.current?.focus();
   }, []);
 
   useEffect(() => {
@@ -121,24 +126,30 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={headingId}
-        className={`relative flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-soft ${
+        tabIndex={-1}
+        style={panelStyle}
+        className={`relative flex flex-col overflow-hidden rounded-md border border-border bg-card shadow-soft outline-none ${
           sizeClassName ??
           `max-h-[calc(100vh-2rem)] ${fitContent ? "w-auto min-w-[24rem]" : "w-full"} ${maxWidthClassName}`
         }`}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-border px-6 py-4">
-          <h2 id={headingId} className="text-lg font-semibold text-card-foreground">
-            {title}
-          </h2>
+        <div className="flex min-h-[4.5rem] items-center justify-between gap-4 border-b border-border px-6 py-4">
+          <div className="flex min-w-0 items-center gap-3">
+            <h2
+              id={headingId}
+              className="truncate text-xl font-semibold leading-none text-card-foreground"
+            >
+              {title}
+            </h2>
+            {headerActions}
+          </div>
           <button
-            ref={closeButtonRef}
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            title="Close"
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className="-mr-2 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-muted-foreground transition hover:bg-muted/60 hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            <X aria-hidden="true" className="h-4 w-4" />
+            <X aria-hidden="true" className="h-5 w-5" strokeWidth={1.75} />
           </button>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">{children}</div>

@@ -271,7 +271,9 @@ shared `comparisonGroupKeyOf` primitive.
   company.
   The selection-rationale disclosure is auxiliary: a button toggled by click, tap,
   Enter, or Space (never hover or focus alone), with disclosure semantics rather than a
-  dialog. It adds the rationale only, and the page stays fully usable without it.
+  dialog. It adds the rationale only, and the page stays fully usable without it. The
+  disclosure panel is portalled to the viewport and flips above its trigger when needed,
+  so the comparison table's horizontal scroller never clips the panel or its links.
 - **Compare programs** (`EfficacyCompareLauncher`) is a presentation-only overlay on
   top of the same `view.families` rows — it adds no read-model logic and never
   reorders, filters, or recalculates a row. A picker dialog (`EfficacyProgramPicker`)
@@ -290,8 +292,17 @@ shared `comparisonGroupKeyOf` primitive.
   Arms that reach the same final dose remain separate bars and their permanent
   labels express an escalation configuration with an arrow (for example
   `9 mg`, `6→9 mg`, `3→9 mg`; never a rewritten `start X mg` label). The
-  tooltip preserves the full authored dose and escalation regimen text. The
-  chart carries no separate "not a ranking" caption because the duration/hue
+  custom evidence tooltip preserves the full authored dose and escalation regimen
+  text, pairs them with Study/phase/timepoint provenance, and opens from either
+  pointer hover or keyboard focus; chart bars never fall back to a browser-native
+  `title` tooltip. The
+  chart dialog derives its desktop width from the selected groups while retaining
+  viewport gutters, and keeps a left-aligned plot rather than centering a small
+  selection in an oversized canvas. Its Y axis is a fixed, independent column:
+  the zero baseline, negative tick grid, and labels share one scale, while only
+  the program plot scrolls horizontally on narrow viewports. The dialog exposes
+  Edit selection beside its title and returns to the same picker state. The chart
+  carries no separate "not a ranking" caption because the duration/hue
   encoding already keeps each bar tied to its own trial. Both dialogs share the
   hand-rolled `Modal` primitive (portal, focus trap, Escape, scroll lock) rather
   than `ProgramDetailDrawer`'s side-drawer variant, since neither needs a slide

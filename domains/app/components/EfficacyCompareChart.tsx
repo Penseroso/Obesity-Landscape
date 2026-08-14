@@ -1,12 +1,15 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { ArrowLeftRight } from "lucide-react";
 import { Modal } from "@/domains/app/components/Modal";
 import type { ChartSourceRole } from "@/domains/app/lib/efficacy-comparison/chart-evidence";
 import type { EfficacyComparisonRow } from "@/domains/app/lib/efficacy-comparison/read-model";
 
 type EfficacyCompareChartProps = {
   rows: EfficacyComparisonRow[];
+  onEdit: () => void;
   onClose: () => void;
 };
 
@@ -39,6 +42,11 @@ const BAR_PROVENANCE_HEIGHT = 28;
 /** Per-group program-name label only now — timepoint moved to per-bar above. */
 const GROUP_LABEL_HEIGHT = 24;
 const Y_AXIS_WIDTH = 40;
+// The first visible bar always starts this far from the Y axis. Without an
+// explicit gutter, programs with a wide multi-dose cluster began at x=0 while
+// one- or two-dose programs inherited incidental centering space from
+// MIN_GROUP_WIDTH, making the axis spacing vary by selected asset.
+const FIRST_BAR_GUTTER = 32;
 // Floor for a program's horizontal slot so its group-header label (program
 // name + timepoint) always has room, even when that program has only one or
 // two doses — otherwise a narrow bar cluster forces the name to truncate.
@@ -48,24 +56,29 @@ const MIN_GROUP_WIDTH = 104;
 // badge colors used elsewhere on this page — enough separation for up to
 // EFFICACY_COMPARE_MAX_SELECTION programs at once.
 const PROGRAM_HUES = [
-  { h: 201, s: 100, base: 30 },
-  { h: 27, s: 100, base: 38 },
-  { h: 164, s: 100, base: 26 },
-  { h: 280, s: 70, base: 42 },
-  { h: 100, s: 55, base: 32 },
+  { h: 202, s: 55, base: 34 },
+  { h: 22, s: 68, base: 42 },
+  { h: 164, s: 48, base: 32 },
+  { h: 282, s: 38, base: 42 },
+  { h: 82, s: 38, base: 34 },
 ];
-const DOSE_LIGHTNESS_SPREAD = 30;
+const DOSE_LIGHTNESS_SPREAD = 20;
 
 function programColor(programIndex: number): string {
   const hue = PROGRAM_HUES[programIndex % PROGRAM_HUES.length];
-  return `hsl(${hue.h}, ${hue.s}%, ${hue.base}%)`;
+  return `hsl(${hue.h}, ${hue.s}%, ${hue.base + 6}%)`;
+}
+
+function doseLightness(programIndex: number, doseIndex: number, doseCount: number) {
+  const hue = PROGRAM_HUES[programIndex % PROGRAM_HUES.length];
+  const step = doseCount > 1 ? DOSE_LIGHTNESS_SPREAD / (doseCount - 1) : 0;
+  return hue.base + (doseCount - 1 - doseIndex) * step;
 }
 
 /** Lighter shade for a lower dose, darker for a higher one, same hue per program. */
 function doseColor(programIndex: number, doseIndex: number, doseCount: number): string {
   const hue = PROGRAM_HUES[programIndex % PROGRAM_HUES.length];
-  const step = doseCount > 1 ? DOSE_LIGHTNESS_SPREAD / (doseCount - 1) : 0;
-  const lightness = hue.base + (doseCount - 1 - doseIndex) * step;
+  const lightness = doseLightness(programIndex, doseIndex, doseCount);
   return `hsl(${hue.h}, ${hue.s}%, ${lightness}%)`;
 }
 
@@ -92,6 +105,14 @@ function formatPercent(raw: string): string {
   const [main, annotation] = match ? [match[1], match[2]] : [raw, null];
   const withGlyph = main.includes("%") ? main : `${main}%`;
   return annotation ? `${withGlyph} ${annotation}` : withGlyph;
+}
+
+/** Compact permanent bar label; a source-reported parenthetical precision
+ * qualifier remains available in the bar's full tooltip. */
+function compactPercent(raw: string): string {
+  const match = raw.match(/^(.*?)\s*(\([^()]*\))\s*$/);
+  const main = match ? match[1] : raw;
+  return main.includes("%") ? main : `${main}%`;
 }
 
 // `studyTitle` is the Study's short acronym when one is authored ("STEP 1",
@@ -293,6 +314,19 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
 
 type PositionedSlot = ChartSlot & { x: number; groupX: number; groupWidth: number };
 
+type ChartTooltipState = {
+  slot: PositionedSlot;
+  anchor: { left: number; right: number; top: number; bottom: number };
+};
+
+type ChartTooltipPosition = {
+  left: number;
+  top: number;
+  width: number;
+  arrowLeft: number;
+  placement: "above" | "below";
+};
+
 /**
  * One program's horizontal slot, whether or not it produced any bars. No
  * selected program currently has zero chart-eligible doses — `resolveNominalDose`
@@ -340,7 +374,9 @@ function layoutSlots(
     const groupWidth = Math.max(naturalWidth, MIN_GROUP_WIDTH);
     const barOffset = (groupWidth - naturalWidth) / 2;
 
-    if (programIndex > 0) {
+    if (programIndex === 0 && doseCount > 0) {
+      x = Math.max(0, FIRST_BAR_GUTTER - barOffset);
+    } else if (programIndex > 0) {
       x += BETWEEN_GROUP_GAP;
     }
     const groupX = x;
@@ -372,7 +408,11 @@ function niceStep(maxAbs: number, targetTicks = 4): number {
   return niceResidual * magnitude;
 }
 
-export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProps) {
+export function EfficacyCompareChart({
+  rows,
+  onEdit,
+  onClose,
+}: EfficacyCompareChartProps) {
   const slots = useMemo(() => buildChartSlots(rows), [rows]);
   const { positioned, groups, totalWidth } = useMemo(
     () => layoutSlots(slots, rows),
@@ -393,7 +433,16 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
   // fixed constant, so the chart always fills the panel with no internal
   // scroll needed to reach the bottom group labels.
   const chartAreaRef = useRef<HTMLDivElement>(null);
+  const chartScrollerRef = useRef<HTMLDivElement>(null);
+  const chartContentRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const tooltipId = useId();
   const [plotHeight, setPlotHeight] = useState(MIN_PLOT_HEIGHT);
+  const [chartAreaWidth, setChartAreaWidth] = useState(0);
+  const [hasHorizontalOverflow, setHasHorizontalOverflow] = useState(false);
+  const [tooltip, setTooltip] = useState<ChartTooltipState | null>(null);
+  const [tooltipPosition, setTooltipPosition] =
+    useState<ChartTooltipPosition | null>(null);
 
   useEffect(() => {
     const element = chartAreaRef.current;
@@ -407,53 +456,194 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
         BAR_PROVENANCE_HEIGHT -
         GROUP_LABEL_HEIGHT;
       setPlotHeight(Math.max(available, MIN_PLOT_HEIGHT));
+      const scrollerWidth = chartScrollerRef.current?.clientWidth ?? 0;
+      const contentWidth = chartContentRef.current?.offsetWidth ?? 0;
+      setChartAreaWidth(element.clientWidth);
+      setHasHorizontalOverflow(contentWidth > scrollerWidth);
     };
     updateHeight();
     const observer = new ResizeObserver(updateHeight);
     observer.observe(element);
+    if (chartContentRef.current) observer.observe(chartContentRef.current);
     return () => observer.disconnect();
   }, []);
+
+  useLayoutEffect(() => {
+    const panel = tooltipRef.current;
+    if (!tooltip || !panel) return;
+
+    const gutter = 16;
+    const gap = 12;
+    const width = Math.min(340, window.innerWidth - gutter * 2);
+    const panelHeight = panel.getBoundingClientRect().height;
+    const anchorCenter = (tooltip.anchor.left + tooltip.anchor.right) / 2;
+    const left = Math.min(
+      Math.max(anchorCenter - width / 2, gutter),
+      window.innerWidth - width - gutter,
+    );
+    const roomAbove = tooltip.anchor.top - gutter - gap;
+    const roomBelow = window.innerHeight - tooltip.anchor.bottom - gutter - gap;
+    const placement =
+      roomAbove >= panelHeight || roomAbove >= roomBelow ? "above" : "below";
+    const top =
+      placement === "above"
+        ? Math.max(gutter, tooltip.anchor.top - gap - panelHeight)
+        : Math.min(
+            window.innerHeight - gutter - panelHeight,
+            tooltip.anchor.bottom + gap,
+          );
+
+    setTooltipPosition({
+      left,
+      top,
+      width,
+      arrowLeft: Math.min(Math.max(anchorCenter - left, 18), width - 18),
+      placement,
+    });
+  }, [tooltip]);
+
+  useEffect(() => {
+    if (!tooltip) return;
+    const dismiss = () => setTooltip(null);
+    window.addEventListener("resize", dismiss);
+    return () => window.removeEventListener("resize", dismiss);
+  }, [tooltip]);
+
+  const showTooltip = (slot: PositionedSlot, element: HTMLElement) => {
+    const rect = element.getBoundingClientRect();
+    setTooltip({
+      slot,
+      anchor: {
+        left: rect.left,
+        right: rect.right,
+        top: rect.top,
+        bottom: rect.bottom,
+      },
+    });
+  };
+
+  const showPointerTooltip = (slot: PositionedSlot, clientX: number, clientY: number) => {
+    setTooltip({
+      slot,
+      anchor: {
+        left: clientX,
+        right: clientX,
+        top: clientY,
+        bottom: clientY,
+      },
+    });
+  };
+
+  const dismissTooltip = (slotKey: string) => {
+    setTooltip((current) => (current?.slot.key === slotKey ? null : current));
+  };
+
+  const desiredPanelWidth = Math.min(
+    1200,
+    Math.max(720, Y_AXIS_WIDTH + totalWidth + 112),
+  );
+  const availablePlotWidth = Math.max(chartAreaWidth - Y_AXIS_WIDTH - 8, 0);
+  const horizontalScale =
+    totalWidth > 0 && totalWidth < availablePlotWidth
+      ? Math.min(1.5, availablePlotWidth / totalWidth)
+      : 1;
+  const renderedTotalWidth = totalWidth * horizontalScale;
+  const renderedCanvasWidth = Math.max(
+    renderedTotalWidth + 8,
+    availablePlotWidth,
+  );
 
   return (
     <Modal
       title="Efficacy comparison"
       onClose={onClose}
-      sizeClassName="h-[75vh] w-[calc(100vw-2rem)] max-w-4xl sm:w-[80vw] lg:w-[60vw] xl:w-[50vw]"
+      sizeClassName="h-[86dvh] w-[calc(100vw-2rem)] sm:h-[72vh] sm:max-h-[48rem]"
+      panelStyle={{ maxWidth: desiredPanelWidth }}
+      headerActions={
+        <button
+          type="button"
+          onClick={onEdit}
+          className="ml-1 shrink-0 border-l border-border pl-3 text-xs font-medium text-primary hover:underline focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <span className="sm:hidden">Edit</span>
+          <span className="hidden sm:inline">Edit selection</span>
+        </button>
+      }
     >
       <div className="flex h-full flex-col">
-        <div className="mb-4 flex shrink-0 flex-wrap items-center gap-4">
-          {rows.map((row, index) => (
-            <div key={row.unitKey} className="flex items-center gap-2 text-xs">
-              <span
-                className="h-3 w-3 shrink-0 rounded-sm"
-                style={{ backgroundColor: programColor(index) }}
-              />
-              <span className="font-medium text-card-foreground">{row.name}</span>
-              <span className="text-muted-foreground">{row.companyName}</span>
-            </div>
-          ))}
+        <div className="mb-3 min-w-0 shrink-0 overflow-x-auto pb-1 sm:mb-4 sm:overflow-visible sm:pb-0">
+          <div className="flex min-w-max items-center gap-4 sm:min-w-0 sm:flex-wrap">
+            {rows.map((row, index) => (
+              <div key={row.unitKey} className="flex shrink-0 items-center gap-2 text-xs">
+                <span
+                  className="h-3 w-3 shrink-0 rounded-sm"
+                  style={{ backgroundColor: programColor(index) }}
+                />
+                <span className="font-medium text-card-foreground">{row.name}</span>
+                <span className="text-muted-foreground">{row.companyName}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div ref={chartAreaRef} className="min-h-0 flex-1 overflow-x-auto overflow-y-hidden">
+        <div className="mb-2 flex shrink-0 items-center justify-between gap-3 text-[11px] text-muted-foreground">
+          <span>Body-weight change from baseline (%)</span>
+          {hasHorizontalOverflow ? (
+            <span className="inline-flex items-center gap-1 text-right">
+              <ArrowLeftRight aria-hidden="true" className="h-3.5 w-3.5" />
+              Scroll to view all programs
+            </span>
+          ) : null}
+        </div>
+
+        <div
+          ref={chartAreaRef}
+          className="relative flex min-h-0 flex-1 overflow-hidden"
+        >
           <div
-            className="relative"
-            style={{
-              width: Y_AXIS_WIDTH + totalWidth + 8,
-              height:
-                DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + GROUP_LABEL_HEIGHT,
-            }}
+            aria-hidden="true"
+            className="pointer-events-none relative z-20 w-10 shrink-0 bg-card"
           >
             {ticks.map((tick) => {
               const top = DOSE_LABEL_HEIGHT + (tick / domainMin) * plotHeight;
               return (
-                <div key={tick} className="absolute left-0 right-0" style={{ top }}>
-                  <span className="absolute left-0 -translate-y-1/2 text-[9px] text-muted-foreground">
+                <div key={tick} className="absolute inset-x-0" style={{ top }}>
+                  <span className="absolute right-1 -translate-y-1/2 text-right text-[10px] leading-none text-muted-foreground">
                     {Math.round(tick)}%
                   </span>
-                  <div
-                    className="absolute border-t border-dashed border-border"
-                    style={{ left: Y_AXIS_WIDTH, right: 0 }}
-                  />
+                  <span className="absolute right-0 w-1 border-t border-border" />
+                </div>
+              );
+            })}
+            <div
+              className="absolute right-0 border-l border-border"
+              style={{ top: DOSE_LABEL_HEIGHT, height: plotHeight }}
+            />
+          </div>
+          <div
+            ref={chartScrollerRef}
+            onScroll={() => setTooltip(null)}
+            className="min-w-0 flex-1 overflow-x-auto overflow-y-hidden"
+          >
+            <div
+              ref={chartContentRef}
+              className="relative shrink-0"
+              style={{
+                width: renderedCanvasWidth,
+                height:
+                  DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + GROUP_LABEL_HEIGHT,
+              }}
+            >
+            {ticks.map((tick) => {
+              const top = DOSE_LABEL_HEIGHT + (tick / domainMin) * plotHeight;
+              return (
+                <div key={tick} className="absolute left-0 right-0" style={{ top }}>
+                  {tick !== 0 ? (
+                    <div
+                      className="absolute border-t border-dashed border-border"
+                      style={{ left: 0, right: 0 }}
+                    />
+                  ) : null}
                 </div>
               );
             })}
@@ -463,10 +653,10 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
               return (
                 <div key={slot.key}>
                   <div
-                    className="absolute flex items-end justify-center text-center text-[9px] font-medium leading-tight text-card-foreground"
+                    className="absolute flex items-end justify-center text-center text-[10px] font-medium leading-tight text-card-foreground"
                     style={{
-                      left: Y_AXIS_WIDTH + slot.x - 4,
-                      width: BAR_WIDTH + 8,
+                      left: slot.x * horizontalScale - 4,
+                      width: BAR_WIDTH * horizontalScale + 8,
                       top: 0,
                       height: DOSE_LABEL_HEIGHT - 3,
                     }}
@@ -474,16 +664,53 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                     {slot.doseAxisLabel}
                   </div>
                   <div
-                    title={`${slot.program} (${slot.companyName})\n${[shortStudyTitle(slot.studyTitle), slot.phase, slot.timepoint].filter(Boolean).join(" · ")}\n${slot.doseLabel}${slot.doseDetail ? `\nDose: ${slot.doseDetail}` : ""}${slot.titration ? `\nTitration regimen: ${slot.titration}` : ""}${slot.sourceRole === "active-comparator" ? "\nActive comparator" : ""}\nResult: ${formatPercent(slot.doseRaw)}`}
-                    className="absolute rounded-t-sm"
+                    role="img"
+                    tabIndex={0}
+                    aria-label={`${slot.program}, ${slot.doseLabel}, result ${formatPercent(slot.doseRaw)}, ${slot.studyTitle}, ${slot.phase}, ${slot.timepoint}`}
+                    aria-describedby={tooltip?.slot.key === slot.key ? tooltipId : undefined}
+                    onMouseEnter={(event) =>
+                      showPointerTooltip(slot, event.clientX, event.clientY)
+                    }
+                    onMouseMove={(event) =>
+                      showPointerTooltip(slot, event.clientX, event.clientY)
+                    }
+                    onMouseLeave={() => dismissTooltip(slot.key)}
+                    onFocus={(event) => showTooltip(slot, event.currentTarget)}
+                    onBlur={() => dismissTooltip(slot.key)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Escape") dismissTooltip(slot.key);
+                    }}
+                    className={`absolute rounded-b-sm outline-none transition-[filter,box-shadow] hover:brightness-[1.04] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
+                      tooltip?.slot.key === slot.key
+                        ? "z-10 brightness-[1.04] ring-1 ring-foreground/20"
+                        : ""
+                    }`}
                     style={{
-                      left: Y_AXIS_WIDTH + slot.x,
-                      width: BAR_WIDTH,
+                      left: slot.x * horizontalScale,
+                      width: BAR_WIDTH * horizontalScale,
                       top: DOSE_LABEL_HEIGHT,
                       height: barHeight,
                       backgroundColor: doseColor(slot.programIndex, slot.doseIndex, slot.doseCount),
                     }}
-                  />
+                  >
+                    <span
+                      className="absolute inset-x-0 truncate px-0.5 text-center text-[9px] font-semibold leading-none"
+                      style={{
+                        bottom: barHeight >= 18 ? 4 : -12,
+                        color:
+                          barHeight < 18 ||
+                          doseLightness(
+                            slot.programIndex,
+                            slot.doseIndex,
+                            slot.doseCount,
+                          ) >= 52
+                            ? "hsl(20, 16%, 14%)"
+                            : "white",
+                      }}
+                    >
+                      {compactPercent(slot.doseRaw)}
+                    </span>
+                  </div>
                   {/* Bar-local, every bar — not just the group start — since a
                       program's bars may now come from different Studies with
                       different timepoints. Permanent, not tooltip-only: see
@@ -491,17 +718,17 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                   <div
                     className="absolute text-center"
                     style={{
-                      left: Y_AXIS_WIDTH + slot.x,
-                      width: BAR_WIDTH,
+                      left: slot.x * horizontalScale,
+                      width: BAR_WIDTH * horizontalScale,
                       top: DOSE_LABEL_HEIGHT + plotHeight + 3,
                     }}
                   >
                     {shortStudyTitle(slot.studyTitle) ? (
-                      <p className="truncate text-[8px] font-medium leading-tight text-card-foreground">
+                      <p className="truncate text-[9px] font-medium leading-tight text-card-foreground">
                         {shortStudyTitle(slot.studyTitle)}
                       </p>
                     ) : null}
-                    <p className="truncate text-[8px] leading-tight text-muted-foreground">
+                    <p className="truncate text-[9px] leading-tight text-muted-foreground">
                       {slot.timepoint}
                     </p>
                   </div>
@@ -519,12 +746,12 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                 <div
                   className="absolute text-center"
                   style={{
-                    left: Y_AXIS_WIDTH + group.groupX,
-                    width: group.groupWidth,
+                    left: group.groupX * horizontalScale,
+                    width: group.groupWidth * horizontalScale,
                     top: DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + 3,
                   }}
                 >
-                  <p className="truncate text-[10px] font-semibold text-card-foreground">
+                  <p className="truncate text-[11px] font-semibold text-card-foreground">
                     {group.program}
                   </p>
                 </div>
@@ -532,8 +759,8 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
                   <div
                     className="absolute text-center"
                     style={{
-                      left: Y_AXIS_WIDTH + group.groupX,
-                      width: group.groupWidth,
+                      left: group.groupX * horizontalScale,
+                      width: group.groupWidth * horizontalScale,
                       top: DOSE_LABEL_HEIGHT,
                     }}
                   >
@@ -550,11 +777,99 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
 
             <div
               className="absolute border-t border-border"
-              style={{ left: Y_AXIS_WIDTH, right: 0, top: DOSE_LABEL_HEIGHT }}
+              style={{ left: 0, right: 0, top: DOSE_LABEL_HEIGHT }}
             />
+            </div>
           </div>
         </div>
       </div>
+
+      {tooltip && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              ref={tooltipRef}
+              id={tooltipId}
+              role="tooltip"
+              className="pointer-events-none fixed z-[80] rounded-md border border-border bg-card text-card-foreground shadow-soft"
+              style={
+                tooltipPosition
+                  ? {
+                      left: tooltipPosition.left,
+                      top: tooltipPosition.top,
+                      width: tooltipPosition.width,
+                    }
+                  : {
+                      left: 0,
+                      top: 0,
+                      width: "min(340px, calc(100vw - 32px))",
+                      visibility: "hidden",
+                    }
+              }
+            >
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-0.5 rounded-t-md"
+                style={{ backgroundColor: programColor(tooltip.slot.programIndex) }}
+              />
+              <div className="flex items-start justify-between gap-4 border-b border-border/80 bg-muted/25 px-4 py-3">
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold">{tooltip.slot.program}</p>
+                  <p className="mt-0.5 truncate text-[11px] text-muted-foreground">
+                    {tooltip.slot.companyName}
+                  </p>
+                </div>
+                <div className="shrink-0 text-right">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                    Reported result
+                  </p>
+                  <p className="mt-0.5 text-lg font-semibold leading-none">
+                    {formatPercent(tooltip.slot.doseRaw)}
+                  </p>
+                </div>
+              </div>
+              <div className="px-4 py-3">
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-xs font-medium leading-5">{tooltip.slot.doseLabel}</p>
+                  {tooltip.slot.sourceRole === "active-comparator" ? (
+                    <span className="shrink-0 rounded-full border border-border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+                      Active comparator
+                    </span>
+                  ) : null}
+                </div>
+                <dl className="mt-3 grid grid-cols-[4.25rem_minmax(0,1fr)] gap-x-3 gap-y-1.5 border-t border-border/70 pt-3 text-[11px] leading-4">
+                  <dt className="text-muted-foreground">Study</dt>
+                  <dd className="font-medium">{tooltip.slot.studyTitle}</dd>
+                  <dt className="text-muted-foreground">Evidence</dt>
+                  <dd>{tooltip.slot.phase} · {tooltip.slot.timepoint}</dd>
+                  {tooltip.slot.doseDetail ? (
+                    <>
+                      <dt className="text-muted-foreground">Dose</dt>
+                      <dd>{tooltip.slot.doseDetail}</dd>
+                    </>
+                  ) : null}
+                  {tooltip.slot.titration ? (
+                    <>
+                      <dt className="text-muted-foreground">Titration</dt>
+                      <dd>{tooltip.slot.titration}</dd>
+                    </>
+                  ) : null}
+                </dl>
+              </div>
+              {tooltipPosition ? (
+                <span
+                  aria-hidden="true"
+                  className={`absolute h-2.5 w-2.5 rotate-45 bg-card ${
+                    tooltipPosition.placement === "above"
+                      ? "-bottom-[5px] border-b border-r border-border"
+                      : "-top-[5px] border-l border-t border-border"
+                  }`}
+                  style={{ left: tooltipPosition.arrowLeft - 5 }}
+                />
+              ) : null}
+            </div>,
+            document.body,
+          )
+        : null}
 
       <ul className="sr-only">
         {rows.map((row) => (

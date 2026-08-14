@@ -225,7 +225,7 @@ function HeadToHeadEntity({ entity }: { entity: ComparisonEntity }) {
  */
 function HeadToHeadEntry({ group }: { group: HeadToHeadGroup }) {
   return (
-    <tr className="border-t border-border/80 align-top first:border-t-0">
+    <tr className="border-t border-border/80 align-top transition first:border-t-0 hover:bg-background/25">
       <th scope="row" className="w-[24%] px-4 py-4 text-left font-normal">
           <span className="flex flex-wrap items-center gap-2 text-sm font-semibold text-card-foreground">
             {group.entities.map((item, index) => (
@@ -298,7 +298,7 @@ function HeadToHeadEntry({ group }: { group: HeadToHeadGroup }) {
         <span className="text-sm italic text-muted-foreground">Not reported</span>
       )}
       </td>
-      <td className="w-14 px-3 py-4 text-right">
+      <td className="w-20 px-4 py-4 text-center">
         <EfficacySelectionDetails
           facts={[
             { label: "Study", value: group.studyTitle, href: group.href },
@@ -405,7 +405,7 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
           <span className="text-sm italic text-muted-foreground">Not reported</span>
         )}
       </td>
-      <td className="w-14 px-3 py-4 text-right">
+      <td className="w-20 px-4 py-4 text-center">
         <EfficacySelectionDetails
           facts={[
             {
@@ -548,7 +548,7 @@ export function EfficacyComparison({
             appearance="plain"
           >
             <div className="overflow-x-auto border-y border-border bg-card">
-              <table className="w-full min-w-[1120px] border-collapse text-left">
+              <table className="w-full min-w-[1080px] border-collapse text-left">
                 <thead className="bg-muted/70 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
                   <tr>
                     <th scope="col" className="px-4 py-3 font-semibold">Program</th>
@@ -556,7 +556,7 @@ export function EfficacyComparison({
                     <th scope="col" className="px-4 py-3 font-semibold">Reported dose values</th>
                     <th scope="col" className="px-4 py-3 font-semibold">Same-group reference</th>
                     <th scope="col" className="px-4 py-3 font-semibold">Between-arm</th>
-                    <th scope="col" className="px-3 py-3 text-right font-semibold">Details</th>
+                    <th scope="col" className="w-20 px-4 py-3 text-center font-semibold">Details</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -572,7 +572,7 @@ export function EfficacyComparison({
 
       <section
         id="head-to-head"
-        className="scroll-mt-20 rounded-md bg-accent px-5 py-6 sm:px-6"
+        className="scroll-mt-20 rounded-md bg-accent/35 px-5 py-6 ring-1 ring-inset ring-border/50 sm:px-6"
       >
         <div className="max-w-3xl">
           <h2 className="text-xl font-semibold tracking-tight text-accent-foreground">
@@ -591,15 +591,15 @@ export function EfficacyComparison({
             description="No trial with recorded body-weight evidence reported a direct comparison between two products."
           />
         ) : (
-          <div className="mt-5 overflow-x-auto border-y border-border bg-card/80">
+          <div className="mt-5 overflow-x-auto border-y border-border bg-transparent">
             <table className="w-full min-w-[900px] border-collapse text-left">
-              <thead className="bg-muted/70 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
+              <thead className="bg-background/35 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
                 <tr>
                   <th scope="col" className="px-4 py-3 font-semibold">Direct comparison</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Evidence axis</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Arm-level values</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Between-arm</th>
-                  <th scope="col" className="px-3 py-3 text-right font-semibold">Details</th>
+                  <th scope="col" className="w-20 px-4 py-3 text-center font-semibold">Details</th>
                 </tr>
               </thead>
               <tbody>
