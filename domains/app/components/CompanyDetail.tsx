@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
-import { stageCountChipClassName } from "@/domains/app/components/StageCountChip";
 import { buttonVariants } from "@/domains/app/components/ui/Button";
 import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import type { CompanyDetailView } from "@/domains/app/lib/company-detail/read-model";
@@ -99,28 +97,57 @@ export function CompanyDetail({
         }
       />
 
-      <CollapsibleSection
+      <section
         id="stage-distribution"
-        title="Development stage distribution"
-        defaultOpen={false}
+        aria-labelledby="stage-distribution-heading"
+        className="border-y border-border"
       >
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4">
+        <div className="flex flex-col gap-2 py-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2
+              id="stage-distribution-heading"
+              className="text-base font-semibold text-foreground"
+            >
+              Development portfolio
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {view.summary.assetCount}{" "}
+              {view.summary.assetCount === 1 ? "asset" : "assets"} across{" "}
+              {view.summary.programRowCount} program rows
+            </p>
+          </div>
+          <Link
+            href={registerHref}
+            className="inline-flex w-fit items-center gap-1 rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            View in Program Register
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 border-t border-border sm:grid-cols-3 lg:grid-cols-6">
           {stageBuckets.map((bucket) => {
             const count = stageCounts.get(bucket.id) ?? 0;
             const chip = (
-              <span className={stageCountChipClassName(count)}>
+              <span
+                className={`text-lg font-semibold tabular-nums ${
+                  count > 0 ? "text-primary" : "font-normal text-muted-foreground"
+                }`}
+              >
                 {count > 0 ? count : <>&ndash;</>}
               </span>
             );
             return (
-              <div key={bucket.id} className="flex items-center gap-2">
+              <div
+                key={bucket.id}
+                className="flex flex-col-reverse gap-1 border-b border-border py-3 pr-4 [&:nth-last-child(-n+2)]:border-b-0 sm:[&:nth-last-child(-n+3)]:border-b-0 lg:border-b-0"
+              >
                 {count > 0 ? (
                   <Link
                     href={`${registerHref}&stageBucket=${bucket.id}`}
                     aria-label={`${bucket.label}, ${count} program${
                       count === 1 ? "" : "s"
                     } — open in Program Register`}
-                    className="inline-flex rounded-sm transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    className="inline-flex w-fit rounded-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {chip}
                   </Link>
@@ -134,22 +161,7 @@ export function CompanyDetail({
             );
           })}
         </div>
-        <div className="flex flex-wrap items-center gap-4 border-t border-border px-5 py-3 text-sm text-muted-foreground">
-          <span>
-            {view.summary.assetCount}{" "}
-            {view.summary.assetCount === 1 ? "asset" : "assets"}
-          </span>
-          <span aria-hidden="true">&middot;</span>
-          <span>{view.summary.programRowCount} program rows</span>
-          <Link
-            href={registerHref}
-            className="ml-auto rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            View all in Program Register
-            <ArrowRight aria-hidden="true" className="ml-1 inline h-4 w-4" />
-          </Link>
-        </div>
-      </CollapsibleSection>
+      </section>
 
       {view.assets.length === 0 ? (
         <EmptyState
@@ -164,7 +176,7 @@ export function CompanyDetail({
           >
             In-scope assets ({view.assets.length})
           </h2>
-          <ul className="divide-y divide-border overflow-hidden rounded-md border border-border bg-card shadow-soft">
+          <ul className="max-w-6xl border-t border-border">
             {view.assets.map((asset) => {
               const leadVariant = asset.programVariants[0];
               const mostAdvancedStage = leadVariant?.development.stage;
@@ -200,9 +212,9 @@ export function CompanyDetail({
               return (
                 <li
                   key={`${asset.companyId}|${asset.assetId}`}
-                  className="flex flex-col gap-3 p-5 transition hover:bg-accent/20 sm:flex-row sm:items-center sm:justify-between"
+                  className="border-b border-border py-5 transition hover:bg-accent/15"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <Link
                       href={assetHref}
                       className="rounded-sm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -242,42 +254,32 @@ export function CompanyDetail({
                       </span>
                     ))}
                   </div>
-                  <span className="flex flex-wrap items-center gap-3">
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                     {mostAdvancedStage ? (
                       <StageBadge stage={mostAdvancedStage} />
                     ) : null}
-                    <span className="text-xs text-muted-foreground">
+                    <span className="flex-none text-xs text-muted-foreground">
                       {variantCount} {variantCount === 1 ? "variant" : "variants"}
                     </span>
                     {asset.clinical.hasStudies ? (
                       <Link
                         href={asset.clinical.href}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary hover:bg-accent/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        className="inline-flex flex-none items-center gap-1 rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                       >
-                        <span
-                          aria-hidden="true"
-                          className={`h-1.5 w-1.5 rounded-full ${
-                            asset.clinical.hasClinicalEvidence
-                              ? "bg-primary"
-                              : "bg-primary/40"
-                          }`}
-                        />
                         {clinicalPillLabel(asset.clinical.hasClinicalEvidence)}
+                        <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
                       </Link>
                     ) : null}
                     {compareUnitKey ? (
                       <Link
                         href={`/efficacy-comparison?unit=${encodeURIComponent(compareUnitKey)}&open=1`}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-xs font-semibold text-primary transition hover:border-primary hover:bg-accent/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        className="inline-flex flex-none items-center gap-1 rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                       >
-                        <span
-                          aria-hidden="true"
-                          className="h-1.5 w-1.5 rounded-full bg-primary"
-                        />
-                        Compare
+                        Compare efficacy
+                        <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
                       </Link>
                     ) : null}
-                  </span>
+                  </div>
                 </li>
               );
             })}
@@ -301,7 +303,7 @@ export function CompanyDetail({
             role and licensed or partnered territory recorded for {" "}
             {view.company.name}.
           </p>
-          <ul className="grid gap-4 md:grid-cols-2">
+          <ul className="max-w-6xl border-t border-border">
             {view.partneredAssets.map((asset) => {
               const leadVariant = asset.programVariants[0];
               const mostAdvancedStage = leadVariant?.development.stage;
@@ -321,10 +323,10 @@ export function CompanyDetail({
               return (
                 <li
                   key={`${asset.ownerCompanyId}|${asset.assetId}`}
-                  className="flex min-h-44 flex-col justify-between gap-5 rounded-md border border-border bg-card p-5 shadow-soft"
+                  className="border-b border-border py-5"
                 >
-                  <div>
-                    <span className="text-base font-semibold text-card-foreground">
+                  <div className="min-w-0">
+                    <span className="text-base font-semibold text-foreground">
                       {asset.assetName}
                     </span>
                     <span className="mt-1 block text-xs text-muted-foreground">
@@ -338,16 +340,17 @@ export function CompanyDetail({
                       {asset.codeName ? ` · Code ${asset.codeName}` : null}
                     </span>
                   </div>
-                  <div className="space-y-3 border-t border-border pt-4">
-                    <div className="flex flex-wrap items-center gap-3">
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <div className="contents">
                     {mostAdvancedStage ? (
                       <StageBadge stage={mostAdvancedStage} />
                     ) : null}
                     </div>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
                     {relationshipDetails.map((detail) => (
                       <p
                         key={`${detail.role}|${detail.territories.join("|")}`}
-                        className="text-sm leading-6 text-muted-foreground"
+                        className="text-sm leading-5 text-muted-foreground"
                       >
                         <span className="font-medium text-foreground">
                           {capitalize(detail.role)}
@@ -358,6 +361,7 @@ export function CompanyDetail({
                           : "Territory not specified"}
                       </p>
                     ))}
+                    </div>
                   </div>
                 </li>
               );

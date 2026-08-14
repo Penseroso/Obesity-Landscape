@@ -128,6 +128,15 @@ JSON, and only these canonical selectors import that loader.
   licensee/licensor pairing and its regional rights are not visually conflated
   with genuine co-development. A missing territory is disclosed as not
   specified rather than inferred.
+- **Company Detail presents both owned and partnered assets as editorial
+  registers, not independent cards.** Hairline row boundaries provide the
+  scan path, while stage, variant count, evidence actions, and relationship
+  facts form a content-sized metadata line beneath each asset identity rather
+  than reserving sparse fixed columns. The line wraps in source order on narrow
+  screens. The development summary is a lightweight stage-count strip. These
+  are presentation rules only: asset ownership, relationship wording,
+  territory, stage, evidence links, and comparison eligibility continue to
+  come from the existing read model without aggregation or inference.
 - **`scopeClass`** (Contract 1.2, ADR-0053) is a filter dimension, a Program
   Register column (configurable, hidden by default), and a Program Detail /
   company-page field. It is never a badge or color-coded status pill — it
