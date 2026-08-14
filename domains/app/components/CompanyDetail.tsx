@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
@@ -78,7 +79,7 @@ export function CompanyDetail({
                 className={buttonVariants({ variant: "outline" })}
               >
                 Official website
-                <span aria-hidden="true">&#8599;</span>
+                <ExternalLink aria-hidden="true" className="h-4 w-4" />
               </a>
             ) : null}
             {view.company.officialPipeline ? (
@@ -90,7 +91,7 @@ export function CompanyDetail({
                 className={buttonVariants({ variant: "primary" })}
               >
                 Official pipeline
-                <span aria-hidden="true">&#8599;</span>
+                <ExternalLink aria-hidden="true" className="h-4 w-4" />
               </a>
             ) : null}
             </>
@@ -144,7 +145,8 @@ export function CompanyDetail({
             href={registerHref}
             className="ml-auto rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            View all in Program Register &rarr;
+            View all in Program Register
+            <ArrowRight aria-hidden="true" className="ml-1 inline h-4 w-4" />
           </Link>
         </div>
       </CollapsibleSection>

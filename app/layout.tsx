@@ -38,22 +38,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${notoSansKr.variable}`}>
       <body className="min-h-screen antialiased">
         <div className="mx-auto flex min-h-screen w-full max-w-[1600px] flex-col px-5 py-4 sm:px-8">
-          <header className="mb-6 flex flex-col gap-4 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
+          <header className="mb-6 border-b border-border pb-3 sm:flex sm:items-center sm:justify-between sm:gap-8">
             <Link
               href="/"
-              className="flex items-center gap-3 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="inline-flex rounded-sm py-2 text-lg font-semibold tracking-tight text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-primary text-sm font-semibold text-primary-foreground">
-                OL
-              </span>
-              <span>
-                <span className="block text-sm font-semibold tracking-wide text-foreground">
-                  Obesity Landscape
-                </span>
-                <span className="block text-xs text-muted-foreground">
-                  Obesity landscape pipeline intelligence
-                </span>
-              </span>
+              Obesity Landscape
             </Link>
             <PrimaryNav />
           </header>

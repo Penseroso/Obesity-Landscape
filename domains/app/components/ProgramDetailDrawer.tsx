@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { SourceList } from "@/domains/app/components/SourceList";
@@ -93,7 +94,8 @@ function AssetClinicalContext({
             href={clinicalContext.href}
             className="mt-3 inline-flex items-center gap-1 rounded-md border border-border bg-accent px-3 py-2 text-sm font-semibold text-accent-foreground transition hover:bg-accent/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            View Asset Clinical Studies →
+            View Asset Clinical Studies
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </>
       ) : (
@@ -295,9 +297,11 @@ export function ProgramDetailDrawer({
               ref={closeButtonRef}
               type="button"
               onClick={onClose}
-              className="rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              aria-label="Close program detail"
+              title="Close"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
-              Close
+              <X aria-hidden="true" className="h-4 w-4" />
             </button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { buttonVariants } from "@/domains/app/components/ui/Button";
 import type { LatestNewsView } from "@/domains/app/lib/news/read-model";
 
@@ -61,7 +62,7 @@ export function LatestNewsFeed({
                       {source.sourceName}
                     </span>
                     {`: ${source.title} `}
-                    <span aria-hidden="true">↗</span>
+                    <ExternalLink aria-hidden="true" className="ml-1 inline h-3 w-3" />
                   </a>
                 ))}
               </div>

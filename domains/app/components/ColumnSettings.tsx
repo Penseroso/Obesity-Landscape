@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { ArrowDown, ArrowUp, Columns3 } from "lucide-react";
 import {
   getProgramTableColumnLabel,
   type ProgramTableColumnId,
@@ -73,7 +74,7 @@ export function ColumnSettings({ controls }: ColumnSettingsProps) {
         aria-controls={open ? panelId : undefined}
         className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
       >
-        <span aria-hidden="true">▤</span>
+        <Columns3 aria-hidden="true" className="h-4 w-4" />
         Columns
       </button>
 
@@ -142,7 +143,7 @@ export function ColumnSettings({ controls }: ColumnSettingsProps) {
                       aria-label={`Move ${label} up`}
                       className={iconButtonClassName}
                     >
-                      <span aria-hidden="true">↑</span>
+                      <ArrowUp aria-hidden="true" className="h-3.5 w-3.5" />
                     </button>
                     <button
                       type="button"
@@ -151,7 +152,7 @@ export function ColumnSettings({ controls }: ColumnSettingsProps) {
                       aria-label={`Move ${label} down`}
                       className={iconButtonClassName}
                     >
-                      <span aria-hidden="true">↓</span>
+                      <ArrowDown aria-hidden="true" className="h-3.5 w-3.5" />
                     </button>
                   </span>
                 </li>

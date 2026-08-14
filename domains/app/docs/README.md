@@ -22,6 +22,12 @@ boundaries. Historical UI audits are not part of the implementation path.
 | `/assets/[companyId]/[assetId]` | Focal and linked studies for an asset |
 | `/studies/[studyId]` | Study, arms, endpoints, outcomes, and source detail |
 
+The global shell uses a text-only `Obesity Landscape` wordmark and a static,
+underline-style primary navigation. On mobile the navigation remains one row
+inside its own horizontal scroll container. `/assets`, `/companies/*`, and
+`/studies/*` share the Program Register active state; the other primary routes
+activate only their own entry.
+
 `app/` owns routing and page composition; it is root-pinned for the current
 Next.js architecture and this migration program (Module 6 resolved D6 — the
 App Router only resolves `app/` at the repository root or under `src/`, and
@@ -69,6 +75,12 @@ JSON, and only these canonical selectors import that loader.
   the authored `studyFamily` only; a Study without one is unclassified and renders
   in a trailing "Other studies" group. Family is never inferred from an acronym or
   title, and the family name appears in the group header only.
+- Asset Studies exposes that projection through URL-synchronised presentation
+  controls: `scope=linked` selects linked evidence (focal is the default and is
+  omitted), while `family=<authored family>` selects one family within the active
+  scope. `family=__unclassified` addresses the "Other studies" group. Invalid or
+  unavailable values fall back to focal/all families; these controls filter only
+  the already-returned projection and never change its membership or ordering.
 - The Program (or regimen) mapping stays explicit and is displayed as per-row
   metadata — route, dosage form, dosing interval, or the regimen name — rather than
   as the grouping boundary. It is still never inferred from asset, indication,
@@ -129,6 +141,13 @@ JSON, and only these canonical selectors import that loader.
   `generated-output-contract.md#5-consumer-contract`.
 
 ## Study Detail (`/studies/[studyId]`)
+
+- The sticky Study section navigation is a URL-synchronised scroll spy. Its
+  existing section IDs (`overview`, `arms`, optional `analysis-groups`,
+  `endpoints`, `sources`) are the hash contract; clicking adds a history entry,
+  manual scrolling replaces the current hash, and an invalid hash resolves to
+  `overview`. The active link uses `aria-current="location"`, and the underlying
+  anchors remain usable before hydration.
 
 - The Endpoints & outcomes list clusters outcomes under one Population/Estimand
   header whenever two or more outcomes on the same endpoint share population,

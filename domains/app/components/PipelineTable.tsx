@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import {
   getProgramTableColumnLabel,
   type ProgramTableColumn,
@@ -564,13 +565,15 @@ export function PipelineTable({
                         className="flex w-full items-center justify-between gap-2 px-3 py-2.5 pr-4 text-left transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
                       >
                         <span className="truncate">{label}</span>
-                        <span aria-hidden="true" className="shrink-0 text-[0.7rem]">
-                          {activeSort
-                            ? activeSort.direction === "ascending"
-                              ? "▲"
-                              : "▼"
-                            : "↕"}
-                        </span>
+                        {activeSort ? (
+                          activeSort.direction === "ascending" ? (
+                            <ArrowUp aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+                          ) : (
+                            <ArrowDown aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+                          )
+                        ) : (
+                          <ArrowUpDown aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+                        )}
                       </button>
                       <ColumnResizeHandle
                         column={column}

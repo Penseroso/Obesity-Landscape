@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { SourceList } from "@/domains/app/components/SourceList";
 import { EndpointsSection } from "@/domains/app/components/clinical/EndpointsSection";
+import { StudySectionNav } from "@/domains/app/components/clinical/StudySectionNav";
 import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import { formatNullableValue } from "@/domains/app/lib/format";
 import type {
@@ -215,48 +217,6 @@ function AnalysisGroupCard({ group }: { group: AnalysisGroupView }) {
   );
 }
 
-/**
- * Sticky in-page section nav. Server-only (plain anchor links): no scroll-spy,
- * so it needs no client boundary and stays fully keyboard/no-JS accessible.
- * Only sections actually present are listed — Analysis groups is omitted when
- * the study has none. `scroll-mt-*` on each target offsets the sticky bar.
- */
-function StudySectionNav({
-  hasAnalysisGroups,
-}: {
-  hasAnalysisGroups: boolean;
-}) {
-  const sections = [
-    { id: "overview", label: "Overview" },
-    { id: "arms", label: "Arms" },
-    ...(hasAnalysisGroups
-      ? [{ id: "analysis-groups", label: "Analysis groups" }]
-      : []),
-    { id: "endpoints", label: "Endpoints" },
-    { id: "sources", label: "Sources" },
-  ];
-
-  return (
-    <nav
-      aria-label="Study sections"
-      className="sticky top-0 z-20 -mx-5 overflow-x-auto border-b border-border bg-background px-5 py-2 sm:-mx-8 sm:px-8"
-    >
-      <ul className="flex gap-1 text-sm">
-        {sections.map((section) => (
-          <li key={section.id}>
-            <a
-              href={`#${section.id}`}
-              className="inline-flex whitespace-nowrap rounded-md px-3 py-1.5 font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            >
-              {section.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
-
 export function StudyDetail({ detail }: { detail: StudyDetailView }) {
   const {
     study,
@@ -274,7 +234,8 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
           href={`/assets/${asset.companyId}/${asset.assetId}`}
           className="text-sm font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
-          ← {asset.assetName}
+          <ArrowLeft aria-hidden="true" className="mr-1 inline h-4 w-4" />
+          {asset.assetName}
         </Link>
         <PageHeading
           className="pt-3"
