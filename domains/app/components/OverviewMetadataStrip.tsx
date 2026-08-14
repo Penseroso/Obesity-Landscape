@@ -15,10 +15,10 @@ type OverviewMetadataStripProps = {
 
 function Stat({ value, label }: { value: string | number; label: string }) {
   return (
-    <>
-      <span className="font-semibold tabular-nums text-primary">{value}</span>{" "}
-      {label}
-    </>
+    <span className="flex items-baseline gap-2 px-4 py-3 first:pl-0 last:pr-0 sm:border-l sm:border-border sm:first:border-l-0 sm:first:pl-0">
+      <span className="text-lg font-semibold tabular-nums text-foreground">{value}</span>
+      <span className="text-xs text-muted-foreground">{label}</span>
+    </span>
   );
 }
 
@@ -29,17 +29,15 @@ export function OverviewMetadataStrip({
   lastUpdated,
 }: OverviewMetadataStripProps) {
   return (
-    <p className="flex flex-wrap items-baseline gap-x-1.5 text-sm text-muted-foreground">
+    <div className="grid border-y border-border sm:grid-cols-[auto_auto_auto_1fr] sm:items-center sm:gap-x-4">
       <Stat
         value={companyCount}
         label={companyCount === 1 ? "company" : "companies"}
       />
-      <span aria-hidden="true">&middot;</span>
       <Stat
         value={programCount}
         label={programCount === 1 ? "program" : "programs"}
       />
-      <span aria-hidden="true">&middot;</span>
       <Stat
         value={`${obesityPurposeProgramCount} of ${programCount}`}
         label="obesity-purpose"
@@ -47,10 +45,10 @@ export function OverviewMetadataStrip({
       {lastUpdated ? (
         // Provenance metadata, not a KPI - kept as a trailing clause rather
         // than sharing tile chrome with the counts above.
-        <span className="ml-auto text-xs text-muted-foreground">
+        <span className="border-t border-border py-3 text-xs text-muted-foreground sm:ml-auto sm:border-t-0 sm:text-right">
           Updated {lastUpdated}
         </span>
       ) : null}
-    </p>
+    </div>
   );
 }

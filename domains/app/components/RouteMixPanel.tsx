@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { CollapsibleSection } from "./CollapsibleSection";
-import { DistributionBar } from "./DistributionBar";
+import { MixStack } from "./MixStack";
 import type { RouteDistributionEntry } from "@/domains/company-pipeline/lib/selectors";
 
 type RouteMixPanelProps = {
@@ -8,6 +7,15 @@ type RouteMixPanelProps = {
 };
 
 export function RouteMixPanel({ entries }: RouteMixPanelProps) {
+  const colors = [
+    "#2a78d6",
+    "#eb6834",
+    "#1baf7a",
+    "#eda100",
+    "#e87ba4",
+    "#008300",
+  ];
+
   return (
     <CollapsibleSection
       id="route-mix"
@@ -15,35 +23,23 @@ export function RouteMixPanel({ entries }: RouteMixPanelProps) {
       subtitle="Programs by administration route."
       defaultOpen={false}
     >
-      <div className="flex flex-col justify-center space-y-1.5 px-5 py-4">
-        {entries.length > 0 ? (
-          entries.map((entry) => (
-            // Drill-down: Program Register filtered to this exact route
-            // string, mirroring the Mechanism Mix donut's link-out - so a
-            // reader curious what "Subcutaneous and oral" means can follow
-            // it to the sourced row instead of the summary label guessing
-            // at trial-design intent it was never given (source-and-entry-
-            // policy.md's "only as published" bars inventing that wording
-            // here).
-            <Link
-              key={entry.route}
-              href={`/assets?route=${encodeURIComponent(entry.route)}`}
-              aria-label={`${entry.route}: ${entry.count} programs (${Math.round(
-                entry.share * 100,
-              )}%) — open in Program Register`}
-              className="-mx-2 block rounded-sm px-2 py-1 transition hover:bg-muted/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            >
-              <DistributionBar
-                label={entry.route}
-                count={entry.count}
-                share={entry.share}
-              />
-            </Link>
-          ))
-        ) : (
-          <p className="text-sm text-muted-foreground">No programs to display.</p>
-        )}
-      </div>
+      {entries.length > 0 ? (
+        <MixStack
+          ariaLabel="Programs by administration route"
+          entries={entries.map((entry, index) => ({
+            key: entry.route,
+            label: entry.route,
+            count: entry.count,
+            share: entry.share,
+            color: colors[index % colors.length],
+            href: `/assets?route=${encodeURIComponent(entry.route)}`,
+          }))}
+        />
+      ) : (
+        <p className="px-5 py-10 text-center text-sm text-muted-foreground">
+          No programs to display.
+        </p>
+      )}
     </CollapsibleSection>
   );
 }

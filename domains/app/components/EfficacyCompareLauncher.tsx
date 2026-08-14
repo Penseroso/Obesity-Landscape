@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { EfficacyCompareChart } from "@/domains/app/components/EfficacyCompareChart";
 import { EfficacyProgramPicker } from "@/domains/app/components/EfficacyProgramPicker";
+import { Button } from "@/domains/app/components/ui/Button";
 import type {
   EfficacyComparisonRow,
   EfficacyFamilyGroup,
@@ -60,10 +61,11 @@ export function EfficacyCompareLauncher({
 
   return (
     <>
-      <button
-        type="button"
+      <Button
+        variant="primary"
+        size="md"
         onClick={() => setMode("picker")}
-        className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-card px-3.5 py-2 text-sm font-semibold text-card-foreground shadow-soft transition hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        className="shrink-0"
       >
         Compare programs
         {selected.size > 0 ? (
@@ -71,7 +73,7 @@ export function EfficacyCompareLauncher({
             {selected.size}
           </span>
         ) : null}
-      </button>
+      </Button>
 
       {mode === "picker" ? (
         <EfficacyProgramPicker

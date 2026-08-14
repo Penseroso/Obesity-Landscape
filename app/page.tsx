@@ -31,15 +31,12 @@ export default function OverviewPage() {
   const efficacyComparison = getEfficacyComparison();
 
   return (
-    <div className="space-y-6 pb-10">
-      <section>
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          Pipeline intelligence
-        </p>
-        <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+    <div className="space-y-10 pb-12">
+      <section className="max-w-4xl pt-2">
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Obesity Landscape
         </h1>
-        <p className="mt-4 max-w-none text-base leading-7 text-muted-foreground">
+        <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">
           Tracks companies and development programs across the competitive obesity landscape as company source records are added.
         </p>
       </section>
@@ -52,21 +49,23 @@ export default function OverviewPage() {
       />
 
       {efficacyComparison.totalUnits > 0 ? (
-        <section className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-border bg-card px-5 py-4 shadow-soft">
-          <p className="text-sm text-card-foreground">
-            Compare reported body-weight reduction across{" "}
-            <span className="font-semibold tabular-nums text-primary">
-              {efficacyComparison.totalUnits}
-            </span>{" "}
-            eligible programs.
-          </p>
+        <section className="grid gap-5 rounded-md bg-accent px-5 py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:px-6">
+          <div>
+            <h2 className="text-lg font-semibold tracking-tight text-accent-foreground">
+              Compare reported efficacy
+            </h2>
+            <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">
+              Build a cross-family chart from {efficacyComparison.totalUnits} eligible
+              programs while keeping each source-reported dose and duration visible.
+            </p>
+          </div>
           <EfficacyCompareLauncher families={efficacyComparison.families} />
         </section>
       ) : null}
 
       <CompanyStageMatrix matrix={stageMatrix} />
 
-      <section className="grid items-stretch gap-6 md:grid-cols-2">
+      <section className="grid items-start gap-6 lg:grid-cols-2">
         <RouteMixPanel entries={routeDistribution} />
         <MechanismMixPanel entries={mechanismMix} />
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Modal } from "@/domains/app/components/Modal";
+import { Button } from "@/domains/app/components/ui/Button";
 import type { EfficacyFamilyGroup } from "@/domains/app/lib/efficacy-comparison/read-model";
 
 export const EFFICACY_COMPARE_MAX_SELECTION = 5;
@@ -73,14 +74,14 @@ export function EfficacyProgramPicker({
         <span className="text-sm text-muted-foreground">
           {selected.size} / {EFFICACY_COMPARE_MAX_SELECTION} selected
         </span>
-        <button
-          type="button"
+        <Button
+          variant="primary"
           onClick={onCompare}
           disabled={selected.size === 0}
-          className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="disabled:cursor-not-allowed disabled:opacity-50"
         >
           Compare
-        </button>
+        </Button>
       </div>
     </Modal>
   );

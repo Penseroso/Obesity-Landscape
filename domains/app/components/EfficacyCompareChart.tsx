@@ -415,7 +415,11 @@ export function EfficacyCompareChart({ rows, onClose }: EfficacyCompareChartProp
   }, []);
 
   return (
-    <Modal title="Efficacy comparison" onClose={onClose} sizeClassName="w-[50vw] h-[75vh] max-w-[50vw]">
+    <Modal
+      title="Efficacy comparison"
+      onClose={onClose}
+      sizeClassName="h-[75vh] w-[calc(100vw-2rem)] max-w-4xl sm:w-[80vw] lg:w-[60vw] xl:w-[50vw]"
+    >
       <div className="flex h-full flex-col">
         <div className="mb-4 flex shrink-0 flex-wrap items-center gap-4">
           {rows.map((row, index) => (

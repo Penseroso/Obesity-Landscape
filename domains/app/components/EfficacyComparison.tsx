@@ -168,27 +168,19 @@ function ValueList({
   values: { value: string; unit: string; label: string; dose?: string; outcomeId: string }[];
 }) {
   return (
-    <table className="w-full max-w-md border-collapse text-sm">
-      <thead className="sr-only">
-        <tr>
-          <th scope="col">Dose</th>
-          <th scope="col">Result</th>
-        </tr>
-      </thead>
-      <tbody>
-        {values.map((value) => (
-          <tr key={value.outcomeId}>
-            <td className="py-1 pr-4 align-baseline text-xs text-muted-foreground">
+    <ul className="space-y-1.5 text-sm">
+      {values.map((value) => (
+        <li key={value.outcomeId} className="grid grid-cols-[minmax(0,1fr)_auto] gap-3">
+          <span className="text-xs leading-5 text-muted-foreground">
               {value.label}
               <DoseCaption label={value.label} dose={value.dose} />
-            </td>
-            <td className="py-1 text-right align-baseline">
-              <ValueNumber value={value.value} unit={value.unit} />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </span>
+          <span className="text-right leading-5">
+            <ValueNumber value={value.value} unit={value.unit} />
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -232,10 +224,9 @@ function HeadToHeadEntity({ entity }: { entity: ComparisonEntity }) {
  */
 function HeadToHeadEntry({ group }: { group: HeadToHeadGroup }) {
   return (
-    <li className="border-t border-border px-5 py-4 first:border-t-0">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div className="min-w-0">
-          <h3 className="flex flex-wrap items-center gap-2 text-base font-semibold text-card-foreground">
+    <tr className="border-t border-border/80 align-top first:border-t-0">
+      <th scope="row" className="w-[24%] px-4 py-4 text-left font-normal">
+          <span className="flex flex-wrap items-center gap-2 text-sm font-semibold text-card-foreground">
             {group.entities.map((item, index) => (
               <span key={item.entity.key} className="inline-flex items-center gap-2">
                 {index > 0 ? (
@@ -245,24 +236,17 @@ function HeadToHeadEntry({ group }: { group: HeadToHeadGroup }) {
               </span>
             ))}
             <span className={phaseBadgeClass(group.phase)}>{group.phase}</span>
-          </h3>
-        </div>
-        <EfficacySelectionDetails
-          facts={[
-            { label: "Study", value: group.studyTitle, href: group.href },
-            { label: "Endpoint", value: group.endpointName },
-            { label: "Timepoint", value: group.assessmentTimepoint },
-            { label: "Duration", value: formatNullableValue(group.duration) },
-            { label: "Population", value: group.population },
-          ]}
-        />
-      </div>
-
-      <p className="mt-2 text-xs text-muted-foreground">
-        {group.endpointName} · {group.assessmentTimepoint}
-      </p>
-
-      <ul className="mt-1.5 space-y-1">
+          </span>
+        <span className="mt-2 block text-xs font-normal leading-5 text-muted-foreground">
+          {group.endpointName} &middot; {group.assessmentTimepoint}
+        </span>
+      </th>
+      <td className="w-[18%] px-4 py-4 text-xs leading-5 text-muted-foreground">
+        <span className="block text-foreground">{group.population}</span>
+        <span className="block">{formatNullableValue(group.duration)}</span>
+      </td>
+      <td className="w-[28%] px-4 py-4">
+      <ul className="space-y-1.5">
         {group.entities.map((item) => (
           <li
             key={item.entity.key}
@@ -285,13 +269,10 @@ function HeadToHeadEntry({ group }: { group: HeadToHeadGroup }) {
           </li>
         ))}
       </ul>
-
+      </td>
+      <td className="w-[24%] px-4 py-4">
       {group.betweenArm.length > 0 ? (
-        <div className="mt-3">
-          <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-            Between-arm estimate, as reported
-          </p>
-          <ul className="mt-1 space-y-1">
+          <ul className="space-y-1.5">
             {group.betweenArm.flatMap((pair) =>
               pair.values.map((value) => (
                 <li key={value.outcomeId} className="text-sm">
@@ -312,9 +293,22 @@ function HeadToHeadEntry({ group }: { group: HeadToHeadGroup }) {
               )),
             )}
           </ul>
-        </div>
-      ) : null}
-    </li>
+      ) : (
+        <span className="text-sm italic text-muted-foreground">Not reported</span>
+      )}
+      </td>
+      <td className="w-14 px-3 py-4 text-right">
+        <EfficacySelectionDetails
+          facts={[
+            { label: "Study", value: group.studyTitle, href: group.href },
+            { label: "Endpoint", value: group.endpointName },
+            { label: "Timepoint", value: group.assessmentTimepoint },
+            { label: "Duration", value: formatNullableValue(group.duration) },
+            { label: "Population", value: group.population },
+          ]}
+        />
+      </td>
+    </tr>
   );
 }
 
@@ -322,10 +316,9 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
   const { evidence } = row;
 
   return (
-    <li className="border-t border-border px-5 py-4 first:border-t-0">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div className="min-w-0">
-          <h3 className="flex flex-wrap items-center gap-2 text-base font-semibold text-card-foreground">
+    <tr className="border-t border-border/80 align-top first:border-t-0 hover:bg-muted/20">
+      <th scope="row" className="w-[20%] px-4 py-4 text-left font-normal">
+          <span className="block text-sm font-semibold leading-5 text-card-foreground">
             {row.href ? (
               <Link href={row.href} className={`rounded-sm hover:text-primary hover:underline ${focusRing}`}>
                 {row.name}
@@ -333,11 +326,8 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
             ) : (
               row.name
             )}
-            <span className={phaseBadgeClass(evidence.phase)}>
-              {evidence.phase}
-            </span>
-          </h3>
-          <p className="mt-0.5 text-xs text-muted-foreground">
+          </span>
+          <span className="mt-1 block text-xs leading-5 text-muted-foreground">
             {row.unitKind === "global-asset" ? "Selected evidence: " : null}
             <Link
               href={`/companies/${row.companyId}`}
@@ -346,8 +336,75 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
               {row.companyName}
             </Link>
             {row.mechanism ? <> &middot; {row.mechanism}</> : null}
-          </p>
-        </div>
+          </span>
+      </th>
+      <td className="w-[16%] px-4 py-4">
+        <span className={phaseBadgeClass(evidence.phase)}>{evidence.phase}</span>
+        <span className="mt-2 block text-xs leading-5 text-foreground">
+          {evidence.population}
+        </span>
+        <span className="block text-xs leading-5 text-muted-foreground">
+          {evidence.assessmentTimepoint}
+          {evidence.duration ? <> &middot; {evidence.duration}</> : null}
+        </span>
+      </td>
+      <td className="w-[24%] px-4 py-4">
+        <ValueList values={evidence.treatmentValues} />
+      </td>
+      <td className="w-[20%] px-4 py-4">
+        {evidence.placeboValues.length > 0 ||
+        evidence.activeComparatorValues.length > 0 ? (
+              <ul className="space-y-1.5 text-sm">
+                  {evidence.placeboValues.map((value) => (
+                    <li key={value.outcomeId} className="grid grid-cols-[minmax(0,1fr)_auto] gap-3">
+                      <span>
+                        <span className="font-medium text-card-foreground">Placebo</span>
+                        <span className="block text-xs text-muted-foreground">
+                          Placebo reference
+                        </span>
+                      </span>
+                      <span className="text-right">
+                        <ValueNumber value={value.value} unit={value.unit} />
+                      </span>
+                    </li>
+                  ))}
+                  {evidence.activeComparatorValues.map((value) => (
+                    <li key={value.outcomeId} className="grid grid-cols-[minmax(0,1fr)_auto] gap-3">
+                      <span>
+                        <span className="font-medium text-card-foreground">{value.label}</span>
+                        <span className="block text-xs text-muted-foreground">
+                          Active comparator
+                        </span>
+                        <DoseCaption label={value.label} dose={value.dose} />
+                      </span>
+                      <span className="text-right">
+                        <ValueNumber value={value.value} unit={value.unit} />
+                      </span>
+                    </li>
+                  ))}
+              </ul>
+        ) : (
+          <span className="text-sm italic text-muted-foreground">Not reported</span>
+        )}
+      </td>
+      <td className="w-[15%] px-4 py-4">
+        {evidence.storedBetweenArmValues.length > 0 ? (
+              <ul className="space-y-1">
+                {evidence.storedBetweenArmValues.map((value) => (
+                  <li key={value.outcomeId} className="text-sm">
+                    <ValueNumber value={value.value} unit={value.unit} />
+                    <span className="block text-xs text-muted-foreground">
+                      {formatNullableValue(value.comparisonType ?? value.effectMeasure)}
+                      {value.confidenceInterval ? <> &middot; {value.confidenceInterval}</> : null}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+        ) : (
+          <span className="text-sm italic text-muted-foreground">Not reported</span>
+        )}
+      </td>
+      <td className="w-14 px-3 py-4 text-right">
         <EfficacySelectionDetails
           facts={[
             {
@@ -365,12 +422,7 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
               : []),
             { label: "Study region", value: evidence.studyRegion },
             ...(evidence.developmentScope
-              ? [
-                  {
-                    label: "Development scope",
-                    value: evidence.developmentScope,
-                  },
-                ]
+              ? [{ label: "Development scope", value: evidence.developmentScope }]
               : []),
             { label: "Endpoint", value: evidence.endpointName },
             { label: "Endpoint role", value: evidence.endpointRole },
@@ -383,88 +435,8 @@ function ComparisonRow({ row }: { row: EfficacyComparisonRow }) {
             { label: "Evidence maturity", value: evidence.groupMaturities.join(", ") },
           ]}
         />
-      </div>
-
-      <dl className="mt-3 grid gap-3 sm:grid-cols-2">
-        <div className="sm:col-span-2">
-          <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-            Change from baseline in body weight ({evidence.assessmentTimepoint})
-          </dt>
-          <dd className="mt-1.5">
-            <ValueList values={evidence.treatmentValues} />
-          </dd>
-        </div>
-
-        {evidence.placeboValues.length > 0 ||
-        evidence.activeComparatorValues.length > 0 ? (
-          <div>
-            <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-              Same-group reference
-            </dt>
-            <dd className="mt-1.5">
-              <table className="w-full max-w-md border-collapse text-sm">
-                <thead className="sr-only">
-                  <tr>
-                    <th scope="col">Reference</th>
-                    <th scope="col">Result</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {evidence.placeboValues.map((value) => (
-                    <tr key={value.outcomeId}>
-                      <td className="py-1 pr-4 align-baseline">
-                        <span className="font-medium text-card-foreground">Placebo</span>
-                        <span className="block text-xs text-muted-foreground">
-                          Placebo reference
-                        </span>
-                      </td>
-                      <td className="py-1 text-right align-baseline">
-                        <ValueNumber value={value.value} unit={value.unit} />
-                      </td>
-                    </tr>
-                  ))}
-                  {evidence.activeComparatorValues.map((value) => (
-                    <tr key={value.outcomeId}>
-                      <td className="py-1 pr-4 align-baseline">
-                        <span className="font-medium text-card-foreground">{value.label}</span>
-                        <span className="block text-xs text-muted-foreground">
-                          Active comparator
-                        </span>
-                        <DoseCaption label={value.label} dose={value.dose} />
-                      </td>
-                      <td className="py-1 text-right align-baseline">
-                        <ValueNumber value={value.value} unit={value.unit} />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </dd>
-          </div>
-        ) : null}
-
-        {evidence.storedBetweenArmValues.length > 0 ? (
-          <div>
-            <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-              Between-arm estimate, as reported
-            </dt>
-            <dd className="mt-1.5">
-              <ul className="space-y-1">
-                {evidence.storedBetweenArmValues.map((value) => (
-                  <li key={value.outcomeId} className="text-sm">
-                    <ValueNumber value={value.value} unit={value.unit} />
-                    <span className="block text-xs text-muted-foreground">
-                      {formatNullableValue(value.comparisonType ?? value.effectMeasure)}
-                      {value.confidenceInterval ? <> &middot; {value.confidenceInterval}</> : null}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-        ) : null}
-      </dl>
-    </li>
+      </td>
+    </tr>
   );
 }
 
@@ -500,48 +472,56 @@ export function EfficacyComparison({
   );
 
   return (
-    <div className="space-y-6 pb-10">
-      <section className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            Clinical evidence
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+    <div className="space-y-10 pb-12">
+      <section className="grid gap-7 pt-2 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.52fr)] lg:items-end">
+        <div className="max-w-3xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Efficacy Comparison
           </h1>
-          <p className="mt-2 max-w-none text-sm text-muted-foreground">
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
             Reported body-weight reduction by mechanism family, for assets and registered combination products with a recorded percent-change result.
           </p>
         </div>
         {rowCount > 0 ? (
-          <EfficacyCompareLauncher
-            families={view.families}
-            initialSelectedUnitKeys={
-              initialSelectedUnitKey ? [initialSelectedUnitKey] : undefined
-            }
-            initialOpen={initialOpen}
-          />
+          <div className="rounded-md bg-accent px-5 py-5">
+            <h2 className="text-base font-semibold text-accent-foreground">
+              Build a cross-program chart
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-muted-foreground">
+              Select up to five programs. Dose and duration stay attached to every
+              source-reported value.
+            </p>
+            <div className="mt-4">
+              <EfficacyCompareLauncher
+                families={view.families}
+                initialSelectedUnitKeys={
+                  initialSelectedUnitKey ? [initialSelectedUnitKey] : undefined
+                }
+                initialOpen={initialOpen}
+              />
+            </div>
+          </div>
         ) : null}
       </section>
 
       {rowCount > 0 ? (
         <nav
           aria-label="Jump to a mechanism family"
-          className="flex gap-2 overflow-x-auto pb-1"
+          className="flex gap-6 overflow-x-auto border-b border-border pb-0"
         >
           {view.families.map((group) => (
             <a
               key={group.family.id}
               href={`#family-${group.family.id}`}
               title={group.family.label}
-              className={`shrink-0 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition hover:bg-muted hover:text-foreground ${focusRing}`}
+              className={`shrink-0 border-b-2 border-transparent px-0 py-2.5 text-xs font-medium text-muted-foreground transition hover:border-primary hover:text-foreground ${focusRing}`}
             >
               {shortFamilyLabel(group.family.label)}
             </a>
           ))}
           <a
             href="#head-to-head"
-            className={`shrink-0 rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition hover:bg-muted hover:text-foreground ${focusRing}`}
+            className={`shrink-0 border-b-2 border-transparent px-0 py-2.5 text-xs font-medium text-muted-foreground transition hover:border-primary hover:text-foreground ${focusRing}`}
           >
             Head-to-head
           </a>
@@ -566,25 +546,40 @@ export function EfficacyComparison({
                 ? "Multi-component product"
                 : "Single molecule"
             }
+            appearance="plain"
           >
-            <ul>
-              {group.rows.map((row) => (
-                <ComparisonRow key={row.unitKey} row={row} />
-              ))}
-            </ul>
+            <div className="overflow-x-auto border-y border-border bg-card">
+              <table className="w-full min-w-[1120px] border-collapse text-left">
+                <thead className="bg-muted/70 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
+                  <tr>
+                    <th scope="col" className="px-4 py-3 font-semibold">Program</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Evidence</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Reported dose values</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Same-group reference</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Between-arm</th>
+                    <th scope="col" className="px-3 py-3 text-right font-semibold">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.rows.map((row) => (
+                    <ComparisonRow key={row.unitKey} row={row} />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </CollapsibleSection>
         ))
       )}
 
       <section
         id="head-to-head"
-        className="scroll-mt-20 rounded-md border border-border bg-card shadow-soft"
+        className="scroll-mt-20 rounded-md bg-accent px-5 py-6 sm:px-6"
       >
-        <div className="border-b border-border px-5 py-4">
-          <h2 className="text-base font-semibold text-card-foreground">
+        <div className="max-w-3xl">
+          <h2 className="text-xl font-semibold tracking-tight text-accent-foreground">
             Head-to-head
           </h2>
-          <p className="mt-0.5 text-sm text-muted-foreground">
+          <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
             Direct comparisons a single trial reported between two products. These are
             separate from the cross-trial rows above &mdash; the comparison is internal
             to one study, so a diabetic or maintenance population does not disqualify
@@ -597,14 +592,27 @@ export function EfficacyComparison({
             description="No trial with recorded body-weight evidence reported a direct comparison between two products."
           />
         ) : (
-          <ul>
-            {view.headToHead.map((group) => (
-              <HeadToHeadEntry
-                key={`${group.studyId}:${group.endpointName}`}
-                group={group}
-              />
-            ))}
-          </ul>
+          <div className="mt-5 overflow-x-auto border-y border-border bg-card/80">
+            <table className="w-full min-w-[900px] border-collapse text-left">
+              <thead className="bg-muted/70 text-[11px] uppercase tracking-[0.1em] text-muted-foreground">
+                <tr>
+                  <th scope="col" className="px-4 py-3 font-semibold">Direct comparison</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Evidence axis</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Arm-level values</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Between-arm</th>
+                  <th scope="col" className="px-3 py-3 text-right font-semibold">Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                {view.headToHead.map((group) => (
+                  <HeadToHeadEntry
+                    key={`${group.studyId}:${group.endpointName}`}
+                    group={group}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </section>
     </div>

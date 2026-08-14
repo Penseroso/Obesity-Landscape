@@ -8,6 +8,7 @@ type CollapsibleSectionProps = {
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   defaultOpen?: boolean;
+  appearance?: "card" | "plain";
   children: React.ReactNode;
 };
 
@@ -30,6 +31,7 @@ export function CollapsibleSection({
   title,
   subtitle,
   defaultOpen = true,
+  appearance = "card",
   children,
 }: CollapsibleSectionProps) {
   const [open, setOpen] = useState(defaultOpen);
@@ -38,15 +40,25 @@ export function CollapsibleSection({
   return (
     <section
       id={id}
-      className="scroll-mt-20 rounded-md border border-border bg-card shadow-soft"
+      className={
+        appearance === "plain"
+          ? "scroll-mt-20 border-t border-border"
+          : "scroll-mt-20 rounded-md border border-border bg-card shadow-soft"
+      }
     >
-      <h2 className={`m-0 ${open ? "border-b border-border" : ""}`}>
+      <h2
+        className={`m-0 ${
+          open && appearance === "card" ? "border-b border-border" : ""
+        }`}
+      >
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-controls={bodyId}
-          className="flex w-full items-start gap-2 rounded-t-md px-5 py-4 text-left transition hover:bg-muted/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className={`flex w-full items-start gap-2 text-left transition hover:bg-muted/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+            appearance === "plain" ? "px-0 py-5" : "rounded-t-md px-5 py-4"
+          }`}
         >
           <span aria-hidden="true" className="mt-1 shrink-0 text-muted-foreground">
             {open ? (
@@ -56,7 +68,11 @@ export function CollapsibleSection({
             )}
           </span>
           <span className="min-w-0">
-            <span className="block text-base font-semibold text-card-foreground">
+            <span
+              className={`block font-semibold tracking-tight text-card-foreground ${
+                appearance === "plain" ? "text-xl" : "text-base"
+              }`}
+            >
               {title}
             </span>
             {subtitle ? (

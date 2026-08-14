@@ -1,11 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { CollapsibleSection } from "./CollapsibleSection";
+import { MixStack } from "./MixStack";
 import type { MechanismMixEntry } from "@/domains/company-pipeline/lib/selectors";
-import { donutWedgePath, layoutDonutSlices } from "@/domains/app/lib/donut-geometry";
 
 type MechanismMixPanelProps = {
   entries: MechanismMixEntry[];
@@ -59,28 +56,7 @@ function hrefForEntry(entry: MechanismMixEntry): string | null {
   return null;
 }
 
-const SIZE = 176;
-const CENTER = SIZE / 2;
-const OUTER_R = 80;
-const INNER_R = 50;
-const GAP_DEG = 2.5;
-
 export function MechanismMixPanel({ entries }: MechanismMixPanelProps) {
-  const router = useRouter();
-  const [activeKey, setActiveKey] = useState<string | null>(null);
-
-  const slices = layoutDonutSlices(entries);
-  const segments = entries.map((entry, index) => ({
-    entry,
-    color: colorForEntry(entry, index),
-    slice: slices[index],
-    href: hrefForEntry(entry),
-  }));
-  const activeEntry = entries.find((entry) => entry.key === activeKey) ?? null;
-  const total = entries.reduce((sum, entry) => sum + entry.count, 0);
-
-  const clear = () => setActiveKey(null);
-
   return (
     <CollapsibleSection
       id="mechanism-mix"
@@ -88,120 +64,19 @@ export function MechanismMixPanel({ entries }: MechanismMixPanelProps) {
       subtitle="Programs by mechanism family."
       defaultOpen={false}
     >
-      {segments.length > 0 ? (
-        <div className="flex flex-col items-center gap-3 px-5 py-4">
-          <div className="relative">
-            <svg
-              width={SIZE}
-              height={SIZE}
-              viewBox={`0 0 ${SIZE} ${SIZE}`}
-              role="img"
-              aria-label="Programs by mechanism family"
-            >
-              {segments.map(({ entry, color, slice, href }) => (
-                <path
-                  key={entry.key}
-                  d={donutWedgePath(
-                    CENTER,
-                    CENTER,
-                    INNER_R,
-                    OUTER_R,
-                    slice.startAngle,
-                    slice.endAngle,
-                    GAP_DEG,
-                  )}
-                  fill={color}
-                  stroke={activeKey === entry.key ? "hsl(var(--card))" : "none"}
-                  strokeWidth={activeKey === entry.key ? 3 : 0}
-                  opacity={activeKey === null || activeKey === entry.key ? 1 : 0.4}
-                  tabIndex={0}
-                  role={href ? "link" : undefined}
-                  aria-label={
-                    href
-                      ? `${entry.label}: ${entry.count} programs (${Math.round(entry.share * 100)}%) — open in Program Register`
-                      : undefined
-                  }
-                  className={`outline-none transition-opacity ${href ? "cursor-pointer" : ""}`}
-                  onMouseEnter={() => setActiveKey(entry.key)}
-                  onMouseLeave={clear}
-                  onFocus={() => setActiveKey(entry.key)}
-                  onBlur={clear}
-                  onClick={href ? () => router.push(href) : undefined}
-                  onKeyDown={
-                    href
-                      ? (event) => {
-                          if (event.key === "Enter" || event.key === " ") {
-                            event.preventDefault();
-                            router.push(href);
-                          }
-                        }
-                      : undefined
-                  }
-                >
-                  <title>{`${entry.label}: ${entry.count} programs (${Math.round(entry.share * 100)}%)`}</title>
-                </path>
-              ))}
-            </svg>
-            <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center">
-              <span className="text-xl font-semibold tabular-nums text-foreground">
-                {activeEntry ? activeEntry.count : total}
-              </span>
-              <span className="text-[11px] text-muted-foreground">
-                {activeEntry ? `${Math.round(activeEntry.share * 100)}%` : "programs"}
-              </span>
-            </div>
-          </div>
-          <p className="min-h-[1.25rem] text-center text-sm font-medium text-foreground">
-            {activeEntry ? activeEntry.label : " "}
-          </p>
-          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1.5">
-            {segments.map(({ entry, color, href }) => {
-              const itemClassName = `flex items-center gap-1.5 rounded-sm px-1 text-sm outline-none transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-                activeKey === entry.key ? "text-foreground" : "text-muted-foreground"
-              } ${href ? "hover:text-foreground" : ""}`;
-              const content = (
-                <>
-                  <span
-                    className="h-2.5 w-2.5 shrink-0 rounded-full"
-                    style={{ backgroundColor: color }}
-                    aria-hidden="true"
-                  />
-                  {entry.label}
-                  <span className="font-semibold tabular-nums text-primary">
-                    {entry.count}
-                  </span>
-                </>
-              );
-              return (
-                <li key={entry.key}>
-                  {href ? (
-                    <Link
-                      href={href}
-                      className={itemClassName}
-                      onMouseEnter={() => setActiveKey(entry.key)}
-                      onMouseLeave={clear}
-                      onFocus={() => setActiveKey(entry.key)}
-                      onBlur={clear}
-                    >
-                      {content}
-                    </Link>
-                  ) : (
-                    <button
-                      type="button"
-                      className={itemClassName}
-                      onMouseEnter={() => setActiveKey(entry.key)}
-                      onMouseLeave={clear}
-                      onFocus={() => setActiveKey(entry.key)}
-                      onBlur={clear}
-                    >
-                      {content}
-                    </button>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+      {entries.length > 0 ? (
+        <MixStack
+          ariaLabel="Programs by mechanism family"
+          activeStrokeColor="hsl(var(--card))"
+          entries={entries.map((entry, index) => ({
+            key: entry.key,
+            label: entry.label,
+            count: entry.count,
+            share: entry.share,
+            color: colorForEntry(entry, index),
+            href: hrefForEntry(entry) ?? undefined,
+          }))}
+        />
       ) : (
         <p className="px-5 py-10 text-center text-sm text-muted-foreground">
           No programs to display.
