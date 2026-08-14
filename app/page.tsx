@@ -32,11 +32,11 @@ export default function OverviewPage() {
 
   return (
     <div className="space-y-10 pb-12">
-      <section className="max-w-4xl pt-2">
+      <section className="pt-2">
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
           Obesity Landscape
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">
+        <p className="mt-4 text-base leading-7 text-muted-foreground">
           Tracks companies and development programs across the competitive obesity landscape as company source records are added.
         </p>
       </section>
@@ -54,7 +54,7 @@ export default function OverviewPage() {
             <h2 className="text-lg font-semibold tracking-tight text-accent-foreground">
               Compare reported efficacy
             </h2>
-            <p className="mt-1 max-w-2xl text-sm leading-6 text-muted-foreground">
+            <p className="mt-1 text-sm leading-6 text-muted-foreground">
               Build a cross-family chart from {efficacyComparison.totalUnits} eligible
               programs while keeping each source-reported dose and duration visible.
             </p>

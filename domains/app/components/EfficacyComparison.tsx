@@ -473,25 +473,26 @@ export function EfficacyComparison({
 
   return (
     <div className="space-y-10 pb-12">
-      <section className="grid gap-7 pt-2 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.52fr)] lg:items-end">
-        <div className="max-w-3xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+      <section className="pt-2">
+        <div>
+          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Efficacy Comparison
           </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
+          <p className="mt-4 text-base leading-7 text-muted-foreground">
             Reported body-weight reduction by mechanism family, for assets and registered combination products with a recorded percent-change result.
           </p>
         </div>
         {rowCount > 0 ? (
-          <div className="rounded-md bg-accent px-5 py-5">
-            <h2 className="text-base font-semibold text-accent-foreground">
-              Build a cross-program chart
-            </h2>
-            <p className="mt-1 text-sm leading-6 text-muted-foreground">
-              Select up to five programs. Dose and duration stay attached to every
-              source-reported value.
-            </p>
-            <div className="mt-4">
+          <div className="mt-8 grid gap-5 rounded-md bg-accent px-5 py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:px-6">
+            <div>
+              <h2 className="text-lg font-semibold tracking-tight text-accent-foreground">
+                Build a cross-program chart
+              </h2>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                Select up to five programs. Dose and duration stay attached to every source-reported value.
+              </p>
+            </div>
+            <div>
               <EfficacyCompareLauncher
                 families={view.families}
                 initialSelectedUnitKeys={
