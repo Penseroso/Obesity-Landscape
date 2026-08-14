@@ -2,6 +2,7 @@ import Link from "next/link";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StudyTable } from "@/domains/app/components/clinical/StudyTable";
 import { buttonVariants } from "@/domains/app/components/ui/Button";
+import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import type {
   AssetStudiesView,
   StudyFamilyGroupView,
@@ -71,15 +72,10 @@ export function AssetStudies({
 
   return (
     <div className="space-y-6 pb-10">
-      <section className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            Clinical evidence
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            {view.assetName}
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground">
+      <PageHeading
+        title={view.assetName}
+        meta={
+          <>
             <Link
               href={`/companies/${view.companyId}`}
               className="rounded-sm hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
@@ -92,9 +88,9 @@ export function AssetStudies({
                 {totalStudies} {totalStudies === 1 ? "study" : "studies"}
               </>
             ) : null}
-          </p>
-        </div>
-        {compareUnitKey ? (
+          </>
+        }
+        actions={compareUnitKey ? (
           <Link
             href={`/efficacy-comparison?unit=${encodeURIComponent(compareUnitKey)}&open=1`}
             className={buttonVariants({ variant: "outline" })}
@@ -102,7 +98,7 @@ export function AssetStudies({
             Compare efficacy
           </Link>
         ) : null}
-      </section>
+      />
 
       {hasStudies ? (
         <>

@@ -4,6 +4,7 @@ import { EfficacyCompareLauncher } from "@/domains/app/components/EfficacyCompar
 import { MechanismMixPanel } from "@/domains/app/components/MechanismMixPanel";
 import { OverviewMetadataStrip } from "@/domains/app/components/OverviewMetadataStrip";
 import { RouteMixPanel } from "@/domains/app/components/RouteMixPanel";
+import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import { getEfficacyComparison } from "@/domains/app/lib/efficacy-comparison/read-model";
 import { companies, pipelinePrograms } from "@/domains/company-pipeline/lib/data";
 import {
@@ -32,14 +33,10 @@ export default function OverviewPage() {
 
   return (
     <div className="space-y-10 pb-12">
-      <section className="pt-2">
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Obesity Landscape
-        </h1>
-        <p className="mt-4 text-base leading-7 text-muted-foreground">
-          Tracks companies and development programs across the competitive obesity landscape as company source records are added.
-        </p>
-      </section>
+      <PageHeading
+        title="Obesity Landscape"
+        description="Tracks companies and development programs across the competitive obesity landscape as company source records are added."
+      />
 
       <OverviewMetadataStrip
         companyCount={companies.length}

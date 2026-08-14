@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CollapsibleSection } from "@/domains/app/components/CollapsibleSection";
 import { EfficacyCompareLauncher } from "@/domains/app/components/EfficacyCompareLauncher";
+import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import { EmptyState } from "@/domains/app/components/EmptyState";
 import { EfficacySelectionDetails } from "@/domains/app/components/EfficacySelectionDetails";
 import { formatNullableValue } from "@/domains/app/lib/format";
@@ -474,14 +475,11 @@ export function EfficacyComparison({
   return (
     <div className="space-y-10 pb-12">
       <section className="pt-2">
-        <div>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Efficacy Comparison
-          </h1>
-          <p className="mt-4 text-base leading-7 text-muted-foreground">
-            Reported body-weight reduction by mechanism family, for assets and registered combination products with a recorded percent-change result.
-          </p>
-        </div>
+        <PageHeading
+          className="pt-0"
+          title="Efficacy Comparison"
+          description="Reported body-weight reduction by mechanism family, for assets and registered combination products with a recorded percent-change result."
+        />
         {rowCount > 0 ? (
           <div className="mt-8 grid gap-5 rounded-md bg-accent px-5 py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:px-6">
             <div>

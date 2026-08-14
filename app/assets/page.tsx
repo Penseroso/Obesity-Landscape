@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PipelineTable } from "@/domains/app/components/PipelineTable";
+import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import {
   getAssetClinicalRollup,
   getProgramStudyPreview,
@@ -36,17 +37,10 @@ const clinicalContextByProgramId: Record<string, AssetClinicalRollup> =
 export default function AssetsPage() {
   return (
     <div className="space-y-6 pb-10">
-      <section>
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          Program intelligence
-        </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Program Register
-        </h1>
-        <p className="mt-3 max-w-none text-sm leading-6 text-muted-foreground">
-          A searchable register of obesity landscape development programs.
-        </p>
-      </section>
+      <PageHeading
+        title="Program Register"
+        description="A searchable register of obesity landscape development programs."
+      />
       {/* PipelineTable reads drill-down filters from the URL via
           useSearchParams, which requires a Suspense boundary on this
           statically-rendered route. */}

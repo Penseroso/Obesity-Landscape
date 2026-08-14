@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SourceList } from "@/domains/app/components/SourceList";
 import { EndpointsSection } from "@/domains/app/components/clinical/EndpointsSection";
+import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import { formatNullableValue } from "@/domains/app/lib/format";
 import type {
   AnalysisGroupView,
@@ -268,29 +269,27 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
 
   return (
     <div className="space-y-6 pb-10">
-      <section>
+      <section className="pt-2">
         <Link
           href={`/assets/${asset.companyId}/${asset.assetId}`}
           className="text-sm font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           ← {asset.assetName}
         </Link>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          {study.acronym?.trim() || study.officialTitle}
-        </h1>
-        {study.acronym ? (
-          <p className="mt-2 text-sm text-muted-foreground">
-            {study.officialTitle}
-          </p>
-        ) : null}
-        <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          <span className="rounded-full border border-border bg-accent px-2.5 py-1 font-semibold text-accent-foreground">
-            {study.phase}
-          </span>
-          <span className="rounded-full border border-border bg-muted px-2.5 py-1 font-semibold text-muted-foreground">
-            {study.registryStatus.sourceStatus}
-          </span>
-        </div>
+        <PageHeading
+          className="pt-3"
+          title={study.acronym?.trim() || study.officialTitle}
+          description={study.acronym ? study.officialTitle : undefined}
+        >
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="rounded-full border border-border bg-accent px-2.5 py-1 font-semibold text-accent-foreground">
+              {study.phase}
+            </span>
+            <span className="rounded-full border border-border bg-muted px-2.5 py-1 font-semibold text-muted-foreground">
+              {study.registryStatus.sourceStatus}
+            </span>
+          </div>
+        </PageHeading>
       </section>
 
       <StudySectionNav hasAnalysisGroups={analysisGroups.length > 0} />

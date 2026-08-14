@@ -4,6 +4,7 @@ import { EmptyState } from "@/domains/app/components/EmptyState";
 import { StageBadge } from "@/domains/app/components/StageBadge";
 import { stageCountChipClassName } from "@/domains/app/components/StageCountChip";
 import { buttonVariants } from "@/domains/app/components/ui/Button";
+import { PageHeading } from "@/domains/app/components/ui/PageHeading";
 import type { CompanyDetailView } from "@/domains/app/lib/company-detail/read-model";
 import {
   getStageBucketId,
@@ -62,20 +63,12 @@ export function CompanyDetail({
         Back to Program Register
       </Link>
 
-      <section className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            Company portfolio
-          </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            {view.company.name}
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Headquarters: {view.company.headquartersCountry}
-          </p>
-        </div>
-        {view.company.officialWebsite || view.company.officialPipeline ? (
-          <div className="flex flex-wrap gap-2 sm:pt-1">
+      <PageHeading
+        title={view.company.name}
+        meta={<>Headquarters: {view.company.headquartersCountry}</>}
+        actions={
+          view.company.officialWebsite || view.company.officialPipeline ? (
+            <>
             {view.company.officialWebsite ? (
               <a
                 href={view.company.officialWebsite.url}
@@ -100,9 +93,10 @@ export function CompanyDetail({
                 <span aria-hidden="true">&#8599;</span>
               </a>
             ) : null}
-          </div>
-        ) : null}
-      </section>
+            </>
+          ) : null
+        }
+      />
 
       <CollapsibleSection
         id="stage-distribution"
