@@ -216,6 +216,13 @@ export type ClinicalEndpointRecord = {
   /** Legacy free-text descriptor. Superseded by role/domain; not a role authority. */
   classification?: string;
   assessmentTimepoint: string;
+  /**
+   * Machine-readable reading of `assessmentTimepoint`, in weeks on study drug from first
+   * dose. Required: explicitly `null` when the timepoint is a range, a mid-trial change
+   * window, or otherwise has no single on-drug week count — never omitted. Never a
+   * re-derived or recalculated figure; mirrors `ClinicalReportedResult.numericValue`.
+   */
+  assessmentTimepointWeeks: number | null;
 };
 
 export type ClinicalResultMaturity =

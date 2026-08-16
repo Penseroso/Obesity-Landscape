@@ -219,10 +219,17 @@ shared `comparisonGroupKeyOf` primitive.
   group) triple. Within a global asset group, an authored development-scope priority
   is applied first (global olatorepatide evidence before Hansoh's regional evidence),
   with ordinary ranking as fallback when the preferred scope has no eligible result.
-  The remaining keys are trial phase tier, endpoint role, estimand, analysis
-  population, source completeness, evidence maturity, then curated source order.
-  It is **selection, never calculation**: every rendered figure is a stored
-  `result.value` for a stored anchor.
+  The remaining keys are trial phase tier, estimand, a **duration tie-break**
+  (ADR-0068), endpoint role, analysis population, source completeness, evidence
+  maturity, then curated source order. It is **selection, never calculation**:
+  every rendered figure is a stored `result.value` for a stored anchor.
+- **Duration only decides between two candidates that already share a genuine,
+  reported estimand** (`Endpoint.assessmentTimepointWeeks`, ADR-0067); it is inert
+  when either side's duration is unrepresented (`null`) or when the shared
+  estimand rank is really two absent values coinciding, not a confirmed match.
+  When it fires, the longer on-drug timepoint wins over endpoint role — role
+  states how much statistical protection a trial's own hierarchy gave a result,
+  not how clinically informative its follow-up length is.
 - **Trial phase tier is feature-local**, not a Clinical Evidence authority.
   `study.phase` stays open free text; an unrecognised phase dispositions one
   candidate rather than failing data validation.

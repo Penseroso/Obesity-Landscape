@@ -268,6 +268,21 @@ model two timepoints as one Endpoint with two Outcomes: `assessmentTimepoint` is
 excluded from the outcome semantic key (see the Latest-Result Rule), so the second
 Outcome would be rejected as a duplicate semantic outcome.
 
+`assessmentTimepointWeeks` is **required**: the machine-readable reading of
+`assessmentTimepoint`, in weeks on study drug counted from first dose, or explicit
+`null` when the source text has no single on-drug week count (never omitted).
+Mirrors `result.numericValue`'s value/numericValue split, applied to the timepoint
+instead of the result. A plain `"Week N"` (drug starts at baseline) parses to `N`;
+so does a qualified form where the qualifier confirms drug and randomization start
+together, e.g. `"Week 72 of randomized treatment"` following a non-drug run-in. Use
+`null` for a range (`"Week 36 to Week 88"`), a mid-trial change window measured
+from a later baseline, or any timepoint where on-drug duration differs by arm —
+for example a randomized-withdrawal design's post-randomization endpoint, where
+one arm stayed on drug throughout and another switched to placebo, has no single
+answer to "how long was the drug administered." Never guess between two candidate
+numbers in a compound timepoint like `"Week 68 (48 weeks after randomization)"`;
+store `null` instead.
+
 **Outcome** is one reported result for a specific endpoint (which already carries
 the timepoint), analysis unit, analysis population, estimand, result type, and
 comparison type. It requires an outcome ID, `studyId`, `endpointId`, exactly one

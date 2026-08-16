@@ -20,6 +20,7 @@ import {
   getEndpointRoleRank,
   getEstimandRank,
   getMaturityRank,
+  UNRANKED_ESTIMAND_RANK,
 } from "./policy";
 
 /**
@@ -125,6 +126,8 @@ export type ScoredCandidate = {
   populationRank: number;
   sourceCount: number;
   maturityRank: number;
+  /** `endpoint.assessmentTimepointWeeks`, carried for the duration tie-break below. */
+  durationWeeks: number | null;
 };
 
 /**
@@ -148,7 +151,33 @@ export function scoreCandidate(candidate: EvidenceCandidate): ScoredCandidate {
     maturityRank: getBestMaturityRank(
       candidate.group.map((view) => view.outcome.maturity),
     ),
+    durationWeeks: candidate.endpoint.assessmentTimepointWeeks,
   };
+}
+
+/**
+ * Duration tie-break: when two candidates share a **genuine, reported**
+ * estimand, the longer on-drug timepoint wins over role — role states how
+ * much statistical protection *that trial's own hierarchy* gave a result,
+ * not how clinically informative its follow-up length is, and two results
+ * that already match on estimand are equally well-estimated in the sense
+ * that axis measures.
+ *
+ * Fires only when `estimandRank` is already tied (guaranteed by this
+ * function's position in `compareScoredCandidates`, re-checked here so the
+ * function is safe to call on its own) and that shared rank is not
+ * `UNRANKED_ESTIMAND_RANK` — two candidates that both simply omit an
+ * estimand are not a confirmed match, they are two unknowns that happen to
+ * sort the same, and letting duration decide on that coincidence would
+ * treat missing data as equivalence. Also inert when either side's duration
+ * is `null` (no single on-drug week count): a null is not "shorter", it is
+ * unrepresented, and a defeat on an unrepresented value would be a guess.
+ */
+function compareDurationTiebreak(a: ScoredCandidate, b: ScoredCandidate): number {
+  if (a.estimandRank !== b.estimandRank) return 0;
+  if (a.estimandRank === UNRANKED_ESTIMAND_RANK) return 0;
+  if (a.durationWeeks === null || b.durationWeeks === null) return 0;
+  return b.durationWeeks - a.durationWeeks;
 }
 
 /**
@@ -162,8 +191,9 @@ export function compareScoredCandidates(a: ScoredCandidate, b: ScoredCandidate):
   return (
     a.candidate.globalEvidencePriority - b.candidate.globalEvidencePriority ||
     a.candidate.phaseTier - b.candidate.phaseTier ||
-    a.endpointRoleRank - b.endpointRoleRank ||
     a.estimandRank - b.estimandRank ||
+    compareDurationTiebreak(a, b) ||
+    a.endpointRoleRank - b.endpointRoleRank ||
     a.populationRank - b.populationRank ||
     b.sourceCount - a.sourceCount ||
     a.maturityRank - b.maturityRank ||
@@ -233,13 +263,27 @@ function toValue(
 /**
  * Ranks candidates and builds the representative evidence for the winner.
  *
- * Keys, in order: authored global-development priority, phase tier, endpoint role,
- * estimand, analysis population, source completeness, maturity, then curated source
- * order. Maturity sits late deliberately — the
- * contract documents that it conflates finality with venue, so it is too coarse to
- * decide anything more meaningful. Duration and assessment timepoint are **not**
- * keys: both are free text ("Approximately 59 weeks", "Week 68 (48 weeks after
- * randomization)") and ranking them would mean parsing them.
+ * Keys, in order: authored global-development priority, phase tier, estimand, a
+ * duration tie-break (`compareDurationTiebreak`, fires only on a genuine shared
+ * estimand), endpoint role, analysis population, source completeness, maturity,
+ * then curated source order. Maturity sits late deliberately — the contract
+ * documents that it conflates finality with venue, so it is too coarse to decide
+ * anything more meaningful.
+ *
+ * Duration is `Endpoint.assessmentTimepointWeeks` (ADR-0067) — a required,
+ * authored, machine-readable field, not a parse of the free-text
+ * `assessmentTimepoint`; it is `null` wherever that text has no single on-drug
+ * week count, and `compareDurationTiebreak` is inert on a `null`.
+ *
+ * Role sits after the duration tie-break, not before (ADR-0068): role states
+ * how much statistical protection a trial's own hierarchy gave one result, not
+ * how clinically informative that result's follow-up length is. This moved 5
+ * units to a longer-duration result once every earlier key already tied. Three
+ * (retatrutide Phase 2, VISTA, GLORY-1) had a genuine role difference the old
+ * order let decide first; the other two (semaglutide subcutaneous and oral)
+ * had **matching role** across studies, where every key up to and including
+ * the old role position already tied and the previous pick was decided by
+ * curated source order alone — an authoring-sequence artifact, not evidence.
  */
 export function selectRepresentative(
   candidates: EvidenceCandidate[],

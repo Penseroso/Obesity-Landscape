@@ -334,7 +334,8 @@
       "name": "Percent change in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "fixture-endpoint-dr-weight",
@@ -342,7 +343,8 @@
       "name": "Percent change in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "fixture-endpoint-tp-weight-w72",
@@ -350,7 +352,8 @@
       "name": "Percent change in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "fixture-endpoint-tp-weight-w24",
@@ -358,7 +361,8 @@
       "name": "Percent change in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     }
   ],
   "outcomes": [

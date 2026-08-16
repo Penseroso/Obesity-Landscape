@@ -703,7 +703,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-resp5-w48",
@@ -711,7 +712,8 @@
       "name": "Proportion of participants achieving at least 5% body weight reduction",
       "role": "key-secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-resp10-w48",
@@ -719,7 +721,8 @@
       "name": "Proportion of participants achieving at least 10% body weight reduction",
       "role": "key-secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-resp15-w48",
@@ -727,7 +730,8 @@
       "name": "Proportion of participants achieving at least 15% body weight reduction",
       "role": "key-secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-resp20-w48",
@@ -735,7 +739,8 @@
       "name": "Proportion of participants achieving at least 20% body weight reduction",
       "role": "key-secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-resp25-w48",
@@ -743,7 +748,8 @@
       "name": "Proportion of participants achieving at least 25% body weight reduction",
       "role": "key-secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-resp30-w48",
@@ -751,7 +757,8 @@
       "name": "Proportion of participants achieving at least 30% body weight reduction",
       "role": "exploratory",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-bmi30-w48",
@@ -759,7 +766,8 @@
       "name": "Proportion of participants achieving resolution of obesity (BMI < 30 kg/m^2)",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-glucose-norm-w48",
@@ -767,7 +775,8 @@
       "name": "Proportion of participants with baseline prediabetes achieving normoglycemia",
       "role": "key-secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en101-sad-weight-d8",
@@ -775,7 +784,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Day 8"
+      "assessmentTimepoint": "Day 8",
+      "assessmentTimepointWeeks": 1.14
     },
     {
       "id": "en101-mad-weight-d29",
@@ -783,7 +793,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Day 29"
+      "assessmentTimepoint": "Day 29",
+      "assessmentTimepointWeeks": 4.14
     },
     {
       "id": "en101-md8-weight-w12",
@@ -791,7 +802,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "en101-md22-weight-w24",
@@ -799,7 +811,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "en101-md22-resp5-w24",
@@ -807,7 +820,8 @@
       "name": "Proportion of participants achieving greater than 5% body weight loss",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "en101-md22-resp10-w24",
@@ -815,7 +829,8 @@
       "name": "Proportion of participants achieving greater than 10% body weight loss",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "en101-md22-resp15-w24",
@@ -823,7 +838,8 @@
       "name": "Proportion of participants achieving greater than 15% body weight loss",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "en101-md22-resp20-w24",
@@ -831,7 +847,8 @@
       "name": "Proportion of participants achieving greater than 20% body weight loss",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "en101-md22-normoglycemia-w24",
@@ -839,7 +856,8 @@
       "name": "Proportion of participants with prediabetes at baseline achieving normoglycemia",
       "role": "secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "en101-t2d-hba1c-w12",
@@ -847,7 +865,8 @@
       "name": "Change from baseline in HbA1c",
       "role": "secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "en101-t2d-hba1c65-w12",
@@ -855,7 +874,8 @@
       "name": "Proportion of participants achieving HbA1c at or below 6.5%",
       "role": "other",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "en101-t2d-hba1c57-w12",
@@ -863,7 +883,8 @@
       "name": "Proportion of participants achieving HbA1c below 5.7%",
       "role": "other",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "en101-t2d-weightloss-w12",
@@ -871,7 +892,8 @@
       "name": "Percentage body weight loss",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "en101-t2d-resp5-w12",
@@ -879,7 +901,8 @@
       "name": "Proportion of participants achieving at least 5% body weight loss",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "en101-sad-sae",
@@ -887,7 +910,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "SAD treatment and follow-up period"
+      "assessmentTimepoint": "SAD treatment and follow-up period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "en101-sad-nausea",
@@ -895,7 +919,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "SAD treatment and follow-up period"
+      "assessmentTimepoint": "SAD treatment and follow-up period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "en101-sad-vomiting",
@@ -903,7 +928,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "SAD treatment and follow-up period"
+      "assessmentTimepoint": "SAD treatment and follow-up period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "en101-mad-sae",
@@ -911,7 +937,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "MAD treatment and follow-up period"
+      "assessmentTimepoint": "MAD treatment and follow-up period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "en101-mad-nausea",
@@ -919,7 +946,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "MAD treatment and follow-up period"
+      "assessmentTimepoint": "MAD treatment and follow-up period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "en101-mad-vomiting",
@@ -927,7 +955,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "MAD treatment and follow-up period"
+      "assessmentTimepoint": "MAD treatment and follow-up period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "en103-sae-w48",
@@ -935,7 +964,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-nausea-w48",
@@ -943,7 +973,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "en103-vomiting-w48",
@@ -951,7 +982,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     }
   ],
   "outcomes": [

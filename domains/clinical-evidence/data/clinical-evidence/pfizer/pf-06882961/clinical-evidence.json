@@ -422,7 +422,8 @@
       "name": "Change from baseline in body weight in participants with type 2 diabetes",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "danu-1008-weight-week12-obesity",
@@ -430,7 +431,8 @@
       "name": "Change from baseline in body weight in participants with obesity without diabetes",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "danu-1008-sae",
@@ -438,7 +440,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
+      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "danu-1008-nausea",
@@ -446,7 +449,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
+      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "danu-1008-vomiting",
@@ -454,7 +458,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)"
+      "assessmentTimepoint": "Baseline through follow-up (Day 112-119)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "danu-1019-weight-week26",
@@ -462,7 +467,8 @@
       "name": "Percent change from baseline in body weight at end of treatment",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 26"
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
     },
     {
       "id": "danu-1019-weight-week32",
@@ -470,7 +476,8 @@
       "name": "Percent change from baseline in body weight at end of treatment",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 32"
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
     },
     {
       "id": "danu-1019-responder5-week26",
@@ -478,7 +485,8 @@
       "name": "Participants achieving at least 5% body weight loss",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 26"
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
     },
     {
       "id": "danu-1019-responder5-week32",
@@ -486,7 +494,8 @@
       "name": "Participants achieving at least 5% body weight loss",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 32"
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
     },
     {
       "id": "danu-1019-sae",
@@ -494,7 +503,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
+      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "danu-1019-nausea",
@@ -502,7 +512,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
+      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "danu-1019-vomiting",
@@ -510,7 +521,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)"
+      "assessmentTimepoint": "From Day 1 through 28-35 days after last dose (maximum Week 31 for Cohorts 1 and 2; Week 37 for Cohort 3)",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [

@@ -427,7 +427,8 @@
       "name": "Percent change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Day 29"
+      "assessmentTimepoint": "Day 29",
+      "assessmentTimepointWeeks": 4.14
     },
     {
       "id": "ct996-glucose-auc-d28",
@@ -435,7 +436,8 @@
       "name": "Change from Day -1 to Day 28 in glucose AUC0-240min during a mixed meal tolerance test",
       "role": "secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Day 28"
+      "assessmentTimepoint": "Day 28",
+      "assessmentTimepointWeeks": 4
     },
     {
       "id": "ct996-insulin-auc-d28",
@@ -443,7 +445,8 @@
       "name": "Change from Day -1 to Day 28 in insulin AUC0-240min during a mixed meal tolerance test",
       "role": "secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Day 28"
+      "assessmentTimepoint": "Day 28",
+      "assessmentTimepointWeeks": 4
     },
     {
       "id": "ct996-sae-day58",
@@ -451,7 +454,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Through Day 58"
+      "assessmentTimepoint": "Through Day 58",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "ct996-nausea-day58",
@@ -459,7 +463,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Through Day 58"
+      "assessmentTimepoint": "Through Day 58",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "ct996-vomiting-day58",
@@ -467,7 +472,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Through Day 58"
+      "assessmentTimepoint": "Through Day 58",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [

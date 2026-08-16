@@ -1105,7 +1105,8 @@
       "name": "Percent change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-hba1c-w52",
@@ -1113,7 +1114,8 @@
       "name": "Change from baseline in hemoglobin A1c",
       "role": "secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-fasting-glucose-w52",
@@ -1121,7 +1123,8 @@
       "name": "Change from baseline in fasting plasma glucose",
       "role": "secondary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-sbp-w52",
@@ -1129,7 +1132,8 @@
       "name": "Change from baseline in systolic blood pressure",
       "role": "secondary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-triglycerides-w52",
@@ -1137,7 +1141,8 @@
       "name": "Percent change from baseline in triglycerides",
       "role": "secondary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-hs-crp-w52",
@@ -1145,7 +1150,8 @@
       "name": "Percent change from baseline in high-sensitivity C-reactive protein",
       "role": "secondary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-ldl-c-w52",
@@ -1153,7 +1159,8 @@
       "name": "Percent change from baseline in low-density lipoprotein cholesterol",
       "role": "secondary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-sae-w52",
@@ -1161,7 +1168,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-nausea-w52",
@@ -1169,7 +1177,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "mt-p2-endpoint-vomiting-w52",
@@ -1177,7 +1186,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     }
   ],
   "outcomes": [

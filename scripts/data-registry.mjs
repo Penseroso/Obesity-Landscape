@@ -2127,6 +2127,17 @@ function validateClinicalEndpoint(endpoint, context) {
   }
   assertOptionalNonEmptyString(endpoint.classification, `${context}: classification`);
   assert(isNonEmptyString(endpoint.assessmentTimepoint), `${context}: assessmentTimepoint is required`);
+  assert(
+    endpoint.assessmentTimepointWeeks !== undefined,
+    `${context}: assessmentTimepointWeeks is required; use null explicitly when the timepoint has no single on-drug week count`,
+  );
+  if (endpoint.assessmentTimepointWeeks !== null) {
+    assert(
+      typeof endpoint.assessmentTimepointWeeks === "number" &&
+        Number.isFinite(endpoint.assessmentTimepointWeeks),
+      `${context}: assessmentTimepointWeeks must be a finite number or null`,
+    );
+  }
 }
 
 function validateClinicalOutcomeResult(result, context, isAnalysisGroupAnchored) {
@@ -3226,6 +3237,12 @@ function validateClinicalEvidenceSyntheticFixtures() {
       );
       armLevel.result.responderThreshold = ">=5%";
     }],
+    // A timepoint with no single on-drug week count (a range, or a mid-trial change
+    // window that differs by arm) stores assessmentTimepointWeeks: null rather than a
+    // guessed number.
+    ["assessment-timepoint-weeks-null-validates", (fixture) => {
+      fixture.endpoints[0].assessmentTimepointWeeks = null;
+    }],
   ];
 
   for (const [name, mutate] of validExpectations) {
@@ -3314,6 +3331,7 @@ function validateClinicalEvidenceSyntheticFixtures() {
         id: "fixture-endpoint-without-outcome",
         name: "Percent change in body weight (secondary timepoint)",
         assessmentTimepoint: "Week 52",
+        assessmentTimepointWeeks: 52,
       });
     }],
     ["missing-arm-route", /route is required/, (fixture) => {
@@ -3568,6 +3586,12 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["non-numeric-numeric-value", /numericValue must be a finite number or null/, (fixture) => {
       fixture.outcomes[0].result.numericValue = "-8.0";
+    }],
+    ["missing-assessment-timepoint-weeks", /assessmentTimepointWeeks is required/, (fixture) => {
+      delete fixture.endpoints[0].assessmentTimepointWeeks;
+    }],
+    ["non-numeric-assessment-timepoint-weeks", /assessmentTimepointWeeks must be a finite number or null/, (fixture) => {
+      fixture.endpoints[0].assessmentTimepointWeeks = "24";
     }],
     // Endpoint role and domain (G14a/G17).
     ["unknown-endpoint-role", /endpoint role "Primary efficacy" is not allowed/, (fixture) => {

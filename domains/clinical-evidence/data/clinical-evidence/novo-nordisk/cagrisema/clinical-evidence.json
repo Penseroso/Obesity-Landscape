@@ -378,7 +378,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine1-weight-5pct-week68",
@@ -386,7 +387,8 @@
       "name": "Participants achieving at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine1-weight-20pct-week68",
@@ -394,7 +396,8 @@
       "name": "Participants achieving at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine1-weight-25pct-week68",
@@ -402,7 +405,8 @@
       "name": "Participants achieving at least 25% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine1-weight-30pct-week68",
@@ -410,7 +414,8 @@
       "name": "Participants achieving at least 30% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine1-sae-in-trial",
@@ -418,7 +423,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "In-trial period"
+      "assessmentTimepoint": "In-trial period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "redefine2-weight-week68",
@@ -426,7 +432,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine2-weight-5pct-week68",
@@ -434,7 +441,8 @@
       "name": "Participants achieving at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine2-weight-20pct-week68",
@@ -442,7 +450,8 @@
       "name": "Participants achieving at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "redefine2-weight-week20",
@@ -450,7 +459,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 20"
+      "assessmentTimepoint": "Week 20",
+      "assessmentTimepointWeeks": 20
     },
     {
       "id": "redefine2-sae-in-trial",
@@ -458,7 +468,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "In-trial period"
+      "assessmentTimepoint": "In-trial period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "redefine4-weight-week84",
@@ -466,7 +477,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 84"
+      "assessmentTimepoint": "Week 84",
+      "assessmentTimepointWeeks": 84
     }
   ],
   "outcomes": [

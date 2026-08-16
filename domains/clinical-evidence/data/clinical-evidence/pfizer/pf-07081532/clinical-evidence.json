@@ -263,7 +263,8 @@
       "name": "Percent change from baseline in body weight",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 20"
+      "assessmentTimepoint": "Week 20",
+      "assessmentTimepointWeeks": 20
     },
     {
       "id": "loti-obesity-nausea-through-follow-up",
@@ -271,7 +272,8 @@
       "name": "Participants with nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Through study follow-up"
+      "assessmentTimepoint": "Through study follow-up",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "loti-obesity-vomiting-through-follow-up",
@@ -279,7 +281,8 @@
       "name": "Participants with vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Through study follow-up"
+      "assessmentTimepoint": "Through study follow-up",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "loti-obesity-sae-through-follow-up",
@@ -287,7 +290,8 @@
       "name": "Participants with all-causality serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Through study follow-up"
+      "assessmentTimepoint": "Through study follow-up",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [

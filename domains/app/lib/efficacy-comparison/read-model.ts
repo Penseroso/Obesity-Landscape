@@ -16,7 +16,9 @@ import {
 } from "./candidates";
 import {
   buildChartDoseSeries,
+  buildChartTrajectorySeries,
   type ChartDosePoint,
+  type ChartTrajectorySeries,
   type ChartUnitAsset,
 } from "./chart-evidence";
 import { findHeadToHeadGroups, type HeadToHeadGroup } from "./head-to-head";
@@ -66,6 +68,12 @@ export type EfficacyComparisonRow = {
    * See `chart-evidence.ts`.
    */
   chartDoseSeries: ChartDosePoint[];
+  /**
+   * Chart-only weight-loss-over-time evidence: the richest same-(dose,
+   * estimand) series per dose, when one exists with 2+ timepoints. See
+   * `buildChartTrajectorySeries`. Additive, same as `chartDoseSeries`.
+   */
+  chartTrajectorySeries: ChartTrajectorySeries[];
 };
 
 export type EfficacyFamilyGroup = {
@@ -317,6 +325,11 @@ export function getEfficacyComparison(): EfficacyComparisonView {
       detailByStudyId,
       chartUnitAssets,
     );
+    const chartTrajectorySeries = buildChartTrajectorySeries(
+      candidates,
+      detailByStudyId,
+      chartUnitAssets,
+    );
 
     const row: EfficacyComparisonRow = {
       unitKey,
@@ -337,6 +350,7 @@ export function getEfficacyComparison(): EfficacyComparisonView {
           : href,
       evidence,
       chartDoseSeries,
+      chartTrajectorySeries,
     };
 
     const list = rowsByFamilyId.get(resolution.family.id);

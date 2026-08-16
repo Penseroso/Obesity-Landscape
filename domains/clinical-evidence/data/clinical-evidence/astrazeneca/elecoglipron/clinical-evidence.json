@@ -170,7 +170,8 @@
       "name": "Percent change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 26"
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
     },
     {
       "id": "vista-weight-loss-5-week26",
@@ -178,7 +179,8 @@
       "name": "Participants achieving at least 5% body weight loss",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 26"
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
     },
     {
       "id": "vista-body-weight-week36",
@@ -186,7 +188,8 @@
       "name": "Percent change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 36"
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
     },
     {
       "id": "vista-weight-loss-5-week36",
@@ -194,7 +197,8 @@
       "name": "Participants achieving at least 5% body weight loss",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 36"
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
     },
     {
       "id": "vista-weight-loss-10-week36",
@@ -202,7 +206,8 @@
       "name": "Participants achieving at least 10% body weight loss",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 36"
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
     },
     {
       "id": "vista-weight-loss-15-week36",
@@ -210,7 +215,8 @@
       "name": "Participants achieving at least 15% body weight loss",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 36"
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
     }
   ],
   "outcomes": [

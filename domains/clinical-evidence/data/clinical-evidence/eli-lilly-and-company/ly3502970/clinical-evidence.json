@@ -727,7 +727,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "attain2-weight-week72",
@@ -735,7 +736,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "attain1-sae-week72",
@@ -743,7 +745,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "attain2-sae-week72",
@@ -751,7 +754,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "attain2-nausea-week72",
@@ -759,7 +763,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "attain2-vomiting-week72",
@@ -767,7 +772,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     }
   ],
   "outcomes": [

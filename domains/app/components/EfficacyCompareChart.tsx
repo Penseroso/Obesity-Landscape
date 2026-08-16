@@ -2,16 +2,19 @@
 
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { ArrowLeftRight } from "lucide-react";
+import { ArrowLeftRight, ChartLine, ChartNoAxesColumn } from "lucide-react";
 import { Modal } from "@/domains/app/components/Modal";
 import type { ChartSourceRole } from "@/domains/app/lib/efficacy-comparison/chart-evidence";
 import type { EfficacyComparisonRow } from "@/domains/app/lib/efficacy-comparison/read-model";
+import type { ClinicalEndpointRole } from "@/domains/clinical-evidence/lib/types";
 
 type EfficacyCompareChartProps = {
   rows: EfficacyComparisonRow[];
   onEdit: () => void;
   onClose: () => void;
 };
+
+type ChartMode = "dose" | "trajectory";
 
 // Fixed pixel layout — chosen once, hardcoded, instead of a proportional band
 // scale: it's what lets "same asset" and "different asset" get two distinct,
@@ -51,6 +54,16 @@ const FIRST_BAR_GUTTER = 32;
 // name + timepoint) always has room, even when that program has only one or
 // two doses — otherwise a narrow bar cluster forces the name to truncate.
 const MIN_GROUP_WIDTH = 104;
+
+// Trajectory (duration-axis) mode's own layout constants — a different chart
+// shape (line + marker over weeks, not grouped bars over dose), so it gets
+// its own vertical/horizontal budget rather than reusing the dose-mode ones.
+const WEEK_PIXELS = 6;
+const TRAJECTORY_LEFT_PADDING = 16;
+const TRAJECTORY_RIGHT_LABEL_WIDTH = 64;
+const TRAJECTORY_TOP_PADDING = 16;
+const TRAJECTORY_BOTTOM_HEIGHT = 30;
+const TRAJECTORY_MARKER_RADIUS = 5;
 
 // Five hues, each visually distinct from the others and from the phase-tier
 // badge colors used elsewhere on this page — enough separation for up to
@@ -165,26 +178,33 @@ function extractDoseAxisLabel(label: string): string | null {
   return unit ? `${finalDose} ${unit}` : finalDose;
 }
 
-type ChartSlot = {
+/**
+ * The fields a tooltip needs to render, regardless of which chart mode
+ * produced the point. `PositionedSlot` (dose mode) and `TrajectoryPoint`
+ * (trajectory mode) each independently satisfy this shape, so the tooltip
+ * state, positioning effect, and portal below are written once and shared —
+ * only the *content* differs, not the mechanism.
+ */
+type TooltipSlot = {
   key: string;
   program: string;
   companyName: string;
-  /** Bar-local, never shared across a program's other bars — see
-   * `BAR_PROVENANCE_HEIGHT`'s comment. */
   phase: string;
   studyTitle: string;
   timepoint: string;
+  role: ClinicalEndpointRole;
+  estimand: string | null;
   sourceRole: ChartSourceRole;
   doseLabel: string;
-  /** The arm's stored `dose` text, when the read model resolved one and it
-   * says more than `doseLabel` already does — shown in the tooltip only. */
   doseDetail: string | null;
-  /** Full authored titration, shown in the tooltip. */
   titration: string | null;
-  doseAxisLabel: string;
   doseRaw: string;
-  doseNumeric: number;
   programIndex: number;
+};
+
+type ChartSlot = TooltipSlot & {
+  doseAxisLabel: string;
+  doseNumeric: number;
   doseIndex: number;
   doseCount: number;
 };
@@ -265,6 +285,8 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         studyTitle: point.studyTitle,
         phase: point.phase,
         timepoint: point.assessmentTimepoint,
+        role: point.role,
+        estimand: point.estimand ?? null,
         sourceRole: point.sourceRole,
       }))
       .filter(
@@ -287,6 +309,8 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
         phase: dose.phase,
         studyTitle: dose.studyTitle,
         timepoint: dose.timepoint,
+        role: dose.role,
+        estimand: dose.estimand,
         sourceRole: dose.sourceRole,
         doseLabel: dose.label,
         doseDetail:
@@ -315,7 +339,7 @@ function buildChartSlots(rows: EfficacyComparisonRow[]): ChartSlot[] {
 type PositionedSlot = ChartSlot & { x: number; groupX: number; groupWidth: number };
 
 type ChartTooltipState = {
-  slot: PositionedSlot;
+  slot: TooltipSlot;
   anchor: { left: number; right: number; top: number; bottom: number };
 };
 
@@ -396,7 +420,8 @@ function layoutSlots(
   return { positioned, groups, totalWidth: x };
 }
 
-/** A "nice" round step (1/2/5 × a power of ten) for ~4 y-axis gridlines. */
+/** A "nice" round step (1/2/5 × a power of ten) for ~4 axis gridlines. Used
+ * for both the dose chart's % axis and the trajectory chart's week axis. */
 function niceStep(maxAbs: number, targetTicks = 4): number {
   if (!Number.isFinite(maxAbs) || maxAbs <= 0) {
     return 1;
@@ -408,18 +433,124 @@ function niceStep(maxAbs: number, targetTicks = 4): number {
   return niceResidual * magnitude;
 }
 
+/**
+ * One dose's weight-loss-over-time trajectory, positioned for rendering.
+ * Sourced from `row.chartTrajectorySeries` (`chart-evidence.ts`), which
+ * already restricted each series to one dose's richest same-estimand group —
+ * this only adds plotting fields (numeric value, x-position) and drops any
+ * point whose value fails to parse, re-checking the 2-point floor afterward
+ * since a parse failure can shrink a series below it.
+ */
+type TrajectoryPoint = TooltipSlot & { weeks: number; numeric: number };
+
+type TrajectoryLine = {
+  programIndex: number;
+  doseIndex: number;
+  doseCount: number;
+  dose: string;
+  /** `dose`, disambiguated when another line in the same program resolves to
+   * the same nominal dose (retatrutide's "4 mg (2 mg starting dose)" versus
+   * "4 mg (4 mg starting dose)" — two distinct Arms, two distinct lines, but
+   * both display "4 mg" unless told apart). Reuses `escalationAxisLabel`, the
+   * same disambiguation the dose-axis chart already applies to its bars. */
+  lineLabel: string;
+  points: TrajectoryPoint[];
+};
+
+function buildTrajectoryLines(rows: EfficacyComparisonRow[]): TrajectoryLine[] {
+  const lines: TrajectoryLine[] = [];
+  rows.forEach((row, programIndex) => {
+    const seriesList = row.chartTrajectorySeries
+      .map((series) => {
+        const points = series.points
+          .map((point) => ({
+            key: point.outcomeId,
+            program: row.name,
+            companyName: row.companyName,
+            phase: point.phase,
+            studyTitle: point.studyTitle,
+            timepoint: point.assessmentTimepoint,
+            role: point.role,
+            estimand: point.estimand ?? null,
+            sourceRole: point.sourceRole,
+            doseLabel: point.label,
+            doseDetail:
+              point.doseSchedule ??
+              (point.dose &&
+              !point.label.toLowerCase().includes(point.dose.toLowerCase())
+                ? point.dose
+                : null),
+            titration: point.titration ?? null,
+            doseRaw: point.value,
+            programIndex,
+            weeks: point.assessmentTimepointWeeks ?? 0,
+            numeric: parsePercent(point.value),
+          }))
+          .filter(
+            (point): point is typeof point & { numeric: number } => point.numeric !== null,
+          )
+          .sort((a, b) => a.weeks - b.weeks);
+        return { dose: series.dose, points };
+      })
+      // A parse failure can drop a series below the 2-point floor
+      // `buildChartTrajectorySeries` already enforced on unparsed values.
+      .filter((series) => series.points.length >= 2);
+
+    const doseCounts = new Map<string, number>();
+    for (const series of seriesList) {
+      doseCounts.set(series.dose, (doseCounts.get(series.dose) ?? 0) + 1);
+    }
+
+    seriesList.forEach((series, doseIndex) => {
+      const anchor = series.points[series.points.length - 1];
+      const lineLabel =
+        (doseCounts.get(series.dose) ?? 0) > 1
+          ? escalationAxisLabel({
+              label: anchor.doseLabel,
+              dose: series.dose,
+              doseSchedule: anchor.doseDetail ?? undefined,
+              titration: anchor.titration ?? undefined,
+            }) ?? series.dose
+          : series.dose;
+      lines.push({
+        programIndex,
+        doseIndex,
+        doseCount: seriesList.length,
+        dose: series.dose,
+        lineLabel,
+        points: series.points,
+      });
+    });
+  });
+  return lines;
+}
+
+/** Week-axis span shared by every selected program's trajectory lines, plus
+ * the pixel width that span needs at `WEEK_PIXELS` density. The axis always
+ * starts at week 0 (baseline) regardless of each line's earliest reported
+ * point, so "how far into treatment" reads consistently across programs. */
+function layoutTrajectory(lines: TrajectoryLine[]): { maxWeeks: number; totalWidth: number } {
+  const allWeeks = lines.flatMap((line) => line.points.map((point) => point.weeks));
+  const maxWeeks = allWeeks.length > 0 ? Math.max(...allWeeks, 0) : 0;
+  const totalWidth =
+    TRAJECTORY_LEFT_PADDING + Math.max(maxWeeks, 1) * WEEK_PIXELS + TRAJECTORY_RIGHT_LABEL_WIDTH;
+  return { maxWeeks, totalWidth };
+}
+
 export function EfficacyCompareChart({
   rows,
   onEdit,
   onClose,
 }: EfficacyCompareChartProps) {
+  const [mode, setMode] = useState<ChartMode>("dose");
+
   const slots = useMemo(() => buildChartSlots(rows), [rows]);
-  const { positioned, groups, totalWidth } = useMemo(
+  const { positioned, groups, totalWidth: doseTotalWidth } = useMemo(
     () => layoutSlots(slots, rows),
     [slots, rows],
   );
 
-  const { domainMin, ticks } = useMemo(() => {
+  const { domainMin: doseDomainMin, ticks: doseTicks } = useMemo(() => {
     const magnitudes = slots.map((slot) => Math.abs(slot.doseNumeric));
     const maxAbs = magnitudes.length > 0 ? Math.max(...magnitudes) : 0;
     const step = niceStep(maxAbs);
@@ -427,6 +558,37 @@ export function EfficacyCompareChart({
     const tickValues = Array.from({ length: tickCount + 1 }, (_, i) => -(i * step));
     return { domainMin: tickValues[tickValues.length - 1] || -1, ticks: tickValues };
   }, [slots]);
+
+  const trajectoryLines = useMemo(() => buildTrajectoryLines(rows), [rows]);
+  const hasTrajectory = trajectoryLines.length > 0;
+  const { maxWeeks, totalWidth: trajectoryTotalWidth } = useMemo(
+    () => layoutTrajectory(trajectoryLines),
+    [trajectoryLines],
+  );
+  const { domainMin: trajectoryDomainMin, ticks: trajectoryValueTicks } = useMemo(() => {
+    const magnitudes = trajectoryLines.flatMap((line) =>
+      line.points.map((point) => Math.abs(point.numeric)),
+    );
+    const maxAbs = magnitudes.length > 0 ? Math.max(...magnitudes) : 0;
+    const step = niceStep(maxAbs);
+    const tickCount = Math.max(1, Math.ceil(maxAbs / step));
+    const tickValues = Array.from({ length: tickCount + 1 }, (_, i) => -(i * step));
+    return { domainMin: tickValues[tickValues.length - 1] || -1, ticks: tickValues };
+  }, [trajectoryLines]);
+  const weekTicks = useMemo(() => {
+    const step = niceStep(maxWeeks);
+    const tickCount = Math.max(1, Math.ceil(maxWeeks / step));
+    return Array.from({ length: tickCount + 1 }, (_, i) => i * step);
+  }, [maxWeeks]);
+
+  const activeDomainMin = mode === "dose" ? doseDomainMin : trajectoryDomainMin;
+  const activeTicks = mode === "dose" ? doseTicks : trajectoryValueTicks;
+  const activeTotalWidth = mode === "dose" ? doseTotalWidth : trajectoryTotalWidth;
+  const topOffset = mode === "dose" ? DOSE_LABEL_HEIGHT : TRAJECTORY_TOP_PADDING;
+  const bottomHeight =
+    mode === "dose"
+      ? BAR_PROVENANCE_HEIGHT + GROUP_LABEL_HEIGHT
+      : TRAJECTORY_BOTTOM_HEIGHT;
 
   // Plot height tracks the panel's actual available space (measured via
   // ResizeObserver on the flex-1 chart area below the legend) rather than a
@@ -450,11 +612,7 @@ export function EfficacyCompareChart({
       return;
     }
     const updateHeight = () => {
-      const available =
-        element.clientHeight -
-        DOSE_LABEL_HEIGHT -
-        BAR_PROVENANCE_HEIGHT -
-        GROUP_LABEL_HEIGHT;
+      const available = element.clientHeight - topOffset - bottomHeight;
       setPlotHeight(Math.max(available, MIN_PLOT_HEIGHT));
       const scrollerWidth = chartScrollerRef.current?.clientWidth ?? 0;
       const contentWidth = chartContentRef.current?.offsetWidth ?? 0;
@@ -466,7 +624,7 @@ export function EfficacyCompareChart({
     observer.observe(element);
     if (chartContentRef.current) observer.observe(chartContentRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [topOffset, bottomHeight]);
 
   useLayoutEffect(() => {
     const panel = tooltipRef.current;
@@ -509,7 +667,12 @@ export function EfficacyCompareChart({
     return () => window.removeEventListener("resize", dismiss);
   }, [tooltip]);
 
-  const showTooltip = (slot: PositionedSlot, element: HTMLElement) => {
+  const setModeAndDismissTooltip = (nextMode: ChartMode) => {
+    setMode(nextMode);
+    setTooltip(null);
+  };
+
+  const showTooltip = (slot: TooltipSlot, element: Element) => {
     const rect = element.getBoundingClientRect();
     setTooltip({
       slot,
@@ -522,7 +685,7 @@ export function EfficacyCompareChart({
     });
   };
 
-  const showPointerTooltip = (slot: PositionedSlot, clientX: number, clientY: number) => {
+  const showPointerTooltip = (slot: TooltipSlot, clientX: number, clientY: number) => {
     setTooltip({
       slot,
       anchor: {
@@ -540,18 +703,52 @@ export function EfficacyCompareChart({
 
   const desiredPanelWidth = Math.min(
     1200,
-    Math.max(720, Y_AXIS_WIDTH + totalWidth + 112),
+    Math.max(720, Y_AXIS_WIDTH + activeTotalWidth + 112),
   );
   const availablePlotWidth = Math.max(chartAreaWidth - Y_AXIS_WIDTH - 8, 0);
   const horizontalScale =
-    totalWidth > 0 && totalWidth < availablePlotWidth
-      ? Math.min(1.5, availablePlotWidth / totalWidth)
+    activeTotalWidth > 0 && activeTotalWidth < availablePlotWidth
+      ? Math.min(1.5, availablePlotWidth / activeTotalWidth)
       : 1;
-  const renderedTotalWidth = totalWidth * horizontalScale;
+  const renderedTotalWidth = activeTotalWidth * horizontalScale;
   const renderedCanvasWidth = Math.max(
     renderedTotalWidth + 8,
     availablePlotWidth,
   );
+
+  // Trajectory end-of-line dose labels, nudged apart when two lines end at a
+  // similar week and value — otherwise two closely-matched lines (a common
+  // case: adjacent doses of the same asset) print overlapping text. Bucketed
+  // by rounded x rather than compared globally, so labels at genuinely
+  // different weeks never push each other around.
+  const TRAJECTORY_LABEL_COLUMN = 40;
+  const TRAJECTORY_LABEL_MIN_GAP = 12;
+  const trajectoryLabelY = useMemo(() => {
+    const raw = trajectoryLines.map((line) => {
+      const last = line.points[line.points.length - 1];
+      const x = (TRAJECTORY_LEFT_PADDING + last.weeks * WEEK_PIXELS) * horizontalScale;
+      const y = TRAJECTORY_TOP_PADDING + (last.numeric / trajectoryDomainMin) * plotHeight;
+      return { key: `${line.programIndex}-${line.doseIndex}`, x, y };
+    });
+    const byColumn = new Map<number, typeof raw>();
+    for (const item of raw) {
+      const column = Math.round(item.x / TRAJECTORY_LABEL_COLUMN);
+      const list = byColumn.get(column) ?? [];
+      list.push(item);
+      byColumn.set(column, list);
+    }
+    const adjusted = new Map<string, number>();
+    for (const list of byColumn.values()) {
+      list.sort((a, b) => a.y - b.y);
+      let lastY = Number.NEGATIVE_INFINITY;
+      for (const item of list) {
+        const y = Math.max(item.y, lastY + TRAJECTORY_LABEL_MIN_GAP);
+        adjusted.set(item.key, y);
+        lastY = y;
+      }
+    }
+    return adjusted;
+  }, [trajectoryLines, horizontalScale, plotHeight, trajectoryDomainMin]);
 
   return (
     <Modal
@@ -586,8 +783,48 @@ export function EfficacyCompareChart({
           </div>
         </div>
 
-        <div className="mb-2 flex shrink-0 items-center justify-between gap-3 text-[11px] text-muted-foreground">
-          <span>Body-weight change from baseline (%)</span>
+        <div className="mb-2 flex shrink-0 flex-wrap items-center justify-between gap-3 text-[11px] text-muted-foreground">
+          <div className="flex items-center gap-3">
+            <span>
+              {mode === "dose"
+                ? "Body-weight change from baseline (%)"
+                : "Body-weight change from baseline (%), by week"}
+            </span>
+            {hasTrajectory ? (
+              <div
+                role="group"
+                aria-label="Chart view"
+                className="inline-flex overflow-hidden rounded-md border border-border"
+              >
+                <button
+                  type="button"
+                  onClick={() => setModeAndDismissTooltip("dose")}
+                  aria-pressed={mode === "dose"}
+                  className={`inline-flex items-center gap-1 px-2 py-1 text-[11px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary ${
+                    mode === "dose"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card text-muted-foreground hover:text-card-foreground"
+                  }`}
+                >
+                  <ChartNoAxesColumn aria-hidden="true" className="h-3.5 w-3.5" />
+                  By dose
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setModeAndDismissTooltip("trajectory")}
+                  aria-pressed={mode === "trajectory"}
+                  className={`inline-flex items-center gap-1 border-l border-border px-2 py-1 text-[11px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary ${
+                    mode === "trajectory"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card text-muted-foreground hover:text-card-foreground"
+                  }`}
+                >
+                  <ChartLine aria-hidden="true" className="h-3.5 w-3.5" />
+                  Over time
+                </button>
+              </div>
+            ) : null}
+          </div>
           {hasHorizontalOverflow ? (
             <span className="inline-flex items-center gap-1 text-right">
               <ArrowLeftRight aria-hidden="true" className="h-3.5 w-3.5" />
@@ -604,8 +841,8 @@ export function EfficacyCompareChart({
             aria-hidden="true"
             className="pointer-events-none relative z-20 w-10 shrink-0 bg-card"
           >
-            {ticks.map((tick) => {
-              const top = DOSE_LABEL_HEIGHT + (tick / domainMin) * plotHeight;
+            {activeTicks.map((tick) => {
+              const top = topOffset + (tick / activeDomainMin) * plotHeight;
               return (
                 <div key={tick} className="absolute inset-x-0" style={{ top }}>
                   <span className="absolute right-1 -translate-y-1/2 text-right text-[10px] leading-none text-muted-foreground">
@@ -617,7 +854,7 @@ export function EfficacyCompareChart({
             })}
             <div
               className="absolute right-0 border-l border-border"
-              style={{ top: DOSE_LABEL_HEIGHT, height: plotHeight }}
+              style={{ top: topOffset, height: plotHeight }}
             />
           </div>
           <div
@@ -630,12 +867,11 @@ export function EfficacyCompareChart({
               className="relative shrink-0"
               style={{
                 width: renderedCanvasWidth,
-                height:
-                  DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + GROUP_LABEL_HEIGHT,
+                height: topOffset + plotHeight + bottomHeight,
               }}
             >
-            {ticks.map((tick) => {
-              const top = DOSE_LABEL_HEIGHT + (tick / domainMin) * plotHeight;
+            {activeTicks.map((tick) => {
+              const top = topOffset + (tick / activeDomainMin) * plotHeight;
               return (
                 <div key={tick} className="absolute left-0 right-0" style={{ top }}>
                   {tick !== 0 ? (
@@ -648,136 +884,260 @@ export function EfficacyCompareChart({
               );
             })}
 
-            {positioned.map((slot) => {
-              const barHeight = Math.max((slot.doseNumeric / domainMin) * plotHeight, 1);
-              return (
-                <div key={slot.key}>
-                  <div
-                    className="absolute flex items-end justify-center text-center text-[10px] font-medium leading-tight text-card-foreground"
-                    style={{
-                      left: slot.x * horizontalScale - 4,
-                      width: BAR_WIDTH * horizontalScale + 8,
-                      top: 0,
-                      height: DOSE_LABEL_HEIGHT - 3,
-                    }}
-                  >
-                    {slot.doseAxisLabel}
-                  </div>
-                  <div
-                    role="img"
-                    tabIndex={0}
-                    aria-label={`${slot.program}, ${slot.doseLabel}, result ${formatPercent(slot.doseRaw)}, ${slot.studyTitle}, ${slot.phase}, ${slot.timepoint}`}
-                    aria-describedby={tooltip?.slot.key === slot.key ? tooltipId : undefined}
-                    onMouseEnter={(event) =>
-                      showPointerTooltip(slot, event.clientX, event.clientY)
-                    }
-                    onMouseMove={(event) =>
-                      showPointerTooltip(slot, event.clientX, event.clientY)
-                    }
-                    onMouseLeave={() => dismissTooltip(slot.key)}
-                    onFocus={(event) => showTooltip(slot, event.currentTarget)}
-                    onBlur={() => dismissTooltip(slot.key)}
-                    onKeyDown={(event) => {
-                      if (event.key === "Escape") dismissTooltip(slot.key);
-                    }}
-                    className={`absolute rounded-b-sm outline-none transition-[filter,box-shadow] hover:brightness-[1.04] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
-                      tooltip?.slot.key === slot.key
-                        ? "z-10 brightness-[1.04] ring-1 ring-foreground/20"
-                        : ""
-                    }`}
-                    style={{
-                      left: slot.x * horizontalScale,
-                      width: BAR_WIDTH * horizontalScale,
-                      top: DOSE_LABEL_HEIGHT,
-                      height: barHeight,
-                      backgroundColor: doseColor(slot.programIndex, slot.doseIndex, slot.doseCount),
-                    }}
-                  >
-                    <span
-                      className="absolute inset-x-0 truncate px-0.5 text-center text-[9px] font-semibold leading-none"
+            {mode === "dose" ? (
+              <>
+                {positioned.map((slot) => {
+                  const barHeight = Math.max(
+                    (slot.doseNumeric / doseDomainMin) * plotHeight,
+                    1,
+                  );
+                  return (
+                    <div key={slot.key}>
+                      <div
+                        className="absolute flex items-end justify-center text-center text-[10px] font-medium leading-tight text-card-foreground"
+                        style={{
+                          left: slot.x * horizontalScale - 4,
+                          width: BAR_WIDTH * horizontalScale + 8,
+                          top: 0,
+                          height: DOSE_LABEL_HEIGHT - 3,
+                        }}
+                      >
+                        {slot.doseAxisLabel}
+                      </div>
+                      <div
+                        role="img"
+                        tabIndex={0}
+                        aria-label={`${slot.program}, ${slot.doseLabel}, result ${formatPercent(slot.doseRaw)}, ${slot.studyTitle}, ${slot.phase}, ${slot.timepoint}`}
+                        aria-describedby={tooltip?.slot.key === slot.key ? tooltipId : undefined}
+                        onMouseEnter={(event) =>
+                          showPointerTooltip(slot, event.clientX, event.clientY)
+                        }
+                        onMouseMove={(event) =>
+                          showPointerTooltip(slot, event.clientX, event.clientY)
+                        }
+                        onMouseLeave={() => dismissTooltip(slot.key)}
+                        onFocus={(event) => showTooltip(slot, event.currentTarget)}
+                        onBlur={() => dismissTooltip(slot.key)}
+                        onKeyDown={(event) => {
+                          if (event.key === "Escape") dismissTooltip(slot.key);
+                        }}
+                        className={`absolute rounded-b-sm outline-none transition-[filter,box-shadow] hover:brightness-[1.04] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
+                          tooltip?.slot.key === slot.key
+                            ? "z-10 brightness-[1.04] ring-1 ring-foreground/20"
+                            : ""
+                        }`}
+                        style={{
+                          left: slot.x * horizontalScale,
+                          width: BAR_WIDTH * horizontalScale,
+                          top: DOSE_LABEL_HEIGHT,
+                          height: barHeight,
+                          backgroundColor: doseColor(slot.programIndex, slot.doseIndex, slot.doseCount),
+                        }}
+                      >
+                        <span
+                          className="absolute inset-x-0 truncate px-0.5 text-center text-[9px] font-semibold leading-none"
+                          style={{
+                            bottom: barHeight >= 18 ? 4 : -12,
+                            color:
+                              barHeight < 18 ||
+                              doseLightness(
+                                slot.programIndex,
+                                slot.doseIndex,
+                                slot.doseCount,
+                              ) >= 52
+                                ? "hsl(20, 16%, 14%)"
+                                : "white",
+                          }}
+                        >
+                          {compactPercent(slot.doseRaw)}
+                        </span>
+                      </div>
+                      {/* Bar-local, every bar — not just the group start — since a
+                          program's bars may now come from different Studies with
+                          different timepoints. Permanent, not tooltip-only: see
+                          BAR_PROVENANCE_HEIGHT's comment. */}
+                      <div
+                        className="absolute text-center"
+                        style={{
+                          left: slot.x * horizontalScale,
+                          width: BAR_WIDTH * horizontalScale,
+                          top: DOSE_LABEL_HEIGHT + plotHeight + 3,
+                        }}
+                      >
+                        {shortStudyTitle(slot.studyTitle) ? (
+                          <p className="truncate text-[9px] font-medium leading-tight text-card-foreground">
+                            {shortStudyTitle(slot.studyTitle)}
+                          </p>
+                        ) : null}
+                        <p className="truncate text-[9px] leading-tight text-muted-foreground">
+                          {slot.timepoint}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Program-name label and, for a program with no chart-eligible
+                    dose, an explicit empty-state notice — both keyed off `groups`
+                    rather than `positioned` so a zero-dose program still gets its
+                    reserved slot and a disclosed reason, never a silent gap a
+                    reader could mistake for a rendering bug. */}
+                {groups.map((group) => (
+                  <div key={group.programIndex}>
+                    <div
+                      className="absolute text-center"
                       style={{
-                        bottom: barHeight >= 18 ? 4 : -12,
-                        color:
-                          barHeight < 18 ||
-                          doseLightness(
-                            slot.programIndex,
-                            slot.doseIndex,
-                            slot.doseCount,
-                          ) >= 52
-                            ? "hsl(20, 16%, 14%)"
-                            : "white",
+                        left: group.groupX * horizontalScale,
+                        width: group.groupWidth * horizontalScale,
+                        top: DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + 3,
                       }}
                     >
-                      {compactPercent(slot.doseRaw)}
-                    </span>
-                  </div>
-                  {/* Bar-local, every bar — not just the group start — since a
-                      program's bars may now come from different Studies with
-                      different timepoints. Permanent, not tooltip-only: see
-                      BAR_PROVENANCE_HEIGHT's comment. */}
-                  <div
-                    className="absolute text-center"
-                    style={{
-                      left: slot.x * horizontalScale,
-                      width: BAR_WIDTH * horizontalScale,
-                      top: DOSE_LABEL_HEIGHT + plotHeight + 3,
-                    }}
-                  >
-                    {shortStudyTitle(slot.studyTitle) ? (
-                      <p className="truncate text-[9px] font-medium leading-tight text-card-foreground">
-                        {shortStudyTitle(slot.studyTitle)}
+                      <p className="truncate text-[11px] font-semibold text-card-foreground">
+                        {group.program}
                       </p>
+                    </div>
+                    {group.isEmpty ? (
+                      <div
+                        className="absolute text-center"
+                        style={{
+                          left: group.groupX * horizontalScale,
+                          width: group.groupWidth * horizontalScale,
+                          top: DOSE_LABEL_HEIGHT,
+                        }}
+                      >
+                        <p
+                          className="px-1 text-[9px] italic leading-tight text-muted-foreground"
+                          title="Every dose this program reports is a range, escalation schedule, or pooled group rather than one explicit nominal dose, so none can be safely charted. See the Study for its full results."
+                        >
+                          No single-dose result to chart — see Study
+                        </p>
+                      </div>
                     ) : null}
-                    <p className="truncate text-[9px] leading-tight text-muted-foreground">
-                      {slot.timepoint}
-                    </p>
                   </div>
-                </div>
-              );
-            })}
-
-            {/* Program-name label and, for a program with no chart-eligible
-                dose, an explicit empty-state notice — both keyed off `groups`
-                rather than `positioned` so a zero-dose program still gets its
-                reserved slot and a disclosed reason, never a silent gap a
-                reader could mistake for a rendering bug. */}
-            {groups.map((group) => (
-              <div key={group.programIndex}>
-                <div
-                  className="absolute text-center"
-                  style={{
-                    left: group.groupX * horizontalScale,
-                    width: group.groupWidth * horizontalScale,
-                    top: DOSE_LABEL_HEIGHT + plotHeight + BAR_PROVENANCE_HEIGHT + 3,
-                  }}
+                ))}
+              </>
+            ) : (
+              <>
+                <svg
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 overflow-visible"
+                  style={{ width: renderedTotalWidth, height: topOffset + plotHeight }}
                 >
-                  <p className="truncate text-[11px] font-semibold text-card-foreground">
-                    {group.program}
-                  </p>
-                </div>
-                {group.isEmpty ? (
-                  <div
-                    className="absolute text-center"
-                    style={{
-                      left: group.groupX * horizontalScale,
-                      width: group.groupWidth * horizontalScale,
-                      top: DOSE_LABEL_HEIGHT,
-                    }}
-                  >
-                    <p
-                      className="px-1 text-[9px] italic leading-tight text-muted-foreground"
-                      title="Every dose this program reports is a range, escalation schedule, or pooled group rather than one explicit nominal dose, so none can be safely charted. See the Study for its full results."
+                  {trajectoryLines.map((line) => {
+                    const color = doseColor(line.programIndex, line.doseIndex, line.doseCount);
+                    const points = line.points.map((point) => ({
+                      point,
+                      x:
+                        (TRAJECTORY_LEFT_PADDING + point.weeks * WEEK_PIXELS) *
+                        horizontalScale,
+                      y: topOffset + (point.numeric / trajectoryDomainMin) * plotHeight,
+                    }));
+                    return (
+                      <polyline
+                        key={`${line.programIndex}-${line.doseIndex}`}
+                        points={points.map((p) => `${p.x},${p.y}`).join(" ")}
+                        fill="none"
+                        stroke={color}
+                        strokeWidth={2}
+                        strokeLinejoin="round"
+                      />
+                    );
+                  })}
+                </svg>
+
+                {trajectoryLines.flatMap((line) => {
+                  const color = doseColor(line.programIndex, line.doseIndex, line.doseCount);
+                  return line.points.map((point, pointIndex) => {
+                    const x =
+                      (TRAJECTORY_LEFT_PADDING + point.weeks * WEEK_PIXELS) * horizontalScale;
+                    const y = topOffset + (point.numeric / trajectoryDomainMin) * plotHeight;
+                    const isLast = pointIndex === line.points.length - 1;
+                    return (
+                      <div key={point.key}>
+                        <button
+                          type="button"
+                          aria-label={`${point.program}, ${line.lineLabel}, ${point.timepoint}, result ${formatPercent(point.doseRaw)}, ${point.studyTitle}, ${point.phase}`}
+                          aria-describedby={tooltip?.slot.key === point.key ? tooltipId : undefined}
+                          onMouseEnter={(event) =>
+                            showPointerTooltip(point, event.clientX, event.clientY)
+                          }
+                          onMouseMove={(event) =>
+                            showPointerTooltip(point, event.clientX, event.clientY)
+                          }
+                          onMouseLeave={() => dismissTooltip(point.key)}
+                          onFocus={(event) => showTooltip(point, event.currentTarget)}
+                          onBlur={() => dismissTooltip(point.key)}
+                          onKeyDown={(event) => {
+                            if (event.key === "Escape") dismissTooltip(point.key);
+                          }}
+                          className={`absolute rounded-full outline-none transition-[filter] hover:brightness-[1.08] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-card ${
+                            tooltip?.slot.key === point.key
+                              ? "z-10 brightness-[1.08] ring-1 ring-foreground/20"
+                              : ""
+                          }`}
+                          style={{
+                            left: x - TRAJECTORY_MARKER_RADIUS,
+                            top: y - TRAJECTORY_MARKER_RADIUS,
+                            width: TRAJECTORY_MARKER_RADIUS * 2,
+                            height: TRAJECTORY_MARKER_RADIUS * 2,
+                            backgroundColor: color,
+                            border: "1.5px solid var(--card)",
+                          }}
+                        />
+                        {isLast ? (
+                          <p
+                            className="pointer-events-none absolute whitespace-nowrap text-[10px] font-semibold leading-none text-card-foreground"
+                            style={{
+                              left: x + TRAJECTORY_MARKER_RADIUS + 5,
+                              top:
+                                (trajectoryLabelY.get(`${line.programIndex}-${line.doseIndex}`) ??
+                                  y) - 5,
+                            }}
+                          >
+                            {line.lineLabel}
+                          </p>
+                        ) : null}
+                      </div>
+                    );
+                  });
+                })}
+
+                {weekTicks.map((weekTick) => {
+                  const left = (TRAJECTORY_LEFT_PADDING + weekTick * WEEK_PIXELS) * horizontalScale;
+                  return (
+                    <div
+                      key={weekTick}
+                      className="absolute text-center"
+                      style={{
+                        left: left - 20,
+                        width: 40,
+                        top: topOffset + plotHeight + 4,
+                      }}
                     >
-                      No single-dose result to chart — see Study
+                      <p className="text-[9px] leading-tight text-muted-foreground">
+                        Wk {weekTick}
+                      </p>
+                    </div>
+                  );
+                })}
+
+                {!hasTrajectory ? (
+                  <div
+                    className="absolute inset-x-0 flex items-center justify-center"
+                    style={{ top: topOffset, height: plotHeight }}
+                  >
+                    <p className="max-w-xs px-2 text-center text-[11px] italic text-muted-foreground">
+                      None of the selected programs report the same dose at two or
+                      more timepoints under a matching estimand.
                     </p>
                   </div>
                 ) : null}
-              </div>
-            ))}
+              </>
+            )}
 
             <div
               className="absolute border-t border-border"
-              style={{ left: 0, right: 0, top: DOSE_LABEL_HEIGHT }}
+              style={{ left: 0, right: 0, top: topOffset }}
             />
             </div>
           </div>
@@ -841,6 +1201,10 @@ export function EfficacyCompareChart({
                   <dd className="font-medium">{tooltip.slot.studyTitle}</dd>
                   <dt className="text-muted-foreground">Evidence</dt>
                   <dd>{tooltip.slot.phase} · {tooltip.slot.timepoint}</dd>
+                  <dt className="text-muted-foreground">Endpoint role</dt>
+                  <dd>{tooltip.slot.role}</dd>
+                  <dt className="text-muted-foreground">Estimand</dt>
+                  <dd>{tooltip.slot.estimand ?? "Not reported"}</dd>
                   {tooltip.slot.doseDetail ? (
                     <>
                       <dt className="text-muted-foreground">Dose</dt>
@@ -881,7 +1245,8 @@ export function EfficacyCompareChart({
                   .map(
                     (point) =>
                       `${point.label}${point.dose ? ` (${point.dose})` : ""} ${formatPercent(point.value)} — ` +
-                      `${point.studyTitle}, ${point.phase}, ${point.assessmentTimepoint}` +
+                      `${point.studyTitle}, ${point.phase}, ${point.assessmentTimepoint}, ${point.role} role, ` +
+                      `estimand: ${point.estimand ?? "not reported"}` +
                       (point.sourceRole === "active-comparator" ? " (active comparator)" : ""),
                   )
                   .join("; ")}

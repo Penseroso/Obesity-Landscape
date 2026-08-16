@@ -244,7 +244,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 26"
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
     },
     {
       "id": "cagri-p2-sae-week26",
@@ -252,7 +253,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 0 to week 26"
+      "assessmentTimepoint": "Week 0 to week 26",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "cagri-p2-nausea-week26",
@@ -260,7 +262,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 0 to week 26"
+      "assessmentTimepoint": "Week 0 to week 26",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "cagri-p2-vomiting-week26",
@@ -268,7 +271,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 0 to week 26"
+      "assessmentTimepoint": "Week 0 to week 26",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [

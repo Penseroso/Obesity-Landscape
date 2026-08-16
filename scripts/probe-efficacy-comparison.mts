@@ -18,6 +18,7 @@ import { screenStudy } from "@/domains/app/lib/efficacy-comparison/candidates";
 import { selectRepresentative } from "@/domains/app/lib/efficacy-comparison/representative";
 import {
   buildChartDoseSeries,
+  buildChartTrajectorySeries,
   resolveNominalDose,
 } from "@/domains/app/lib/efficacy-comparison/chart-evidence";
 import { getStudyDetail } from "@/domains/app/lib/clinical-evidence/selectors";
@@ -125,20 +126,23 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  // Duration tie-break (ADR-0068): week 26 (co-primary) and week 36 (secondary)
+  // both carry "Efficacy estimand", so once role no longer decides first, the
+  // longer-duration week-36 result wins.
   "asset:astrazeneca/elecoglipron/astrazeneca-elecoglipron-oral-tablets": {
     familyId: "glp1-agonist",
     studyId: "astrazeneca-elecoglipron-nct06579092",
-    endpointId: "vista-body-weight-week26",
+    endpointId: "vista-body-weight-week36",
     comparisonGroupKey:
       "arm-level|participants who followed treatment as directed|efficacy",
     treatmentOutcomeIds: [
-      "vista-bw26-5mg",
-      "vista-bw26-15mg",
-      "vista-bw26-50mg",
-      "vista-bw26-75mg-weekly",
-      "vista-bw26-75mg-q2w",
+      "vista-bw36-5mg",
+      "vista-bw36-15mg",
+      "vista-bw36-50mg",
+      "vista-bw36-75mg-weekly",
+      "vista-bw36-75mg-q2w",
     ],
-    placeboOutcomeIds: ["vista-bw26-placebo"],
+    placeboOutcomeIds: ["vista-bw36-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
@@ -169,39 +173,39 @@ const REVIEWED_EVIDENCE: Record<
   // Route split (ADR-0065): subcutaneous and oral semaglutide were one merged unit
   // before, which silently hid the oral (OASIS) evidence behind STEP 8's win. Each
   // route is now its own unit, ranked independently within its own Programs.
-  // Endpoint-role tier merge (ADR-0066): STEP 1 (co-primary, placebo-controlled)
-  // and STEP 8 (primary, head-to-head vs liraglutide) tie on every ranking key
-  // through maturity — both are Phase 3, both hit the merged primary/co-primary
-  // tier, and both now carry "Treatment policy estimand" (STEP 8's was
-  // backfilled after this note was first written; it previously had none, which
-  // is what used to decide this). The winner is decided by the last, curated-
-  // order tie-break (`studyIndex`): STEP 1 is declared earlier in
-  // novo-nordisk/semaglutide/clinical-evidence.json. This is a deliberate,
-  // generic fallback (see `representative.ts`'s own doc comment) applied
-  // identically to every unit, not a rule specific to STEP 1 or STEP 8 - it
-  // will track array order if that order ever changes, and reviewers changing
-  // it should update this note alongside the reviewed value below. STEP 8
-  // remains the representative row's Head-to-head entry independent of this —
-  // see `findHeadToHeadGroups`.
+  // Duration tie-break (ADR-0068): STEP 1 (week 68) and STEP 5 (week 104) tie on
+  // every key through role — both Phase 3, both the merged primary/co-primary
+  // tier, both "Treatment policy estimand" — so under the old order the winner
+  // was the last, curated-order tie-break (`studyIndex`) alone: STEP 1 is
+  // declared first in novo-nordisk/semaglutide/clinical-evidence.json, an
+  // authoring-sequence artifact, not evidence. The duration tie-break now fires
+  // first on that same estimand match and picks STEP 5's longer follow-up.
+  // STEP 8 remains the representative row's Head-to-head entry independent of
+  // this — see `findHeadToHeadGroups`.
   "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-subcutaneous-injection": {
     familyId: "glp1-agonist",
-    studyId: "novo-nordisk-semaglutide-step-1-nct03548935",
-    endpointId: "step1-weight-week68",
+    studyId: "novo-nordisk-semaglutide-step-5-nct03693430",
+    endpointId: "step5-weight-week104",
     comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
-    treatmentOutcomeIds: ["step1-weight-sema24"],
-    placeboOutcomeIds: ["step1-weight-placebo"],
+    treatmentOutcomeIds: ["step5-weight-sema24"],
+    placeboOutcomeIds: ["step5-weight-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  // Duration tie-break (ADR-0068): OASIS 1 (week 68) and OASIS 4 (week 64) tie on
+  // every key through role — same pattern as STEP 1 / STEP 5 above; OASIS 4 had
+  // won only because it is declared earlier in the source file. OASIS 1 also
+  // carries a stored between-arm estimate at this comparison group, which OASIS 4
+  // did not.
   "asset:novo-nordisk/semaglutide/novo-nordisk-semaglutide-oral-tablets": {
     familyId: "glp1-agonist",
-    studyId: "novo-nordisk-semaglutide-oasis-4-nct05564117",
-    endpointId: "oasis4-weight-week64",
+    studyId: "novo-nordisk-semaglutide-oasis-1-nct05035095",
+    endpointId: "oasis1-weight-week68",
     comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
-    treatmentOutcomeIds: ["oasis4-weight-sema25"],
-    placeboOutcomeIds: ["oasis4-weight-placebo"],
+    treatmentOutcomeIds: ["oasis1-weight-treatment-policy-semaglutide"],
+    placeboOutcomeIds: ["oasis1-weight-treatment-policy-placebo"],
     activeComparatorOutcomeIds: [],
-    betweenArmOutcomeIds: [],
+    betweenArmOutcomeIds: ["oasis1-weight-treatment-policy-between"],
   },
   "asset:gan-lee-pharmaceuticals/gzr18/gan-lee-pharmaceuticals-gzr18-subcutaneous-injection": {
     familyId: "glp1-agonist",
@@ -276,17 +280,20 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: ["en103-weight-efficacy"],
   },
+  // Duration tie-break (ADR-0068): week 32 (co-primary) and week 48 (secondary)
+  // both carry "Treatment-policy estimand", so once role no longer decides
+  // first, the longer-duration week-48 result wins over the co-primary week-32
+  // result. (Week 32's co-primary endpoints were added from the NEJM
+  // publication by "Fix two primary/co-primary endpoint gaps found in a full
+  // role-coverage sweep"; week 48 remains correctly secondary — role is
+  // unchanged, only its position in the ranking moved.)
   "asset:eli-lilly-and-company/ly3305677/eli-lilly-and-company-ly3305677-subcutaneous-injection": {
     familyId: "glp1-glucagon-agonist",
     studyId: "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
-    // Week 32 (co-primary) beats week 48 (secondary) under getEndpointRoleRank: GLORY-1's
-    // week-32 co-primary endpoints were added from the NEJM publication by "Fix two
-    // primary/co-primary endpoint gaps found in a full role-coverage sweep" - the
-    // week-48 endpoint was already, and remains, correctly secondary.
-    endpointId: "glory1-weight-week32",
+    endpointId: "glory1-weight-week48",
     comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
-    treatmentOutcomeIds: ["glory1-weight32-maz4", "glory1-weight32-maz6"],
-    placeboOutcomeIds: ["glory1-weight32-placebo"],
+    treatmentOutcomeIds: ["glory1-weight-maz4", "glory1-weight-maz6"],
+    placeboOutcomeIds: ["glory1-weight-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
@@ -303,30 +310,33 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  // Duration tie-break (ADR-0068): week 24 (primary) and week 48 (secondary)
+  // both carry "Efficacy estimand" and the same efficacy analysis set, so once
+  // role no longer decides first, the longer-duration week-48 result wins.
   "asset:eli-lilly-and-company/ly3437943/eli-lilly-and-company-ly3437943-subcutaneous-injection": {
     familyId: "glp1-gip-glucagon-agonist",
     studyId: "eli-lilly-and-company-retatrutide-phase-2-nct04881760",
-    endpointId: "reta-p2-weight-week24",
+    endpointId: "reta-p2-weight-week48",
     comparisonGroupKey: "arm-level|efficacy analysis set(overall)|efficacy",
     treatmentOutcomeIds: [
-      "reta-p2-weight24-1mg",
-      "reta-p2-weight24-4mg-start2",
-      "reta-p2-weight24-4mg-start4",
-      "reta-p2-weight24-8mg-start2",
-      "reta-p2-weight24-8mg-start4",
-      "reta-p2-weight24-12mg",
-      "reta-p2-weight24-4mg",
-      "reta-p2-weight24-8mg",
+      "reta-p2-weight-1mg",
+      "reta-p2-weight48-4mg-start2",
+      "reta-p2-weight48-4mg-start4",
+      "reta-p2-weight48-8mg-start2",
+      "reta-p2-weight48-8mg-start4",
+      "reta-p2-weight-12mg",
+      "reta-p2-weight-4mg",
+      "reta-p2-weight-8mg",
     ],
-    placeboOutcomeIds: ["reta-p2-weight24-placebo"],
+    placeboOutcomeIds: ["reta-p2-weight-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [
-      "reta-p2-weight24-vs-placebo-1mg",
-      "reta-p2-weight24-vs-placebo-4mg-start2",
-      "reta-p2-weight24-vs-placebo-4mg-start4",
-      "reta-p2-weight24-vs-placebo-8mg-start2",
-      "reta-p2-weight24-vs-placebo-8mg-start4",
-      "reta-p2-weight24-vs-placebo-12mg",
+      "reta-p2-weight48-vs-placebo-1mg",
+      "reta-p2-weight48-vs-placebo-4mg-start2",
+      "reta-p2-weight48-vs-placebo-4mg-start4",
+      "reta-p2-weight48-vs-placebo-8mg-start2",
+      "reta-p2-weight48-vs-placebo-8mg-start4",
+      "reta-p2-weight48-vs-placebo-12mg",
     ],
   },
   "asset:eli-lilly-and-company/ly3841136/eli-lilly-and-company-ly3841136-subcutaneous-injection": {
@@ -396,8 +406,8 @@ const REVIEWED_CHART_EVIDENCE: Record<
     {
       dose: "2.4 mg",
       sourceRole: "experimental",
-      studyId: "novo-nordisk-semaglutide-step-1-nct03548935",
-      outcomeId: "step1-weight-sema24",
+      studyId: "novo-nordisk-semaglutide-step-5-nct03693430",
+      outcomeId: "step5-weight-sema24",
     },
     {
       dose: "7.2 mg",
@@ -880,6 +890,7 @@ function syntheticThreeEntityStudy(): StudyDetailView {
     role: "primary",
     domain: "body weight",
     assessmentTimepoint: "Week 24",
+    assessmentTimepointWeeks: 24,
   };
   const outcome = {
     id: "o1",
@@ -956,6 +967,7 @@ function syntheticResponderStudy(withThreshold: boolean): StudyDetailView {
     role: "secondary",
     domain: "body weight",
     assessmentTimepoint: "Week 48",
+    assessmentTimepointWeeks: 48,
   };
   const responderThreshold = withThreshold ? ">=5%" : undefined;
   const mkOutcome = (id: string, armId: string, value: string) => ({
@@ -1088,6 +1100,7 @@ function syntheticChartDoseStudy(): StudyDetailView {
     role: "primary",
     domain: "body weight",
     assessmentTimepoint: "Week 24",
+    assessmentTimepointWeeks: 24,
   };
   const mk = (id: string, armId: string, value: string) => ({
     outcome: {
@@ -1189,6 +1202,318 @@ check(
   "resolveNominalDose must accept a single dose with non-ambiguous surrounding context",
 );
 console.log("  synthetic chart-dose series: MTD alternative excluded, escalation schedules resolve to their final step, external comparator excluded, same-Study same-dose arms preserved, unique active-comparator dose included");
+
+// --- synthetic: chart-only trajectory series (chart-evidence.ts, ADR-0068) -
+//
+// One synthetic Study pins the trajectory-grouping mechanics `buildChartDoseSeries`
+// doesn't exercise: a dose's richest-timepoint-count estimand group wins over a
+// tied-role, higher-preference-rank estimand group with fewer timepoints; a tie in
+// timepoint count falls back to the existing estimand preference order; two
+// candidates that both merely omit an estimand never count as a matching pair
+// (`UNRANKED_ESTIMAND_RANK`); an active-comparator point never joins a trajectory
+// even when it shares a dose, estimand, and timepoint with the winning group; and a
+// dose with only one qualifying timepoint never becomes a trajectory.
+
+function syntheticChartTrajectoryStudy(): StudyDetailView {
+  const study = {
+    id: "synthetic-chart-trajectory",
+    companyId: "fixture-co",
+    assetId: "alpha",
+    officialTitle: "Synthetic chart-trajectory-series study",
+    phase: "Phase 3",
+    design: { randomization: "Randomized", masking: "Double-blind", comparator: "Placebo" },
+    population: "Adults with obesity, without diabetes.",
+    populationProfile: {
+      ageGroup: "adult",
+      diabetesStatus: "without-type-2-diabetes",
+      requiresAdditionalCondition: false,
+      treatmentContext: "initial-treatment",
+    },
+  };
+  const arms = [
+    { id: "exp-10mg", studyId: study.id, role: "experimental", label: "Alpha 10 mg", intervention: "Alpha", dose: "10 mg" },
+    { id: "exp-20mg", studyId: study.id, role: "experimental", label: "Alpha 20 mg", intervention: "Alpha", dose: "20 mg" },
+    { id: "placebo", studyId: study.id, role: "placebo", label: "Placebo", intervention: "Placebo" },
+    {
+      id: "ac-10mg",
+      studyId: study.id,
+      role: "active comparator",
+      label: "Beta 10 mg",
+      intervention: "Beta",
+      linkedAssetRef: { companyId: "fixture-co", assetId: "alpha" },
+      dose: "10 mg",
+    },
+  ];
+  const mkEndpoint = (id: string, role: string, weeks: number) => ({
+    id,
+    studyId: study.id,
+    name: "Percentage change from baseline in body weight",
+    role,
+    domain: "body weight",
+    assessmentTimepoint: `Week ${weeks}`,
+    assessmentTimepointWeeks: weeks,
+  });
+  const endpoints = {
+    w24tp: mkEndpoint("traj-w24-tp", "primary", 24),
+    w48tp: mkEndpoint("traj-w48-tp", "secondary", 48),
+    w12eff: mkEndpoint("traj-w12-eff", "secondary", 12),
+    w60eff: mkEndpoint("traj-w60-eff", "secondary", 60),
+    w80none: mkEndpoint("traj-w80-none", "secondary", 80),
+    w90none: mkEndpoint("traj-w90-none", "secondary", 90),
+  };
+  const mk = (
+    id: string,
+    endpoint: (typeof endpoints)[keyof typeof endpoints],
+    armId: string,
+    value: string,
+    estimand?: string,
+  ) => ({
+    outcome: {
+      id,
+      studyId: study.id,
+      endpointId: endpoint.id,
+      armIds: [armId],
+      analysisPopulation: "Full analysis set (overall)",
+      estimand,
+      result: { value, numericValue: Number(value), unit: "percent", resultType: "arm-level" },
+      maturity: "peer-reviewed publication",
+      metadata: { lastVerifiedAt: "2026-08-16", updatedAt: "2026-08-16", sources: [] },
+    },
+    endpoint,
+    armLabels: [],
+  });
+  return {
+    study,
+    asset: { companyId: "fixture-co", assetId: "alpha", assetName: "Alpha" },
+    arms,
+    analysisGroups: [],
+    endpointGroups: [
+      // 10 mg, "Treatment policy estimand": 2 timepoints (24, 48) — wins the
+      // tie against the 10 mg efficacy-estimand group below.
+      {
+        endpoint: endpoints.w24tp,
+        outcomes: [
+          mk("traj-exp-w24-tp", endpoints.w24tp, "exp-10mg", "-5", "Treatment policy estimand"),
+          // Same dose, same estimand, same timepoint, active-comparator arm:
+          // must never enter the trajectory even though it would otherwise
+          // qualify on every other axis.
+          mk("traj-ac-w24-tp", endpoints.w24tp, "ac-10mg", "-4", "Treatment policy estimand"),
+        ],
+      },
+      {
+        endpoint: endpoints.w48tp,
+        outcomes: [mk("traj-exp-w48-tp", endpoints.w48tp, "exp-10mg", "-10", "Treatment policy estimand")],
+      },
+      // 10 mg, "Efficacy estimand": also 2 timepoints (12, 60) — a genuine
+      // count tie with the group above, broken by estimand preference rank
+      // (treatment policy outranks efficacy).
+      {
+        endpoint: endpoints.w12eff,
+        outcomes: [mk("traj-exp-w12-eff", endpoints.w12eff, "exp-10mg", "-3", "Efficacy estimand")],
+      },
+      {
+        endpoint: endpoints.w60eff,
+        outcomes: [mk("traj-exp-w60-eff", endpoints.w60eff, "exp-10mg", "-12", "Efficacy estimand")],
+      },
+      // 10 mg, no estimand reported, at two more timepoints: must never be
+      // treated as a matching pair merely because both omit one.
+      {
+        endpoint: endpoints.w80none,
+        outcomes: [mk("traj-exp-w80-none", endpoints.w80none, "exp-10mg", "-15")],
+      },
+      {
+        endpoint: endpoints.w90none,
+        outcomes: [mk("traj-exp-w90-none", endpoints.w90none, "exp-10mg", "-16")],
+      },
+      // 20 mg has exactly one qualifying timepoint: never a trajectory.
+      {
+        endpoint: endpoints.w24tp,
+        outcomes: [mk("traj-exp-w24-20mg", endpoints.w24tp, "exp-20mg", "-8", "Treatment policy estimand")],
+      },
+    ],
+    linkedFromAssets: [],
+  } as unknown as StudyDetailView;
+}
+
+{
+  const detail = syntheticChartTrajectoryStudy();
+  const screening = screenStudy(detail, 0);
+  check(
+    screening.reason === null,
+    `synthetic chart-trajectory study should be eligible, got ${screening.reason}`,
+  );
+  if (screening.reason === null) {
+    const detailByStudyId = new Map([[detail.study.id, detail]]);
+    const series = buildChartTrajectorySeries(screening.candidates, detailByStudyId, [
+      { companyId: "fixture-co", assetId: "alpha" },
+    ]);
+
+    check(
+      series.length === 1,
+      `expected exactly one trajectory series (10 mg / treatment policy), got ${series.length}: ${JSON.stringify(series.map((s) => [s.dose, s.estimand]))}`,
+    );
+    const tenMg = series.find((s) => s.dose === "10 mg");
+    check(
+      tenMg !== undefined && tenMg.estimand === "Treatment policy estimand",
+      `10 mg series must win on the treatment-policy estimand group (tied timepoint count, better preference rank), got ${JSON.stringify(tenMg)}`,
+    );
+    check(
+      tenMg !== undefined &&
+        tenMg.points.map((p) => p.outcomeId).join(",") === "traj-exp-w24-tp,traj-exp-w48-tp",
+      `10 mg series must contain exactly the two treatment-policy experimental points, sorted by week, got ${JSON.stringify(tenMg?.points.map((p) => p.outcomeId))}`,
+    );
+    check(
+      series.every((s) => s.dose !== "20 mg"),
+      "a dose with only one qualifying timepoint must never form a trajectory series",
+    );
+    check(
+      series.every((s) => s.points.every((p) => p.sourceRole === "experimental")),
+      "an active-comparator point must never enter a trajectory series, even one that would otherwise match on dose, estimand, and timepoint",
+    );
+    check(
+      series.every((s) =>
+        s.points.every(
+          (p) => p.outcomeId !== "traj-exp-w80-none" && p.outcomeId !== "traj-exp-w90-none",
+        ),
+      ),
+      "two points that both omit an estimand must never be treated as a matching pair",
+    );
+  }
+}
+console.log("  synthetic chart-trajectory series: richest-timepoint-count estimand wins, tie breaks by estimand preference rank, unranked-estimand pair never matches, active comparator excluded, single-timepoint dose excluded");
+
+// --- synthetic: trajectory grouping is per-Arm, never per resolved dose ----
+//
+// Regression pin for a live bug: two distinct Arms that both resolve to the
+// same nominal dose (retatrutide's actual shape — "4 mg (2 mg starting
+// dose)" and "4 mg (4 mg starting dose)", two separately source-authored
+// Outcomes testing whether the ramp schedule itself matters) were being
+// connected into one trajectory line, splicing two different titration
+// schedules into what read as one continuous measurement.
+
+function syntheticChartTrajectoryArmCollisionStudy(): StudyDetailView {
+  const study = {
+    id: "synthetic-chart-trajectory-arm-collision",
+    companyId: "fixture-co",
+    assetId: "alpha",
+    officialTitle: "Synthetic chart-trajectory arm-collision study",
+    phase: "Phase 2",
+    design: { randomization: "Randomized", masking: "Double-blind", comparator: "Placebo" },
+    population: "Adults with obesity, without diabetes.",
+    populationProfile: {
+      ageGroup: "adult",
+      diabetesStatus: "without-type-2-diabetes",
+      requiresAdditionalCondition: false,
+      treatmentContext: "initial-treatment",
+    },
+  };
+  const arms = [
+    {
+      id: "exp-4mg-start2",
+      studyId: study.id,
+      role: "experimental",
+      label: "Alpha 4 mg (2 mg starting dose)",
+      intervention: "Alpha",
+      dose: "4 mg target dose",
+      titration: "2 mg starting dose followed by 4 mg",
+    },
+    {
+      id: "exp-4mg-start4",
+      studyId: study.id,
+      role: "experimental",
+      label: "Alpha 4 mg (4 mg starting dose)",
+      intervention: "Alpha",
+      dose: "4 mg target dose",
+      titration: "4 mg starting dose without escalation",
+    },
+    { id: "placebo", studyId: study.id, role: "placebo", label: "Placebo", intervention: "Placebo" },
+  ];
+  const mkEndpoint = (id: string, weeks: number) => ({
+    id,
+    studyId: study.id,
+    name: "Percentage change from baseline in body weight",
+    role: weeks === 24 ? "primary" : "secondary",
+    domain: "body weight",
+    assessmentTimepoint: `Week ${weeks}`,
+    assessmentTimepointWeeks: weeks,
+  });
+  const endpoints = { w24: mkEndpoint("coll-w24", 24), w48: mkEndpoint("coll-w48", 48) };
+  const mk = (id: string, endpoint: (typeof endpoints)[keyof typeof endpoints], armId: string, value: string) => ({
+    outcome: {
+      id,
+      studyId: study.id,
+      endpointId: endpoint.id,
+      armIds: [armId],
+      analysisPopulation: "Efficacy analysis set (overall)",
+      estimand: "Efficacy estimand",
+      result: { value, numericValue: Number(value), unit: "percent", resultType: "arm-level" },
+      maturity: "peer-reviewed publication",
+      metadata: { lastVerifiedAt: "2026-08-16", updatedAt: "2026-08-16", sources: [] },
+    },
+    endpoint,
+    armLabels: [],
+  });
+  return {
+    study,
+    asset: { companyId: "fixture-co", assetId: "alpha", assetName: "Alpha" },
+    arms,
+    analysisGroups: [],
+    endpointGroups: [
+      {
+        endpoint: endpoints.w24,
+        outcomes: [
+          mk("coll-start2-w24", endpoints.w24, "exp-4mg-start2", "-8"),
+          mk("coll-start4-w24", endpoints.w24, "exp-4mg-start4", "-9"),
+        ],
+      },
+      {
+        endpoint: endpoints.w48,
+        outcomes: [
+          mk("coll-start2-w48", endpoints.w48, "exp-4mg-start2", "-15"),
+          mk("coll-start4-w48", endpoints.w48, "exp-4mg-start4", "-17"),
+        ],
+      },
+    ],
+    linkedFromAssets: [],
+  } as unknown as StudyDetailView;
+}
+
+{
+  const detail = syntheticChartTrajectoryArmCollisionStudy();
+  const screening = screenStudy(detail, 0);
+  check(
+    screening.reason === null,
+    `synthetic arm-collision study should be eligible, got ${screening.reason}`,
+  );
+  if (screening.reason === null) {
+    const detailByStudyId = new Map([[detail.study.id, detail]]);
+    const series = buildChartTrajectorySeries(screening.candidates, detailByStudyId, [
+      { companyId: "fixture-co", assetId: "alpha" },
+    ]);
+
+    check(
+      series.length === 2,
+      `two Arms resolving to the same nominal dose must yield two separate trajectory series, not one merged line, got ${series.length}: ${JSON.stringify(series.map((s) => [s.armId, s.dose]))}`,
+    );
+    check(
+      series.every((s) => s.dose === "4 mg"),
+      `both series should still resolve to the same displayed dose, got ${JSON.stringify(series.map((s) => s.dose))}`,
+    );
+    const start2 = series.find((s) => s.armId === "exp-4mg-start2");
+    const start4 = series.find((s) => s.armId === "exp-4mg-start4");
+    check(
+      start2 !== undefined &&
+        start2.points.map((p) => p.outcomeId).join(",") === "coll-start2-w24,coll-start2-w48",
+      `the 2 mg-starting-dose Arm's series must contain only its own two points, got ${JSON.stringify(start2?.points.map((p) => p.outcomeId))}`,
+    );
+    check(
+      start4 !== undefined &&
+        start4.points.map((p) => p.outcomeId).join(",") === "coll-start4-w24,coll-start4-w48",
+      `the 4 mg-starting-dose Arm's series must contain only its own two points, got ${JSON.stringify(start4?.points.map((p) => p.outcomeId))}`,
+    );
+  }
+}
+console.log("  synthetic chart-trajectory arm collision: two Arms resolving to the same nominal dose stay two separate series, never one connected line");
 
 // --- synthetic: mechanism-family resolution compares families, not wording -
 //

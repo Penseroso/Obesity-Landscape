@@ -167,7 +167,8 @@
       "name": "Change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "nct00500370-body-weight-week24",
@@ -175,7 +176,8 @@
       "name": "Change in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     }
   ],
   "outcomes": [

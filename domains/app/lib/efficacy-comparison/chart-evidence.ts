@@ -2,8 +2,12 @@ import type {
   ArmView,
   StudyDetailView,
 } from "@/domains/app/lib/clinical-evidence/selectors";
-import type { ClinicalResultMaturity } from "@/domains/clinical-evidence/lib/types";
+import type {
+  ClinicalEndpointRole,
+  ClinicalResultMaturity,
+} from "@/domains/clinical-evidence/lib/types";
 import type { EvidenceCandidate } from "./candidates";
+import { UNRANKED_ESTIMAND_RANK } from "./policy";
 import {
   compareScoredCandidates,
   scoreCandidate,
@@ -67,7 +71,19 @@ export type ChartDosePoint = {
   studyId: string;
   studyTitle: string;
   phase: string;
+  /** The winning Endpoint's prespecified role — a tooltip-disclosure field
+   * only; it plays no part in the dose-axis chart's own selection (that is
+   * `compareScoredCandidates`, reused unmodified). */
+  role: ClinicalEndpointRole;
+  /** Source-reported estimand, verbatim, when the Outcome carries one. */
+  estimand?: string;
   assessmentTimepoint: string;
+  /**
+   * `Endpoint.assessmentTimepointWeeks` (ADR-0067), carried through for the
+   * duration-axis trajectory view (`buildChartTrajectorySeries`); `null`
+   * wherever the source timepoint has no single on-drug week count.
+   */
+  assessmentTimepointWeeks: number | null;
   href: string;
   maturity: ClinicalResultMaturity;
 };
@@ -175,47 +191,34 @@ function resolveChartRole(
   return isThisUnitsAsset ? "active-comparator" : null;
 }
 
+/** One chart-eligible (dose, arm) observation plus the ranking context both
+ * `buildChartDoseSeries` and `buildChartTrajectorySeries` collapse from. */
+type ChartEntry = {
+  point: ChartDosePoint;
+  rank: ScoredCandidate;
+  roleRank: number;
+  candidateKey: string;
+};
+
 /**
- * Builds every chart-eligible dose observation for one unit, across **every**
- * eligible candidate for that unit — not just the winner `selectRepresentative`
- * would pick. Candidates are the exact same list `getEfficacyComparison`
- * already screens per unit (`screenStudy`); this function adds no new
- * eligibility gate beyond the dose check above; it only widens *which arm
- * role* within an already-eligible candidate may supply a point.
+ * Gathers every chart-eligible (dose, arm) observation for one unit, across
+ * **every** eligible candidate for that unit — not just the winner
+ * `selectRepresentative` would pick. Candidates are the exact same list
+ * `getEfficacyComparison` already screens per unit (`screenStudy`); this adds
+ * no new eligibility gate beyond the dose check below; it only widens *which
+ * arm role* within an already-eligible candidate may supply a point.
  *
- * **The resolved dose is a chart-positioning key, never an evidence-identity
- * key.** `resolveNominalDose` deliberately reduces a deterministic escalation
- * schedule to its final step so it can be placed on a dose axis at all — but
- * two arms that both happen to reach the same final step are not the same
- * evidence. Retatrutide's `"4 mg (2 mg starting dose)"` and `"4 mg (4 mg
- * starting dose)"` are two distinct, separately source-authored Outcomes in
- * the *same* Study testing whether the ramp schedule itself matters;
- * eloralintide's plain `"9 mg"` arm and its two `"X mg escalating to 9 mg"`
- * arms are three distinct Outcomes. Collapsing same-Study arms that resolve
- * to one dose would silently discard exactly the comparison those arms
- * exist to support, so **every arm from the same Study is kept**, however
- * many resolve to the same dose.
- *
- * `compareScoredCandidates` — the page's one evidence ranking, reused
- * unmodified — instead chooses one evidence candidate (Study, Endpoint,
- * comparison group) for a resolved dose. This prevents the same protocol Arm
- * from appearing again through a second timepoint or estimand, while every
- * distinct arm in the winning candidate survives. Source role is a final
- * chart-local tie-break between otherwise equal candidates.
+ * Shared by `buildChartDoseSeries` (collapses to one candidate per resolved
+ * dose) and `buildChartTrajectorySeries` (collapses to one estimand-matched
+ * group per resolved dose) so the dose/role resolution rules — and any future
+ * change to them — can never drift between the two chart views.
  */
-export function buildChartDoseSeries(
+function gatherChartEntries(
   candidates: EvidenceCandidate[],
   detailByStudyId: Map<string, StudyDetailView>,
   unitAssets: ChartUnitAsset[],
-): ChartDosePoint[] {
-  type Entry = {
-    point: ChartDosePoint;
-    rank: ScoredCandidate;
-    roleRank: number;
-    candidateKey: string;
-  };
-
-  const byDose = new Map<string, Entry[]>();
+): ChartEntry[] {
+  const entries: ChartEntry[] = [];
 
   for (const candidate of candidates) {
     const detail = detailByStudyId.get(candidate.study.id);
@@ -226,7 +229,7 @@ export function buildChartDoseSeries(
       candidate.study.id,
       candidate.endpoint.id,
       candidate.comparisonGroupKey,
-    ].join("\u0000");
+    ].join(" ");
 
     for (const view of candidate.group) {
       const { outcome } = view;
@@ -256,13 +259,15 @@ export function buildChartDoseSeries(
         studyId: candidate.study.id,
         studyTitle: candidate.study.acronym?.trim() || candidate.study.officialTitle,
         phase: candidate.study.phase,
+        role: candidate.endpoint.role,
+        estimand: outcome.estimand,
         assessmentTimepoint: candidate.endpoint.assessmentTimepoint,
+        assessmentTimepointWeeks: candidate.endpoint.assessmentTimepointWeeks,
         href: `/studies/${candidate.study.id}`,
         maturity: outcome.maturity,
       };
 
-      const list = byDose.get(point.dose) ?? [];
-      list.push({
+      entries.push({
         point,
         rank,
         // Experimental evidence wins a same-dose tie over an active
@@ -271,13 +276,50 @@ export function buildChartDoseSeries(
         roleRank: sourceRole === "experimental" ? 0 : 1,
         candidateKey,
       });
-      byDose.set(point.dose, list);
     }
+  }
+
+  return entries;
+}
+
+/**
+ * Builds every chart-eligible dose observation for one unit.
+ *
+ * **The resolved dose is a chart-positioning key, never an evidence-identity
+ * key.** `resolveNominalDose` deliberately reduces a deterministic escalation
+ * schedule to its final step so it can be placed on a dose axis at all — but
+ * two arms that both happen to reach the same final step are not the same
+ * evidence. Retatrutide's `"4 mg (2 mg starting dose)"` and `"4 mg (4 mg
+ * starting dose)"` are two distinct, separately source-authored Outcomes in
+ * the *same* Study testing whether the ramp schedule itself matters;
+ * eloralintide's plain `"9 mg"` arm and its two `"X mg escalating to 9 mg"`
+ * arms are three distinct Outcomes. Collapsing same-Study arms that resolve
+ * to one dose would silently discard exactly the comparison those arms
+ * exist to support, so **every arm from the same Study is kept**, however
+ * many resolve to the same dose.
+ *
+ * `compareScoredCandidates` — the page's one evidence ranking, reused
+ * unmodified — instead chooses one evidence candidate (Study, Endpoint,
+ * comparison group) for a resolved dose. This prevents the same protocol Arm
+ * from appearing again through a second timepoint or estimand, while every
+ * distinct arm in the winning candidate survives. Source role is a final
+ * chart-local tie-break between otherwise equal candidates.
+ */
+export function buildChartDoseSeries(
+  candidates: EvidenceCandidate[],
+  detailByStudyId: Map<string, StudyDetailView>,
+  unitAssets: ChartUnitAsset[],
+): ChartDosePoint[] {
+  const byDose = new Map<string, ChartEntry[]>();
+  for (const entry of gatherChartEntries(candidates, detailByStudyId, unitAssets)) {
+    const list = byDose.get(entry.point.dose) ?? [];
+    list.push(entry);
+    byDose.set(entry.point.dose, list);
   }
 
   const winners: ChartDosePoint[] = [];
   for (const entries of byDose.values()) {
-    const byCandidate = new Map<string, Entry[]>();
+    const byCandidate = new Map<string, ChartEntry[]>();
     for (const entry of entries) {
       const list = byCandidate.get(entry.candidateKey) ?? [];
       list.push(entry);
@@ -311,5 +353,119 @@ export function buildChartDoseSeries(
       return aNum - bNum;
     }
     return a.dose.localeCompare(b.dose) || a.outcomeId.localeCompare(b.outcomeId);
+  });
+}
+
+/**
+ * One protocol Arm's weight-loss-over-time trajectory: every timepoint the
+ * *same* (Arm, estimand) pairing reports, sourced only from `experimental`
+ * arms (an active comparator is a different drug; splicing its dose-response
+ * into this unit's own trajectory would misrepresent it as the row's own
+ * asset).
+ */
+export type ChartTrajectorySeries = {
+  /** Protocol Arm identity — the series' own grouping key, not `dose`. Two
+   * arms that resolve to the same nominal dose (retatrutide's "4 mg (2 mg
+   * starting dose)" and "4 mg (4 mg starting dose)") are two distinct
+   * Outcomes and therefore two distinct series, never one connected line. */
+  armId: string;
+  dose: string;
+  /** Source-reported estimand shared by every point in this series, verbatim. */
+  estimand: string;
+  /** Sorted by `assessmentTimepointWeeks` ascending. */
+  points: ChartDosePoint[];
+};
+
+/**
+ * Builds, for each protocol Arm, the single richest same-estimand time series
+ * available — the "weight-loss-over-time" alternative to
+ * `buildChartDoseSeries`'s one-timepoint-per-dose bars.
+ *
+ * Grouped by **Arm, not resolved dose**: `resolveNominalDose` deliberately
+ * collapses distinct arms to one axis position for the dose chart (see its
+ * own doc comment), but a trajectory is a claim that the connected points
+ * describe *the same treated cohort over time* — two arms that only happen
+ * to reach the same final nominal dose are not that, and connecting them
+ * would draw one continuous line through two different populations on two
+ * different titration schedules.
+ *
+ * Within one Arm, points are further split by estimand: a candidate whose
+ * estimand is absent or unrecognised (`UNRANKED_ESTIMAND_RANK`) never joins a
+ * group, and two candidates that both merely omit an estimand are never
+ * treated as a match — see `compareDurationTiebreak`'s identical guard in
+ * `representative.ts`, which this mirrors rather than imports (that function
+ * is a pairwise comparator for picking one overall winner; this is an N-way
+ * partition, a different job over the same rule). Splicing two genuinely
+ * different estimands into one line would connect two different analysis
+ * assumptions as if they were one continuous measurement.
+ *
+ * Among one Arm's estimand groups, the group with the most **distinct**
+ * timepoints wins — not the group `compareScoredCandidates` would rank
+ * highest. That ranking answers "which is the single best evidence," not
+ * "which group has the richest time series," and the two questions can
+ * disagree: a trial's confirmatory (best-ranked) analysis is often reported
+ * at one timepoint while a lower-ranked analysis is reported at several. A
+ * tie in timepoint count falls back to the existing estimand preference
+ * order (`getEstimandRank`, via `ScoredCandidate.estimandRank`). An Arm whose
+ * winning group still has only one timepoint is omitted — a single point is
+ * not a trajectory.
+ */
+export function buildChartTrajectorySeries(
+  candidates: EvidenceCandidate[],
+  detailByStudyId: Map<string, StudyDetailView>,
+  unitAssets: ChartUnitAsset[],
+): ChartTrajectorySeries[] {
+  const byArm = new Map<string, ChartEntry[]>();
+  for (const entry of gatherChartEntries(candidates, detailByStudyId, unitAssets)) {
+    if (entry.point.sourceRole !== "experimental") continue;
+    if (entry.point.assessmentTimepointWeeks === null) continue;
+    if (entry.rank.estimandRank === UNRANKED_ESTIMAND_RANK) continue;
+    const list = byArm.get(entry.point.armId) ?? [];
+    list.push(entry);
+    byArm.set(entry.point.armId, list);
+  }
+
+  const series: ChartTrajectorySeries[] = [];
+  for (const [armId, armEntries] of byArm) {
+    const byEstimandRank = new Map<number, ChartEntry[]>();
+    for (const entry of armEntries) {
+      const list = byEstimandRank.get(entry.rank.estimandRank) ?? [];
+      list.push(entry);
+      byEstimandRank.set(entry.rank.estimandRank, list);
+    }
+
+    const distinctWeekCount = (group: ChartEntry[]) =>
+      new Set(group.map((entry) => entry.point.assessmentTimepointWeeks)).size;
+
+    let winner: ChartEntry[] | null = null;
+    let winnerEstimandRank = Number.POSITIVE_INFINITY;
+    for (const [estimandRank, group] of byEstimandRank) {
+      if (
+        !winner ||
+        distinctWeekCount(group) > distinctWeekCount(winner) ||
+        (distinctWeekCount(group) === distinctWeekCount(winner) &&
+          estimandRank < winnerEstimandRank)
+      ) {
+        winner = group;
+        winnerEstimandRank = estimandRank;
+      }
+    }
+    if (!winner || distinctWeekCount(winner) < 2) continue;
+
+    const points = winner
+      .map((entry) => entry.point)
+      .sort(
+        (a, b) => (a.assessmentTimepointWeeks ?? 0) - (b.assessmentTimepointWeeks ?? 0),
+      );
+    series.push({ armId, dose: points[0].dose, estimand: points[0].estimand ?? "", points });
+  }
+
+  return series.sort((a, b) => {
+    const aNum = Number.parseFloat(a.dose.match(/\d+(\.\d+)?/)?.[0] ?? "");
+    const bNum = Number.parseFloat(b.dose.match(/\d+(\.\d+)?/)?.[0] ?? "");
+    if (Number.isFinite(aNum) && Number.isFinite(bNum) && aNum !== bNum) {
+      return aNum - bNum;
+    }
+    return a.dose.localeCompare(b.dose) || a.armId.localeCompare(b.armId);
   });
 }

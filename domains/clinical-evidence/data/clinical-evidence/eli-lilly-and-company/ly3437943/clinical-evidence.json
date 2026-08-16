@@ -954,7 +954,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 24"
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
     },
     {
       "id": "reta-p2-weight-week48",
@@ -962,7 +963,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "reta-p2-responder5-week48",
@@ -970,6 +972,7 @@
       "role": "secondary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -978,6 +981,7 @@
       "role": "secondary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -986,6 +990,7 @@
       "role": "secondary",
       "domain": "body weight",
       "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -994,6 +999,7 @@
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Up to 52 weeks",
+      "assessmentTimepointWeeks": null,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -1002,6 +1008,7 @@
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Up to 52 weeks",
+      "assessmentTimepointWeeks": null,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -1010,6 +1017,7 @@
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Up to 52 weeks",
+      "assessmentTimepointWeeks": null,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -1018,6 +1026,7 @@
       "role": "safety",
       "domain": "safety",
       "assessmentTimepoint": "Up to 52 weeks",
+      "assessmentTimepointWeeks": null,
       "studyId": "eli-lilly-and-company-retatrutide-phase-2-nct04881760"
     },
     {
@@ -1026,7 +1035,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "triumph4-womac-week68",
@@ -1034,7 +1044,8 @@
       "name": "Change from baseline in WOMAC pain score",
       "role": "co-primary",
       "domain": "musculoskeletal",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "triumph4-nausea-week68",
@@ -1042,7 +1053,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "triumph4-vomiting-week68",
@@ -1050,7 +1062,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     }
   ],
   "outcomes": [

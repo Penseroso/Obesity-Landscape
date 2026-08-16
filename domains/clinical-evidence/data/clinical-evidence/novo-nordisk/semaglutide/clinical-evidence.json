@@ -1976,7 +1976,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step1-weight-5pct-week68",
@@ -1984,7 +1985,8 @@
       "name": "Participants achieving at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step1-weight-10pct-week68",
@@ -1992,7 +1994,8 @@
       "name": "Participants achieving at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step1-weight-15pct-week68",
@@ -2000,7 +2003,8 @@
       "name": "Participants achieving at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step1-weight-20pct-week68",
@@ -2008,7 +2012,8 @@
       "name": "Participants achieving at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step1-sae-week75",
@@ -2016,7 +2021,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline to week 75"
+      "assessmentTimepoint": "Baseline to week 75",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step1-nausea-on-treatment",
@@ -2024,7 +2030,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step1-vomiting-on-treatment",
@@ -2032,7 +2039,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step2-weight-week68",
@@ -2040,7 +2048,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step2-weight-5pct-week68",
@@ -2048,7 +2057,8 @@
       "name": "Participants achieving at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step2-weight-10pct-week68",
@@ -2056,7 +2066,8 @@
       "name": "Participants achieving at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step2-weight-15pct-week68",
@@ -2064,7 +2075,8 @@
       "name": "Participants achieving at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step2-sae-week75",
@@ -2072,7 +2084,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline to week 75"
+      "assessmentTimepoint": "Baseline to week 75",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step2-nausea-on-treatment",
@@ -2080,7 +2093,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step2-vomiting-on-treatment",
@@ -2088,7 +2102,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step5-weight-week104",
@@ -2096,7 +2111,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 104"
+      "assessmentTimepoint": "Week 104",
+      "assessmentTimepointWeeks": 104
     },
     {
       "id": "step5-responder-5-week104",
@@ -2104,7 +2120,8 @@
       "name": "Participants with at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 104"
+      "assessmentTimepoint": "Week 104",
+      "assessmentTimepointWeeks": 104
     },
     {
       "id": "step5-responder-10-week104",
@@ -2112,7 +2129,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 104"
+      "assessmentTimepoint": "Week 104",
+      "assessmentTimepointWeeks": 104
     },
     {
       "id": "step5-responder-15-week104",
@@ -2120,7 +2138,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 104"
+      "assessmentTimepoint": "Week 104",
+      "assessmentTimepointWeeks": 104
     },
     {
       "id": "step5-responder-20-week104",
@@ -2128,7 +2147,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 104"
+      "assessmentTimepoint": "Week 104",
+      "assessmentTimepointWeeks": 104
     },
     {
       "id": "step5-sae-week104",
@@ -2136,7 +2156,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Trial period through week 104"
+      "assessmentTimepoint": "Trial period through week 104",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step5-nausea-week104",
@@ -2144,7 +2165,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Trial period through week 104"
+      "assessmentTimepoint": "Trial period through week 104",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step5-vomiting-week104",
@@ -2152,7 +2174,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Trial period through week 104"
+      "assessmentTimepoint": "Trial period through week 104",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepteens-bmi-week68",
@@ -2160,7 +2183,8 @@
       "name": "Percentage change from baseline in BMI",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "stepteens-responder-5-week68",
@@ -2168,7 +2192,8 @@
       "name": "Participants with at least 5% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "stepteens-responder-10-week68",
@@ -2176,7 +2201,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "stepteens-responder-15-week68",
@@ -2184,7 +2210,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "stepteens-responder-20-week68",
@@ -2192,7 +2219,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "stepteens-sae-week75",
@@ -2200,7 +2228,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Treatment period and 7-week follow-up"
+      "assessmentTimepoint": "Treatment period and 7-week follow-up",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepteens-nausea-week75",
@@ -2208,7 +2237,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Treatment period and 7-week follow-up"
+      "assessmentTimepoint": "Treatment period and 7-week follow-up",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepteens-vomiting-week75",
@@ -2216,7 +2246,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Treatment period and 7-week follow-up"
+      "assessmentTimepoint": "Treatment period and 7-week follow-up",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepup-weight-week72",
@@ -2224,7 +2255,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepup-responder-5-week72",
@@ -2232,7 +2264,8 @@
       "name": "Participants with at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepup-responder-10-week72",
@@ -2240,7 +2273,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepup-responder-15-week72",
@@ -2248,7 +2282,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepup-responder-20-week72",
@@ -2256,7 +2291,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepup-responder-25-week72",
@@ -2264,7 +2300,8 @@
       "name": "Participants with at least 25% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepup-sae-week81",
@@ -2272,7 +2309,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Up to week 81"
+      "assessmentTimepoint": "Up to week 81",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepup-nausea-on-treatment",
@@ -2280,7 +2318,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepup-vomiting-on-treatment",
@@ -2288,7 +2327,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepupt2d-weight-week72",
@@ -2296,7 +2336,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepupt2d-responder-5-week72",
@@ -2304,7 +2345,8 @@
       "name": "Participants with at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepupt2d-responder-10-week72",
@@ -2312,7 +2354,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepupt2d-responder-15-week72",
@@ -2320,7 +2363,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepupt2d-responder-20-week72",
@@ -2328,7 +2372,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 72"
+      "assessmentTimepoint": "Week 72",
+      "assessmentTimepointWeeks": 72
     },
     {
       "id": "stepupt2d-sae-week81",
@@ -2336,7 +2381,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Up to week 81"
+      "assessmentTimepoint": "Up to week 81",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepupt2d-nausea-on-treatment",
@@ -2344,7 +2390,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "stepupt2d-vomiting-on-treatment",
@@ -2352,7 +2399,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis4-weight-week64",
@@ -2360,7 +2408,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 64"
+      "assessmentTimepoint": "Week 64",
+      "assessmentTimepointWeeks": 64
     },
     {
       "id": "oasis4-responder-5-week64",
@@ -2368,7 +2417,8 @@
       "name": "Participants with at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 64"
+      "assessmentTimepoint": "Week 64",
+      "assessmentTimepointWeeks": 64
     },
     {
       "id": "oasis4-responder-10-week64",
@@ -2376,7 +2426,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 64"
+      "assessmentTimepoint": "Week 64",
+      "assessmentTimepointWeeks": 64
     },
     {
       "id": "oasis4-responder-15-week64",
@@ -2384,7 +2435,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 64"
+      "assessmentTimepoint": "Week 64",
+      "assessmentTimepointWeeks": 64
     },
     {
       "id": "oasis4-responder-20-week64",
@@ -2392,7 +2444,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 64"
+      "assessmentTimepoint": "Week 64",
+      "assessmentTimepointWeeks": 64
     },
     {
       "id": "oasis4-sae-week71",
@@ -2400,7 +2453,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Trial period through week 71"
+      "assessmentTimepoint": "Trial period through week 71",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis4-nausea-week71",
@@ -2408,7 +2462,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Trial period through week 71"
+      "assessmentTimepoint": "Trial period through week 71",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis4-vomiting-week71",
@@ -2416,7 +2471,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Trial period through week 71"
+      "assessmentTimepoint": "Trial period through week 71",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step3-weight-week68",
@@ -2424,7 +2480,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step4-weight-week68",
@@ -2432,7 +2489,8 @@
       "name": "Percentage change in body weight from randomization",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68 (48 weeks after randomization)"
+      "assessmentTimepoint": "Week 68 (48 weeks after randomization)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step6-weight-week68",
@@ -2440,7 +2498,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step7-weight-week44",
@@ -2448,7 +2507,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step8-weight-week68",
@@ -2456,7 +2516,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step9-weight-week68",
@@ -2464,7 +2525,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step9-womac-pain-week68",
@@ -2472,7 +2534,8 @@
       "name": "Change from baseline in WOMAC pain score",
       "role": "co-primary",
       "domain": "musculoskeletal",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step10-weight-week52",
@@ -2480,7 +2543,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step10-normoglycemia-week52",
@@ -2488,7 +2552,8 @@
       "name": "Participants with change to normoglycemia",
       "role": "co-primary",
       "domain": "glycemic",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step12-weight-week44",
@@ -2496,7 +2561,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step3-sae-week68",
@@ -2504,7 +2570,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step3-nausea-week68",
@@ -2512,7 +2579,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step3-vomiting-week68",
@@ -2520,7 +2588,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step4-sae-week68",
@@ -2528,7 +2597,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68 (randomized period, weeks 20-68)"
+      "assessmentTimepoint": "Week 68 (randomized period, weeks 20-68)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step4-nausea-week68",
@@ -2536,7 +2606,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68 (randomized period, weeks 20-68)"
+      "assessmentTimepoint": "Week 68 (randomized period, weeks 20-68)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step4-vomiting-week68",
@@ -2544,7 +2615,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68 (randomized period, weeks 20-68)"
+      "assessmentTimepoint": "Week 68 (randomized period, weeks 20-68)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "step8-sae-week68",
@@ -2552,7 +2624,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step8-nausea-week68",
@@ -2560,7 +2633,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step8-vomiting-week68",
@@ -2568,7 +2642,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step12-sae-week44",
@@ -2576,7 +2651,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step12-nausea-week44",
@@ -2584,7 +2660,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step12-vomiting-week44",
@@ -2592,7 +2669,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step6-sae-week68",
@@ -2600,7 +2678,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step6-nausea-week68",
@@ -2608,7 +2687,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step6-vomiting-week68",
@@ -2616,7 +2696,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step6-ada-week68",
@@ -2624,7 +2705,8 @@
       "name": "Anti-drug antibodies",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step7-sae-week44",
@@ -2632,7 +2714,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step7-nausea-week44",
@@ -2640,7 +2723,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step7-vomiting-week44",
@@ -2648,7 +2732,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 44"
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
     },
     {
       "id": "step9-sae-week68",
@@ -2656,7 +2741,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step10-sae-week52",
@@ -2664,7 +2750,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-sae-week52",
@@ -2672,7 +2759,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "select-sae-week240",
@@ -2680,7 +2768,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Mean follow-up 39.8 months"
+      "assessmentTimepoint": "Mean follow-up 39.8 months",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis1-sae-week68",
@@ -2688,7 +2777,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis1-nausea-week68",
@@ -2696,7 +2786,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis1-vomiting-week68",
@@ -2704,7 +2795,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "step-hfpef-kccq-week52",
@@ -2712,7 +2804,8 @@
       "name": "Change from baseline in Kansas City Cardiomyopathy Questionnaire Clinical Summary Score",
       "role": "co-primary",
       "domain": "patient-reported",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-weight-week52",
@@ -2720,7 +2813,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-kccq-week52",
@@ -2728,7 +2822,8 @@
       "name": "Change from baseline in Kansas City Cardiomyopathy Questionnaire Clinical Summary Score",
       "role": "co-primary",
       "domain": "patient-reported",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-weight-week52",
@@ -2736,7 +2831,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-6mwd-week52",
@@ -2744,7 +2840,8 @@
       "name": "Change from baseline in 6-minute walk distance",
       "role": "secondary",
       "domain": "other",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-hierarchical-week52",
@@ -2752,7 +2849,8 @@
       "name": "Hierarchical composite endpoint crude percentage of wins",
       "role": "secondary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-crp-week52",
@@ -2760,7 +2858,8 @@
       "name": "Percentage change from baseline in C-reactive protein",
       "role": "secondary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-responder-10-week52",
@@ -2768,7 +2867,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-responder-15-week52",
@@ -2776,7 +2876,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-responder-20-week52",
@@ -2784,7 +2885,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 52"
+      "assessmentTimepoint": "Week 52",
+      "assessmentTimepointWeeks": 52
     },
     {
       "id": "step-hfpef-dm-sae-treatment-period",
@@ -2792,7 +2894,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Treatment period"
+      "assessmentTimepoint": "Treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis1-weight-week68",
@@ -2800,7 +2903,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-weight-week68",
@@ -2808,7 +2912,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-responder-5-week68",
@@ -2816,7 +2921,8 @@
       "name": "Participants with at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-responder-10-week68",
@@ -2824,7 +2930,8 @@
       "name": "Participants with at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-iwqol-week68",
@@ -2832,7 +2939,8 @@
       "name": "Change from baseline in IWQOL-Lite-CT physical function score",
       "role": "secondary",
       "domain": "patient-reported",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-responder-15-week68",
@@ -2840,7 +2948,8 @@
       "name": "Participants with at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-responder-20-week68",
@@ -2848,7 +2957,8 @@
       "name": "Participants with at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 68"
+      "assessmentTimepoint": "Week 68",
+      "assessmentTimepointWeeks": 68
     },
     {
       "id": "oasis2-sae-on-treatment",
@@ -2856,7 +2966,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis2-nausea-on-treatment",
@@ -2864,7 +2975,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "oasis2-vomiting-on-treatment",
@@ -2872,7 +2984,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "On-treatment period"
+      "assessmentTimepoint": "On-treatment period",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "select-mace-up-to-week240",
@@ -2880,7 +2993,8 @@
       "name": "First occurrence of cardiovascular death, nonfatal myocardial infarction, or nonfatal stroke",
       "role": "primary",
       "domain": "cardiovascular",
-      "assessmentTimepoint": "From randomization through up to 240 weeks"
+      "assessmentTimepoint": "From randomization through up to 240 weeks",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [

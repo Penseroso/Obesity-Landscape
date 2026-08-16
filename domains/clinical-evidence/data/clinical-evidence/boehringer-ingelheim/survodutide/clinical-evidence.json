@@ -1084,7 +1084,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 46"
+      "assessmentTimepoint": "Week 46",
+      "assessmentTimepointWeeks": 46
     },
     {
       "id": "survo-06066515-weight-week76",
@@ -1092,7 +1093,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 76"
+      "assessmentTimepoint": "Week 76",
+      "assessmentTimepointWeeks": 76
     },
     {
       "id": "survo-06066515-responder5-week76",
@@ -1100,7 +1102,8 @@
       "name": "Participants achieving at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 76"
+      "assessmentTimepoint": "Week 76",
+      "assessmentTimepointWeeks": 76
     },
     {
       "id": "survo-06309992-weight-week48",
@@ -1108,7 +1111,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "survo-06309992-liver-fat-responder-week48",
@@ -1116,7 +1120,8 @@
       "name": "Participants achieving at least 30% reduction in MRI-PDFF-assessed liver fat content",
       "role": "co-primary",
       "domain": "hepatic",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     }
   ],
   "outcomes": [

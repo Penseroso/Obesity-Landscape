@@ -286,7 +286,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 32"
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
     },
     {
       "id": "glory1-responder5-week32",
@@ -294,7 +295,8 @@
       "name": "Percentage of participants who achieve at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 32"
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
     },
     {
       "id": "glory1-weight-week48",
@@ -302,7 +304,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "glory2-weight-week60",
@@ -310,7 +313,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-responder5-week60",
@@ -318,7 +322,8 @@
       "name": "Percentage of participants who achieve at least 5% body-weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-responder10-week60",
@@ -326,7 +331,8 @@
       "name": "Percentage of participants who achieve at least 10% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-responder15-week60",
@@ -334,7 +340,8 @@
       "name": "Percentage of participants who achieve at least 15% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-responder20-week60",
@@ -342,7 +349,8 @@
       "name": "Percentage of participants who achieve at least 20% body-weight reduction",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-sae-week60",
@@ -350,7 +358,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-nausea-week60",
@@ -358,7 +367,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory2-vomiting-week60",
@@ -366,7 +376,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 60"
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
     },
     {
       "id": "glory1-sae-week48",
@@ -374,7 +385,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "glory1-nausea-week48",
@@ -382,7 +394,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "glory1-vomiting-week48",
@@ -390,7 +403,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "glory1-ada-week48",
@@ -398,7 +412,8 @@
       "name": "Anti-drug antibodies",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     }
   ],
   "outcomes": [

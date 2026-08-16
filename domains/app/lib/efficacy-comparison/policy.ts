@@ -114,6 +114,17 @@ export function getEstimandRank(estimand: string | undefined): number {
 }
 
 /**
+ * The rank `getEstimandRank` returns for an unlisted or absent estimand.
+ *
+ * Exported so a duration tie-break (`representative.ts`) can tell a genuine
+ * matching estimand from two candidates that merely both failed to report
+ * one — an equal rank alone does not mean an equal estimand when neither
+ * side names one, and letting duration decide on that coincidence would use
+ * missing data as if it were confirmed equivalence.
+ */
+export const UNRANKED_ESTIMAND_RANK = estimandOrder.length;
+
+/**
  * Analysis-set preference. Ranked on the **analysis set only**; a trailing
  * subgroup parenthetical does not change the rank, so two analyses of the same
  * set fall through to curated source order rather than being ordered by a

@@ -281,7 +281,8 @@
       "name": "Percent change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     }
   ],
   "outcomes": [

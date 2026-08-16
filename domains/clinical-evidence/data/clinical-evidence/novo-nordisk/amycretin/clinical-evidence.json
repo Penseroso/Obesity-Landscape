@@ -353,7 +353,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "other",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 12"
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "amysc-weight-week36",
@@ -361,7 +362,8 @@
       "name": "Percentage change from baseline in body weight",
       "role": "secondary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 36"
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
     },
     {
       "id": "amyoral-sae-week105",
@@ -369,7 +371,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Day 1 to day 105 (Part C/D)"
+      "assessmentTimepoint": "Day 1 to day 105 (Part C/D)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "amyoral-nausea-week105",
@@ -377,7 +380,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Day 1 to day 105 (Part C/D)"
+      "assessmentTimepoint": "Day 1 to day 105 (Part C/D)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "amyoral-vomiting-week105",
@@ -385,7 +389,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Day 1 to day 105 (Part C/D)"
+      "assessmentTimepoint": "Day 1 to day 105 (Part C/D)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "amysc-sae-eos",
@@ -393,7 +398,8 @@
       "name": "Serious adverse events",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline to end of study (Parts B-E)"
+      "assessmentTimepoint": "Baseline to end of study (Parts B-E)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "amysc-nausea-eos",
@@ -401,7 +407,8 @@
       "name": "Nausea",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline to end of study (Parts B-E)"
+      "assessmentTimepoint": "Baseline to end of study (Parts B-E)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "amysc-vomiting-eos",
@@ -409,7 +416,8 @@
       "name": "Vomiting",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline to end of study (Parts B-E)"
+      "assessmentTimepoint": "Baseline to end of study (Parts B-E)",
+      "assessmentTimepointWeeks": null
     },
     {
       "id": "amysc-ada-eos",
@@ -417,7 +425,8 @@
       "name": "Anti-drug antibodies",
       "role": "safety",
       "domain": "safety",
-      "assessmentTimepoint": "Baseline to end of study (Parts B-D)"
+      "assessmentTimepoint": "Baseline to end of study (Parts B-D)",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [

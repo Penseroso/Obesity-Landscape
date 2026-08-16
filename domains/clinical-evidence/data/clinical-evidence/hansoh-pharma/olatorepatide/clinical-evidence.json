@@ -295,7 +295,8 @@
       "name": "Percent change in body weight from baseline",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     },
     {
       "id": "olatorepatide-nct06839664-five-percent-responder-week-48",
@@ -303,7 +304,8 @@
       "name": "Participants achieving at least 5% body weight reduction",
       "role": "co-primary",
       "domain": "body weight",
-      "assessmentTimepoint": "Week 48"
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     }
   ],
   "outcomes": [
