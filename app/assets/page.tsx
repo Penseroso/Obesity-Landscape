@@ -2,37 +2,11 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PipelineTable } from "@/domains/app/components/PipelineTable";
 import { PageHeading } from "@/domains/app/components/ui/PageHeading";
-import {
-  getAssetClinicalRollup,
-  getProgramStudyPreview,
-  type AssetClinicalRollup,
-  type ProgramStudyPreview,
-} from "@/domains/app/lib/clinical-evidence/selectors";
 import { pipelinePrograms } from "@/domains/company-pipeline/lib/data";
 
 export const metadata: Metadata = {
   title: "Program Register",
 };
-
-// Precompute explicit programId matches so the client drawer never imports or
-// infers relationships from the Clinical Evidence data layer.
-const clinicalPreviewByProgramId: Record<string, ProgramStudyPreview> =
-  Object.fromEntries(
-    pipelinePrograms.flatMap((program) => {
-      const preview = getProgramStudyPreview(program.id);
-      return preview ? [[program.id, preview]] : [];
-    }),
-  );
-
-// Asset-level context deliberately uses the existing focal/linked read model.
-// It is kept separate from the exact programId preview above.
-const clinicalContextByProgramId: Record<string, AssetClinicalRollup> =
-  Object.fromEntries(
-    pipelinePrograms.flatMap((program) => {
-      const rollup = getAssetClinicalRollup(program.companyId, program.assetId);
-      return rollup ? [[program.id, rollup]] : [];
-    }),
-  );
 
 export default function AssetsPage() {
   return (
@@ -51,11 +25,7 @@ export default function AssetsPage() {
           </div>
         }
       >
-        <PipelineTable
-          programs={pipelinePrograms}
-          clinicalPreviewByProgramId={clinicalPreviewByProgramId}
-          clinicalContextByProgramId={clinicalContextByProgramId}
-        />
+        <PipelineTable programs={pipelinePrograms} />
       </Suspense>
     </div>
   );

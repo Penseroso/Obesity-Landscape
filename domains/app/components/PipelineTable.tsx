@@ -41,10 +41,11 @@ import {
 
 type PipelineTableProps = {
   programs: PipelineProgram[];
-  /** Explicit programId-scoped Clinical previews, prepared server-side. */
-  clinicalPreviewByProgramId?: Record<string, ProgramStudyPreview>;
-  /** Focal/linked asset context, prepared separately from program matches. */
-  clinicalContextByProgramId?: Record<string, AssetClinicalRollup>;
+};
+
+type ProgramClinicalData = {
+  preview: ProgramStudyPreview | null;
+  context: AssetClinicalRollup | null;
 };
 
 type SortDirection = "ascending" | "descending";
@@ -213,11 +214,7 @@ function ColumnResizeHandle({
   );
 }
 
-export function PipelineTable({
-  programs,
-  clinicalPreviewByProgramId,
-  clinicalContextByProgramId,
-}: PipelineTableProps) {
+export function PipelineTable({ programs }: PipelineTableProps) {
   const searchParams = useSearchParams();
 
   const companyNameById = useMemo(() => {
@@ -307,14 +304,13 @@ export function PipelineTable({
   );
   const triggerButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const clinicalPreview =
-    selectedProgram && clinicalPreviewByProgramId
-      ? clinicalPreviewByProgramId[selectedProgram.id] ?? null
-      : null;
-  const clinicalContext =
-    selectedProgram && clinicalContextByProgramId
-      ? clinicalContextByProgramId[selectedProgram.id] ?? null
-      : null;
+  // Fetched on demand per opened program, rather than precomputed for every
+  // program in the register server-side. See domains/app/docs/README.md.
+  const [clinicalData, setClinicalData] = useState<ProgramClinicalData | null>(
+    null,
+  );
+  const [isClinicalLoading, setIsClinicalLoading] = useState(false);
+  const clinicalRequestIdRef = useRef(0);
 
   const openProgram = (
     program: PipelineProgram,
@@ -322,6 +318,24 @@ export function PipelineTable({
   ) => {
     triggerButtonRef.current = trigger;
     setSelectedProgram(program);
+    setClinicalData(null);
+    setIsClinicalLoading(true);
+    const requestId = ++clinicalRequestIdRef.current;
+    const query = new URLSearchParams({
+      companyId: program.companyId,
+      assetId: program.assetId,
+    });
+    fetch(`/api/programs/${program.id}/clinical?${query}`)
+      .then((response) => response.json() as Promise<ProgramClinicalData>)
+      .then((data) => {
+        if (clinicalRequestIdRef.current !== requestId) return;
+        setClinicalData(data);
+        setIsClinicalLoading(false);
+      })
+      .catch(() => {
+        if (clinicalRequestIdRef.current !== requestId) return;
+        setIsClinicalLoading(false);
+      });
   };
 
   const closeDrawer = () => {
@@ -687,8 +701,9 @@ export function PipelineTable({
       </section>
       <ProgramDetailDrawer
         program={selectedProgram}
-        clinicalPreview={clinicalPreview}
-        clinicalContext={clinicalContext}
+        clinicalPreview={clinicalData?.preview ?? null}
+        clinicalContext={clinicalData?.context ?? null}
+        clinicalLoading={isClinicalLoading}
         onClose={closeDrawer}
       />
     </div>

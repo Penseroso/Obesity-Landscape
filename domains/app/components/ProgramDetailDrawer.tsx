@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, X } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import { SourceList } from "@/domains/app/components/SourceList";
 import { StudyPreviewList } from "@/domains/app/components/clinical/StudyPreviewList";
@@ -23,10 +23,10 @@ type ProgramDetailDrawerProps = {
   clinicalPreview?: ProgramStudyPreview | null;
   /** Asset-wide focal/linked context. This is intentionally not program-scoped. */
   clinicalContext?: AssetClinicalRollup | null;
+  /** True while the on-demand clinical fetch for the open program is in flight. */
+  clinicalLoading?: boolean;
   onClose: () => void;
 };
-
-const DRAWER_TRANSITION_MS = 240;
 
 function DetailRow({ label, value }: { label: string; value?: string | null }) {
   return (
@@ -62,9 +62,11 @@ const FOCUSABLE_SELECTOR =
 function AssetClinicalContext({
   clinicalPreview,
   clinicalContext,
+  clinicalLoading,
 }: {
   clinicalPreview?: ProgramStudyPreview | null;
   clinicalContext?: AssetClinicalRollup | null;
+  clinicalLoading?: boolean;
 }) {
   const hasAssetStudies = clinicalContext?.hasStudies ?? false;
 
@@ -73,7 +75,11 @@ function AssetClinicalContext({
       <h3 className="text-sm font-semibold text-foreground">
         Broader clinical context for this asset
       </h3>
-      {hasAssetStudies && clinicalContext ? (
+      {clinicalLoading ? (
+        <p className="mt-2 text-sm text-muted-foreground">
+          Loading clinical evidence…
+        </p>
+      ) : hasAssetStudies && clinicalContext ? (
         <>
           <p className="mt-2 text-sm text-muted-foreground">
             {clinicalContext.focalStudyCount} focal{" "}
@@ -113,64 +119,18 @@ export function ProgramDetailDrawer({
   program,
   clinicalPreview,
   clinicalContext,
+  clinicalLoading,
   onClose,
 }: ProgramDetailDrawerProps) {
   const panelRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const headingId = useId();
-  const [renderedProgram, setRenderedProgram] = useState<PipelineProgram | null>(
-    program,
-  );
-  const [renderedClinicalPreview, setRenderedClinicalPreview] =
-    useState<ProgramStudyPreview | null>(clinicalPreview ?? null);
-  const [renderedClinicalContext, setRenderedClinicalContext] =
-    useState<AssetClinicalRollup | null>(clinicalContext ?? null);
-  const [isOpen, setIsOpen] = useState(false);
-  const renderedProgramRef = useRef<PipelineProgram | null>(program);
-
-  // Retain the last selected program through the exit transition. A new
-  // selection interrupts a close cleanly and opens the replacement drawer.
-  useEffect(() => {
-    if (program) {
-      let openFrame: number | undefined;
-      const mountFrame = window.requestAnimationFrame(() => {
-        renderedProgramRef.current = program;
-        setRenderedProgram(program);
-        setRenderedClinicalPreview(clinicalPreview ?? null);
-        setRenderedClinicalContext(clinicalContext ?? null);
-        openFrame = window.requestAnimationFrame(() => setIsOpen(true));
-      });
-      return () => {
-        window.cancelAnimationFrame(mountFrame);
-        if (openFrame !== undefined) window.cancelAnimationFrame(openFrame);
-      };
-    }
-
-    if (!renderedProgramRef.current) return;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
-      .matches;
-    const closeFrame = window.requestAnimationFrame(() => setIsOpen(false));
-    const timeout = window.setTimeout(
-      () => {
-        renderedProgramRef.current = null;
-        setRenderedProgram(null);
-        setRenderedClinicalPreview(null);
-        setRenderedClinicalContext(null);
-      },
-      reducedMotion ? 0 : DRAWER_TRANSITION_MS + 16,
-    );
-    return () => {
-      window.cancelAnimationFrame(closeFrame);
-      window.clearTimeout(timeout);
-    };
-  }, [program, clinicalPreview, clinicalContext]);
 
   // Lock background scroll while the drawer is open; always restore the
   // exact previous inline value, whether the drawer closes or the whole
   // component unmounts.
   useEffect(() => {
-    if (!renderedProgram) {
+    if (!program) {
       return;
     }
 
@@ -189,21 +149,21 @@ export function ProgramDetailDrawer({
       document.body.style.overflow = previousOverflow;
       document.body.style.paddingRight = previousPaddingRight;
     };
-  }, [renderedProgram]);
+  }, [program]);
 
   // Move focus into the dialog when it opens (or when the displayed program
   // changes while it's already open).
   useEffect(() => {
-    if (!isOpen || !renderedProgram) {
+    if (!program) {
       return;
     }
 
     closeButtonRef.current?.focus();
-  }, [isOpen, renderedProgram]);
+  }, [program]);
 
   // Escape closes the dialog; Tab/Shift+Tab is trapped inside the panel.
   useEffect(() => {
-    if (!isOpen || !renderedProgram) {
+    if (!program) {
       return;
     }
 
@@ -245,24 +205,17 @@ export function ProgramDetailDrawer({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, renderedProgram, onClose]);
+  }, [program, onClose]);
 
-  if (!renderedProgram || typeof document === "undefined") {
+  if (!program || typeof document === "undefined") {
     return null;
   }
 
   return createPortal(
-    <div
-      aria-hidden={!isOpen}
-      className={`fixed inset-0 z-50 m-0 h-dvh overflow-hidden p-0 ${
-        isOpen ? "" : "pointer-events-none"
-      }`}
-    >
+    <div className="fixed inset-0 z-50 m-0 h-dvh overflow-hidden p-0">
       <button
         aria-label="Close program detail"
-        className={`absolute inset-0 cursor-default bg-foreground/30 transition-opacity duration-[240ms] ease-out motion-reduce:transition-none ${
-          isOpen ? "opacity-100" : "opacity-0"
-        }`}
+        className="absolute inset-0 cursor-default bg-foreground/30"
         onClick={onClose}
       />
       <aside
@@ -270,27 +223,25 @@ export function ProgramDetailDrawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={headingId}
-        className={`absolute inset-y-0 right-0 m-0 flex h-dvh w-full max-w-2xl flex-col border-l border-border bg-card p-0 shadow-soft transition-[transform,opacity] duration-[240ms] ease-out motion-reduce:transition-none ${
-          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        }`}
+        className="absolute inset-y-0 right-0 m-0 flex h-dvh w-full max-w-2xl flex-col border-l border-border bg-card p-0 shadow-soft"
       >
         <div className="border-b border-border px-6 py-5">
           <div className="flex items-start justify-between gap-4">
             <div>
               <Link
-                href={`/companies/${renderedProgram.companyId}`}
+                href={`/companies/${program.companyId}`}
                 className="rounded-sm text-sm font-medium text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                {formatNullableValue(renderedProgram.company?.name)}
+                {formatNullableValue(program.company?.name)}
               </Link>
               <h2
                 id={headingId}
                 className="mt-1 text-2xl font-semibold tracking-tight text-card-foreground"
               >
-                {renderedProgram.assetName}
+                {program.assetName}
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Code {formatNullableValue(renderedProgram.codeName)}
+                Code {formatNullableValue(program.codeName)}
               </p>
             </div>
             <button
@@ -306,12 +257,13 @@ export function ProgramDetailDrawer({
           </div>
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">
-          {renderedClinicalPreview ? (
-            <StudyPreviewList preview={renderedClinicalPreview} />
+          {clinicalPreview ? (
+            <StudyPreviewList preview={clinicalPreview} />
           ) : null}
           <AssetClinicalContext
-            clinicalPreview={renderedClinicalPreview}
-            clinicalContext={renderedClinicalContext}
+            clinicalPreview={clinicalPreview}
+            clinicalContext={clinicalContext}
+            clinicalLoading={clinicalLoading}
           />
           <div className="space-y-5">
             <DetailGroup title="Identity">
@@ -321,61 +273,61 @@ export function ProgramDetailDrawer({
               </dt>
               <dd className="text-sm text-foreground">
                 <Link
-                  href={`/companies/${renderedProgram.companyId}`}
+                  href={`/companies/${program.companyId}`}
                   className="rounded-sm text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
-                  {formatNullableValue(renderedProgram.company?.name)}
+                  {formatNullableValue(program.company?.name)}
                 </Link>
               </dd>
             </div>
             <DetailRow
               label="Company country"
-              value={renderedProgram.company?.headquartersCountry}
+              value={program.company?.headquartersCountry}
             />
-            <DetailRow label="Mechanism" value={renderedProgram.technical.mechanism} />
-            <DetailRow label="Platform" value={renderedProgram.technical.platform} />
+            <DetailRow label="Mechanism" value={program.technical.mechanism} />
+            <DetailRow label="Platform" value={program.technical.platform} />
             <DetailRow
               label="Indications"
-              value={formatInlineValues(renderedProgram.indications)}
+              value={formatInlineValues(program.indications)}
             />
             <DetailRow
               label="Scope class"
-              value={getScopeClassEntry(renderedProgram.scopeClass).label}
+              value={getScopeClassEntry(program.scopeClass).label}
             />
             </DetailGroup>
 
             <DetailGroup title="Administration">
             <DetailRow
               label="Route"
-              value={renderedProgram.administration.route}
+              value={program.administration.route}
             />
             <DetailRow
               label="Dosage form"
-              value={renderedProgram.administration.dosageForm}
+              value={program.administration.dosageForm}
             />
             <DetailRow
               label="Interval"
-              value={renderedProgram.administration.dosingInterval}
+              value={program.administration.dosingInterval}
             />
             </DetailGroup>
 
             <DetailGroup title="Clinical status">
-            <DetailRow label="Stage" value={renderedProgram.development.stage} />
-            <DetailRow label="Status" value={renderedProgram.development.status} />
+            <DetailRow label="Stage" value={program.development.stage} />
+            <DetailRow label="Status" value={program.development.status} />
             </DetailGroup>
 
             <DetailGroup title="Record metadata">
             <DetailRow
               label="Last verified"
-              value={renderedProgram.metadata.lastVerifiedAt}
+              value={program.metadata.lastVerifiedAt}
             />
-            <DetailRow label="Updated" value={renderedProgram.metadata.updatedAt} />
+            <DetailRow label="Updated" value={program.metadata.updatedAt} />
             <div className="grid gap-1 px-4 py-3 sm:grid-cols-[10rem_1fr] sm:gap-4">
               <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 Sources
               </dt>
               <dd className="space-y-2 text-sm">
-                <SourceList sources={renderedProgram.metadata.sources} emptyLabel="N/A" />
+                <SourceList sources={program.metadata.sources} emptyLabel="N/A" />
               </dd>
             </div>
             </DetailGroup>
