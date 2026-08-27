@@ -200,7 +200,22 @@ function resolveGlobalAssetMechanismFamily(group: EfficacyGlobalAssetGroup) {
   return disclosed[0];
 }
 
+let cachedView: EfficacyComparisonView | undefined;
+
+/**
+ * Computed once per module instance and cached: this composes the full
+ * Clinical Evidence dataset across every company/asset, and is called from
+ * four different routes (Overview, Efficacy Comparison, Asset Detail, Company
+ * Detail). The underlying generated JSON is fixed for the life of a running
+ * instance, so recomputing per call only repeats identical work.
+ */
 export function getEfficacyComparison(): EfficacyComparisonView {
+  if (cachedView) return cachedView;
+  cachedView = computeEfficacyComparison();
+  return cachedView;
+}
+
+function computeEfficacyComparison(): EfficacyComparisonView {
   const detailByStudyId = new Map<string, StudyDetailView>();
   const units = collectUnits(detailByStudyId);
 
