@@ -99,6 +99,7 @@ npm install
 npm run dev
 npm run build
 npm run lint
+npm run gate
 npm run data:validate:registries
 npm run data:validate:companies
 npm run data:generate
@@ -113,7 +114,18 @@ npm run data:probe:news-source-overlap
 ```
 
 The repository has no GitHub Actions CI; workflows report local validation
-results.
+results. `npm run gate` is the single pre-merge/pre-deploy check: it chains
+`data:generate`, every `data:validate:*` command, every `data:probe:*`
+command, `lint`, `build`, and `git diff --check` in one fail-fast run, so a
+regression in any one data file or generated artifact is caught without
+running each command by hand. It excludes
+`data:validate:company-pipeline:manifest`, which checks a different
+precondition (a clean Company/Pipeline working tree before a Clinical
+Evidence research run) — see
+[Clinical Evidence workflow](domains/clinical-evidence/docs/workflow.md).
+
+Production deployment (Cloudflare Workers) is documented separately in
+[`DEPLOYMENT.md`](DEPLOYMENT.md).
 
 ## Stack
 

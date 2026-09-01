@@ -38,7 +38,13 @@ const eslintConfig = [
   ...nextVitals,
   ...nextTypescript,
   {
-    ignores: [".next/**", ".npm-cache/**", "node_modules/**"],
+    ignores: [
+      ".next/**",
+      ".npm-cache/**",
+      "node_modules/**",
+      ".open-next/**",
+      ".wrangler/**",
+    ],
   },
   {
     // Project-wide fallback: no direct generated JSON or raw data access.

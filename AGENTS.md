@@ -19,6 +19,7 @@ read only the path for the task. Do not read the full documentation tree.
 | Latest News research | [`workflow.md`](domains/news/docs/workflow.md) and [`News Data Contract`](domains/news/docs/README.md) | None by default; News does not enter canonical data workflows in v1. |
 | Schema or validator | Relevant type file, relevant contract, and the relevant section of `scripts/data-registry.mjs` | Aggregate/projection change: generated-output contract. Workflow only if operator behavior changes. |
 | UI | [`UI Reference`](domains/app/docs/README.md), then only the relevant route, component, selector, and read-model files | Data contract only when the UI consumes or changes that contract's meaning. |
+| Deployment or build/CPU-limit risk | [`DEPLOYMENT.md`](DEPLOYMENT.md) | None by default. |
 | Historical decision review | [`decision-log.md`](domains/company-pipeline/docs/decision-log.md), then the linked current authority | Use [`docs/history/README.md`](docs/history/README.md) only when the compact index is insufficient. |
 
 The files under `docs/history/` are historical, non-authoritative, and frozen.
@@ -83,3 +84,13 @@ run.
 Current rules belong in contracts and references, not in the Decision Log.
 Completed audits, migrations, and module reports are archived once and are not
 maintained as living documents.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

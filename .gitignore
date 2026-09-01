@@ -6,6 +6,12 @@ node_modules/
 next-env.d.ts
 out/
 
+# Cloudflare Workers (OpenNext build output and local dev state)
+.open-next/
+.wrangler/
+cloudflare-env.d.ts
+.dev.vars
+
 # production
 build/
 dist/

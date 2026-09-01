@@ -390,13 +390,13 @@
     ],
     "development": {
       "stage": "Phase 1",
-      "status": "Active",
+      "status": "Discontinued",
       "stageBasis": "Operational evidence",
-      "stageOperationalState": "Initiated or active"
+      "stageOperationalState": "Not separately confirmed"
     },
     "metadata": {
-      "lastVerifiedAt": "2026-07-31",
-      "updatedAt": "2026-07-31",
+      "lastVerifiedAt": "2026-09-01",
+      "updatedAt": "2026-09-01",
       "sources": [
         {
           "url": "https://www.amgenpipeline.com/",
@@ -417,6 +417,13 @@
           "sourceType": "company press release",
           "publishedAt": "2026-04-30",
           "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.amgen.com/newsroom/press-releases/2026/08/amgen-reports-second-quarter-2026-financial-results",
+          "title": "Amgen Reports Second Quarter 2026 Financial Results",
+          "sourceType": "company press release",
+          "publishedAt": "2026-08-04",
+          "checkedAt": "2026-09-01"
         }
       ]
     },

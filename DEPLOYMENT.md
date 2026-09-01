@@ -1,0 +1,123 @@
+---
+role: deployment-runbook
+status: active
+authority: authoritative
+update-boundary: Update when the deployment target, adapter, resource limits, or deploy/rollback procedure change.
+---
+
+# Deployment
+
+## Target
+
+This app runs in production as a **Cloudflare Worker**. That target was previously
+undocumented in this repository — it was recovered from the commit message of
+`a20fa95` ("Cache Efficacy Comparison read model to avoid recomputing per
+request"), which describes a real production incident: the Efficacy Comparison
+read model was recomputing its full ranking on every request, exhausting the
+Worker's per-request CPU budget and causing 404s where static generation
+didn't complete in time. This file exists so that incident, its cause, and the
+deploy path are reproducible by anyone working on this repo, not only whoever
+holds Cloudflare dashboard access.
+
+## Adapter
+
+Deployment uses [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare)
+(OpenNext's Cloudflare adapter), added to this repo on 2026-09-01. This was a
+deliberate choice over Cloudflare's newer `vinext` project: as of this writing
+`vinext` is `1.0.0-beta.x` and explicitly documented as experimental and not
+battle-tested with production traffic, while OpenNext is the mature, proven
+path for running a full Next.js App Router app (dynamic routes, API routes,
+Node.js runtime) on Workers. Re-evaluate this choice only once `vinext` reaches
+a stable release with documented production usage.
+
+Relevant files:
+
+- `wrangler.jsonc` — Worker name, compatibility date/flags, static-asset
+  binding, and the `WORKER_SELF_REFERENCE` service binding OpenNext needs for
+  internal fetches.
+- `open-next.config.ts` — OpenNext build configuration (currently defaults;
+  no R2/KV overrides configured — see **Known gaps** below).
+- `next.config.ts` — calls `initOpenNextCloudflareForDev()` so `npm run dev`
+  gets Cloudflare-compatible bindings in local development.
+
+## First-time setup (whoever holds Cloudflare account access)
+
+This configuration was authored and build/dry-run verified in this repo, but
+nobody running it here has Cloudflare account access, so it has **not** been
+verified against the actual live Worker. Before the first deploy from this
+config:
+
+1. `npx wrangler login` (or set `CLOUDFLARE_API_TOKEN`) against the account
+   that owns the existing production Worker.
+2. Confirm `wrangler.jsonc`'s `name` (`obesity-landscape`) matches the
+   **existing** Worker's name in the Cloudflare dashboard. If the live Worker
+   uses a different name, change `name` in `wrangler.jsonc` to match before
+   deploying — deploying under the wrong name creates a second, separate
+   Worker instead of updating production.
+3. Confirm custom domain / route bindings (if any) in the dashboard; they are
+   not captured in this repo and must be reconciled by hand or added to
+   `wrangler.jsonc`'s `routes` once known.
+
+## Deploy
+
+```bash
+npm run gate          # full local validation — see README
+npm run cf:deploy      # opennextjs-cloudflare build && opennextjs-cloudflare deploy
+```
+
+To test the Workers build locally before deploying:
+
+```bash
+npm run cf:preview     # opennextjs-cloudflare build && opennextjs-cloudflare preview
+```
+
+`npm run cf:deploy` was verified in this session up through `wrangler deploy
+--dry-run` (build succeeds, 268 routes generate, bindings resolve, asset
+upload totals ~11 MB / ~1.5 MB gzip) — the actual authenticated deploy step
+was not run, since no Cloudflare credentials are available in this
+environment.
+
+## The CPU-limit constraint (why the 2026-08-27 outage happened)
+
+Cloudflare Workers enforce a **per-request CPU time limit** (plan-dependent;
+consult the current limit in the Cloudflare dashboard for this account's
+plan — do not assume a specific number here, as it is a Cloudflare account
+setting, not a repo setting). A request that recomputes a full dataset
+ranking, join, or aggregation on every hit — rather than reading a
+precomputed or cached result — can burn through that budget once the dataset
+is large enough, which is exactly what happened to `/efficacy-comparison`.
+
+Two read models have already needed this fix (see the audit at
+[`domains/company-pipeline/docs/decision-log.md`](domains/company-pipeline/docs/decision-log.md)
+for related history):
+
+- `domains/app/lib/efficacy-comparison/read-model.ts` — now caches its
+  computed ranking at module scope instead of recomputing per request.
+- Program Register clinical data — moved from an eager per-program join to
+  an on-demand fetch (`/api/programs/[programId]/clinical`).
+
+When adding a new dynamic route or read model over `data/generated/*.json`
+(the largest of which, `clinical-evidence.json`, is ~2 MB), default to the
+same pattern: compute once at module load or cache the result, rather than
+recomputing per request. Do not wait for a third production outage to notice
+a third instance of this pattern.
+
+## Known gaps / follow-ups
+
+- **No persistent ISR/data cache.** `open-next.config.ts` uses OpenNext's
+  default cache (in-memory, per-isolate — not shared across Worker instances
+  or persisted across deploys). Cross-instance caching would need an R2
+  bucket bound via `incrementalCache` in `open-next.config.ts`; not set up
+  here because it requires provisioning a bucket in the live account. Add
+  this only if cold-cache latency or duplicate computation across instances
+  becomes an observed problem — the module-scope caches above already cover
+  the failure mode that actually caused an outage.
+- **No verified authenticated deploy.** See **First-time setup** above.
+- **No custom domain / route config captured.** Add to `wrangler.jsonc` once
+  known.
+- **Observability** is enabled in `wrangler.jsonc`
+  (`observability.enabled: true`), so Worker logs should already be visible
+  under the Cloudflare dashboard's Workers Observability view (or
+  `npx wrangler tail` for a live authenticated tail) once deployed — confirm
+  this is actually where the account owner is looking when investigating a
+  production issue.

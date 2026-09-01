@@ -10,6 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "cf:preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf:typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "data:generate": "node scripts/data-registry.mjs generate",
     "data:generate:clinical-evidence": "node scripts/data-registry.mjs generate:clinical-evidence",
     "data:validate:company-pipeline:manifest": "node scripts/data-registry.mjs validate:company-pipeline:manifest",
@@ -28,23 +31,26 @@
     "data:probe:scope-class": "node scripts/data-registry.mjs probe:scope-class",
     "data:probe:registry-citations": "node scripts/data-registry.mjs probe:registry-citations",
     "data:validate:registries": "node scripts/data-registry.mjs validate:registries",
-    "data:validate:synthetic": "node scripts/data-registry.mjs validate:synthetic"
+    "data:validate:synthetic": "node scripts/data-registry.mjs validate:synthetic",
+    "gate": "npm run data:generate && npm run data:validate:registries && npm run data:validate:companies && npm run data:validate:generated && npm run data:validate:synthetic && npm run data:validate:clinical-evidence && npm run data:validate:clinical-evidence:generated && npm run data:validate:clinical-evidence:synthetic && npm run data:validate:news && npm run data:validate:news:synthetic && npm run data:probe:indication-scope && npm run data:probe:scope-class && npm run data:probe:registry-citations && npm run data:probe:mechanism-families && npm run data:probe:efficacy-population-coverage && npm run data:probe:efficacy-comparison && npm run data:probe:news-source-overlap && npm run lint && npm run build && git diff --check"
   },
   "dependencies": {
     "lucide-react": "^1.31.0",
-    "next": "16.2.6",
+    "next": "16.3.4",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.5",
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
-    "eslint-config-next": "^16.2.6",
+    "eslint-config-next": "^16.3.4",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "wrangler": "^4.127.1"
   }
 }
