@@ -57,6 +57,34 @@ config:
 3. Confirm custom domain / route bindings (if any) in the dashboard; they are
    not captured in this repo and must be reconciled by hand or added to
    `wrangler.jsonc`'s `routes` once known.
+4. In the Worker project's **Build configuration** (Cloudflare Workers Builds,
+   the git-integrated CI that runs on every push), the build and deploy
+   commands are dashboard settings, not something this repo can set for you.
+   They must be:
+   - Build command: `npx opennextjs-cloudflare build`
+   - Deploy command: `npx wrangler deploy`
+
+   This is not optional — see the incident below.
+
+### Incident: git-push deploy failed on default dashboard settings (2026-09-02)
+
+Commit `9e8b7c18` failed to deploy via Cloudflare's git-integrated Workers
+Builds with `ERROR Could not find compiled Open Next config, did you run the
+build command?`. The build log showed the dashboard was still on its
+auto-detected defaults:
+
+- Build command: `npm run build` (plain `next build`)
+- Deploy command: `npx wrangler deploy`
+
+`wrangler deploy` auto-detects this as an OpenNext project (from
+`wrangler.jsonc`'s `main: ".open-next/worker.js"`) and hands off to
+`opennextjs-cloudflare deploy`, which requires the compiled OpenNext output.
+Plain `next build` never produces `.open-next/` — only
+`opennextjs-cloudflare build` does — so the deploy step had nothing to deploy.
+`npm run build` succeeding and even `npm run cf:deploy` working locally does
+not mean the dashboard is configured correctly; the dashboard's own build
+command is a separate setting that this repo cannot override. Fix: set the
+Build command explicitly per step 4 above.
 
 ## Deploy
 
