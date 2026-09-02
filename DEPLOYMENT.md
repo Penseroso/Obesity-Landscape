@@ -130,16 +130,43 @@ same pattern: compute once at module load or cache the result, rather than
 recomputing per request. Do not wait for a third production outage to notice
 a third instance of this pattern.
 
+## `dynamicParams = false` requires a persistent incremental cache — do not use it here (2026-09-02 incident)
+
+`/companies/abbvie` (and every other `/companies/[companyId]` page) 404'd in
+production while working locally. Root cause, reproduced with
+`npx opennextjs-cloudflare preview` and confirmed via
+`.wrangler`'s local observability logs (`Error: Internal: NoFallbackError` in
+OpenNext's `handleRevalidate`): the page had `export const dynamicParams =
+false`. On this Worker, a statically generated App Router page's prerendered
+HTML lives only in OpenNext's incremental cache (`.open-next/cache/**/*.cache`)
+— it is **not** copied into `.open-next/assets`, and this repo has no
+persistent cache store configured (see the gap below), so that cache is empty
+on every isolate. With `dynamicParams = false`, Next.js is forbidden from
+falling back to on-demand rendering when the cache misses, so the request
+throws and OpenNext returns 404 — for every param, unconditionally, not just
+cold-start ones. `/assets/[companyId]/[assetId]` and `/studies/[studyId]`
+never had this flag and render fine from the same cold cache, because
+`dynamicParams` defaults to `true` and they fall back to SSR on a miss; both
+already guard unknown params with `notFound()` in the component body, same as
+the companies page. Fix applied: removed the flag from
+`app/companies/[companyId]/page.tsx` — `notFound()` still 404s unknown company
+IDs correctly, verified locally in the actual Worker runtime with
+`npx opennextjs-cloudflare preview`. **Do not add `dynamicParams = false` to
+any route on this deploy target unless a persistent `incrementalCache` (R2) is
+configured** — otherwise it will 404 every param, not just invalid ones.
+
 ## Known gaps / follow-ups
 
 - **No persistent ISR/data cache.** `open-next.config.ts` uses OpenNext's
   default cache (in-memory, per-isolate — not shared across Worker instances
   or persisted across deploys). Cross-instance caching would need an R2
   bucket bound via `incrementalCache` in `open-next.config.ts`; not set up
-  here because it requires provisioning a bucket in the live account. Add
-  this only if cold-cache latency or duplicate computation across instances
-  becomes an observed problem — the module-scope caches above already cover
-  the failure mode that actually caused an outage.
+  here because it requires provisioning a bucket in the live account. This is
+  not just a latency concern — see the incident above: any route with
+  `dynamicParams = false` depends on this cache being populated to serve
+  anything at all. Every route in this app currently avoids that flag, so the
+  known failure mode is contained, but re-check this the moment a new SSG
+  route adds it.
 - **No verified authenticated deploy.** See **First-time setup** above.
 - **No custom domain / route config captured.** Add to `wrangler.jsonc` once
   known.

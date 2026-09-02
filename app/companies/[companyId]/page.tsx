@@ -34,8 +34,6 @@ type CompanyPageProps = {
   params: Promise<{ companyId: string }>;
 };
 
-export const dynamicParams = false;
-
 export function generateStaticParams() {
   return listCompanyDetailIds().map((companyId) => ({ companyId }));
 }
