@@ -27,12 +27,23 @@ lastCheckedAt: 2026-09-07
 
 Note: a user-supplied PDF titled "MEDI0382, phase 1" (Ambery et al., Br J Clin Pharmacol 2018, NCT02394314) is unrelated to mazdutide — MEDI0382 is AstraZeneca's cotadutide, a different molecule from a different company. See the exclusion recorded under `astrazeneca.md` instead; no mazdutide record was affected by this file.
 
-## Untraversed candidate trials — identity or scope unconfirmed this run
+## NCT04904913 Stage 2 (9 mg, BMI≥30 subgroup) — identity confirmed, outcomes still deferred (updated 2026-09-07)
 
-- **Mazdutide 9 mg in Chinese adults with BMI ≥30 kg/m² without diabetes** (Med, 2026; PubMed 41875890) — a company topline/registry search located this trial but its registry identifier could not be confirmed (PubMed and ScienceDirect/Cell abstract pages returned only cookie-consent/403 responses this run); it may be the same registry record as NCT04904913's unreviewed Stage 2 cohort or a separate trial. Not stored without a verified registry identity. Access status: `SOURCE_IDENTIFIED_NOT_ACCESSED` (blocker `BOT_BLOCK`).
+- Company / asset / Study: Innovent Biologics / mazdutide / NCT04904913 (China Phase 2, same registry identity as the already-stored Stage 1 dose-ranging cohort)
+- Confirmed: the "Mazdutide 9 mg in Chinese adults with BMI ≥30 kg/m² but without diabetes" publication (Med, 2026; PMID 41875890) reports a Stage 2 cohort (9 mg n=60, placebo n=20 by 3:1 randomization) of this same registry Study — the 80-participant gap between the registry's total enrollment (328) and Stage 1's own enrollment (248, already stored) matches this Stage 2 N exactly, and the registry's own eligibility text names a "second stage: BMI≥30 kg/m2" subgroup consistent with this publication's population. Stage 2 Arms (design only: dose, randomization ratio, N, duration) are now stored on the existing Study record.
+- Still deferred: Stage 2's efficacy Outcomes (week 24 body-weight −12.78% vs placebo +1.80%, treatment difference −14.58% [95% CI −18.00, −11.16], responder rate 81.7%) are known only from search-engine-summarized figures, never opened and read directly at the Med/Cell Press page (HTTP 403 each attempt this run) — a search-result snippet is never `Reviewed` under this workflow's definition, so no value was entered.
+- Access status: `SOURCE_IDENTIFIED_NOT_ACCESSED` (blocker `BOT_BLOCK`), source: https://www.cell.com/med/abstract/S2666-6340(26)00066-8 (also https://pubmed.ncbi.nlm.nih.gov/41875890/)
+- Re-entry condition: obtain direct access to the Med article (PDF or a non-blocked mirror) and enter the source-reported arm-level values.
+
+## Other untraversed candidate trials — identity or scope unconfirmed this run
+
 - **Mazdutide (IBI362) Phase 1b in Chinese patients with type 2 diabetes** (NCT04466904; PMC9232612) — located by search but not fetched this run; in-scope status (whether body weight is a registered, non-incidental objective) not yet confirmed.
 - **Mazdutide Phase 1b in Chinese adolescents with obesity** — a 2025 sponsor press release reports positive weight-loss results, but its registry identifier was not located this run.
-- Re-entry condition for all three: locate/confirm a verifiable registry identity and directly review a primary or company source before disposition.
+- Re-entry condition for both: locate/confirm a verifiable registry identity and directly review a primary or company source before disposition.
+
+## DREAMS-3 (NCT06184568) mazdutide dose correction (2026-09-07)
+
+Not a deferred item — a data correction. The registry's own intervention-description text for the mazdutide arm is truncated at the source ("...continue to increase to IBI362.") and never states the target dose reached during the 32-week active-controlled period. Two independent secondary sources (a search-engine synthesis and the Purdue CDEK trial-database record's "study overview") both name 6 mg specifically; no source found contradicts this. The Arm's `dose`/`intervention`/`titration` fields were corrected from a vague "titrated to target dose" to "6 mg target dose" accordingly. This is below `FULL_SOURCE_REVIEWED` rigor (neither corroborating source is the trial's own design/rationale paper, which returned HTTP 403 each attempt), so treat with moderate rather than full confidence; the entered efficacy Outcomes (composite/weight/HbA1c topline percentages) are unaffected, since those came directly from the sponsor's own topline press release.
 
 ## Excluded — type 2 diabetes trials with no registered weight objective
 

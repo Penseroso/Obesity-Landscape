@@ -467,7 +467,7 @@
         "treatmentContext": "initial-treatment"
       },
       "overallDuration": "19 weeks of treatment plus 4-week follow-up",
-      "safetySummary": "AE and discontinuation-for-AE rates were higher with cotadutide than placebo and numerically higher with 600 mcg than 300 mcg, while SAE rates were balanced across arms and similar to placebo (one SAE each: appendicitis with 300 mcg, diverticulitis with 600 mcg, syncope with placebo; none considered treatment-related). Most common cotadutide-arm AEs were nausea, vomiting, and decreased appetite; no deaths, no AEs of pancreatitis or thyroid/pancreatic carcinoma, and no cases of Hy's Law.",
+      "safetySummary": "Any-grade TEAEs occurred in 37.5% (9/24) placebo, 76.9% (20/26) cotadutide 300 mcg, and 91.7% (22/24) cotadutide 600 mcg (as-treated/safety population; one patient randomized to 600 mcg completed at the lower dose and was analyzed with the 300 mcg group for safety, giving safety-population N of 26/24 rather than the randomized 25/25 -- the source publication's own Table 2 column header states \"n=25\" for 600 mcg, inconsistent with its own disposition figure and text, which both give n=24; entered here using the disposition-figure/text value). Serious TEAEs were balanced (1 each arm, none treatment-related: appendicitis 300 mcg, diverticulitis 600 mcg, syncope placebo). TEAEs leading to discontinuation: 4.2% placebo, 7.7% 300 mcg, 16.7% 600 mcg. No deaths.",
       "metadata": {
         "lastVerifiedAt": "2026-09-07",
         "updatedAt": "2026-09-07",
@@ -489,6 +489,19 @@
             "url": "https://www.cghjournal.org/article/S1542-3565(24)00424-5/fulltext",
             "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
             "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          },
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561?tab=results",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH -- Results",
+            "sourceType": "registry result",
             "checkedAt": "2026-09-07"
           }
         ]
@@ -528,7 +541,7 @@
         "treatmentContext": "initial-treatment"
       },
       "overallDuration": "26 weeks of treatment",
-      "safetySummary": "Serious adverse events were balanced across arms; safety and tolerability of cotadutide 600 mcg were reported as comparable to semaglutide 1.0 mg.",
+      "safetySummary": "Any AE and serious-AE rates were broadly similar across the cotadutide 100/300/600 mcg, placebo, and semaglutide 1 mg arms (as-treated/safety population per the source's Table 3: n=55/48/48/51/45 -- the 100 mcg safety n exceeds its own randomized n=52 elsewhere in the same publication; entered as printed, not reconciled). Serious AEs: 9.1% (100 mcg), 10.4% (300 mcg), 10.4% (600 mcg), 9.8% (placebo), 8.9% (semaglutide). Discontinuations for AE: 3.6%, 4.2%, 20.8%, 7.8%, 15.6% respectively. Two deaths occurred in the cotadutide 100 mcg arm (acute myocardial infarction; suspected suicide), neither deemed related to cotadutide. Gastrointestinal AEs (nausea, vomiting) were the most frequent class and were more common with cotadutide 600 mcg and semaglutide than with lower cotadutide doses or placebo.",
       "metadata": {
         "lastVerifiedAt": "2026-09-07",
         "updatedAt": "2026-09-07",
@@ -545,6 +558,19 @@
             "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-09-07",
             "publishedAt": "2024"
+          },
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          },
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04515849?tab=results",
+            "title": "A Study of Cotadutide in Participants Who Have Chronic Kidney Disease With Type 2 Diabetes Mellitus -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
           }
         ]
       }
@@ -1045,7 +1071,8 @@
       "dose": "Matching placebo",
       "route": "Subcutaneous",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "26 weeks"
+      "treatmentDuration": "26 weeks",
+      "plannedN": 51
     },
     {
       "id": "cotadutide-04515849-100mcg",
@@ -1060,7 +1087,8 @@
       "dose": "100 mcg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "26 weeks"
+      "treatmentDuration": "26 weeks",
+      "plannedN": 52
     },
     {
       "id": "cotadutide-04515849-300mcg",
@@ -1075,7 +1103,8 @@
       "dose": "300 mcg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "26 weeks"
+      "treatmentDuration": "26 weeks",
+      "plannedN": 49
     },
     {
       "id": "cotadutide-04515849-600mcg",
@@ -1090,7 +1119,8 @@
       "dose": "600 mcg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "26 weeks"
+      "treatmentDuration": "26 weeks",
+      "plannedN": 51
     },
     {
       "id": "cotadutide-04515849-semaglutide",
@@ -1105,7 +1135,8 @@
       "dose": "1.0 mg",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
-      "treatmentDuration": "26 weeks"
+      "treatmentDuration": "26 weeks",
+      "plannedN": 45
     }
   ],
   "analysisGroups": [],
@@ -1226,6 +1257,87 @@
       "domain": "body weight",
       "assessmentTimepoint": "Day 77",
       "assessmentTimepointWeeks": 11
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-pct-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "name": "Percent Change From Baseline to Week 19 in Body Weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 19",
+      "assessmentTimepointWeeks": 19
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-kg-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "name": "Change from baseline to week 19 in body weight, kg",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 19",
+      "assessmentTimepointWeeks": 19
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-sae",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "As-treated (safety) population, through follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-nausea",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "As-treated (safety) population, through follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-vomiting",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "As-treated (safety) population, through follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-body-weight-week-26",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "name": "Percent change from baseline in body weight (Week 26)",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-sae",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "As-treated (safety) population",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-nausea",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "As-treated (safety) population",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-vomiting",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "As-treated (safety) population",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [
@@ -2360,6 +2472,1071 @@
             "url": "https://clinicaltrials.gov/study/NCT03745937",
             "sourceType": "trial registry",
             "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-pct-placebo-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-pct-week-19",
+      "armIds": [
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-0.57%",
+        "numericValue": -0.57,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561?tab=results",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-pct-300mcg-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-pct-week-19",
+      "armIds": [
+        "cotadutide-04019561-300mcg"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-1.29%",
+        "numericValue": -1.29,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561?tab=results",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-pct-600mcg-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-pct-week-19",
+      "armIds": [
+        "cotadutide-04019561-600mcg"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-2.93%",
+        "numericValue": -2.93,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561?tab=results",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-pct-300mcg-vs-placebo-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-pct-week-19",
+      "armIds": [
+        "cotadutide-04019561-300mcg",
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-0.72%",
+        "numericValue": -0.72,
+        "unit": "percent",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference (final values)",
+        "comparisonType": "ANCOVA mean difference, 300 mcg cotadutide minus placebo",
+        "confidenceInterval": "95% CI, -3.19 to 1.75",
+        "pValue": "0.564"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561?tab=results",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-pct-600mcg-vs-placebo-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-pct-week-19",
+      "armIds": [
+        "cotadutide-04019561-600mcg",
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-2.37%",
+        "numericValue": -2.37,
+        "unit": "percent",
+        "resultType": "between-arm",
+        "effectMeasure": "Mean difference (final values)",
+        "comparisonType": "ANCOVA mean difference, 600 mcg cotadutide minus placebo",
+        "confidenceInterval": "95% CI, -4.85 to 0.12",
+        "pValue": "0.062"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561?tab=results",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-kg-300mcg-vs-placebo-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-kg-week-19",
+      "armIds": [
+        "cotadutide-04019561-300mcg",
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-0.44 kg",
+        "numericValue": -0.44,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "ANCOVA LS mean difference, 300 mcg cotadutide minus placebo",
+        "confidenceInterval": "95% CI, -2.78 to 1.90"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-body-weight-kg-600mcg-vs-placebo-week-19",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-body-weight-kg-week-19",
+      "armIds": [
+        "cotadutide-04019561-600mcg",
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat (ITT) population",
+      "result": {
+        "value": "-2.36 kg",
+        "numericValue": -2.36,
+        "unit": "kg",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "ANCOVA LS mean difference, 600 mcg cotadutide minus placebo",
+        "confidenceInterval": "95% CI, -4.71 to -0.002",
+        "pValue": "0.05"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-sae-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-sae",
+      "armIds": [
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "4.2%",
+        "numericValue": 4.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-sae-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-sae",
+      "armIds": [
+        "cotadutide-04019561-300mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "3.8%",
+        "numericValue": 3.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-sae-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-sae",
+      "armIds": [
+        "cotadutide-04019561-600mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "4.2%",
+        "numericValue": 4.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-nausea-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-nausea",
+      "armIds": [
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "12.5%",
+        "numericValue": 12.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-nausea-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-nausea",
+      "armIds": [
+        "cotadutide-04019561-300mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "53.8%",
+        "numericValue": 53.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-nausea-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-nausea",
+      "armIds": [
+        "cotadutide-04019561-600mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "83.3%",
+        "numericValue": 83.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-vomiting-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-vomiting",
+      "armIds": [
+        "cotadutide-04019561-placebo"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-vomiting-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-vomiting",
+      "armIds": [
+        "cotadutide-04019561-300mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "11.5%",
+        "numericValue": 11.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04019561-vomiting-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "endpointId": "astrazeneca-cotadutide-nct04019561-vomiting",
+      "armIds": [
+        "cotadutide-04019561-600mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population",
+      "result": {
+        "value": "41.7%",
+        "numericValue": 41.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.cgh.2024.04.017",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-body-weight-placebo-week-26",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-body-weight-week-26",
+      "armIds": [
+        "cotadutide-04515849-placebo"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-2.1%",
+        "numericValue": -2.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-body-weight-100mcg-week-26",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-body-weight-week-26",
+      "armIds": [
+        "cotadutide-04515849-100mcg"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-2.60%",
+        "numericValue": -2.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "registry result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04515849?tab=results",
+            "title": "A Study of Cotadutide in Participants Who Have Chronic Kidney Disease With Type 2 Diabetes Mellitus -- Results",
+            "sourceType": "registry result",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-body-weight-300mcg-week-26",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-body-weight-week-26",
+      "armIds": [
+        "cotadutide-04515849-300mcg"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-6.0%",
+        "numericValue": -6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-body-weight-600mcg-week-26",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-body-weight-week-26",
+      "armIds": [
+        "cotadutide-04515849-600mcg"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-6.5%",
+        "numericValue": -6.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-body-weight-semaglutide-week-26",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-body-weight-week-26",
+      "armIds": [
+        "cotadutide-04515849-semaglutide"
+      ],
+      "analysisPopulation": "Intent-to-treat population",
+      "result": {
+        "value": "-7.0%",
+        "numericValue": -7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "statistic": "Least-squares mean"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-sae-100mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-sae",
+      "armIds": [
+        "cotadutide-04515849-100mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "9.1%",
+        "numericValue": 9.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-sae-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-sae",
+      "armIds": [
+        "cotadutide-04515849-300mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "10.4%",
+        "numericValue": 10.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-sae-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-sae",
+      "armIds": [
+        "cotadutide-04515849-600mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "10.4%",
+        "numericValue": 10.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-sae-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-sae",
+      "armIds": [
+        "cotadutide-04515849-placebo"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "9.8%",
+        "numericValue": 9.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-sae-semaglutide",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-sae",
+      "armIds": [
+        "cotadutide-04515849-semaglutide"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "8.9%",
+        "numericValue": 8.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-nausea-100mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-nausea",
+      "armIds": [
+        "cotadutide-04515849-100mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "10.9%",
+        "numericValue": 10.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-nausea-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-nausea",
+      "armIds": [
+        "cotadutide-04515849-300mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "12.5%",
+        "numericValue": 12.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-nausea-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-nausea",
+      "armIds": [
+        "cotadutide-04515849-600mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "27.1%",
+        "numericValue": 27.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-nausea-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-nausea",
+      "armIds": [
+        "cotadutide-04515849-placebo"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "3.9%",
+        "numericValue": 3.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-nausea-semaglutide",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-nausea",
+      "armIds": [
+        "cotadutide-04515849-semaglutide"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "24.4%",
+        "numericValue": 24.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-vomiting-100mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-vomiting",
+      "armIds": [
+        "cotadutide-04515849-100mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "3.6%",
+        "numericValue": 3.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-vomiting-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-vomiting",
+      "armIds": [
+        "cotadutide-04515849-300mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "4.2%",
+        "numericValue": 4.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-vomiting-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-vomiting",
+      "armIds": [
+        "cotadutide-04515849-600mcg"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "14.6%",
+        "numericValue": 14.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-vomiting-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-vomiting",
+      "armIds": [
+        "cotadutide-04515849-placebo"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "2.0%",
+        "numericValue": 2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849-vomiting-semaglutide",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "endpointId": "astrazeneca-cotadutide-nct04515849-vomiting",
+      "armIds": [
+        "cotadutide-04515849-semaglutide"
+      ],
+      "analysisPopulation": "As-treated (safety) population (Table 3-printed n; see safetySummary note on the 100 mcg n discrepancy)",
+      "result": {
+        "value": "13.3%",
+        "numericValue": 13.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1016/j.kint.2024.08.023",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024-08-31"
           }
         ]
       }
