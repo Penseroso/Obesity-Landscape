@@ -1305,6 +1305,126 @@
       }
     },
     {
+      "id": "astrazeneca-cotadutide-nct04019561",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-mash",
+      "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-controlled Study to Evaluate the Safety and Pharmacodynamic Effects of MEDI0382 in Obese Subjects With Non-Alcoholic Fatty Liver Disease (NAFLD)/ Non-Alcoholic Steatohepatitis (NASH)",
+      "acronym": "PROXYMO",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04019561"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D5671C00002"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04019561",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2023-01-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Randomized 2:1:2:1 to cotadutide 300 mcg, matched placebo, cotadutide 600 mcg, matched placebo (pooled placebo group), for 19 weeks."
+      },
+      "population": "Obese adults (BMI >=30 kg/m2) with biopsy-confirmed, non-cirrhotic NAFLD/NASH (NAS >=4, fibrosis stage F1-F3); participants with type 2 diabetes were eligible if HbA1c <=9.5% on stable background therapy.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "19 weeks of treatment plus 4-week follow-up",
+      "safetySummary": "AE and discontinuation-for-AE rates were higher with cotadutide than placebo and numerically higher with 600 mcg than 300 mcg, while SAE rates were balanced across arms and similar to placebo (one SAE each: appendicitis with 300 mcg, diverticulitis with 600 mcg, syncope with placebo; none considered treatment-related). Most common cotadutide-arm AEs were nausea, vomiting, and decreased appetite; no deaths, no AEs of pancreatitis or thyroid/pancreatic carcinoma, and no cases of Hy's Law.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04019561",
+            "title": "A Study to Evaluate Safety and Pharmacodynamic Efficacy of 0382 in Obese Subjects With NAFLD/NASH",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://s3.amazonaws.com/ctr-med-7111/D5671C00002/a7e025dc-807a-4619-91f1-e5cdf18d7fb1/d6bab666-5827-4a9b-8ac9-d80c66895271/d5671c00002-CSR-synopsis_-_Redacted_-_31Mar2022-v1.pdf",
+            "title": "Clinical Study Report Synopsis: Cotadutide (MEDI0382) - D5671C00002",
+            "sourceType": "regulatory filing",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2022-01-18"
+          },
+          {
+            "url": "https://www.cghjournal.org/article/S1542-3565(24)00424-5/fulltext",
+            "title": "Safety and Efficacy of Novel Incretin Co-agonist Cotadutide in Biopsy-proven Noncirrhotic MASH With Fibrosis",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "astrazeneca-cotadutide-nct04515849",
+      "companyId": "astrazeneca",
+      "assetId": "cotadutide",
+      "programId": "astrazeneca-cotadutide-subcutaneous-injection-diabetic-kidney-disease",
+      "officialTitle": "A Phase 2b, Multicentre, Randomised, Double-blind, Placebo-controlled, and Open-label Comparator Study of Cotadutide in Participants Who Have Chronic Kidney Disease With Type 2 Diabetes Mellitus",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04515849"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04515849",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-01-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind for cotadutide and placebo; open-label active comparator",
+        "comparator": "Placebo and semaglutide",
+        "description": "Randomized to cotadutide 100, 300, or 600 mcg once daily, matched placebo, or open-label once-weekly semaglutide 1.0 mg, on background standard-of-care renal/T2D therapy, for 26 weeks."
+      },
+      "population": "Adults aged 18-79 years with type 2 diabetes, eGFR 20 to <90 mL/min/1.73m2, and micro- or macroalbuminuria (UACR >50 mg/g), on stable background ACE inhibitor or ARB therapy.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "26 weeks of treatment",
+      "safetySummary": "Serious adverse events were balanced across arms; safety and tolerability of cotadutide 600 mcg were reported as comparable to semaglutide 1.0 mg.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04515849",
+            "title": "A Study of Cotadutide in Participants Who Have Chronic Kidney Disease With Type 2 Diabetes Mellitus",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://www.kidney-international.org/article/S0085-2538(24)00629-X/fulltext",
+            "title": "A randomized phase 2b trial examined the effects of the glucagon-like peptide-1 and glucagon receptor agonist cotadutide on kidney outcomes in patients with diabetic kidney disease",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2024"
+          }
+        ]
+      }
+    },
+    {
       "id": "astrazeneca-davalintide-nct00785408",
       "companyId": "astrazeneca",
       "assetId": "davalintide",
@@ -12550,6 +12670,53 @@
       "treatmentDuration": "11 weeks"
     },
     {
+      "id": "cotadutide-04019561-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once daily for 19 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "19 weeks",
+      "plannedN": 24,
+      "analyzedN": 24
+    },
+    {
+      "id": "cotadutide-04019561-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "role": "experimental",
+      "label": "Cotadutide 300 mcg",
+      "intervention": "Cotadutide (MEDI0382) 300 mcg administered subcutaneously once daily for 19 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "19 weeks",
+      "plannedN": 25,
+      "analyzedN": 25
+    },
+    {
+      "id": "cotadutide-04019561-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04019561",
+      "role": "experimental",
+      "label": "Cotadutide 600 mcg",
+      "intervention": "Cotadutide (MEDI0382) 600 mcg administered subcutaneously once daily for 19 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "600 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "19 weeks",
+      "plannedN": 25,
+      "analyzedN": 25
+    },
+    {
       "id": "cotadutide-100003-placebo",
       "studyId": "astrazeneca-cotadutide-nct04208620",
       "role": "placebo",
@@ -12566,6 +12733,77 @@
         "companyId": "astrazeneca",
         "assetId": "cotadutide"
       }
+    },
+    {
+      "id": "cotadutide-04515849-placebo",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once daily for 26 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "cotadutide-04515849-100mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "role": "experimental",
+      "label": "Cotadutide 100 mcg",
+      "intervention": "Cotadutide 100 mcg administered subcutaneously once daily for 26 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "100 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "cotadutide-04515849-300mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "role": "experimental",
+      "label": "Cotadutide 300 mcg",
+      "intervention": "Cotadutide 300 mcg administered subcutaneously once daily for 26 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "300 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "cotadutide-04515849-600mcg",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "role": "experimental",
+      "label": "Cotadutide 600 mcg",
+      "intervention": "Cotadutide 600 mcg administered subcutaneously once daily for 26 weeks",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "cotadutide"
+      },
+      "dose": "600 mcg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "cotadutide-04515849-semaglutide",
+      "studyId": "astrazeneca-cotadutide-nct04515849",
+      "role": "active comparator",
+      "label": "Semaglutide 1.0 mg",
+      "intervention": "Semaglutide 1.0 mg administered subcutaneously once weekly for 26 weeks (open-label)",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "dose": "1.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "26 weeks"
     },
     {
       "id": "nct00785408-davalintide-low",

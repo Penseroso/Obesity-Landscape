@@ -49,7 +49,9 @@
         "astrazeneca-cotadutide-nct03625778",
         "astrazeneca-cotadutide-nct03645421",
         "astrazeneca-cotadutide-nct03745937",
-        "astrazeneca-cotadutide-nct04208620"
+        "astrazeneca-cotadutide-nct04208620",
+        "astrazeneca-cotadutide-nct04019561",
+        "astrazeneca-cotadutide-nct04515849"
       ],
       "linkedStudyIds": []
     },
@@ -399,6 +401,7 @@
         "novo-nordisk-semaglutide-select-nct03574597"
       ],
       "linkedStudyIds": [
+        "astrazeneca-cotadutide-nct04515849",
         "boehringer-ingelheim-survodutide-nct05202353",
         "boehringer-ingelheim-survodutide-nct06745284",
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",

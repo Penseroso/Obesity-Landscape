@@ -17,5 +17,12 @@
       "Bash(mkdir -p .temp/ctgov)",
       "Bash(curl -s \"https://clinicaltrials.gov/api/v2/studies/NCT06041217?fields=resultsSection.adverseEventsModule\" -o .temp/ctgov/NCT06041217.json)"
     ]
+  },
+  "skillOverrides": {
+    "design-taste-frontend": "name-only",
+    "find-skills": "name-only",
+    "high-end-visual-design": "name-only",
+    "imagegen-frontend-web": "name-only",
+    "redesign-existing-projects": "name-only"
   }
 }

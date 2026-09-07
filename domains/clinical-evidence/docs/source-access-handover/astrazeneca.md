@@ -1,10 +1,29 @@
 ---
 companyId: astrazeneca
 status: active
-lastCheckedAt: 2026-08-10
+lastCheckedAt: 2026-09-07
 ---
 
 # AstraZeneca Clinical Evidence source-access handover
+
+## Cotadutide NAFLD/NASH (PROXYMO, NCT04019561) and diabetic kidney disease (NCT04515849) body-weight outcomes
+
+- Company / asset / Studies: AstraZeneca / cotadutide / NCT04019561 (PROXYMO), NCT04515849
+- Highest-priority known sources:
+  - NCT04019561: https://www.cghjournal.org/article/S1542-3565(24)00424-5/fulltext (peer-reviewed publication); https://s3.amazonaws.com/ctr-med-7111/D5671C00002/a7e025dc-807a-4619-91f1-e5cdf18d7fb1/d6bab666-5827-4a9b-8ac9-d80c66895271/d5671c00002-CSR-synopsis_-_Redacted_-_31Mar2022-v1.pdf (regulatory filing)
+  - NCT04515849: https://www.kidney-international.org/article/S0085-2538(24)00629-X/fulltext (peer-reviewed publication)
+- Access status: `SOURCE_IDENTIFIED_NOT_ACCESSED` (NCT04019561, blocker `PAYWALL`); `PARTIAL_SOURCE_REVIEWED` (NCT04515849)
+- Blocker: for NCT04019561, the AstraZeneca CSR synopsis was directly opened and read (`FULL_SOURCE_REVIEWED` for that document specifically), but its body-weight and BMI result values are redacted as confidential commercial information ("CCI") — it confirms only that a nominal LS-mean reduction was seen for both dose arms versus placebo, with no numeric value; the Clinical Gastroenterology and Hepatology peer-reviewed publication that would carry the number returned HTTP 403. For NCT04515849, the Kidney International peer-reviewed publication also returned HTTP 403; the only located body-weight figure is a PK/PD-model-predicted value (−5.3% at 600 mcg vs placebo, Week 26) from a secondary modeling paper, which is a derived/recalculated figure the contract does not permit entering as a direct result.
+- Confirmed scope: both Studies, their registry design, population, and randomized N (NCT04019561: n=25/25/24 for 300 mcg/600 mcg/placebo) are stored. NCT04019561's hepatic-fat-fraction, ALT, and AST key secondary results and its qualitative safety summary are confirmed from the CSR synopsis. NCT04515849's UACR renal-outcome topline (statistically significant at 300 mcg and 600 mcg vs placebo by Week 14) is known but not yet entered pending a directly reviewed primary source, since it is outside this handover's immediate body-weight focus.
+- Missing scope: NCT04019561 and NCT04515849 arm-level, directly reported (not model-predicted) body-weight Endpoint/Outcome values.
+- Fallback attempted: none accepted — the CSR synopsis redaction and the PK/PD-model figure were each evaluated and rejected as insufficient per-result evidence rather than substituted.
+- Currently affected scope: the body-weight Outcome for both Studies only (and, for NCT04515849, the UACR renal Outcome, not yet attempted).
+- Re-entry condition: obtain direct access to the Clinical Gastroenterology and Hepatology article (NCT04019561) or the Kidney International article (NCT04515849) and enter the source-reported, non-modeled arm-level values.
+- Last checked: 2026-09-07
+
+## Excluded — PROXYMO-ADV (NCT05364931), no registered weight objective
+
+Not a handover item (disposition is final, not deferred), recorded here for traceability: this later, larger cotadutide MASH proof-of-concept trial (54 participants, same 300/600 mcg dosing) registers only safety, vital-signs, laboratory, ECG, and immunogenicity outcomes — no body-weight or BMI measure appears among its primary or secondary outcomes. Excluded under this workflow's Evidence Scope (MASH-only, weight not a registered Study objective), consistent with the same reasoning already applied to DREAMS-1 and NCT04965506 for Innovent's mazdutide.
 
 ## Cotadutide result publications
 
