@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
@@ -47,6 +47,11 @@ export function Modal({
 }: ModalProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const headingId = useId();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     panelRef.current?.focus();
@@ -110,7 +115,7 @@ export function Modal({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
-  if (typeof document === "undefined") {
+  if (!mounted) {
     return null;
   }
 
