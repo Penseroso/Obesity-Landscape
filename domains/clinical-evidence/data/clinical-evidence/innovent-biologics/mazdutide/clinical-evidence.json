@@ -166,60 +166,6 @@
       }
     },
     {
-      "id": "innovent-biologics-mazdutide-nct05606913",
-      "companyId": "innovent-biologics",
-      "assetId": "mazdutide",
-      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes",
-      "officialTitle": "Efficacy and Safety of IBI362 Versus Dulaglutide as add-on to Metformin and/or SGLT2 Inhibitor or TZD in Subjects With Type 2 Diabetes (DREAMS-2)",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT05606913"
-        }
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT05606913",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2024-08-23"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Active comparator",
-        "description": "Randomized to once-weekly mazdutide 4 mg, mazdutide 6 mg, or once-weekly dulaglutide 1.5 mg, added to background metformin and/or an SGLT2 inhibitor or TZD, for 28 weeks."
-      },
-      "population": "Chinese adults aged 18 years or older with type 2 diabetes inadequately controlled (HbA1c 7.5-11.0%) on stable-dose metformin alone or combined with an SGLT2 inhibitor or sulfonylurea, and BMI ≥23 kg/m².",
-      "metadata": {
-        "lastVerifiedAt": "2026-09-07",
-        "updatedAt": "2026-09-07",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT05606913",
-            "title": "A Study of IBI362 in Participants With Type 2 Diabetes (DREAMS-2)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-09-07"
-          },
-          {
-            "url": "https://www.nature.com/articles/s41586-025-10031-z",
-            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
-            "sourceType": "peer-reviewed publication",
-            "checkedAt": "2026-09-07"
-          }
-        ]
-      },
-      "studyFamily": "DREAMS",
-      "populationProfile": {
-        "ageGroup": "adult",
-        "diabetesStatus": "with-type-2-diabetes",
-        "requiresAdditionalCondition": false,
-        "treatmentContext": "initial-treatment",
-        "regionRestriction": "China"
-      }
-    },
-    {
       "id": "innovent-biologics-mazdutide-nct06884293",
       "companyId": "innovent-biologics",
       "assetId": "mazdutide",
@@ -576,6 +522,64 @@
           }
         ]
       }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "Efficacy and Safety of IBI362 Versus Dulaglutide as add-on to Metformin and/or SGLT2 Inhibitor or TZD in Subjects With Type 2 Diabetes (DREAMS-2)",
+      "acronym": "DREAMS-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05606913"
+        }
+      ],
+      "phase": "Phase 3",
+      "studyFamily": "DREAMS",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05606913",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-08-23"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Dose-blind for mazdutide; open-label active comparator",
+        "comparator": "Active comparator",
+        "description": "Randomized 1:1:1 to once-weekly mazdutide 4 mg, mazdutide 6 mg (dose-blind), or open-label once-weekly dulaglutide 1.5 mg, as add-on to background metformin with or without an SGLT2 inhibitor or sulfonylurea, for 28 weeks, at 71 hospitals in China."
+      },
+      "population": "Chinese adults aged 18 or older with type 2 diabetes, HbA1c 7.5-11.0% on stable-dose metformin (>=1500 mg/day) alone or combined with an SGLT2 inhibitor or a fixed daily dose of sulfonylureas for at least 2 months, and BMI >=23 kg/m2.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "28 weeks of treatment plus 4-week off-treatment follow-up",
+      "safetySummary": "TEAE incidence was higher with mazdutide (90.1% with 4 mg, 88.9% with 6 mg) than dulaglutide (82.4%); serious adverse events were balanced (5.8%, 4.9%, 7.8%). One death occurred in the 4 mg mazdutide group (metastatic lung cancer, assessed unrelated to treatment). The most common TEAEs were diarrhoea, decreased appetite, nausea, and vomiting, mostly mild to moderate and concentrated in the dose-escalation period.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05606913",
+            "title": "A Study of IBI362 in Participants With Type 2 Diabetes (DREAMS-2)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
     }
   ],
   "arms": [
@@ -724,35 +728,6 @@
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "16 weeks"
-    },
-    {
-      "id": "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg",
-      "studyId": "innovent-biologics-mazdutide-nct05606913",
-      "role": "experimental",
-      "label": "IBI362 4.0 mg",
-      "intervention": "IBI362 (mazdutide) titrated to 4.0 mg, subcutaneous, once weekly for 28 weeks",
-      "linkedAsset": {
-        "companyId": "innovent-biologics",
-        "assetId": "mazdutide"
-      }
-    },
-    {
-      "id": "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg",
-      "studyId": "innovent-biologics-mazdutide-nct05606913",
-      "role": "experimental",
-      "label": "IBI362 6.0 mg",
-      "intervention": "IBI362 (mazdutide) titrated to 6.0 mg, subcutaneous, once weekly for 28 weeks",
-      "linkedAsset": {
-        "companyId": "innovent-biologics",
-        "assetId": "mazdutide"
-      }
-    },
-    {
-      "id": "innovent-biologics-mazdutide-nct05606913-dulaglutide",
-      "studyId": "innovent-biologics-mazdutide-nct05606913",
-      "role": "active comparator",
-      "label": "Dulaglutide 1.5 mg",
-      "intervention": "Dulaglutide 1.5 mg, subcutaneous, once weekly for 28 weeks"
     },
     {
       "id": "innovent-biologics-mazdutide-nct06884293-mazdutide",
@@ -937,6 +912,59 @@
       "role": "active comparator",
       "label": "Tirzepatide",
       "intervention": "Open-label tirzepatide, dose-escalated from 2.5 mg to 15 mg, subcutaneous, once weekly"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "role": "experimental",
+      "label": "Mazdutide 4 mg",
+      "intervention": "Mazdutide titrated from 2 mg by 2 mg every 4 weeks to a target of 4 mg, administered subcutaneously once weekly, on background metformin with or without SGLT2 inhibitor or sulfonylurea",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "4 mg target dose",
+      "titration": "2 mg increments every 4 weeks to target",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "28 weeks",
+      "plannedN": 242,
+      "analyzedN": 242
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "role": "experimental",
+      "label": "Mazdutide 6 mg",
+      "intervention": "Mazdutide titrated from 2 mg by 2 mg every 4 weeks to a target of 6 mg, administered subcutaneously once weekly, on background metformin with or without SGLT2 inhibitor or sulfonylurea",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "6 mg target dose",
+      "titration": "2 mg increments every 4 weeks to target",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "28 weeks",
+      "plannedN": 244,
+      "analyzedN": 244
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-dulaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "role": "active comparator",
+      "label": "Dulaglutide 1.5 mg",
+      "intervention": "Dulaglutide 1.5 mg administered subcutaneously once weekly, without dose escalation, on background metformin with or without SGLT2 inhibitor or sulfonylurea",
+      "linkedAsset": {
+        "assetName": "Dulaglutide",
+        "externalCompanyName": "Eli Lilly and Company"
+      },
+      "dose": "1.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "28 weeks",
+      "plannedN": 245,
+      "analyzedN": 245
     }
   ],
   "analysisGroups": [],
@@ -1029,6 +1057,114 @@
       "domain": "body weight",
       "assessmentTimepoint": "Week 16",
       "assessmentTimepointWeeks": 16
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Change from baseline in HbA1c (treatment-policy estimand)",
+      "role": "primary",
+      "domain": "glycemic",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-body-weight-pct-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Percent change from baseline in body weight (treatment-policy estimand)",
+      "role": "key-secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-body-weight-kg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Change from baseline in body weight, kg (treatment-policy estimand)",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-composite-hba1c7-weight5-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Participants achieving HbA1c <7.0% with body-weight loss >=5% (treatment-policy estimand)",
+      "role": "key-secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-lt7-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Participants achieving HbA1c <7.0% (treatment-policy estimand)",
+      "role": "key-secondary",
+      "domain": "glycemic",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-le6-5-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Participants achieving HbA1c <=6.5% (treatment-policy estimand)",
+      "role": "secondary",
+      "domain": "glycemic",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder-5pct-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Participants achieving >=5% body-weight loss (treatment-policy estimand)",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder-10pct-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Participants achieving >=10% body-weight loss (treatment-policy estimand)",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 28",
+      "assessmentTimepointWeeks": 28
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-sae",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Safety population, through follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-nausea",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Safety population, through follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-vomiting",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Safety population, through follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-ada",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "name": "Anti-drug antibodies",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "During treatment",
+      "assessmentTimepointWeeks": null
     }
   ],
   "outcomes": [
@@ -1906,6 +2042,1202 @@
             "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-09-07",
             "publishedAt": "2022-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-1.61%",
+        "numericValue": -1.61,
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-1.66%",
+        "numericValue": -1.66,
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-1.36%",
+        "numericValue": -1.36,
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-4mg-vs-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg",
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-0.24%",
+        "numericValue": -0.24,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "Least-squares mean difference, 4 mg mazdutide minus dulaglutide",
+        "confidenceInterval": "95% CI, -0.40 to -0.08",
+        "pValue": "0.0032"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c-6mg-vs-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg",
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-0.30%",
+        "numericValue": -0.3,
+        "unit": "percentage points",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "Least-squares mean difference, 6 mg mazdutide minus dulaglutide",
+        "confidenceInterval": "95% CI, -0.46 to -0.14",
+        "pValue": "0.0003"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-pct-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-6.55%",
+        "numericValue": -6.55,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-pct-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-8.53%",
+        "numericValue": -8.53,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-pct-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-2.77%",
+        "numericValue": -2.77,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-pct-4mg-vs-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg",
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-3.78%",
+        "numericValue": -3.78,
+        "unit": "percent",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "Least-squares mean difference, 4 mg mazdutide minus dulaglutide",
+        "confidenceInterval": "95% CI, -4.66 to -2.91",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-pct-6mg-vs-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg",
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-5.76%",
+        "numericValue": -5.76,
+        "unit": "percent",
+        "resultType": "between-arm",
+        "effectMeasure": "Least-squares mean difference",
+        "comparisonType": "Least-squares mean difference, 6 mg mazdutide minus dulaglutide",
+        "confidenceInterval": "95% CI, -6.65 to -4.87",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-kg-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-kg-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-4.94 kg",
+        "numericValue": -4.94,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-kg-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-kg-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-6.59 kg",
+        "numericValue": -6.59,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-weight-kg-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-body-weight-kg-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "-2.06 kg",
+        "numericValue": -2.06,
+        "unit": "kg",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-composite-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-composite-hba1c7-weight5-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "46.9%",
+        "numericValue": 46.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-composite-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-composite-hba1c7-weight5-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "59.9%",
+        "numericValue": 59.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-composite-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-composite-hba1c7-weight5-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "18.9%",
+        "numericValue": 18.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c7-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-lt7-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "67.7%",
+        "numericValue": 67.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c7-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-lt7-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "70.4%",
+        "numericValue": 70.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c7-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-lt7-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "61.6%",
+        "numericValue": 61.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c65-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-le6-5-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "52.0%",
+        "numericValue": 52,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c65-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-le6-5-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "59.9%",
+        "numericValue": 59.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-hba1c65-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-hba1c-le6-5-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "41.6%",
+        "numericValue": 41.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder5-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-responder-5pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "responderThreshold": "At least 5% body weight loss from baseline",
+        "value": "58.6%",
+        "numericValue": 58.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder5-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-responder-5pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "responderThreshold": "At least 5% body weight loss from baseline",
+        "value": "73.1%",
+        "numericValue": 73.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder5-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-responder-5pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "responderThreshold": "At least 5% body weight loss from baseline",
+        "value": "26.6%",
+        "numericValue": 26.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder10-4mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-responder-10pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "responderThreshold": "At least 10% body weight loss from baseline",
+        "value": "25.7%",
+        "numericValue": 25.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder10-6mg-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-responder-10pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "responderThreshold": "At least 10% body weight loss from baseline",
+        "value": "33.9%",
+        "numericValue": 33.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-responder10-dulaglutide-week-28",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-responder-10pct-week-28",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "responderThreshold": "At least 10% body weight loss from baseline",
+        "value": "3.4%",
+        "numericValue": 3.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-sae-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-sae",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "5.8%",
+        "numericValue": 5.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-sae-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-sae",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "4.9%",
+        "numericValue": 4.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-sae-dulaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-sae",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "7.8%",
+        "numericValue": 7.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-nausea-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-nausea",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "35.5%",
+        "numericValue": 35.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-nausea-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-nausea",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "34.4%",
+        "numericValue": 34.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-nausea-dulaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-nausea",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "17.1%",
+        "numericValue": 17.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-vomiting-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-vomiting",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "24.0%",
+        "numericValue": 24,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-vomiting-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-vomiting",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "29.1%",
+        "numericValue": 29.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-vomiting-dulaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-vomiting",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-dulaglutide"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "14.3%",
+        "numericValue": 14.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-ada-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-ada",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "7.1%",
+        "numericValue": 7.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-ada-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "endpointId": "innovent-biologics-mazdutide-nct05606913-ada",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (treatment-policy estimand)",
+      "result": {
+        "value": "5.9%",
+        "numericValue": 5.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "estimand": "Treatment-policy estimand",
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-12-17"
           }
         ]
       }

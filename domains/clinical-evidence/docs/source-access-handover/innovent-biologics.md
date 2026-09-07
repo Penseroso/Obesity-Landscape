@@ -17,18 +17,15 @@ lastCheckedAt: 2026-09-07
 - Re-entry condition: represent these three trials under `innovent-biologics/mazdutide` only if the contract adds a shared/multi-focal Study anchor, or another authoritative mapping rule reassigns single ownership (for example, splitting by sponsor-of-record rather than first-claimed identity) without losing the Eli Lilly-side coverage.
 - Last checked: 2026-09-07
 
-## DREAMS-2 (NCT05606913) conflicting body-weight and HbA1c figures across secondary sources
+## DREAMS-2 (NCT05606913) conflicting body-weight and HbA1c figures across secondary sources — RESOLVED 2026-09-07
 
 - Company / asset / Study: Innovent Biologics / mazdutide / NCT05606913 (DREAMS-2, mazdutide vs dulaglutide in T2D)
 - Highest-priority known source: https://www.nature.com/articles/s41586-025-10031-z (peer-reviewed publication)
-- Access status: `SOURCE_IDENTIFIED_NOT_ACCESSED` (paywalled; blocker `PAYWALL`)
-- Blocker: three independently retrieved secondary sources reported mutually inconsistent per-arm Week 28 body-weight percent-change figures for the 4 mg and 6 mg arms, with the 4 mg/6 mg rank order swapped in one of them (a directly fetched EASD 2024 topline release gave 4 mg −9.24%/6 mg −7.13%; an earlier search summary gave 4 mg −7.31%/6 mg −9.24%; a search-engine summary attributed to the Nature publication's adjusted LS-mean, treatment-policy estimand gave 4 mg −6.55%/6 mg −8.53%). None of these was opened and read directly at the primary-publication level — a search-result snippet is never `Reviewed` under this workflow's definition — so no value could be entered without guessing between conflicting figures.
-- Confirmed scope: the Study itself, its registry design (4 mg / 6 mg mazdutide vs dulaglutide 1.5 mg, 28 weeks, N=731), and its in-scope status (body weight is a registered secondary outcome, not incidental) are stored. HbA1c primary-endpoint figures are similarly unresolved for the same reason.
-- Missing scope: arm-level body-weight and HbA1c Outcomes.
-- Fallback attempted: the EASD 2024 sponsor press release (https://www.prnewswire.com/apac/news-releases/head-to-head-superiority-over-dulaglutide-innovents-phase-3-clinical-trial-dreams-2-of-mazdutide-in-chinese-patients-with-type-2-diabetes-were-orally-presented-at-easd-2024-302244860.html) was directly fetched but its dose-arm attribution could not be reconciled with the other two sources; not used as fallback given the risk of misattributing a value to the wrong dose.
-- Currently affected scope: DREAMS-2 body-weight and HbA1c Outcomes only. The Study inventory record itself is stored and complete.
-- Re-entry condition: obtain and directly read the Nature publication (or another primary source) to confirm which arm-level figures are correct, then enter the reconciled values.
+- Original blocker: three independently retrieved secondary sources reported mutually inconsistent per-arm Week 28 body-weight percent-change figures for the 4 mg and 6 mg arms, with the 4 mg/6 mg rank order swapped in one of them. None of these was opened and read directly at the primary-publication level, so no value could be entered without guessing between conflicting figures.
+- Resolution: the user supplied the complete Nature article PDF directly. `FULL_SOURCE_REVIEWED`. All three secondary-source figures were superseded — the peer-reviewed treatment-policy-estimand values are 4 mg mazdutide −6.55%, 6 mg mazdutide −8.53%, dulaglutide −2.77% (Table 2), matching the figure the search-engine summary had attributed to this publication; the other two secondary figures were inaccurate. Full arm-level HbA1c, body-weight (percent and kg), composite (HbA1c<7.0% + ≥5% weight loss), responder (≥5%, ≥10% weight loss), and safety (serious adverse events, nausea, vomiting, anti-drug antibodies) Outcomes, plus between-arm least-squares mean differences vs dulaglutide, are now entered from Tables 1-3 and Extended Data Table 3.
 - Last checked: 2026-09-07
+
+Note: a user-supplied PDF titled "MEDI0382, phase 1" (Ambery et al., Br J Clin Pharmacol 2018, NCT02394314) is unrelated to mazdutide — MEDI0382 is AstraZeneca's cotadutide, a different molecule from a different company. See the exclusion recorded under `astrazeneca.md` instead; no mazdutide record was affected by this file.
 
 ## Untraversed candidate trials — identity or scope unconfirmed this run
 

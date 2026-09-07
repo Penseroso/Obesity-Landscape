@@ -21,6 +21,10 @@ lastCheckedAt: 2026-09-07
 - Re-entry condition: obtain direct access to the Clinical Gastroenterology and Hepatology article (NCT04019561) or the Kidney International article (NCT04515849) and enter the source-reported, non-modeled arm-level values.
 - Last checked: 2026-09-07
 
+## Excluded — MEDI0382 first-in-human Phase 1 (NCT02394314), healthy volunteers
+
+Not a handover item (disposition is final, not deferred), recorded here for traceability: this single-ascending-dose Phase 1 study (Ambery et al., Br J Clin Pharmacol 2018) enrolled healthy volunteers (BMI 22-30 kg/m2, not an obesity/overweight-qualifying criterion) with a safety/tolerability primary objective and PK/immunogenicity secondary objectives; body weight was not measured as an efficacy endpoint (only exploratory food-intake and glucose measures were reported). Excluded under this workflow's Evidence Scope ("healthy-volunteer PK studies without an explicit obesity or weight-management objective").
+
 ## Excluded — PROXYMO-ADV (NCT05364931), no registered weight objective
 
 Not a handover item (disposition is final, not deferred), recorded here for traceability: this later, larger cotadutide MASH proof-of-concept trial (54 participants, same 300/600 mcg dosing) registers only safety, vital-signs, laboratory, ECG, and immunogenicity outcomes — no body-weight or BMI measure appears among its primary or secondary outcomes. Excluded under this workflow's Evidence Scope (MASH-only, weight not a registered Study objective), consistent with the same reasoning already applied to DREAMS-1 and NCT04965506 for Innovent's mazdutide.
