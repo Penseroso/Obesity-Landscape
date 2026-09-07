@@ -44103,7 +44103,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2-placebo"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "0%",
         "numericValue": 0,
@@ -44132,7 +44132,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "0%",
         "numericValue": 0,
@@ -44161,7 +44161,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2-placebo"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "0%",
         "numericValue": 0,
@@ -44190,7 +44190,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "50.0%",
         "numericValue": 50,
@@ -44219,7 +44219,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2-placebo"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "10.0%",
         "numericValue": 10,
@@ -44248,7 +44248,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "36.7%",
         "numericValue": 36.7,
@@ -44277,7 +44277,7 @@
       "armIds": [
         "innovent-biologics-mazdutide-nct04904913-9mg-stage2"
       ],
-      "analysisPopulation": "Modified intention-to-treat (mITT) population",
+      "analysisPopulation": "Safety population",
       "result": {
         "value": "28.3%",
         "numericValue": 28.3,
