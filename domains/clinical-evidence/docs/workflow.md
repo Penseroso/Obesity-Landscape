@@ -130,6 +130,51 @@ a locator this workflow anchors to a *different* row — which is Company/
 Pipeline's own consistency signal, not an input to this workflow's anchor
 decision.
 
+## 1a. Asset-scoped execution for a named asset (ADR-0069)
+
+When a request explicitly names one or more of the company's existing assets —
+by `assetId`, canonical asset name, code name, or alias — this execution may
+scope its evidence traversal (step 2 onward) to those named assets instead of
+the company's complete manifest, as an **asset-scoped run**. This is an
+option, not a requirement: a request that names only the company still
+traverses every current asset under section 1's complete-manifest rule.
+
+1. **Declare the scope.** State the named asset(s) — by `assetId` — this
+   execution traverses, in this execution's own report (section 7) and in its
+   commit message(s). An execution that does not declare a scope traverses the
+   full company and is held to the unmodified sections 1–8.
+2. **What loads regardless.** Section 1's read-only manifest load, its
+   validation, and the registry-citation preflight always cover the
+   **complete** company manifest, never a subset — identity resolution and the
+   no-`scopeClass`-filter rule are unaffected by an asset-scoped run. Only the
+   evidence-traversal work in step 2 onward narrows.
+3. **What a scope covers.** Every named asset gets full rigor: step 2 items
+   1–6, the source and update rules of step 3, and the step 6 completion check
+   all apply in full to each named asset's Studies. If an already-stored
+   Regimen or FDC row directly composes a named asset with another asset in
+   the same company (for example `asc36-35-fdc` composing `asc36` and
+   `asc35`), that row's own Studies are in scope too, even when its other
+   component asset was not separately named — a combination Study cannot be
+   dispositioned from evidence covering only one of its own components. Step
+   2's "every current in-scope asset" resolves, for an asset-scoped run, to
+   exactly the assets this item reaches — never the company's complete set. A
+   scope is not required to traverse any other company asset beyond what this
+   item reaches.
+4. **What stays out of scope.** Every company asset not named and not reached
+   by item 3 remains whatever its current Clinical Evidence state already is —
+   untouched, not implicitly marked current, not implicitly marked absent. An
+   asset-scoped run reports its own scope as **asset scope complete**, never
+   as company-level completion; the run-level completion status defined in
+   step 6 (`FULL`, `FULL_WITH_FALLBACK`, `PARTIAL`) describes only the
+   declared scope's own result coverage and must not be read as satisfying
+   full company coverage.
+5. **No new ledger.** Coverage of which of a company's assets Clinical
+   Evidence currently covers is read from the existing per-asset source-file
+   layout in step 4
+   (`domains/clinical-evidence/data/clinical-evidence/<company-id>/<asset-id>/`)
+   — an asset's own directory presence, or its absence, is the coverage
+   signal. Asset-scoped execution introduces no new tracking file.
+
 ## 2. Establish and traverse the evidence set
 
 Inspect existing Clinical Evidence source files and decide initial
@@ -444,7 +489,9 @@ Company/Pipeline changes.
 Report:
 
 - initial Clinical Evidence investigation or update;
-- assets traversed;
+- assets traversed, including the declared scope for an asset-scoped run
+  (section 1a) and which of the company's other current assets remain outside
+  that scope;
 - Studies entered or updated, including inventory-only Studies;
 - result-availability state, checked sources, and check date for every Study,
   plus the result-bearing sources reviewed. Keep "no result was disclosed" and
