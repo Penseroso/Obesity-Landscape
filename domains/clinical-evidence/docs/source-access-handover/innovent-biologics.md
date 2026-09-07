@@ -27,13 +27,13 @@ lastCheckedAt: 2026-09-07
 
 Note: a user-supplied PDF titled "MEDI0382, phase 1" (Ambery et al., Br J Clin Pharmacol 2018, NCT02394314) is unrelated to mazdutide — MEDI0382 is AstraZeneca's cotadutide, a different molecule from a different company. See the exclusion recorded under `astrazeneca.md` instead; no mazdutide record was affected by this file.
 
-## NCT04904913 Stage 2 (9 mg, BMI≥30 subgroup) — identity confirmed, outcomes still deferred (updated 2026-09-07)
+## NCT04904913 Stage 2 (9 mg, BMI≥30 subgroup) — RESOLVED 2026-09-07
 
 - Company / asset / Study: Innovent Biologics / mazdutide / NCT04904913 (China Phase 2, same registry identity as the already-stored Stage 1 dose-ranging cohort)
-- Confirmed: the "Mazdutide 9 mg in Chinese adults with BMI ≥30 kg/m² but without diabetes" publication (Med, 2026; PMID 41875890) reports a Stage 2 cohort (9 mg n=60, placebo n=20 by 3:1 randomization) of this same registry Study — the 80-participant gap between the registry's total enrollment (328) and Stage 1's own enrollment (248, already stored) matches this Stage 2 N exactly, and the registry's own eligibility text names a "second stage: BMI≥30 kg/m2" subgroup consistent with this publication's population. Stage 2 Arms (design only: dose, randomization ratio, N, duration) are now stored on the existing Study record.
-- Still deferred: Stage 2's efficacy Outcomes (week 24 body-weight −12.78% vs placebo +1.80%, treatment difference −14.58% [95% CI −18.00, −11.16], responder rate 81.7%) are known only from search-engine-summarized figures, never opened and read directly at the Med/Cell Press page (HTTP 403 each attempt this run) — a search-result snippet is never `Reviewed` under this workflow's definition, so no value was entered.
-- Access status: `SOURCE_IDENTIFIED_NOT_ACCESSED` (blocker `BOT_BLOCK`), source: https://www.cell.com/med/abstract/S2666-6340(26)00066-8 (also https://pubmed.ncbi.nlm.nih.gov/41875890/)
-- Re-entry condition: obtain direct access to the Med article (PDF or a non-blocked mirror) and enter the source-reported arm-level values.
+- Highest-priority known source: https://doi.org/10.1016/j.medj.2026.101063 (Ji et al., Med 2026)
+- Resolution: the user supplied the complete Med (Cell Press) PDF directly. `FULL_SOURCE_REVIEWED`. Confirms this is Stage 2 of NCT04904913 ("the second part of a multi-centre, randomized, double-blind, placebo-controlled phase 2 study (NCT04904913)... The enrollment, operation, and data analysis of these two parts were independent"), matching the earlier identity inference (enrollment gap and eligibility text) exactly. Full Stage 2 data now entered: primary endpoint (percentage body-weight change, ANCOVA+LOCF, Week 24: mazdutide 9 mg −12.78% vs placebo +1.80%, ETD −14.58% [95% CI −18.00, −11.16], p<0.0001), absolute weight change (kg), responder rates at the ≥5/10/15/20% thresholds, and safety (serious adverse events, nausea, vomiting, anti-drug antibodies) from the paper's Tables 2 and 4.
+- Not entered: the voluntary, non-randomized 24-week extension data (Week 48/60), since the paper's own Limitations section flags a real bias risk from non-random continuation, and it is exploratory rather than confirmatory; could be added in a future run if needed.
+- Last checked: 2026-09-07
 
 ## Other untraversed candidate trials — identity or scope unconfirmed this run
 
