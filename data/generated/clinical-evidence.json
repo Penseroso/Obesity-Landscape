@@ -5954,6 +5954,580 @@
       }
     },
     {
+      "id": "innovent-biologics-mazdutide-nct04904913",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase II Clinical Study to Evaluate the Efficacy and Safety of IBI362 in Chinese Overweight and Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04904913"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04904913",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-11-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Two-stage study; Stage 1 randomized participants 3:1:3:1:3:1 to mazdutide 3 mg, 4.5 mg, or 6 mg (each dose paired with its own randomized placebo group) for 24 weeks across 20 hospitals in China. This record covers the reviewed Stage 1 dose-ranging cohort only; a Stage 2 higher-dose (9 mg) cohort in a BMI ≥30 kg/m² subgroup is part of the same registry record but its results were not located in this run."
+      },
+      "population": "Chinese adults aged 18 to 75 years with BMI ≥28 kg/m², or ≥24 kg/m² with at least one of hyperphagia, prediabetes, hypertension, dyslipidemia, fatty liver disease, weight-bearing joint pain, obesity-induced dyspnea, or obstructive sleep apnea syndrome; participants with diabetes mellitus were excluded.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "24 weeks of treatment plus 12 weeks of follow-up",
+      "safetySummary": "Treatment-emergent adverse events occurred in 93.5-96.7% of mazdutide-arm participants versus 80.6% on placebo, driven by dose-dependent gastrointestinal events (nausea, diarrhea, vomiting). Serious adverse events occurred in 9 mazdutide-treated participants and 0 placebo participants (pooled across mazdutide arms, none treatment-related); one participant (mazdutide 4.5 mg) discontinued for an adverse event.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04904913",
+            "title": "A Study of IBI362 Evaluating Weight Loss in Obese and Overweight Chinese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes-with-obesity",
+      "officialTitle": "A Multicenter, Randomized, Open-label Phase 3 Study Comparing the Efficacy and Safety of IBI362 Versus Semaglutide in Chinese Participants With Early Type 2 Diabetes and Obesity (DREAMS-3)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06184568"
+        }
+      ],
+      "phase": "Phase 3",
+      "studyFamily": "DREAMS",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06184568",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "None (open-label)",
+        "comparator": "Active comparator",
+        "description": "Open-label, active-comparator head-to-head study randomizing participants to once-weekly mazdutide (titrated up to 9 mg) or once-weekly semaglutide (titrated up to 1.0 mg) for 32 weeks."
+      },
+      "population": "Chinese adults aged 18 years or older with type 2 diabetes diagnosed within 5 years, HbA1c 7.5-9.5% on diet/exercise with or without stable metformin, and BMI ≥28 kg/m².",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "32 weeks of treatment",
+      "safetySummary": "Gastrointestinal symptoms were the most common adverse events in both arms, mostly mild to moderate in severity, with no new safety signals identified for mazdutide relative to semaglutide.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06184568",
+            "title": "A Study Comparing IBI362 vs Semaglutide in Chinese Adults With Early Type 2 Diabetes and Obesity (DREAMS-3)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection",
+      "officialTitle": "Safety and Efficacy of a GLP-1 and Glucagon Receptor Dual Agonist Mazdutide (IBI362) 9 mg and 10 mg in Chinese Adults With Overweight or Obesity: A Randomised, Placebo-controlled, Multiple-ascending-dose Phase 1b Trial",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT04440345"
+        }
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT04440345",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2022-10"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multiple-ascending-dose design at five Chinese hospitals; participants randomized 2:1 to mazdutide or placebo within each of a 9 mg cohort (12 weeks) and a 10 mg cohort (16 weeks), each cohort with its own randomized placebo group."
+      },
+      "population": "Chinese adults aged 18-75 years with overweight (BMI ≥24 kg/m² with hyperphagia and/or at least one obesity-related comorbidity) or obesity (BMI ≥28 kg/m²).",
+      "overallDuration": "12 weeks of treatment (9 mg cohort) or 16 weeks of treatment (10 mg cohort)",
+      "safetySummary": "No serious adverse events were reported. Treatment-emergent adverse events were mild to moderate, led by gastrointestinal symptoms (nausea up to 62.5% in the higher-dose cohort vs 37.5% in the lower-dose cohort; diarrhea 50%; decreased appetite 62.5%; vomiting 37.5%) and a heart-rate increase of up to 17.4 bpm alongside a concurrent blood-pressure decrease.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT04440345",
+            "title": "Mazdutide (IBI362) Multiple-ascending-dose Study in Chinese Adults With Overweight or Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/",
+            "title": "Safety and efficacy of a GLP-1 and glucagon receptor dual agonist mazdutide (IBI362) 9 mg and 10 mg in Chinese adults with overweight or obesity: A randomised, placebo-controlled, multiple-ascending-dose phase 1b trial",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2022-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "Efficacy and Safety of IBI362 Versus Dulaglutide as add-on to Metformin and/or SGLT2 Inhibitor or TZD in Subjects With Type 2 Diabetes (DREAMS-2)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05606913"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05606913",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-08-23"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Active comparator",
+        "description": "Randomized to once-weekly mazdutide 4 mg, mazdutide 6 mg, or once-weekly dulaglutide 1.5 mg, added to background metformin and/or an SGLT2 inhibitor or TZD, for 28 weeks."
+      },
+      "population": "Chinese adults aged 18 years or older with type 2 diabetes inadequately controlled (HbA1c 7.5-11.0%) on stable-dose metformin alone or combined with an SGLT2 inhibitor or sulfonylurea, and BMI ≥23 kg/m².",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05606913",
+            "title": "A Study of IBI362 in Participants With Type 2 Diabetes (DREAMS-2)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          },
+          {
+            "url": "https://www.nature.com/articles/s41586-025-10031-z",
+            "title": "Mazdutide versus dulaglutide in Chinese adults with type 2 diabetes",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "studyFamily": "DREAMS",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06884293",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-mafld",
+      "officialTitle": "A Multicenter, Randomized, Open-label Phase III Study to Compare the Efficacy and Safety of IBI362 and Semaglutide in Chinese Overweight or Obese Subjects With Metabolic Dysfunction-associated Fatty Liver Disease (GLORY-3)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06884293"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06884293",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-05-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "None (open-label)",
+        "comparator": "Active comparator",
+        "description": "Open-label head-to-head study randomizing to once-weekly mazdutide (titrated to 9 mg) or once-weekly semaglutide (titrated to 2.5 mg) for 48 weeks."
+      },
+      "population": "Chinese adults with BMI ≥27 kg/m², MAFLD with liver fat content ≥8% by MRI-PDFF, and HbA1c ≤10%.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06884293",
+            "title": "A Study Comparing IBI362 vs Semaglutide in Chinese Overweight or Obese Adults With MAFLD (GLORY-3)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "studyFamily": "GLORY",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06931028",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-osa",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled Phase III Clinical Study to Assess the Efficacy and Safety of IBI362 in Chinese Subjects With Moderate-to-Severe Obstructive Sleep Apnea and BMI≥28 kg/m2 (GLORY-OSA)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06931028"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06931028",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2025-06-29"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple",
+        "comparator": "Placebo",
+        "description": "Randomized to once-weekly mazdutide (titrated to 9 mg) or placebo for 48 weeks."
+      },
+      "population": "Chinese adults with moderate-to-severe obstructive sleep apnea (AHI ≥15/hour) and BMI ≥28 kg/m².",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06931028",
+            "title": "A Study of IBI362 in Chinese Subjects With Obstructive Sleep Apnea and BMI at Least 28 kg/m2 (GLORY-OSA)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "studyFamily": "GLORY",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07255209",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-adolescent-obesity",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase 3 Clinical Trial to Assess the Efficacy and Safety of IBI362 in Chinese Adolescents With Obesity or Overweight (GLORY-YOUNG)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07255209"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07255209",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-01-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Randomized, sequential-allocation study of two mazdutide dose levels versus placebo."
+      },
+      "population": "Chinese adolescents aged 12 to under 18 years meeting national obesity screening criteria, or overweight with at least one weight-related comorbidity (prediabetes, type 2 diabetes, hypertension, dyslipidemia, fatty liver disease, or obstructive sleep apnea).",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07255209",
+            "title": "A Study of IBI362 in Chinese Adolescents With Obesity or Overweight (GLORY-YOUNG)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "studyFamily": "GLORY"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07469800",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-obesity-with-hypertension",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Clinical Study to Evaluate the Efficacy and Safety of IBI362 in Participants With Mild to Moderate Hypertension Complicated by Overweight/Obesity Who Have Not Received Antihypertensive Drug Treatment",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07469800"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07469800",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-05-27"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Randomized to once-weekly mazdutide (step-up titration to 6/9 mg) or placebo for 48 weeks, in antihypertensive-drug-naive participants."
+      },
+      "population": "Adults aged 18 years or older with confirmed mild-to-moderate hypertension complicated by overweight/obesity, with no prior antihypertensive treatment (or a single agent discontinued at least 2 weeks before screening).",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07469800",
+            "title": "Efficacy and Safety of IBI362 in Hypertensive Patients With Overweight/Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06862908",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-hfpef-with-obesity",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase II Clinical Study to Evaluate the Efficacy and Safety of IBI362 in Subjects With HFpEF (Heart Failure With Preserved Ejection Fraction) or HFmrEF (Heart Failure With Mildly Reduced Ejection Fraction) Combined With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06862908"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06862908",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2025-07-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Randomized to once-weekly mazdutide 4.0 mg, 6.0 mg, or placebo, for up to 52 weeks."
+      },
+      "population": "Adults aged 18 years or older with BMI ≥28 kg/m², NYHA class II-III, no heart-failure hospitalization between screening and randomization, and KCCQ-CSS score <80.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06862908",
+            "title": "A Study of IBI362 in Subjects With HFpEF or HFmrEF Combined With Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06937749",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-mash",
+      "officialTitle": "A Randomized, Double-blind, Placebo-controlled Phase 2 Study Evaluating the Efficacy and Safety of IBI362 in Participants With Metabolic Dysfunction-Associated Steatohepatitis (MASH)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06937749"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06937749",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2025-11-20"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple",
+        "comparator": "Placebo",
+        "description": "Randomized to once-weekly mazdutide low dose, high dose, or placebo, for up to 60 weeks; biopsy-confirmed MASH with fibrosis stage F2 or F3."
+      },
+      "population": "Adults aged 18 years or older with BMI ≥25 kg/m² and biopsy-confirmed MASH (NAS ≥4, fibrosis stage F2 or F3).",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06937749",
+            "title": "A Study of IBI362 in Participants With Metabolic Dysfunction-Associated Steatohepatitis (MASH)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07767552",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes",
+      "officialTitle": "Mazdutide for Remission of Type 2 Diabetes: Multicentre, Double Blind, Randomised, Placebo Controlled Trial",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07767552"
+        }
+      ],
+      "phase": "N/A",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07767552",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-08-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple",
+        "comparator": "Placebo",
+        "description": "Randomized to once-weekly mazdutide 6 mg or placebo."
+      },
+      "population": "Adults aged 18-70 years with type 2 diabetes diagnosed within 5 years, HbA1c 6.5-9.0% on monotherapy or diet/exercise alone, and BMI ≥24 kg/m².",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07767552",
+            "title": "Mazdutide for Remission of Type 2 Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      },
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07000955",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection",
+      "officialTitle": "Tolerance and Pharmacokinetic/Pharmacokinetic Study of IBI362 15mg Administered Multiple Times in Chinese Patients With Moderate to Severe Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07000955"
+        }
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07000955",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2025-12-15"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple",
+        "comparator": "Placebo and active comparator",
+        "description": "Two-stage design; Stage 1 dose-escalates IBI362 up to 15 mg once weekly for 44 weeks against placebo and open-label tirzepatide; Stage 2 continues at 12 mg or 15 mg every 2 weeks for 12 weeks."
+      },
+      "population": "Chinese adults aged 18-55 years with BMI ≥32.5 kg/m² (moderate-to-severe obesity).",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07000955",
+            "title": "Tolerance and Pharmacokinetic/Pharmacokinetic Study of IBI362 15mg in Patients With Moderate to Severe Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-07"
+          }
+        ]
+      }
+    },
+    {
       "id": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
@@ -16182,6 +16756,365 @@
       "treatmentDuration": "48 weeks"
     },
     {
+      "id": "innovent-biologics-mazdutide-nct04440345-9mg-cohort-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "role": "placebo",
+      "label": "Placebo (9 mg cohort)",
+      "intervention": "Matching placebo administered subcutaneously once weekly for 12 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-9mg",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "role": "experimental",
+      "label": "Mazdutide 9 mg",
+      "intervention": "IBI362 (mazdutide) titrated to 9 mg and administered subcutaneously once weekly for 12 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "9 mg target dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-10mg-cohort-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "role": "placebo",
+      "label": "Placebo (10 mg cohort)",
+      "intervention": "Matching placebo administered subcutaneously once weekly for 16 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "16 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-10mg",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "role": "experimental",
+      "label": "Mazdutide 10 mg",
+      "intervention": "IBI362 (mazdutide) titrated to 10 mg and administered subcutaneously once weekly for 16 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "10 mg target dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "16 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly for 24 weeks",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks",
+      "plannedN": 62,
+      "analyzedN": 62
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-3mg",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "role": "experimental",
+      "label": "IBI362 3 mg",
+      "intervention": "IBI362 (mazdutide) 3 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "3 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks",
+      "plannedN": 62,
+      "analyzedN": 62
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-4-5mg",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "role": "experimental",
+      "label": "IBI362 4.5 mg",
+      "intervention": "IBI362 (mazdutide) 4.5 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "4.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks",
+      "plannedN": 63,
+      "analyzedN": 63
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "role": "experimental",
+      "label": "IBI362 6 mg",
+      "intervention": "IBI362 (mazdutide) 6 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "24 weeks",
+      "plannedN": 61,
+      "analyzedN": 61
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-mazdutide-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "role": "experimental",
+      "label": "IBI362 4.0 mg",
+      "intervention": "IBI362 (mazdutide) titrated to 4.0 mg, subcutaneous, once weekly for 28 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-mazdutide-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "role": "experimental",
+      "label": "IBI362 6.0 mg",
+      "intervention": "IBI362 (mazdutide) titrated to 6.0 mg, subcutaneous, once weekly for 28 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct05606913-dulaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct05606913",
+      "role": "active comparator",
+      "label": "Dulaglutide 1.5 mg",
+      "intervention": "Dulaglutide 1.5 mg, subcutaneous, once weekly for 28 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-mazdutide",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "role": "experimental",
+      "label": "IBI362 (mazdutide)",
+      "intervention": "IBI362 (mazdutide) titrated from 2.0 mg to 4.0 mg to target dose, administered subcutaneously once weekly for 32 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "Titrated to target dose",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "32 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-semaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide titrated from 0.25 mg to 0.5 mg to 1.0 mg, administered subcutaneously once weekly for 24 weeks at target dose",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      },
+      "dose": "Titrated to 1.0 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "32 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06862908-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct06862908",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Once-weekly matching placebo"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06862908-4mg",
+      "studyId": "innovent-biologics-mazdutide-nct06862908",
+      "role": "experimental",
+      "label": "IBI362 4.0 mg",
+      "intervention": "IBI362 (mazdutide) titrated to 4.0 mg, subcutaneous, once weekly",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06862908-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct06862908",
+      "role": "experimental",
+      "label": "IBI362 6.0 mg",
+      "intervention": "IBI362 (mazdutide) titrated to 6.0 mg, subcutaneous, once weekly",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06884293-mazdutide",
+      "studyId": "innovent-biologics-mazdutide-nct06884293",
+      "role": "experimental",
+      "label": "IBI362 (mazdutide)",
+      "intervention": "IBI362 (mazdutide) titrated to 9 mg, subcutaneous, once weekly for 48 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06884293-semaglutide",
+      "studyId": "innovent-biologics-mazdutide-nct06884293",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide titrated to 2.5 mg, subcutaneous, once weekly for 48 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06931028-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct06931028",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Once-weekly matching placebo for 48 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06931028-mazdutide",
+      "studyId": "innovent-biologics-mazdutide-nct06931028",
+      "role": "experimental",
+      "label": "IBI362 (mazdutide)",
+      "intervention": "IBI362 (mazdutide) titrated to 9 mg, subcutaneous, once weekly for 48 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06937749-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct06937749",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Once-weekly matching placebo for 60 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06937749-low-dose",
+      "studyId": "innovent-biologics-mazdutide-nct06937749",
+      "role": "experimental",
+      "label": "IBI362 low dose",
+      "intervention": "IBI362 (mazdutide), subcutaneous, once weekly, lower dose level, for 52 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06937749-high-dose",
+      "studyId": "innovent-biologics-mazdutide-nct06937749",
+      "role": "experimental",
+      "label": "IBI362 high dose",
+      "intervention": "IBI362 (mazdutide), subcutaneous, once weekly, higher dose level, for 48 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07000955-ibi362",
+      "studyId": "innovent-biologics-mazdutide-nct07000955",
+      "role": "experimental",
+      "label": "IBI362",
+      "intervention": "IBI362 (mazdutide) dose-escalated from 2 mg to 15 mg, subcutaneous, once weekly (Stage 1), then 12 mg or 15 mg every 2 weeks (Stage 2)",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07000955-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct07000955",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo, subcutaneous, dose-escalated schedule mirroring the IBI362 arm"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07000955-tirzepatide",
+      "studyId": "innovent-biologics-mazdutide-nct07000955",
+      "role": "active comparator",
+      "label": "Tirzepatide",
+      "intervention": "Open-label tirzepatide, dose-escalated from 2.5 mg to 15 mg, subcutaneous, once weekly"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07255209-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct07255209",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Once-weekly matching placebo"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07255209-dose1",
+      "studyId": "innovent-biologics-mazdutide-nct07255209",
+      "role": "experimental",
+      "label": "IBI362 dose 1",
+      "intervention": "IBI362 (mazdutide), subcutaneous, once weekly, lower dose level",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07255209-dose2",
+      "studyId": "innovent-biologics-mazdutide-nct07255209",
+      "role": "experimental",
+      "label": "IBI362 dose 2",
+      "intervention": "IBI362 (mazdutide), subcutaneous, once weekly, higher dose level",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07469800-ibi362",
+      "studyId": "innovent-biologics-mazdutide-nct07469800",
+      "role": "experimental",
+      "label": "IBI362 treatment group",
+      "intervention": "IBI362 (mazdutide), step-up titration 2 mg (Weeks 1-4), 4 mg (Weeks 5-8), 6 mg (Weeks 9-24), 6/9 mg (Weeks 25-48), subcutaneous, once weekly",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07469800-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct07469800",
+      "role": "placebo",
+      "label": "Placebo control group",
+      "intervention": "Matching placebo, subcutaneous, once weekly for 48 weeks"
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07767552-mazdutide-6mg",
+      "studyId": "innovent-biologics-mazdutide-nct07767552",
+      "role": "experimental",
+      "label": "Mazdutide 6 mg",
+      "intervention": "Mazdutide titrated from 2 mg to 6 mg, subcutaneous, once weekly for 24 weeks",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct07767552-placebo",
+      "studyId": "innovent-biologics-mazdutide-nct07767552",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo, subcutaneous, once weekly for 32 weeks"
+    },
+    {
       "id": "amyoral-100",
       "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "role": "experimental",
@@ -21465,6 +22398,95 @@
       "domain": "body weight",
       "assessmentTimepoint": "Week 48",
       "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-body-weight-week-12",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "name": "Mean Percent Change from Baseline in Body Weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-body-weight-week-16",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "name": "Mean Percent Change from Baseline in Body Weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 16",
+      "assessmentTimepointWeeks": 16
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "name": "Percent Change from Baseline in Body Weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-responder-5pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "name": "Percentage of Participants who Achieve ≥5% Body Weight Reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-responder-10pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "name": "Percentage of Participants who Achieve ≥10% Body Weight Reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-nausea-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-vomiting-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 24",
+      "assessmentTimepointWeeks": 24
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-composite-hba1c-weight10-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "name": "Proportion of subjects who achieve composite endpoint of HbA1c <7.0% and ≥10% weight loss",
+      "role": "primary",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-body-weight-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "name": "Percent change in body weight from baseline",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-hba1c-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "name": "Change from Baseline in HbA1c",
+      "role": "secondary",
+      "domain": "glycemic",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
     },
     {
       "id": "amyoral-weight-week12",
@@ -40249,6 +41271,884 @@
             "sourceType": "company press release",
             "publishedAt": "2026-06-16",
             "checkedAt": "2026-08-11"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-9mg-cohort-placebo-body-weight-week-12",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "endpointId": "innovent-biologics-mazdutide-nct04440345-body-weight-week-12",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04440345-9mg-cohort-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-1.8%",
+        "numericValue": -1.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/",
+            "title": "Safety and efficacy of a GLP-1 and glucagon receptor dual agonist mazdutide (IBI362) 9 mg and 10 mg in Chinese adults with overweight or obesity: A randomised, placebo-controlled, multiple-ascending-dose phase 1b trial",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2022-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-9mg-body-weight-week-12",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "endpointId": "innovent-biologics-mazdutide-nct04440345-body-weight-week-12",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04440345-9mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-11.7%",
+        "numericValue": -11.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/",
+            "title": "Safety and efficacy of a GLP-1 and glucagon receptor dual agonist mazdutide (IBI362) 9 mg and 10 mg in Chinese adults with overweight or obesity: A randomised, placebo-controlled, multiple-ascending-dose phase 1b trial",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2022-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-10mg-cohort-placebo-body-weight-week-16",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "endpointId": "innovent-biologics-mazdutide-nct04440345-body-weight-week-16",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04440345-10mg-cohort-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-3.3%",
+        "numericValue": -3.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/",
+            "title": "Safety and efficacy of a GLP-1 and glucagon receptor dual agonist mazdutide (IBI362) 9 mg and 10 mg in Chinese adults with overweight or obesity: A randomised, placebo-controlled, multiple-ascending-dose phase 1b trial",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2022-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04440345-10mg-body-weight-week-16",
+      "studyId": "innovent-biologics-mazdutide-nct04440345",
+      "endpointId": "innovent-biologics-mazdutide-nct04440345-body-weight-week-16",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04440345-10mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-9.5%",
+        "numericValue": -9.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/",
+            "title": "Safety and efficacy of a GLP-1 and glucagon receptor dual agonist mazdutide (IBI362) 9 mg and 10 mg in Chinese adults with overweight or obesity: A randomised, placebo-controlled, multiple-ascending-dose phase 1b trial",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2022-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-placebo-body-weight-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "1.0%",
+        "numericValue": 1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-3mg-body-weight-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-3mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-6.7%",
+        "numericValue": -6.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-4-5mg-body-weight-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-4-5mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-10.4%",
+        "numericValue": -10.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-6mg-body-weight-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-6mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-11.3%",
+        "numericValue": -11.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-placebo-responder-5pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-5pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "4.8%",
+        "numericValue": 4.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-3mg-responder-5pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-5pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-3mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "58.1%",
+        "numericValue": 58.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-4-5mg-responder-5pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-5pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-4-5mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "82.5%",
+        "numericValue": 82.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-6mg-responder-5pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-5pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-6mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "80.3%",
+        "numericValue": 80.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 5% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-placebo-responder-10pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-10pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-3mg-responder-10pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-10pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-3mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "19.4%",
+        "numericValue": 19.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-4-5mg-responder-10pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-10pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-4-5mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "49.2%",
+        "numericValue": 49.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-6mg-responder-10pct-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-responder-10pct-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-6mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "50.8%",
+        "numericValue": 50.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": "At least 10% body weight reduction from baseline"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-placebo-nausea-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-nausea-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "4.8%",
+        "numericValue": 4.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-3mg-nausea-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-nausea-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-3mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "21.0%",
+        "numericValue": 21,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-4-5mg-nausea-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-nausea-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-4-5mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "23.8%",
+        "numericValue": 23.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-6mg-nausea-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-nausea-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-6mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "41.0%",
+        "numericValue": 41,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-placebo-vomiting-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-vomiting-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "3.2%",
+        "numericValue": 3.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-3mg-vomiting-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-vomiting-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-3mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "12.9%",
+        "numericValue": 12.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-4-5mg-vomiting-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-vomiting-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-4-5mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "20.6%",
+        "numericValue": 20.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct04904913-6mg-vomiting-week-24",
+      "studyId": "innovent-biologics-mazdutide-nct04904913",
+      "endpointId": "innovent-biologics-mazdutide-nct04904913-vomiting-week-24",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct04904913-6mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "27.9%",
+        "numericValue": 27.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.nature.com/articles/s41467-023-44067-4",
+            "title": "A phase 2 randomised controlled trial of mazdutide in Chinese overweight adults or adults with obesity",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2023-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-mazdutide-composite-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "endpointId": "innovent-biologics-mazdutide-nct06184568-composite-hba1c-weight10-week-32",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct06184568-mazdutide"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "48.0%",
+        "numericValue": 48,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-semaglutide-composite-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "endpointId": "innovent-biologics-mazdutide-nct06184568-composite-hba1c-weight10-week-32",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct06184568-semaglutide"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "21.0%",
+        "numericValue": 21,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-mazdutide-body-weight-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "endpointId": "innovent-biologics-mazdutide-nct06184568-body-weight-week-32",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct06184568-mazdutide"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-10.29%",
+        "numericValue": -10.29,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-semaglutide-body-weight-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "endpointId": "innovent-biologics-mazdutide-nct06184568-body-weight-week-32",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct06184568-semaglutide"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-6.00%",
+        "numericValue": -6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-mazdutide-hba1c-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "endpointId": "innovent-biologics-mazdutide-nct06184568-hba1c-week-32",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct06184568-mazdutide"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-2.03%",
+        "numericValue": -2.03,
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-nct06184568-semaglutide-hba1c-week-32",
+      "studyId": "innovent-biologics-mazdutide-nct06184568",
+      "endpointId": "innovent-biologics-mazdutide-nct06184568-hba1c-week-32",
+      "armIds": [
+        "innovent-biologics-mazdutide-nct06184568-semaglutide"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-1.84%",
+        "numericValue": -1.84,
+        "unit": "percentage points",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-07",
+        "updatedAt": "2026-09-07",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/innovents-mazdutide-shows-superiority-in-glycemic-control-with-weight-loss-over-semaglutide-in-a-head-to-head-phase-3-clinical-trial-dreams-3-302594633.html",
+            "title": "Innovent's Mazdutide Shows Superiority in Glycemic Control with Weight Loss over Semaglutide in a Head-to-head Phase 3 Clinical Trial DREAMS-3",
+            "sourceType": "company topline announcement",
+            "checkedAt": "2026-09-07",
+            "publishedAt": "2025-10-26"
           }
         ]
       }

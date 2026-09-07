@@ -272,6 +272,25 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "focalStudyIds": [
+        "innovent-biologics-mazdutide-nct04904913",
+        "innovent-biologics-mazdutide-nct06184568",
+        "innovent-biologics-mazdutide-nct04440345",
+        "innovent-biologics-mazdutide-nct05606913",
+        "innovent-biologics-mazdutide-nct06884293",
+        "innovent-biologics-mazdutide-nct06931028",
+        "innovent-biologics-mazdutide-nct07255209",
+        "innovent-biologics-mazdutide-nct07469800",
+        "innovent-biologics-mazdutide-nct06862908",
+        "innovent-biologics-mazdutide-nct06937749",
+        "innovent-biologics-mazdutide-nct07767552",
+        "innovent-biologics-mazdutide-nct07000955"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
       "focalStudyIds": [
@@ -385,6 +404,7 @@
         "eli-lilly-and-company-tirzepatide-surmount-5-nct05822830",
         "gan-lee-pharmaceuticals-gzr18-nct07150975",
         "gan-lee-pharmaceuticals-gzr18-nct07622810",
+        "innovent-biologics-mazdutide-nct06184568",
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
         "pfizer-pf-07081532-nct05579977",
         "roche-ct-996-bp45703-nct07112872",
