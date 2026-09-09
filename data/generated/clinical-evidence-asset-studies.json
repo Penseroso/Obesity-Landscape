@@ -2,6 +2,18 @@
   "projectionSchemaVersion": "2.0",
   "assets": [
     {
+      "companyId": "abbvie",
+      "assetId": "abbv-295",
+      "focalStudyIds": [
+        "abbvie-abbv-295-nct06144684",
+        "abbvie-abbv-295-nct07291232",
+        "abbvie-abbv-295-nct07514260",
+        "abbvie-abbv-295-nct07414784",
+        "abbvie-abbv-295-nct07752979"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "amgen",
       "assetId": "maridebart-cafraglutide",
       "focalStudyIds": [

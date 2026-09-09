@@ -2,6 +2,263 @@
   "clinicalEvidenceSchemaVersion": "3.1",
   "studies": [
     {
+      "id": "abbvie-abbv-295-nct06144684",
+      "companyId": "abbvie",
+      "assetId": "abbv-295",
+      "programId": "abbvie-abbv-295-subcutaneous-injection",
+      "officialTitle": "A Two-Part First-in-Human Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Single and Multiple Ascending Subcutaneous Doses of GUB014295 in Lean to Overweight or Obese But Otherwise Healthy Men and Women",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06144684"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GUC17-01",
+        "IRAS 1008236",
+        "ISRCTN85112396"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06144684",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-01"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind within cohorts",
+        "comparator": "Placebo",
+        "description": "Single-center, two-part first-in-human study of single ascending doses in Part 1 and multiple ascending doses in Part 2; 76 participants were enrolled overall."
+      },
+      "population": "Adults aged 18 to 65 years who were lean, overweight, or obese but otherwise healthy; Part 1 enrolled men and Part 2 enrolled men and women, with BMI ranges varying by part from 22.0-32.0 kg/m2 to 27.0-35.0 kg/m2.",
+      "overallDuration": "Part 1 through Day 29; Part 2 cohorts through Day 64, Day 120, or Day 127",
+      "safetySummary": "In the 60-participant MAD analysis reported in the EASD 2026 abstract, ABBV-295 was generally well tolerated, with no serious treatment-emergent adverse events; gastrointestinal disorders were the most common adverse events, were mostly mild, and occurred predominantly during the first 6 weeks.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06144684",
+            "title": "A Two-Part First-In-Human Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of GUB014295",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-09"
+          },
+          {
+            "url": "https://www.gubra.dk/mfn_news/gubra-announces-positive-gubamy-phase-1-sad-data-correction/",
+            "title": "Gubra announces positive GUBamy Phase 1 SAD data (correction)",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2024-11-13",
+            "checkedAt": "2026-09-09"
+          },
+          {
+            "url": "https://www.gubra.dk/mfn_news/gubra-announces-positive-gubamy-phase-1-interim-mad-results",
+            "title": "Gubra announces positive GUBamy Phase 1 interim MAD results",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2025-04-01",
+            "checkedAt": "2026-09-09"
+          },
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "title": "AbbVie Announces Positive Topline Results from a Phase 1 Multiple Ascending Dose Study of ABBV-295, a Long-Acting Amylin Analog, in Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          },
+          {
+            "url": "https://easddistribute.m-anage.com/from.storage?image=DRQMKAdip9FzW2MCANbX455oGpa8lOOzd43PIVHWY64aLK4MDZ939Z5s-uia03kA0",
+            "title": "Phase 1 multiple ascending dose study of ABBV-295, a long-acting amylin analog for the treatment of obesity",
+            "sourceType": "conference abstract",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbvie-abbv-295-nct07291232",
+      "companyId": "abbvie",
+      "assetId": "abbv-295",
+      "programId": "abbvie-abbv-295-subcutaneous-injection",
+      "officialTitle": "A Phase 1b Study to Assess the Safety, Tolerability, Pharmacokinetics, Immunogenicity, and Pharmacodynamics of Multiple Subcutaneous Doses of ABBV-295 in Adult Subjects With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07291232"
+        }
+      ],
+      "protocolIdentifiers": [
+        "M26-089"
+      ],
+      "phase": "Phase 1b",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07291232",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-masked",
+        "comparator": "Placebo",
+        "description": "Sequential-assignment study with eight ABBV-295-or-placebo groups treated for 13 or 20 weeks; estimated enrollment is 80 participants."
+      },
+      "population": "Adults aged 18 to 65 years with obesity (BMI 30.0-45.0 kg/m2), with or without stable weight-related comorbidities.",
+      "overallDuration": "Treatment for 13 or 20 weeks, with assessments up to approximately 194 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07291232",
+            "title": "A Study of ABBV-295 Subcutaneous Injections to Assess Adverse Events and Pharmacokinetics in Adult Participants With Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbvie-abbv-295-nct07514260",
+      "companyId": "abbvie",
+      "assetId": "abbv-295",
+      "programId": "abbvie-abbv-295-subcutaneous-injection",
+      "officialTitle": "A Phase 1 Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of ABBV-295 in Healthy Japanese Subjects With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07514260"
+        }
+      ],
+      "protocolIdentifiers": [
+        "M26-009"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07514260",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Triple-masked",
+        "comparator": "Placebo",
+        "description": "Parallel, two-part study with ABBV-295 and placebo groups in each part; 24 participants were enrolled."
+      },
+      "population": "First- or second-generation Japanese adults aged 18 to 65 years with BMI 23.0-35.0 kg/m2.",
+      "overallDuration": "12 weeks of treatment, with assessments up to approximately 138 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07514260",
+            "title": "A Study to Assess Adverse Events, Tolerability, and Pharmacokinetics of Subcutaneous Injections of ABBV-295 in Healthy Adult Japanese Participants With Overweight or Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbvie-abbv-295-nct07414784",
+      "companyId": "abbvie",
+      "assetId": "abbv-295",
+      "programId": "abbvie-abbv-295-subcutaneous-injection",
+      "officialTitle": "A Phase 1 Drug-Drug Interaction Study of ABBV-295, Levonorgestrel, and Ethinyl Estradiol in Healthy Adult Female Subjects With Overweight or Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07414784"
+        }
+      ],
+      "protocolIdentifiers": [
+        "M26-006"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07414784",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-08"
+      },
+      "design": {
+        "randomization": "Not applicable",
+        "masking": "Open-label",
+        "comparator": "None",
+        "description": "Single-group drug-drug interaction study of ABBV-295 with levonorgestrel and ethinyl estradiol; 20 participants were enrolled."
+      },
+      "population": "Women aged 18 to 65 years with overweight or obesity (BMI 25.0-35.0 kg/m2) taking levonorgestrel and ethinyl estradiol.",
+      "overallDuration": "68 days of treatment, with assessments up to approximately 128 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07414784",
+            "title": "A Study of ABBV-295 Subcutaneous Injections to Assess Pharmacokinetics and Adverse Events in Healthy Adult Women Participants With Overweight or Obesity Taking Oral Contraceptives",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbvie-abbv-295-nct07752979",
+      "companyId": "abbvie",
+      "assetId": "abbv-295",
+      "programId": "abbvie-abbv-295-subcutaneous-injection",
+      "officialTitle": "A Phase 2 Dose-Finding Study to Assess the Safety and Efficacy of ABBV-295 in Adults With Obesity or Overweight With Weight-Related Comorbidities",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07752979"
+        }
+      ],
+      "protocolIdentifiers": [
+        "M25-998"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07752979",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-masked",
+        "comparator": "Placebo",
+        "description": "Parallel dose-finding study with six ABBV-295 dosing arms and one placebo arm; estimated enrollment is 360 participants at approximately 70 sites in the United States and Puerto Rico."
+      },
+      "population": "Adults aged 18 to 75 years without type 1 or type 2 diabetes who have obesity, or overweight with at least one weight-related comorbidity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "United States and Puerto Rico"
+      },
+      "overallDuration": "52 weeks of double-blind treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07752979",
+            "title": "Safety and Efficacy of ABBV-295 in Adults With Obesity or Overweight With Weight-Related Comorbidities",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
       "id": "amgen-maridebart-cafraglutide-amg133-phase2-nct05669599",
       "companyId": "amgen",
       "assetId": "maridebart-cafraglutide",
@@ -10796,6 +11053,280 @@
   ],
   "arms": [
     {
+      "id": "abbv-295-nct06144684-active",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "role": "experimental",
+      "label": "GUB014295",
+      "intervention": "GUB014295 single or multiple ascending subcutaneous doses",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "dose": "Single and multiple ascending doses",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose or multiple doses at protocol-defined intervals",
+      "treatmentDuration": "Part 1 through Day 29; Part 2 through Day 64, Day 120, or Day 127"
+    },
+    {
+      "id": "abbv-295-nct06144684-placebo",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo single or multiple subcutaneous doses",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Single dose or multiple doses at protocol-defined intervals",
+      "treatmentDuration": "Part 1 through Day 29; Part 2 through Day 64, Day 120, or Day 127"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-1",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 1",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "13 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-2",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 2",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "13 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-3",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 3",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "13 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-3-extension",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 3 Extension",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "13 or 20 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-4",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 4",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "13 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-4-extension",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 4 Extension",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "13 or 20 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-5",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 5",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "20 weeks"
+    },
+    {
+      "id": "abbv-295-nct07291232-group-6",
+      "studyId": "abbvie-abbv-295-nct07291232",
+      "role": "experimental",
+      "label": "ABBV-295 or Placebo-Group 6",
+      "intervention": "ABBV-295 or matching placebo by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "20 weeks"
+    },
+    {
+      "id": "abbv-295-nct07414784-ddi",
+      "studyId": "abbvie-abbv-295-nct07414784",
+      "role": "experimental",
+      "label": "ABBV-295 with Levonorgestrel and Ethinyl Estradiol",
+      "intervention": "Subcutaneous ABBV-295 with oral levonorgestrel and ethinyl estradiol",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous and oral",
+      "treatmentDuration": "68 days"
+    },
+    {
+      "id": "abbv-295-nct07514260-active-part-1",
+      "studyId": "abbvie-abbv-295-nct07514260",
+      "role": "experimental",
+      "label": "ABBV-295 Part 1",
+      "intervention": "ABBV-295 by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "abbv-295-nct07514260-placebo-part-1",
+      "studyId": "abbvie-abbv-295-nct07514260",
+      "role": "placebo",
+      "label": "Placebo for ABBV-295 Part 1",
+      "intervention": "Matching placebo by subcutaneous injection",
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "abbv-295-nct07514260-active-part-2",
+      "studyId": "abbvie-abbv-295-nct07514260",
+      "role": "experimental",
+      "label": "ABBV-295 Part 2",
+      "intervention": "ABBV-295 by subcutaneous injection",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "abbv-295-nct07514260-placebo-part-2",
+      "studyId": "abbvie-abbv-295-nct07514260",
+      "role": "placebo",
+      "label": "Placebo for ABBV-295 Part 2",
+      "intervention": "Matching placebo by subcutaneous injection",
+      "route": "Subcutaneous",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-arm-1",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "experimental",
+      "label": "ABBV-295 Arm 1",
+      "intervention": "ABBV-295 dose escalated to a maintenance dose during the double-blind period",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-arm-2",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "experimental",
+      "label": "ABBV-295 Arm 2",
+      "intervention": "ABBV-295 dose escalated to a maintenance dose during the double-blind period",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-arm-3",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "experimental",
+      "label": "ABBV-295 Arm 3",
+      "intervention": "ABBV-295 dose escalated to a maintenance dose during the double-blind period",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-arm-4",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "experimental",
+      "label": "ABBV-295 Arm 4",
+      "intervention": "ABBV-295 dose escalated to a maintenance dose during the double-blind period",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-arm-5",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "experimental",
+      "label": "ABBV-295 Arm 5",
+      "intervention": "ABBV-295 dose escalated to a maintenance dose during the double-blind period",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-arm-6",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "experimental",
+      "label": "ABBV-295 Arm 6",
+      "intervention": "ABBV-295 dose escalated to a maintenance dose during the double-blind period",
+      "linkedAsset": {
+        "companyId": "abbvie",
+        "assetId": "abbv-295"
+      },
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
+      "id": "abbv-295-nct07752979-placebo",
+      "studyId": "abbvie-abbv-295-nct07752979",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo following the active treatment dosing schedules",
+      "route": "Subcutaneous",
+      "treatmentDuration": "52 weeks"
+    },
+    {
       "id": "mt-p2-a-placebo",
       "studyId": "amgen-maridebart-cafraglutide-amg133-phase2-nct05669599",
       "role": "placebo",
@@ -21469,6 +22000,69 @@
   ],
   "analysisGroups": [
     {
+      "id": "abbv-295-nct06144684-sad-high-dose-groups",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "Three highest SAD dose groups (3.5-6.0 mg)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-2",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "MAD Cohort 2 (2 mg once weekly)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-3",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "MAD Cohort 3 (weekly dosing)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-4",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "MAD Cohort 4 (weekly dosing)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-5a",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "MAD Cohort 5a (weekly dosing)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-5b",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "MAD Cohort 5b (every-other-week dosing)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-6",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "kind": "other",
+      "label": "MAD Cohort 6 (monthly dosing after Week 5)",
+      "memberArmIds": [
+        "abbv-295-nct06144684-active"
+      ]
+    },
+    {
       "id": "mt-p2-a-pooled-420",
       "studyId": "amgen-maridebart-cafraglutide-amg133-phase2-nct05669599",
       "kind": "pooled",
@@ -21551,6 +22145,51 @@
     }
   ],
   "endpoints": [
+    {
+      "id": "abbv-295-nct06144684-sad-body-weight",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "name": "Percent change in body weight from baseline",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "During the 6-week SAD follow-up",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-body-weight-day-43",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "name": "Percent change in body weight from baseline",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 43",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "name": "Percent change in body weight from baseline",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-body-weight-week-13",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "name": "Percent change in body weight from baseline",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "abbv-295-nct06144684-half-life",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "name": "Terminal elimination half-life of ABBV-295",
+      "role": "secondary",
+      "domain": "other",
+      "assessmentTimepoint": "Across the MAD pharmacokinetic assessment period",
+      "assessmentTimepointWeeks": null
+    },
     {
       "id": "mt-p2-endpoint-body-weight-w52",
       "studyId": "amgen-maridebart-cafraglutide-amg133-phase2-nct05669599",
@@ -25179,6 +25818,393 @@
     }
   ],
   "outcomes": [
+    {
+      "id": "abbv-295-nct06144684-sad-high-dose-body-weight",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-sad-body-weight",
+      "analysisGroupId": "abbv-295-nct06144684-sad-high-dose-groups",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "approximately 3% reduction",
+        "numericValue": null,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://www.gubra.dk/mfn_news/gubra-announces-positive-gubamy-phase-1-sad-data-correction/",
+            "title": "Gubra announces positive GUBamy Phase 1 SAD data (correction)",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2024-11-13",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-sad-placebo-body-weight",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-sad-body-weight",
+      "armIds": [
+        "abbv-295-nct06144684-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "approximately 1% gain",
+        "numericValue": null,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://www.gubra.dk/mfn_news/gubra-announces-positive-gubamy-phase-1-sad-data-correction/",
+            "title": "Gubra announces positive GUBamy Phase 1 SAD data (correction)",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2024-11-13",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-2-day-43",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-day-43",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-2",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-7.77%",
+        "numericValue": -7.77,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "interim",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://www.gubra.dk/mfn_news/gubra-announces-positive-gubamy-phase-1-interim-mad-results",
+            "title": "Gubra announces positive GUBamy Phase 1 interim MAD results",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2025-04-01",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-placebo-day-43",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-day-43",
+      "armIds": [
+        "abbv-295-nct06144684-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "+1.99%",
+        "numericValue": 1.99,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "interim",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://www.gubra.dk/mfn_news/gubra-announces-positive-gubamy-phase-1-interim-mad-results",
+            "title": "Gubra announces positive GUBamy Phase 1 interim MAD results",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2025-04-01",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-3-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-3",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-7.75%",
+        "numericValue": -7.75,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -9.89 to -5.61"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-4-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-4",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-8.70%",
+        "numericValue": -8.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -10.75 to -6.65"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-5a-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-5a",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-9.79%",
+        "numericValue": -9.79,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -11.99 to -7.59"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-5b-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-5b",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-7.76%",
+        "numericValue": -7.76,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -9.82 to -5.70"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-6-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-6",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-6.74%",
+        "numericValue": -6.74,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -8.70 to -4.79"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-placebo-week-12",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-12",
+      "armIds": [
+        "abbv-295-nct06144684-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-0.26%",
+        "numericValue": -0.26,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -1.89 to 1.37"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-5b-week-13",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-13",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-5b",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-9.73%",
+        "numericValue": -9.73,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -11.79 to -7.67"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-cohort-6-week-13",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-13",
+      "analysisGroupId": "abbv-295-nct06144684-mad-cohort-6",
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-7.86%",
+        "numericValue": -7.86,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -9.80 to -5.91"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-placebo-week-13",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-mad-body-weight-week-13",
+      "armIds": [
+        "abbv-295-nct06144684-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "result": {
+        "value": "-0.25%",
+        "numericValue": -0.25,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -1.88 to 1.38"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://news.abbvie.com/2026-03-09-AbbVie-Announces-Positive-Topline-Results-from-a-Phase-1-Multiple-Ascending-Dose-Study-of-ABBV-295,-a-Long-Acting-Amylin-Analog,-in-Adults",
+            "sourceType": "company topline announcement",
+            "publishedAt": "2026-03-09",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
+    {
+      "id": "abbv-295-nct06144684-mad-half-life",
+      "studyId": "abbvie-abbv-295-nct06144684",
+      "endpointId": "abbv-295-nct06144684-half-life",
+      "armIds": [
+        "abbv-295-nct06144684-active"
+      ],
+      "analysisPopulation": "MAD participants",
+      "result": {
+        "value": "10.7-12.3 days across the study cohorts",
+        "numericValue": null,
+        "unit": "days",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-09",
+        "updatedAt": "2026-09-09",
+        "sources": [
+          {
+            "url": "https://easddistribute.m-anage.com/from.storage?image=DRQMKAdip9FzW2MCANbX455oGpa8lOOzd43PIVHWY64aLK4MDZ939Z5s-uia03kA0",
+            "title": "Phase 1 multiple ascending dose study of ABBV-295, a long-acting amylin analog for the treatment of obesity",
+            "sourceType": "conference abstract",
+            "checkedAt": "2026-09-09"
+          }
+        ]
+      }
+    },
     {
       "id": "mt-p2-outcome-weight-a-placebo-treatment-policy",
       "studyId": "amgen-maridebart-cafraglutide-amg133-phase2-nct05669599",
