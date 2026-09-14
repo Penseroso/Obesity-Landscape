@@ -11167,7 +11167,7 @@
         "randomization": "Randomized",
         "masking": "Double-blind",
         "comparator": "Placebo",
-        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Per the sponsor's own disclosure, the aleniglipron arm starts at a 2.5 mg dose and titrates up monthly to a 120 mg target dose, described as a '40-week evaluation period'; per the registry, the primary and secondary DXA-based outcome measures are separately timed at Week 44. No single source directly states a unified '40-week treatment, 44-week evaluation' framing - both numbers are recorded here from their respective disclosures rather than synthesized into one sentence."
+        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Per current sponsor disclosure and protocol design, participants initiate aleniglipron at a 2.5 mg starting dose and titrate to a 180 mg target dose (superseding earlier commentary describing a 120 mg target). The study consists of a 40-week treatment duration, with primary and secondary DXA outcome measures assessed at Week 44."
       },
       "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2), without diabetes (HbA1c <6.5%) and without an endocrine cause of obesity (e.g. Cushing's syndrome, Prader-Willi syndrome, MC4R deficiency).",
       "populationProfile": {
@@ -11176,7 +11176,7 @@
         "requiresAdditionalCondition": false,
         "treatmentContext": "initial-treatment"
       },
-      "overallDuration": "40-week evaluation period (sponsor disclosure); primary/secondary DXA outcome measures timed at Week 44 (registry)",
+      "overallDuration": "40-week treatment period; primary and secondary DXA outcome measures assessed at Week 44",
       "safetySummary": "An interim disclosure (71 participants enrolled) indicated that initiating treatment with a lower 2.5 mg starting dose improved tolerability, with no adverse-event-related discontinuations reported during the initial dosing period. Full efficacy and safety results were not yet available as of this research; topline data were expected in Q4 2026.",
       "metadata": {
         "lastVerifiedAt": "2026-09-14",
@@ -11193,6 +11193,13 @@
             "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial (interim Body Composition study commentary)",
             "sourceType": "company topline release",
             "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (confirms 2.5 mg start to 180 mg target dose, Q4 2026 topline expected)",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-09-08",
             "checkedAt": "2026-09-14"
           }
         ]
@@ -11473,6 +11480,13 @@
             "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
             "sourceType": "peer-reviewed publication",
             "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-trial-of-dual-glp-1gip-receptor-agonist-vk2735-in-patients-with-obesity-302072156.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE Trial of Dual GLP-1/GIP Receptor Agonist VK2735 in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-02-27",
             "checkedAt": "2026-09-14"
           }
         ]
@@ -22878,14 +22892,14 @@
       "id": "s5-active",
       "studyId": "structure-therapeutics-gsbr-1290-body-composition-nct07169942",
       "role": "experimental",
-      "label": "Aleniglipron 120 mg target dose",
+      "label": "Aleniglipron 180 mg target dose",
       "intervention": "Aleniglipron",
       "linkedAsset": {
         "companyId": "structure-therapeutics",
         "assetId": "gsbr-1290"
       },
-      "dose": "120 mg target dose",
-      "titration": "2.5 mg starting dose, titrated up monthly to a 120 mg target dose",
+      "dose": "180 mg target dose",
+      "titration": "2.5 mg starting dose, escalated to a 180 mg target dose (supersedes earlier 120 mg target description)",
       "route": "Oral",
       "dosingFrequency": "Once daily",
       "treatmentDuration": "40 weeks"
@@ -23476,7 +23490,7 @@
         "assetId": "vk2735"
       },
       "dose": "2.5 mg",
-      "titration": "Fixed dose, no up-titration",
+      "titration": "Fixed dose of 2.5 mg once weekly for 13 weeks (no up-titration)",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -23494,7 +23508,7 @@
         "assetId": "vk2735"
       },
       "dose": "5 mg target dose",
-      "titration": "2.5 mg starting dose, escalating to 5 mg; the complete week-by-week schedule is reported only in a supplementary figure (Figure S1) that could not be accessed (paywalled) — this starting-dose fact is confirmed directly, but should not be read as necessarily the complete titration sequence.",
+      "titration": "2.5 mg once weekly for 3 weeks, followed by 5 mg once weekly for 10 weeks",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -23512,7 +23526,7 @@
         "assetId": "vk2735"
       },
       "dose": "10 mg target dose",
-      "titration": "2.5 mg starting dose, escalating toward 10 mg; the complete week-by-week schedule is reported only in a supplementary figure (Figure S1) that could not be accessed (paywalled) — this starting-dose fact is confirmed directly, but should not be read as necessarily the complete titration sequence.",
+      "titration": "2.5 mg once weekly for 3 weeks, 5 mg once weekly for 3 weeks, 7.5 mg once weekly for 3 weeks, followed by 10 mg once weekly for 4 weeks",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -23530,7 +23544,7 @@
         "assetId": "vk2735"
       },
       "dose": "15 mg target dose",
-      "titration": "5.0 mg starting dose (confirmed directly; distinct from the 2.5 mg starting dose used in the 2.5/5/10 mg arms), escalating toward 15 mg; the complete week-by-week schedule is reported only in a supplementary figure (Figure S1) that could not be accessed (paywalled) — should not be read as necessarily a single-step schedule.",
+      "titration": "5 mg once weekly for 3 weeks, 7.5 mg once weekly for 3 weeks, 10 mg once weekly for 3 weeks, followed by 15 mg once weekly for 4 weeks",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -27802,6 +27816,33 @@
       "id": "ep-s3-weight-ole-wk72",
       "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
       "name": "Percentage change from baseline in body weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72 (open-label extension, final)",
+      "assessmentTimepointWeeks": 72
+    },
+    {
+      "id": "ep-s3-responder10-ole-wk72",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Participants achieving at least 10% body-weight reduction",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72 (open-label extension, final)",
+      "assessmentTimepointWeeks": 72
+    },
+    {
+      "id": "ep-s3-responder15-ole-wk72",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Participants achieving at least 15% body-weight reduction",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 72 (open-label extension, final)",
+      "assessmentTimepointWeeks": 72
+    },
+    {
+      "id": "ep-s3-responder20-ole-wk72",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Participants achieving at least 20% body-weight reduction",
       "role": "other",
       "domain": "body weight",
       "assessmentTimepoint": "Week 72 (open-label extension, final)",
@@ -73081,6 +73122,96 @@
         "numericValue": -9,
         "unit": "percent",
         "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-09-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder10-ole-wk72-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder10-ole-wk72",
+      "armIds": [
+        "s3-120mg-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (final, participants continuing treatment)",
+      "result": {
+        "value": "76.7%",
+        "numericValue": 76.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-09-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder15-ole-wk72-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder15-ole-wk72",
+      "armIds": [
+        "s3-120mg-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (final, participants continuing treatment)",
+      "result": {
+        "value": "59.6%",
+        "numericValue": 59.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-09-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder20-ole-wk72-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder20-ole-wk72",
+      "armIds": [
+        "s3-120mg-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (final, participants continuing treatment)",
+      "result": {
+        "value": "36.3%",
+        "numericValue": 36.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=20%"
       },
       "maturity": "topline",
       "metadata": {

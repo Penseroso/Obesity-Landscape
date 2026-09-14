@@ -105,6 +105,13 @@
             "sourceType": "peer-reviewed publication",
             "publishedAt": "2026-01",
             "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-trial-of-dual-glp-1gip-receptor-agonist-vk2735-in-patients-with-obesity-302072156.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE Trial of Dual GLP-1/GIP Receptor Agonist VK2735 in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-02-27",
+            "checkedAt": "2026-09-14"
           }
         ]
       }
@@ -462,7 +469,7 @@
       "intervention": "VK2735",
       "linkedAsset": { "companyId": "viking-therapeutics", "assetId": "vk2735" },
       "dose": "2.5 mg",
-      "titration": "Fixed dose, no up-titration",
+      "titration": "Fixed dose of 2.5 mg once weekly for 13 weeks (no up-titration)",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -477,7 +484,7 @@
       "intervention": "VK2735",
       "linkedAsset": { "companyId": "viking-therapeutics", "assetId": "vk2735" },
       "dose": "5 mg target dose",
-      "titration": "2.5 mg starting dose, escalating to 5 mg; the complete week-by-week schedule is reported only in a supplementary figure (Figure S1) that could not be accessed (paywalled) — this starting-dose fact is confirmed directly, but should not be read as necessarily the complete titration sequence.",
+      "titration": "2.5 mg once weekly for 3 weeks, followed by 5 mg once weekly for 10 weeks",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -492,7 +499,7 @@
       "intervention": "VK2735",
       "linkedAsset": { "companyId": "viking-therapeutics", "assetId": "vk2735" },
       "dose": "10 mg target dose",
-      "titration": "2.5 mg starting dose, escalating toward 10 mg; the complete week-by-week schedule is reported only in a supplementary figure (Figure S1) that could not be accessed (paywalled) — this starting-dose fact is confirmed directly, but should not be read as necessarily the complete titration sequence.",
+      "titration": "2.5 mg once weekly for 3 weeks, 5 mg once weekly for 3 weeks, 7.5 mg once weekly for 3 weeks, followed by 10 mg once weekly for 4 weeks",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
@@ -507,7 +514,7 @@
       "intervention": "VK2735",
       "linkedAsset": { "companyId": "viking-therapeutics", "assetId": "vk2735" },
       "dose": "15 mg target dose",
-      "titration": "5.0 mg starting dose (confirmed directly; distinct from the 2.5 mg starting dose used in the 2.5/5/10 mg arms), escalating toward 15 mg; the complete week-by-week schedule is reported only in a supplementary figure (Figure S1) that could not be accessed (paywalled) — should not be read as necessarily a single-step schedule.",
+      "titration": "5 mg once weekly for 3 weeks, 7.5 mg once weekly for 3 weeks, 10 mg once weekly for 3 weeks, followed by 15 mg once weekly for 4 weeks",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly",
       "treatmentDuration": "13 weeks",
