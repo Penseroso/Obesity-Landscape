@@ -10883,6 +10883,301 @@
       }
     },
     {
+      "id": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "companyId": "viking-therapeutics",
+      "assetId": "vk2735",
+      "programId": "viking-therapeutics-vk2735-oral-tablet",
+      "officialTitle": "A Phase 1, Randomized, Double-Blind, Placebo-Controlled, Single and Multiple Ascending Dose Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of VK2735, a Dual Glucagon-like Peptide-1 and Gastric Inhibitory Polypeptide Receptor Agonist, in Healthy Adults and Otherwise Healthy Adults Who Have an Increased Body Mass Index",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05203237"
+        }
+      ],
+      "protocolIdentifiers": [
+        "VK2735-101"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05203237",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-02-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Three-part single and multiple ascending dose study: Part A (single subcutaneous dose, healthy participants), Part B (subcutaneous doses once weekly for 4 weeks, healthy or increased-BMI participants), and Part C (oral doses once daily for 28 days, participants with obesity, BMI >=30 kg/m^2). Only Parts B and C had disclosed arm-level weight or safety results; Part A produced no disclosed arm-level weight or safety breakdown and is not separately modeled here."
+      },
+      "population": "Healthy adults, and otherwise healthy adults with an increased body mass index, receiving single or multiple ascending subcutaneous doses (Parts A and B); adults with obesity (BMI >=30 kg/m^2) receiving multiple ascending oral doses (Part C).",
+      "safetySummary": "Across the subcutaneous multiple-ascending-dose cohorts (Part B), nausea (33-83% of VK2735 cohorts vs. 50% placebo) and vomiting (0-33% vs. 10% placebo) were the most common adverse events, without a clear dose-response pattern disclosed at the individual-cohort level; one serious adverse event (acute choledocholithiasis in a participant with a prior gallstone history) occurred, and no discontinuations due to gastrointestinal adverse events were reported. In the oral multiple-dose cohorts (Part C), nausea occurred in 14% of VK2735-treated participants (pooled across active doses) versus 0% with placebo, and vomiting occurred in 0% of both groups; no serious adverse events were reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05203237",
+            "title": "Phase 1 Study to Evaluate the Safety and Tolerability of VK2735 (VK2735-101) study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "viking-therapeutics-vk2735-venture-nct06068946",
+      "companyId": "viking-therapeutics",
+      "assetId": "vk2735",
+      "programId": "viking-therapeutics-vk2735-subcutaneous-injection",
+      "officialTitle": "A Phase 2 Randomized, Double-Blind, Placebo-Controlled, 13-week Study of VK2735 for Weight Management in Subjects Who Are Obese, or Overweight With at Least One Weight-related Comorbid Condition",
+      "acronym": "VENTURE",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06068946"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06068946",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-02-12"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group, dose-ranging trial of once-weekly subcutaneous VK2735 versus placebo over 13 weeks, with dose titration for the 5 mg, 10 mg, and 15 mg arms."
+      },
+      "population": "Adults who are obese (BMI >=30 kg/m^2) or overweight (BMI >=27 kg/m^2, <50 kg/m^2) with at least one weight-related comorbid condition, without diabetes mellitus.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "13 weeks",
+      "safetySummary": "Gastrointestinal adverse events (nausea, vomiting, diarrhea, constipation) were the most common treatment-emergent adverse events and generally increased with dose. Twelve treatment-emergent serious adverse events occurred in eight participants overall; ten were assessed as unrelated to study drug and two (atrial fibrillation and dehydration, both in one 5 mg participant) as possibly or probably related. One death occurred in the 15 mg arm (head trauma from a fall, assessed as unrelated to study drug); no Grade 4/5 treatment-related adverse events occurred. Discontinuation due to adverse events, chiefly nausea, vomiting, diarrhea, and headache, ranged from 0% (placebo) to 20% (15 mg).",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06068946",
+            "title": "VK2735 for Weight Management Phase 2 (VENTURE) study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "companyId": "viking-therapeutics",
+      "assetId": "vk2735",
+      "programId": "viking-therapeutics-vk2735-oral-tablet",
+      "officialTitle": "A Phase 2 Randomized, Double-Blind, Placebo-Controlled, 13-week Dose Finding Study of VK2735 Oral Formulation for Weight Management in Subjects Who Are Obese, or Overweight With at Least One Weight-related Comorbid Condition",
+      "acronym": "VENTURE-Oral",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06828055"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06828055",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-10-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group, dose-ranging trial of once-daily oral VK2735 tablet versus placebo over 13 weeks, with dose titration for the 60 mg, 90 mg, and 120 mg arms and a maintenance/de-escalation cohort titrated up to 90 mg before stepping down to a 30 mg maintenance dose."
+      },
+      "population": "Adults (>=18 years) who are obese (BMI >=30 kg/m^2) or overweight (BMI >=27 kg/m^2, <50 kg/m^2) with at least one weight-related comorbid condition (hypertension, dyslipidemia, obstructive sleep apnea, or cardiovascular disease); no current or past type 2 diabetes diagnosis.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "13 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most common treatment-emergent adverse events, with 98% of drug-related and 99% of GI-specific adverse events assessed as mild or moderate. Discontinuation due to adverse events occurred in 13% of placebo participants versus a pooled 20% (range approximately 8-20% across active dose arms) of VK2735 participants; overall discontinuation was 18% (placebo) versus a pooled 28% (range approximately 20-38%) for VK2735. Diarrhea (up to 25%) and constipation (up to 43%) were also reported across active doses, not itemized per arm. Serious adverse events and anti-drug antibody incidence were not reported in the available sources.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06828055",
+            "title": "VK2735 for Weight Management Phase 2 (Venture Oral Dosing) study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "viking-therapeutics-vk2735-vanquish-1-nct07104500",
+      "companyId": "viking-therapeutics",
+      "assetId": "vk2735",
+      "programId": "viking-therapeutics-vk2735-subcutaneous-injection",
+      "officialTitle": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, 78-Week Efficacy and Safety Study of VK2735 Administered Subcutaneously for Weight Management in Participants Without Type 2 Diabetes Who Are Obese, or Overweight With at Least One Weight-related Comorbid Condition",
+      "acronym": "VANQUISH-1",
+      "studyFamily": "VANQUISH",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07104500"
+        }
+      ],
+      "protocolIdentifiers": [
+        "VK2735-301"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07104500",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2025-11-24"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group, fixed-dose trial of once-weekly subcutaneous VK2735 versus placebo over 78 weeks."
+      },
+      "population": "Adults (>=18 years) with obesity (BMI >=30 kg/m^2), or overweight (BMI >=27 kg/m^2) with at least one weight-related comorbid condition (hypertension, dyslipidemia, obstructive sleep apnea, or cardiovascular disease), without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "78 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07104500",
+            "title": "VK2735 for Weight Management Phase 3 (VANQUISH-1) study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-completion-of-enrollment-in-phase-3-vanquish-1-trial-of-vk2735-302619296.html",
+            "title": "Viking Therapeutics Announces Completion of Enrollment in Phase 3 VANQUISH-1 Trial of VK2735",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "viking-therapeutics-vk2735-vanquish-2-nct07104383",
+      "companyId": "viking-therapeutics",
+      "assetId": "vk2735",
+      "programId": "viking-therapeutics-vk2735-subcutaneous-injection",
+      "officialTitle": "A Phase 3 Randomized, Double-Blind, Placebo-Controlled, 78-Week Efficacy and Safety Study of VK2735 Administered Subcutaneously for Weight Management in Participants With Type 2 Diabetes Who Are Obese, or Overweight",
+      "acronym": "VANQUISH-2",
+      "studyFamily": "VANQUISH",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07104383"
+        }
+      ],
+      "protocolIdentifiers": [
+        "VK2735-302"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07104383",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-04-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group, fixed-dose trial of once-weekly subcutaneous VK2735 versus placebo over 78 weeks, in participants with type 2 diabetes."
+      },
+      "population": "Adults (>=18 years) with type 2 diabetes (per American Diabetes Association criteria; HbA1c 7-11% on stable therapy for >=3 months) who are obese (BMI >=30 kg/m^2) or overweight (BMI >=27 kg/m^2).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "78 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07104383",
+            "title": "VK2735 for Weight Management Type 2 Diabetes Phase 3 (VANQUISH-2) study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-completion-of-enrollment-in-phase-3-vanquish-2-trial-of-vk2735-302725563.html",
+            "title": "Viking Therapeutics Announces Completion of Enrollment in Phase 3 VANQUISH-2 Trial of VK2735",
+            "sourceType": "company press release",
+            "publishedAt": "2026-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
       "id": "zealand-pharma-dapiglutide-nct06000891",
       "companyId": "zealand-pharma",
       "assetId": "dapiglutide",
@@ -21778,6 +22073,511 @@
       "treatmentDuration": "68 weeks"
     },
     {
+      "id": "vk2735-p1-partb-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "placebo",
+      "label": "Placebo (Part B, subcutaneous)",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 10
+    },
+    {
+      "id": "vk2735-p1-partb-0.5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 0.5 mg (Part B, subcutaneous)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "0.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "vk2735-p1-partb-1.5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 1.5 mg (Part B, subcutaneous)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "1.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "vk2735-p1-partb-5mg-titrated",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 5 mg (1.5/3/5/5 mg titration, Part B, subcutaneous)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "5 mg target dose",
+      "titration": "1.5 mg starting dose escalating to 3 mg, 5 mg, and 5 mg over four weekly doses",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 7
+    },
+    {
+      "id": "vk2735-p1-partb-7.5mg-titrated",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 7.5 mg (3/5/5/7.5 mg titration, Part B, subcutaneous)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "7.5 mg target dose",
+      "titration": "3 mg starting dose escalating to 5 mg, 5 mg, and 7.5 mg over four weekly doses",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "vk2735-p1-partb-10mg-titrated",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 10 mg (5/5/7.5/10 mg titration, Part B, subcutaneous)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "10 mg target dose",
+      "titration": "5 mg starting dose escalating to 5 mg, 7.5 mg, and 10 mg over four weekly doses",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "vk2735-p1-partc-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "placebo",
+      "label": "Placebo (Part C, oral)",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "analyzedN": 10
+    },
+    {
+      "id": "vk2735-p1-partc-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 2.5 mg (Part C, oral)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "2.5 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "analyzedN": 8
+    },
+    {
+      "id": "vk2735-p1-partc-5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 5 mg (Part C, oral)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "5 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "analyzedN": 6
+    },
+    {
+      "id": "vk2735-p1-partc-10mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 10 mg (Part C, oral)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "10 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "analyzedN": 6
+    },
+    {
+      "id": "vk2735-p1-partc-20mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 20 mg (Part C, oral)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "20 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "analyzedN": 8
+    },
+    {
+      "id": "vk2735-p1-partc-40mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "role": "experimental",
+      "label": "VK2735 40 mg (Part C, oral)",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "40 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "28 days",
+      "analyzedN": 7
+    },
+    {
+      "id": "vk2735-vanquish1-placebo",
+      "studyId": "viking-therapeutics-vk2735-vanquish-1-nct07104500",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish1-7.5mg",
+      "studyId": "viking-therapeutics-vk2735-vanquish-1-nct07104500",
+      "role": "experimental",
+      "label": "VK2735 7.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "7.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish1-12.5mg",
+      "studyId": "viking-therapeutics-vk2735-vanquish-1-nct07104500",
+      "role": "experimental",
+      "label": "VK2735 12.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "12.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish1-17.5mg",
+      "studyId": "viking-therapeutics-vk2735-vanquish-1-nct07104500",
+      "role": "experimental",
+      "label": "VK2735 17.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "17.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish2-placebo",
+      "studyId": "viking-therapeutics-vk2735-vanquish-2-nct07104383",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish2-7.5mg",
+      "studyId": "viking-therapeutics-vk2735-vanquish-2-nct07104383",
+      "role": "experimental",
+      "label": "VK2735 7.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "7.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish2-12.5mg",
+      "studyId": "viking-therapeutics-vk2735-vanquish-2-nct07104383",
+      "role": "experimental",
+      "label": "VK2735 12.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "12.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-vanquish2-17.5mg",
+      "studyId": "viking-therapeutics-vk2735-vanquish-2-nct07104383",
+      "role": "experimental",
+      "label": "VK2735 17.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "17.5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "78 weeks"
+    },
+    {
+      "id": "vk2735-venture-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 35,
+      "analyzedN": 34
+    },
+    {
+      "id": "vk2735-venture-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "role": "experimental",
+      "label": "VK2735 2.5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "2.5 mg",
+      "titration": "Fixed dose, no up-titration",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 35,
+      "analyzedN": 35
+    },
+    {
+      "id": "vk2735-venture-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "role": "experimental",
+      "label": "VK2735 5 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "5 mg target dose",
+      "titration": "2.5 mg starting dose followed by 5 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 35,
+      "analyzedN": 35
+    },
+    {
+      "id": "vk2735-venture-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "role": "experimental",
+      "label": "VK2735 10 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "10 mg target dose",
+      "titration": "2.5 mg starting dose followed by 5 mg and then 10 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 36,
+      "analyzedN": 35
+    },
+    {
+      "id": "vk2735-venture-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "role": "experimental",
+      "label": "VK2735 15 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "15 mg target dose",
+      "titration": "5 mg starting dose followed by 15 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 35,
+      "analyzedN": 35
+    },
+    {
+      "id": "vk2735-ventureoral-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 40,
+      "analyzedN": 40
+    },
+    {
+      "id": "vk2735-ventureoral-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "experimental",
+      "label": "VK2735 15 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "15 mg",
+      "titration": "Fixed dose, no up-titration",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 40,
+      "analyzedN": 40
+    },
+    {
+      "id": "vk2735-ventureoral-30mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "experimental",
+      "label": "VK2735 30 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "30 mg",
+      "titration": "Fixed dose, no up-titration",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 40,
+      "analyzedN": 40
+    },
+    {
+      "id": "vk2735-ventureoral-60mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "experimental",
+      "label": "VK2735 60 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "60 mg target dose",
+      "titration": "30 mg for 2 weeks, then 60 mg for the remaining 11 weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 38,
+      "analyzedN": 38
+    },
+    {
+      "id": "vk2735-ventureoral-90mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "experimental",
+      "label": "VK2735 90 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "90 mg target dose",
+      "titration": "30 mg for 2 weeks, 60 mg for 2 weeks, then 90 mg for the remaining 9 weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 39,
+      "analyzedN": 39
+    },
+    {
+      "id": "vk2735-ventureoral-120mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "experimental",
+      "label": "VK2735 120 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "120 mg target dose",
+      "titration": "30 mg for 2 weeks, 60 mg for 2 weeks, 90 mg for 2 weeks, then 120 mg for the remaining 7 weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 39,
+      "analyzedN": 39
+    },
+    {
+      "id": "vk2735-ventureoral-maintenance",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "role": "experimental",
+      "label": "VK2735 90 mg with de-escalation to 30 mg",
+      "intervention": "VK2735",
+      "linkedAsset": {
+        "companyId": "viking-therapeutics",
+        "assetId": "vk2735"
+      },
+      "dose": "90 mg peak dose, de-escalated to 30 mg maintenance dose",
+      "titration": "30 mg for 1 week, 60 mg for 1 week, 90 mg for 4 weeks, then de-escalated to 30 mg for the remaining 7 weeks",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "13 weeks",
+      "plannedN": 39,
+      "analyzedN": 39
+    },
+    {
       "id": "nct06000891-zp7570",
       "studyId": "zealand-pharma-dapiglutide-nct06000891",
       "role": "experimental",
@@ -22142,6 +22942,35 @@
       ],
       "description": "Source-reported pooled placebo analysis group across the three dose cohorts.",
       "analyzedN": 165
+    },
+    {
+      "id": "vk2735-p1-partc-pooled",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "kind": "pooled",
+      "label": "VK2735 pooled (Part C, oral, all active doses)",
+      "memberArmIds": [
+        "vk2735-p1-partc-2.5mg",
+        "vk2735-p1-partc-5mg",
+        "vk2735-p1-partc-10mg",
+        "vk2735-p1-partc-20mg",
+        "vk2735-p1-partc-40mg"
+      ],
+      "analyzedN": 37
+    },
+    {
+      "id": "vk2735-ventureoral-pooled",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "kind": "pooled",
+      "label": "VK2735 pooled (all active dose arms)",
+      "memberArmIds": [
+        "vk2735-ventureoral-15mg",
+        "vk2735-ventureoral-30mg",
+        "vk2735-ventureoral-60mg",
+        "vk2735-ventureoral-90mg",
+        "vk2735-ventureoral-120mg",
+        "vk2735-ventureoral-maintenance"
+      ],
+      "analyzedN": 235
     }
   ],
   "endpoints": [
@@ -25815,6 +26644,159 @@
       "domain": "safety",
       "assessmentTimepoint": "Through Week 20",
       "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "name": "Percentage change from baseline in body weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "End of 4-week dosing period",
+      "assessmentTimepointWeeks": 4
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "name": "Percentage change from baseline in body weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 28 (end of 28-day dosing period)",
+      "assessmentTimepointWeeks": 4
+    },
+    {
+      "id": "vk2735-p1-partc-responder5-day28",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Day 28 (end of 28-day dosing period)",
+      "assessmentTimepointWeeks": 4
+    },
+    {
+      "id": "vk2735-p1-partc-nausea",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through 28 days of dosing",
+      "assessmentTimepointWeeks": 4
+    },
+    {
+      "id": "vk2735-p1-partc-vomiting",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through 28 days of dosing",
+      "assessmentTimepointWeeks": 4
+    },
+    {
+      "id": "vk2735-venture-weight-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Participants achieving at least 10% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-responder15-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Participants achieving at least 15% body-weight reduction",
+      "role": "exploratory",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-sae-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-nausea-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-vomiting-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-venture-ada-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "name": "Anti-drug antibodies",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "name": "Participants achieving at least 10% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-ventureoral-nausea-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 13",
+      "assessmentTimepointWeeks": 13
+    },
+    {
+      "id": "vk2735-ventureoral-vomiting-wk13",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 13",
+      "assessmentTimepointWeeks": 13
     }
   ],
   "outcomes": [
@@ -69447,6 +70429,3064 @@
             "sourceType": "conference abstract",
             "publishedAt": "2026-06",
             "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.8%",
+        "numericValue": -1.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-0.5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-0.5mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-2.5%",
+        "numericValue": -2.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-1.5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-1.5mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-3.7%",
+        "numericValue": -3.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-5mg-titrated",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-5mg-titrated"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-4.1%",
+        "numericValue": -4.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-7.5mg-titrated",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-7.5mg-titrated"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-7.4%",
+        "numericValue": -7.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-10mg-titrated",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-10mg-titrated"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-7.8%",
+        "numericValue": -7.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-0.5mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-0.5mg",
+        "vk2735-p1-partb-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-0.7",
+        "numericValue": -0.7,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 0.5 mg minus placebo",
+        "pValue": "0.64"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-1.5mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-1.5mg",
+        "vk2735-p1-partb-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.9",
+        "numericValue": -1.9,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 1.5 mg minus placebo",
+        "pValue": "0.17"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-5mg-titrated-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-5mg-titrated",
+        "vk2735-p1-partb-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-2.3",
+        "numericValue": -2.3,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 5 mg (titrated) minus placebo",
+        "pValue": "0.09"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-7.5mg-titrated-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-7.5mg-titrated",
+        "vk2735-p1-partb-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-5.6",
+        "numericValue": -5.6,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 7.5 mg (titrated) minus placebo",
+        "pValue": "0.0003"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partb-weight-wk4-10mg-titrated-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partb-weight-wk4",
+      "armIds": [
+        "vk2735-p1-partb-10mg-titrated",
+        "vk2735-p1-partb-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-6.0",
+        "numericValue": -6,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 10 mg (titrated) minus placebo",
+        "pValue": "0.0002"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-dual-glp-1gip-receptor-agonist-vk2735-301782861.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-03-28",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-2.1%",
+        "numericValue": -2.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-2.5mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-0.3%",
+        "numericValue": -0.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-5mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-5mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-0.9%",
+        "numericValue": -0.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-10mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-10mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.1%",
+        "numericValue": -1.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-20mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-20mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-3.2%",
+        "numericValue": -3.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-40mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-40mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-5.3%",
+        "numericValue": -5.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-2.5mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-2.5mg",
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "+1.8",
+        "numericValue": 1.8,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 2.5 mg minus placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-5mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-5mg",
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "+1.2",
+        "numericValue": 1.2,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 5 mg minus placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-10mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-10mg",
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "+1.0",
+        "numericValue": 1,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 10 mg minus placebo"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-20mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-20mg",
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.1",
+        "numericValue": -1.1,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 20 mg minus placebo",
+        "pValue": "0.23"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-weight-day28-40mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-weight-day28",
+      "armIds": [
+        "vk2735-p1-partc-40mg",
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-3.3",
+        "numericValue": -3.3,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 40 mg minus placebo",
+        "pValue": "0.0006"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-responder5-day28-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-responder5-day28",
+      "armIds": [
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-responder5-day28-20mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-responder5-day28",
+      "armIds": [
+        "vk2735-p1-partc-20mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "25%",
+        "numericValue": 25,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%",
+        "pValue": "0.18"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-responder5-day28-40mg",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-responder5-day28",
+      "armIds": [
+        "vk2735-p1-partc-40mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "57%",
+        "numericValue": 57,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%",
+        "pValue": "0.015"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-nausea-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-nausea",
+      "armIds": [
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-nausea-pooled",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-nausea",
+      "analysisGroupId": "vk2735-p1-partc-pooled",
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "14%",
+        "numericValue": 14,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-vomiting-placebo",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-vomiting",
+      "armIds": [
+        "vk2735-p1-partc-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-p1-partc-vomiting-pooled",
+      "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+      "endpointId": "vk2735-p1-partc-vomiting",
+      "analysisGroupId": "vk2735-p1-partc-pooled",
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-results-from-phase-1-clinical-trial-of-oral-tablet-formulation-of-dual-glp-1gip-receptor-agonist-vk2735-302098869.html",
+            "title": "Viking Therapeutics Announces Results from Phase 1 Clinical Trial of Oral Tablet Formulation of Dual GLP-1/GIP Receptor Agonist VK2735",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-03-26",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-weight-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-weight-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-1.7%",
+        "numericValue": -1.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -3.03 to -0.30"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-weight-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-weight-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-9.1%",
+        "numericValue": -9.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -10.43 to -7.76",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-weight-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-weight-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-10.9%",
+        "numericValue": -10.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -12.25 to -9.55",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-weight-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-weight-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-12.9%",
+        "numericValue": -12.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -14.30 to -11.56",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-weight-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-weight-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "-14.7%",
+        "numericValue": -14.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -16.11 to -13.38",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "11.5% (4/34)",
+        "numericValue": 11.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "80.8% (28/35)",
+        "numericValue": 80.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "97.0% (34/35)",
+        "numericValue": 97,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "93.8% (33/35)",
+        "numericValue": 93.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "100% (35/35)",
+        "numericValue": 100,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-2.5mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "26.7",
+        "numericValue": 26.7,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=5% weight reduction, VK2735 2.5 mg versus placebo",
+        "confidenceInterval": "95% CI, 6.9 to 103.2",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-5mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-5mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "148.9",
+        "numericValue": 148.9,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=5% weight reduction, VK2735 5 mg versus placebo",
+        "confidenceInterval": "95% CI, 20.8 to >999.9",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-10mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-10mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "84.6",
+        "numericValue": 84.6,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=5% weight reduction, VK2735 10 mg versus placebo",
+        "confidenceInterval": "95% CI, 15.6 to 457.2",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder5-wk13-15mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder5-wk13",
+      "armIds": [
+        "vk2735-venture-15mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "454.1",
+        "numericValue": 454.1,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=5% weight reduction, VK2735 15 mg versus placebo",
+        "confidenceInterval": "95% CI, 23.3 to >999.9",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "3.0% (1/34)",
+        "numericValue": 3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "40.1% (14/35)",
+        "numericValue": 40.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "65.1% (23/35)",
+        "numericValue": 65.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "70.4% (25/35)",
+        "numericValue": 70.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "89.1% (31/35)",
+        "numericValue": 89.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-2.5mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "23.6",
+        "numericValue": 23.6,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=10% weight reduction, VK2735 2.5 mg versus placebo",
+        "confidenceInterval": "95% CI, 2.8 to 197.5",
+        "pValue": "0.0036"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-5mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-5mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "60.2",
+        "numericValue": 60.2,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=10% weight reduction, VK2735 5 mg versus placebo",
+        "confidenceInterval": "95% CI, 7.1 to 509.3",
+        "pValue": "0.0002"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-10mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-10mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "91.5",
+        "numericValue": 91.5,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=10% weight reduction, VK2735 10 mg versus placebo",
+        "confidenceInterval": "95% CI, 10.4 to 806.8",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder10-wk13-15mg-or",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder10-wk13",
+      "armIds": [
+        "vk2735-venture-15mg",
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "315.5",
+        "numericValue": 315.5,
+        "unit": "ratio",
+        "effectMeasure": "Odds ratio",
+        "resultType": "between-arm",
+        "comparisonType": "Odds ratio for achieving >=10% weight reduction, VK2735 15 mg versus placebo",
+        "confidenceInterval": "95% CI, 30.6 to >999.9",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder15-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder15-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "0% (0/34)",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder15-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder15-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "12.8% (4/35)",
+        "numericValue": 12.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%",
+        "pValue": "0.1163"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder15-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder15-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "11.6% (4/35)",
+        "numericValue": 11.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%",
+        "pValue": "0.1533"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder15-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder15-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "31.2% (11/35)",
+        "numericValue": 31.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%",
+        "pValue": "0.0169"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-responder15-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-responder15-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Modified intention-to-treat (overall)",
+      "result": {
+        "value": "41.5% (15/35)",
+        "numericValue": 41.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%",
+        "pValue": "0.0082"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-sae-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-sae-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "3% (1/34)",
+        "numericValue": 3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-sae-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-sae-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "6% (2/35)",
+        "numericValue": 6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-sae-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-sae-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "6% (2/35)",
+        "numericValue": 6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-sae-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-sae-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "6% (2/35)",
+        "numericValue": 6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-sae-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-sae-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "3% (1/35)",
+        "numericValue": 3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-nausea-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-nausea-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "20% (7/34)",
+        "numericValue": 20,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-nausea-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-nausea-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "26% (9/35)",
+        "numericValue": 26,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-nausea-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-nausea-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "46% (16/35)",
+        "numericValue": 46,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-nausea-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-nausea-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "37% (13/35)",
+        "numericValue": 37,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-nausea-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-nausea-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "63% (22/35)",
+        "numericValue": 63,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-vomiting-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-vomiting-wk13",
+      "armIds": [
+        "vk2735-venture-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "0% (0/34)",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-vomiting-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-vomiting-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "9% (3/35)",
+        "numericValue": 9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-vomiting-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-vomiting-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "17% (6/35)",
+        "numericValue": 17,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-vomiting-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-vomiting-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "17% (6/35)",
+        "numericValue": 17,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-vomiting-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-vomiting-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "29% (10/35)",
+        "numericValue": 29,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-ada-wk13-2.5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-ada-wk13",
+      "armIds": [
+        "vk2735-venture-2.5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "9% (3/34)",
+        "numericValue": 9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-ada-wk13-5mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-ada-wk13",
+      "armIds": [
+        "vk2735-venture-5mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "12% (4/34)",
+        "numericValue": 12,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-ada-wk13-10mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-ada-wk13",
+      "armIds": [
+        "vk2735-venture-10mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "23% (8/35)",
+        "numericValue": 23,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-venture-ada-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-nct06068946",
+      "endpointId": "vk2735-venture-ada-wk13",
+      "armIds": [
+        "vk2735-venture-15mg"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "16% (5/32)",
+        "numericValue": 16,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12933218/",
+            "title": "Weekly Subcutaneous VK2735, a GIP/GLP-1 Receptor Dual Agonist, for Weight Management: Phase 2, Randomized, 13-Week VENTURE Study",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-01",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.3%",
+        "numericValue": -1.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-15mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-2.3%",
+        "numericValue": -2.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-30mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-30mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-7.0%",
+        "numericValue": -7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-60mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-60mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-8.7%",
+        "numericValue": -8.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-90mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-90mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-11.1%",
+        "numericValue": -11.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-120mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-120mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-12.2%",
+        "numericValue": -12.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-maintenance",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-maintenance"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-9.2%",
+        "numericValue": -9.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-15mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-15mg",
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.0",
+        "numericValue": -1,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 15 mg minus placebo"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-30mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-30mg",
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-5.7",
+        "numericValue": -5.7,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 30 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-60mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-60mg",
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-7.4",
+        "numericValue": -7.4,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 60 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-90mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-90mg",
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-9.8",
+        "numericValue": -9.8,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 90 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-weight-wk13-120mg-vs-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-weight-wk13",
+      "armIds": [
+        "vk2735-ventureoral-120mg",
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-10.9",
+        "numericValue": -10.9,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, VK2735 120 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-responder10-wk13",
+      "armIds": [
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "5%",
+        "numericValue": 5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13-15mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-responder10-wk13",
+      "armIds": [
+        "vk2735-ventureoral-15mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "8%",
+        "numericValue": 8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13-30mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-responder10-wk13",
+      "armIds": [
+        "vk2735-ventureoral-30mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "35%",
+        "numericValue": 35,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%",
+        "pValue": "<0.01"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13-60mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-responder10-wk13",
+      "armIds": [
+        "vk2735-ventureoral-60mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "40%",
+        "numericValue": 40,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%",
+        "pValue": "0.0017"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13-90mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-responder10-wk13",
+      "armIds": [
+        "vk2735-ventureoral-90mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "59%",
+        "numericValue": 59,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-responder10-wk13-120mg",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-responder10-wk13",
+      "armIds": [
+        "vk2735-ventureoral-120mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "80%",
+        "numericValue": 80,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%",
+        "pValue": "<0.0001"
+      },
+      "maturity": "conference result",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-presents-data-from-its-13-week-phase-2-venture-oral-dosing-trial-of-vk2735-at-european-congress-on-obesity-eco-2026-302768959.html",
+            "title": "Viking Therapeutics Presents Data from its 13-Week Phase 2 VENTURE-Oral Dosing Trial of VK2735 at European Congress on Obesity (ECO) 2026",
+            "sourceType": "conference presentation",
+            "publishedAt": "2026-05-12",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-nausea-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-nausea-wk13",
+      "armIds": [
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "48% (19/40)",
+        "numericValue": 48,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-nausea-wk13-pooled",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-nausea-wk13",
+      "analysisGroupId": "vk2735-ventureoral-pooled",
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "58%",
+        "numericValue": 58,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-vomiting-wk13-placebo",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-vomiting-wk13",
+      "armIds": [
+        "vk2735-ventureoral-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "10% (4/40)",
+        "numericValue": 10,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vk2735-ventureoral-vomiting-wk13-pooled",
+      "studyId": "viking-therapeutics-vk2735-venture-oral-nct06828055",
+      "endpointId": "vk2735-ventureoral-vomiting-wk13",
+      "analysisGroupId": "vk2735-ventureoral-pooled",
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "26%",
+        "numericValue": 26,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.prnewswire.com/news-releases/viking-therapeutics-announces-positive-top-line-results-from-phase-2-venture-oral-dosing-trial-of-vk2735-tablet-formulation-in-patients-with-obesity-302533355.html",
+            "title": "Viking Therapeutics Announces Positive Top-Line Results from Phase 2 VENTURE-Oral Dosing Trial of VK2735 Tablet Formulation in Patients with Obesity",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-08-19",
+            "checkedAt": "2026-09-14"
           }
         ]
       }

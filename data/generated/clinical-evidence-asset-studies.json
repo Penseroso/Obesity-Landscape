@@ -539,6 +539,18 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "viking-therapeutics",
+      "assetId": "vk2735",
+      "focalStudyIds": [
+        "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
+        "viking-therapeutics-vk2735-venture-nct06068946",
+        "viking-therapeutics-vk2735-venture-oral-nct06828055",
+        "viking-therapeutics-vk2735-vanquish-1-nct07104500",
+        "viking-therapeutics-vk2735-vanquish-2-nct07104383"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "zealand-pharma",
       "assetId": "dapiglutide",
       "focalStudyIds": [
