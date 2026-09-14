@@ -1,5 +1,7 @@
-import type { RecordMetadata } from "@/domains/shared/lib/record-metadata";
+import type { RecordMetadata, ResearchStateMetadata } from "@/domains/shared/lib/record-metadata";
 import type { ComponentReference } from "@/domains/company-pipeline/lib/types";
+
+export type { ResearchStateMetadata } from "@/domains/shared/lib/record-metadata";
 
 /**
  * Canonical Clinical Evidence schema version. Earlier records require migration.
@@ -13,6 +15,7 @@ export const CLINICAL_EVIDENCE_SCHEMA_VERSION = "3.1";
 
 export type ClinicalEvidenceAggregate = {
   clinicalEvidenceSchemaVersion: string;
+  researchState?: ResearchStateMetadata;
   studies: ClinicalStudyRecord[];
   arms: ClinicalArmRecord[];
   analysisGroups: ClinicalAnalysisGroupRecord[];

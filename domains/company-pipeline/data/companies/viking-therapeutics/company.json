@@ -9,5 +9,61 @@
   "officialPipeline": {
     "url": "https://vikingtherapeutics.com/pipeline/overview/",
     "checkedAt": "2026-07-30"
+  },
+  "researchState": {
+    "checkpointVersion": 1,
+    "workflowRevision": "ADR-0070",
+    "coldPathEligible": true,
+    "discoveryCheckpoint": {
+      "asOf": "2026-09-14",
+      "secEdgar": {
+        "cik": "0001607678",
+        "latestAcceptanceDateTime": "2026-07-29T21:15:35.000Z",
+        "latestAccessionNumber": "0001193125-26-324219"
+      },
+      "clinicalTrials": {
+        "sponsorQuery": "Viking Therapeutics",
+        "assetAliases": [
+          "VK2735",
+          "VK3019"
+        ],
+        "lastQueriedAt": "2026-09-14",
+        "knownNCTs": {
+          "NCT05203237": {
+            "lastUpdatePostDate": "2025-02-17",
+            "semanticHash": "f56237c06f3a13c9a550c2bc3d919e8407832b6494a821425fc340063b106d7b"
+          },
+          "NCT06068946": {
+            "lastUpdatePostDate": "2025-02-12",
+            "semanticHash": "11eaf3f7fe31a20f10da18d674b088a99b71ceca002ecdaa4248baf25a4e2f22"
+          },
+          "NCT06828055": {
+            "lastUpdatePostDate": "2025-10-06",
+            "semanticHash": "56c3cbf36112209ed1ceef534e2ff69061a9ccc9ee8284499755ea1ccd4ab11d"
+          },
+          "NCT07104383": {
+            "lastUpdatePostDate": "2026-04-07",
+            "semanticHash": "65a6685345a96464730aaf18a05ed72d3d9bc7749bf0ab6379ef659e8e317b2c"
+          },
+          "NCT07104500": {
+            "lastUpdatePostDate": "2025-11-24",
+            "semanticHash": "25a752202ce3e2278ca2d10bc4113a40b7d206c2a958eb59782caee007f30300"
+          }
+        }
+      },
+      "literature": {
+        "assetAliases": [
+          "VK2735",
+          "VK3019"
+        ],
+        "lastQueriedAt": "2026-09-14",
+        "monitoredPMIDs": {
+          "41508550": {
+            "status": "clean",
+            "lastCheckedAt": "2026-09-14"
+          }
+        }
+      }
+    }
   }
 }

@@ -916,6 +916,9 @@ function validateCompany(company, context) {
   );
   validateCompanyReferenceLink(company.officialWebsite, "officialWebsite", context);
   validateCompanyReferenceLink(company.officialPipeline, "officialPipeline", context);
+  if (company.researchState !== undefined) {
+    validateResearchState(company.researchState, `${context}: company.researchState`);
+  }
 }
 
 function validateSource(source, context) {
@@ -967,26 +970,50 @@ function validateResearchState(researchState, context) {
     assert(isObject(cp.secEdgar), `${context}: secEdgar must be an object`);
     assert(isNonEmptyString(cp.secEdgar.cik), `${context}: secEdgar.cik is required`);
     assert(isNonEmptyString(cp.secEdgar.latestAcceptanceDateTime), `${context}: secEdgar.latestAcceptanceDateTime is required`);
+    if (cp.secEdgar.latestAccessionNumber !== undefined) {
+      assert(isNonEmptyString(cp.secEdgar.latestAccessionNumber), `${context}: secEdgar.latestAccessionNumber must be non-empty string`);
+    }
   }
   if (cp.clinicalTrials !== undefined) {
     assert(isObject(cp.clinicalTrials), `${context}: clinicalTrials must be an object`);
+    if (cp.clinicalTrials.sponsorQuery !== undefined) {
+      assert(isNonEmptyString(cp.clinicalTrials.sponsorQuery), `${context}: clinicalTrials.sponsorQuery must be non-empty string`);
+    }
+    if (cp.clinicalTrials.assetAliases !== undefined) {
+      assert(Array.isArray(cp.clinicalTrials.assetAliases), `${context}: clinicalTrials.assetAliases must be an array`);
+    }
+    if (cp.clinicalTrials.lastQueriedAt !== undefined) {
+      assert(isValidFullDate(cp.clinicalTrials.lastQueriedAt), `${context}: clinicalTrials.lastQueriedAt must be YYYY-MM-DD`);
+    }
     if (cp.clinicalTrials.knownNCTs !== undefined) {
       assert(isObject(cp.clinicalTrials.knownNCTs), `${context}: clinicalTrials.knownNCTs must be an object`);
       for (const [nctId, record] of Object.entries(cp.clinicalTrials.knownNCTs)) {
         assert(nctPattern.test(nctId), `${context}: knownNCTs key "${nctId}" must match NCT########`);
         assert(isObject(record), `${context}: knownNCTs["${nctId}"] must be an object`);
         assert(isValidFullDate(record.lastUpdatePostDate), `${context}: knownNCTs["${nctId}"].lastUpdatePostDate must be YYYY-MM-DD`);
+        if (record.semanticHash !== undefined) {
+          assert(isNonEmptyString(record.semanticHash), `${context}: knownNCTs["${nctId}"].semanticHash must be non-empty string`);
+        }
       }
     }
   }
   if (cp.literature !== undefined) {
     assert(isObject(cp.literature), `${context}: literature must be an object`);
+    if (cp.literature.assetAliases !== undefined) {
+      assert(Array.isArray(cp.literature.assetAliases), `${context}: literature.assetAliases must be an array`);
+    }
+    if (cp.literature.lastQueriedAt !== undefined) {
+      assert(isValidFullDate(cp.literature.lastQueriedAt), `${context}: literature.lastQueriedAt must be YYYY-MM-DD`);
+    }
     if (cp.literature.monitoredPMIDs !== undefined) {
       assert(isObject(cp.literature.monitoredPMIDs), `${context}: literature.monitoredPMIDs must be an object`);
       for (const [pmid, record] of Object.entries(cp.literature.monitoredPMIDs)) {
         assert(/^\d+$/.test(pmid), `${context}: monitoredPMIDs key "${pmid}" must be numeric PMID`);
         assert(isObject(record), `${context}: monitoredPMIDs["${pmid}"] must be an object`);
         assert(["clean", "has-erratum", "retracted"].includes(record.status), `${context}: monitoredPMIDs status "${record.status}" is invalid`);
+        if (record.lastCheckedAt !== undefined) {
+          assert(isValidFullDate(record.lastCheckedAt), `${context}: monitoredPMIDs["${pmid}"].lastCheckedAt must be YYYY-MM-DD`);
+        }
       }
     }
   }
@@ -1764,6 +1791,10 @@ function readClinicalEvidenceSourceTree(baseDir, context) {
     assert(Array.isArray(data.analysisGroups), `${fileContext}: analysisGroups must be an array`);
     assert(Array.isArray(data.endpoints), `${fileContext}: endpoints must be an array`);
     assert(Array.isArray(data.outcomes), `${fileContext}: outcomes must be an array`);
+
+    if (data.researchState !== undefined) {
+      validateResearchState(data.researchState, `${fileContext}: researchState`);
+    }
 
     for (const study of data.studies) {
       assert(study.companyId === data.companyId, `${fileContext}: study ${study.id} companyId must match file companyId`);

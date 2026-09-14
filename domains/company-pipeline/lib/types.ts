@@ -1,4 +1,4 @@
-import type { RecordMetadata } from "@/domains/shared/lib/record-metadata";
+import type { RecordMetadata, ResearchStateMetadata } from "@/domains/shared/lib/record-metadata";
 import type { developmentStatuses, StageBucketId } from "./constants";
 
 export type {
@@ -25,6 +25,8 @@ export type Company = {
   officialWebsite?: CompanyReferenceLink | null;
   /** Official public pipeline/R&D page, when the company publishes one. */
   officialPipeline?: CompanyReferenceLink | null;
+  /** Optional research state checkpoint for cost-effective research preflights */
+  researchState?: ResearchStateMetadata;
 };
 
 export type AssetType =
