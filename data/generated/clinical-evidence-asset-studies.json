@@ -539,6 +539,21 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "focalStudyIds": [
+        "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+        "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+        "structure-therapeutics-gsbr-1290-access-nct06693843",
+        "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+        "structure-therapeutics-gsbr-1290-body-composition-nct07169942",
+        "structure-therapeutics-gsbr-1290-t2d-phase2-nct07400588",
+        "structure-therapeutics-gsbr-1290-accomplish-1-nct07654361",
+        "structure-therapeutics-gsbr-1290-accomplish-2-nct07654374"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "viking-therapeutics",
       "assetId": "vk2735",
       "focalStudyIds": [

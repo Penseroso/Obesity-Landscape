@@ -10883,6 +10883,460 @@
       }
     },
     {
+      "id": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Phase 1b/2a, Randomized, Double-blind, Placebo-controlled, Study of the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Multiple Ascending Doses of GSBR-1290 in Adult Overweight or Obese Healthy Subjects and in Subjects With Type 2 Diabetes Mellitus on Metformin",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05762471"
+        }
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05762471",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-04-25"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multi-cohort, multiple-ascending-dose study: Cohorts 1-3 (4-week, once-daily dose-ranging at 30/60/90 mg in overweight/obese participants), Cohort 4 (12-week, once-daily 120 mg in overweight/obese participants), and Cohort 5 (12-week, once-daily 45 mg or 90 mg in participants with type 2 diabetes on stable metformin)."
+      },
+      "population": "Adults who are overweight or obese (BMI 27-40 kg/m^2) without diabetes (Cohorts 1-4); adults who are overweight or obese (BMI 27-40 kg/m^2) with type 2 diabetes mellitus on stable metformin therapy for at least 6 months (Cohort 5).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "safetySummary": "Adverse events were predominantly gastrointestinal (nausea, vomiting), most common at higher doses; 88-96% of adverse events were mild to moderate. Discontinuation due to adverse events was 0% in the overweight/obese cohorts and 2.8% (1/36) in the type 2 diabetes cohort. No serious adverse events were assessed as related to study drug, and no drug-induced liver injury was observed.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05762471",
+            "title": "Phase 1b/2a Study of GSBR-1290 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2023/09/29/2751029/0/en/Structure-Therapeutics-Announces-Positive-Interim-Results-from-Phase-1-Trial-of-GSBR-1290.html",
+            "title": "Structure Therapeutics Announces Positive Interim Results from Phase 1 Trial of GSBR-1290 (Cohorts 1-3)",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-09-29",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2023/12/18/2798656/0/en/Structure-Therapeutics-Announces-Positive-Interim-Data-from-Phase-1-Trial-of-GSBR-1290.html",
+            "title": "Structure Therapeutics Announces Positive Interim Data from Phase 1 Trial of GSBR-1290 (Cohort 4 interim and Cohort 5)",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-12-18",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.biospace.com/structure-therapeutics-reports-positive-topline-data-from-its-phase-2a-obesity-study-and-capsule-to-tablet-pk-study-for-its-oral-non-peptide-small-molecule-glp-1-receptor-agonist-gsbr-1290",
+            "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study for its Oral Non-Peptide Small Molecule GLP-1 Receptor Agonist GSBR-1290 (Cohort 4 final)",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-06-03",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A 2-part, Phase 1, Randomized Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Comparative Bioavailability of Multiple-ascending Doses of GSBR-1290 in Healthy Overweight/Obese Participants",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06139055"
+        }
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06139055",
+        "overallStatus": "unknown",
+        "sourceStatus": "Unknown status",
+        "statusUpdatedAt": "2024-02-15"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Part 1: single-dose crossover comparing capsule and tablet formulations (bioavailability). Part 2: three 12-week, once-daily tablet dosing cohorts (Cohort 3 additionally randomized to capsule or tablet formulation for Weeks 9-12). Exact per-cohort doses and any Part 2 placebo arm were not disclosed in the sources reviewed; only an aggregate, dose-unattributed efficacy figure for Part 2 was found (see case-scoped fallback in the research report)."
+      },
+      "population": "Healthy adults who are overweight or obese (BMI >=27 kg/m^2), 18-75 years.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "safetySummary": "Across this study and the concurrent Phase 1b/2a obesity study, gastrointestinal adverse events (nausea, vomiting) were the most common treatment-emergent adverse events; discontinuation due to adverse events was reported in the range of 5% (obesity study) to 11% (this study), with no drug-induced liver injury observed. A per-cohort adverse-event breakdown was not disclosed.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06139055",
+            "title": "2-part Phase 1 capsule-to-tablet study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.biospace.com/structure-therapeutics-reports-positive-topline-data-from-its-phase-2a-obesity-study-and-capsule-to-tablet-pk-study-for-its-oral-non-peptide-small-molecule-glp-1-receptor-agonist-gsbr-1290",
+            "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study (capsule-to-tablet PK study)",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-06-03",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Phase 2b, Randomized, Double-blind, Placebo-controlled, Dose-range Finding Study of the Efficacy and Safety of Multiple Doses of Aleniglipron (GSBR-1290) in Participants Living With Obesity (Body Mass Index >= 30 kg/m2) or Overweight (Body Mass Index >= 27 kg/m2) With at Least One Weight-related Comorbidity",
+      "acronym": "ACCESS",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06693843"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GSBR-1290-06"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06693843",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-08-10"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "36-week double-blind, placebo-controlled, dose-ranging trial of once-daily oral aleniglipron (5 mg starting dose, escalated every 4 weeks to a 45 mg, 90 mg, or 120 mg target dose), followed by an optional 36-week open-label extension in which the prior-placebo group was rolled over onto active drug starting at 2.5 mg with a separate titration schedule."
+      },
+      "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2) or overweight (BMI >=27 kg/m^2) with at least one obesity-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks (double-blind period), plus an optional 36-week open-label extension",
+      "safetySummary": "Gastrointestinal adverse events, chiefly nausea and vomiting, were the most common treatment-emergent adverse events during the double-blind period, generally mild to moderate, decreasing in frequency over time with little recurrence of vomiting after dose interruption and retitration. Discontinuation due to adverse events was 5.4% with placebo and 13.3%, 7.7%, and 11.1% with the 45 mg, 90 mg, and 120 mg doses respectively. No drug-induced liver injury or QTc prolongation was observed; systolic blood pressure decreased in a dose-dependent manner (-7.9 to -9.0 mmHg with active treatment versus -1.5 mmHg with placebo). Anti-drug antibody incidence was not reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06693843",
+            "title": "ACCESS (Phase 2b) study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472946/",
+            "title": "Publisher Correction: Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication correction",
+            "publishedAt": "2026-07",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-access",
+            "title": "Structure Therapeutics Reports Positive Topline Data from ACCESS Program for its Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Study of the Safety, Tolerability, and Efficacy of Increasing Optimal Doses of Aleniglipron (GSBR-1290) in Participants Living With Obesity or Overweight and a Weight-Related Comorbidity (ACCESS II)",
+      "acronym": "ACCESS II",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06703021"
+        }
+      ],
+      "protocolIdentifiers": [
+        "GSBR-1290-09"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06703021",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-04-28"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "44-week, dose-ranging trial of once-daily oral aleniglipron tablet (120 mg, 180 mg, or 240 mg target dose) versus placebo, following an initial low-dose sentinel safety cohort whose dose and N were not disclosed in the sources reviewed."
+      },
+      "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2) or overweight (BMI >=27 kg/m^2) and at least one obesity-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "44 weeks",
+      "safetySummary": "Gastrointestinal adverse events (nausea, vomiting) were the most common treatment-emergent adverse events and were most frequent during dose titration. Across active-dose arms reaching at least 120 mg between Weeks 28 and 44, only one adverse-event-related discontinuation (3.7%) occurred. Serious adverse event and anti-drug antibody data were not reported in the sources reviewed.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06703021",
+            "title": "ACCESS II study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-body-composition-nct07169942",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Study Evaluating the Effects of Aleniglipron (GSBR-1290) on Body Composition in Participants Living With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07169942"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07169942",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-03-03"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "40-week trial evaluating body-composition effects (total body fat mass, visceral adipose tissue, lean mass) of once-daily oral aleniglipron, dosed in 4-week titration increments, versus placebo (5:1 randomization)."
+      },
+      "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2), without diabetes (HbA1c <6.5%) and without an endocrine cause of obesity (e.g. Cushing's syndrome, Prader-Willi syndrome, MC4R deficiency).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "40 weeks",
+      "safetySummary": "An interim disclosure (71 participants enrolled) indicated that initiating treatment with a lower 2.5 mg starting dose improved tolerability, with no adverse-event-related discontinuations reported during the initial dosing period. Full efficacy and safety results were not yet available as of this research; topline data were expected in Q4 2026.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07169942",
+            "title": "Aleniglipron Phase 2 Body Composition Study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial (interim Body Composition study commentary)",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-t2d-phase2-nct07400588",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Phase 2, Randomized, Double-blind, Placebo-controlled, Study of the Safety and Tolerability of Aleniglipron in Adult Participants With Type 2 Diabetes Mellitus Living With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07400588"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07400588",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-04-27"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Approximately 31-week trial of once-daily oral aleniglipron (titrated up to 240 mg) versus placebo, evaluating safety and tolerability as the primary objective."
+      },
+      "population": "Adults (18-79 years) with type 2 diabetes (>=6 months' duration, HbA1c 6.5-10%) and obesity or overweight (BMI >=27 kg/m^2).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "31 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07400588",
+            "title": "Aleniglipron Phase 2 in Type 2 Diabetes Mellitus study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-accomplish-1-nct07654361",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Pivotal Phase 3 Study to Evaluate the Long-Term Efficacy and Safety of Multiple Maintenance Doses of Once Daily Oral Aleniglipron for Chronic Weight Management in Adults With Obesity or Overweight and a Weight-Related Comorbidity",
+      "acronym": "ACCOMPLISH-1",
+      "studyFamily": "ACCOMPLISH",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07654361"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07654361",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-08-10"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Pivotal, parallel-group trial of multiple maintenance doses of once-daily oral aleniglipron versus placebo over 76 weeks; exact doses of the three active arms are not yet disclosed."
+      },
+      "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2), or overweight (BMI >=27 kg/m^2) with at least one obesity-related comorbidity, without type 1 or type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07654361",
+            "title": "ACCOMPLISH-1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "structure-therapeutics-gsbr-1290-accomplish-2-nct07654374",
+      "companyId": "structure-therapeutics",
+      "assetId": "gsbr-1290",
+      "programId": "structure-therapeutics-gsbr-1290-oral-tablet",
+      "officialTitle": "A Long-Term Randomized, Double-Blind, Placebo-Controlled, Phase 3 Study to Evaluate the Efficacy and Safety of Multiple Maintenance Doses of Oral Once Daily Aleniglipron for Chronic Weight Management in Adults With Obesity or Overweight and Type 2 Diabetes Mellitus",
+      "acronym": "ACCOMPLISH-2",
+      "studyFamily": "ACCOMPLISH",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07654374"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07654374",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Long-term, parallel-group trial of multiple maintenance doses of once-daily oral aleniglipron versus placebo over 76 weeks, in participants with type 2 diabetes; exact doses of the three active arms are not yet disclosed."
+      },
+      "population": "Adults (18-79 years) with type 2 diabetes (per WHO criteria, HbA1c 6.5-10%) and obesity or overweight (BMI >=27 kg/m^2).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07654374",
+            "title": "ACCOMPLISH-2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
       "id": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
       "companyId": "viking-therapeutics",
       "assetId": "vk2735",
@@ -22073,6 +22527,547 @@
       "treatmentDuration": "68 weeks"
     },
     {
+      "id": "s4-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks"
+    },
+    {
+      "id": "s4-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "role": "experimental",
+      "label": "Aleniglipron 120 mg",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "120 mg target dose",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks"
+    },
+    {
+      "id": "s4-180mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "role": "experimental",
+      "label": "Aleniglipron 180 mg",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "180 mg target dose",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks"
+    },
+    {
+      "id": "s4-240mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "role": "experimental",
+      "label": "Aleniglipron 240 mg",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "240 mg target dose",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks"
+    },
+    {
+      "id": "s3-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks",
+      "plannedN": 56,
+      "analyzedN": 42
+    },
+    {
+      "id": "s3-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Aleniglipron 45 mg",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "45 mg target dose",
+      "titration": "5 mg starting dose, escalated every 4 weeks to 45 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks",
+      "plannedN": 45,
+      "analyzedN": 33
+    },
+    {
+      "id": "s3-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Aleniglipron 90 mg",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "90 mg target dose",
+      "titration": "5 mg starting dose, escalated every 4 weeks to 90 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks",
+      "plannedN": 65,
+      "analyzedN": 49
+    },
+    {
+      "id": "s3-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Aleniglipron 120 mg",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "120 mg target dose",
+      "titration": "5 mg starting dose, escalated every 4 weeks to 120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36 weeks",
+      "plannedN": 64,
+      "analyzedN": 50
+    },
+    {
+      "id": "s3-45mg-ole",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Aleniglipron 45 mg (open-label extension)",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "45 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36-week open-label extension",
+      "analyzedN": 28
+    },
+    {
+      "id": "s3-90mg-ole",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Aleniglipron 90 mg (open-label extension)",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "90 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36-week open-label extension",
+      "analyzedN": 42
+    },
+    {
+      "id": "s3-120mg-ole",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Aleniglipron 120 mg (open-label extension)",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36-week open-label extension",
+      "analyzedN": 43
+    },
+    {
+      "id": "s3-placebo-rollover-ole",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "role": "experimental",
+      "label": "Prior-placebo rollover (open-label extension)",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "2.5 mg starting dose",
+      "titration": "2.5 mg starting dose with a separate, smaller-increment titration schedule than the original active arms",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "36-week open-label extension",
+      "analyzedN": 38
+    },
+    {
+      "id": "s7-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-1-nct07654361",
+      "role": "placebo",
+      "label": "Placebo Arm 4",
+      "intervention": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s7-arm1",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-1-nct07654361",
+      "role": "experimental",
+      "label": "Aleniglipron Arm 1",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s7-arm2",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-1-nct07654361",
+      "role": "experimental",
+      "label": "Aleniglipron Arm 2",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s7-arm3",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-1-nct07654361",
+      "role": "experimental",
+      "label": "Aleniglipron Arm 3",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s8-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-2-nct07654374",
+      "role": "placebo",
+      "label": "Placebo Arm 4",
+      "intervention": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s8-arm1",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-2-nct07654374",
+      "role": "experimental",
+      "label": "Aleniglipron Arm 1",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s8-arm2",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-2-nct07654374",
+      "role": "experimental",
+      "label": "Aleniglipron Arm 2",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s8-arm3",
+      "studyId": "structure-therapeutics-gsbr-1290-accomplish-2-nct07654374",
+      "role": "experimental",
+      "label": "Aleniglipron Arm 3",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "76 weeks"
+    },
+    {
+      "id": "s5-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-body-composition-nct07169942",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "40 weeks"
+    },
+    {
+      "id": "s5-active",
+      "studyId": "structure-therapeutics-gsbr-1290-body-composition-nct07169942",
+      "role": "experimental",
+      "label": "Aleniglipron (titrated dose)",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "40 weeks"
+    },
+    {
+      "id": "s2-part1-capsule",
+      "studyId": "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+      "role": "experimental",
+      "label": "GSBR-1290 capsule (Part 1, single dose)",
+      "intervention": "GSBR-1290 capsule formulation",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Single dose"
+    },
+    {
+      "id": "s2-part1-tablet",
+      "studyId": "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+      "role": "experimental",
+      "label": "GSBR-1290 tablet (Part 1, single dose)",
+      "intervention": "GSBR-1290 tablet formulation",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Single dose"
+    },
+    {
+      "id": "s2-part2-cohort1",
+      "studyId": "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+      "role": "experimental",
+      "label": "GSBR-1290 tablet (Part 2, Cohort 1)",
+      "intervention": "GSBR-1290 tablet formulation",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "s2-part2-cohort2",
+      "studyId": "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+      "role": "experimental",
+      "label": "GSBR-1290 tablet (Part 2, Cohort 2)",
+      "intervention": "GSBR-1290 tablet formulation",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "s2-part2-cohort3",
+      "studyId": "structure-therapeutics-gsbr-1290-capsule-tablet-pk-nct06139055",
+      "role": "experimental",
+      "label": "GSBR-1290 tablet, then randomized capsule or tablet at Weeks 9-12 (Part 2, Cohort 3)",
+      "intervention": "GSBR-1290 tablet formulation, with a formulation switch at Weeks 9-12",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks"
+    },
+    {
+      "id": "s1-c123-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "placebo",
+      "label": "Placebo (Cohorts 1-3)",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 5
+    },
+    {
+      "id": "s1-c123-30mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "experimental",
+      "label": "GSBR-1290 30 mg (Cohort 1)",
+      "intervention": "GSBR-1290",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "30 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "s1-c123-60mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "experimental",
+      "label": "GSBR-1290 60 mg (Cohort 2)",
+      "intervention": "GSBR-1290",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "60 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 6
+    },
+    {
+      "id": "s1-c123-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "experimental",
+      "label": "GSBR-1290 90 mg (Cohort 3)",
+      "intervention": "GSBR-1290",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "90 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "4 weeks",
+      "analyzedN": 5
+    },
+    {
+      "id": "s1-c4-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "placebo",
+      "label": "Placebo (Cohort 4)",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "analyzedN": 27
+    },
+    {
+      "id": "s1-c4-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "experimental",
+      "label": "GSBR-1290 120 mg (Cohort 4)",
+      "intervention": "GSBR-1290",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "analyzedN": 37
+    },
+    {
+      "id": "s1-c5-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "placebo",
+      "label": "Placebo (Cohort 5, type 2 diabetes)",
+      "intervention": "Matched placebo",
+      "dose": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "analyzedN": 18
+    },
+    {
+      "id": "s1-c5-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "experimental",
+      "label": "GSBR-1290 45 mg (Cohort 5, type 2 diabetes)",
+      "intervention": "GSBR-1290 plus stable metformin",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "45 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "analyzedN": 10
+    },
+    {
+      "id": "s1-c5-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "role": "experimental",
+      "label": "GSBR-1290 90 mg (Cohort 5, type 2 diabetes)",
+      "intervention": "GSBR-1290 plus stable metformin",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "90 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "12 weeks",
+      "analyzedN": 26
+    },
+    {
+      "id": "s6-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-t2d-phase2-nct07400588",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "31 weeks"
+    },
+    {
+      "id": "s6-active",
+      "studyId": "structure-therapeutics-gsbr-1290-t2d-phase2-nct07400588",
+      "role": "experimental",
+      "label": "Aleniglipron (titrated up to 240 mg)",
+      "intervention": "Aleniglipron",
+      "linkedAsset": {
+        "companyId": "structure-therapeutics",
+        "assetId": "gsbr-1290"
+      },
+      "dose": "Titrated up to 240 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "31 weeks"
+    },
+    {
       "id": "vk2735-p1-partb-placebo",
       "studyId": "viking-therapeutics-vk2735-phase1-sad-mad-nct05203237",
       "role": "placebo",
@@ -26644,6 +27639,141 @@
       "domain": "safety",
       "assessmentTimepoint": "Through Week 20",
       "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "ep-s4-weight-wk44",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
+    },
+    {
+      "id": "ep-s3-weight-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Percentage change from baseline in body weight",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-responder5-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Participants achieving at least 5% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-responder10-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Participants achieving at least 10% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-responder15-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Participants achieving at least 15% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-waist-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Change from baseline in waist circumference",
+      "role": "secondary",
+      "domain": "body composition",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-bmi-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Change from baseline in BMI",
+      "role": "secondary",
+      "domain": "body composition",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-weight-ole",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Percentage change from baseline in body weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Interim analysis, median 20 weeks into open-label extension (approximately Week 56 from randomization)",
+      "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "ep-s3-sae-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 36 (double-blind period)",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-nausea-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 36 (double-blind period)",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s3-vomiting-wk36",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Through Week 36 (double-blind period)",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "ep-s1-weight-wk12",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "name": "Percentage change from baseline in body weight",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
+    },
+    {
+      "id": "ep-s1-hba1c-wk12",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "name": "Change from baseline in HbA1c",
+      "role": "other",
+      "domain": "glycemic",
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
+    },
+    {
+      "id": "ep-s1-responder6-wk12",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "name": "Participants achieving at least 6% body-weight reduction",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
+    },
+    {
+      "id": "ep-s1-responder10-wk12",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "name": "Participants achieving at least 10% body-weight reduction",
+      "role": "other",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 12",
+      "assessmentTimepointWeeks": 12
     },
     {
       "id": "vk2735-p1-partb-weight-wk4",
@@ -70429,6 +71559,1923 @@
             "sourceType": "conference abstract",
             "publishedAt": "2026-06",
             "checkedAt": "2026-08-12"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "+1.1%",
+        "numericValue": 1.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-120mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-13.6%",
+        "numericValue": -13.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-180mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-180mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.3%",
+        "numericValue": -15.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-240mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-240mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-15.0%",
+        "numericValue": -15,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-120mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-120mg",
+        "s4-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.7%",
+        "numericValue": -14.7,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 120 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-180mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-180mg",
+        "s4-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.3%",
+        "numericValue": -16.3,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 180 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s4-weight-wk44-240mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+      "endpointId": "ep-s4-weight-wk44",
+      "armIds": [
+        "s4-240mg",
+        "s4-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-16.0%",
+        "numericValue": -16,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 240 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial with Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2026-03-16",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.8%",
+        "numericValue": -0.8,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -2.7 to 1.1"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.0%",
+        "numericValue": -9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -11.2 to -6.8"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.7%",
+        "numericValue": -10.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -12.5 to -8.8"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.7%",
+        "numericValue": -12.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -13.9 to -10.3"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472946/",
+            "title": "Publisher Correction: Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - corrects the 120 mg Figure 3b LS-mean value from -12.1 to -12.7",
+            "sourceType": "peer-reviewed publication correction",
+            "publishedAt": "2026-07",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-45mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-45mg",
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-8.2%",
+        "numericValue": -8.2,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 45 mg minus placebo",
+        "confidenceInterval": "95% CI, -11.1 to -5.3",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-access",
+            "title": "Structure Therapeutics Reports Positive Topline Data from ACCESS Program for its Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-90mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-90mg",
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.8%",
+        "numericValue": -9.8,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 90 mg minus placebo",
+        "confidenceInterval": "95% CI, -12.5 to -7.2",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-access",
+            "title": "Structure Therapeutics Reports Positive Topline Data from ACCESS Program for its Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-120mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-120mg",
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.3%",
+        "numericValue": -11.3,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 120 mg minus placebo",
+        "confidenceInterval": "95% CI, -13.9 to -8.6",
+        "pValue": "<0.0001"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          },
+          {
+            "url": "https://ir.structuretx.com/news-releases/news-release-details/structure-therapeutics-reports-positive-topline-data-access",
+            "title": "Structure Therapeutics Reports Positive Topline Data from ACCESS Program for its Once-Daily Oral Small Molecule GLP-1 Receptor Agonist, Aleniglipron",
+            "sourceType": "company topline release",
+            "publishedAt": "2025-12-08",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-45mg-vs-placebo-tre",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-45mg",
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-8.8%",
+        "numericValue": -8.8,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 45 mg minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - Extended Data Table 2",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-90mg-vs-placebo-tre",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-90mg",
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-10.2%",
+        "numericValue": -10.2,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 90 mg minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - Extended Data Table 2",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-wk36-120mg-vs-placebo-tre",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-wk36",
+      "armIds": [
+        "s3-120mg",
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-regimen estimand",
+      "result": {
+        "value": "-11.4%",
+        "numericValue": -11.4,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, aleniglipron 120 mg minus placebo"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - Extended Data Table 2",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder5-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder5-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "22.7%",
+        "numericValue": 22.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder5-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder5-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "75.4%",
+        "numericValue": 75.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder5-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder5-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "79.5%",
+        "numericValue": 79.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder5-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder5-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "85.9%",
+        "numericValue": 85.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder10-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder10-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "6.9%",
+        "numericValue": 6.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder10-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder10-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "44.2%",
+        "numericValue": 44.2,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder10-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder10-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "54.4%",
+        "numericValue": 54.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder10-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder10-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "70.4%",
+        "numericValue": 70.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder15-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder15-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "1.0%",
+        "numericValue": 1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder15-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder15-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "19.4%",
+        "numericValue": 19.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder15-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder15-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "26.1%",
+        "numericValue": 26.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-responder15-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-responder15-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "37.9%",
+        "numericValue": 37.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-waist-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-waist-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-4.1 cm",
+        "numericValue": -4.1,
+        "unit": "cm",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -6.53 to -1.69"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-waist-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-waist-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.7 cm",
+        "numericValue": -9.7,
+        "unit": "cm",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -12.45 to -6.98"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-waist-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-waist-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.5 cm",
+        "numericValue": -9.5,
+        "unit": "cm",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -11.78 to -7.23"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-waist-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-waist-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.1 cm",
+        "numericValue": -12.1,
+        "unit": "cm",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -14.39 to -9.88"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-bmi-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-bmi-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.4 kg/m2",
+        "numericValue": -0.4,
+        "unit": "kg/m2",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -1.15 to 0.40"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-bmi-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-bmi-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.6 kg/m2",
+        "numericValue": -3.6,
+        "unit": "kg/m2",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -4.48 to -2.71"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-bmi-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-bmi-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-4.1 kg/m2",
+        "numericValue": -4.1,
+        "unit": "kg/m2",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -4.86 to -3.39"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-bmi-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-bmi-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-4.8 kg/m2",
+        "numericValue": -4.8,
+        "unit": "kg/m2",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -5.53 to -4.07"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-ole-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-ole",
+      "armIds": [
+        "s3-45mg-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (interim, participants continuing treatment)",
+      "result": {
+        "value": "-13.3% (SD 8.9)",
+        "numericValue": -13.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - open-label extension interim analysis",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-ole-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-ole",
+      "armIds": [
+        "s3-90mg-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (interim, participants continuing treatment)",
+      "result": {
+        "value": "-16.2% (SD 10.4)",
+        "numericValue": -16.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - open-label extension interim analysis",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-ole-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-ole",
+      "armIds": [
+        "s3-120mg-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (interim, participants continuing treatment)",
+      "result": {
+        "value": "-15.3% (SD 8.7)",
+        "numericValue": -15.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - open-label extension interim analysis",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-weight-ole-placebo-rollover",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-weight-ole",
+      "armIds": [
+        "s3-placebo-rollover-ole"
+      ],
+      "analysisPopulation": "Open-label extension analysis population (interim, participants continuing treatment)",
+      "result": {
+        "value": "-6.4%",
+        "numericValue": -6.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS) - open-label extension interim analysis",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-sae-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-sae-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "5.4% (3/56)",
+        "numericValue": 5.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-sae-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-sae-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "2.2% (1/45)",
+        "numericValue": 2.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-sae-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-sae-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "0% (0/65)",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-sae-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-sae-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "6.3% (4/64)",
+        "numericValue": 6.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-nausea-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-nausea-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "21.4%",
+        "numericValue": 21.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-nausea-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-nausea-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "71.1%",
+        "numericValue": 71.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-nausea-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-nausea-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "67.7%",
+        "numericValue": 67.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-nausea-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-nausea-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "65.1%",
+        "numericValue": 65.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-vomiting-wk36-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-vomiting-wk36",
+      "armIds": [
+        "s3-placebo"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "5.4%",
+        "numericValue": 5.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-vomiting-wk36-45mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-vomiting-wk36",
+      "armIds": [
+        "s3-45mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "40.0%",
+        "numericValue": 40,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-vomiting-wk36-90mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-vomiting-wk36",
+      "armIds": [
+        "s3-90mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "44.6%",
+        "numericValue": 44.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s3-vomiting-wk36-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-access-nct06693843",
+      "endpointId": "ep-s3-vomiting-wk36",
+      "armIds": [
+        "s3-120mg"
+      ],
+      "analysisPopulation": "Safety population (double-blind period)",
+      "result": {
+        "value": "31.7%",
+        "numericValue": 31.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13472849/",
+            "title": "Aleniglipron, an oral non-peptide GLP-1 receptor agonist, for obesity: a phase 2b randomized trial (ACCESS)",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-weight-c4-120mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-weight-wk12",
+      "armIds": [
+        "s1-c4-120mg",
+        "s1-c4-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-6.2",
+        "numericValue": -6.2,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, GSBR-1290 120 mg minus placebo",
+        "pValue": "<0.0001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.biospace.com/structure-therapeutics-reports-positive-topline-data-from-its-phase-2a-obesity-study-and-capsule-to-tablet-pk-study-for-its-oral-non-peptide-small-molecule-glp-1-receptor-agonist-gsbr-1290",
+            "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study (Cohort 4 final)",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-06-03",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-weight-c5-45mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-weight-wk12",
+      "armIds": [
+        "s1-c5-45mg",
+        "s1-c5-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-3.51",
+        "numericValue": -3.51,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, GSBR-1290 45 mg minus placebo",
+        "pValue": "0.0019"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2023/12/18/2798656/0/en/Structure-Therapeutics-Announces-Positive-Interim-Data-from-Phase-1-Trial-of-GSBR-1290.html",
+            "title": "Structure Therapeutics Announces Positive Interim Data from Phase 1 Trial of GSBR-1290 (Cohort 4 interim and Cohort 5)",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-12-18",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-weight-c5-90mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-weight-wk12",
+      "armIds": [
+        "s1-c5-90mg",
+        "s1-c5-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-3.26",
+        "numericValue": -3.26,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in percent change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, GSBR-1290 90 mg minus placebo",
+        "pValue": "0.0013"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2023/12/18/2798656/0/en/Structure-Therapeutics-Announces-Positive-Interim-Data-from-Phase-1-Trial-of-GSBR-1290.html",
+            "title": "Structure Therapeutics Announces Positive Interim Data from Phase 1 Trial of GSBR-1290 (Cohort 4 interim and Cohort 5)",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-12-18",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-hba1c-c5-45mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-hba1c-wk12",
+      "armIds": [
+        "s1-c5-45mg",
+        "s1-c5-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.01",
+        "numericValue": -1.01,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in HbA1c change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, GSBR-1290 45 mg minus placebo",
+        "pValue": "0.008"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2023/12/18/2798656/0/en/Structure-Therapeutics-Announces-Positive-Interim-Data-from-Phase-1-Trial-of-GSBR-1290.html",
+            "title": "Structure Therapeutics Announces Positive Interim Data from Phase 1 Trial of GSBR-1290 (Cohort 4 interim and Cohort 5)",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-12-18",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-hba1c-c5-90mg-vs-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-hba1c-wk12",
+      "armIds": [
+        "s1-c5-90mg",
+        "s1-c5-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "-1.02",
+        "numericValue": -1.02,
+        "unit": "percentage points",
+        "effectMeasure": "Placebo-adjusted mean difference in HbA1c change from baseline",
+        "resultType": "between-arm",
+        "comparisonType": "Placebo-adjusted mean difference, GSBR-1290 90 mg minus placebo",
+        "pValue": "0.001"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2023/12/18/2798656/0/en/Structure-Therapeutics-Announces-Positive-Interim-Data-from-Phase-1-Trial-of-GSBR-1290.html",
+            "title": "Structure Therapeutics Announces Positive Interim Data from Phase 1 Trial of GSBR-1290 (Cohort 4 interim and Cohort 5)",
+            "sourceType": "company topline release",
+            "publishedAt": "2023-12-18",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-responder6-c4-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-responder6-wk12",
+      "armIds": [
+        "s1-c4-120mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "67%",
+        "numericValue": 67,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=6%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.biospace.com/structure-therapeutics-reports-positive-topline-data-from-its-phase-2a-obesity-study-and-capsule-to-tablet-pk-study-for-its-oral-non-peptide-small-molecule-glp-1-receptor-agonist-gsbr-1290",
+            "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study (Cohort 4 final)",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-06-03",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-responder10-c4-120mg",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-responder10-wk12",
+      "armIds": [
+        "s1-c4-120mg"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "33%",
+        "numericValue": 33,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.biospace.com/structure-therapeutics-reports-positive-topline-data-from-its-phase-2a-obesity-study-and-capsule-to-tablet-pk-study-for-its-oral-non-peptide-small-molecule-glp-1-receptor-agonist-gsbr-1290",
+            "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study (Cohort 4 final)",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-06-03",
+            "checkedAt": "2026-09-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "o-s1-responder10-c4-placebo",
+      "studyId": "structure-therapeutics-gsbr-1290-phase1b-2a-nct05762471",
+      "endpointId": "ep-s1-responder10-wk12",
+      "armIds": [
+        "s1-c4-placebo"
+      ],
+      "analysisPopulation": "Analysis population not specified in company topline announcement",
+      "result": {
+        "value": "0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-14",
+        "updatedAt": "2026-09-14",
+        "sources": [
+          {
+            "url": "https://www.biospace.com/structure-therapeutics-reports-positive-topline-data-from-its-phase-2a-obesity-study-and-capsule-to-tablet-pk-study-for-its-oral-non-peptide-small-molecule-glp-1-receptor-agonist-gsbr-1290",
+            "title": "Structure Therapeutics Reports Positive Topline Data from its Phase 2a Obesity Study and Capsule to Tablet PK Study (Cohort 4 final)",
+            "sourceType": "company topline release",
+            "publishedAt": "2024-06-03",
+            "checkedAt": "2026-09-14"
           }
         ]
       }
