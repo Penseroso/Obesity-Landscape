@@ -590,34 +590,50 @@ function probeMechanismFamilyRegistry() {
  * drift silently — an authoring edit that quietly moves a unit in or out of the
  * comparison would otherwise pass every validator.
  *
- * The reviewed snapshot below is the accepted 17-of-30 result (ADR-0065),
- * superseding ADR-0064's 15-of-24. Two independent causes moved the counts:
- * subsequent Clinical Evidence research added body-weight studies (73 → 78),
- * and the unit key now also splits a company-local asset by `programId` (see
- * the comment above `unitStudies`), which is what raised evidenceBearingUnits
- * from 24 to 30 — Novo Nordisk semaglutide, Ascletis Pharma ASC30, Novo Nordisk
- * amycretin, and Sciwind Biosciences ecnoglutide each split into a separate
- * unit per route/dosage-form Program. No population or metric eligibility rule
- * was relaxed. Changing this snapshot remains a deliberate review, never a
- * mechanical update to make the probe pass again.
+ * The reviewed snapshot below is the accepted 21-of-39 result, superseding the
+ * prior 17-of-30 (ADR-0065). bodyWeightOutcomeStudies rose from 78 to 92 across
+ * several independent Clinical Evidence research runs since that snapshot:
+ * ABBV-295, DREAMS-2/cotadutide, mazdutide China Ph2 Stage 2, Viking
+ * Therapeutics VK2735, and Structure Therapeutics aleniglipron (GSBR-1290).
+ * evidenceBearingUnits rose from 30 to 39 as those same runs added new
+ * company-local units: Viking VK2735 (subcutaneous-injection and oral-tablet)
+ * and Structure Therapeutics GSBR-1290 (oral-tablet) are all newly ELIGIBLE;
+ * AbbVie ABBV-295, AstraZeneca cotadutide (two additional Program-specific
+ * units: diabetic-kidney-disease and MASH), and Innovent mazdutide (two
+ * additional Program-specific units: type-2-diabetes and
+ * type-2-diabetes-with-obesity) are new GAP units, each excluded for the same
+ * class of population-eligibility reason already tracked below. No population
+ * or metric eligibility rule was relaxed or tightened. Changing this snapshot
+ * remains a deliberate review, never a mechanical update to make the probe
+ * pass again.
  */
 const efficacyPopulationCoverageSnapshot = {
-  bodyWeightOutcomeStudies: 78,
-  bodyWeightStudiesMissingProfile: 5,
-  evidenceBearingUnits: 30,
-  eligibleUnits: 17,
-  gapUnits: 13,
+  bodyWeightOutcomeStudies: 92,
+  bodyWeightStudiesMissingProfile: 8,
+  evidenceBearingUnits: 39,
+  eligibleUnits: 21,
+  gapUnits: 18,
   gaps: {
+    "abbvie/abbv-295/abbvie-abbv-295-subcutaneous-injection":
+      "population-unclassified",
     "amgen/maridebart-cafraglutide/amgen-maridebart-cafraglutide-subcutaneous-injection":
       "population-mixed-diabetes-status",
     "ascletis-pharma/asc30/ascletis-pharma-asc30-subcutaneous-depot-injection":
       "metric-unavailable-percent",
+    "astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-diabetic-kidney-disease":
+      "population-with-type-2-diabetes",
+    "astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-mash":
+      "population-mixed-diabetes-status",
     "astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-type-2-diabetes":
       "population-with-type-2-diabetes",
     "astrazeneca/exenatide/astrazeneca-exenatide-subcutaneous-injection-obesity":
       "metric-unavailable-percent",
     "eli-lilly-and-company/ly3437943/eli-lilly-and-company-ly3437943-subcutaneous-injection-oa":
       "population-requires-additional-condition",
+    "innovent-biologics/mazdutide/innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes":
+      "population-with-type-2-diabetes",
+    "innovent-biologics/mazdutide/innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes-with-obesity":
+      "population-with-type-2-diabetes",
     "novo-nordisk/amycretin/novo-nordisk-amycretin-subcutaneous-injection":
       "population-diabetes-status-not-specified",
     "novo-nordisk/cagrilintide/novo-nordisk-cagrilintide-subcutaneous-injection":

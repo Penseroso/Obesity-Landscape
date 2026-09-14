@@ -63,16 +63,42 @@ const armById = new Map(aggregate.arms.map((arm) => [arm.id, arm]));
  * metric eligibility rule was relaxed. ADR-0058 reviewed a comparable change for
  * `data:probe:efficacy-population-coverage` and synchronized its separately
  * frozen snapshot the same way.
+ *
+ * Refreshed again to 21-of-39 (from 17-of-30) after several independent
+ * Clinical Evidence research runs: ABBV-295, DREAMS-2/cotadutide, mazdutide
+ * China Ph2 Stage 2, Viking Therapeutics VK2735, and Structure Therapeutics
+ * aleniglipron (GSBR-1290). Four units became newly eligible (added to
+ * REVIEWED_EVIDENCE below): Viking VK2735 subcutaneous-injection (VENTURE) and
+ * oral-tablet (VENTURE-Oral), Structure Therapeutics GSBR-1290 oral-tablet
+ * (ACCESS II), and Innovent mazdutide subcutaneous-injection (IBI362 Phase 2,
+ * previously eligible in the data but never synced into this file's snapshot).
+ * Five new gap units appeared (added to REVIEWED_GAPS): AbbVie ABBV-295,
+ * AstraZeneca cotadutide (two additional Program-specific units: diabetic-
+ * kidney-disease and MASH), and Innovent mazdutide (two additional
+ * Program-specific units: type-2-diabetes and type-2-diabetes-with-obesity).
+ * Head-to-head studies/groups rose from 9 to 12 from the same underlying
+ * cotadutide/mazdutide comparator evidence. No population, design, or metric
+ * eligibility rule was relaxed or tightened in this refresh.
  */
 const REVIEWED_TOTALS = {
-  eligibleUnits: 17,
-  gapUnits: 13,
-  totalUnits: 30,
-  headToHeadStudies: 9,
-  headToHeadGroups: 9,
+  eligibleUnits: 21,
+  gapUnits: 18,
+  totalUnits: 39,
+  headToHeadStudies: 12,
+  headToHeadGroups: 12,
 };
 
 const REVIEWED_GAPS: Record<string, string> = {
+  "asset:abbvie/abbv-295/abbvie-abbv-295-subcutaneous-injection":
+    "population-unclassified",
+  "asset:astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-diabetic-kidney-disease":
+    "population-with-type-2-diabetes",
+  "asset:astrazeneca/cotadutide/astrazeneca-cotadutide-subcutaneous-injection-mash":
+    "population-mixed-diabetes-status",
+  "asset:innovent-biologics/mazdutide/innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes":
+    "population-with-type-2-diabetes",
+  "asset:innovent-biologics/mazdutide/innovent-biologics-mazdutide-subcutaneous-injection-type-2-diabetes-with-obesity":
+    "population-with-type-2-diabetes",
   "asset:amgen/maridebart-cafraglutide/amgen-maridebart-cafraglutide-subcutaneous-injection":
     "population-mixed-diabetes-status",
   "asset:ascletis-pharma/asc30/ascletis-pharma-asc30-subcutaneous-depot-injection":
@@ -386,6 +412,78 @@ const REVIEWED_EVIDENCE: Record<
       "redefine1-weight-cagrilintide",
       "redefine1-weight-semaglutide",
     ],
+    betweenArmOutcomeIds: [],
+  },
+  "asset:structure-therapeutics/gsbr-1290/structure-therapeutics-gsbr-1290-oral-tablet": {
+    familyId: "glp1-agonist",
+    studyId: "structure-therapeutics-gsbr-1290-access-ii-nct06703021",
+    endpointId: "ep-s4-weight-wk44",
+    comparisonGroupKey:
+      "arm-level|analysis population not specified in company topline announcement|efficacy",
+    treatmentOutcomeIds: [
+      "o-s4-weight-wk44-120mg",
+      "o-s4-weight-wk44-180mg",
+      "o-s4-weight-wk44-240mg",
+    ],
+    placeboOutcomeIds: ["o-s4-weight-wk44-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [
+      "o-s4-weight-wk44-120mg-vs-placebo",
+      "o-s4-weight-wk44-180mg-vs-placebo",
+      "o-s4-weight-wk44-240mg-vs-placebo",
+    ],
+  },
+  "asset:viking-therapeutics/vk2735/viking-therapeutics-vk2735-oral-tablet": {
+    familyId: "glp1-gip-agonist",
+    studyId: "viking-therapeutics-vk2735-venture-oral-nct06828055",
+    endpointId: "vk2735-ventureoral-weight-wk13",
+    comparisonGroupKey:
+      "arm-level|analysis population not specified in company topline announcement|",
+    treatmentOutcomeIds: [
+      "vk2735-ventureoral-weight-wk13-15mg",
+      "vk2735-ventureoral-weight-wk13-30mg",
+      "vk2735-ventureoral-weight-wk13-60mg",
+      "vk2735-ventureoral-weight-wk13-90mg",
+      "vk2735-ventureoral-weight-wk13-120mg",
+      "vk2735-ventureoral-weight-wk13-maintenance",
+    ],
+    placeboOutcomeIds: ["vk2735-ventureoral-weight-wk13-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [
+      "vk2735-ventureoral-weight-wk13-15mg-vs-placebo",
+      "vk2735-ventureoral-weight-wk13-30mg-vs-placebo",
+      "vk2735-ventureoral-weight-wk13-60mg-vs-placebo",
+      "vk2735-ventureoral-weight-wk13-90mg-vs-placebo",
+      "vk2735-ventureoral-weight-wk13-120mg-vs-placebo",
+    ],
+  },
+  "asset:viking-therapeutics/vk2735/viking-therapeutics-vk2735-subcutaneous-injection": {
+    familyId: "glp1-gip-agonist",
+    studyId: "viking-therapeutics-vk2735-venture-nct06068946",
+    endpointId: "vk2735-venture-weight-wk13",
+    comparisonGroupKey: "arm-level|modified intention to treat(overall)|",
+    treatmentOutcomeIds: [
+      "vk2735-venture-weight-wk13-2.5mg",
+      "vk2735-venture-weight-wk13-5mg",
+      "vk2735-venture-weight-wk13-10mg",
+      "vk2735-venture-weight-wk13-15mg",
+    ],
+    placeboOutcomeIds: ["vk2735-venture-weight-wk13-placebo"],
+    activeComparatorOutcomeIds: [],
+    betweenArmOutcomeIds: [],
+  },
+  "asset:innovent-biologics/mazdutide/innovent-biologics-mazdutide-subcutaneous-injection": {
+    familyId: "glp1-glucagon-agonist",
+    studyId: "innovent-biologics-mazdutide-nct04904913",
+    endpointId: "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
+    comparisonGroupKey: "arm-level|not reported|",
+    treatmentOutcomeIds: [
+      "innovent-biologics-mazdutide-nct04904913-3mg-body-weight-week-24",
+      "innovent-biologics-mazdutide-nct04904913-4-5mg-body-weight-week-24",
+      "innovent-biologics-mazdutide-nct04904913-6mg-body-weight-week-24",
+    ],
+    placeboOutcomeIds: ["innovent-biologics-mazdutide-nct04904913-placebo-body-weight-week-24"],
+    activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
 };
