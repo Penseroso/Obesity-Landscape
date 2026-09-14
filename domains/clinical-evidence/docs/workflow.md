@@ -175,6 +175,39 @@ traverses every current asset under section 1's complete-manifest rule.
    — an asset's own directory presence, or its absence, is the coverage
    signal. Asset-scoped execution introduces no new tracking file.
 
+## 1b. Deterministic network preflights & Cold-Path execution (ADR-0070)
+
+To eliminate redundant web searches and unnecessary LLM token consumption while
+maintaining 100% factual accuracy, Clinical Evidence research utilizes
+zero-token Node.js network preflights strictly outside the offline CI gate:
+
+```text
+# Run all preflight checks for the target company
+npm run research:preflight -- <companyId>
+
+# Or run specific decoupled probes
+npm run research:preflight:registry <companyId>
+npm run research:preflight:registry:discovery <companyId>
+npm run research:preflight:literature <companyId>
+npm run research:preflight:literature:discovery <companyId>
+```
+
+### Two-stage delta detection & decoupled probes
+1. **Registry Update Probe (`registry:update`) vs Registry Discovery Probe (`registry:discovery`)**:
+   - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`). Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped).
+   - Discovery probe executes deterministic queries with company name and asset aliases, computing an ID set difference ($\text{Candidates} \setminus \text{Known NCTs}$) to surface brand-new trial registrations at 0 LLM tokens.
+2. **Literature Health Check (`literature:health`) vs Literature Discovery Probe (`literature:discovery`)**:
+   - Health check queries PubMed E-utilities (`esummary`) for all cited PMIDs, scanning `CommentsCorrectionsList` for `ErratumIn`, `RetractionIn`, or other adverse notices.
+   - Discovery probe queries PubMed E-utilities (`esearch`) for asset aliases to detect newly indexed peer-reviewed journal articles that may supersede earlier interim disclosures or press releases ($\text{Discovered PMIDs} \setminus \text{Known PMIDs}$).
+
+### Cold-Path execution ("Freeze the source, not the study")
+Completed Studies with established Tier 1 peer-reviewed publications (e.g. STEP 1, SURMOUNT-1, SELECT) older than 12 months enter **Cold-Path Execution**:
+- **Do not freeze the Study**: The Study is never removed from the refresh workflow or frozen permanently.
+- **Freeze the source text**: Re-downloading and re-parsing immutable full-text papers (30k+ tokens) is skipped.
+- **Probes remain vigilant**: Preflight probes actively monitor PubMed errata, registry status changes, and newly indexed follow-up publications.
+- If all preflights report `CLEAN`, the Study's evidence is confirmed as `COLD_PATH_VERIFIED` with zero token waste.
+- If an erratum, protocol amendment, or new publication is detected, immediately trigger targeted LLM review of that specific delta payload only.
+
 ## 2. Establish and traverse the evidence set
 
 Inspect existing Clinical Evidence source files and decide initial

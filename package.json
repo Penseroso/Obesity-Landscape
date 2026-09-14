@@ -32,6 +32,12 @@
     "data:probe:registry-citations": "node scripts/data-registry.mjs probe:registry-citations",
     "data:validate:registries": "node scripts/data-registry.mjs validate:registries",
     "data:validate:synthetic": "node scripts/data-registry.mjs validate:synthetic",
+    "research:preflight": "node scripts/research-preflight.mjs all",
+    "research:preflight:registry": "node scripts/research-preflight.mjs registry:update",
+    "research:preflight:registry:discovery": "node scripts/research-preflight.mjs registry:discovery",
+    "research:preflight:literature": "node scripts/research-preflight.mjs literature:health",
+    "research:preflight:literature:discovery": "node scripts/research-preflight.mjs literature:discovery",
+    "research:preflight:sec": "node scripts/research-preflight.mjs sec",
     "gate": "npm run data:generate && npm run data:validate:registries && npm run data:validate:companies && npm run data:validate:generated && npm run data:validate:synthetic && npm run data:validate:clinical-evidence && npm run data:validate:clinical-evidence:generated && npm run data:validate:clinical-evidence:synthetic && npm run data:validate:news && npm run data:validate:news:synthetic && npm run data:probe:indication-scope && npm run data:probe:scope-class && npm run data:probe:registry-citations && npm run data:probe:mechanism-families && npm run data:probe:efficacy-population-coverage && npm run data:probe:efficacy-comparison && npm run data:probe:news-source-overlap && npm run lint && npm run build && git diff --check"
   },
   "dependencies": {

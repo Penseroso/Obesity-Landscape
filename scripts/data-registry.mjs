@@ -947,6 +947,49 @@ function validateMetadata(metadata, context) {
   for (const [index, source] of metadata.sources.entries()) {
     validateSource(source, `${context}: metadata.sources[${index}]`);
   }
+
+  if (metadata.researchState !== undefined) {
+    validateResearchState(metadata.researchState, `${context}: metadata.researchState`);
+  }
+}
+
+function validateResearchState(researchState, context) {
+  assert(isObject(researchState), `${context}: researchState must be an object`);
+  assert(researchState.checkpointVersion === 1, `${context}: checkpointVersion must be 1`);
+  assert(isNonEmptyString(researchState.workflowRevision), `${context}: workflowRevision is required`);
+  if (researchState.coldPathEligible !== undefined) {
+    assert(typeof researchState.coldPathEligible === "boolean", `${context}: coldPathEligible must be boolean`);
+  }
+  assert(isObject(researchState.discoveryCheckpoint), `${context}: discoveryCheckpoint is required`);
+  const cp = researchState.discoveryCheckpoint;
+  assert(isValidFullDate(cp.asOf), `${context}: discoveryCheckpoint.asOf must be YYYY-MM-DD`);
+  if (cp.secEdgar !== undefined) {
+    assert(isObject(cp.secEdgar), `${context}: secEdgar must be an object`);
+    assert(isNonEmptyString(cp.secEdgar.cik), `${context}: secEdgar.cik is required`);
+    assert(isNonEmptyString(cp.secEdgar.latestAcceptanceDateTime), `${context}: secEdgar.latestAcceptanceDateTime is required`);
+  }
+  if (cp.clinicalTrials !== undefined) {
+    assert(isObject(cp.clinicalTrials), `${context}: clinicalTrials must be an object`);
+    if (cp.clinicalTrials.knownNCTs !== undefined) {
+      assert(isObject(cp.clinicalTrials.knownNCTs), `${context}: clinicalTrials.knownNCTs must be an object`);
+      for (const [nctId, record] of Object.entries(cp.clinicalTrials.knownNCTs)) {
+        assert(nctPattern.test(nctId), `${context}: knownNCTs key "${nctId}" must match NCT########`);
+        assert(isObject(record), `${context}: knownNCTs["${nctId}"] must be an object`);
+        assert(isValidFullDate(record.lastUpdatePostDate), `${context}: knownNCTs["${nctId}"].lastUpdatePostDate must be YYYY-MM-DD`);
+      }
+    }
+  }
+  if (cp.literature !== undefined) {
+    assert(isObject(cp.literature), `${context}: literature must be an object`);
+    if (cp.literature.monitoredPMIDs !== undefined) {
+      assert(isObject(cp.literature.monitoredPMIDs), `${context}: literature.monitoredPMIDs must be an object`);
+      for (const [pmid, record] of Object.entries(cp.literature.monitoredPMIDs)) {
+        assert(/^\d+$/.test(pmid), `${context}: monitoredPMIDs key "${pmid}" must be numeric PMID`);
+        assert(isObject(record), `${context}: monitoredPMIDs["${pmid}"] must be an object`);
+        assert(["clean", "has-erratum", "retracted"].includes(record.status), `${context}: monitoredPMIDs status "${record.status}" is invalid`);
+      }
+    }
+  }
 }
 
 function validateDevelopment(development, context, registries) {

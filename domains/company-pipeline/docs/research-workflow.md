@@ -258,21 +258,26 @@ apply per segment and which are company-wide.
 2. For every `Filed` or `Approved` program, reconcile disclosed jurisdiction,
    authority, and official date in `regulatoryStates`.
 3. Classify every newly surfaced candidate.
-4. Repeat company-centred discovery independently, without using the first
-   pass's source list or inventory as the starting point.
-5. The independent pass covers previously DEFERRED and unresolved candidates
-   and claims as well as new ones. Re-search each of them and record which
-   applies: new evidence now resolves it, the same blocker still stands, or its
-   disposition has changed. A prior deferral is not carried forward untested.
-6. If the independent pass finds an unclassified candidate, research and
-   classify it, then repeat the independent pass. A final pass finds no
-   unclassified candidate and no unre-searched prior deferral.
+4. **Deterministic Preflight & Prior Checkpoint Diff (ADR-0070).** For a refresh run,
+   execute `npm run research:preflight -- <companyId>` to check registry update/discovery,
+   literature health/discovery, and SEC EDGAR filings before drafting mutations.
+5. **Coverage verification via Conclusion-Blind Audit (Section 5a).**
+   - For an **initial company investigation**, run a Targeted Conclusion-Blind Audit
+     covering negative space (untracked obesity assets), borderline exclusions/deferrals,
+     and initial stage/status claims.
+   - For an **incremental refresh**, run a Risk-Triggered Conclusion-Blind Audit whenever
+     high-risk mutations occur (Section 5a).
+   - Re-search previously DEFERRED candidates to confirm whether new evidence resolves
+     them, the same blocker stands, or their disposition has changed. A prior deferral
+     is not carried forward untested.
+6. If the preflight or audit surfaces an unclassified candidate, research and
+   classify it before concluding the run.
 7. **Zero undispositioned candidates.** Count every candidate surfaced across
-   both passes that does not carry a final STORED, EXCLUDED, or DEFERRED
-   disposition (section 2). This count must be exactly zero before the run
-   may report GO — a nonzero count is NO-GO regardless of how much other work
-   has completed. Under a declared segment (section 1a), this count is scoped
-   to candidates surfaced within the segment.
+   discovery, preflights, and audits that does not carry a final STORED, EXCLUDED,
+   or DEFERRED disposition (section 2). This count must be exactly zero before the
+   run may report GO — a nonzero count is NO-GO regardless of how much other work
+   has completed. Under a declared segment (section 1a), this count is scoped to
+   candidates surfaced within the segment.
 8. Every touched program row's `development.stage`, `development.status`, and
    `stageOperationalState` are confirmed by evidence naming that row's own
    program scope (asset, route, dosage form, and indication scope). Do not
@@ -340,6 +345,59 @@ apply per segment and which are company-wide.
     to a broader existing label solely to avoid this check.
 
 This audit is in-session only. Do not create a per-run ledger or report file.
+
+## 5a. Conclusion-Blind Subagent Audit & Prompting Rules (ADR-0070)
+
+To replace redundant in-session duplicate searches and prevent context anchoring,
+factual verification uses an isolated subagent under strict **Conclusion-Blind**
+conventions.
+
+### Why "Conclusion-Blind", not "Source-Blind"?
+- Earlier terminology referred to this step as "Source-Blind", which caused agents
+  to misunderstand their role and independently re-crawl external search engines,
+  duplicating network calls and wasting tokens.
+  - The correct convention is **Raw-Source-Provided, Prior-Conclusion-Blind**.
+  - The subagent is provided with the exact target entity ID and raw primary source
+    locator(s) (official IR URLs, SEC accession numbers, or ClinicalTrials.gov links).
+  - The subagent is **strictly shielded** from the drafting agent's drafted JSON,
+    extracted values, interpretations, or reasoning.
+  - The subagent extracts facts independently from the designated raw sources using
+    neutral questionnaires, eliminating confirmation bias without searching the web.
+
+### When audits are triggered
+1. **Initial Company Investigation (Bootstrap Audit)**:
+   - Always run an isolated subagent audit verifying **Negative Space** (confirming no
+     qualifying obesity/overweight pipeline assets were omitted from official IR/SEC),
+     **Borderline Exclusions/Deferrals** (verifying that non-stored candidates are
+     correctly dispositioned), and **Initial Stage/Status Claims**.
+2. **Incremental Refresh (Risk-Triggered Audit)**:
+   - For routine refreshes, a subagent audit is triggered **only** when one or more of
+     these high-risk mutations occur:
+     - New Program or Study first-time canonicalization;
+     - `STORED` $\leftrightarrow$ `DEFERRED` / `Discontinued` status transition (ADR-0050);
+     - Row split or merge (ADR-0051);
+     - Cross-anchor collision (`npm run data:probe:registry-citations`);
+     - New pivotal efficacy or safety outcome added;
+     - Phase transition or official regulatory filing/approval;
+     - Source priority conflict (e.g. sponsor disclosure contradicting trial registry);
+     - Unrepresentable schema boundary case.
+
+### Conclusion-Blind Prompting Convention
+Provide only the entity identifier, raw source locators, and neutral extraction
+questions. Do NOT include drafted JSON or prior values:
+
+```text
+Task: Neutral factual extraction for [Entity ID / NCT ID].
+Read ONLY the primary disclosures at:
+- [Source Locator 1]
+- [Source Locator 2]
+
+Do NOT search external search engines. Extract directly from the provided locators:
+1. Exact development stage and current operational status.
+2. Stored indications and target population.
+3. Administration route and dosage form.
+Provide direct verbatim citations for all answers.
+```
 
 ## 6. Generate and validate
 

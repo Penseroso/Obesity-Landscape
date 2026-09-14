@@ -3,6 +3,7 @@ import type { developmentStatuses, StageBucketId } from "./constants";
 
 export type {
   RecordMetadata,
+  ResearchStateMetadata,
   SourceReference,
 } from "@/domains/shared/lib/record-metadata";
 
