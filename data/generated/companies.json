@@ -284,84 +284,7 @@
       "url": "https://structuretx.com/",
       "checkedAt": "2026-07-31"
     },
-    "researchState": {
-      "checkpointVersion": 1,
-      "workflowRevision": "ADR-0070",
-      "coldPathEligible": true,
-      "discoveryCheckpoint": {
-        "asOf": "2026-09-14",
-        "secEdgar": {
-          "cik": "0001888886",
-          "latestAcceptanceDateTime": "2026-09-08T12:09:26.000Z",
-          "latestAccessionNumber": "0001104659-26-105688"
-        },
-        "clinicalTrials": {
-          "sponsorQuery": "Structure Therapeutics",
-          "assetAliases": [
-            "ACCG-2671",
-            "ACCG-3535",
-            "ANPA-0073",
-            "Aleniglipron",
-            "GSBR-1290"
-          ],
-          "lastQueriedAt": "2026-09-14",
-          "knownNCTs": {
-            "NCT05762471": {
-              "lastUpdatePostDate": "2024-04-25",
-              "semanticHash": "685d171f5f4250e1a9b6d55cc393e97dd23f5a4184905ede8ec5fc00643d7790"
-            },
-            "NCT06139055": {
-              "lastUpdatePostDate": "2024-02-15",
-              "semanticHash": "c731b4219a5b814e0280c36d327f1a351729eecf9a7bc8f60e2543625e6082fc"
-            },
-            "NCT06693843": {
-              "lastUpdatePostDate": "2026-08-10",
-              "semanticHash": "48abbc9b2a9632ce65306ad2e8224c381357786746ca5de426a9eb3b10e262ce"
-            },
-            "NCT06703021": {
-              "lastUpdatePostDate": "2026-04-28",
-              "semanticHash": "a1e50afbb487165cf61472d85b092c7bfd3aa6cb344e3d33c4ec2ebc0d367ac1"
-            },
-            "NCT07169942": {
-              "lastUpdatePostDate": "2026-03-03",
-              "semanticHash": "13323a5e1958705139ea0189682bcc54a7a34fc3945d7cf1a93b5f5c2f21bf20"
-            },
-            "NCT07400588": {
-              "lastUpdatePostDate": "2026-04-27",
-              "semanticHash": "274cc5ba0aede3bb0f515e84b82fbfd3b76a07f36e176625c3e0038cfb6bfb45"
-            },
-            "NCT07654361": {
-              "lastUpdatePostDate": "2026-08-10",
-              "semanticHash": "d116fadde31b9750d23500220df7a90f5f9db411e9ef0749fcf04668f20502c9"
-            },
-            "NCT07654374": {
-              "lastUpdatePostDate": "2026-09-11",
-              "semanticHash": "301ada0db00b1d09851e5e7b8c78f68d2a0406c21011bf8591184fdb5d885100"
-            }
-          }
-        },
-        "literature": {
-          "assetAliases": [
-            "ACCG-2671",
-            "ACCG-3535",
-            "ANPA-0073",
-            "Aleniglipron",
-            "GSBR-1290"
-          ],
-          "lastQueriedAt": "2026-09-14",
-          "monitoredPMIDs": {
-            "42249138": {
-              "status": "clean",
-              "lastCheckedAt": "2026-09-14"
-            },
-            "42343118": {
-              "status": "clean",
-              "lastCheckedAt": "2026-09-14"
-            }
-          }
-        }
-      }
-    }
+    "secCik": "0001888886"
   },
   {
     "id": "verdiva-bio",
@@ -385,62 +308,7 @@
       "url": "https://vikingtherapeutics.com/pipeline/overview/",
       "checkedAt": "2026-07-30"
     },
-    "researchState": {
-      "checkpointVersion": 1,
-      "workflowRevision": "ADR-0070",
-      "coldPathEligible": true,
-      "discoveryCheckpoint": {
-        "asOf": "2026-09-14",
-        "secEdgar": {
-          "cik": "0001607678",
-          "latestAcceptanceDateTime": "2026-07-29T21:15:35.000Z",
-          "latestAccessionNumber": "0001193125-26-324219"
-        },
-        "clinicalTrials": {
-          "sponsorQuery": "Viking Therapeutics",
-          "assetAliases": [
-            "VK2735",
-            "VK3019"
-          ],
-          "lastQueriedAt": "2026-09-14",
-          "knownNCTs": {
-            "NCT05203237": {
-              "lastUpdatePostDate": "2025-02-17",
-              "semanticHash": "f56237c06f3a13c9a550c2bc3d919e8407832b6494a821425fc340063b106d7b"
-            },
-            "NCT06068946": {
-              "lastUpdatePostDate": "2025-02-12",
-              "semanticHash": "11eaf3f7fe31a20f10da18d674b088a99b71ceca002ecdaa4248baf25a4e2f22"
-            },
-            "NCT06828055": {
-              "lastUpdatePostDate": "2025-10-06",
-              "semanticHash": "56c3cbf36112209ed1ceef534e2ff69061a9ccc9ee8284499755ea1ccd4ab11d"
-            },
-            "NCT07104383": {
-              "lastUpdatePostDate": "2026-04-07",
-              "semanticHash": "65a6685345a96464730aaf18a05ed72d3d9bc7749bf0ab6379ef659e8e317b2c"
-            },
-            "NCT07104500": {
-              "lastUpdatePostDate": "2025-11-24",
-              "semanticHash": "25a752202ce3e2278ca2d10bc4113a40b7d206c2a958eb59782caee007f30300"
-            }
-          }
-        },
-        "literature": {
-          "assetAliases": [
-            "VK2735",
-            "VK3019"
-          ],
-          "lastQueriedAt": "2026-09-14",
-          "monitoredPMIDs": {
-            "41508550": {
-              "status": "clean",
-              "lastCheckedAt": "2026-09-14"
-            }
-          }
-        }
-      }
-    }
+    "secCik": "0001607678"
   },
   {
     "id": "zealand-pharma",

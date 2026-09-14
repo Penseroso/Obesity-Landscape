@@ -25,7 +25,9 @@ export type Company = {
   officialWebsite?: CompanyReferenceLink | null;
   /** Official public pipeline/R&D page, when the company publishes one. */
   officialPipeline?: CompanyReferenceLink | null;
-  /** Optional research state checkpoint for cost-effective research preflights */
+  /** Official SEC Central Index Key (CIK) if reporting to US SEC. Optional. */
+  secCik?: string;
+  /** Operational research state checkpoint for source tracking; stripped from generated outputs. */
   researchState?: ResearchStateMetadata;
 };
 

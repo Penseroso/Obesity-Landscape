@@ -916,6 +916,12 @@ function validateCompany(company, context) {
   );
   validateCompanyReferenceLink(company.officialWebsite, "officialWebsite", context);
   validateCompanyReferenceLink(company.officialPipeline, "officialPipeline", context);
+  if (company.secCik !== undefined) {
+    assert(
+      /^\d{10}$/.test(company.secCik),
+      `${context}: company.secCik must be a 10-digit zero-padded CIK string`,
+    );
+  }
   if (company.researchState !== undefined) {
     validateResearchState(company.researchState, `${context}: company.researchState`);
   }
@@ -960,9 +966,6 @@ function validateResearchState(researchState, context) {
   assert(isObject(researchState), `${context}: researchState must be an object`);
   assert(researchState.checkpointVersion === 1, `${context}: checkpointVersion must be 1`);
   assert(isNonEmptyString(researchState.workflowRevision), `${context}: workflowRevision is required`);
-  if (researchState.coldPathEligible !== undefined) {
-    assert(typeof researchState.coldPathEligible === "boolean", `${context}: coldPathEligible must be boolean`);
-  }
   assert(isObject(researchState.discoveryCheckpoint), `${context}: discoveryCheckpoint is required`);
   const cp = researchState.discoveryCheckpoint;
   assert(isValidFullDate(cp.asOf), `${context}: discoveryCheckpoint.asOf must be YYYY-MM-DD`);
@@ -2742,14 +2745,22 @@ function loadValidatedCompanyPipelineAggregates() {
     });
   }
 
-  validateDataset(companies, programs, regimens, "generated aggregate", registries, {
+  // Strip operational researchState from companies before emitting consumer aggregate
+  const consumerCompanies = companies.map((c) => {
+    if (c.researchState === undefined) return c;
+    const stripped = { ...c };
+    delete stripped.researchState;
+    return stripped;
+  });
+
+  validateDataset(consumerCompanies, programs, regimens, "generated aggregate", registries, {
     companyLocalReferences: true,
   });
-  companies.sort((a, b) => a.id.localeCompare(b.id));
+  consumerCompanies.sort((a, b) => a.id.localeCompare(b.id));
   programs.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
   regimens.sort((a, b) => a.companyId.localeCompare(b.companyId) || a.id.localeCompare(b.id));
 
-  return { companies, programs, regimens };
+  return { companies: consumerCompanies, programs, regimens };
 }
 
 function buildCurrentClinicalEvidenceAggregate(companies, programs, regimens) {
@@ -2883,6 +2894,12 @@ function validateGenerated() {
   validateDataset(companies, programs, regimens, "data/generated", registries, {
     companyLocalReferences: true,
   });
+  for (const company of companies) {
+    assert(
+      company.researchState === undefined,
+      `data/generated/companies.json: company "${company.id}" contains operational researchState; researchState must be stripped from generated consumer aggregates`,
+    );
+  }
   validateClinicalEvidenceAggregate(
     clinicalEvidence,
     createClinicalReferenceContext(companies, programs, regimens),

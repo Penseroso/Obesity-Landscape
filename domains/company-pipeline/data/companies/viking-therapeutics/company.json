@@ -10,10 +10,10 @@
     "url": "https://vikingtherapeutics.com/pipeline/overview/",
     "checkedAt": "2026-07-30"
   },
+  "secCik": "0001607678",
   "researchState": {
     "checkpointVersion": 1,
     "workflowRevision": "ADR-0070",
-    "coldPathEligible": true,
     "discoveryCheckpoint": {
       "asOf": "2026-09-14",
       "secEdgar": {

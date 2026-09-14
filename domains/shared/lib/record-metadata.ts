@@ -9,7 +9,6 @@ export type SourceReference = {
 export type ResearchStateMetadata = {
   checkpointVersion: 1;
   workflowRevision: string;
-  coldPathEligible?: boolean;
   discoveryCheckpoint: {
     asOf: string;
     secEdgar?: {

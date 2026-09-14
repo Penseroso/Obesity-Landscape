@@ -10,10 +10,10 @@
     "url": "https://structuretx.com/",
     "checkedAt": "2026-07-31"
   },
+  "secCik": "0001888886",
   "researchState": {
     "checkpointVersion": 1,
     "workflowRevision": "ADR-0070",
-    "coldPathEligible": true,
     "discoveryCheckpoint": {
       "asOf": "2026-09-14",
       "secEdgar": {
