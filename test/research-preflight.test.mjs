@@ -1652,7 +1652,7 @@ function buildPartnerDiscoveryFixture(fixtureDir) {
   const companyDir = path.join(fixtureDir, "companies");
   const clinicalDir = path.join(fixtureDir, "clinical-evidence");
 
-  function writeCompany(id, name, programs) {
+  function writeCompany(id, name, programs, regimens = []) {
     fs.mkdirSync(path.join(companyDir, id), { recursive: true });
     fs.writeFileSync(
       path.join(companyDir, id, "company.json"),
@@ -1664,7 +1664,18 @@ function buildPartnerDiscoveryFixture(fixtureDir) {
       JSON.stringify(programs, null, 2) + "\n",
       "utf8",
     );
+    fs.writeFileSync(
+      path.join(companyDir, id, "regimens.json"),
+      JSON.stringify(regimens, null, 2) + "\n",
+      "utf8",
+    );
   }
+
+  const regimen = (overrides) => ({
+    components: [],
+    relationships: [],
+    ...overrides,
+  });
 
   const program = (overrides) => ({
     id: `${overrides.companyId}-${overrides.assetId}`,
@@ -1747,7 +1758,24 @@ function buildPartnerDiscoveryFixture(fixtureDir) {
       assetName: "Enicepatide",
       codeName: "RO7795068",
       aliases: [{ type: "development-code", value: "CT-388" }],
-      relationships: [{ externalCompanyName: "Chugai Fixture Pharmaceutical", role: "licensee", territories: ["Japan"], sourceUrls: ["https://example.test/d"] }],
+      relationships: [
+        { externalCompanyName: "Chugai Fixture Pharmaceutical", role: "licensee", territories: ["Japan"], sourceUrls: ["https://example.test/d"] },
+        // Role-scope guard: `originator` is deliberately excluded from
+        // reciprocal-role/partner-aware handling. Carmot Fixture is tracked
+        // and genuinely shares this asset's identity, so if role filtering
+        // were absent this would wrongly expand or at least appear in
+        // diagnostics - it must not.
+        { externalCompanyName: "Carmot Fixture Therapeutics", role: "originator", sourceUrls: ["https://example.test/h"] },
+      ],
+    }),
+  ]);
+  writeCompany("carmot-fx", "Carmot Fixture Therapeutics", [
+    program({
+      companyId: "carmot-fx",
+      assetId: "ct388-origin-asset",
+      assetName: "CT-388",
+      codeName: "CT-388",
+      relationships: [{ externalCompanyName: "Roche Fixture", role: "originator", sourceUrls: ["https://example.test/h"] }],
     }),
   ]);
   writeCompany("chugai-fx", "Chugai Fixture Pharmaceutical", [
@@ -1787,6 +1815,48 @@ function buildPartnerDiscoveryFixture(fixtureDir) {
       assetName: "Orforglipron",
       codeName: "LY3502970",
       relationships: [{ externalCompanyName: "Chugai Fixture Pharmaceutical", role: "licensor", territories: ["Worldwide"], sourceUrls: ["https://example.test/f"] }],
+    }),
+  ]);
+
+  // Regimen-only partner relationship: the focal asset's own Program row
+  // carries no relationships at all - the *only* place the cross-company
+  // relationship is recorded is a same-company Regimen row that composes
+  // the focal asset with a partner's molecule. An asset-scoped run targeting
+  // the plain Program must still reach this Regimen (ADR-0069's compose
+  // reach) and expand via the partner's own matched identity.
+  writeCompany("wexler-fx", "Wexler Fixture Biosciences", [
+    program({
+      companyId: "wexler-fx",
+      assetId: "wex101-asset",
+      assetName: "Wexatide",
+      codeName: "WEX-101",
+      // Deliberately no relationships here - proves the Regimen, not this
+      // row, is what must supply the partner-aware expansion.
+    }),
+  ], [
+    regimen({
+      id: "wexler-fx-wex101-plus-partner-regimen",
+      companyId: "wexler-fx",
+      name: "Wexatide + Partner Combination Regimen",
+      components: [
+        { assetId: "wex101-asset", role: "component" },
+        { assetName: "Partneratide", codeName: "PTX-9", externalCompanyName: "Partner Fixture Therapeutics", role: "component" },
+      ],
+      relationships: [{ externalCompanyName: "Partner Fixture Therapeutics", role: "co-developer", territories: ["Worldwide"], sourceUrls: ["https://example.test/g"] }],
+    }),
+  ]);
+  writeCompany("partner-fixture-fx", "Partner Fixture Therapeutics", [
+    program({
+      companyId: "partner-fixture-fx",
+      assetId: "ptx9-asset",
+      assetName: "Partneratide",
+      codeName: "PTX-9",
+      // An internal code Wexler's own Regimen never mentions - the concrete
+      // new discovery surface, distinguishing genuine partner-aware
+      // expansion from names already reachable via the Regimen's own
+      // components[] text alone.
+      aliases: [{ type: "development-code", value: "PTX9-INTERNAL-9001" }],
+      relationships: [{ externalCompanyName: "Wexler Fixture Biosciences", role: "co-developer", territories: ["Worldwide"], sourceUrls: ["https://example.test/g"] }],
     }),
   ]);
 
@@ -1856,6 +1926,16 @@ test("Regression 18: Partner-aware CE discovery term computation - representativ
       !rocheTerms.includes("ro7795068") && !rocheTerms.includes("ct-388"),
       "Terms Roche's own row already carries must not be duplicated into the partner-expansion list",
     );
+    // Role-scope guard: the same row also carries an `originator` entry
+    // naming a tracked, genuinely-identity-matching company (Carmot
+    // Fixture) - it must never appear in diagnostics or expand terms at all,
+    // proving role filtering runs before company/identity resolution, not
+    // merely that it happens not to match.
+    assert.ok(
+      !rocheContext.partnerDiscoveryDiagnostics.some((d) => d.counterpartCompanyId === "carmot-fx"),
+      "an originator relationship must never be processed for partner-aware discovery, even when the counterpart is tracked and identity-matching",
+    );
+    assert.ok(!rocheTerms.some((t) => t.includes("ct388-origin-asset")));
 
     // Untracked counterpart: must never guess a tracked company, must add no terms.
     const azContext = await loadCompanyContext("az-fx", "elecoglipron-asset", {
@@ -1948,6 +2028,56 @@ test("Regression 19: probeRegistryDiscovery partner-expanded query surfaces a pa
     // Confirm the partner query was scoped to the one confirmed code, never
     // a bare company-name/whole-pipeline search for Kailera.
     assert.ok(!requestedUrls.some((u) => u.toLowerCase().includes("kailera") && !u.includes("query.intr")));
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 20: Regimen-only partner relationship - asset-scoped run reaches a composing Regimen row and expands via the partner's own identity", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "partner-discovery-regimen");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildPartnerDiscoveryFixture(fixtureDir);
+
+  try {
+    // The scoped asset itself (wex101-asset) carries zero relationships -
+    // only the composing Regimen does.
+    const context = await loadCompanyContext("wexler-fx", "wex101-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+
+    // "PTX-9"/"Partneratide" are already reachable via the Regimen's own
+    // components[] text (folded into focal aliases below), so the genuine,
+    // unambiguous proof of partner-aware expansion is the partner's own
+    // internal code the Regimen never mentions at all.
+    const partnerTerms = context.partnerAssetAliases.map((t) => t.toLowerCase());
+    assert.ok(
+      partnerTerms.includes("ptx9-internal-9001"),
+      "an asset-scoped run must reach a same-company Regimen composing the focal asset and expand via the partner's own matched identity, including codes the Regimen itself never mentions",
+    );
+
+    const partnerExpanded = context.partnerDiscoveryDiagnostics.find(
+      (d) => d.status === "partner-expanded" && d.counterpartCompanyId === "partner-fixture-fx",
+    );
+    assert.ok(partnerExpanded, "the composing Regimen's relationship must be surfaced in partner-aware diagnostics");
+
+    // The focal alias collection itself must also reach the Regimen's own
+    // identity (and its components' names), not only the plain Program's.
+    assert.ok(
+      context.assetAliases.some((a) => a.toLowerCase().includes("wexatide + partner combination regimen")),
+      "focal asset alias collection must include the composing Regimen's own name",
+    );
+
+    // A regimen-free, company-pipeline-domain context must not error or
+    // attempt partner-aware expansion at all (asset-scoped only, and
+    // company-pipeline domain never sets targetAssetId).
+    const cpContext = await loadCompanyContext("wexler-fx", null, {
+      companyDir,
+      clinicalDir,
+      domain: "company-pipeline",
+    });
+    assert.deepStrictEqual(cpContext.partnerAssetAliases, []);
   } finally {
     fs.rmSync(fixtureDir, { recursive: true, force: true });
   }

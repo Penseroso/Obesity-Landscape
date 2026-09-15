@@ -14,6 +14,14 @@ import {
   canonicalizeClinicalAnalysisPopulation,
   canonicalizeClinicalEstimand,
 } from "../domains/clinical-evidence/lib/clinical-term-canonicalization.mjs";
+// Shared with scripts/research-preflight.mjs (ADR-0073's partner-aware
+// discovery) so the two scripts' notions of "reciprocal role" and "same
+// asset identity" cannot drift apart.
+import {
+  RECIPROCAL_RELATIONSHIP_ROLES as reciprocalRelationshipRoles,
+  buildRowIdentityKeys,
+  identityKeysIntersect as relationshipNameKeysIntersect,
+} from "../domains/company-pipeline/lib/relationship-identity.mjs";
 
 const root = process.cwd();
 const dataDir = path.join(root, "data");
@@ -4618,46 +4626,14 @@ function probeScopeClass() {
 // not yet researched the counterpart's side of it. It is a prompt for a
 // separate asset-coverage review, not a verdict.
 
-const reciprocalRelationshipRoles = new Map([
-  ["licensor", ["licensee"]],
-  ["licensee", ["licensor"]],
-  ["co-developer", ["co-developer"]],
-]);
-
-// Every name a specific row is itself known by, for asset-identity
-// narrowing only (never for the company-name resolution above). Programs
-// reuse the same fields `createInternalAssetNameIndex` already indexes
-// (`assetId`, `assetName`, `codeName`, `aliases[].value`), plus a
-// combination row's own `components[].assetName`/`codeName` text - a
-// fixed-dose-combination row's own `assetName` (for example "Petrelintide /
-// CT-388 fixed-dose combination") will not normalize-match a partner's
-// single-molecule code name, but a listed component's name might.
-// `components[].companyId`/`assetId` are deliberately excluded: the
-// validator restricts them to the row's own company only (never a genuine
-// cross-company reference), so they carry no cross-company signal here.
-// Regimens carry only a free-text `name` - a strictly weaker signal that is
-// still exact-match only, never fuzzy.
-function buildRelationshipRowNameKeys(row) {
-  const names =
-    row.kind === "program"
-      ? [
-          row.assetId,
-          row.assetName,
-          row.codeName,
-          ...(row.aliases ?? []).map((alias) => alias.value),
-          ...(row.components ?? []).flatMap((component) => [component.assetName, component.codeName]),
-        ]
-      : [row.assetLabel];
-
-  return new Set(names.filter(isNonEmptyString).map(normalize));
-}
-
-function relationshipNameKeysIntersect(keysA, keysB) {
-  for (const key of keysA) {
-    if (keysB.has(key)) return true;
-  }
-  return false;
-}
+// `reciprocalRelationshipRoles`, `buildRowIdentityKeys` (used here as
+// `buildRelationshipRowNameKeys` was previously defined), and
+// `relationshipNameKeysIntersect` are imported from the shared
+// domains/company-pipeline/lib/relationship-identity.mjs module - see that
+// module's own documentation for the exact identity-key rules (Regimens now
+// also read their own `components[].assetName`/`codeName`, matching
+// Programs, which this file's own earlier local copy did not do).
+const buildRelationshipRowNameKeys = buildRowIdentityKeys;
 
 /**
  * Relationship-reciprocity candidate finder (ADR-0072). Pure function over
@@ -4719,6 +4695,7 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
       // identity unit, so its own row id doubles as the asset-grouping key.
       assetId: regimen.id,
       assetLabel: regimen.name,
+      components: regimen.components,
       relationships: regimen.relationships,
     })),
   ];

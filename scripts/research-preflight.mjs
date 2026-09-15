@@ -24,6 +24,16 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+// Shared with scripts/data-registry.mjs (ADR-0072's relationship-reciprocity
+// probe) so this preflight's notions of "reciprocal role" and "same asset
+// identity" cannot drift apart from the probe's.
+import {
+  RECIPROCAL_RELATIONSHIP_ROLES,
+  buildRowIdentityKeys,
+  collectRowIdentityTerms,
+  identityKeysIntersect,
+  normalizeIdentityText,
+} from "../domains/company-pipeline/lib/relationship-identity.mjs";
 
 const ROOT = process.cwd();
 const COMPANY_DIR = path.join(ROOT, "domains", "company-pipeline", "data", "companies");
@@ -339,7 +349,7 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
 }
 
 /**
- * Partner-aware Clinical Evidence discovery (ADR-0071 companion).
+ * Partner-aware Clinical Evidence discovery (ADR-0071 companion, ADR-0073).
  *
  * A licensed, co-developed, or regional-rights-split asset can be registered
  * on ClinicalTrials.gov under the *partner* company's own code name (for
@@ -353,17 +363,22 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
  *
  * Scope is deliberately narrow: `focal asset identities + partner-side
  * identities for the same asset`, gated on every one of:
- *   1. The focal Program's own `relationships[]` names a counterpart whose
+ *   1. The relationship's own `role` is one of `RECIPROCAL_RELATIONSHIP_ROLES`
+ *      (`licensor`/`licensee`/`co-developer`) - the same role scope ADR-0072's
+ *      reciprocity probe checks. `originator` and every acquisition/
+ *      historical-transfer-flavored role are one-directional by meaning and
+ *      are never treated as a partner-discovery signal.
+ *   2. The focal row's own `relationships[]` names a counterpart whose
  *      `externalCompanyName` exactly matches a tracked company's own
- *      `company.name` (the same exact-normalized-match rule ADR-0072's
- *      reciprocity probe already uses - no subsidiary/legal-entity
- *      resolution, no fuzzy matching).
- *   2. That counterpart has at least one of its own program rows whose
- *      name/code identity (`assetId`/`assetName`/`codeName`/`aliases`, and a
- *      combination row's own `components[].assetName`/`codeName`) overlaps
- *      with the focal asset's own identity - the same asset-identity
- *      authority ADR-0072's asset/deal-aware matching already uses. This is
- *      what tells apart a genuine same-asset partner from an untracked or
+ *      `company.name` (ADR-0072's exact-normalized-match rule - no
+ *      subsidiary/legal-entity resolution, no fuzzy matching).
+ *   3. That counterpart has at least one of its own Program or Regimen rows
+ *      whose name/code identity overlaps the focal asset's own identity -
+ *      `buildRowIdentityKeys`/`identityKeysIntersect` from
+ *      `domains/company-pipeline/lib/relationship-identity.mjs`, the exact
+ *      same shared authority ADR-0072's asset/deal-aware matching uses (no
+ *      separate, potentially-drifting copy of the identity rule here). This
+ *      is what tells apart a genuine same-asset partner from an untracked or
  *      unrelated counterpart.
  * A relationship that resolves to an untracked counterpart, or to a tracked
  * counterpart with no matching asset row, adds no query terms - it is
@@ -372,29 +387,18 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
  * `counterpart-asset-row-absent` case, per ADR-0072, is not a blocker here
  * either).
  *
+ * The focal side itself spans both the directly-named Program row and any
+ * Regimen or fixed-dose-combination Program row that, per the asset-scoped
+ * workflow's own reach (ADR-0069), composes the named asset with another
+ * asset of the *same* company - `loadCompanyContext` resolves that reach
+ * once and passes both `scopedPrograms` and `scopedRegimens` in here.
+ *
  * This only decides what to *search for*. Which company's Clinical Evidence
  * folder a resulting Study belongs in is decided afterward by ADR-0071's
  * sponsor-resolution cascade - a candidate found via a partner query is not
  * thereby attributed to the partner, and is not thereby kept with the focal
  * company either.
  */
-function normalizeIdentityText(value) {
-  return value.trim().toLowerCase().replace(/\s+/g, " ");
-}
-
-function buildProgramIdentityKeys(program) {
-  const names = [
-    program.assetId,
-    program.assetName,
-    program.codeName,
-    ...(program.aliases ?? []).map((alias) => alias?.value),
-    ...(program.components ?? []).flatMap((component) => [component?.assetName, component?.codeName]),
-  ];
-  return new Set(
-    names.filter((name) => typeof name === "string" && name.length > 0).map(normalizeIdentityText),
-  );
-}
-
 function loadTrackedCompanyDirectory(companyDir) {
   const nameById = new Map();
   const idByNormalizedName = new Map();
@@ -418,36 +422,53 @@ function loadTrackedCompanyDirectory(companyDir) {
   return { nameById, idByNormalizedName };
 }
 
-function loadCounterpartPrograms(companyDir, companyId) {
-  const pipelinePath = path.join(companyDir, companyId, "pipeline-programs.json");
-  if (!fs.existsSync(pipelinePath)) return [];
+function loadCounterpartRows(companyDir, companyId, fileName, kind) {
+  const filePath = path.join(companyDir, companyId, fileName);
+  if (!fs.existsSync(filePath)) return [];
   try {
-    return JSON.parse(fs.readFileSync(pipelinePath, "utf8"));
+    const rows = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return rows.map((row) => ({ row, kind }));
   } catch {
     return [];
   }
 }
 
+function loadCounterpartAssetRows(companyDir, companyId) {
+  return [
+    ...loadCounterpartRows(companyDir, companyId, "pipeline-programs.json", "program"),
+    ...loadCounterpartRows(companyDir, companyId, "regimens.json", "regimen"),
+  ];
+}
+
 /**
  * Computes the additional (partner-side) query terms for a set of
- * asset-scoped focal Program rows, plus a full diagnostic trail of every
- * relationship considered - resolved, skipped, or excluded - so a caller can
- * inspect exactly why a term was or was not added.
+ * asset-scoped focal Program and Regimen rows, plus a full diagnostic trail
+ * of every relationship considered - resolved, skipped, or excluded - so a
+ * caller can inspect exactly why a term was or was not added. Program and
+ * Regimen focal rows are treated with identical same-asset identity
+ * semantics throughout (both via the shared `buildRowIdentityKeys`).
  */
-function computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir) {
+function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, companyDir) {
   const { nameById, idByNormalizedName } = loadTrackedCompanyDirectory(companyDir);
+  const scopedRows = [
+    ...scopedPrograms.map((row) => ({ row, kind: "program" })),
+    ...(scopedRegimens ?? []).map((row) => ({ row, kind: "regimen" })),
+  ];
+
   const focalOwnTerms = new Set();
-  for (const program of scopedPrograms) {
-    for (const key of buildProgramIdentityKeys(program)) focalOwnTerms.add(key);
+  for (const { row, kind } of scopedRows) {
+    for (const key of buildRowIdentityKeys(row, kind)) focalOwnTerms.add(key);
   }
 
   const termProvenance = new Map(); // normalized term -> { term, counterpartCompanyId, counterpartCompanyName, focalAssetId }
   const diagnostics = [];
 
-  for (const program of scopedPrograms) {
-    const focalKeys = buildProgramIdentityKeys(program);
+  for (const { row: focalRow, kind: focalKind } of scopedRows) {
+    const focalAssetId = focalKind === "program" ? focalRow.assetId : focalRow.id;
+    const focalKeys = buildRowIdentityKeys(focalRow, focalKind);
 
-    for (const relationship of program.relationships ?? []) {
+    for (const relationship of focalRow.relationships ?? []) {
+      if (!RECIPROCAL_RELATIONSHIP_ROLES.has(relationship.role)) continue; // one-directional role - never a discovery signal
       if (relationship.externalCompanyName === undefined) continue; // self-referential or malformed - not a counterpart
 
       const normalizedExternalName = normalizeIdentityText(relationship.externalCompanyName);
@@ -456,26 +477,22 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir) {
       if (counterpartCompanyId === undefined) {
         diagnostics.push({
           status: "untracked-counterpart",
-          focalAssetId: program.assetId,
+          focalAssetId,
           externalCompanyName: relationship.externalCompanyName,
         });
         continue; // never guess a tracked company for an unresolved name
       }
-      if (counterpartCompanyId === program.companyId) continue; // self-reference, not a partner
+      if (counterpartCompanyId === focalRow.companyId) continue; // self-reference, not a partner
 
-      const counterpartPrograms = loadCounterpartPrograms(companyDir, counterpartCompanyId);
-      const matchedRows = counterpartPrograms.filter((counterpartProgram) => {
-        const counterpartKeys = buildProgramIdentityKeys(counterpartProgram);
-        for (const key of focalKeys) {
-          if (counterpartKeys.has(key)) return true;
-        }
-        return false;
-      });
+      const counterpartRows = loadCounterpartAssetRows(companyDir, counterpartCompanyId);
+      const matchedRows = counterpartRows.filter(({ row: counterpartRow, kind: counterpartKind }) =>
+        identityKeysIntersect(focalKeys, buildRowIdentityKeys(counterpartRow, counterpartKind)),
+      );
 
       if (matchedRows.length === 0) {
         diagnostics.push({
           status: "counterpart-asset-row-absent",
-          focalAssetId: program.assetId,
+          focalAssetId,
           counterpartCompanyId,
           counterpartCompanyName: nameById.get(counterpartCompanyId),
         });
@@ -483,10 +500,9 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir) {
       }
 
       const addedTerms = [];
-      for (const matchedRow of matchedRows) {
-        const rowTerms = [matchedRow.assetId, matchedRow.assetName, matchedRow.codeName, ...(matchedRow.aliases ?? []).map((a) => a?.value)];
-        for (const term of rowTerms) {
-          if (typeof term !== "string" || term.length < 4) continue;
+      for (const { row: matchedRow, kind: matchedKind } of matchedRows) {
+        for (const term of collectRowIdentityTerms(matchedRow, matchedKind)) {
+          if (term.length < 4) continue;
           const normalizedTerm = normalizeIdentityText(term);
           if (focalOwnTerms.has(normalizedTerm)) continue; // already covered by focal-side aliases
           if (!termProvenance.has(normalizedTerm)) {
@@ -494,7 +510,7 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir) {
               term,
               counterpartCompanyId,
               counterpartCompanyName: nameById.get(counterpartCompanyId),
-              focalAssetId: program.assetId,
+              focalAssetId,
             });
             addedTerms.push(term);
           }
@@ -503,10 +519,10 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir) {
 
       diagnostics.push({
         status: "partner-expanded",
-        focalAssetId: program.assetId,
+        focalAssetId,
         counterpartCompanyId,
         counterpartCompanyName: nameById.get(counterpartCompanyId),
-        matchedRowIds: matchedRows.map((row) => row.id),
+        matchedRowIds: matchedRows.map(({ row }) => row.id),
         addedTerms,
       });
     }
@@ -636,16 +652,47 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     // -------------------------------------------------------------------------
     const ceCompanyPath = path.join(clinicalDir, companyId);
 
-    // Extract asset aliases for search query targeting
-    const scopedPrograms = targetAssetId
+    // Extract asset aliases for search query targeting. An asset-scoped run
+    // also reaches any same-company Regimen or fixed-dose-combination
+    // Program row that directly composes the named asset with another asset
+    // of the same company (ADR-0069's asset-scoped reach) - both feed the
+    // same alias collection and the partner-aware expansion below with
+    // identical same-asset identity semantics.
+    const directPrograms = targetAssetId
       ? allPrograms.filter((p) => p.assetId === targetAssetId || p.id === targetAssetId)
       : allPrograms;
+
+    let scopedPrograms = directPrograms;
+    let scopedRegimens = [];
+
+    if (targetAssetId) {
+      const composesTargetAsset = (row) =>
+        row.companyId === companyId && (row.components ?? []).some((component) => component?.assetId === targetAssetId);
+      const directIds = new Set(directPrograms.map((p) => p.id));
+      const composingPrograms = allPrograms.filter((p) => !directIds.has(p.id) && composesTargetAsset(p));
+      scopedPrograms = [...directPrograms, ...composingPrograms];
+      scopedRegimens = allRegimens.filter(composesTargetAsset);
+    }
 
     for (const prog of scopedPrograms) {
       if (prog.assetName) assetAliases.add(prog.assetName);
       if (prog.codeName) assetAliases.add(prog.codeName);
       for (const alias of prog.aliases ?? []) {
         if (alias.value) assetAliases.add(alias.value);
+      }
+      // A fixed-dose-combination row's own components can also name a
+      // same-company sibling asset by its own code - the reason a composing
+      // row was pulled into scope at all.
+      for (const component of prog.components ?? []) {
+        if (component?.assetName) assetAliases.add(component.assetName);
+        if (component?.codeName) assetAliases.add(component.codeName);
+      }
+    }
+    for (const reg of scopedRegimens) {
+      if (reg.name) assetAliases.add(reg.name);
+      for (const component of reg.components ?? []) {
+        if (component?.assetName) assetAliases.add(component.assetName);
+        if (component?.codeName) assetAliases.add(component.codeName);
       }
     }
 
@@ -674,7 +721,7 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       // confirmed same-asset identity - see computePartnerAwareDiscoveryTerms.
       Object.assign(
         partnerAwareDiscoveryResult,
-        computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir),
+        computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, companyDir),
       );
     } else {
       // 2b. Company-scoped Clinical Evidence run
