@@ -659,6 +659,17 @@ test("Regression 3: Semantic fingerprint version and workflowRevision mismatch -
   const advanceBlockedGate = canAdvanceCheckpoint(oldWfContext, oldWfRes, null, null, null, null, { advance: true, ackDeltas: true });
   assert.strictEqual(advanceBlockedGate.allowed, false);
   assert.match(advanceBlockedGate.reason, /REBASELINE_REQUIRED/);
+
+  // 6. Workflow revision mismatch rebaseline requires explicit --ack-deltas:
+  // a) mismatch + --bootstrap (without ackDeltas) -> BLOCKED
+  const bootstrapWithoutAck = canAdvanceCheckpoint(oldWfContext, oldWfRes, null, null, null, null, { bootstrap: true });
+  assert.strictEqual(bootstrapWithoutAck.allowed, false);
+  assert.match(bootstrapWithoutAck.reason, /Unresolved deltas detected/);
+  assert.match(bootstrapWithoutAck.reason, /Registry scientific updates/);
+
+  // b) mismatch + --bootstrap --ack-deltas -> ALLOWED
+  const bootstrapWithAck = canAdvanceCheckpoint(oldWfContext, oldWfRes, null, null, null, null, { bootstrap: true, ackDeltas: true });
+  assert.strictEqual(bootstrapWithAck.allowed, true);
 });
 
 test("Regression 4: Asset bootstrap without canonical CE file -> blocked with ASSET_CANONICAL_TARGET_MISSING", async () => {
@@ -1236,6 +1247,46 @@ test("Regression 14: Company/Pipeline and Clinical Evidence maintain strictly is
     );
     assert.strictEqual(exitCode, 1);
     assert.match(errorMsg, /'--pipeline' \/ 'company-pipeline' domain is company-wide and does not support '--asset'/);
+
+    // c. Conflicting domain flags: --pipeline + --ce
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--pipeline", "--ce"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /Conflicting domain flags specified/);
+
+    // d. Conflicting domain flags with asset: --pipeline --asset X --ce
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--pipeline", "--asset", "vk2735", "--ce"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /Conflicting domain flags specified/);
+
+    // e. Conflicting domain flags: --cp + --clinical
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--cp", "--clinical"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /Conflicting domain flags specified/);
+
+    // f. Conflicting domain flags: --domain company-pipeline + --domain clinical-evidence
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--domain", "company-pipeline", "--domain", "clinical-evidence"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /Conflicting domain flags specified/);
   } finally {
     process.exit = origExit;
     console.error = origError;

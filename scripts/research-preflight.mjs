@@ -121,6 +121,8 @@ export function parseArgs(argv) {
   let ackFilings = false;
   let ackDeltas = false;
   let json = false;
+  let hasCpFlag = false;
+  let hasCeFlag = false;
 
   let i = 0;
   while (i < args.length) {
@@ -133,12 +135,16 @@ export function parseArgs(argv) {
       i += 2;
     } else if (arg === "--domain") {
       domain = args[i + 1];
+      if (domain === "company-pipeline") hasCpFlag = true;
+      else if (domain === "clinical-evidence") hasCeFlag = true;
       i += 2;
     } else if (arg === "--clinical" || arg === "--ce") {
       domain = "clinical-evidence";
+      hasCeFlag = true;
       i += 1;
     } else if (arg === "--pipeline" || arg === "--cp") {
       domain = "company-pipeline";
+      hasCpFlag = true;
       i += 1;
     } else if (arg === "--cik") {
       cik = args[i + 1];
@@ -181,13 +187,18 @@ export function parseArgs(argv) {
     }
   }
 
-  if (domain && !["company-pipeline", "clinical-evidence"].includes(domain)) {
-    console.error(`Error: Invalid --domain '${domain}'. Must be 'company-pipeline' or 'clinical-evidence'.`);
+  if (hasCpFlag && hasCeFlag) {
+    console.error("Error: Conflicting domain flags specified. Cannot specify both Company/Pipeline ('--pipeline', '--cp', '--domain company-pipeline') and Clinical Evidence ('--clinical', '--ce', '--domain clinical-evidence') in the same command.");
     process.exit(1);
   }
 
-  if (domain === "company-pipeline" && assetId) {
+  if (hasCpFlag && assetId) {
     console.error("Error: Invalid argument combination. '--pipeline' / 'company-pipeline' domain is company-wide and does not support '--asset'. Use '--clinical' / '--ce' with '--asset', or omit '--pipeline' for automatic Clinical Evidence routing with '--asset'.");
+    process.exit(1);
+  }
+
+  if (domain && !["company-pipeline", "clinical-evidence"].includes(domain)) {
+    console.error(`Error: Invalid --domain '${domain}'. Must be 'company-pipeline' or 'clinical-evidence'.`);
     process.exit(1);
   }
 
@@ -1390,7 +1401,7 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
   if (isAdvance && isRebaselineRequired) {
     return {
       allowed: false,
-      reason: "Checkpoint advance blocked: REBASELINE_REQUIRED (workflowRevision or semanticFingerprintVersion mismatch). Routine '--advance' is prohibited; re-establish baseline using '--bootstrap'.",
+      reason: "Checkpoint advance blocked: REBASELINE_REQUIRED (workflowRevision or semanticFingerprintVersion mismatch). Routine '--advance' is prohibited; re-establish baseline using '--bootstrap --ack-deltas'.",
     };
   }
 

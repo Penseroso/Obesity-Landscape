@@ -223,7 +223,7 @@ node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --
 ```
 
 ### Two-stage delta detection & decoupled probes
-- **Checkpoint compatibility & invalidation keys**: `workflowRevision` (`ADR-0070`) and `semanticFingerprintVersion` (`2`) are active compatibility keys. If either stored key differs from current code constants, preflight flags `REBASELINE_REQUIRED` and strictly blocks routine `--advance`, requiring an explicit re-baseline (`--bootstrap`) after verifying current evidence.
+- **Checkpoint compatibility & invalidation keys**: `workflowRevision` (`ADR-0070`) and `semanticFingerprintVersion` (`2`) are active compatibility keys. If either stored key differs from current code constants, preflight flags `REBASELINE_REQUIRED` and strictly blocks routine `--advance`, requiring an explicit re-baseline (`--bootstrap --ack-deltas`) after verifying current evidence.
 1. **Registry Update Probe (`registry:update`) vs Registry Discovery Probe (`registry:discovery`)**:
    - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`, `eligibility`, `enrollmentCount`) under `semanticFingerprintVersion: 2`. Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped). Version or workflow revision mismatches trigger `REBASELINE_REQUIRED`.
    - Discovery probe executes deterministic queries with company name and asset aliases, computing an ID set difference ($\text{Candidates} \setminus \text{Known NCTs}$) to surface brand-new trial registrations at 0 LLM tokens.
