@@ -769,7 +769,7 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
         ...scopedPrograms.map((row) => ({ row, kind: "program" })),
         ...scopedRegimens.map((row) => ({ row, kind: "regimen" })),
       ]) {
-        for (const key of buildRowIdentityKeys(row, kind)) focalIdentityKeys.add(key);
+        for (const key of buildRowOwnIdentityKeys(row, kind)) focalIdentityKeys.add(key);
       }
     } else {
       // 2b. Company-scoped Clinical Evidence run
@@ -859,16 +859,17 @@ function checkForeignDispositionLocalValidity(disp, context) {
   if (!nameById.has(disp.ownerCompanyId)) {
     return { valid: false, reason: "owner-company-untracked" };
   }
-  if (disp.ownerAssetId) {
-    const ownerRow = loadCounterpartAssetRows(context.companyDir, disp.ownerCompanyId).find(
-      ({ row, kind }) => (kind === "program" ? row.assetId : row.id) === disp.ownerAssetId,
-    );
-    if (!ownerRow) {
-      return { valid: false, reason: "owner-asset-unresolvable" };
-    }
-    if (!identityKeysIntersect(context.focalIdentityKeys, buildRowIdentityKeys(ownerRow.row, ownerRow.kind))) {
-      return { valid: false, reason: "identity-no-longer-sustained" };
-    }
+  if (!disp.ownerAssetId || typeof disp.ownerAssetId !== "string" || disp.ownerAssetId.trim().length === 0) {
+    return { valid: false, reason: "owner-asset-unresolvable" };
+  }
+  const ownerRow = loadCounterpartAssetRows(context.companyDir, disp.ownerCompanyId).find(
+    ({ row, kind }) => (kind === "program" ? row.assetId : row.id) === disp.ownerAssetId,
+  );
+  if (!ownerRow) {
+    return { valid: false, reason: "owner-asset-unresolvable" };
+  }
+  if (!identityKeysIntersect(context.focalIdentityKeys, buildRowOwnIdentityKeys(ownerRow.row, ownerRow.kind))) {
+    return { valid: false, reason: "identity-no-longer-sustained" };
   }
   return { valid: true };
 }
@@ -877,16 +878,19 @@ function checkForeignDispositionLocalValidity(disp, context) {
  * ADR-0074: re-validates every foreign disposition in this asset's envelope
  * for the current preflight run - local checks first (cheap, no network),
  * then a single lightweight leadSponsor-only fetch per still-locally-valid
- * entry (condition 1, "leadSponsor materially changed"). A fetch failure is
- * treated conservatively: the entry stays suppressed rather than being
- * forced back open by a transient network error, but the run is still
- * flagged `hasError` so a checkpoint write is blocked until it is resolved -
- * mirroring `probeRegistryUpdate`'s own FETCH_ERROR handling.
+ * entry (condition 1, "leadSponsor materially changed").
+ *
+ * Missing or unparseable leadSponsor in the registry response is treated as
+ * schema/fetch incompleteness (`hasIncomplete: true`), which strictly blocks
+ * checkpoint write and advance. Network failure is flagged `hasError: true`,
+ * also blocking checkpoint advance.
  */
 async function checkForeignStudyDispositions(context, fetchFn) {
   const valid = [];
   const invalidated = [];
+  const unconfirmed = [];
   let hasError = false;
+  let hasIncomplete = false;
 
   for (const [nctId, disp] of Object.entries(context.foreignStudyDispositions ?? {})) {
     const localCheck = checkForeignDispositionLocalValidity(disp, context);
@@ -900,23 +904,31 @@ async function checkForeignStudyDispositions(context, fetchFn) {
       const res = await fetchFn(sponsorUrl);
       if (!res.ok) {
         hasError = true;
-        valid.push(nctId);
+        unconfirmed.push({ nctId, reason: "lead-sponsor-fetch-error" });
         continue;
       }
       const data = await res.json();
-      const liveLeadSponsor = data.protocolSection?.sponsorCollaboratorsModule?.leadSponsor?.name ?? null;
-      if (liveLeadSponsor !== null && liveLeadSponsor !== disp.recordedLeadSponsor) {
+      const rawLeadSponsor = data.protocolSection?.sponsorCollaboratorsModule?.leadSponsor?.name;
+      const liveLeadSponsor =
+        typeof rawLeadSponsor === "string" && rawLeadSponsor.trim().length > 0
+          ? rawLeadSponsor.trim()
+          : null;
+
+      if (liveLeadSponsor === null) {
+        hasIncomplete = true;
+        unconfirmed.push({ nctId, reason: "lead-sponsor-missing" });
+      } else if (liveLeadSponsor !== disp.recordedLeadSponsor) {
         invalidated.push({ nctId, reason: "lead-sponsor-changed" });
       } else {
         valid.push(nctId);
       }
     } catch {
       hasError = true;
-      valid.push(nctId);
+      unconfirmed.push({ nctId, reason: "lead-sponsor-fetch-error" });
     }
   }
 
-  return { valid, invalidated, hasError };
+  return { valid, invalidated, unconfirmed, hasError, hasIncomplete };
 }
 
 /**
@@ -1083,6 +1095,7 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
   const fields = "protocolSection.identificationModule.nctId,protocolSection.identificationModule.briefTitle,protocolSection.statusModule.overallStatus,protocolSection.statusModule.lastUpdatePostDateStruct";
   let hasError = false;
   let truncated = false;
+  let hasIncomplete = false;
 
   // 1. Query sponsor with pagination (only if not scoped to a specific asset)
   if (!context.targetAssetId && context.companyName) {
@@ -1160,43 +1173,58 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
 
   // ADR-0074: re-validate every operator-authored foreign disposition for
   // this run, then suppress `NEW` for the still-valid subset only.
-  // `knownSet` (local canonical) and foreign dispositions stay visibly
-  // distinct sets - unioned only at this final suppression check, never
-  // merged into one concept - and a disposition that fails re-validation is
-  // reported separately (`resurfacedForeignDispositions`), never silently
-  // dropped into `newlyDiscovered` as an ordinary brand-new candidate.
+  // `knownSet` (local canonical), valid foreign dispositions, and unconfirmed
+  // dispositions stay visibly distinct sets. Genuinely new trials are those
+  // not in knownNCTs, not in currently-valid foreign dispositions, not in
+  // unconfirmed (interim suppressed to prevent false NEW on transient error),
+  // and not in resurfacedForeignDispositions (invalidated entries are reported
+  // exclusively under resurfacedForeignDispositions, never duplicated in newlyDiscovered).
   const foreignDispositionStatus = await checkForeignStudyDispositions(context, fetchFn);
   if (foreignDispositionStatus.hasError) hasError = true;
+  if (foreignDispositionStatus.hasIncomplete || truncated) hasIncomplete = true;
 
   const knownSet = new Set(context.knownNCTs);
   const validForeignSet = new Set(foreignDispositionStatus.valid);
-  const suppressionSet = new Set([...knownSet, ...validForeignSet]);
+  const unconfirmedForeignSet = new Set((foreignDispositionStatus.unconfirmed ?? []).map((u) => u.nctId));
+  const resurfacedForeignDispositions = foreignDispositionStatus.invalidated;
+  const resurfacedForeignSet = new Set(resurfacedForeignDispositions.map((r) => r.nctId));
+
   const newlyDiscovered = [];
   for (const [id, record] of candidateNCTs.entries()) {
-    if (!suppressionSet.has(id)) {
+    if (
+      !knownSet.has(id) &&
+      !validForeignSet.has(id) &&
+      !unconfirmedForeignSet.has(id) &&
+      !resurfacedForeignSet.has(id)
+    ) {
       newlyDiscovered.push(record);
     }
   }
-  const resurfacedForeignDispositions = foreignDispositionStatus.invalidated;
 
   const newlyDiscoveredFocalCount = newlyDiscovered.filter((r) => r.discoveryPath !== "partner").length;
   const newlyDiscoveredPartnerCount = newlyDiscovered.filter((r) => r.discoveryPath === "partner").length;
 
   const hasDelta = newlyDiscovered.length > 0 || resurfacedForeignDispositions.length > 0;
-  const hasIncomplete = truncated;
 
   let deltaVerdict = "CLEAN";
   if (hasDelta) {
-    deltaVerdict = "NEW_TRIALS_DETECTED";
+    if (newlyDiscovered.length > 0 && resurfacedForeignDispositions.length > 0) {
+      deltaVerdict = "NEW_TRIALS_AND_RESURFACED_DISPOSITIONS";
+    } else if (newlyDiscovered.length > 0) {
+      deltaVerdict = "NEW_TRIALS_DETECTED";
+    } else {
+      deltaVerdict = "RESURFACED_DISPOSITIONS_DETECTED";
+    }
   } else if (hasError) {
     deltaVerdict = "FETCH_ERROR";
-  } else if (truncated) {
-    deltaVerdict = "PARTIAL_TRUNCATED";
+  } else if (hasIncomplete) {
+    deltaVerdict = truncated ? "PARTIAL_TRUNCATED" : "PARTIAL_INCOMPLETE";
   }
 
   return {
     totalCandidates: candidateNCTs.size,
     newlyDiscoveredCount: newlyDiscovered.length,
+    resurfacedForeignDispositionCount: resurfacedForeignDispositions.length,
     newlyDiscoveredFocalCount,
     newlyDiscoveredPartnerCount,
     deltaVerdict,
@@ -1850,7 +1878,13 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
       unacknowledged.push("Registry scientific updates (pass --ack-deltas after reviewing)");
     }
     if (evalResult.deltaSources.has("registryDiscovery") && !flags.ackDeltas) {
-      unacknowledged.push("New clinical trials discovered (pass --ack-deltas after reviewing)");
+      if (discRes?.resurfacedForeignDispositions?.length > 0 && discRes?.newlyDiscovered?.length === 0) {
+        unacknowledged.push("Resurfaced foreign study dispositions requiring re-review (pass --ack-deltas after reviewing)");
+      } else if (discRes?.resurfacedForeignDispositions?.length > 0 && discRes?.newlyDiscovered?.length > 0) {
+        unacknowledged.push("New clinical trials discovered and resurfaced foreign study dispositions (pass --ack-deltas after reviewing)");
+      } else {
+        unacknowledged.push("New clinical trials discovered (pass --ack-deltas after reviewing)");
+      }
     }
     if (evalResult.deltaSources.has("literatureHealth") && !flags.ackDeltas) {
       unacknowledged.push("Adverse literature notices (errata/retractions) discovered (pass --ack-deltas after reviewing)");
@@ -2080,7 +2114,12 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
 
     // ADR-0074: currently-suppressed and resurfaced foreign dispositions.
     const foreignStatus = discRes.foreignDispositionStatus;
-    if (foreignStatus && (foreignStatus.valid.length > 0 || foreignStatus.invalidated.length > 0)) {
+    if (
+      foreignStatus &&
+      (foreignStatus.valid.length > 0 ||
+        foreignStatus.invalidated.length > 0 ||
+        (foreignStatus.unconfirmed && foreignStatus.unconfirmed.length > 0))
+    ) {
       console.log("  Foreign-owner dispositions (ADR-0074):");
       if (foreignStatus.valid.length > 0) {
         console.log(
@@ -2089,6 +2128,9 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
       }
       for (const r of discRes.resurfacedForeignDispositions ?? []) {
         console.log(`    ! RESURFACED ${r.nctId}: disposition invalidated (${r.reason}) - requires re-review, not re-attributed automatically`);
+      }
+      for (const u of foreignStatus.unconfirmed ?? []) {
+        console.log(`    ? UNCONFIRMED ${u.nctId}: lead sponsor could not be verified (${u.reason}) - checkpoint write blocked`);
       }
     }
   }

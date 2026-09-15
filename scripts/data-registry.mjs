@@ -1027,12 +1027,10 @@ function validateResearchState(researchState, context) {
           isNonEmptyString(entry.ownerCompanyId),
           `${context}: foreignStudyDispositions["${nctId}"].ownerCompanyId is required`,
         );
-        if (entry.ownerAssetId !== undefined) {
-          assert(
-            isNonEmptyString(entry.ownerAssetId),
-            `${context}: foreignStudyDispositions["${nctId}"].ownerAssetId must be non-empty string`,
-          );
-        }
+        assert(
+          isNonEmptyString(entry.ownerAssetId),
+          `${context}: foreignStudyDispositions["${nctId}"].ownerAssetId is required`,
+        );
         assert(
           isValidFullDate(entry.recordedAt),
           `${context}: foreignStudyDispositions["${nctId}"].recordedAt must be YYYY-MM-DD`,
@@ -2818,12 +2816,14 @@ function validateForeignStudyDispositions(researchStateEnvelopes, references) {
         entry.ownerCompanyId !== envelope.companyId,
         `${entryContext}: ownerCompanyId must not be the envelope's own company "${envelope.companyId}" - a disposition records a *different* company's ownership`,
       );
-      if (entry.ownerAssetId !== undefined) {
-        assert(
-          references.assetKeys.has(`${entry.ownerCompanyId}|${entry.ownerAssetId}`),
-          `${entryContext}: ownerAssetId "${entry.ownerAssetId}" does not exist at company "${entry.ownerCompanyId}"`,
-        );
-      }
+      assert(
+        isNonEmptyString(entry.ownerAssetId),
+        `${entryContext}: ownerAssetId is required`,
+      );
+      assert(
+        references.assetKeys.has(`${entry.ownerCompanyId}|${entry.ownerAssetId}`),
+        `${entryContext}: ownerAssetId "${entry.ownerAssetId}" does not exist at company "${entry.ownerCompanyId}"`,
+      );
     }
   }
 }
@@ -3428,6 +3428,11 @@ function validateClinicalEvidenceSyntheticFixtures() {
       (d) => { d.NCT20000002.ownerAssetId = "no-such-asset"; },
       /does not exist at company/,
       "unresolvable-owner-asset",
+    );
+    expectRejection(
+      (d) => { delete d.NCT20000002.ownerAssetId; },
+      /ownerAssetId is required/,
+      "missing-owner-asset",
     );
   }
 

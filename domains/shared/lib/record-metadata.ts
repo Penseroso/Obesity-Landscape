@@ -37,7 +37,7 @@ export type ResearchStateMetadata = {
       foreignStudyDispositions?: Record<string, {
         disposition: "CROSS_COMPANY_OWNED";
         ownerCompanyId: string;
-        ownerAssetId?: string;
+        ownerAssetId: string;
         recordedAt: string;
         recordedLeadSponsor: string;
       }>;
