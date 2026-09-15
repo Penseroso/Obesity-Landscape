@@ -295,7 +295,7 @@
         "randomization": "Randomized",
         "masking": "Double-blind",
         "comparator": "Placebo",
-        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Current design, independently and identically confirmed by Structure Therapeutics' Form 10-Q for the quarters ended March 31, 2026 (filed 2026-05-07) and June 30, 2026 (filed 2026-08-06): 'the body composition trial is ongoing to assess the effect of aleniglipron on body fat loss over a 44-week evaluation period, which includes a 28-week titration period and a starting dose of 2.5 mg and target dose of 180 mg of aleniglipron.' Structure Therapeutics' earlier March 2026 topline disclosure (8-K Exhibit 99.1, 2026-03-16) instead described a 2.5 mg starting dose titrated to a 120 mg target over a '40-week evaluation period'; this is treated as an earlier, superseded design statement, not current design authority, since two later and independent 10-Q filings both directly state 180 mg / 28-week titration / 44-week evaluation. Per the registry, primary and secondary DXA outcome measures are timed at Week 44, consistent with the 10-Qs' 44-week evaluation period."
+        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Current design, independently and identically confirmed by Structure Therapeutics' Form 10-Q for the quarters ended March 31, 2026 (filed 2026-05-07) and June 30, 2026 (filed 2026-08-06): 'the body composition trial is ongoing to assess the effect of aleniglipron on body fat loss over a 44-week evaluation period, which includes a 28-week titration period and a starting dose of 2.5 mg and target dose of 180 mg of aleniglipron.' Structure Therapeutics' earlier March 2026 topline disclosure (8-K Exhibit 99.1, 2026-03-16) instead described a 2.5 mg starting dose titrated to a 120 mg target over a '40-week evaluation period'; this is treated as an earlier, superseded design statement, not current design authority, since two later and independent 10-Q filings both directly state 180 mg / 28-week titration / 44-week evaluation. The registry separately and consistently describes 40 weeks of active dosing ('titration steps of 4 weeks duration for a total of 40 weeks of treatment'), with primary/secondary DXA outcome measures assessed at Week 44 - a 4-week post-treatment observation window, not a conflicting duration figure. This 40-week treatment-exposure fact remains current (it is a dosing-exposure fact, not a superseded design claim); the 44-week span in overallDuration below describes the full study through final assessment."
       },
       "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2), without diabetes (HbA1c <6.5%) and without an endocrine cause of obesity (e.g. Cushing's syndrome, Prader-Willi syndrome, MC4R deficiency).",
       "populationProfile": {
@@ -304,7 +304,7 @@
         "requiresAdditionalCondition": false,
         "treatmentContext": "initial-treatment"
       },
-      "overallDuration": "44-week evaluation period, including a 28-week titration period (Form 10-Q for the quarters ended March 31, 2026 and June 30, 2026, independently and identically stated); primary/secondary DXA outcome measures timed at Week 44 (registry), consistent with the 10-Qs. Superseded design (2026-03-16 topline): 40-week evaluation period.",
+      "overallDuration": "44-week evaluation period, including a 28-week titration period to the 180 mg target dose (Form 10-Q for the quarters ended March 31, 2026 and June 30, 2026, independently and identically stated). The registry separately states 40 weeks of active dosing/treatment exposure, with primary/secondary DXA outcome measures assessed at Week 44 (a 4-week post-treatment observation window) - see Arm treatmentDuration for the 40-week dosing figure. Superseded design (2026-03-16 topline): 40-week evaluation period with a 120 mg target dose.",
       "safetySummary": "An interim disclosure (71 participants enrolled) indicated that initiating treatment with a lower 2.5 mg starting dose improved tolerability, with no adverse-event-related discontinuations reported during the initial dosing period. Full efficacy and safety results were not yet available as of this research; topline data were expected in Q4 2026.",
       "metadata": {
         "lastVerifiedAt": "2026-09-15",
@@ -948,7 +948,7 @@
       "dose": "Matched placebo",
       "route": "Oral",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "44-week evaluation period (including the 28-week titration period)"
+      "treatmentDuration": "40 weeks (per the registry; the study's 44-week evaluation period includes a 4-week post-treatment assessment window - see Study overallDuration)"
     },
     {
       "id": "s5-active",
@@ -964,7 +964,7 @@
       "titration": "2.5 mg starting dose, escalated over a 28-week titration period to a 180 mg target dose (per the March/June 2026 quarter Form 10-Q filings; supersedes an earlier 2026-03-16 topline disclosure describing a 120 mg target)",
       "route": "Oral",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "44-week evaluation period (including the 28-week titration period)"
+      "treatmentDuration": "40 weeks (per the registry; the study's 44-week evaluation period includes a 4-week post-treatment assessment window - see Study overallDuration)"
     },
     {
       "id": "s6-placebo",
