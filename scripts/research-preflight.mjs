@@ -1237,7 +1237,10 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
   const knownNCTsSet = new Set(context.knownNCTs);
   const knownPMIDsSet = new Set(context.knownPMIDs);
 
-  const knownNCTsMap = {};
+  const prevNCTs = context.baseline?.discoveryCheckpoint?.clinicalTrials?.knownNCTs ?? {};
+  const prevPMIDs = context.baseline?.discoveryCheckpoint?.literature?.monitoredPMIDs ?? {};
+
+  const knownNCTsMap = updateRes ? {} : { ...prevNCTs };
   const updateList = updateRes?.results ?? (Array.isArray(updateRes) ? updateRes : []);
   for (const r of updateList) {
     if (r.nctId && r.lastUpdatePostDate && knownNCTsSet.has(r.nctId)) {
@@ -1248,7 +1251,7 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
     }
   }
 
-  const monitoredPMIDsMap = {};
+  const monitoredPMIDsMap = healthRes ? {} : { ...prevPMIDs };
   for (const h of (healthRes?.checked ?? [])) {
     if (h.pmid && h.status !== "NOT_FOUND" && knownPMIDsSet.has(h.pmid)) {
       monitoredPMIDsMap[h.pmid] = {
@@ -1485,6 +1488,11 @@ export async function main() {
 
   let savedBaseline = null;
   const wantsCheckpointWrite = bootstrap || advance;
+
+  if (wantsCheckpointWrite && command !== "all") {
+    console.error(`\n[CHECKPOINT WRITE BLOCKED] Checkpoint modification (--bootstrap / --advance) is only permitted with the composite 'all' command to ensure all update and discovery surfaces are verified.`);
+    process.exit(1);
+  }
 
   if (wantsCheckpointWrite) {
     const gateCheck = canAdvanceCheckpoint(context, updateRes, discRes, healthRes, litDiscRes, secRes, {

@@ -26,6 +26,7 @@ import {
   probeRegistryUpdate,
   probeSecFilings,
   resolveCik,
+  saveBaselineCheckpoint,
 } from "../scripts/research-preflight.mjs";
 
 const ROOT = process.cwd();
@@ -693,6 +694,78 @@ test("Regression 9: Package engines node requirement is at least >=22.19.0", () 
   const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8"));
   assert.ok(pkg.engines?.node, "package.json must declare engines.node");
   assert.match(pkg.engines.node, />=22\.19\.0/, "engines.node must require >=22.19.0 for reliable system CA");
+});
+
+test("Regression 10: saveBaselineCheckpoint defends unrun probes against map deletion", () => {
+  const tempDir = path.join(ROOT, "test", "fixtures");
+  fs.mkdirSync(tempDir, { recursive: true });
+  const tempFile = path.join(tempDir, "temp-test-checkpoint.json");
+
+  const initialJson = {
+    id: "temp-company",
+    name: "Temp Company",
+    researchState: {
+      checkpointVersion: 1,
+      workflowRevision: "ADR-0070",
+      discoveryCheckpoint: {
+        asOf: "2026-01-01",
+        clinicalTrials: {
+          knownNCTs: {
+            NCT09999999: { lastUpdatePostDate: "2026-01-01", semanticHash: "dummyhash123" },
+          },
+        },
+        literature: {
+          monitoredPMIDs: {
+            "99999999": { status: "clean", lastCheckedAt: "2026-01-01" },
+          },
+        },
+        secEdgar: { cik: "0009999999", latestAcceptanceDateTime: "2026-01-01T00:00:00.000Z" },
+      },
+    },
+  };
+  fs.writeFileSync(tempFile, JSON.stringify(initialJson, null, 2), "utf8");
+
+  try {
+    const context = {
+      companyId: "temp-company",
+      companyName: "Temp Company",
+      targetFile: tempFile,
+      knownNCTs: ["NCT09999999"],
+      knownPMIDs: ["99999999"],
+      assetAliases: ["TEMP"],
+      baseline: initialJson.researchState,
+    };
+
+    // When saveBaselineCheckpoint is called with null updateRes & healthRes (e.g. only SEC probe ran)
+    const mockSecRes = {
+      status: "OK",
+      cik: "0009999999",
+      allRecentKeyFilings: [{ acceptanceDateTime: "2026-02-01T00:00:00.000Z", accessionNumber: "0001" }],
+    };
+
+    const saved = saveBaselineCheckpoint(context, null, null, mockSecRes);
+    assert.ok(saved.targetPath, "saveBaselineCheckpoint must return targetPath");
+    const written = JSON.parse(fs.readFileSync(tempFile, "utf8"));
+
+    // Checkpoint must NOT wipe knownNCTs or monitoredPMIDs to {}
+    assert.strictEqual(
+      written.researchState.discoveryCheckpoint.clinicalTrials.knownNCTs["NCT09999999"]?.semanticHash,
+      "dummyhash123",
+      "Unrun trial probe must preserve previous knownNCTs baseline data",
+    );
+    assert.strictEqual(
+      written.researchState.discoveryCheckpoint.literature.monitoredPMIDs["99999999"]?.status,
+      "clean",
+      "Unrun literature probe must preserve previous monitoredPMIDs baseline data",
+    );
+    assert.strictEqual(
+      written.researchState.discoveryCheckpoint.secEdgar.latestAcceptanceDateTime,
+      "2026-02-01T00:00:00.000Z",
+      "Executed SEC probe must update acceptance timestamp",
+    );
+  } finally {
+    if (fs.existsSync(tempFile)) fs.unlinkSync(tempFile);
+  }
 });
 
 test("CIK resolution hierarchy and mapping checks", () => {
