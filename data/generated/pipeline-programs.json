@@ -11541,6 +11541,22 @@
         "sourceUrls": [
           "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"
         ]
+      },
+      {
+        "externalCompanyName": "Zealand Pharma",
+        "role": "co-developer",
+        "territories": [
+          "Europe",
+          "United States"
+        ],
+        "rights": [
+          "co-development",
+          "co-commercialization"
+        ],
+        "effectiveDate": "2025-03-12",
+        "sourceUrls": [
+          "https://www.roche.com/media/releases/med-cor-2025-03-12"
+        ]
       }
     ],
     "metadata": {
@@ -11579,6 +11595,13 @@
           "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
           "sourceType": "company press release",
           "publishedAt": "2025-10-10",
+          "checkedAt": "2026-09-15"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
+          "title": "Roche enters into an exclusive collaboration & licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide",
+          "sourceType": "company press release",
+          "publishedAt": "2025-03-12",
           "checkedAt": "2026-09-15"
         }
       ]
@@ -11670,6 +11693,70 @@
       ]
     },
     "scopeClass": "obesity-comorbidity"
+  },
+  {
+    "id": "roche-petrelintide-subcutaneous-injection",
+    "assetId": "petrelintide",
+    "companyId": "roche",
+    "assetName": "Petrelintide",
+    "codeName": "ZP8396",
+    "technical": {
+      "mechanism": "Long-acting amylin analog",
+      "platform": null
+    },
+    "administration": {
+      "route": "Subcutaneous",
+      "dosageForm": "Injection",
+      "dosingInterval": "Once weekly"
+    },
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Completed"
+    },
+    "relationships": [
+      {
+        "externalCompanyName": "Zealand Pharma",
+        "role": "co-developer",
+        "territories": [
+          "Europe",
+          "United States"
+        ],
+        "rights": [
+          "co-development",
+          "co-commercialization"
+        ],
+        "effectiveDate": "2025-03-12",
+        "sourceUrls": [
+          "https://www.roche.com/media/releases/med-cor-2025-03-12"
+        ]
+      }
+    ],
+    "metadata": {
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
+      "sources": [
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
+          "title": "Roche enters into an exclusive collaboration & licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide",
+          "sourceType": "company press release",
+          "publishedAt": "2025-03-12",
+          "checkedAt": "2026-09-15"
+        },
+        {
+          "url": "https://www.zealandpharma.com/pipeline/petrelintide/",
+          "title": "Petrelintide - Pipeline - Zealand Pharma",
+          "sourceType": "company pipeline page",
+          "checkedAt": "2026-09-15"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
   },
   {
     "id": "sciwind-biosciences-ecnoglutide-oral-tablets",
