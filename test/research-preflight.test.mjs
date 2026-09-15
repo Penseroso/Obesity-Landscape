@@ -13,6 +13,7 @@ import test from "node:test";
 
 import {
   CURRENT_FINGERPRINT_VERSION,
+  CURRENT_WORKFLOW_REVISION,
   KNOWN_SEC_CIKS,
   canAdvanceCheckpoint,
   canonicalizeJson,
@@ -118,6 +119,7 @@ test("Test 1: Administrative-only update -> ADMIN_UPDATE_BYPASS", async () => {
   const context = {
     knownNCTs: ["NCT06068946"],
     baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
       discoveryCheckpoint: {
         clinicalTrials: {
           semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
@@ -186,6 +188,7 @@ test("Test 2: Dose/intervention scientific change -> SCIENTIFIC_UPDATE_DETECTED"
   const context = {
     knownNCTs: ["NCT06068946"],
     baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
       discoveryCheckpoint: {
         clinicalTrials: {
           semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
@@ -268,9 +271,10 @@ test("Test 4: Unresolved delta -> checkpoint write blocked", async () => {
     targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
     targetFileExists: true,
     baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
       discoveryCheckpoint: {
         asOf: "2024-03-01",
-        clinicalTrials: {},
+        clinicalTrials: { semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION },
         secEdgar: { latestAcceptanceDateTime: "2024-03-01T16:00:00.000Z" },
       },
     },
@@ -341,7 +345,13 @@ test("Test 5: Legacy no-checkpoint -> bootstrap baseline allowed", async () => {
     companyId: "novo-nordisk",
     targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "novo-nordisk", "company.json"),
     targetFileExists: true,
-    baseline: { discoveryCheckpoint: { asOf: "2024-01-01" } },
+    baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
+      discoveryCheckpoint: {
+        asOf: "2024-01-01",
+        clinicalTrials: { semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION },
+      },
+    },
   };
   const bootstrapOnExisting = canAdvanceCheckpoint(contextWithBaseline, updateRes, null, null, null, secRes, { bootstrap: true });
   assert.strictEqual(bootstrapOnExisting.allowed, false);
@@ -556,13 +566,64 @@ test("Regression 2: Mixed state delta + truncation -> write BLOCKED even with --
   assert.match(gate.reason, /Errors or incomplete data detected/);
 });
 
-test("Regression 3: Semantic fingerprint version mismatch -> REBASELINE_REQUIRED", async () => {
+test("Regression 3: Semantic fingerprint version and workflowRevision mismatch -> REBASELINE_REQUIRED", async () => {
   const { hash } = computeScientificFingerprint(baseStudy);
 
-  // Baseline has old version 1, whereas current version is 2
-  const context = {
+  // 1. Same workflowRevision + same fingerprint -> clean UNCHANGED behavior
+  const currentContext = {
     knownNCTs: ["NCT06068946"],
     baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
+      discoveryCheckpoint: {
+        clinicalTrials: {
+          semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
+          knownNCTs: {
+            NCT06068946: {
+              lastUpdatePostDate: "2024-03-01",
+              semanticHash: hash,
+            },
+          },
+        },
+      },
+    },
+  };
+  const mockFetch = async () => ({ ok: true, json: async () => baseStudy });
+  const cleanRes = await probeRegistryUpdate(currentContext, mockFetch);
+  assert.strictEqual(cleanRes.deltaVerdict, "UNCHANGED");
+  assert.strictEqual(cleanRes.isVersionMismatch, false);
+  assert.strictEqual(cleanRes.hasDelta, false);
+
+  // 2. Old workflowRevision + same fingerprint -> REBASELINE_REQUIRED
+  const oldWfContext = {
+    knownNCTs: ["NCT06068946"],
+    baseline: {
+      workflowRevision: "ADR-0055", // old revision
+      discoveryCheckpoint: {
+        clinicalTrials: {
+          semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
+          knownNCTs: {
+            NCT06068946: {
+              lastUpdatePostDate: "2024-03-01",
+              semanticHash: hash,
+            },
+          },
+        },
+      },
+    },
+  };
+  const oldWfRes = await probeRegistryUpdate(oldWfContext, mockFetch);
+  assert.strictEqual(oldWfRes.deltaVerdict, "REBASELINE_REQUIRED");
+  assert.strictEqual(oldWfRes.isWorkflowRevisionMismatch, true);
+  assert.strictEqual(oldWfRes.isVersionMismatch, true);
+  assert.strictEqual(oldWfRes.hasDelta, true);
+  assert.strictEqual(oldWfRes.results[0].deltaVerdict, "REBASELINE_REQUIRED");
+  assert.match(oldWfRes.results[0].deltaMessage, /Workflow revision mismatch/);
+
+  // 3. Current workflowRevision + old fingerprint version -> REBASELINE_REQUIRED
+  const oldFpContext = {
+    knownNCTs: ["NCT06068946"],
+    baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
       discoveryCheckpoint: {
         clinicalTrials: {
           semanticFingerprintVersion: 1, // old version
@@ -576,18 +637,28 @@ test("Regression 3: Semantic fingerprint version mismatch -> REBASELINE_REQUIRED
       },
     },
   };
+  const oldFpRes = await probeRegistryUpdate(oldFpContext, mockFetch);
+  assert.strictEqual(oldFpRes.deltaVerdict, "REBASELINE_REQUIRED");
+  assert.strictEqual(oldFpRes.isFingerprintMismatch, true);
+  assert.strictEqual(oldFpRes.isVersionMismatch, true);
+  assert.strictEqual(oldFpRes.hasDelta, true);
+  assert.strictEqual(oldFpRes.results[0].deltaVerdict, "REBASELINE_REQUIRED");
+  assert.match(oldFpRes.results[0].deltaMessage, /Semantic fingerprint version mismatch/);
 
-  const mockFetch = async () => ({
-    ok: true,
-    json: async () => baseStudy,
-  });
+  // 4. Both current with real change -> normal delta comparison (SCIENTIFIC_UPDATE_DETECTED)
+  const modifiedStudy = JSON.parse(JSON.stringify(baseStudy));
+  modifiedStudy.protocolSection.statusModule.lastUpdatePostDateStruct.date = "2026-09-01";
+  modifiedStudy.protocolSection.statusModule.overallStatus = "TERMINATED";
+  const modFetch = async () => ({ ok: true, json: async () => modifiedStudy });
+  const deltaRes = await probeRegistryUpdate(currentContext, modFetch);
+  assert.strictEqual(deltaRes.deltaVerdict, "SCIENTIFIC_UPDATE_DETECTED");
+  assert.strictEqual(deltaRes.isVersionMismatch, false);
+  assert.strictEqual(deltaRes.hasDelta, true);
 
-  const updateRes = await probeRegistryUpdate(context, mockFetch);
-  assert.strictEqual(updateRes.deltaVerdict, "REBASELINE_REQUIRED");
-  assert.strictEqual(updateRes.isVersionMismatch, true);
-  assert.strictEqual(updateRes.hasDelta, true);
-  assert.strictEqual(updateRes.results[0].deltaVerdict, "REBASELINE_REQUIRED");
-  assert.match(updateRes.results[0].deltaMessage, /Semantic fingerprint version mismatch/);
+  // 5. Workflow revision mismatch blocks routine advance
+  const advanceBlockedGate = canAdvanceCheckpoint(oldWfContext, oldWfRes, null, null, null, null, { advance: true, ackDeltas: true });
+  assert.strictEqual(advanceBlockedGate.allowed, false);
+  assert.match(advanceBlockedGate.reason, /REBASELINE_REQUIRED/);
 });
 
 test("Regression 4: Asset bootstrap without canonical CE file -> blocked with ASSET_CANONICAL_TARGET_MISSING", async () => {
@@ -602,21 +673,20 @@ test("Regression 4: Asset bootstrap without canonical CE file -> blocked with AS
   assert.match(gate.reason, /ASSET_CANONICAL_TARGET_MISSING/);
 });
 
-test("Regression 5: Regimen components[].assetId scope correctly includes related and excludes unrelated sibling regimens", async () => {
+test("Regression 5: Asset-scoped Clinical Evidence context isolates known NCTs from target asset's canonical CE source (including anchored regimen studies) and excludes unrelated regimen studies", async () => {
   // Eli Lilly: ly3298176 (Tirzepatide)
   const tirzContext = await loadCompanyContext("eli-lilly-and-company", "ly3298176");
 
-  // In Lilly regimens.json:
-  // "eli-lilly-and-company-bimagrumab-tirzepatide-obesity" components:
-  // [{ "assetName": "Bimagrumab" }, { "assetId": "ly3298176" }] -> cites NCT06643728
+  // In Lilly CE source (domains/clinical-evidence/data/clinical-evidence/eli-lilly-and-company/ly3298176/clinical-evidence.json):
+  // Study NCT06643728 is anchored to regimen "eli-lilly-and-company-bimagrumab-tirzepatide-obesity"
+  // which belongs to Tirzepatide CE scope:
   assert.ok(
     tirzContext.knownNCTs.includes("NCT06643728"),
-    "NCT06643728 from Bimagrumab+Tirzepatide regimen component must be included in Tirzepatide scope",
+    "NCT06643728 from Bimagrumab+Tirzepatide regimen study in Tirzepatide CE file must be included in Tirzepatide scope",
   );
 
-  // In Lilly regimens.json:
-  // "eli-lilly-and-company-bimagrumab-semaglutide-obesity" components:
-  // [{ "assetName": "Bimagrumab" }, { "assetName": "Semaglutide" }] -> cites NCT05616013 (no Tirzepatide)
+  // In contrast, Bimagrumab+Semaglutide regimen (NCT05616013) is not an asset in Lilly CE
+  // and has no study in ly3298176 CE file:
   assert.strictEqual(
     tirzContext.knownNCTs.includes("NCT05616013"),
     false,
@@ -1130,8 +1200,51 @@ test("Regression 14: Company/Pipeline and Clinical Evidence maintain strictly is
     "clinical-evidence",
   );
   assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--ce", "--asset", "vk2735"]).domain,
+    "clinical-evidence",
+  );
+  assert.strictEqual(
     parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics"]).domain,
     "company-pipeline",
+  );
+
+  // 5. Explicitly forbidden hybrid path: company-pipeline + --asset
+  const origExit = process.exit;
+  const origError = console.error;
+  let exitCode = null;
+  let errorMsg = "";
+  try {
+    process.exit = (code) => { exitCode = code; throw new Error("EXIT"); };
+    console.error = (msg) => { errorMsg = msg; };
+
+    // a. --pipeline + --asset
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--pipeline", "--asset", "vk2735"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /'--pipeline' \/ 'company-pipeline' domain is company-wide and does not support '--asset'/);
+
+    // b. --domain company-pipeline + --asset
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--domain", "company-pipeline", "--asset", "vk2735"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /'--pipeline' \/ 'company-pipeline' domain is company-wide and does not support '--asset'/);
+  } finally {
+    process.exit = origExit;
+    console.error = origError;
+  }
+
+  // c. Programmatic loadCompanyContext with company-pipeline + targetAssetId rejects
+  await assert.rejects(
+    async () => loadCompanyContext("viking-therapeutics", "vk2735", { domain: "company-pipeline" }),
+    /domain 'company-pipeline' is company-wide and does not support targetAssetId/,
   );
 });
 
@@ -1402,7 +1515,13 @@ test("Regression 17: Genuine non-PubMed DOIs do not block checkpoint advance, wh
     companyId: "viking-therapeutics",
     targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
     targetFileExists: true,
-    baseline: { discoveryCheckpoint: { asOf: "2026-01-01" } },
+    baseline: {
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
+      discoveryCheckpoint: {
+        asOf: "2026-01-01",
+        clinicalTrials: { semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION },
+      },
+    },
     knownPMIDs: [],
     unresolvedIdentifiers: un1,
     nonPubMedIdentifiers: np1,

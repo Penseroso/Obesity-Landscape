@@ -677,7 +677,7 @@ Rules:
   `secEdgar.cik` disagree, research preflight flags `CIK_CONFLICT` and halts SEC
   discovery until reconciled.
 - **Authority hierarchy**:
-  1. Explicit CLI override (`--sec-cik <cik>`)
+  1. Explicit CLI override (`--cik <cik>`)
   2. Canonical `company.secCik` in `company.json`
   3. Stored checkpoint CIK in `researchState.discoveryCheckpoint.secEdgar.cik`
   4. Operational fallback mapping (`KNOWN_SEC_CIKS`)

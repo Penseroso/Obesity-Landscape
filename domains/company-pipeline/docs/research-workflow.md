@@ -274,6 +274,7 @@ apply per segment and which are company-wide.
      - `CLEAN` refresh: Advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --domain company-pipeline --advance`
      - `DELTA_DETECTED`: After drafting canonical mutations and completing factual audits, advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --domain company-pipeline --advance --ack-deltas`
      - `FETCH_ERROR` / `PARTIAL`: Checkpoint advance is strictly blocked until network issues or data truncations are resolved.
+     - **Checkpoint compatibility & invalidation keys**: `workflowRevision` (`CURRENT_WORKFLOW_REVISION = "ADR-0070"`) and `semanticFingerprintVersion` (`CURRENT_FINGERPRINT_VERSION = 2`) are active checkpoint invalidation keys. If either stored key differs from current code constants, preflight flags `REBASELINE_REQUIRED`, strictly blocking routine `--advance` and requiring an explicit re-baseline (`--bootstrap`) after verifying current evidence.
 5. **Coverage verification via Conclusion-Blind Audit (Section 5a).**
    - For an **initial company investigation**, run a Targeted Conclusion-Blind Audit
      covering negative space (untracked obesity assets), borderline exclusions/deferrals,

@@ -196,6 +196,7 @@ node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --ce
 
 # 2. Lifecycle Checkpoint Transitions (Clinical Evidence domain):
+# --- Asset-scoped lifecycle (target: <companyId>/<assetId>/clinical-evidence.json) ---
 # [LEGACY_UNBASELINED] -> Initial investigation complete; establish baseline checkpoint:
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId> --bootstrap
 # (Note: If adverse notices or deltas are surfaced on unbaselined data, pass --bootstrap --ack-deltas after reviewing)
@@ -207,12 +208,24 @@ node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --
 # Perform canonical updates & conclusion-blind audit, then advance checkpoint:
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId> --advance --ack-deltas
 
+# --- Company-wide lifecycle (target: <companyId>/company-research-state.json) ---
+# Company-wide CE initial baseline:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --ce --bootstrap
+
+# Company-wide CE clean refresh:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --ce --advance
+
+# Company-wide CE reviewed delta:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --ce --advance --ack-deltas
+
 # [FETCH_ERROR / NETWORK_ERROR / PARTIAL] -> Checkpoint advance is STRICTLY BLOCKED until errors/truncation are resolved.
+# Note: TRUNCATED / PARTIAL is an operational safety limitation protecting network boundaries; it strictly blocks checkpoint advance without indicating a correctness failure.
 ```
 
 ### Two-stage delta detection & decoupled probes
+- **Checkpoint compatibility & invalidation keys**: `workflowRevision` (`ADR-0070`) and `semanticFingerprintVersion` (`2`) are active compatibility keys. If either stored key differs from current code constants, preflight flags `REBASELINE_REQUIRED` and strictly blocks routine `--advance`, requiring an explicit re-baseline (`--bootstrap`) after verifying current evidence.
 1. **Registry Update Probe (`registry:update`) vs Registry Discovery Probe (`registry:discovery`)**:
-   - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`, `eligibility`, `enrollmentCount`) under `semanticFingerprintVersion: 2`. Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped). Version mismatches trigger `REBASELINE_REQUIRED`.
+   - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`, `eligibility`, `enrollmentCount`) under `semanticFingerprintVersion: 2`. Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped). Version or workflow revision mismatches trigger `REBASELINE_REQUIRED`.
    - Discovery probe executes deterministic queries with company name and asset aliases, computing an ID set difference ($\text{Candidates} \setminus \text{Known NCTs}$) to surface brand-new trial registrations at 0 LLM tokens.
 2. **Literature Health Check (`literature:health`) vs Literature Discovery Probe (`literature:discovery`)**:
    - Health check queries PubMed E-utilities (`efetch.fcgi` XML) for all cited PMIDs, parsing `<CommentsCorrections>` (`ErratumIn`, `RetractionIn`, `ExpressionOfConcernIn`) and `<PublicationType>` (`Retracted Publication`). It computes a granular `noticeFingerprint` (enforced as required by validator whenever status is `has-erratum` or `retracted`). If an adverse notice changes in either direction (e.g. erratum to retraction, secondary erratum added, or notice resolved/retracted status cleared), the bidirectional diff surfaces a delta (`RETRACTION_DETECTED`, `NEW_ERRATUM_DETECTED`, or `LITERATURE_NOTICE_CHANGED`), never silently returning `CLEAN`. Genuine non-PubMed DOIs (unindexed on PubMed) are tracked with `status: "NOT_FOUND_ON_PUBMED"` as non-monitored without blocking checkpoint advance.

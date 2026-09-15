@@ -30,6 +30,7 @@ const COMPANY_DIR = path.join(ROOT, "domains", "company-pipeline", "data", "comp
 const CLINICAL_DIR = path.join(ROOT, "domains", "clinical-evidence", "data", "clinical-evidence");
 
 export const CURRENT_FINGERPRINT_VERSION = 2;
+export const CURRENT_WORKFLOW_REVISION = "ADR-0070";
 
 export const USER_AGENT_SEC = "ObesityLandscapeResearch/1.0 (research@obesitylandscape.org)";
 export const USER_AGENT_PUBMED_TOOL = "obesity-landscape";
@@ -185,6 +186,11 @@ export function parseArgs(argv) {
     process.exit(1);
   }
 
+  if (domain === "company-pipeline" && assetId) {
+    console.error("Error: Invalid argument combination. '--pipeline' / 'company-pipeline' domain is company-wide and does not support '--asset'. Use '--clinical' / '--ce' with '--asset', or omit '--pipeline' for automatic Clinical Evidence routing with '--asset'.");
+    process.exit(1);
+  }
+
   const effectiveDomain = domain || (assetId ? "clinical-evidence" : "company-pipeline");
   return { command, companyId, assetId, domain: effectiveDomain, cik, bootstrap, advance, ackFilings, ackDeltas, json };
 }
@@ -266,7 +272,6 @@ export function computeScientificFingerprint(study) {
 }
 
 /**
-/**
  * Resolves external DOIs and PMC IDs to PMIDs via PubMed E-utilities.
  * Distinguishes normal 200 OK responses with 0 hits (non-PubMed sources) from API errors.
  */
@@ -345,6 +350,10 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
   const clinicalDir = options?.clinicalDir ?? CLINICAL_DIR;
   const domain = options?.domain ?? (targetAssetId ? "clinical-evidence" : "company-pipeline");
   const fetchFn = options?.fetchFn ?? fetch;
+
+  if (domain === "company-pipeline" && targetAssetId) {
+    throw new Error(`Invalid context: domain 'company-pipeline' is company-wide and does not support targetAssetId '${targetAssetId}'`);
+  }
 
   const companyFolderPath = path.join(companyDir, companyId);
   if (!fs.existsSync(companyFolderPath)) {
@@ -539,9 +548,17 @@ export async function probeRegistryUpdate(context, fetchFn = fetch) {
   const fieldMask = "protocolSection.identificationModule,protocolSection.statusModule,protocolSection.designModule,protocolSection.armsInterventionsModule,protocolSection.eligibilityModule,protocolSection.outcomesModule";
 
   const storedVersion = context.baseline?.discoveryCheckpoint?.clinicalTrials?.semanticFingerprintVersion ?? 1;
-  const isVersionMismatch = context.baseline?.discoveryCheckpoint && (storedVersion !== CURRENT_FINGERPRINT_VERSION);
+  const storedWorkflowRevision = context.baseline?.workflowRevision ?? null;
 
-  let hasDelta = false;
+  const isFingerprintMismatch = Boolean(
+    context.baseline?.discoveryCheckpoint && (storedVersion !== CURRENT_FINGERPRINT_VERSION)
+  );
+  const isWorkflowRevisionMismatch = Boolean(
+    context.baseline && (storedWorkflowRevision !== CURRENT_WORKFLOW_REVISION)
+  );
+  const isVersionMismatch = isFingerprintMismatch || isWorkflowRevisionMismatch;
+
+  let hasDelta = isVersionMismatch;
   let hasError = false;
 
   for (const nctId of context.knownNCTs) {
@@ -565,7 +582,12 @@ export async function probeRegistryUpdate(context, fetchFn = fetch) {
       let itemHasDelta = false;
 
       if (context.baseline?.discoveryCheckpoint) {
-        if (isVersionMismatch) {
+        if (isWorkflowRevisionMismatch) {
+          deltaVerdict = "REBASELINE_REQUIRED";
+          deltaMessage = `Workflow revision mismatch (stored: '${storedWorkflowRevision}', current: '${CURRENT_WORKFLOW_REVISION}'). Re-baseline required.`;
+          itemHasDelta = true;
+          hasDelta = true;
+        } else if (isFingerprintMismatch) {
           deltaVerdict = "REBASELINE_REQUIRED";
           deltaMessage = `Semantic fingerprint version mismatch (stored: ${storedVersion}, current: ${CURRENT_FINGERPRINT_VERSION}). Targeted re-baseline required.`;
           itemHasDelta = true;
@@ -625,6 +647,8 @@ export async function probeRegistryUpdate(context, fetchFn = fetch) {
     hasError,
     hasIncomplete: false,
     isVersionMismatch,
+    isWorkflowRevisionMismatch,
+    isFingerprintMismatch,
     results,
   };
 }
@@ -1259,7 +1283,7 @@ export function evaluatePreflight(context, updateRes, discRes, healthRes, litDis
     if (res.hasDelta) {
       deltaSources.add(name);
       if (res.deltaVerdict === "REBASELINE_REQUIRED") {
-        blockedReasons.push("ClinicalTrials semantic fingerprint version mismatch (re-baseline required)");
+        blockedReasons.push(res.deltaMessage || "Workflow revision or semantic fingerprint version mismatch (re-baseline required)");
       } else if (res.deltaMessage) {
         blockedReasons.push(res.deltaMessage);
       } else if (res.newlyDiscoveredCount) {
@@ -1319,9 +1343,10 @@ export function evaluatePreflight(context, updateRes, discRes, healthRes, litDis
  *      regardless of whether --ack-deltas is supplied.
  *   2. Missing asset CE target: if targetAssetId specified and CE file does not exist,
  *      blocks with ASSET_CANONICAL_TARGET_MISSING.
- *   3. Bootstrap mode: only permitted for unbaselined targets.
- *   4. Advance mode: only permitted for established baselines. If deltas exist, requires
- *      explicit confirmation flags (--ack-filings, --ack-deltas).
+ *   3. Bootstrap mode: only permitted for unbaselined targets or when re-baseline is required.
+ *   4. Advance mode: only permitted for established baselines with matching workflowRevision
+ *      and semanticFingerprintVersion. If deltas exist, requires explicit confirmation flags
+ *      (--ack-filings, --ack-deltas). Routine advance is blocked under REBASELINE_REQUIRED.
  */
 export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, litDiscRes, secRes, flags = {}) {
   const isBootstrap = flags.bootstrap === true;
@@ -1353,10 +1378,23 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
     };
   }
 
-  // 3. Mode enforcement
+  // 3. Mode enforcement & Version Invalidation Check
   const hasExistingBaseline = Boolean(context.baseline?.discoveryCheckpoint);
+  const storedWorkflowRevision = context.baseline?.workflowRevision ?? null;
+  const storedFingerprintVersion = context.baseline?.discoveryCheckpoint?.clinicalTrials?.semanticFingerprintVersion ?? 1;
+  const hasRevisionMismatch = Boolean(context.baseline && storedWorkflowRevision !== CURRENT_WORKFLOW_REVISION);
+  const hasFingerprintMismatch = Boolean(context.baseline?.discoveryCheckpoint && storedFingerprintVersion !== CURRENT_FINGERPRINT_VERSION);
+  const hasRebaselineVerdict = [updateRes, discRes, healthRes, litDiscRes, secRes].some((r) => r?.deltaVerdict === "REBASELINE_REQUIRED");
+  const isRebaselineRequired = hasRevisionMismatch || hasFingerprintMismatch || hasRebaselineVerdict;
 
-  if (isBootstrap && hasExistingBaseline) {
+  if (isAdvance && isRebaselineRequired) {
+    return {
+      allowed: false,
+      reason: "Checkpoint advance blocked: REBASELINE_REQUIRED (workflowRevision or semanticFingerprintVersion mismatch). Routine '--advance' is prohibited; re-establish baseline using '--bootstrap'.",
+    };
+  }
+
+  if (isBootstrap && hasExistingBaseline && !isRebaselineRequired) {
     return {
       allowed: false,
       reason: "Checkpoint write blocked: Baseline already established. Use --advance to advance existing baseline.",
@@ -1456,7 +1494,7 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
 
   const researchState = {
     checkpointVersion: 1,
-    workflowRevision: "ADR-0070",
+    workflowRevision: CURRENT_WORKFLOW_REVISION,
     discoveryCheckpoint: {
       asOf,
       ...(secEdgar ? { secEdgar } : {}),
