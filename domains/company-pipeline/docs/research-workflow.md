@@ -497,7 +497,13 @@ self-checks its own detection rules, then reports where a `licensor`/`licensee`
 or `co-developer`/`co-developer` relationship is recorded on only one of the
 two tracked companies' own rows, or with a mismatched role on the other side —
 see [Entities and Rows §Licensed and in-licensed
-assets](./entities-and-rows.md#licensed-and-in-licensed-assets). It never
+assets](./entities-and-rows.md#licensed-and-in-licensed-assets). Matching is
+asset/deal-aware: a company pair with more than one concurrent deal is
+checked per asset via existing name/alias identity, never by company pair
+alone, so a correctly-reciprocated asset can never mask a genuinely missing
+or mismatched one on a different asset between the same two companies. When
+it cannot narrow a multi-deal pair to exactly one asset, it reports
+`ambiguous-multi-deal-relationship-pair` rather than guessing. It never
 fails a run, edits data, or decides which side is correct; it is most relevant
 whenever this run adds, edits, or reads a `relationships` entry with one of
 these two roles, and a reported candidate resolves the same way as any other

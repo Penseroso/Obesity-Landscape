@@ -325,6 +325,16 @@ nested indication.
   company's name (a subsidiary or legal-entity name, or a genuinely untracked
   company) is reported separately and is never assumed to be a gap — verify
   against a primary source before adding or correcting either side's row.
+  When a company pair carries more than one concurrent deal (for example
+  Jiangsu Hengrui Pharmaceuticals/Kailera Therapeutics license three separate
+  molecules to each other), the probe checks reciprocity **per asset**, using
+  each row's own `assetName`/`codeName`/`aliases` (and, for a combination
+  row, its `components[].assetName`/`codeName`) as the asset-identity signal
+  — the same authority `linkedAsset` resolution already uses (ADR-0037) —
+  never a bare `assetName` string match and never a new cross-company
+  alias registry. When it cannot narrow a multi-deal pair to exactly one
+  asset, it reports `ambiguous-multi-deal-relationship-pair` instead of
+  guessing a pass, a gap, or a wrong-role verdict.
 
 ## Program identity
 

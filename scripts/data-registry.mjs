@@ -4587,6 +4587,23 @@ function probeScopeClass() {
 // exactly match any tracked company's name is reported separately, as a
 // weaker, unresolved signal for manual review - not as a confirmed company,
 // and not as a confirmed gap.
+//
+// Asset/deal-aware matching: a company pair can have more than one
+// concurrent deal on different assets (for example Jiangsu Hengrui
+// Pharmaceuticals and Kailera Therapeutics license three separate
+// molecules to each other). Checking reciprocity at company-pair
+// granularity alone would let a correctly-reciprocated asset mask a
+// genuinely missing or role-inconsistent reciprocal on a *different* asset
+// between the same two companies. This audit therefore only trusts a
+// same-counterpart match directly when the counterpart has at most one
+// distinct asset in play; when the counterpart has 2+ *distinct* assets
+// pointing back at the same company, it narrows to the specific asset using
+// the same name-identity authority already used elsewhere in this file for
+// cross-company `linkedAsset` resolution (`createInternalAssetNameIndex`,
+// ADR-0037) - never a bare `assetName` string match. When that narrowing
+// cannot resolve to exactly one asset, the case is reported as
+// `ambiguousMultiDealPair`, never silently passed and never silently
+// reported as a false gap.
 
 const reciprocalRelationshipRoles = new Map([
   ["licensor", ["licensee"]],
@@ -4594,23 +4611,62 @@ const reciprocalRelationshipRoles = new Map([
   ["co-developer", ["co-developer"]],
 ]);
 
+// Every name a specific row is itself known by, for asset-identity
+// narrowing only (never for the company-name resolution above). Programs
+// reuse the same fields `createInternalAssetNameIndex` already indexes
+// (`assetId`, `assetName`, `codeName`, `aliases[].value`), plus a
+// combination row's own `components[].assetName`/`codeName` text - a
+// fixed-dose-combination row's own `assetName` (for example "Petrelintide /
+// CT-388 fixed-dose combination") will not normalize-match a partner's
+// single-molecule code name, but a listed component's name might.
+// `components[].companyId`/`assetId` are deliberately excluded: the
+// validator restricts them to the row's own company only (never a genuine
+// cross-company reference), so they carry no cross-company signal here.
+// Regimens carry only a free-text `name` - a strictly weaker signal that is
+// still exact-match only, never fuzzy.
+function buildRelationshipRowNameKeys(row) {
+  const names =
+    row.kind === "program"
+      ? [
+          row.assetId,
+          row.assetName,
+          row.codeName,
+          ...(row.aliases ?? []).map((alias) => alias.value),
+          ...(row.components ?? []).flatMap((component) => [component.assetName, component.codeName]),
+        ]
+      : [row.assetLabel];
+
+  return new Set(names.filter(isNonEmptyString).map(normalize));
+}
+
+function relationshipNameKeysIntersect(keysA, keysB) {
+  for (const key of keysA) {
+    if (keysB.has(key)) return true;
+  }
+  return false;
+}
+
 /**
  * Relationship-reciprocity candidate finder (ADR-0072). Pure function over
  * already-loaded `companies`, `programs`, and `regimens` - no I/O.
  *
- * Returns three advisory signal lists:
+ * Returns four advisory signal lists:
  *
  *   - `missingReciprocal` - company A names tracked company B with a
  *     reciprocal-role relationship, but no row of B names A back with any of
- *     the expected reciprocal roles.
- *   - `inconsistentReciprocalRole` - B does name A back, but with a role
- *     outside the expected reciprocal set (for example A says "licensor",
- *     B's own entry for A says "co-developer" rather than "licensee").
+ *     the expected reciprocal roles for that same asset.
+ *   - `inconsistentReciprocalRole` - B does name A back for that same asset,
+ *     but with a role outside the expected reciprocal set (for example A
+ *     says "licensor", B's own entry for A says "co-developer" rather than
+ *     "licensee").
  *   - `unresolvedCounterpartName` - the relationship's role is in scope, but
  *     `externalCompanyName` does not exactly match any tracked company's
  *     `company.name`; it may be a genuinely external company, or a tracked
  *     company under a subsidiary/legal-entity name this audit does not
  *     resolve. Reported for awareness only, never as a gap.
+ *   - `ambiguousMultiDealPair` - B has 2+ distinct assets naming A back for
+ *     this role pair, and this entry's own name identity does not narrow to
+ *     exactly one of them. Never coerced into a pass or a gap.
  */
 function findRelationshipReciprocityCandidates(companies, programs, regimens) {
   const companyNameById = new Map(companies.map((company) => [company.id, company.name]));
@@ -4623,14 +4679,22 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
       kind: "program",
       id: program.id,
       companyId: program.companyId,
+      assetId: program.assetId,
       assetLabel: program.assetName,
+      assetName: program.assetName,
+      codeName: program.codeName,
+      aliases: program.aliases,
+      components: program.components,
       relationships: program.relationships,
     })),
     ...regimens.map((regimen) => ({
       kind: "regimen",
       id: regimen.id,
       companyId: regimen.companyId,
-      assetLabel: regimen.id,
+      // Regimens carry no separate assetId; each regimen row is its own
+      // identity unit, so its own row id doubles as the asset-grouping key.
+      assetId: regimen.id,
+      assetLabel: regimen.name,
       relationships: regimen.relationships,
     })),
   ];
@@ -4652,7 +4716,9 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
         normalizedExternalCompanyName: normalize(relationship.externalCompanyName),
         rowId: row.id,
         rowKind: row.kind,
+        assetId: row.assetId,
         assetLabel: row.assetLabel,
+        nameKeys: buildRelationshipRowNameKeys(row),
         sourceUrls: relationship.sourceUrls ?? [],
       });
       outboundByCompany.set(row.companyId, list);
@@ -4662,6 +4728,50 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
   const missingReciprocal = [];
   const inconsistentReciprocalRole = [];
   const unresolvedCounterpartName = [];
+  const ambiguousMultiDealPair = [];
+
+  // Whether *any* asset on either side of an (X, Y) company pair can be
+  // name-matched to an asset on the other side, across every one of their
+  // mutual relationship entries - computed once per unordered pair and
+  // cached, since it is asked once per directed entry but the answer does
+  // not depend on direction. This distinguishes two different reasons a
+  // specific asset's own narrowing can find zero matches: if the pair's
+  // alias data demonstrably bridges *some* other asset between these two
+  // companies, a clean zero-match for *this* asset is a confident signal
+  // that no reciprocal was recorded for it (`missingReciprocal`); if the
+  // pair's alias data never bridges anything at all, a zero-match carries
+  // no information either way and must not be asserted as a gap
+  // (`ambiguousMultiDealPair`).
+  const pairHasConfirmedMatchCache = new Map();
+  function pairHasConfirmedAssetMatch(companyIdX, companyIdY) {
+    const cacheKey = [companyIdX, companyIdY].sort().join("|");
+    if (pairHasConfirmedMatchCache.has(cacheKey)) {
+      return pairHasConfirmedMatchCache.get(cacheKey);
+    }
+
+    const normalizedNameX = normalize(companyNameById.get(companyIdX));
+    const normalizedNameY = normalize(companyNameById.get(companyIdY));
+    const xToY = (outboundByCompany.get(companyIdX) ?? []).filter(
+      (entry) => entry.normalizedExternalCompanyName === normalizedNameY,
+    );
+    const yToX = (outboundByCompany.get(companyIdY) ?? []).filter(
+      (entry) => entry.normalizedExternalCompanyName === normalizedNameX,
+    );
+
+    let confirmed = false;
+    for (const a of xToY) {
+      for (const b of yToX) {
+        if (relationshipNameKeysIntersect(a.nameKeys, b.nameKeys)) {
+          confirmed = true;
+          break;
+        }
+      }
+      if (confirmed) break;
+    }
+
+    pairHasConfirmedMatchCache.set(cacheKey, confirmed);
+    return confirmed;
+  }
 
   for (const [companyId, outbound] of outboundByCompany.entries()) {
     const companyName = companyNameById.get(companyId);
@@ -4685,13 +4795,40 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
       const backReferences = counterpartOutbound.filter(
         (back) => back.normalizedExternalCompanyName === normalizedCompanyName,
       );
+      const counterpartName = companyNameById.get(counterpartCompanyId);
 
-      if (backReferences.some((back) => expectedReciprocalRoles.includes(back.role))) {
-        continue; // consistent - a matching reciprocal entry exists
+      if (backReferences.length === 0) {
+        missingReciprocal.push({
+          companyId,
+          companyName,
+          counterpartCompanyId,
+          counterpartName,
+          role: entry.role,
+          expectedReciprocalRoles,
+          rowId: entry.rowId,
+          rowKind: entry.rowKind,
+          assetLabel: entry.assetLabel,
+          sourceUrls: entry.sourceUrls,
+        });
+        continue;
       }
 
-      const counterpartName = companyNameById.get(counterpartCompanyId);
-      if (backReferences.length > 0) {
+      // Genuine multi-deal ambiguity requires 2+ distinct assets somewhere in
+      // this pair - on B's side pointing back at A, or on A's own side
+      // pointing at B. A single distinct asset on both sides - even across
+      // several indication-split rows of that one asset - is not multi-deal
+      // ambiguity; trust it exactly as before, no asset-identity narrowing.
+      const distinctBackAssetIds = new Set(backReferences.map((back) => back.assetId));
+      const ownEntriesToCounterpart = outbound.filter(
+        (candidate) => candidate.normalizedExternalCompanyName === entry.normalizedExternalCompanyName,
+      );
+      const distinctOwnAssetIds = new Set(ownEntriesToCounterpart.map((candidate) => candidate.assetId));
+      const hasGenuineMultiplicity = distinctBackAssetIds.size >= 2 || distinctOwnAssetIds.size >= 2;
+
+      if (!hasGenuineMultiplicity) {
+        if (backReferences.some((back) => expectedReciprocalRoles.includes(back.role))) {
+          continue; // consistent - a matching reciprocal entry exists
+        }
         inconsistentReciprocalRole.push({
           companyId,
           companyName,
@@ -4705,7 +4842,48 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
           assetLabel: entry.assetLabel,
           sourceUrls: entry.sourceUrls,
         });
-      } else {
+        continue;
+      }
+
+      // Genuine multi-deal pair: narrow using this entry's own name identity
+      // against each distinct counterpart asset (unioned across its own
+      // indication-split rows, if any).
+      const backReferencesByAssetId = new Map();
+      for (const back of backReferences) {
+        const group = backReferencesByAssetId.get(back.assetId) ?? [];
+        group.push(back);
+        backReferencesByAssetId.set(back.assetId, group);
+      }
+
+      const matchedAssetIds = [...backReferencesByAssetId.entries()]
+        .filter(([, group]) => group.some((back) => relationshipNameKeysIntersect(entry.nameKeys, back.nameKeys)))
+        .map(([assetId]) => assetId);
+
+      if (matchedAssetIds.length === 1) {
+        const matchedGroup = backReferencesByAssetId.get(matchedAssetIds[0]);
+        if (matchedGroup.some((back) => expectedReciprocalRoles.includes(back.role))) {
+          continue; // consistent - resolved to exactly one asset, correct role present
+        }
+        inconsistentReciprocalRole.push({
+          companyId,
+          companyName,
+          counterpartCompanyId,
+          counterpartName,
+          role: entry.role,
+          expectedReciprocalRoles,
+          observedCounterpartRoles: matchedGroup.map((back) => back.role),
+          rowId: entry.rowId,
+          rowKind: entry.rowKind,
+          assetLabel: entry.assetLabel,
+          sourceUrls: entry.sourceUrls,
+        });
+        continue;
+      }
+
+      if (matchedAssetIds.length === 0 && pairHasConfirmedAssetMatch(companyId, counterpartCompanyId)) {
+        // The name-identity mechanism demonstrably bridges some other asset
+        // in this same pair, so a clean zero-match for this specific asset
+        // is a confident miss, not mere uncertainty.
         missingReciprocal.push({
           companyId,
           companyName,
@@ -4718,11 +4896,34 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
           assetLabel: entry.assetLabel,
           sourceUrls: entry.sourceUrls,
         });
+        continue;
       }
+
+      // Either 2+ candidate assets matched (genuinely can't choose), or 0
+      // matched with no confirmed match anywhere else in the pair either
+      // (the mechanism has no signal here at all) - never coerce either
+      // case into a pass, a missing gap, or a wrong-role verdict.
+      ambiguousMultiDealPair.push({
+        companyId,
+        companyName,
+        counterpartCompanyId,
+        counterpartName,
+        role: entry.role,
+        expectedReciprocalRoles,
+        rowId: entry.rowId,
+        rowKind: entry.rowKind,
+        assetLabel: entry.assetLabel,
+        sourceUrls: entry.sourceUrls,
+        candidateCounterpartAssets: [...backReferencesByAssetId.entries()].map(([assetId, group]) => ({
+          assetId,
+          assetLabel: group[0].assetLabel,
+          observedRoles: group.map((back) => back.role),
+        })),
+      });
     }
   }
 
-  return { missingReciprocal, inconsistentReciprocalRole, unresolvedCounterpartName };
+  return { missingReciprocal, inconsistentReciprocalRole, unresolvedCounterpartName, ambiguousMultiDealPair };
 }
 
 /**
@@ -4733,12 +4934,15 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
  */
 function selfCheckRelationshipReciprocity() {
   const company = (id, name) => ({ id, name });
-  const program = (id, companyId, relationships) => ({
+  const program = (id, companyId, relationships, overrides = {}) => ({
     id,
     companyId,
     assetId: `${id}-asset`,
     assetName: `${id} asset`,
+    codeName: null,
+    aliases: [],
     relationships,
+    ...overrides,
   });
   const rel = (role, overrides) => ({ role, sourceUrls: ["https://example.test/source"], ...overrides });
 
@@ -4909,6 +5113,380 @@ function selfCheckRelationshipReciprocity() {
       "self-check: a regimen row's relationships must be checked the same as a program row's",
     );
   }
+
+  // Multi-asset/deal-aware matching (ADR-0072 refinement): a company pair can
+  // have more than one concurrent deal, and reciprocity must be checked per
+  // asset - not merely per company pair - or a correctly-reciprocated asset
+  // can mask a genuinely missing or wrong-role reciprocal on a different
+  // asset between the same two companies.
+
+  // 10: golden case, modeled directly on the live Jiangsu Hengrui
+  // Pharmaceuticals / Kailera Therapeutics pair - two concurrent assets, each
+  // side naming the other's own code name as a `development-code` alias.
+  // Both assets must produce zero signal.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a-asset1", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-1",
+        assetName: "Asset One",
+        codeName: "A-ONE",
+        aliases: [{ type: "development-code", value: "B-ONE" }],
+      }),
+      program("p-a-asset2", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-2",
+        assetName: "Asset Two",
+        codeName: "A-TWO",
+        aliases: [{ type: "development-code", value: "B-TWO" }],
+      }),
+      program("p-b-asset1", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-asset-1",
+        assetName: "B-ONE",
+        codeName: "B-ONE",
+        aliases: [{ type: "development-code", value: "A-ONE" }],
+      }),
+      program("p-b-asset2", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-asset-2",
+        assetName: "B-TWO",
+        codeName: "B-TWO",
+        aliases: [{ type: "development-code", value: "A-TWO" }],
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 &&
+        result.inconsistentReciprocalRole.length === 0 &&
+        result.ambiguousMultiDealPair.length === 0,
+      "self-check: a fully cross-aliased multi-asset reciprocal pair (Hengrui/Kailera-shaped) must produce no signal for either asset",
+    );
+  }
+
+  // 11: masking regression (core) - same shape as test 10, but B's asset-2
+  // reciprocal is entirely absent. Asset 1 must stay clean; asset 2 must be
+  // reported missing - not masked by asset 1's presence, and not merely
+  // "ambiguous", since asset 1's own alias match proves the mechanism works
+  // for this pair.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a-asset1", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-1",
+        assetName: "Asset One",
+        codeName: "A-ONE",
+        aliases: [{ type: "development-code", value: "B-ONE" }],
+      }),
+      program("p-a-asset2", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-2",
+        assetName: "Asset Two",
+        codeName: "A-TWO",
+        aliases: [{ type: "development-code", value: "B-TWO" }],
+      }),
+      program("p-b-asset1", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-asset-1",
+        assetName: "B-ONE",
+        codeName: "B-ONE",
+        aliases: [{ type: "development-code", value: "A-ONE" }],
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 1 && result.missingReciprocal[0].assetLabel === "Asset Two",
+      "self-check: a multi-asset pair where B is missing one asset's reciprocal must report exactly that asset as missing, not mask it behind the other asset's correct reciprocal",
+    );
+    assert(
+      result.inconsistentReciprocalRole.length === 0 && result.ambiguousMultiDealPair.length === 0,
+      "self-check: the confirmed-missing asset must not also appear as inconsistent or ambiguous",
+    );
+  }
+
+  // 12: masking regression, role-mismatch version - B's asset-2 reciprocal
+  // exists but under the wrong role. Asset 1 must stay clean; asset 2 must
+  // report inconsistent-reciprocal-role scoped to that specific asset only.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a-asset1", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-1",
+        assetName: "Asset One",
+        codeName: "A-ONE",
+        aliases: [{ type: "development-code", value: "B-ONE" }],
+      }),
+      program("p-a-asset2", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-2",
+        assetName: "Asset Two",
+        codeName: "A-TWO",
+        aliases: [{ type: "development-code", value: "B-TWO" }],
+      }),
+      program("p-b-asset1", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-asset-1",
+        assetName: "B-ONE",
+        codeName: "B-ONE",
+        aliases: [{ type: "development-code", value: "A-ONE" }],
+      }),
+      program("p-b-asset2", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })], {
+        assetId: "b-asset-2",
+        assetName: "B-TWO",
+        codeName: "B-TWO",
+        aliases: [{ type: "development-code", value: "A-TWO" }],
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0,
+      "self-check: a wrong-role reciprocal on one asset must not be reported as missing",
+    );
+    // Both sides of the mismatched asset report their own perspective (the
+    // same symmetric pattern already established for a single-asset pair in
+    // test 4) - neither the clean asset-1/b-asset-1 pairing contributes any
+    // finding.
+    assert(
+      result.inconsistentReciprocalRole.length === 2,
+      "self-check: the role mismatch must be reported from both companies' own perspectives, scoped to the specific mismatched asset only",
+    );
+    const fromA = result.inconsistentReciprocalRole.find((entry) => entry.companyId === "co-a");
+    const fromB = result.inconsistentReciprocalRole.find((entry) => entry.companyId === "co-b");
+    assert(
+      fromA !== undefined &&
+        fromA.assetLabel === "Asset Two" &&
+        fromA.observedCounterpartRoles.includes("co-developer"),
+      "self-check: company A's asset-2 entry must report B's actual (mismatched) role of co-developer",
+    );
+    assert(
+      fromB !== undefined && fromB.observedCounterpartRoles.includes("licensor"),
+      "self-check: company B's b-asset-2 entry must report A's actual (mismatched) role of licensor",
+    );
+    assert(
+      !result.inconsistentReciprocalRole.some((entry) => entry.assetLabel === "Asset One") &&
+        !result.inconsistentReciprocalRole.some((entry) => entry.assetLabel === "B-ONE"),
+      "self-check: the correctly-reciprocated asset-1/b-asset-1 pairing must not appear in the mismatch at all",
+    );
+  }
+
+  // 13: ambiguous multi-deal pair, modeled on the live Sciwind Biosciences /
+  // "Verdiva Bio" near-miss - a genuine multi-asset pair where neither side's
+  // naming ever cross-references the other's, so the mechanism has no
+  // signal anywhere in the pair. Must land in ambiguousMultiDealPair, never
+  // missing, inconsistent, or a silent pass.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a-x1", "co-a", [rel("licensee", { externalCompanyName: "Company B" })], {
+        assetId: "x1",
+        assetName: "X1",
+      }),
+      program("p-a-x2", "co-a", [rel("licensee", { externalCompanyName: "Company B" })], {
+        assetId: "x2",
+        assetName: "X2",
+      }),
+      program("p-b-y1", "co-b", [rel("licensor", { externalCompanyName: "Company A" })], {
+        assetId: "y1",
+        assetName: "Y1",
+      }),
+      program("p-b-y2", "co-b", [rel("licensor", { externalCompanyName: "Company A" })], {
+        assetId: "y2",
+        assetName: "Y2",
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 && result.inconsistentReciprocalRole.length === 0,
+      "self-check: a multi-asset pair with zero cross-referencing anywhere must never be asserted as missing or inconsistent",
+    );
+    assert(
+      result.ambiguousMultiDealPair.length === 4,
+      "self-check: all 4 unresolvable entries (2 from A's side, 2 from B's own reciprocal perspective) must be reported as ambiguous-multi-deal-relationship-pair",
+    );
+    assert(
+      result.ambiguousMultiDealPair.filter((entry) => entry.companyId === "co-a").length === 2 &&
+        result.ambiguousMultiDealPair.filter((entry) => entry.companyId === "co-b").length === 2,
+      "self-check: ambiguity is reported from each company's own perspective, symmetric to how inconsistent-reciprocal-role already works",
+    );
+    for (const entry of result.ambiguousMultiDealPair) {
+      assert(
+        entry.candidateCounterpartAssets.length === 2,
+        "self-check: an ambiguous finding must list every candidate counterpart asset it could not choose between",
+      );
+    }
+  }
+
+  // 14: gate must trigger on backReferences (same-counterpart matches only),
+  // never on a counterpart's raw outbound count to unrelated companies. B has
+  // deals with two different third parties (not A) plus exactly one deal
+  // with A; checking A's entry must behave exactly as the no-multiplicity
+  // case, never divert into ambiguousMultiDealPair.
+  {
+    const companies = [
+      company("co-a", "Company A"),
+      company("co-b", "Company B"),
+      company("co-c", "Company C"),
+      company("co-d", "Company D"),
+    ];
+    const programs = [
+      program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "asset-a",
+        assetName: "Asset A",
+      }),
+      program("p-b-to-a", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "asset-b1",
+        assetName: "Asset B1",
+      }),
+      program("p-b-to-c", "co-b", [rel("licensor", { externalCompanyName: "Company C" })], {
+        assetId: "asset-b2",
+        assetName: "Asset B2",
+      }),
+      program("p-b-to-d", "co-b", [rel("co-developer", { externalCompanyName: "Company D" })], {
+        assetId: "asset-b3",
+        assetName: "Asset B3",
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    // Company C and D each have an unreciprocated deal with B - genuine,
+    // expected findings unrelated to this test's point, kept in the fixture
+    // deliberately so B carries a raw outbound count of 3.
+    assert(
+      result.missingReciprocal.length === 2 &&
+        result.missingReciprocal.every((entry) => entry.companyId === "co-b"),
+      "self-check fixture check: Company C and D's unreciprocated deals with B must be the only missing-reciprocal findings",
+    );
+    assert(
+      !result.missingReciprocal.some((entry) => entry.companyId === "co-a" || entry.counterpartCompanyId === "co-a") &&
+        result.inconsistentReciprocalRole.length === 0 &&
+        result.ambiguousMultiDealPair.length === 0,
+      "self-check: a counterpart's unrelated deals with other companies must never trigger multi-deal disambiguation for a pair (A, B) that itself has exactly one deal",
+    );
+  }
+
+  // 15: `(companyId, assetId)` dedup - a single real counterpart asset split
+  // across several indication-scoped rows must not be miscounted as several
+  // distinct candidate assets. Company B's one real asset (assetId
+  // "shared-asset") appears as two indication rows; company A also has a
+  // second, unrelated asset to B. Must resolve cleanly, not ambiguous.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a-shared", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "shared-asset",
+        assetName: "Shared Asset",
+        codeName: "SHARED",
+        aliases: [{ type: "development-code", value: "B-SHARED" }],
+      }),
+      program("p-a-other", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "other-asset",
+        assetName: "Other Asset",
+        codeName: "OTHER",
+        aliases: [{ type: "development-code", value: "B-OTHER" }],
+      }),
+      program("p-b-shared-indication-1", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-shared-asset",
+        assetName: "B-SHARED",
+        codeName: "B-SHARED",
+        aliases: [{ type: "development-code", value: "SHARED" }],
+      }),
+      program("p-b-shared-indication-2", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-shared-asset",
+        assetName: "B-SHARED",
+        codeName: "B-SHARED",
+        aliases: [{ type: "development-code", value: "SHARED" }],
+      }),
+      program("p-b-other", "co-b", [rel("licensee", { externalCompanyName: "Company A" })], {
+        assetId: "b-other-asset",
+        assetName: "B-OTHER",
+        codeName: "B-OTHER",
+        aliases: [{ type: "development-code", value: "OTHER" }],
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 &&
+        result.inconsistentReciprocalRole.length === 0 &&
+        result.ambiguousMultiDealPair.length === 0,
+      "self-check: indication-split rows of the same counterpart asset must be grouped by assetId, not counted as separate candidates",
+    );
+  }
+
+  // 16: a fixed-dose-combination row's own assetName does not match its
+  // partner's code name, but a listed component's name does - the component
+  // text must feed the same name-identity lookup.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a-solo", "co-a", [rel("co-developer", { externalCompanyName: "Company B" })], {
+        assetId: "solo-asset",
+        assetName: "Solo Asset",
+        codeName: "SOLO",
+        aliases: [{ type: "development-code", value: "B-SOLO" }],
+      }),
+      program("p-a-fdc", "co-a", [rel("co-developer", { externalCompanyName: "Company B" })], {
+        assetId: "fdc-asset",
+        assetName: "Solo Asset / Partner Combo fixed-dose combination",
+        codeName: null,
+        components: [{ assetId: "solo-asset", role: "component" }, { assetName: "Partner Combo", codeName: "B-COMBO" }],
+      }),
+      program("p-b-solo", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })], {
+        assetId: "b-solo-asset",
+        assetName: "B-SOLO",
+        codeName: "B-SOLO",
+        aliases: [{ type: "development-code", value: "SOLO" }],
+      }),
+      program("p-b-combo", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })], {
+        assetId: "b-combo-asset",
+        assetName: "Partner Combo",
+        codeName: "B-COMBO",
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 &&
+        result.inconsistentReciprocalRole.length === 0 &&
+        result.ambiguousMultiDealPair.length === 0,
+      "self-check: a combination row's own components[].assetName/codeName must feed asset-identity narrowing so it resolves like any other named asset",
+    );
+  }
+
+  // 17: a regimen involved in genuine multi-asset multiplicity must fall to
+  // ambiguous, never guess from its free-text `name` alone. Company A's
+  // regimen has no alias mechanism at all, and B has two distinct assets
+  // pointing back - the regimen's own entry cannot be narrowed.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const regimen = (id, companyId, relationships, overrides = {}) => ({
+      id,
+      companyId,
+      name: `${id} name`,
+      relationships,
+      ...overrides,
+    });
+    const regimens = [
+      regimen("r-a-combo", "co-a", [rel("co-developer", { externalCompanyName: "Company B" })], {
+        name: "Some Combination Regimen",
+      }),
+    ];
+    const programs = [
+      program("p-a-other", "co-a", [rel("co-developer", { externalCompanyName: "Company B" })], {
+        assetId: "other-asset",
+        assetName: "Other Asset",
+      }),
+      program("p-b-y1", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })], {
+        assetId: "y1",
+        assetName: "Y1",
+      }),
+      program("p-b-y2", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })], {
+        assetId: "y2",
+        assetName: "Y2",
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, regimens);
+    const regimenFindings = result.ambiguousMultiDealPair.filter((entry) => entry.rowKind === "regimen");
+    assert(
+      regimenFindings.length === 1,
+      "self-check: a regimen caught in genuine multi-asset multiplicity with no name signal must be reported ambiguous",
+    );
+    assert(
+      !result.missingReciprocal.some((entry) => entry.rowKind === "regimen") &&
+        !result.inconsistentReciprocalRole.some((entry) => entry.rowKind === "regimen"),
+      "self-check: an ambiguous regimen finding must never also be asserted as missing or inconsistent",
+    );
+  }
 }
 
 /**
@@ -4927,9 +5505,12 @@ function probeRelationshipReciprocity() {
 
   console.log("Relationship reciprocity audit (ADR-0072)");
   console.log(
-    `  summary: ${result.missingReciprocal.length} missing-reciprocal-relationship, ${result.inconsistentReciprocalRole.length} inconsistent-reciprocal-role, ${result.unresolvedCounterpartName.length} unresolved-relationship-counterpart-name`,
+    `  summary: ${result.missingReciprocal.length} missing-reciprocal-relationship, ${result.inconsistentReciprocalRole.length} inconsistent-reciprocal-role, ${result.unresolvedCounterpartName.length} unresolved-relationship-counterpart-name, ${result.ambiguousMultiDealPair.length} ambiguous-multi-deal-relationship-pair`,
   );
   console.log("  in scope: licensor <-> licensee, co-developer <-> co-developer only");
+  console.log(
+    "  matching is asset/deal-aware: a company pair with more than one concurrent deal is checked per asset via existing name/alias identity, never by company pair alone",
+  );
 
   if (result.missingReciprocal.length > 0) {
     console.log("  missing-reciprocal-relationship:");
@@ -4956,6 +5537,20 @@ function probeRelationshipReciprocity() {
     for (const entry of result.unresolvedCounterpartName) {
       console.log(
         `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.externalCompanyName}" as ${entry.role} - no tracked company's name matches exactly`,
+      );
+    }
+  }
+
+  if (result.ambiguousMultiDealPair.length > 0) {
+    console.log(
+      "  ambiguous-multi-deal-relationship-pair (multiple concurrent deals with this counterpart; name/alias identity could not narrow to exactly one - not a confirmed gap, review manually):",
+    );
+    for (const entry of result.ambiguousMultiDealPair) {
+      const candidateLabel = entry.candidateCounterpartAssets
+        .map((candidate) => `${candidate.assetLabel} [${candidate.observedRoles.join(", ")}]`)
+        .join(", ");
+      console.log(
+        `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.counterpartName}" (${entry.counterpartCompanyId}) as ${entry.role} - could not narrow to one of ${entry.counterpartCompanyId}'s own assets: ${candidateLabel}`,
       );
     }
   }
