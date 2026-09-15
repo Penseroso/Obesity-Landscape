@@ -1633,3 +1633,322 @@ test("Regression 17: Genuine non-PubMed DOIs do not block checkpoint advance, wh
   const gateBlockedAmbiguous = canAdvanceCheckpoint(ambiguousContext, null, null, healthResAmbiguous, null, null, { advance: true });
   assert.strictEqual(gateBlockedAmbiguous.allowed, false);
 });
+
+// -----------------------------------------------------------------------
+// Partner-aware Clinical Evidence discovery (ADR-0071 companion)
+// -----------------------------------------------------------------------
+
+/**
+ * Builds a synthetic tracked-company fixture covering every representative
+ * case for partner-aware discovery: a two-asset licensor/licensee pair
+ * (Hengrui/Kailera-shaped) proving no cross-asset leak, a territory-split
+ * pair (Hansoh/Regeneron-shaped), a reciprocal-relationship pair added after
+ * an ADR-0072-style fix (Roche/Chugai-shaped, with a Japan-only code), an
+ * untracked counterpart (no company folder for it at all), and a
+ * structurally non-actionable pair where the counterpart is tracked but has
+ * no row for the named asset (Lilly/Chugai-shaped).
+ */
+function buildPartnerDiscoveryFixture(fixtureDir) {
+  const companyDir = path.join(fixtureDir, "companies");
+  const clinicalDir = path.join(fixtureDir, "clinical-evidence");
+
+  function writeCompany(id, name, programs) {
+    fs.mkdirSync(path.join(companyDir, id), { recursive: true });
+    fs.writeFileSync(
+      path.join(companyDir, id, "company.json"),
+      JSON.stringify({ id, name }, null, 2) + "\n",
+      "utf8",
+    );
+    fs.writeFileSync(
+      path.join(companyDir, id, "pipeline-programs.json"),
+      JSON.stringify(programs, null, 2) + "\n",
+      "utf8",
+    );
+  }
+
+  const program = (overrides) => ({
+    id: `${overrides.companyId}-${overrides.assetId}`,
+    aliases: [],
+    relationships: [],
+    ...overrides,
+  });
+
+  // Hengrui/Kailera-shaped: two separate concurrent licensed assets between
+  // the same pair - must not cross-contaminate. Hengrui's own rows deliberately
+  // do *not* cross-list Kailera's internal codes (unlike this pair's real-world
+  // data) so the test isolates partner-aware expansion as the only source of
+  // those terms, rather than the terms being redundant with focal aliases.
+  // Kailera's own rows still reference Hengrui's codes as aliases, which is
+  // what confirms same-asset identity in both directions.
+  writeCompany("hengrui-fx", "Hengrui Fixture Co.", [
+    program({
+      companyId: "hengrui-fx",
+      assetId: "hrs9531-asset",
+      assetName: "Ribupatide",
+      codeName: "HRS9531",
+      relationships: [{ externalCompanyName: "Kailera Therapeutics Fixture", role: "licensee", sourceUrls: ["https://example.test/a"] }],
+    }),
+    program({
+      companyId: "hengrui-fx",
+      assetId: "hrs7535-asset",
+      assetName: "HRS-7535",
+      codeName: null,
+      relationships: [{ externalCompanyName: "Kailera Therapeutics Fixture", role: "licensee", sourceUrls: ["https://example.test/b"] }],
+    }),
+  ]);
+  writeCompany("kailera-fx", "Kailera Therapeutics Fixture", [
+    program({
+      companyId: "kailera-fx",
+      assetId: "kai9531-asset",
+      assetName: "KAI-9531",
+      codeName: "KAI-9531",
+      aliases: [{ type: "development-code", value: "HRS9531" }],
+      relationships: [{ externalCompanyName: "Hengrui Fixture Co.", role: "licensor", sourceUrls: ["https://example.test/a"] }],
+    }),
+    program({
+      companyId: "kailera-fx",
+      assetId: "kai7535-asset",
+      assetName: "KAI-7535",
+      codeName: "KAI-7535",
+      aliases: [{ type: "development-code", value: "HRS-7535" }],
+      relationships: [{ externalCompanyName: "Hengrui Fixture Co.", role: "licensor", sourceUrls: ["https://example.test/b"] }],
+    }),
+  ]);
+
+  // Hansoh/Regeneron-shaped: same molecule, territory split.
+  writeCompany("hansoh-fx", "Hansoh Fixture Pharma", [
+    program({
+      companyId: "hansoh-fx",
+      assetId: "olatorepatide-cn-asset",
+      assetName: "Olatorepatide",
+      codeName: "HS-20094",
+      relationships: [{ externalCompanyName: "Regeneron Fixture", role: "licensee", territories: ["Worldwide excluding China"], sourceUrls: ["https://example.test/c"] }],
+    }),
+  ]);
+  writeCompany("regeneron-fx", "Regeneron Fixture", [
+    program({
+      companyId: "regeneron-fx",
+      assetId: "olatorepatide-global-asset",
+      assetName: "Olatorepatide",
+      codeName: "REGN-OLA",
+      aliases: [{ type: "development-code", value: "HS-20094" }],
+      relationships: [{ externalCompanyName: "Hansoh Fixture Pharma", role: "licensor", territories: ["China"], sourceUrls: ["https://example.test/c"] }],
+    }),
+  ]);
+
+  // Roche/Chugai-shaped: reciprocal relationship already present on both
+  // sides (post-ADR-0072-fix shape), with a Japan-only code on Chugai's row
+  // that Roche's own aliases do not carry - the concrete value partner-aware
+  // discovery adds.
+  writeCompany("roche-fx", "Roche Fixture", [
+    program({
+      companyId: "roche-fx",
+      assetId: "enicepatide-asset",
+      assetName: "Enicepatide",
+      codeName: "RO7795068",
+      aliases: [{ type: "development-code", value: "CT-388" }],
+      relationships: [{ externalCompanyName: "Chugai Fixture Pharmaceutical", role: "licensee", territories: ["Japan"], sourceUrls: ["https://example.test/d"] }],
+    }),
+  ]);
+  writeCompany("chugai-fx", "Chugai Fixture Pharmaceutical", [
+    program({
+      companyId: "chugai-fx",
+      assetId: "enicepatide-jp-asset",
+      assetName: "Enicepatide",
+      codeName: "RO7795068",
+      aliases: [
+        { type: "development-code", value: "CT-388" },
+        { type: "development-code", value: "RO7795068-JP" },
+      ],
+      relationships: [{ externalCompanyName: "Roche Fixture", role: "licensor", territories: ["Japan"], sourceUrls: ["https://example.test/d"] }],
+    }),
+  ]);
+
+  // Untracked-counterpart-shaped: the named partner has no company folder at
+  // all - must never be guessed.
+  writeCompany("az-fx", "AstraZeneca Fixture", [
+    program({
+      companyId: "az-fx",
+      assetId: "elecoglipron-asset",
+      assetName: "Elecoglipron",
+      codeName: "AZD5004",
+      aliases: [{ type: "development-code", value: "ECC5004" }],
+      relationships: [{ externalCompanyName: "Eccogene Fixture (Untracked)", role: "licensor", territories: ["Worldwide except China"], sourceUrls: ["https://example.test/e"] }],
+    }),
+  ]);
+
+  // Lilly/Chugai-shaped: counterpart is tracked (reuses chugai-fx) but has no
+  // row at all for this different asset - structurally non-actionable, must
+  // never block or error.
+  writeCompany("lilly-fx", "Lilly Fixture", [
+    program({
+      companyId: "lilly-fx",
+      assetId: "orforglipron-asset",
+      assetName: "Orforglipron",
+      codeName: "LY3502970",
+      relationships: [{ externalCompanyName: "Chugai Fixture Pharmaceutical", role: "licensor", territories: ["Worldwide"], sourceUrls: ["https://example.test/f"] }],
+    }),
+  ]);
+
+  fs.mkdirSync(clinicalDir, { recursive: true });
+  return { companyDir, clinicalDir };
+}
+
+test("Regression 18: Partner-aware CE discovery term computation - representative cases", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "partner-discovery-terms");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildPartnerDiscoveryFixture(fixtureDir);
+
+  try {
+    // Hengrui/Kailera: HRS9531 must expand via KAI-9531 only, never KAI-7535.
+    const hrs9531Context = await loadCompanyContext("hengrui-fx", "hrs9531-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    const hrs9531Terms = hrs9531Context.partnerAssetAliases.map((t) => t.toLowerCase());
+    assert.ok(hrs9531Terms.includes("kai-9531"), "HRS9531 must expand to include Kailera's own KAI-9531 code");
+    assert.ok(
+      !hrs9531Terms.some((t) => t.includes("kai-7535") || t.includes("kai7535")),
+      "HRS9531 must never pull in Kailera's unrelated KAI-7535 asset code (same company pair, different asset)",
+    );
+    const hrs9531Partnered = hrs9531Context.partnerDiscoveryDiagnostics.find((d) => d.status === "partner-expanded");
+    assert.ok(hrs9531Partnered && hrs9531Partnered.counterpartCompanyId === "kailera-fx");
+
+    // HRS-7535 (the sibling asset) must expand via KAI-7535 only.
+    const hrs7535Context = await loadCompanyContext("hengrui-fx", "hrs7535-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    const hrs7535Terms = hrs7535Context.partnerAssetAliases.map((t) => t.toLowerCase());
+    assert.ok(hrs7535Terms.includes("kai-7535"));
+    assert.ok(!hrs7535Terms.some((t) => t.includes("kai-9531")));
+
+    // Hansoh/Regeneron: territory split, same molecule - must still resolve
+    // via shared name/alias identity.
+    const hansohContext = await loadCompanyContext("hansoh-fx", "olatorepatide-cn-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    const hansohTerms = hansohContext.partnerAssetAliases.map((t) => t.toLowerCase());
+    assert.ok(
+      hansohTerms.some((t) => t.includes("regn-ola") || t.includes("olatorepatide-global-asset")),
+      "Hansoh's asset-scoped run must expand via Regeneron's own code/asset identity for the same molecule",
+    );
+
+    // Roche/Chugai: after the reciprocal relationship exists on both sides,
+    // Roche's own asset-scoped run must pick up Chugai's Japan-only code -
+    // the concrete new discovery surface, not merely a re-confirmation of
+    // Roche's own already-known aliases.
+    const rocheContext = await loadCompanyContext("roche-fx", "enicepatide-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    const rocheTerms = rocheContext.partnerAssetAliases.map((t) => t.toLowerCase());
+    assert.ok(
+      rocheTerms.includes("ro7795068-jp"),
+      "Roche's asset-scoped run must surface Chugai's Japan-only development code once the reciprocal relationship is recorded",
+    );
+    assert.ok(
+      !rocheTerms.includes("ro7795068") && !rocheTerms.includes("ct-388"),
+      "Terms Roche's own row already carries must not be duplicated into the partner-expansion list",
+    );
+
+    // Untracked counterpart: must never guess a tracked company, must add no terms.
+    const azContext = await loadCompanyContext("az-fx", "elecoglipron-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    assert.strictEqual(azContext.partnerAssetAliases.length, 0);
+    const azDiag = azContext.partnerDiscoveryDiagnostics.find((d) => d.status === "untracked-counterpart");
+    assert.ok(azDiag && azDiag.externalCompanyName === "Eccogene Fixture (Untracked)");
+
+    // Structurally non-actionable (Lilly/Chugai-shaped): tracked counterpart,
+    // no matching row - must not throw, must not block, must add no terms.
+    const lillyContext = await loadCompanyContext("lilly-fx", "orforglipron-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    assert.strictEqual(lillyContext.partnerAssetAliases.length, 0);
+    const lillyDiag = lillyContext.partnerDiscoveryDiagnostics.find((d) => d.status === "counterpart-asset-row-absent");
+    assert.ok(lillyDiag && lillyDiag.counterpartCompanyId === "chugai-fx");
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 19: probeRegistryDiscovery partner-expanded query surfaces a partner-code-only candidate without pulling in unrelated partner trials", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "partner-discovery-fetch");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildPartnerDiscoveryFixture(fixtureDir);
+
+  try {
+    const context = await loadCompanyContext("hengrui-fx", "hrs9531-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+    // Simulate one already-known focal trial so the "existing discovered
+    // Study is preserved" behavior is actually exercised, not merely absent.
+    context.knownNCTs = ["NCT10000001"];
+
+    const requestedUrls = [];
+    const studyFor = (nctId, title) => ({
+      protocolSection: {
+        identificationModule: { nctId, briefTitle: title },
+        statusModule: { overallStatus: "RECRUITING", lastUpdatePostDateStruct: { date: "2026-01-01" } },
+      },
+    });
+
+    const mockFetch = async (url) => {
+      requestedUrls.push(url);
+      const parsed = new URL(url);
+      const intr = parsed.searchParams.get("query.intr");
+      const spons = parsed.searchParams.get("query.spons");
+
+      if (spons) {
+        // Asset-scoped runs never issue a bare sponsor query.
+        throw new Error(`unexpected sponsor query in an asset-scoped run: ${spons}`);
+      }
+      if (intr === "Ribupatide" || intr === "HRS9531") {
+        return { ok: true, json: async () => ({ studies: [studyFor("NCT10000001", "Known Hengrui ribupatide trial")] }) };
+      }
+      if (intr === "KAI-9531") {
+        return { ok: true, json: async () => ({ studies: [studyFor("NCT20000002", "Kailera-registered ribupatide trial")] }) };
+      }
+      if (intr === "KAI-7535" || intr === "HRS-7535") {
+        // Must never be queried at all when scoped to the HRS9531 asset -
+        // if it is, fail loudly rather than silently returning noise.
+        throw new Error(`unrelated sibling-asset code must never be queried: ${intr}`);
+      }
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+
+    // Existing discovered Study is preserved (known, not re-reported as new).
+    assert.ok(!result.newlyDiscovered.some((d) => d.nctId === "NCT10000001"));
+
+    // Partner-code-only candidate is discoverable.
+    const partnerCandidate = result.newlyDiscovered.find((d) => d.nctId === "NCT20000002");
+    assert.ok(partnerCandidate, "a trial registered only under the partner's own code must be discovered");
+    assert.strictEqual(partnerCandidate.discoveryPath, "partner");
+    assert.ok(partnerCandidate.matchedOn.includes("KAI-9531"));
+    assert.ok(partnerCandidate.matchedOn.includes("Kailera"));
+    assert.strictEqual(result.newlyDiscoveredPartnerCount, 1);
+    assert.strictEqual(result.newlyDiscoveredFocalCount, 0);
+
+    // Confirm no request ever carried the sibling asset's own codes.
+    assert.ok(!requestedUrls.some((u) => u.includes("KAI-7535") || u.includes("HRS-7535")));
+    // Confirm the partner query was scoped to the one confirmed code, never
+    // a bare company-name/whole-pipeline search for Kailera.
+    assert.ok(!requestedUrls.some((u) => u.toLowerCase().includes("kailera") && !u.includes("query.intr")));
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});

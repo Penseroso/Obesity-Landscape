@@ -339,6 +339,187 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
 }
 
 /**
+ * Partner-aware Clinical Evidence discovery (ADR-0071 companion).
+ *
+ * A licensed, co-developed, or regional-rights-split asset can be registered
+ * on ClinicalTrials.gov under the *partner* company's own code name (for
+ * example Kailera Therapeutics' "KAI-9531" for Jiangsu Hengrui
+ * Pharmaceuticals' HRS9531/ribupatide). Focal-company-only discovery never
+ * queries that name, so such a trial can be missed entirely. This extends
+ * discovery to also query a partner's own code name for the *same,
+ * identity-confirmed* asset - never the partner's whole pipeline, never a
+ * different asset of the same company pair, and never a fuzzy company/asset
+ * guess.
+ *
+ * Scope is deliberately narrow: `focal asset identities + partner-side
+ * identities for the same asset`, gated on every one of:
+ *   1. The focal Program's own `relationships[]` names a counterpart whose
+ *      `externalCompanyName` exactly matches a tracked company's own
+ *      `company.name` (the same exact-normalized-match rule ADR-0072's
+ *      reciprocity probe already uses - no subsidiary/legal-entity
+ *      resolution, no fuzzy matching).
+ *   2. That counterpart has at least one of its own program rows whose
+ *      name/code identity (`assetId`/`assetName`/`codeName`/`aliases`, and a
+ *      combination row's own `components[].assetName`/`codeName`) overlaps
+ *      with the focal asset's own identity - the same asset-identity
+ *      authority ADR-0072's asset/deal-aware matching already uses. This is
+ *      what tells apart a genuine same-asset partner from an untracked or
+ *      unrelated counterpart.
+ * A relationship that resolves to an untracked counterpart, or to a tracked
+ * counterpart with no matching asset row, adds no query terms - it is
+ * reported as a diagnostic, never as an error, and never blocks discovery
+ * for the rest of the run (a structurally non-actionable
+ * `counterpart-asset-row-absent` case, per ADR-0072, is not a blocker here
+ * either).
+ *
+ * This only decides what to *search for*. Which company's Clinical Evidence
+ * folder a resulting Study belongs in is decided afterward by ADR-0071's
+ * sponsor-resolution cascade - a candidate found via a partner query is not
+ * thereby attributed to the partner, and is not thereby kept with the focal
+ * company either.
+ */
+function normalizeIdentityText(value) {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function buildProgramIdentityKeys(program) {
+  const names = [
+    program.assetId,
+    program.assetName,
+    program.codeName,
+    ...(program.aliases ?? []).map((alias) => alias?.value),
+    ...(program.components ?? []).flatMap((component) => [component?.assetName, component?.codeName]),
+  ];
+  return new Set(
+    names.filter((name) => typeof name === "string" && name.length > 0).map(normalizeIdentityText),
+  );
+}
+
+function loadTrackedCompanyDirectory(companyDir) {
+  const nameById = new Map();
+  const idByNormalizedName = new Map();
+  if (!fs.existsSync(companyDir)) return { nameById, idByNormalizedName };
+
+  for (const entry of fs.readdirSync(companyDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const companyJsonPath = path.join(companyDir, entry.name, "company.json");
+    if (!fs.existsSync(companyJsonPath)) continue;
+    try {
+      const company = JSON.parse(fs.readFileSync(companyJsonPath, "utf8"));
+      if (company.id && company.name) {
+        nameById.set(company.id, company.name);
+        idByNormalizedName.set(normalizeIdentityText(company.name), company.id);
+      }
+    } catch {
+      // An unreadable company.json is not this function's concern; skip it
+      // rather than fail partner-aware discovery for every other company.
+    }
+  }
+  return { nameById, idByNormalizedName };
+}
+
+function loadCounterpartPrograms(companyDir, companyId) {
+  const pipelinePath = path.join(companyDir, companyId, "pipeline-programs.json");
+  if (!fs.existsSync(pipelinePath)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(pipelinePath, "utf8"));
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Computes the additional (partner-side) query terms for a set of
+ * asset-scoped focal Program rows, plus a full diagnostic trail of every
+ * relationship considered - resolved, skipped, or excluded - so a caller can
+ * inspect exactly why a term was or was not added.
+ */
+function computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir) {
+  const { nameById, idByNormalizedName } = loadTrackedCompanyDirectory(companyDir);
+  const focalOwnTerms = new Set();
+  for (const program of scopedPrograms) {
+    for (const key of buildProgramIdentityKeys(program)) focalOwnTerms.add(key);
+  }
+
+  const termProvenance = new Map(); // normalized term -> { term, counterpartCompanyId, counterpartCompanyName, focalAssetId }
+  const diagnostics = [];
+
+  for (const program of scopedPrograms) {
+    const focalKeys = buildProgramIdentityKeys(program);
+
+    for (const relationship of program.relationships ?? []) {
+      if (relationship.externalCompanyName === undefined) continue; // self-referential or malformed - not a counterpart
+
+      const normalizedExternalName = normalizeIdentityText(relationship.externalCompanyName);
+      const counterpartCompanyId = idByNormalizedName.get(normalizedExternalName);
+
+      if (counterpartCompanyId === undefined) {
+        diagnostics.push({
+          status: "untracked-counterpart",
+          focalAssetId: program.assetId,
+          externalCompanyName: relationship.externalCompanyName,
+        });
+        continue; // never guess a tracked company for an unresolved name
+      }
+      if (counterpartCompanyId === program.companyId) continue; // self-reference, not a partner
+
+      const counterpartPrograms = loadCounterpartPrograms(companyDir, counterpartCompanyId);
+      const matchedRows = counterpartPrograms.filter((counterpartProgram) => {
+        const counterpartKeys = buildProgramIdentityKeys(counterpartProgram);
+        for (const key of focalKeys) {
+          if (counterpartKeys.has(key)) return true;
+        }
+        return false;
+      });
+
+      if (matchedRows.length === 0) {
+        diagnostics.push({
+          status: "counterpart-asset-row-absent",
+          focalAssetId: program.assetId,
+          counterpartCompanyId,
+          counterpartCompanyName: nameById.get(counterpartCompanyId),
+        });
+        continue; // structurally non-actionable here too - not an error, adds no terms
+      }
+
+      const addedTerms = [];
+      for (const matchedRow of matchedRows) {
+        const rowTerms = [matchedRow.assetId, matchedRow.assetName, matchedRow.codeName, ...(matchedRow.aliases ?? []).map((a) => a?.value)];
+        for (const term of rowTerms) {
+          if (typeof term !== "string" || term.length < 4) continue;
+          const normalizedTerm = normalizeIdentityText(term);
+          if (focalOwnTerms.has(normalizedTerm)) continue; // already covered by focal-side aliases
+          if (!termProvenance.has(normalizedTerm)) {
+            termProvenance.set(normalizedTerm, {
+              term,
+              counterpartCompanyId,
+              counterpartCompanyName: nameById.get(counterpartCompanyId),
+              focalAssetId: program.assetId,
+            });
+            addedTerms.push(term);
+          }
+        }
+      }
+
+      diagnostics.push({
+        status: "partner-expanded",
+        focalAssetId: program.assetId,
+        counterpartCompanyId,
+        counterpartCompanyName: nameById.get(counterpartCompanyId),
+        matchedRowIds: matchedRows.map((row) => row.id),
+        addedTerms,
+      });
+    }
+  }
+
+  return {
+    partnerAssetAliases: [...termProvenance.values()].map((entry) => entry.term).sort(),
+    partnerAliasProvenance: termProvenance,
+    partnerDiscoveryDiagnostics: diagnostics,
+  };
+}
+
+/**
  * Reads and indexes company, pipeline, and clinical evidence targets from disk.
  *
  * Domain Authority Separation (ADR-0070):
@@ -388,6 +569,11 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
   const knownDOIs = new Set();
   const knownPMCs = new Set();
   const assetAliases = new Set();
+  const partnerAwareDiscoveryResult = {
+    partnerAssetAliases: [],
+    partnerAliasProvenance: new Map(),
+    partnerDiscoveryDiagnostics: [],
+  };
 
   function scanSources(sources) {
     for (const src of sources ?? []) {
@@ -482,6 +668,14 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
           scanSources(study.metadata?.sources);
         }
       }
+
+      // Partner-aware discovery expansion (ADR-0071 companion): asset-scoped
+      // only, gated per relationship on tracked-counterpart resolution and
+      // confirmed same-asset identity - see computePartnerAwareDiscoveryTerms.
+      Object.assign(
+        partnerAwareDiscoveryResult,
+        computePartnerAwareDiscoveryTerms(scopedPrograms, companyDir),
+      );
     } else {
       // 2b. Company-scoped Clinical Evidence run
       const envelopePath = path.join(ceCompanyPath, "company-research-state.json");
@@ -545,6 +739,9 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     knownNCTs: [...knownNCTs].sort(),
     knownPMIDs: [...knownPMIDs].sort(),
     assetAliases: [...assetAliases].filter(Boolean).sort(),
+    partnerAssetAliases: partnerAwareDiscoveryResult.partnerAssetAliases,
+    partnerAliasProvenance: partnerAwareDiscoveryResult.partnerAliasProvenance,
+    partnerDiscoveryDiagnostics: partnerAwareDiscoveryResult.partnerDiscoveryDiagnostics,
     unresolvedIdentifiers,
     nonPubMedIdentifiers,
   };
@@ -731,12 +928,13 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
           overallStatus: study.protocolSection?.statusModule?.overallStatus ?? "UNKNOWN",
           lastUpdatePostDate: study.protocolSection?.statusModule?.lastUpdatePostDateStruct?.date ?? null,
           matchedOn: `sponsor: ${context.companyName}`,
+          discoveryPath: "focal",
         });
       }
     }
   }
 
-  // 2. Query asset aliases
+  // 2. Query asset aliases (focal company's own asset identity)
   for (const alias of context.assetAliases) {
     if (alias.length < 4) continue;
     const intrUrl = `https://clinicaltrials.gov/api/v2/studies?query.intr=${encodeURIComponent(alias)}&pageSize=20&fields=${fields}`;
@@ -753,6 +951,36 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
           overallStatus: study.protocolSection?.statusModule?.overallStatus ?? "UNKNOWN",
           lastUpdatePostDate: study.protocolSection?.statusModule?.lastUpdatePostDateStruct?.date ?? null,
           matchedOn: `intervention: ${alias}`,
+          discoveryPath: "focal",
+        });
+      }
+    }
+  }
+
+  // 3. Query partner-side asset identity (ADR-0071 companion, asset-scoped
+  // only - see computePartnerAwareDiscoveryTerms). Each term is only ever a
+  // name/code confirmed, via CP identity, to denote the same focal asset on
+  // a tracked counterpart's own row - never a partner's whole pipeline.
+  for (const alias of context.partnerAssetAliases ?? []) {
+    if (alias.length < 4) continue;
+    const intrUrl = `https://clinicaltrials.gov/api/v2/studies?query.intr=${encodeURIComponent(alias)}&pageSize=20&fields=${fields}`;
+    const aliasRes = await fetchCtGovStudies(intrUrl, 3, fetchFn);
+    if (aliasRes.hasError) hasError = true;
+    if (aliasRes.truncated) truncated = true;
+
+    const provenance = context.partnerAliasProvenance?.get(normalizeIdentityText(alias));
+    const counterpartLabel = provenance?.counterpartCompanyName ?? provenance?.counterpartCompanyId ?? "unknown counterpart";
+
+    for (const study of aliasRes.studies) {
+      const id = study.protocolSection?.identificationModule?.nctId;
+      if (id && !candidateNCTs.has(id)) {
+        candidateNCTs.set(id, {
+          nctId: id,
+          briefTitle: study.protocolSection?.identificationModule?.briefTitle ?? "",
+          overallStatus: study.protocolSection?.statusModule?.overallStatus ?? "UNKNOWN",
+          lastUpdatePostDate: study.protocolSection?.statusModule?.lastUpdatePostDateStruct?.date ?? null,
+          matchedOn: `partner-intervention: ${alias} (via ${counterpartLabel})`,
+          discoveryPath: "partner",
         });
       }
     }
@@ -765,6 +993,9 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
       newlyDiscovered.push(record);
     }
   }
+
+  const newlyDiscoveredFocalCount = newlyDiscovered.filter((r) => r.discoveryPath !== "partner").length;
+  const newlyDiscoveredPartnerCount = newlyDiscovered.filter((r) => r.discoveryPath === "partner").length;
 
   const hasDelta = newlyDiscovered.length > 0;
   const hasIncomplete = truncated;
@@ -781,12 +1012,15 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
   return {
     totalCandidates: candidateNCTs.size,
     newlyDiscoveredCount: newlyDiscovered.length,
+    newlyDiscoveredFocalCount,
+    newlyDiscoveredPartnerCount,
     deltaVerdict,
     hasDelta,
     hasError,
     hasIncomplete,
     truncated,
     newlyDiscovered,
+    partnerDiscoveryDiagnostics: context.partnerDiscoveryDiagnostics ?? [],
   };
 }
 
@@ -1600,11 +1834,39 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
         console.log(`  WARNING: ${discRes.deltaVerdict} (Candidates inspected: ${discRes.totalCandidates})`);
       }
     } else {
-      console.log(`  ALERT: ${discRes.newlyDiscoveredCount} newly registered trials discovered:`);
+      console.log(
+        `  ALERT: ${discRes.newlyDiscoveredCount} newly registered trials discovered (${discRes.newlyDiscoveredFocalCount ?? discRes.newlyDiscoveredCount} focal, ${discRes.newlyDiscoveredPartnerCount ?? 0} partner-expanded):`,
+      );
       for (const d of discRes.newlyDiscovered) {
         console.log(`    + ${d.nctId} [${d.overallStatus}] (PostDate: ${d.lastUpdatePostDate})`);
         console.log(`      "${d.briefTitle}"`);
         console.log(`      Matched: ${d.matchedOn}`);
+      }
+      if ((discRes.newlyDiscoveredPartnerCount ?? 0) > 0) {
+        console.log(
+          "      NOTE (ADR-0071): a partner-expanded candidate is not thereby attributed to the partner or kept with the focal company - the sponsor-resolution cascade decides the Study anchor after discovery, independent of which query found it.",
+        );
+      }
+    }
+
+    const partnerDiag = discRes.partnerDiscoveryDiagnostics ?? [];
+    if (partnerDiag.length > 0) {
+      console.log("  Partner-aware discovery diagnostics (ADR-0071 companion):");
+      for (const d of partnerDiag) {
+        if (d.status === "untracked-counterpart") {
+          console.log(
+            `    - ${d.focalAssetId}: relationship names "${d.externalCompanyName}" - not a tracked company; no query expansion (never guessed)`,
+          );
+        } else if (d.status === "counterpart-asset-row-absent") {
+          console.log(
+            `    - ${d.focalAssetId}: ${d.counterpartCompanyName} (${d.counterpartCompanyId}) has no row matching this asset's identity - no query expansion (structurally non-actionable per ADR-0072, not a blocker)`,
+          );
+        } else if (d.status === "partner-expanded") {
+          const termsLabel = d.addedTerms.length > 0 ? d.addedTerms.join(", ") : "(no new terms - already covered by focal aliases)";
+          console.log(
+            `    - ${d.focalAssetId}: expanded via ${d.counterpartCompanyName} (${d.counterpartCompanyId}), matched row(s) [${d.matchedRowIds.join(", ")}] - terms added: ${termsLabel}`,
+          );
+        }
       }
     }
   }

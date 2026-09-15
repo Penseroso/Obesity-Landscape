@@ -170,8 +170,31 @@ not create multi-anchor storage: a registry identity resolved to another
 company's canonical anchor is not stored a second time under the company
 currently being researched. Recording that a specific registry identity was
 discovered and attributed elsewhere is an operational disposition, not a
-schema change; its exact mechanism is left to a future revision of this
-workflow.
+schema change; its exact mechanism (a durable `foreignStudyDispositions`-style
+record) remains a future revision of this workflow — **discovery reach**
+itself no longer is (below).
+
+**Partner-aware discovery is implemented.** Section 1's asset-scoped registry
+discovery preflight (`scripts/research-preflight.mjs`,
+`registry:discovery`) also queries a licensed, co-developed, or
+regional-rights-split asset's **partner-side** code name when it can be
+confirmed, via Company/Pipeline identity alone, to denote the same asset —
+never the partner's whole pipeline, and never a fuzzy company/asset guess.
+For each of the focal Program's own `relationships[]` entries: the named
+counterpart must resolve to a tracked company by an exact `company.name`
+match (the same rule ADR-0072's reciprocity probe uses), and that
+counterpart must carry its own row whose name/code identity overlaps the
+focal asset's (the same asset/deal-aware identity authority ADR-0072 already
+uses, including a combination row's `components[].assetName`/`codeName`).
+Only then are that counterpart row's own `assetId`/`assetName`/`codeName`/
+`aliases` added as additional `query.intr` search terms. An untracked
+counterpart, or a tracked counterpart with no matching row (a structurally
+non-actionable case under ADR-0072), adds no terms and never blocks
+discovery. A candidate found only through a partner term is reported with
+its own `partner-intervention` provenance in the preflight diagnostics, but
+this decides only what discovery searches for — **which company's Clinical
+Evidence folder the resulting Study belongs in is still decided entirely by
+the four-step cascade above**, independent of which query surfaced it.
 
 ## 1a. Asset-scoped execution for a named asset (ADR-0069)
 
@@ -269,7 +292,7 @@ node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --
 - **Checkpoint compatibility & invalidation keys**: `workflowRevision` (`ADR-0070`) and `semanticFingerprintVersion` (`2`) are active compatibility keys. If either stored key differs from current code constants, preflight flags `REBASELINE_REQUIRED` and strictly blocks routine `--advance`, requiring an explicit re-baseline (`--bootstrap --ack-deltas`) after verifying current evidence.
 1. **Registry Update Probe (`registry:update`) vs Registry Discovery Probe (`registry:discovery`)**:
    - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`, `eligibility`, `enrollmentCount`) under `semanticFingerprintVersion: 2`. Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped). Version or workflow revision mismatches trigger `REBASELINE_REQUIRED`.
-   - Discovery probe executes deterministic queries with company name and asset aliases, computing an ID set difference ($\text{Candidates} \setminus \text{Known NCTs}$) to surface brand-new trial registrations at 0 LLM tokens.
+   - Discovery probe executes deterministic queries with company name and asset aliases, computing an ID set difference ($\text{Candidates} \setminus \text{Known NCTs}$) to surface brand-new trial registrations at 0 LLM tokens. For an asset-scoped run, this also queries a confirmed same-asset partner-side code name (§1's "Partner-aware discovery is implemented") - never a partner's whole pipeline - and labels any resulting candidate with which query path (focal or partner) surfaced it.
 2. **Literature Health Check (`literature:health`) vs Literature Discovery Probe (`literature:discovery`)**:
    - Health check queries PubMed E-utilities (`efetch.fcgi` XML) for all cited PMIDs, parsing `<CommentsCorrections>` (`ErratumIn`, `RetractionIn`, `ExpressionOfConcernIn`) and `<PublicationType>` (`Retracted Publication`). It computes a granular `noticeFingerprint` (enforced as required by validator whenever status is `has-erratum` or `retracted`). If an adverse notice changes in either direction (e.g. erratum to retraction, secondary erratum added, or notice resolved/retracted status cleared), the bidirectional diff surfaces a delta (`RETRACTION_DETECTED`, `NEW_ERRATUM_DETECTED`, or `LITERATURE_NOTICE_CHANGED`), never silently returning `CLEAN`. Genuine non-PubMed DOIs (unindexed on PubMed) are tracked with `status: "NOT_FOUND_ON_PUBMED"` as non-monitored without blocking checkpoint advance.
    - Discovery probe queries PubMed E-utilities (`esearch.fcgi`) for asset aliases to detect newly indexed peer-reviewed journal articles that may supersede earlier interim disclosures or press releases ($\text{Discovered PMIDs} \setminus \text{Known PMIDs}$). Failure of follow-up detail fetch preserves discovered delta IDs with `hasIncomplete: true`, never collapsing into a false `CLEAN`.
