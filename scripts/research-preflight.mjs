@@ -629,6 +629,8 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     partnerAliasProvenance: new Map(),
     partnerDiscoveryDiagnostics: [],
   };
+  let foreignStudyDispositions = {};
+  const focalIdentityKeys = new Set();
 
   function scanSources(sources) {
     for (const src of sources ?? []) {
@@ -756,6 +758,19 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
         partnerAwareDiscoveryResult,
         computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, companyDir),
       );
+
+      // ADR-0074: raw operator-authored foreign-owner dispositions for this
+      // asset envelope, plus the focal side's own identity keys (reusing the
+      // same shared identity authority as the partner-aware expansion above)
+      // so probeRegistryDiscovery can re-check condition 5 ("CP identity
+      // still sustains the resolution") without a second identity mechanism.
+      foreignStudyDispositions = baseline?.discoveryCheckpoint?.clinicalTrials?.foreignStudyDispositions ?? {};
+      for (const { row, kind } of [
+        ...scopedPrograms.map((row) => ({ row, kind: "program" })),
+        ...scopedRegimens.map((row) => ({ row, kind: "regimen" })),
+      ]) {
+        for (const key of buildRowIdentityKeys(row, kind)) focalIdentityKeys.add(key);
+      }
     } else {
       // 2b. Company-scoped Clinical Evidence run
       const envelopePath = path.join(ceCompanyPath, "company-research-state.json");
@@ -822,9 +837,86 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     partnerAssetAliases: partnerAwareDiscoveryResult.partnerAssetAliases,
     partnerAliasProvenance: partnerAwareDiscoveryResult.partnerAliasProvenance,
     partnerDiscoveryDiagnostics: partnerAwareDiscoveryResult.partnerDiscoveryDiagnostics,
+    foreignStudyDispositions,
+    focalIdentityKeys,
+    companyDir,
     unresolvedIdentifiers,
     nonPubMedIdentifiers,
   };
+}
+
+/**
+ * ADR-0074: re-validates one operator-authored foreign-owner disposition
+ * against the *current* local Company/Pipeline manifests only (no network) -
+ * conditions 2 ("ownerCompanyId no longer tracked"), 3 ("ownerAssetId no
+ * longer resolves"), and 5 ("CP identity no longer sustains the resolution")
+ * of the five deterministic invalidation conditions. Reuses exactly the same
+ * lookups and shared identity authority `computePartnerAwareDiscoveryTerms`
+ * already relies on - no new resolver.
+ */
+function checkForeignDispositionLocalValidity(disp, context) {
+  const { nameById } = loadTrackedCompanyDirectory(context.companyDir);
+  if (!nameById.has(disp.ownerCompanyId)) {
+    return { valid: false, reason: "owner-company-untracked" };
+  }
+  if (disp.ownerAssetId) {
+    const ownerRow = loadCounterpartAssetRows(context.companyDir, disp.ownerCompanyId).find(
+      ({ row, kind }) => (kind === "program" ? row.assetId : row.id) === disp.ownerAssetId,
+    );
+    if (!ownerRow) {
+      return { valid: false, reason: "owner-asset-unresolvable" };
+    }
+    if (!identityKeysIntersect(context.focalIdentityKeys, buildRowIdentityKeys(ownerRow.row, ownerRow.kind))) {
+      return { valid: false, reason: "identity-no-longer-sustained" };
+    }
+  }
+  return { valid: true };
+}
+
+/**
+ * ADR-0074: re-validates every foreign disposition in this asset's envelope
+ * for the current preflight run - local checks first (cheap, no network),
+ * then a single lightweight leadSponsor-only fetch per still-locally-valid
+ * entry (condition 1, "leadSponsor materially changed"). A fetch failure is
+ * treated conservatively: the entry stays suppressed rather than being
+ * forced back open by a transient network error, but the run is still
+ * flagged `hasError` so a checkpoint write is blocked until it is resolved -
+ * mirroring `probeRegistryUpdate`'s own FETCH_ERROR handling.
+ */
+async function checkForeignStudyDispositions(context, fetchFn) {
+  const valid = [];
+  const invalidated = [];
+  let hasError = false;
+
+  for (const [nctId, disp] of Object.entries(context.foreignStudyDispositions ?? {})) {
+    const localCheck = checkForeignDispositionLocalValidity(disp, context);
+    if (!localCheck.valid) {
+      invalidated.push({ nctId, reason: localCheck.reason });
+      continue;
+    }
+
+    try {
+      const sponsorUrl = `https://clinicaltrials.gov/api/v2/studies/${nctId}?fields=protocolSection.sponsorCollaboratorsModule.leadSponsor.name`;
+      const res = await fetchFn(sponsorUrl);
+      if (!res.ok) {
+        hasError = true;
+        valid.push(nctId);
+        continue;
+      }
+      const data = await res.json();
+      const liveLeadSponsor = data.protocolSection?.sponsorCollaboratorsModule?.leadSponsor?.name ?? null;
+      if (liveLeadSponsor !== null && liveLeadSponsor !== disp.recordedLeadSponsor) {
+        invalidated.push({ nctId, reason: "lead-sponsor-changed" });
+      } else {
+        valid.push(nctId);
+      }
+    } catch {
+      hasError = true;
+      valid.push(nctId);
+    }
+  }
+
+  return { valid, invalidated, hasError };
 }
 
 /**
@@ -1066,18 +1158,31 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
     }
   }
 
+  // ADR-0074: re-validate every operator-authored foreign disposition for
+  // this run, then suppress `NEW` for the still-valid subset only.
+  // `knownSet` (local canonical) and foreign dispositions stay visibly
+  // distinct sets - unioned only at this final suppression check, never
+  // merged into one concept - and a disposition that fails re-validation is
+  // reported separately (`resurfacedForeignDispositions`), never silently
+  // dropped into `newlyDiscovered` as an ordinary brand-new candidate.
+  const foreignDispositionStatus = await checkForeignStudyDispositions(context, fetchFn);
+  if (foreignDispositionStatus.hasError) hasError = true;
+
   const knownSet = new Set(context.knownNCTs);
+  const validForeignSet = new Set(foreignDispositionStatus.valid);
+  const suppressionSet = new Set([...knownSet, ...validForeignSet]);
   const newlyDiscovered = [];
   for (const [id, record] of candidateNCTs.entries()) {
-    if (!knownSet.has(id)) {
+    if (!suppressionSet.has(id)) {
       newlyDiscovered.push(record);
     }
   }
+  const resurfacedForeignDispositions = foreignDispositionStatus.invalidated;
 
   const newlyDiscoveredFocalCount = newlyDiscovered.filter((r) => r.discoveryPath !== "partner").length;
   const newlyDiscoveredPartnerCount = newlyDiscovered.filter((r) => r.discoveryPath === "partner").length;
 
-  const hasDelta = newlyDiscovered.length > 0;
+  const hasDelta = newlyDiscovered.length > 0 || resurfacedForeignDispositions.length > 0;
   const hasIncomplete = truncated;
 
   let deltaVerdict = "CLEAN";
@@ -1101,6 +1206,8 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
     truncated,
     newlyDiscovered,
     partnerDiscoveryDiagnostics: context.partnerDiscoveryDiagnostics ?? [],
+    foreignDispositionStatus,
+    resurfacedForeignDispositions,
   };
 }
 
@@ -1768,13 +1875,14 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
  * Constructs and writes the updated researchState checkpoint to canonical JSON.
  * Strictly writes only NCTs and PMIDs present in the canonical source tree.
  */
-export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
+export function saveBaselineCheckpoint(context, updateRes, discRes, healthRes, secRes) {
   const asOf = new Date().toISOString().slice(0, 10);
   const knownNCTsSet = new Set(context.knownNCTs);
   const knownPMIDsSet = new Set(context.knownPMIDs);
 
   const prevNCTs = context.baseline?.discoveryCheckpoint?.clinicalTrials?.knownNCTs ?? {};
   const prevPMIDs = context.baseline?.discoveryCheckpoint?.literature?.monitoredPMIDs ?? {};
+  const prevForeignDispositions = context.baseline?.discoveryCheckpoint?.clinicalTrials?.foreignStudyDispositions ?? {};
 
   const knownNCTsMap = updateRes ? {} : { ...prevNCTs };
   // Defensive compatibility: supports updateRes as object ({ results: [...] }) or raw array
@@ -1787,6 +1895,21 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
       };
     }
   }
+
+  // ADR-0074: pure filter, never invention - an entry survives only if this
+  // run's foreign-disposition re-validation (local + sponsor-drift checks)
+  // still confirms it. A dropped entry is not deleted state, it simply
+  // re-qualifies as an ordinary NEW discovery candidate on the next run,
+  // exactly like knownNCtsMap's own "start from previous, filter by current
+  // truth" reconstruction above never invents a new known NCT either - new
+  // dispositions are hand-authored into the source JSON, the same way a new
+  // Study is.
+  const validForeignIds = new Set(discRes?.foreignDispositionStatus?.valid ?? []);
+  const foreignDispositionsMap = discRes
+    ? Object.fromEntries(
+        Object.entries(prevForeignDispositions).filter(([nctId]) => validForeignIds.has(nctId)),
+      )
+    : { ...prevForeignDispositions };
 
   const monitoredPMIDsMap = healthRes ? {} : { ...prevPMIDs };
   for (const h of (healthRes?.checked ?? [])) {
@@ -1829,6 +1952,7 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
         assetAliases: context.assetAliases,
         lastQueriedAt: asOf,
         knownNCTs: knownNCTsMap,
+        ...(Object.keys(foreignDispositionsMap).length > 0 ? { foreignStudyDispositions: foreignDispositionsMap } : {}),
       },
       literature: {
         assetAliases: context.assetAliases,
@@ -1951,6 +2075,20 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
             `    - ${d.focalAssetId}: relationship confirmed via ${d.counterpartCompanyName} (${d.counterpartCompanyId}), matched row(s) [${d.matchedRowIds.join(", ")}], but only through a components[] reference to a different asset - no query expansion (would search that different asset's own trials, not this one)`,
           );
         }
+      }
+    }
+
+    // ADR-0074: currently-suppressed and resurfaced foreign dispositions.
+    const foreignStatus = discRes.foreignDispositionStatus;
+    if (foreignStatus && (foreignStatus.valid.length > 0 || foreignStatus.invalidated.length > 0)) {
+      console.log("  Foreign-owner dispositions (ADR-0074):");
+      if (foreignStatus.valid.length > 0) {
+        console.log(
+          `    - ${foreignStatus.valid.length} still suppressed (previously confirmed as another tracked company's canonical CE): ${foreignStatus.valid.join(", ")}`,
+        );
+      }
+      for (const r of discRes.resurfacedForeignDispositions ?? []) {
+        console.log(`    ! RESURFACED ${r.nctId}: disposition invalidated (${r.reason}) - requires re-review, not re-attributed automatically`);
       }
     }
   }
@@ -2110,7 +2248,7 @@ export async function main() {
       process.exit(1);
     }
 
-    savedBaseline = saveBaselineCheckpoint(context, updateRes, healthRes, secRes);
+    savedBaseline = saveBaselineCheckpoint(context, updateRes, discRes, healthRes, secRes);
   }
 
   if (json) {

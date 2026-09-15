@@ -850,7 +850,7 @@ test("Regression 10: saveBaselineCheckpoint defends unrun probes against map del
       allRecentKeyFilings: [{ acceptanceDateTime: "2026-02-01T00:00:00.000Z", accessionNumber: "0001" }],
     };
 
-    const saved = saveBaselineCheckpoint(context, null, null, mockSecRes);
+    const saved = saveBaselineCheckpoint(context, null, null, null, mockSecRes);
     assert.ok(saved.targetPath, "saveBaselineCheckpoint must return targetPath");
     const written = JSON.parse(fs.readFileSync(tempFile, "utf8"));
 
@@ -1047,7 +1047,7 @@ test("Regression 13: Clinical Evidence company-wide bootstrap/advance targets co
       },
     ],
   };
-  const saved = saveBaselineCheckpoint(ceContext, mockUpdateRes, null, null);
+  const saved = saveBaselineCheckpoint(ceContext, mockUpdateRes, null, null, null);
 
   // 1. Assert company-research-state.json was created
   const envelopePath = path.join(tempClinicalDir, "mock-corp", "company-research-state.json");
@@ -2212,6 +2212,400 @@ test("Regression 21: a fixed-dose-combination is itself searchable, but its sibl
       !queriedIntrValues.includes("SK-77") && !queriedIntrValues.includes("Sidekick Molecule"),
       "no request issued by an A-scoped run may query the sibling component's own standalone code/name as an exact query.intr value",
     );
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// ADR-0074: durable cross-company disposition (foreignStudyDispositions)
+// ---------------------------------------------------------------------------
+
+/**
+ * Focal company "focal-fx" (asset-a) plus a distinct owner company
+ * "owner-fx" (owner-asset-a) sharing the same assetName - enough for
+ * `buildRowIdentityKeys` to intersect without needing a CP relationship
+ * between them, mirroring a real cross-company case (for example an
+ * Innovent-scoped run surfacing a Lilly-owned mazdutide NCT) where no
+ * licensing relationship need exist between the two companies at all.
+ */
+function buildForeignDispositionFixture(fixtureDir, options = {}) {
+  const companyDir = path.join(fixtureDir, "companies");
+  const clinicalDir = path.join(fixtureDir, "clinical-evidence");
+
+  function writeCompany(id, name, programs) {
+    fs.mkdirSync(path.join(companyDir, id), { recursive: true });
+    fs.writeFileSync(path.join(companyDir, id, "company.json"), JSON.stringify({ id, name }, null, 2) + "\n", "utf8");
+    fs.writeFileSync(path.join(companyDir, id, "pipeline-programs.json"), JSON.stringify(programs, null, 2) + "\n", "utf8");
+    fs.writeFileSync(path.join(companyDir, id, "regimens.json"), "[]\n", "utf8");
+  }
+
+  writeCompany("focal-fx", "Focal Fixture Co.", [
+    {
+      id: "focal-fx-asset-a",
+      companyId: "focal-fx",
+      assetId: "asset-a",
+      assetName: "Fixture Asset A",
+      codeName: "FA-100",
+      aliases: [],
+      relationships: [],
+    },
+  ]);
+
+  if (!options.omitOwnerCompany) {
+    writeCompany("owner-fx", "Owner Fixture Co.", [
+      {
+        id: "owner-fx-owner-asset-a",
+        companyId: "owner-fx",
+        assetId: options.omitOwnerAsset ? "owner-asset-a-renamed" : "owner-asset-a",
+        assetName: "Fixture Asset A",
+        codeName: "OWN-100",
+        aliases: [],
+        relationships: [],
+      },
+    ]);
+  }
+
+  const foreignStudyDispositions = options.foreignStudyDispositions ?? {
+    NCT20000002: {
+      disposition: "CROSS_COMPANY_OWNED",
+      ownerCompanyId: "owner-fx",
+      ownerAssetId: "owner-asset-a",
+      recordedAt: "2026-08-01",
+      recordedLeadSponsor: "Owner Fixture Co.",
+    },
+  };
+
+  const ceAssetDir = path.join(clinicalDir, "focal-fx", "asset-a");
+  fs.mkdirSync(ceAssetDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(ceAssetDir, "clinical-evidence.json"),
+    JSON.stringify(
+      {
+        companyId: "focal-fx",
+        assetId: "asset-a",
+        studies: [],
+        arms: [],
+        analysisGroups: [],
+        endpoints: [],
+        outcomes: [],
+        researchState: options.legacyResearchState ?? {
+          checkpointVersion: 1,
+          workflowRevision: CURRENT_WORKFLOW_REVISION,
+          discoveryCheckpoint: {
+            asOf: "2026-08-01",
+            clinicalTrials: {
+              semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
+              knownNCTs: {},
+              ...(Object.keys(foreignStudyDispositions).length > 0 ? { foreignStudyDispositions } : {}),
+            },
+          },
+        },
+      },
+      null,
+      2,
+    ) + "\n",
+    "utf8",
+  );
+
+  return { companyDir, clinicalDir };
+}
+
+function ctgovCandidateResponse(nctId, title) {
+  return {
+    ok: true,
+    json: async () => ({
+      studies: [
+        {
+          protocolSection: {
+            identificationModule: { nctId, briefTitle: title },
+            statusModule: { overallStatus: "RECRUITING", lastUpdatePostDateStruct: { date: "2026-08-15" } },
+          },
+        },
+      ],
+    }),
+  };
+}
+
+function ctgovSponsorResponse(leadSponsorName) {
+  return {
+    ok: true,
+    json: async () => ({
+      protocolSection: leadSponsorName === null ? {} : { sponsorCollaboratorsModule: { leadSponsor: { name: leadSponsorName } } },
+    }),
+  };
+}
+
+test("Regression 22: a foreign disposition suppresses repeat NEW reporting for the same registry identity on the next discovery run", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-suppression");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildForeignDispositionFixture(fixtureDir);
+
+  try {
+    const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+
+    const mockFetch = async (url) => {
+      const parsed = new URL(url);
+      if (parsed.pathname.endsWith("/NCT20000002")) {
+        return ctgovSponsorResponse("Owner Fixture Co.");
+      }
+      const intr = parsed.searchParams.get("query.intr");
+      if (intr === "Fixture Asset A" || intr === "FA-100") {
+        return ctgovCandidateResponse("NCT20000002", "Cross-company owned fixture trial");
+      }
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+
+    assert.ok(
+      !result.newlyDiscovered.some((d) => d.nctId === "NCT20000002"),
+      "a registry identity with a currently-valid foreign disposition must not be reported as NEW",
+    );
+    assert.ok(result.foreignDispositionStatus.valid.includes("NCT20000002"));
+    assert.strictEqual(result.resurfacedForeignDispositions.length, 0);
+    assert.strictEqual(result.deltaVerdict, "CLEAN");
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 23: a partner-expanded candidate with no recorded foreign disposition still reports NEW - discoveryPath alone never suppresses", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-partner-path-not-ownership");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildPartnerDiscoveryFixture(fixtureDir);
+
+  try {
+    // hengrui-fx/hrs9531-asset has no researchState / foreignStudyDispositions
+    // at all - the same Hengrui/Kailera partner-expanded candidate Regression
+    // 19 proves is discoverable must still surface as an ordinary NEW
+    // candidate, since discoveryPath=partner is diagnostic provenance only.
+    const context = await loadCompanyContext("hengrui-fx", "hrs9531-asset", { companyDir, clinicalDir, domain: "clinical-evidence" });
+    assert.deepStrictEqual(context.foreignStudyDispositions, {});
+
+    const mockFetch = async (url) => {
+      const intr = new URL(url).searchParams.get("query.intr");
+      if (intr === "KAI-9531") return ctgovCandidateResponse("NCT20000002", "Kailera-registered ribupatide trial");
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+    const candidate = result.newlyDiscovered.find((d) => d.nctId === "NCT20000002");
+    assert.ok(candidate, "a partner-expanded candidate with no disposition entry must still surface as NEW");
+    assert.strictEqual(candidate.discoveryPath, "partner");
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 24: an unrecorded (ambiguous) candidate is treated as ordinary NEW, independent of any other candidate's disposition", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-ambiguous-default");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildForeignDispositionFixture(fixtureDir);
+
+  try {
+    const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+
+    const mockFetch = async (url) => {
+      const parsed = new URL(url);
+      if (parsed.pathname.endsWith("/NCT20000002")) return ctgovSponsorResponse("Owner Fixture Co.");
+      const intr = parsed.searchParams.get("query.intr");
+      if (intr === "Fixture Asset A" || intr === "FA-100") {
+        // Two candidates: the recorded, currently-valid disposition, and a
+        // second, never-dispositioned identity representing an ambiguous
+        // case that was investigated but deliberately never recorded.
+        return {
+          ok: true,
+          json: async () => ({
+            studies: [
+              { protocolSection: { identificationModule: { nctId: "NCT20000002", briefTitle: "Owned" }, statusModule: { overallStatus: "RECRUITING", lastUpdatePostDateStruct: { date: "2026-08-15" } } } },
+              { protocolSection: { identificationModule: { nctId: "NCT40000004", briefTitle: "Ambiguous, never recorded" }, statusModule: { overallStatus: "RECRUITING", lastUpdatePostDateStruct: { date: "2026-08-15" } } } },
+            ],
+          }),
+        };
+      }
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+    assert.ok(!result.newlyDiscovered.some((d) => d.nctId === "NCT20000002"), "the recorded disposition still suppresses");
+    assert.ok(result.newlyDiscovered.some((d) => d.nctId === "NCT40000004"), "an ambiguous candidate that was never recorded must default to NEW");
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 25: a leadSponsor change invalidates the disposition, resurfacing it for review rather than silently keeping it suppressed", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-sponsor-drift");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildForeignDispositionFixture(fixtureDir);
+
+  try {
+    const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+
+    const mockFetch = async (url) => {
+      const parsed = new URL(url);
+      if (parsed.pathname.endsWith("/NCT20000002")) {
+        // The registry's own leadSponsor no longer matches what was recorded.
+        return ctgovSponsorResponse("A Different Company Entirely");
+      }
+      const intr = parsed.searchParams.get("query.intr");
+      if (intr === "Fixture Asset A" || intr === "FA-100") return ctgovCandidateResponse("NCT20000002", "Cross-company owned fixture trial");
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+
+    assert.strictEqual(result.foreignDispositionStatus.valid.includes("NCT20000002"), false);
+    const resurfaced = result.resurfacedForeignDispositions.find((r) => r.nctId === "NCT20000002");
+    assert.ok(resurfaced, "a leadSponsor change must invalidate the disposition and resurface it for review");
+    assert.strictEqual(resurfaced.reason, "lead-sponsor-changed");
+    assert.strictEqual(result.hasDelta, true);
+    assert.notStrictEqual(result.deltaVerdict, "CLEAN");
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 26: an owner company or asset that no longer resolves invalidates the disposition and is never hidden as CLEAN", async () => {
+  const untrackedOwnerCompanyDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-owner-company-untracked");
+  const unresolvableOwnerAssetDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-owner-asset-unresolvable");
+  fs.rmSync(untrackedOwnerCompanyDir, { recursive: true, force: true });
+  fs.rmSync(unresolvableOwnerAssetDir, { recursive: true, force: true });
+
+  try {
+    // Sub-case A: ownerCompanyId is no longer a tracked company at all.
+    {
+      const { companyDir, clinicalDir } = buildForeignDispositionFixture(untrackedOwnerCompanyDir, { omitOwnerCompany: true });
+      const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+      const result = await probeRegistryDiscovery(context, async () => ({ ok: true, json: async () => ({ studies: [] }) }));
+
+      const resurfaced = result.resurfacedForeignDispositions.find((r) => r.nctId === "NCT20000002");
+      assert.ok(resurfaced, "an untracked ownerCompanyId must invalidate the disposition");
+      assert.strictEqual(resurfaced.reason, "owner-company-untracked");
+      assert.notStrictEqual(result.deltaVerdict, "CLEAN");
+      assert.strictEqual(result.hasDelta, true);
+    }
+
+    // Sub-case B: ownerCompanyId is still tracked, but ownerAssetId no
+    // longer resolves in that company's own manifest.
+    {
+      const { companyDir, clinicalDir } = buildForeignDispositionFixture(unresolvableOwnerAssetDir, { omitOwnerAsset: true });
+      const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+      const result = await probeRegistryDiscovery(context, async () => ({ ok: true, json: async () => ({ studies: [] }) }));
+
+      const resurfaced = result.resurfacedForeignDispositions.find((r) => r.nctId === "NCT20000002");
+      assert.ok(resurfaced, "an unresolvable ownerAssetId must invalidate the disposition");
+      assert.strictEqual(resurfaced.reason, "owner-asset-unresolvable");
+      assert.notStrictEqual(result.deltaVerdict, "CLEAN");
+      assert.strictEqual(result.hasDelta, true);
+    }
+  } finally {
+    fs.rmSync(untrackedOwnerCompanyDir, { recursive: true, force: true });
+    fs.rmSync(unresolvableOwnerAssetDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 27: legacy researchState with no foreignStudyDispositions key loads and runs without error, behaving as an empty map", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-legacy-compat");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildForeignDispositionFixture(fixtureDir, {
+    legacyResearchState: {
+      checkpointVersion: 1,
+      workflowRevision: CURRENT_WORKFLOW_REVISION,
+      discoveryCheckpoint: {
+        asOf: "2026-08-01",
+        clinicalTrials: {
+          semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
+          knownNCTs: {},
+        },
+      },
+    },
+  });
+
+  try {
+    const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+    assert.deepStrictEqual(context.foreignStudyDispositions, {});
+
+    const result = await probeRegistryDiscovery(context, async () => ({ ok: true, json: async () => ({ studies: [] }) }));
+    assert.deepStrictEqual(result.foreignDispositionStatus, { valid: [], invalidated: [], hasError: false });
+    assert.deepStrictEqual(result.resurfacedForeignDispositions, []);
+    assert.strictEqual(result.deltaVerdict, "CLEAN");
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 28: a foreign candidate discovered via a composing Regimen/FDC row follows identical disposition semantics as a plain Program", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-regimen-fdc");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const { companyDir, clinicalDir } = buildPartnerDiscoveryFixture(fixtureDir);
+
+  // wexler-fx/wex101-asset reaches the composing Regimen
+  // ("wexler-fx-wex101-plus-partner-regimen"), whose components[] name
+  // Partner Fixture Therapeutics' own molecule (Partneratide/PTX-9) - the
+  // exact same identity partner-fixture-fx's own Program row carries, so a
+  // disposition attributing a registry identity to that owner asset is
+  // locally sustainable via buildRowIdentityKeys, same as a plain Program.
+  const ceAssetDir = path.join(clinicalDir, "wexler-fx", "wex101-asset");
+  fs.mkdirSync(ceAssetDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(ceAssetDir, "clinical-evidence.json"),
+    JSON.stringify(
+      {
+        companyId: "wexler-fx",
+        assetId: "wex101-asset",
+        studies: [],
+        arms: [],
+        analysisGroups: [],
+        endpoints: [],
+        outcomes: [],
+        researchState: {
+          checkpointVersion: 1,
+          workflowRevision: CURRENT_WORKFLOW_REVISION,
+          discoveryCheckpoint: {
+            asOf: "2026-08-01",
+            clinicalTrials: {
+              semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
+              knownNCTs: {},
+              foreignStudyDispositions: {
+                NCT50000005: {
+                  disposition: "CROSS_COMPANY_OWNED",
+                  ownerCompanyId: "partner-fixture-fx",
+                  ownerAssetId: "ptx9-asset",
+                  recordedAt: "2026-08-01",
+                  recordedLeadSponsor: "Partner Fixture Therapeutics",
+                },
+              },
+            },
+          },
+        },
+      },
+      null,
+      2,
+    ) + "\n",
+    "utf8",
+  );
+
+  try {
+    const context = await loadCompanyContext("wexler-fx", "wex101-asset", { companyDir, clinicalDir, domain: "clinical-evidence" });
+
+    const mockFetch = async (url) => {
+      const parsed = new URL(url);
+      if (parsed.pathname.endsWith("/NCT50000005")) return ctgovSponsorResponse("Partner Fixture Therapeutics");
+      const intr = parsed.searchParams.get("query.intr");
+      if (intr === "Wexatide + Partner Combination Regimen") {
+        return ctgovCandidateResponse("NCT50000005", "Cross-company owned trial reached via composing Regimen");
+      }
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+    assert.ok(
+      !result.newlyDiscovered.some((d) => d.nctId === "NCT50000005"),
+      "a foreign disposition reached only via a composing Regimen/FDC row must suppress identically to a plain Program",
+    );
+    assert.ok(result.foreignDispositionStatus.valid.includes("NCT50000005"));
   } finally {
     fs.rmSync(fixtureDir, { recursive: true, force: true });
   }

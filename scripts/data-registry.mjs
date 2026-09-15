@@ -1014,6 +1014,35 @@ function validateResearchState(researchState, context) {
         }
       }
     }
+    if (cp.clinicalTrials.foreignStudyDispositions !== undefined) {
+      assert(isObject(cp.clinicalTrials.foreignStudyDispositions), `${context}: clinicalTrials.foreignStudyDispositions must be an object`);
+      for (const [nctId, entry] of Object.entries(cp.clinicalTrials.foreignStudyDispositions)) {
+        assert(nctPattern.test(nctId), `${context}: foreignStudyDispositions key "${nctId}" must match NCT########`);
+        assert(isObject(entry), `${context}: foreignStudyDispositions["${nctId}"] must be an object`);
+        assert(
+          entry.disposition === "CROSS_COMPANY_OWNED",
+          `${context}: foreignStudyDispositions["${nctId}"].disposition must be "CROSS_COMPANY_OWNED"`,
+        );
+        assert(
+          isNonEmptyString(entry.ownerCompanyId),
+          `${context}: foreignStudyDispositions["${nctId}"].ownerCompanyId is required`,
+        );
+        if (entry.ownerAssetId !== undefined) {
+          assert(
+            isNonEmptyString(entry.ownerAssetId),
+            `${context}: foreignStudyDispositions["${nctId}"].ownerAssetId must be non-empty string`,
+          );
+        }
+        assert(
+          isValidFullDate(entry.recordedAt),
+          `${context}: foreignStudyDispositions["${nctId}"].recordedAt must be YYYY-MM-DD`,
+        );
+        assert(
+          isNonEmptyString(entry.recordedLeadSponsor),
+          `${context}: foreignStudyDispositions["${nctId}"].recordedLeadSponsor is required`,
+        );
+      }
+    }
   }
   if (cp.literature !== undefined) {
     assert(isObject(cp.literature), `${context}: literature must be an object`);
@@ -1802,7 +1831,7 @@ function sortClinicalEvidenceAggregate(aggregate) {
   }
 }
 
-function readClinicalEvidenceSourceTree(baseDir, context) {
+function readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopesOut) {
   const aggregate = emptyClinicalEvidenceAggregate();
   const files = getClinicalEvidenceSourceFiles(baseDir);
 
@@ -1829,6 +1858,22 @@ function readClinicalEvidenceSourceTree(baseDir, context) {
     for (const study of data.studies) {
       assert(study.companyId === data.companyId, `${fileContext}: study ${study.id} companyId must match file companyId`);
       assert(study.assetId === data.assetId, `${fileContext}: study ${study.id} assetId must match file assetId`);
+    }
+
+    if (researchStateEnvelopesOut) {
+      const localNctIds = new Set();
+      for (const study of data.studies) {
+        for (const regId of study.registryIdentifiers ?? []) {
+          if (regId?.id && nctPattern.test(regId.id)) localNctIds.add(regId.id.toUpperCase());
+        }
+      }
+      researchStateEnvelopesOut.push({
+        companyId: data.companyId,
+        assetId: data.assetId,
+        researchState: data.researchState,
+        localNctIds,
+        fileContext,
+      });
     }
 
     aggregate.studies.push(...data.studies);
@@ -2744,9 +2789,50 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
   }
 }
 
+/**
+ * ADR-0074: cross-reference checks for `foreignStudyDispositions` that need
+ * data beyond a single file - the tracked-company/asset registry
+ * (`references`, the same `companyIds`/`assetKeys` `linkedAsset` already
+ * validates against) and, within one envelope only, that file's own local
+ * canonical registry identifiers. Deliberately run after the per-file
+ * structural checks in `readClinicalEvidenceSourceTree`/`validateResearchState`,
+ * once `references` exists.
+ */
+function validateForeignStudyDispositions(researchStateEnvelopes, references) {
+  for (const envelope of researchStateEnvelopes) {
+    const dispositions = envelope.researchState?.discoveryCheckpoint?.clinicalTrials?.foreignStudyDispositions;
+    if (!dispositions) continue;
+
+    for (const [nctId, entry] of Object.entries(dispositions)) {
+      const entryContext = `${envelope.fileContext}: researchState.discoveryCheckpoint.clinicalTrials.foreignStudyDispositions["${nctId}"]`;
+
+      assert(
+        !envelope.localNctIds.has(nctId),
+        `${entryContext}: registry identity is both a local canonical Study and a foreign disposition in the same asset envelope`,
+      );
+      assert(
+        references.companyIds.has(entry.ownerCompanyId),
+        `${entryContext}: ownerCompanyId "${entry.ownerCompanyId}" is not a known tracked company`,
+      );
+      assert(
+        entry.ownerCompanyId !== envelope.companyId,
+        `${entryContext}: ownerCompanyId must not be the envelope's own company "${envelope.companyId}" - a disposition records a *different* company's ownership`,
+      );
+      if (entry.ownerAssetId !== undefined) {
+        assert(
+          references.assetKeys.has(`${entry.ownerCompanyId}|${entry.ownerAssetId}`),
+          `${entryContext}: ownerAssetId "${entry.ownerAssetId}" does not exist at company "${entry.ownerCompanyId}"`,
+        );
+      }
+    }
+  }
+}
+
 function buildClinicalEvidenceAggregate(baseDir, references, context) {
-  const aggregate = readClinicalEvidenceSourceTree(baseDir, context);
+  const researchStateEnvelopes = [];
+  const aggregate = readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopes);
   validateClinicalEvidenceAggregate(aggregate, references, context);
+  validateForeignStudyDispositions(researchStateEnvelopes, references);
   return aggregate;
 }
 
@@ -3274,6 +3360,76 @@ function validateClinicalEvidenceSyntheticFixtures() {
     );
   }
   assert(studyMetadataFailed, "Expected study metadata with researchState to fail validation");
+
+  // Mutation probes: ADR-0074 foreignStudyDispositions contradiction checks
+  // (validateForeignStudyDispositions). Uses a small ad-hoc two-company
+  // references object, independent of the shared single-company fixture
+  // dataset above, purely to exercise the ownerCompanyId/ownerAssetId
+  // cross-reference branches.
+  {
+    const foreignDispositionReferences = {
+      companyIds: new Set(["fixture-co", "fixture-partner-co"]),
+      assetKeys: new Set(["fixture-co|fixture-asset", "fixture-partner-co|partner-asset"]),
+    };
+    const baseEnvelope = () => ({
+      companyId: "fixture-co",
+      assetId: "fixture-asset",
+      localNctIds: new Set(["NCT10000001"]),
+      fileContext: "synthetic:foreign-study-disposition-probe/fixture-co/fixture-asset/clinical-evidence.json",
+      researchState: {
+        discoveryCheckpoint: {
+          clinicalTrials: {
+            foreignStudyDispositions: {
+              NCT20000002: {
+                disposition: "CROSS_COMPANY_OWNED",
+                ownerCompanyId: "fixture-partner-co",
+                ownerAssetId: "partner-asset",
+                recordedAt: "2026-09-01",
+                recordedLeadSponsor: "Fixture Partner Co",
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const expectRejection = (mutate, pattern, label) => {
+      const envelope = baseEnvelope();
+      mutate(envelope.researchState.discoveryCheckpoint.clinicalTrials.foreignStudyDispositions);
+      let failed = false;
+      try {
+        validateForeignStudyDispositions([envelope], foreignDispositionReferences);
+      } catch (error) {
+        failed = true;
+        assert(pattern.test(error.message), `[${label}] Expected message matching ${pattern}, received: ${error.message}`);
+      }
+      assert(failed, `[${label}] Expected foreignStudyDispositions mutation to fail validation`);
+    };
+
+    // Valid baseline must pass unmodified.
+    validateForeignStudyDispositions([baseEnvelope()], foreignDispositionReferences);
+
+    expectRejection(
+      (d) => { d.NCT10000001 = { ...d.NCT20000002 }; delete d.NCT20000002; },
+      /both a local canonical Study and a foreign disposition/,
+      "local-canonical-collision",
+    );
+    expectRejection(
+      (d) => { d.NCT20000002.ownerCompanyId = "does-not-exist"; },
+      /is not a known tracked company/,
+      "nonexistent-owner-company",
+    );
+    expectRejection(
+      (d) => { d.NCT20000002.ownerCompanyId = "fixture-co"; },
+      /must not be the envelope's own company/,
+      "self-referential-owner-company",
+    );
+    expectRejection(
+      (d) => { d.NCT20000002.ownerAssetId = "no-such-asset"; },
+      /does not exist at company/,
+      "unresolvable-owner-asset",
+    );
+  }
 
   // Mutations that must still validate: a distinct analysis unit or a source-supported
   // subgroup is a distinct outcome, not a duplicate.

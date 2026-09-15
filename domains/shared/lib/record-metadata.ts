@@ -25,6 +25,22 @@ export type ResearchStateMetadata = {
         lastUpdatePostDate: string;
         semanticHash?: string;
       }>;
+      /**
+       * ADR-0074: a registry identity discovered under this asset's scope but
+       * whose ADR-0071 sponsor-resolution cascade confirmed a *different*
+       * tracked company/asset as canonical owner. Never a copy of that
+       * owner's evidence - purely an operational disposition that suppresses
+       * repeat `NEW` discovery noise for the same identity until it fails
+       * re-validation (owner company/asset no longer resolves, leadSponsor
+       * changed, or CP identity no longer sustains the resolution).
+       */
+      foreignStudyDispositions?: Record<string, {
+        disposition: "CROSS_COMPANY_OWNED";
+        ownerCompanyId: string;
+        ownerAssetId?: string;
+        recordedAt: string;
+        recordedLeadSponsor: string;
+      }>;
     };
     literature?: {
       assetAliases?: string[];

@@ -168,11 +168,66 @@ still decides its own Program/Study disposition on sponsor evidence alone,
 and this workflow still decides its own Study anchor independently. It does
 not create multi-anchor storage: a registry identity resolved to another
 company's canonical anchor is not stored a second time under the company
-currently being researched. Recording that a specific registry identity was
-discovered and attributed elsewhere is an operational disposition, not a
-schema change; its exact mechanism (a durable `foreignStudyDispositions`-style
-record) remains a future revision of this workflow — **discovery reach**
-itself no longer is (below).
+currently being researched.
+
+**Recording the cascade's foreign-owner verdict is implemented (ADR-0074).**
+When this cascade's four steps clearly resolve a discovered registry identity
+to a *different* tracked company's canonical anchor, record that verdict in
+the asset-scoped `clinical-evidence.json`'s own `researchState` — the same
+ADR-0070 operational envelope `knownNCTs` already lives in, under
+`discoveryCheckpoint.clinicalTrials.foreignStudyDispositions`, keyed by the
+registry identity:
+
+```json
+"foreignStudyDispositions": {
+  "NCT01234567": {
+    "disposition": "CROSS_COMPANY_OWNED",
+    "ownerCompanyId": "eli-lilly-and-company",
+    "ownerAssetId": "mazdutide",
+    "recordedAt": "2026-09-15",
+    "recordedLeadSponsor": "Eli Lilly and Company"
+  }
+}
+```
+
+Write this entry the same way a Study itself is authored — by hand, in the
+same file, immediately after the cascade resolves — never through a separate
+CLI or interactive flag. `ownerAssetId` is included only when the owner
+company's own manifest carries a stably resolvable asset anchor for it;
+`disposition` currently has exactly one allowed value. This is purely an
+operational fact ("investigated, and currently attributed elsewhere under
+this cascade") and carries **no other meaning**: it does not assert the
+owner's evidence review is complete, that owner's CE record is exhaustive,
+that any publication has been reviewed, or that the underlying license
+relationship is permanent. Canonical Study/Arm/Outcome/`RecordMetadata` data
+is never duplicated into it or read from it.
+
+**Never record an entry** for: an unresolved sponsor, an investigator- or
+academic-sponsored study, a historical sponsor-transfer conflict, co-lead
+ambiguity between two tracked companies, or an owner asset anchor that is not
+actually confirmed (only guessed). Any of these stays a plain `NEW` discovery
+candidate on every run — recording nothing is always the safe default when
+the cascade does not resolve cleanly; use `DEFERRED_SCHEMA_CASE` (§5) if the
+identity itself needs to be tracked as unresolved, not a disposition.
+`discoveryPath`/`matchedOn` (below) are diagnostic provenance only — *how* a
+candidate was found is never a basis for recording, or for withholding, a
+disposition; only this cascade's own verdict is.
+
+The entry is **not permanent**. Every `registry:discovery` run re-validates
+each currently-recorded disposition — locally, against the owner company/
+asset still resolving and still sharing confirmed identity with the focal
+asset, and over the network, against the registry's current `leadSponsor`
+still matching `recordedLeadSponsor` — and drops any entry that no longer
+holds on the next checkpoint save, exactly as `knownNCTs` itself is
+reconstructed fresh on every save. A dropped entry does not vanish silently:
+it resurfaces as an ordinary discovery finding requiring review, and a
+checkpoint holding one can never report `CLEAN`. A future workflow revision
+that changes this cascade's own rules invalidates every existing disposition
+the same way any other `workflowRevision` bump already forces a full
+re-baseline. The same real registry identity legitimately recorded in more
+than one focal asset's own `foreignStudyDispositions` (independent discovery
+provenance from two different asset-scoped runs) is not a conflict; only a
+collision with that *same file's own* local canonical Study is.
 
 **Partner-aware discovery is implemented.** Section 1's asset-scoped registry
 discovery preflight (`scripts/research-preflight.mjs`,
