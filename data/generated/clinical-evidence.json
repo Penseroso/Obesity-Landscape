@@ -11076,10 +11076,17 @@
           },
           {
             "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
+            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data, narrative/Study-level only - does not directly support any single-cohort responder percentage)",
             "sourceType": "company topline release",
             "publishedAt": "2026-09-08",
-            "checkedAt": "2026-09-14"
+            "checkedAt": "2026-09-15"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-2.htm",
+            "title": "Structure Therapeutics investor presentation, 2026-09-08 (Slide 22: Week 72 ACCESS OLE responder rates, 120 mg dose cohort text; other cohorts shown only as a chart image, not usable as text/table evidence)",
+            "sourceType": "investor presentation",
+            "publishedAt": "2026-09-08",
+            "checkedAt": "2026-09-15"
           }
         ]
       }
@@ -11167,7 +11174,7 @@
         "randomization": "Randomized",
         "masking": "Double-blind",
         "comparator": "Placebo",
-        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Per current sponsor disclosure and protocol design, participants initiate aleniglipron at a 2.5 mg starting dose and titrate to a 180 mg target dose (superseding earlier commentary describing a 120 mg target). The study consists of a 40-week treatment duration, with primary and secondary DXA outcome measures assessed at Week 44."
+        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Per Structure Therapeutics' March 2026 disclosure, participants initiate aleniglipron at a 2.5 mg starting dose and titrate monthly to a 120 mg target dose. CORRECTION (2026-09-15): a prior pass mis-stated this trial's target dose as 180 mg, apparently cross-attributed from the separate ACCOMPLISH-1/ACCOMPLISH-2 Phase 3 dosing (45/90/180 mg); the September 2026 8-K exhibit cited for that figure does not mention any dose for this trial at all, and no source anywhere states a 180 mg dose for the Body Composition study specifically - reverted to the sole directly-supported figure, 120 mg. Per the registry, dosing spans approximately 40 weeks with primary/secondary DXA outcome measures assessed at Week 44; Structure's own August 2026 earnings-release language separately describes the trial as assessing body fat loss 'over a 44-week evaluation period,' updating the March release's '40-week evaluation period' phrasing - both are recorded with their own sourcing rather than merged into one unstated sentence."
       },
       "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2), without diabetes (HbA1c <6.5%) and without an endocrine cause of obesity (e.g. Cushing's syndrome, Prader-Willi syndrome, MC4R deficiency).",
       "populationProfile": {
@@ -11176,11 +11183,11 @@
         "requiresAdditionalCondition": false,
         "treatmentContext": "initial-treatment"
       },
-      "overallDuration": "40-week treatment period; primary and secondary DXA outcome measures assessed at Week 44",
+      "overallDuration": "Approximately 40 weeks of dosing (registry); primary/secondary DXA outcome measures at Week 44 (registry); described by the sponsor's most recent (August 2026) disclosure as a 44-week evaluation period, updating its own March 2026 '40-week evaluation period' phrasing",
       "safetySummary": "An interim disclosure (71 participants enrolled) indicated that initiating treatment with a lower 2.5 mg starting dose improved tolerability, with no adverse-event-related discontinuations reported during the initial dosing period. Full efficacy and safety results were not yet available as of this research; topline data were expected in Q4 2026.",
       "metadata": {
-        "lastVerifiedAt": "2026-09-14",
-        "updatedAt": "2026-09-14",
+        "lastVerifiedAt": "2026-09-15",
+        "updatedAt": "2026-09-15",
         "sources": [
           {
             "url": "https://clinicaltrials.gov/study/NCT07169942",
@@ -11190,17 +11197,17 @@
           },
           {
             "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial (interim Body Composition study commentary)",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial (interim Body Composition study commentary: 2.5 mg starting dose, 120 mg target dose, 40-week evaluation period)",
             "sourceType": "company topline release",
             "publishedAt": "2026-03-16",
-            "checkedAt": "2026-09-14"
+            "checkedAt": "2026-09-15"
           },
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (confirms 2.5 mg start to 180 mg target dose, Q4 2026 topline expected)",
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926092017/tm2622407d1_ex99-1.htm",
+            "title": "Structure Therapeutics Reports Second Quarter 2026 Financial Results and Recent Highlights (Body Composition trial described as a 44-week evaluation period; no dose given)",
             "sourceType": "company topline release",
-            "publishedAt": "2026-09-08",
-            "checkedAt": "2026-09-14"
+            "publishedAt": "2026-08-06",
+            "checkedAt": "2026-09-15"
           }
         ]
       }
@@ -73147,23 +73154,23 @@
       ],
       "analysisPopulation": "Open-label extension analysis population (final, participants continuing treatment)",
       "result": {
-        "value": "76.7%",
-        "numericValue": 76.7,
+        "value": "77%",
+        "numericValue": 77,
         "unit": "percent",
         "resultType": "arm-level",
         "responderThreshold": ">=10%"
       },
       "maturity": "topline",
       "metadata": {
-        "lastVerifiedAt": "2026-09-14",
-        "updatedAt": "2026-09-14",
+        "lastVerifiedAt": "2026-09-15",
+        "updatedAt": "2026-09-15",
         "sources": [
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
-            "sourceType": "company topline release",
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-2.htm",
+            "title": "Structure Therapeutics investor presentation, 2026-09-08 (Slide 22: \"Aleniglipron Achieved Significant Responder Rates at Week 72 in ACCESS OLE\", 120 mg dose cohort)",
+            "sourceType": "investor presentation",
             "publishedAt": "2026-09-08",
-            "checkedAt": "2026-09-14"
+            "checkedAt": "2026-09-15"
           }
         ]
       }
@@ -73177,23 +73184,23 @@
       ],
       "analysisPopulation": "Open-label extension analysis population (final, participants continuing treatment)",
       "result": {
-        "value": "59.6%",
-        "numericValue": 59.6,
+        "value": "60%",
+        "numericValue": 60,
         "unit": "percent",
         "resultType": "arm-level",
         "responderThreshold": ">=15%"
       },
       "maturity": "topline",
       "metadata": {
-        "lastVerifiedAt": "2026-09-14",
-        "updatedAt": "2026-09-14",
+        "lastVerifiedAt": "2026-09-15",
+        "updatedAt": "2026-09-15",
         "sources": [
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
-            "sourceType": "company topline release",
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-2.htm",
+            "title": "Structure Therapeutics investor presentation, 2026-09-08 (Slide 22: \"Aleniglipron Achieved Significant Responder Rates at Week 72 in ACCESS OLE\", 120 mg dose cohort)",
+            "sourceType": "investor presentation",
             "publishedAt": "2026-09-08",
-            "checkedAt": "2026-09-14"
+            "checkedAt": "2026-09-15"
           }
         ]
       }
@@ -73207,23 +73214,23 @@
       ],
       "analysisPopulation": "Open-label extension analysis population (final, participants continuing treatment)",
       "result": {
-        "value": "36.3%",
-        "numericValue": 36.3,
+        "value": "36%",
+        "numericValue": 36,
         "unit": "percent",
         "resultType": "arm-level",
         "responderThreshold": ">=20%"
       },
       "maturity": "topline",
       "metadata": {
-        "lastVerifiedAt": "2026-09-14",
-        "updatedAt": "2026-09-14",
+        "lastVerifiedAt": "2026-09-15",
+        "updatedAt": "2026-09-15",
         "sources": [
           {
-            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Clinical Data Across Oral Small Molecule Amylin and GLP-1 Programs for Chronic Weight Management (ACCESS open-label extension Week 72 final data)",
-            "sourceType": "company topline release",
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926105688/tm2624945d1_ex99-2.htm",
+            "title": "Structure Therapeutics investor presentation, 2026-09-08 (Slide 22: \"Aleniglipron Achieved Significant Responder Rates at Week 72 in ACCESS OLE\", 120 mg dose cohort)",
+            "sourceType": "investor presentation",
             "publishedAt": "2026-09-08",
-            "checkedAt": "2026-09-14"
+            "checkedAt": "2026-09-15"
           }
         ]
       }
