@@ -190,22 +190,40 @@ in-scope entry: the named counterpart must resolve to a tracked company by
 an exact `company.name` match, and that counterpart must carry its own
 Program or Regimen row whose name/code identity overlaps the focal asset's
 (the exact same shared identity authority ADR-0072's asset/deal-aware
-matching uses — `buildRowIdentityKeys`/`identityKeysIntersect` from that same
-module, not a separate copy — including a combination row's
-`components[].assetName`/`codeName`). Only then are that counterpart row's
-own identity terms added as additional `query.intr` search terms. The focal
+matching uses — `buildRowIdentityKeys`/`identityKeysIntersect` from
+`domains/company-pipeline/lib/relationship-identity.mjs`, not a separate
+copy — including a combination row's `components[].assetName`/`codeName`,
+which is what lets a fixed-dose-combination row's listed partner molecule
+resolve to that partner's own tracked row in the first place). The focal
 side reaches beyond the directly-named Program too: any same-company Regimen
 or fixed-dose-combination Program row that composes the named asset with
 another asset of the same company (ADR-0069's asset-scoped reach) is scanned
 for `relationships[]` the same way — a relationship recorded only on a
-composing Regimen, never on the plain Program, still triggers expansion. An
-untracked counterpart, or a tracked counterpart with no matching row (a
-structurally non-actionable case under ADR-0072), adds no terms and never
-blocks discovery. A candidate found only through a partner term is reported
-with its own `partner-intervention` provenance in the preflight diagnostics,
-but this decides only what discovery searches for — **which company's
-Clinical Evidence folder the resulting Study belongs in is still decided
-entirely by
+composing Regimen, never on the plain Program, still triggers this check.
+
+**`components[]` identity resolution and actual search terms are kept
+strictly separate.** A component named inside a combination row denotes a
+*different* real-world asset that the row combines with — not another name
+for the row's own asset — so a matched counterpart row's own components are
+never added as search terms, and a match is only ever expanded into
+`query.intr` terms when the counterpart row denotes *this same asset* under
+its own name/code (`buildRowOwnIdentityKeys`, components excluded, on both
+the focal and counterpart side). A relationship confirmed only through a
+components[] reference — the counterpart's asset is real and tracked, but is
+a distinct molecule merely combined with the focal one — is reported as
+`component-only-match` and never expanded: expanding it would search for
+that different asset's own standalone trials directly, pulling in results
+that have nothing to do with the focal asset. The combination row's *own*
+name/code (for example "Petrelintide / CT-388", not "CT-388" alone) remains
+an ordinary focal search term throughout, so the combination itself stays
+discoverable even though its components are not searched individually. An
+untracked counterpart, or a tracked counterpart with no matching row at all
+(a structurally non-actionable case under ADR-0072), likewise adds no terms
+and never blocks discovery. A candidate found only through a partner term is
+reported with its own `partner-intervention` provenance in the preflight
+diagnostics, but this decides only what discovery searches for — **which
+company's Clinical Evidence folder the resulting Study belongs in is still
+decided entirely by
 the four-step cascade above**, independent of which query surfaced it.
 
 ## 1a. Asset-scoped execution for a named asset (ADR-0069)

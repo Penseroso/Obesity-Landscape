@@ -46,41 +46,62 @@ function isNonEmptyString(value) {
 }
 
 /**
- * Every name a Program or Regimen row is itself known by, for asset-identity
- * matching only - never for the company-name resolution that
- * `RECIPROCAL_RELATIONSHIP_ROLES` accompanies. Accepts either shape
- * directly:
+ * A Program or Regimen row's own direct name/code - never a component's.
+ * This is the row's identity as *itself*: a fixed-dose-combination row's own
+ * `assetName`/`codeName` (for example "Petrelintide / CT-388") counts, but a
+ * listed component's `assetName`/`codeName` does not, because a component
+ * names a *different* real-world thing the row combines with, not another
+ * name for the row's own asset.
  *
+ * Two shapes are accepted directly:
  *   - a raw `PipelineProgramRecord`-like object (`kind: "program"`):
- *     `assetId`, `assetName`, `codeName`, `aliases[].value`, and a
- *     combination row's own `components[].assetName`/`codeName` text.
+ *     `assetId`, `assetName`, `codeName`, `aliases[].value`.
  *   - a raw `RegimenRecord`-like object, or an internally-renamed
  *     equivalent (`kind` anything else): `assetId` (falling back to `id`),
  *     `assetName` (falling back to `name`, then `assetLabel` for callers
- *     that pre-normalize a Regimen's `name` under that key), and the same
- *     `components[]` text a Regimen also carries.
+ *     that pre-normalize a Regimen's `name` under that key).
  *
- * `components[].companyId`/`assetId` are deliberately excluded: Company/
- * Pipeline's validator restricts them to the row's own company only (never
- * a genuine cross-company reference), so they carry no cross-company signal
- * here - only a component's free-text `assetName`/`codeName` might name a
- * partner's own asset (for example a fixed-dose-combination row naming a
- * partner's molecule by its own code).
+ * This is what a caller building an actual search-query string (rather than
+ * comparing identity) must use - see `collectRowIdentityTerms` for the
+ * broader, components-inclusive variant reserved for identity resolution.
  */
-/**
- * The same names as `buildRowIdentityKeys`, but as an original-case array
- * (not normalized, not deduplicated) - what a caller building an actual
- * search-query string (rather than comparing identity) needs.
- */
-export function collectRowIdentityTerms(row, kind = row?.kind) {
+export function collectRowOwnSearchTerms(row, kind = row?.kind) {
   const isProgram = kind === "program";
   const names = isProgram
     ? [row.assetId, row.assetName, row.codeName, ...(row.aliases ?? []).map((alias) => alias?.value)]
     : [row.assetId ?? row.id, row.assetName ?? row.name ?? row.assetLabel];
 
-  names.push(...(row.components ?? []).flatMap((component) => [component?.assetName, component?.codeName]));
-
   return names.filter(isNonEmptyString);
+}
+
+/**
+ * `collectRowOwnSearchTerms` plus a combination row's own
+ * `components[].assetName`/`codeName` text - for **identity resolution
+ * only** (confirming a relationship's counterpart, or an FDC's listed
+ * partner molecule, denotes a specific real-world asset), never for
+ * generating a search-query term list. `components[].companyId`/`assetId`
+ * are excluded even here: Company/Pipeline's validator restricts them to
+ * the row's own company only (never a genuine cross-company reference), so
+ * they carry no cross-company signal - only a component's free-text
+ * `assetName`/`codeName` might name a partner's own asset.
+ *
+ * Deliberately kept separate from `collectRowOwnSearchTerms`: a component
+ * named inside a combination row is a *different* real-world asset than the
+ * row itself (a fixed-dose combination's own petrelintide component is not
+ * "another name for" the CT-388 component, or vice versa), so turning a
+ * component's standalone name into a direct search term would pull in that
+ * component's own, otherwise-unrelated trials - see `buildRowOwnIdentityKeys`
+ * for the check that keeps this distinction meaningful at the call site.
+ */
+export function collectRowIdentityTerms(row, kind = row?.kind) {
+  return [
+    ...collectRowOwnSearchTerms(row, kind),
+    ...(row.components ?? []).flatMap((component) => [component?.assetName, component?.codeName]),
+  ].filter(isNonEmptyString);
+}
+
+export function buildRowOwnIdentityKeys(row, kind = row?.kind) {
+  return new Set(collectRowOwnSearchTerms(row, kind).map(normalizeIdentityText));
 }
 
 export function buildRowIdentityKeys(row, kind = row?.kind) {

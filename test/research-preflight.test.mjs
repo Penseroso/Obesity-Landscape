@@ -2033,41 +2033,55 @@ test("Regression 19: probeRegistryDiscovery partner-expanded query surfaces a pa
   }
 });
 
-test("Regression 20: Regimen-only partner relationship - asset-scoped run reaches a composing Regimen row and expands via the partner's own identity", async () => {
+test("Regression 20: Regimen-only partner relationship - asset-scoped run reaches a composing Regimen row, but a component-linked (genuinely different) partner asset is never expanded into a search term", async () => {
   const fixtureDir = path.join(ROOT, "test", "fixtures", "partner-discovery-regimen");
   fs.rmSync(fixtureDir, { recursive: true, force: true });
   const { companyDir, clinicalDir } = buildPartnerDiscoveryFixture(fixtureDir);
 
   try {
     // The scoped asset itself (wex101-asset) carries zero relationships -
-    // only the composing Regimen does.
+    // only the composing Regimen does. Partner Fixture Therapeutics'
+    // molecule (Partneratide/PTX-9) is a genuinely *different* real-world
+    // asset combined with Wexatide, named only via the Regimen's
+    // components[] - not "Wexatide under another company's code" the way
+    // Kailera's KAI-9531 is Hengrui's HRS9531.
     const context = await loadCompanyContext("wexler-fx", "wex101-asset", {
       companyDir,
       clinicalDir,
       domain: "clinical-evidence",
     });
 
-    // "PTX-9"/"Partneratide" are already reachable via the Regimen's own
-    // components[] text (folded into focal aliases below), so the genuine,
-    // unambiguous proof of partner-aware expansion is the partner's own
-    // internal code the Regimen never mentions at all.
+    // The relationship must still be reached and reported - just never
+    // expanded, since expanding it would search for Partner Fixture's own,
+    // otherwise-unrelated Partneratide trials under a Wexatide-scoped run.
+    const componentOnly = context.partnerDiscoveryDiagnostics.find(
+      (d) => d.status === "component-only-match" && d.counterpartCompanyId === "partner-fixture-fx",
+    );
+    assert.ok(componentOnly, "the composing Regimen's relationship must still be surfaced in diagnostics, as component-only-match");
+    assert.ok(
+      !context.partnerDiscoveryDiagnostics.some((d) => d.status === "partner-expanded" && d.counterpartCompanyId === "partner-fixture-fx"),
+      "a component-linked (different-asset) counterpart must never also appear as partner-expanded",
+    );
+
+    // None of Partner Fixture's own terms - neither the component-text
+    // names nor its own internal code - may appear anywhere in the actual
+    // partner query-term list.
     const partnerTerms = context.partnerAssetAliases.map((t) => t.toLowerCase());
-    assert.ok(
-      partnerTerms.includes("ptx9-internal-9001"),
-      "an asset-scoped run must reach a same-company Regimen composing the focal asset and expand via the partner's own matched identity, including codes the Regimen itself never mentions",
-    );
+    for (const leaked of ["ptx-9", "partneratide", "ptx9-asset", "ptx9-internal-9001"]) {
+      assert.ok(!partnerTerms.includes(leaked), `"${leaked}" must never be expanded into a partner query term`);
+    }
 
-    const partnerExpanded = context.partnerDiscoveryDiagnostics.find(
-      (d) => d.status === "partner-expanded" && d.counterpartCompanyId === "partner-fixture-fx",
-    );
-    assert.ok(partnerExpanded, "the composing Regimen's relationship must be surfaced in partner-aware diagnostics");
-
-    // The focal alias collection itself must also reach the Regimen's own
-    // identity (and its components' names), not only the plain Program's.
+    // The focal alias collection must include the composing Regimen's own
+    // name (so the combination itself remains searchable) but never the
+    // component's own standalone name/code.
+    const focalTerms = context.assetAliases.map((a) => a.toLowerCase());
     assert.ok(
-      context.assetAliases.some((a) => a.toLowerCase().includes("wexatide + partner combination regimen")),
+      focalTerms.some((a) => a.includes("wexatide + partner combination regimen")),
       "focal asset alias collection must include the composing Regimen's own name",
     );
+    for (const leaked of ["ptx-9", "partneratide"]) {
+      assert.ok(!focalTerms.includes(leaked), `"${leaked}" must never leak into the focal query-term list via components[]`);
+    }
 
     // A regimen-free, company-pipeline-domain context must not error or
     // attempt partner-aware expansion at all (asset-scoped only, and
@@ -2078,6 +2092,126 @@ test("Regression 20: Regimen-only partner relationship - asset-scoped run reache
       domain: "company-pipeline",
     });
     assert.deepStrictEqual(cpContext.partnerAssetAliases, []);
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("Regression 21: a fixed-dose-combination is itself searchable, but its sibling component's standalone code never leaks into query.intr on either the focal or partner side - no B-only trial is discovered under an A-scoped run", async () => {
+  const fixtureDir = path.join(ROOT, "test", "fixtures", "partner-discovery-fdc");
+  fs.rmSync(fixtureDir, { recursive: true, force: true });
+  const companyDir = path.join(fixtureDir, "companies");
+  const clinicalDir = path.join(fixtureDir, "clinical-evidence");
+
+  function writeCompany(id, name, programs) {
+    fs.mkdirSync(path.join(companyDir, id), { recursive: true });
+    fs.writeFileSync(path.join(companyDir, id, "company.json"), JSON.stringify({ id, name }, null, 2) + "\n", "utf8");
+    fs.writeFileSync(path.join(companyDir, id, "pipeline-programs.json"), JSON.stringify(programs, null, 2) + "\n", "utf8");
+    fs.writeFileSync(path.join(companyDir, id, "regimens.json"), "[]\n", "utf8");
+  }
+
+  try {
+    // Company A: a plain molecule (core-asset) plus a fixed-dose combination
+    // of that molecule with Company B's own molecule (component-only link -
+    // B is a real, separately-tracked, genuinely different asset).
+    writeCompany("alpha-fx", "Alpha Fixture Biosciences", [
+      {
+        id: "alpha-fx-core-asset",
+        companyId: "alpha-fx",
+        assetId: "core-asset",
+        assetName: "Coreatide",
+        codeName: "ALF-100",
+        aliases: [],
+        relationships: [],
+      },
+      {
+        id: "alpha-fx-core-beta-fdc",
+        companyId: "alpha-fx",
+        assetId: "core-beta-fdc-asset",
+        assetType: "fixed-dose-combination",
+        assetName: "Coreatide / Sidekick Combo",
+        codeName: "ALF-100/SK-77",
+        aliases: [],
+        components: [
+          { assetId: "core-asset", role: "component" },
+          { assetName: "Sidekick Molecule", codeName: "SK-77", externalCompanyName: "Beta Fixture Sidekick Co.", role: "component" },
+        ],
+        relationships: [{ externalCompanyName: "Beta Fixture Sidekick Co.", role: "co-developer", sourceUrls: ["https://example.test/i"] }],
+      },
+    ]);
+    writeCompany("beta-fx", "Beta Fixture Sidekick Co.", [
+      {
+        id: "beta-fx-sk77",
+        companyId: "beta-fx",
+        assetId: "sk77-asset",
+        assetName: "Sidekick Molecule",
+        codeName: "SK-77",
+        aliases: [],
+        relationships: [{ externalCompanyName: "Alpha Fixture Biosciences", role: "co-developer", sourceUrls: ["https://example.test/i"] }],
+      },
+    ]);
+    fs.mkdirSync(clinicalDir, { recursive: true });
+
+    const context = await loadCompanyContext("alpha-fx", "core-asset", {
+      companyDir,
+      clinicalDir,
+      domain: "clinical-evidence",
+    });
+
+    // Term-level check: the FDC's own combination name/code is focal-searchable,
+    // but "SK-77"/"Sidekick Molecule" appear nowhere in either term list.
+    const allTerms = [...context.assetAliases, ...context.partnerAssetAliases].map((t) => t.toLowerCase());
+    assert.ok(
+      allTerms.some((t) => t.includes("alf-100/sk-77") || t.includes("coreatide / sidekick combo")),
+      "the A+B fixed-dose combination's own name/code must remain searchable",
+    );
+    for (const leaked of ["sk-77", "sidekick molecule", "sk77-asset"]) {
+      assert.ok(!allTerms.includes(leaked), `component "${leaked}" must never appear as a standalone query term`);
+    }
+
+    // Fetch-level check (mirrors Regression 19's rigor): actually run
+    // discovery with a mock that returns a real match only for "SK-77" - a
+    // B-only trial with nothing to do with Coreatide. If any query the
+    // preflight issues ever carries "SK-77" alone, that trial would
+    // wrongly surface as discovered under this A-scoped run.
+    const requestedUrls = [];
+    const mockFetch = async (url) => {
+      requestedUrls.push(url);
+      const intr = new URL(url).searchParams.get("query.intr");
+      if (intr === "SK-77" || intr === "Sidekick Molecule") {
+        return {
+          ok: true,
+          json: async () => ({
+            studies: [
+              {
+                protocolSection: {
+                  identificationModule: { nctId: "NCT30000003", briefTitle: "Sidekick Molecule monotherapy trial (unrelated to Coreatide)" },
+                  statusModule: { overallStatus: "RECRUITING", lastUpdatePostDateStruct: { date: "2026-01-01" } },
+                },
+              },
+            ],
+          }),
+        };
+      }
+      return { ok: true, json: async () => ({ studies: [] }) };
+    };
+
+    const result = await probeRegistryDiscovery(context, mockFetch);
+
+    assert.ok(
+      !result.newlyDiscovered.some((d) => d.nctId === "NCT30000003"),
+      "a trial found only under the sibling component's own standalone code must never be discovered by an A-scoped run",
+    );
+    // Check the exact `query.intr` value, not a raw substring match on the
+    // URL - the FDC's own compound code ("ALF-100/SK-77") legitimately
+    // contains "SK-77" as a substring and must remain queryable; only the
+    // *bare*, standalone component code/name must never appear as the
+    // entire query.intr value.
+    const queriedIntrValues = requestedUrls.map((u) => new URL(u).searchParams.get("query.intr"));
+    assert.ok(
+      !queriedIntrValues.includes("SK-77") && !queriedIntrValues.includes("Sidekick Molecule"),
+      "no request issued by an A-scoped run may query the sibling component's own standalone code/name as an exact query.intr value",
+    );
   } finally {
     fs.rmSync(fixtureDir, { recursive: true, force: true });
   }

@@ -30,7 +30,8 @@ import { fileURLToPath } from "node:url";
 import {
   RECIPROCAL_RELATIONSHIP_ROLES,
   buildRowIdentityKeys,
-  collectRowIdentityTerms,
+  buildRowOwnIdentityKeys,
+  collectRowOwnSearchTerms,
   identityKeysIntersect,
   normalizeIdentityText,
 } from "../domains/company-pipeline/lib/relationship-identity.mjs";
@@ -446,7 +447,26 @@ function loadCounterpartAssetRows(companyDir, companyId) {
  * of every relationship considered - resolved, skipped, or excluded - so a
  * caller can inspect exactly why a term was or was not added. Program and
  * Regimen focal rows are treated with identical same-asset identity
- * semantics throughout (both via the shared `buildRowIdentityKeys`).
+ * semantics throughout.
+ *
+ * Two different identity checks are used deliberately, for two different
+ * questions:
+ *   - `buildRowIdentityKeys` (components-inclusive) answers "is this
+ *     counterpart row connected to the focal asset at all" - it is what lets
+ *     a combination row's own `components[]` text find a partner's molecule
+ *     row in the first place, and what distinguishes a genuine
+ *     `counterpart-asset-row-absent` from something being found.
+ *   - `buildRowOwnIdentityKeys` (the row's own name/code only, never a
+ *     component's) answers "does the matched row denote *this same asset*
+ *     under another company's code, safe to search for directly" - only a
+ *     match confirmed this way ever contributes query terms. A row found
+ *     only through a components[] reference denotes a *different*,
+ *     genuinely distinct real-world asset that merely gets combined with the
+ *     focal one (for example a fixed-dose-combination's second component,
+ *     or a Regimen's co-administered product) - adding *its* own standalone
+ *     terms would search for that different asset directly and pull in its
+ *     otherwise-unrelated trials, not the focal asset's. Such a match is
+ *     still reported (`component-only-match`), just never expanded.
  */
 function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, companyDir) {
   const { nameById, idByNormalizedName } = loadTrackedCompanyDirectory(companyDir);
@@ -457,7 +477,7 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
 
   const focalOwnTerms = new Set();
   for (const { row, kind } of scopedRows) {
-    for (const key of buildRowIdentityKeys(row, kind)) focalOwnTerms.add(key);
+    for (const key of buildRowOwnIdentityKeys(row, kind)) focalOwnTerms.add(key);
   }
 
   const termProvenance = new Map(); // normalized term -> { term, counterpartCompanyId, counterpartCompanyName, focalAssetId }
@@ -466,6 +486,7 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
   for (const { row: focalRow, kind: focalKind } of scopedRows) {
     const focalAssetId = focalKind === "program" ? focalRow.assetId : focalRow.id;
     const focalKeys = buildRowIdentityKeys(focalRow, focalKind);
+    const focalOwnKeys = buildRowOwnIdentityKeys(focalRow, focalKind);
 
     for (const relationship of focalRow.relationships ?? []) {
       if (!RECIPROCAL_RELATIONSHIP_ROLES.has(relationship.role)) continue; // one-directional role - never a discovery signal
@@ -499,9 +520,27 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
         continue; // structurally non-actionable here too - not an error, adds no terms
       }
 
+      // Narrow to rows confirmed to be *this same asset* (own-identity
+      // overlap, no components on either side) - never a merely
+      // component-linked, genuinely different asset.
+      const sameAssetRows = matchedRows.filter(({ row: counterpartRow, kind: counterpartKind }) =>
+        identityKeysIntersect(focalOwnKeys, buildRowOwnIdentityKeys(counterpartRow, counterpartKind)),
+      );
+
+      if (sameAssetRows.length === 0) {
+        diagnostics.push({
+          status: "component-only-match",
+          focalAssetId,
+          counterpartCompanyId,
+          counterpartCompanyName: nameById.get(counterpartCompanyId),
+          matchedRowIds: matchedRows.map(({ row }) => row.id),
+        });
+        continue; // confirmed relevant, but a different asset - never expanded into search terms
+      }
+
       const addedTerms = [];
-      for (const { row: matchedRow, kind: matchedKind } of matchedRows) {
-        for (const term of collectRowIdentityTerms(matchedRow, matchedKind)) {
+      for (const { row: matchedRow, kind: matchedKind } of sameAssetRows) {
+        for (const term of collectRowOwnSearchTerms(matchedRow, matchedKind)) {
           if (term.length < 4) continue;
           const normalizedTerm = normalizeIdentityText(term);
           if (focalOwnTerms.has(normalizedTerm)) continue; // already covered by focal-side aliases
@@ -522,7 +561,7 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
         focalAssetId,
         counterpartCompanyId,
         counterpartCompanyName: nameById.get(counterpartCompanyId),
-        matchedRowIds: matchedRows.map(({ row }) => row.id),
+        matchedRowIds: sameAssetRows.map(({ row }) => row.id),
         addedTerms,
       });
     }
@@ -674,26 +713,20 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       scopedRegimens = allRegimens.filter(composesTargetAsset);
     }
 
+    // A composing row's own name/code (for example a fixed-dose combination's
+    // own "Petrelintide / CT-388") is searched - that row's own identity is
+    // why it was pulled into scope. Its components[] are deliberately *not*
+    // scanned here: a component names a different, genuinely distinct
+    // real-world asset the row combines with, not another name for the
+    // focal asset, so turning a sibling component's standalone code into a
+    // direct focal search term would search for that different asset's own
+    // trials too (`collectRowOwnSearchTerms` excludes components for exactly
+    // this reason - see domains/company-pipeline/lib/relationship-identity.mjs).
     for (const prog of scopedPrograms) {
-      if (prog.assetName) assetAliases.add(prog.assetName);
-      if (prog.codeName) assetAliases.add(prog.codeName);
-      for (const alias of prog.aliases ?? []) {
-        if (alias.value) assetAliases.add(alias.value);
-      }
-      // A fixed-dose-combination row's own components can also name a
-      // same-company sibling asset by its own code - the reason a composing
-      // row was pulled into scope at all.
-      for (const component of prog.components ?? []) {
-        if (component?.assetName) assetAliases.add(component.assetName);
-        if (component?.codeName) assetAliases.add(component.codeName);
-      }
+      for (const term of collectRowOwnSearchTerms(prog, "program")) assetAliases.add(term);
     }
     for (const reg of scopedRegimens) {
-      if (reg.name) assetAliases.add(reg.name);
-      for (const component of reg.components ?? []) {
-        if (component?.assetName) assetAliases.add(component.assetName);
-        if (component?.codeName) assetAliases.add(component.codeName);
-      }
+      for (const term of collectRowOwnSearchTerms(reg, "regimen")) assetAliases.add(term);
     }
 
     if (targetAssetId) {
@@ -1912,6 +1945,10 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
           const termsLabel = d.addedTerms.length > 0 ? d.addedTerms.join(", ") : "(no new terms - already covered by focal aliases)";
           console.log(
             `    - ${d.focalAssetId}: expanded via ${d.counterpartCompanyName} (${d.counterpartCompanyId}), matched row(s) [${d.matchedRowIds.join(", ")}] - terms added: ${termsLabel}`,
+          );
+        } else if (d.status === "component-only-match") {
+          console.log(
+            `    - ${d.focalAssetId}: relationship confirmed via ${d.counterpartCompanyName} (${d.counterpartCompanyId}), matched row(s) [${d.matchedRowIds.join(", ")}], but only through a components[] reference to a different asset - no query expansion (would search that different asset's own trials, not this one)`,
           );
         }
       }
