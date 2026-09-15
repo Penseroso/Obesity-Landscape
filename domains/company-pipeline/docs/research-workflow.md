@@ -503,7 +503,14 @@ checked per asset via existing name/alias identity, never by company pair
 alone, so a correctly-reciprocated asset can never mask a genuinely missing
 or mismatched one on a different asset between the same two companies. When
 it cannot narrow a multi-deal pair to exactly one asset, it reports
-`ambiguous-multi-deal-relationship-pair` rather than guessing. It never
+`ambiguous-multi-deal-relationship-pair` rather than guessing. When a
+counterpart names nothing back, it further distinguishes a counterpart that
+tracks the asset under a matching name but simply lacks the relationship
+entry (`missing-reciprocal-relationship`, an editable gap) from a
+counterpart with no matching row at all (`counterpart-asset-row-absent`) —
+the latter is not a signal that the asymmetry is fine; it means a
+relationship edit cannot resolve it by itself and the counterpart's own
+asset coverage needs separate review. It never
 fails a run, edits data, or decides which side is correct; it is most relevant
 whenever this run adds, edits, or reads a `relationships` entry with one of
 these two roles, and a reported candidate resolves the same way as any other

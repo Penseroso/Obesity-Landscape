@@ -335,6 +335,17 @@ nested indication.
   alias registry. When it cannot narrow a multi-deal pair to exactly one
   asset, it reports `ambiguous-multi-deal-relationship-pair` instead of
   guessing a pass, a gap, or a wrong-role verdict.
+- When a counterpart names nothing back at all, the probe distinguishes two
+  different situations rather than reporting both as the same gap: if the
+  counterpart has any row (relationship-bearing or not) whose own name/code
+  identity matches the asset, it is `missing-reciprocal-relationship` — an
+  editable gap. If the counterpart has no matching row at all, it is
+  `counterpart-asset-row-absent` — **not** a verdict that the asymmetry is
+  expected or normal. A relationship edit cannot resolve it by itself: the
+  counterpart may have fully exited the asset, or its side may simply not
+  be researched yet, and this probe cannot tell which from static data
+  alone. Treat it as a prompt to review the counterpart's own asset
+  coverage separately, never as confirmation that nothing needs doing.
 
 ## Program identity
 

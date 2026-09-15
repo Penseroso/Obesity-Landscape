@@ -4604,6 +4604,19 @@ function probeScopeClass() {
 // cannot resolve to exactly one asset, the case is reported as
 // `ambiguousMultiDealPair`, never silently passed and never silently
 // reported as a false gap.
+//
+// Relationship gap vs. counterpart asset-coverage gap: when a counterpart
+// names nothing back at all, that can mean two different things - it may
+// track this asset (by name/alias) but simply never recorded the
+// reciprocal relationship (an editable `missingReciprocal` gap), or it may
+// carry no row at all matching this asset's identity. The latter is
+// reported as `counterpartAssetRowAbsent`, never folded into
+// `missingReciprocal` and never asserted to be an expected/normal
+// asymmetry: a relationship edit cannot resolve it by itself, and this
+// audit has no way to tell, from static data alone, whether the
+// counterpart has fully exited the asset or Company/Pipeline simply has
+// not yet researched the counterpart's side of it. It is a prompt for a
+// separate asset-coverage review, not a verdict.
 
 const reciprocalRelationshipRoles = new Map([
   ["licensor", ["licensee"]],
@@ -4650,11 +4663,22 @@ function relationshipNameKeysIntersect(keysA, keysB) {
  * Relationship-reciprocity candidate finder (ADR-0072). Pure function over
  * already-loaded `companies`, `programs`, and `regimens` - no I/O.
  *
- * Returns four advisory signal lists:
+ * Returns five advisory signal lists:
  *
  *   - `missingReciprocal` - company A names tracked company B with a
- *     reciprocal-role relationship, but no row of B names A back with any of
- *     the expected reciprocal roles for that same asset.
+ *     reciprocal-role relationship; B has at least one row whose own name/
+ *     alias identity matches this asset, but none of those rows name A back
+ *     with any of the expected reciprocal roles. B tracks the asset - this
+ *     is an editable relationship gap.
+ *   - `counterpartAssetRowAbsent` - B names nothing back, and B has no row
+ *     at all whose name/alias identity matches this asset. This is *not* a
+ *     verdict that the asymmetry is expected: B may have fully exited this
+ *     asset, or Company/Pipeline may simply not have researched B's side of
+ *     it yet - this audit cannot distinguish the two from static data
+ *     alone, so it reports a separate coverage-review signal rather than
+ *     asserting either a gap or a pass. Never conflated with
+ *     `missingReciprocal`, since adding a relationship entry alone cannot
+ *     resolve it - B's own asset coverage would need separate review first.
  *   - `inconsistentReciprocalRole` - B does name A back for that same asset,
  *     but with a role outside the expected reciprocal set (for example A
  *     says "licensor", B's own entry for A says "co-developer" rather than
@@ -4699,6 +4723,34 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
     })),
   ];
 
+  // Every asset a company has *any* row for, regardless of whether that row
+  // carries relationships at all - used only to tell apart two different
+  // reasons a counterpart names nothing back: it may simply not track this
+  // asset by any name Company/Pipeline recognizes (`counterpartAssetRowAbsent`),
+  // or it may track the asset under a matching name/alias but never
+  // recorded the reciprocal relationship on it (`missingReciprocal`). This
+  // is a company's complete asset-identity footprint, independent of
+  // `outboundByCompany` below (which only covers relationship-bearing rows).
+  const companyAssetIndex = new Map();
+  for (const row of rows) {
+    const assetsByCompany = companyAssetIndex.get(row.companyId) ?? new Map();
+    const nameKeys = assetsByCompany.get(row.assetId) ?? new Set();
+    for (const key of buildRelationshipRowNameKeys(row)) {
+      nameKeys.add(key);
+    }
+    assetsByCompany.set(row.assetId, nameKeys);
+    companyAssetIndex.set(row.companyId, assetsByCompany);
+  }
+
+  function companyHasMatchingAsset(companyId, nameKeys) {
+    const assetsByCompany = companyAssetIndex.get(companyId);
+    if (assetsByCompany === undefined) return false;
+    for (const candidateNameKeys of assetsByCompany.values()) {
+      if (relationshipNameKeysIntersect(nameKeys, candidateNameKeys)) return true;
+    }
+    return false;
+  }
+
   // Every in-scope, cross-company-pointing relationship, grouped by the
   // company whose row carries it. A `relationship.companyId` entry is the
   // row's own company describing its own role (never a counterpart) and is
@@ -4729,6 +4781,7 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
   const inconsistentReciprocalRole = [];
   const unresolvedCounterpartName = [];
   const ambiguousMultiDealPair = [];
+  const counterpartAssetRowAbsent = [];
 
   // Whether *any* asset on either side of an (X, Y) company pair can be
   // name-matched to an asset on the other side, across every one of their
@@ -4798,18 +4851,43 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
       const counterpartName = companyNameById.get(counterpartCompanyId);
 
       if (backReferences.length === 0) {
-        missingReciprocal.push({
-          companyId,
-          companyName,
-          counterpartCompanyId,
-          counterpartName,
-          role: entry.role,
-          expectedReciprocalRoles,
-          rowId: entry.rowId,
-          rowKind: entry.rowKind,
-          assetLabel: entry.assetLabel,
-          sourceUrls: entry.sourceUrls,
-        });
+        // Two different reasons the counterpart names nothing back: it may
+        // track this asset (by name/alias) but never recorded the
+        // reciprocal relationship - an editable gap - or it may have no row
+        // matching this asset's identity at all, which a relationship edit
+        // cannot fix by itself. The latter is deliberately not classified
+        // as "expected" or "fine": the counterpart may have fully exited
+        // this asset, or Company/Pipeline may simply not have researched
+        // its side of this asset yet - this audit cannot tell which, and
+        // reports it as a separate coverage-review signal rather than
+        // guessing either way.
+        if (companyHasMatchingAsset(counterpartCompanyId, entry.nameKeys)) {
+          missingReciprocal.push({
+            companyId,
+            companyName,
+            counterpartCompanyId,
+            counterpartName,
+            role: entry.role,
+            expectedReciprocalRoles,
+            rowId: entry.rowId,
+            rowKind: entry.rowKind,
+            assetLabel: entry.assetLabel,
+            sourceUrls: entry.sourceUrls,
+          });
+        } else {
+          counterpartAssetRowAbsent.push({
+            companyId,
+            companyName,
+            counterpartCompanyId,
+            counterpartName,
+            role: entry.role,
+            expectedReciprocalRoles,
+            rowId: entry.rowId,
+            rowKind: entry.rowKind,
+            assetLabel: entry.assetLabel,
+            sourceUrls: entry.sourceUrls,
+          });
+        }
         continue;
       }
 
@@ -4923,7 +5001,13 @@ function findRelationshipReciprocityCandidates(companies, programs, regimens) {
     }
   }
 
-  return { missingReciprocal, inconsistentReciprocalRole, unresolvedCounterpartName, ambiguousMultiDealPair };
+  return {
+    missingReciprocal,
+    inconsistentReciprocalRole,
+    unresolvedCounterpartName,
+    ambiguousMultiDealPair,
+    counterpartAssetRowAbsent,
+  };
 }
 
 /**
@@ -4976,7 +5060,45 @@ function selfCheckRelationshipReciprocity() {
     );
   }
 
-  // 3: missing reciprocal - B has no relationship back to A at all.
+  // 3 (Test A - core required regression): B carries a row whose own
+  // alias/name identity matches A's asset, but that row has zero
+  // relationships at all. This must still trigger missing-reciprocal-
+  // relationship: the counterpart-asset-row-absent distinction (test 3b
+  // below) must never swallow a genuine, editable gap just because a
+  // company-asset-coverage check now runs first.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })], {
+        assetId: "shared-asset",
+        assetName: "Shared Asset",
+        codeName: "A-CODE",
+        aliases: [{ type: "development-code", value: "B-CODE" }],
+      }),
+      program("p-b", "co-b", [], {
+        assetId: "b-shared-asset",
+        assetName: "B-CODE",
+        codeName: "B-CODE",
+        aliases: [{ type: "development-code", value: "A-CODE" }],
+      }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 1 &&
+        result.missingReciprocal[0].companyId === "co-a" &&
+        result.missingReciprocal[0].counterpartCompanyId === "co-b",
+      "self-check: a counterpart with a name/alias-matching row but zero relationships on it must still trigger missing-reciprocal-relationship",
+    );
+    assert(
+      result.inconsistentReciprocalRole.length === 0 && result.counterpartAssetRowAbsent.length === 0,
+      "self-check: a matching-identity row with no relationships must not also report inconsistent-reciprocal-role or counterpart-asset-row-absent",
+    );
+  }
+
+  // 3b (Test B): B carries a row, but it has nothing to do with A's asset -
+  // no shared name/alias. This must report counterpart-asset-row-absent,
+  // never missing-reciprocal-relationship: adding a relationship entry
+  // cannot fix this by itself, since there is no row of B's to attach it to.
   {
     const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
     const programs = [
@@ -4985,14 +5107,27 @@ function selfCheckRelationshipReciprocity() {
     ];
     const result = findRelationshipReciprocityCandidates(companies, programs, []);
     assert(
-      result.missingReciprocal.length === 1 &&
-        result.missingReciprocal[0].companyId === "co-a" &&
-        result.missingReciprocal[0].counterpartCompanyId === "co-b",
-      "self-check: a tracked counterpart with no relationship back must trigger missing-reciprocal-relationship",
+      result.counterpartAssetRowAbsent.length === 1 &&
+        result.counterpartAssetRowAbsent[0].companyId === "co-a" &&
+        result.counterpartAssetRowAbsent[0].counterpartCompanyId === "co-b",
+      "self-check: a counterpart whose only row is unrelated to this asset must trigger counterpart-asset-row-absent, not missing-reciprocal-relationship",
     );
     assert(
-      result.inconsistentReciprocalRole.length === 0,
-      "self-check: a wholly absent counterpart entry must not also report inconsistent-reciprocal-role",
+      result.missingReciprocal.length === 0 && result.inconsistentReciprocalRole.length === 0,
+      "self-check: counterpart-asset-row-absent must never also be reported as missing-reciprocal-relationship or inconsistent-reciprocal-role",
+    );
+  }
+
+  // 3c (Test C): B has no rows at all (not even an unrelated one). Same
+  // counterpart-asset-row-absent outcome as 3b, confirming "zero rows" and
+  // "only unrelated rows" both resolve the same way.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })])];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.counterpartAssetRowAbsent.length === 1 && result.missingReciprocal.length === 0,
+      "self-check: a counterpart with zero rows of any kind must trigger counterpart-asset-row-absent, not missing-reciprocal-relationship",
     );
   }
 
@@ -5100,7 +5235,9 @@ function selfCheckRelationshipReciprocity() {
     );
   }
 
-  // 9: regimen rows participate the same as program rows.
+  // 9: regimen rows participate the same as program rows. B has no rows of
+  // any kind, so this is the Test C shape (rowKind: "regimen" instead of
+  // "program") - counterpart-asset-row-absent, not missing-reciprocal.
   {
     const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
     const regimen = (id, companyId, relationships) => ({ id, companyId, relationships });
@@ -5109,8 +5246,40 @@ function selfCheckRelationshipReciprocity() {
     ];
     const result = findRelationshipReciprocityCandidates(companies, [], regimens);
     assert(
-      result.missingReciprocal.length === 1 && result.missingReciprocal[0].rowKind === "regimen",
+      result.counterpartAssetRowAbsent.length === 1 &&
+        result.counterpartAssetRowAbsent[0].rowKind === "regimen",
       "self-check: a regimen row's relationships must be checked the same as a program row's",
+    );
+    assert(
+      result.missingReciprocal.length === 0,
+      "self-check: a regimen counterpart with zero rows of any kind must not be reported as missing-reciprocal-relationship",
+    );
+  }
+
+  // 9b: a regimen row whose own `name` matches a counterpart row's identity,
+  // with zero relationships on that counterpart row, must still resolve as
+  // missing-reciprocal-relationship (Test A shape, regimen-flavored).
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const regimen = (id, companyId, relationships, overrides = {}) => ({
+      id,
+      companyId,
+      name: `${id} name`,
+      relationships,
+      ...overrides,
+    });
+    const regimens = [regimen("r-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })])];
+    const programs = [
+      program("p-b", "co-b", [], { assetId: "b-regimen-match", assetName: "r-a name" }),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, regimens);
+    assert(
+      result.missingReciprocal.length === 1 && result.missingReciprocal[0].rowKind === "regimen",
+      "self-check: a regimen whose name matches a counterpart row's identity, with no relationships on that row, must trigger missing-reciprocal-relationship",
+    );
+    assert(
+      result.counterpartAssetRowAbsent.length === 0,
+      "self-check: a name-matched counterpart row must not also report counterpart-asset-row-absent",
     );
   }
 
@@ -5340,19 +5509,20 @@ function selfCheckRelationshipReciprocity() {
       }),
     ];
     const result = findRelationshipReciprocityCandidates(companies, programs, []);
-    // Company C and D each have an unreciprocated deal with B - genuine,
-    // expected findings unrelated to this test's point, kept in the fixture
-    // deliberately so B carries a raw outbound count of 3.
+    // Company C and D each have an unreciprocated deal with B, and neither
+    // has any row of its own at all - genuine, expected
+    // counterpart-asset-row-absent findings unrelated to this test's point,
+    // kept in the fixture deliberately so B carries a raw outbound count of 3.
     assert(
-      result.missingReciprocal.length === 2 &&
-        result.missingReciprocal.every((entry) => entry.companyId === "co-b"),
-      "self-check fixture check: Company C and D's unreciprocated deals with B must be the only missing-reciprocal findings",
+      result.counterpartAssetRowAbsent.length === 2 &&
+        result.counterpartAssetRowAbsent.every((entry) => entry.companyId === "co-b"),
+      "self-check fixture check: Company C and D's unreciprocated deals with B must be the only counterpart-asset-row-absent findings",
     );
     assert(
-      !result.missingReciprocal.some((entry) => entry.companyId === "co-a" || entry.counterpartCompanyId === "co-a") &&
+      result.missingReciprocal.length === 0 &&
         result.inconsistentReciprocalRole.length === 0 &&
         result.ambiguousMultiDealPair.length === 0,
-      "self-check: a counterpart's unrelated deals with other companies must never trigger multi-deal disambiguation for a pair (A, B) that itself has exactly one deal",
+      "self-check: a counterpart's unrelated deals with other companies must never trigger multi-deal disambiguation, nor a missing-reciprocal finding, for a pair (A, B) that itself has exactly one deal",
     );
   }
 
@@ -5505,18 +5675,35 @@ function probeRelationshipReciprocity() {
 
   console.log("Relationship reciprocity audit (ADR-0072)");
   console.log(
-    `  summary: ${result.missingReciprocal.length} missing-reciprocal-relationship, ${result.inconsistentReciprocalRole.length} inconsistent-reciprocal-role, ${result.unresolvedCounterpartName.length} unresolved-relationship-counterpart-name, ${result.ambiguousMultiDealPair.length} ambiguous-multi-deal-relationship-pair`,
+    `  Relationship gaps (missing-reciprocal-relationship): ${result.missingReciprocal.length}`,
   );
+  console.log(
+    `  Counterpart asset rows absent (relationship edit cannot resolve - review counterpart's own asset coverage): ${result.counterpartAssetRowAbsent.length}`,
+  );
+  console.log(`  Inconsistent reciprocal roles: ${result.inconsistentReciprocalRole.length}`);
+  console.log(`  Unresolved counterpart names (entity-resolution review): ${result.unresolvedCounterpartName.length}`);
+  console.log(`  Ambiguous multi-deal pairs (deal-resolution review): ${result.ambiguousMultiDealPair.length}`);
   console.log("  in scope: licensor <-> licensee, co-developer <-> co-developer only");
   console.log(
     "  matching is asset/deal-aware: a company pair with more than one concurrent deal is checked per asset via existing name/alias identity, never by company pair alone",
   );
 
   if (result.missingReciprocal.length > 0) {
-    console.log("  missing-reciprocal-relationship:");
+    console.log("  missing-reciprocal-relationship (counterpart tracks this asset - add the relationship):");
     for (const entry of result.missingReciprocal) {
       console.log(
         `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.counterpartName}" (${entry.counterpartCompanyId}) as ${entry.role}, expected ${entry.counterpartCompanyId} to name ${entry.companyName} back as one of [${entry.expectedReciprocalRoles.join(", ")}] - no such relationship found`,
+      );
+    }
+  }
+
+  if (result.counterpartAssetRowAbsent.length > 0) {
+    console.log(
+      "  counterpart-asset-row-absent (not a verdict of 'expected' or 'fine' - a relationship edit cannot resolve this by itself; review the counterpart's own asset coverage before concluding anything):",
+    );
+    for (const entry of result.counterpartAssetRowAbsent) {
+      console.log(
+        `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.counterpartName}" (${entry.counterpartCompanyId}) as ${entry.role}, but ${entry.counterpartCompanyId} has no row matching this asset's name/code identity at all - may have fully exited it, or it may simply be unresearched here`,
       );
     }
   }
