@@ -418,7 +418,7 @@
     },
     "relationships": [
       {
-        "externalCompanyName": "Verdiva Bio Limited",
+        "externalCompanyName": "Verdiva Bio",
         "role": "licensee",
         "territories": ["Worldwide excluding Greater China and South Korea"],
         "rights": ["development", "manufacturing", "commercialization"],
@@ -540,7 +540,7 @@
     },
     "relationships": [
       {
-        "externalCompanyName": "Verdiva Bio Limited",
+        "externalCompanyName": "Verdiva Bio",
         "role": "licensee",
         "territories": ["Worldwide excluding Greater China and South Korea"],
         "rights": ["development", "manufacturing", "commercialization"],
@@ -598,7 +598,7 @@
     },
     "relationships": [
       {
-        "externalCompanyName": "Verdiva Bio Limited",
+        "externalCompanyName": "Verdiva Bio",
         "role": "licensee",
         "territories": ["Worldwide excluding Greater China and South Korea"],
         "rights": ["development", "manufacturing", "commercialization"],

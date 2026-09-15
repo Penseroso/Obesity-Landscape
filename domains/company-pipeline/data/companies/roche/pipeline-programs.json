@@ -34,9 +34,19 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
     },
+    "relationships": [
+      {
+        "externalCompanyName": "Chugai Pharmaceutical Co., Ltd.",
+        "role": "licensee",
+        "territories": ["Japan"],
+        "rights": ["development", "commercialization"],
+        "effectiveDate": "2025-10-10",
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351045",
@@ -64,6 +74,13 @@
           "title": "Enicepatide | CVRM | Genentech Pipeline and Clinical Trials",
           "sourceType": "company pipeline page",
           "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
+          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-10",
+          "checkedAt": "2026-09-15"
         }
       ]
     },
@@ -103,9 +120,19 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
     },
+    "relationships": [
+      {
+        "externalCompanyName": "Chugai Pharmaceutical Co., Ltd.",
+        "role": "licensee",
+        "territories": ["Japan"],
+        "rights": ["development", "commercialization"],
+        "effectiveDate": "2025-10-10",
+        "sourceUrls": ["https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"]
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351058",
@@ -126,6 +153,13 @@
           "title": "Enicepatide | CVRM | Genentech Pipeline and Clinical Trials",
           "sourceType": "company pipeline page",
           "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
+          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-10",
+          "checkedAt": "2026-09-15"
         }
       ]
     },

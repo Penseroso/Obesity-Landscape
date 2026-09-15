@@ -611,16 +611,9 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
-    "relationships": [
-      {
-        "externalCompanyName": "Eli Lilly and Company",
-        "role": "co-developer",
-        "sourceUrls": ["https://www.astrazenecaclinicaltrials.com/study/H8O-MC-GWBP/"]
-      }
-    ],
     "metadata": {
-      "lastVerifiedAt": "2026-08-10",
-      "updatedAt": "2026-08-10",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://www.astrazeneca.com/content/dam/az/PDF/2013/Diabetes-alliance-transaction-overview.pdf",

@@ -1815,18 +1815,9 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Not separately confirmed"
     },
-    "relationships": [
-      {
-        "externalCompanyName": "Eli Lilly and Company",
-        "role": "co-developer",
-        "sourceUrls": [
-          "https://www.astrazenecaclinicaltrials.com/study/H8O-MC-GWBP/"
-        ]
-      }
-    ],
     "metadata": {
-      "lastVerifiedAt": "2026-08-10",
-      "updatedAt": "2026-08-10",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://www.astrazeneca.com/content/dam/az/PDF/2013/Diabetes-alliance-transaction-overview.pdf",
@@ -2174,7 +2165,7 @@
         ]
       },
       {
-        "externalCompanyName": "F. Hoffmann-La Roche Ltd",
+        "externalCompanyName": "Roche",
         "role": "licensor",
         "territories": [
           "Japan"
@@ -11535,9 +11526,26 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
     },
+    "relationships": [
+      {
+        "externalCompanyName": "Chugai Pharmaceutical Co., Ltd.",
+        "role": "licensee",
+        "territories": [
+          "Japan"
+        ],
+        "rights": [
+          "development",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-10-10",
+        "sourceUrls": [
+          "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"
+        ]
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351045",
@@ -11565,6 +11573,13 @@
           "title": "Enicepatide | CVRM | Genentech Pipeline and Clinical Trials",
           "sourceType": "company pipeline page",
           "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
+          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-10",
+          "checkedAt": "2026-09-15"
         }
       ]
     },
@@ -11604,9 +11619,26 @@
       "stageBasis": "Operational evidence",
       "stageOperationalState": "Initiated or active"
     },
+    "relationships": [
+      {
+        "externalCompanyName": "Chugai Pharmaceutical Co., Ltd.",
+        "role": "licensee",
+        "territories": [
+          "Japan"
+        ],
+        "rights": [
+          "development",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-10-10",
+        "sourceUrls": [
+          "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html"
+        ]
+      }
+    ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-21",
-      "updatedAt": "2026-07-25",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://clinicaltrials.gov/study/NCT07351058",
@@ -11627,6 +11659,13 @@
           "title": "Enicepatide | CVRM | Genentech Pipeline and Clinical Trials",
           "sourceType": "company pipeline page",
           "checkedAt": "2026-07-21"
+        },
+        {
+          "url": "https://www.chugai-pharm.co.jp/english/news/detail/20251010170000_1186.html",
+          "title": "Chugai In-Licenses GLP-1/GIP Receptor Agonist CT-388",
+          "sourceType": "company press release",
+          "publishedAt": "2025-10-10",
+          "checkedAt": "2026-09-15"
         }
       ]
     },
@@ -11669,7 +11708,7 @@
     },
     "relationships": [
       {
-        "externalCompanyName": "Verdiva Bio Limited",
+        "externalCompanyName": "Verdiva Bio",
         "role": "licensee",
         "territories": [
           "Worldwide excluding Greater China and South Korea"
@@ -12238,7 +12277,7 @@
     },
     "relationships": [
       {
-        "externalCompanyName": "Verdiva Bio Limited",
+        "externalCompanyName": "Verdiva Bio",
         "role": "licensee",
         "territories": [
           "Worldwide excluding Greater China and South Korea"
@@ -12302,7 +12341,7 @@
     },
     "relationships": [
       {
-        "externalCompanyName": "Verdiva Bio Limited",
+        "externalCompanyName": "Verdiva Bio",
         "role": "licensee",
         "territories": [
           "Worldwide excluding Greater China and South Korea"
@@ -12732,11 +12771,27 @@
         "sourceUrls": [
           "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
         ]
+      },
+      {
+        "externalCompanyName": "Sciwind Biosciences",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China and South Korea"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-31",
-      "updatedAt": "2026-07-31",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://verdivabio.com/",
@@ -12818,11 +12873,27 @@
         "sourceUrls": [
           "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
         ]
+      },
+      {
+        "externalCompanyName": "Sciwind Biosciences",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China and South Korea"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-31",
-      "updatedAt": "2026-07-31",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://verdivabio.com/",
@@ -12893,11 +12964,27 @@
         "sourceUrls": [
           "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
         ]
+      },
+      {
+        "externalCompanyName": "Sciwind Biosciences",
+        "role": "licensor",
+        "territories": [
+          "Worldwide excluding Greater China and South Korea"
+        ],
+        "rights": [
+          "development",
+          "manufacturing",
+          "commercialization"
+        ],
+        "effectiveDate": "2025-01-10",
+        "sourceUrls": [
+          "https://www.prnewswire.com/news-releases/sciwind-biosciences-announces-global-licensing-and-collaboration-agreement-for-metabolic-disease-portfolio-302347773.html"
+        ]
       }
     ],
     "metadata": {
-      "lastVerifiedAt": "2026-07-31",
-      "updatedAt": "2026-07-31",
+      "lastVerifiedAt": "2026-09-15",
+      "updatedAt": "2026-09-15",
       "sources": [
         {
           "url": "https://www.biospace.com/press-releases/verdiva-bio-initiates-phase-1-study-of-vrb-103-a-selective-oral-amylin-peptide-analog-with-weekly-dosing-potential",
