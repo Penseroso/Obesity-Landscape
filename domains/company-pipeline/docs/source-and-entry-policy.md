@@ -658,6 +658,33 @@ and do not invent a resolution.
 Do **not** redesign the schema for field-level provenance here;
 field-level provenance is logged as an edge case (see `edge-cases.md`).
 
+## Company identity and SEC CIK authoring policy
+
+The `Company.secCik` field records the official Central Index Key (CIK) assigned
+by the U.S. Securities and Exchange Commission (SEC) to reporting entities.
+
+Rules:
+
+- **Source authority**: Verify against the official SEC EDGAR company database
+  or official EDGAR filings (Form 10-K, 10-Q, 8-K, 20-F, 6-K).
+- **Format invariant**: Exactly a 10-digit zero-padded string (`/^\d{10}$/`).
+  Enforced by validator on `company.json`.
+- **No unverified inference**: Never author or infer a CIK from stock ticker
+  symbols, general search engine results, or company name heuristics alone. If a
+  company does not report to the U.S. SEC (e.g. unlisted private biotechs or foreign
+  issuers not registered with the SEC), omit `secCik` or leave it `undefined`.
+- **Conflict detection**: If canonical `company.secCik` and stored checkpoint
+  `secEdgar.cik` disagree, research preflight flags `CIK_CONFLICT` and halts SEC
+  discovery until reconciled.
+- **Authority hierarchy**:
+  1. Explicit CLI override (`--sec-cik <cik>`)
+  2. Canonical `company.secCik` in `company.json`
+  3. Stored checkpoint CIK in `researchState.discoveryCheckpoint.secEdgar.cik`
+  4. Operational fallback mapping (`KNOWN_SEC_CIKS`)
+
+Hard-coded `KNOWN_SEC_CIKS` is solely an operational bootstrap convenience;
+it is **not** a canonical authority and must never override canonical metadata.
+
 ## Registry promotion
 
 During research, add a new development-stage, regulatory-state, or company

@@ -267,11 +267,14 @@ export function computeScientificFingerprint(study) {
 }
 
 /**
+/**
  * Resolves external DOIs and PMC IDs to PMIDs via PubMed E-utilities.
+ * Distinguishes normal 200 OK responses with 0 hits (non-PubMed sources) from API errors.
  */
 export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
   const pmidMap = new Map();
   const unresolved = [];
+  const nonPubMed = [];
 
   for (const doi of dois) {
     try {
@@ -280,10 +283,12 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
       if (res.ok) {
         const data = await res.json();
         const idList = data.esearchresult?.idlist ?? [];
-        if (idList.length > 0) {
+        if (idList.length === 1) {
           pmidMap.set(doi, idList[0]);
+        } else if (idList.length > 1) {
+          unresolved.push({ type: "doi", identifier: doi, reason: "AMBIGUOUS_MULTIPLE_PMIDS" });
         } else {
-          unresolved.push({ type: "doi", identifier: doi, reason: "NOT_FOUND_ON_PUBMED" });
+          nonPubMed.push({ type: "doi", identifier: doi, reason: "NOT_FOUND_ON_PUBMED" });
         }
       } else {
         unresolved.push({ type: "doi", identifier: doi, reason: `HTTP_${res.status}` });
@@ -300,10 +305,12 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
       if (res.ok) {
         const data = await res.json();
         const idList = data.esearchresult?.idlist ?? [];
-        if (idList.length > 0) {
+        if (idList.length === 1) {
           pmidMap.set(pmc, idList[0]);
+        } else if (idList.length > 1) {
+          unresolved.push({ type: "pmc", identifier: pmc, reason: "AMBIGUOUS_MULTIPLE_PMIDS" });
         } else {
-          unresolved.push({ type: "pmc", identifier: pmc, reason: "NOT_FOUND_ON_PUBMED" });
+          nonPubMed.push({ type: "pmc", identifier: pmc, reason: "NOT_FOUND_ON_PUBMED" });
         }
       } else {
         unresolved.push({ type: "pmc", identifier: pmc, reason: `HTTP_${res.status}` });
@@ -313,10 +320,9 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
     }
   }
 
-  return { pmidMap, unresolved };
+  return { pmidMap, unresolved, nonPubMed };
 }
 
-/**
 /**
  * Reads and indexes company, pipeline, and clinical evidence targets from disk.
  *
@@ -498,12 +504,14 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
 
   // Resolve external DOIs and PMCs to PMIDs
   const unresolvedIdentifiers = [];
+  const nonPubMedIdentifiers = [];
   if (knownDOIs.size > 0 || knownPMCs.size > 0) {
-    const { pmidMap, unresolved } = await resolveDoisAndPmcsToPmids([...knownDOIs], [...knownPMCs], fetchFn);
+    const { pmidMap, unresolved, nonPubMed } = await resolveDoisAndPmcsToPmids([...knownDOIs], [...knownPMCs], fetchFn);
     for (const pmid of pmidMap.values()) {
       knownPMIDs.add(pmid);
     }
-    unresolvedIdentifiers.push(...unresolved);
+    unresolvedIdentifiers.push(...(unresolved ?? []));
+    nonPubMedIdentifiers.push(...(nonPubMed ?? []));
   }
 
   return {
@@ -519,6 +527,7 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     knownPMIDs: [...knownPMIDs].sort(),
     assetAliases: [...assetAliases].filter(Boolean).sort(),
     unresolvedIdentifiers,
+    nonPubMedIdentifiers,
   };
 }
 
@@ -843,6 +852,7 @@ export function computeNoticeFingerprint(notices, isRetracted = false) {
  */
 export async function probeLiteratureHealth(context, fetchFn = fetch) {
   const unresolved = context.unresolvedIdentifiers ?? [];
+  const nonPubMed = context.nonPubMedIdentifiers ?? [];
   const hasUnresolved = unresolved.length > 0;
 
   if (context.knownPMIDs.length === 0) {
@@ -856,6 +866,7 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
       hasIncomplete: hasUnresolved,
       checked: [],
       unresolvedIdentifiers: unresolved,
+      nonPubMedIdentifiers: nonPubMed,
     };
   }
 
@@ -876,6 +887,7 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
         httpStatus: res.status,
         checked: [],
         unresolvedIdentifiers: unresolved,
+        nonPubMedIdentifiers: nonPubMed,
       };
     }
     xml = await res.text();
@@ -891,6 +903,7 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
       message: err.message,
       checked: [],
       unresolvedIdentifiers: unresolved,
+      nonPubMedIdentifiers: nonPubMed,
     };
   }
 
@@ -911,64 +924,102 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
     }
 
     const prevBaseline = monitored[pmid];
+    const prevStatus = prevBaseline?.status ?? (prevBaseline ? "clean" : null);
+    const prevFingerprint = prevBaseline?.noticeFingerprint ?? null;
+
     const docStatus = doc.isRetracted ? "retracted" : (doc.hasErratum ? "has-erratum" : "clean");
-    const noticeFingerprint = computeNoticeFingerprint(doc.notices, doc.isRetracted);
+    const noticeFingerprint = (doc.hasErratum || doc.isRetracted)
+      ? computeNoticeFingerprint(doc.notices, doc.isRetracted)
+      : null;
     const noticeTypes = [...new Set((doc.notices ?? []).map((n) => n.refType))].sort();
+
+    let itemHasDelta = false;
+    let itemDeltaVerdict = "CLEAN";
+
+    if (!prevBaseline) {
+      // Unbaselined PMID: if it carries adverse notice, flag as delta
+      if (docStatus === "retracted") {
+        itemHasDelta = true;
+        itemDeltaVerdict = "RETRACTION_DETECTED";
+        newErrataCount += 1;
+      } else if (docStatus === "has-erratum") {
+        itemHasDelta = true;
+        itemDeltaVerdict = "NEW_ERRATUM_DETECTED";
+        newErrataCount += 1;
+      } else {
+        itemHasDelta = false;
+        itemDeltaVerdict = "CLEAN";
+      }
+    } else {
+      // Baselined PMID: compare previous (status, noticeFingerprint) vs current (status, noticeFingerprint)
+      const statusChanged = prevStatus !== docStatus;
+      const fingerprintChanged = prevFingerprint !== noticeFingerprint;
+
+      if (statusChanged || fingerprintChanged) {
+        itemHasDelta = true;
+        newErrataCount += 1;
+
+        if (docStatus === "retracted") {
+          itemDeltaVerdict = "RETRACTION_DETECTED";
+        } else if (docStatus === "has-erratum") {
+          if (prevStatus === "clean") {
+            itemDeltaVerdict = "NEW_ERRATUM_DETECTED";
+          } else if (prevStatus === "retracted") {
+            itemDeltaVerdict = "LITERATURE_NOTICE_CHANGED";
+          } else {
+            itemDeltaVerdict = "NEW_ERRATUM_DETECTED";
+          }
+        } else {
+          // docStatus === "clean" while prevStatus was "has-erratum" or "retracted"
+          // Adverse notice removed / erratum cleared / paper reinstated as clean
+          itemDeltaVerdict = "LITERATURE_NOTICE_CHANGED";
+        }
+      } else {
+        itemHasDelta = false;
+        if (docStatus === "retracted") {
+          itemDeltaVerdict = "KNOWN_RETRACTION";
+        } else if (docStatus === "has-erratum") {
+          itemDeltaVerdict = "KNOWN_ERRATUM";
+        } else {
+          itemDeltaVerdict = "CLEAN";
+        }
+      }
+    }
 
     if (doc.hasErratum || doc.isRetracted) {
       errataCount += 1;
-      const isRetractionUpgrade = doc.isRetracted && prevBaseline?.status !== "retracted";
-      const isFingerprintMatch = prevBaseline?.noticeFingerprint
-        ? prevBaseline.noticeFingerprint === noticeFingerprint
-        : (prevBaseline?.status === docStatus && !isRetractionUpgrade);
-
-      const isKnown = Boolean(prevBaseline && isFingerprintMatch && !isRetractionUpgrade);
-
-      let deltaVerdict = "KNOWN_ERRATUM";
-      let itemHasDelta = false;
-
-      if (!isKnown) {
-        itemHasDelta = true;
-        newErrataCount += 1;
-        if (doc.isRetracted) {
-          deltaVerdict = "RETRACTION_DETECTED";
-        } else {
-          deltaVerdict = "NEW_ERRATUM_DETECTED";
-        }
-      }
-
-      checked.push({
-        pmid,
-        title: doc.title,
-        status: docStatus,
-        deltaVerdict,
-        notices: doc.notices,
-        noticeFingerprint,
-        noticeTypes,
-        hasDelta: itemHasDelta,
-      });
-    } else {
-      checked.push({
-        pmid,
-        title: doc.title,
-        pubdate: doc.pubdate,
-        source: doc.source,
-        status: "clean",
-        deltaVerdict: "CLEAN",
-        noticeFingerprint: null,
-        noticeTypes: [],
-        hasDelta: false,
-      });
     }
+
+    checked.push({
+      pmid,
+      title: doc.title,
+      pubdate: doc.pubdate,
+      source: doc.source,
+      status: docStatus,
+      deltaVerdict: itemDeltaVerdict,
+      notices: doc.notices ?? [],
+      noticeFingerprint,
+      noticeTypes,
+      hasDelta: itemHasDelta,
+      prevStatus,
+      prevFingerprint,
+    });
   }
 
-  const hasDelta = newErrataCount > 0;
+  const hasDelta = checked.some((c) => c.hasDelta);
   const hasIncomplete = hasMissingPmids || hasUnresolved;
 
   let deltaVerdict = "CLEAN";
   if (hasDelta) {
     const hasRetractions = checked.some((c) => c.hasDelta && c.status === "retracted");
-    deltaVerdict = hasRetractions ? "RETRACTION_DETECTED" : "NEW_ERRATUM_DETECTED";
+    const hasNewErrata = checked.some((c) => c.hasDelta && c.status === "has-erratum");
+    if (hasRetractions) {
+      deltaVerdict = "RETRACTION_DETECTED";
+    } else if (hasNewErrata) {
+      deltaVerdict = "NEW_ERRATUM_DETECTED";
+    } else {
+      deltaVerdict = "LITERATURE_NOTICE_CHANGED";
+    }
   } else if (hasIncomplete) {
     deltaVerdict = "PARTIAL";
   }
@@ -983,6 +1034,7 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
     hasIncomplete,
     checked,
     unresolvedIdentifiers: unresolved,
+    nonPubMedIdentifiers: nonPubMed,
   };
 }
 
@@ -1515,13 +1567,19 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
       console.log(`  CLEAN: 0 errata/retractions across ${healthRes.citedCount} monitored publications.`);
     } else {
       console.log(`  NOTICES: ${healthRes.errataCount} errata/retractions detected (${healthRes.newErrataCount} new since baseline):`);
-      for (const c of healthRes.checked.filter((x) => x.status === "has-erratum" || x.status === "retracted" || x.status === "ERRATUM_DETECTED")) {
+      for (const c of healthRes.checked.filter((x) => x.status === "has-erratum" || x.status === "retracted" || x.deltaVerdict === "LITERATURE_NOTICE_CHANGED" || x.hasDelta)) {
         const badge = c.status === "retracted" ? "[RETRACTED]" : `[${c.deltaVerdict}]`;
         console.log(`    ! ${badge} PMID ${c.pmid}: "${c.title}"`);
         if (c.noticeFingerprint) console.log(`      Notice Fingerprint: ${c.noticeFingerprint} (${(c.noticeTypes ?? []).join(", ")})`);
         for (const n of c.notices ?? []) {
           console.log(`      - ${n.refType || "Notice"}: ${n.source}`);
         }
+      }
+    }
+    if (healthRes.nonPubMedIdentifiers?.length > 0) {
+      console.log(`  INFO: ${healthRes.nonPubMedIdentifiers.length} non-PubMed literature source(s) excluded from PubMed health monitoring:`);
+      for (const np of healthRes.nonPubMedIdentifiers) {
+        console.log(`    - [${np.type}] ${np.identifier} (Valid external source, not indexed on PubMed)`);
       }
     }
     if (healthRes.unresolvedIdentifiers?.length > 0) {

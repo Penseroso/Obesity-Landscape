@@ -1021,6 +1021,12 @@ function validateResearchState(researchState, context) {
         assert(/^\d+$/.test(pmid), `${context}: monitoredPMIDs key "${pmid}" must be numeric PMID`);
         assert(isObject(record), `${context}: monitoredPMIDs["${pmid}"] must be an object`);
         assert(["clean", "has-erratum", "retracted"].includes(record.status), `${context}: monitoredPMIDs status "${record.status}" is invalid`);
+        if (record.status === "has-erratum" || record.status === "retracted") {
+          assert(
+            isNonEmptyString(record.noticeFingerprint),
+            `${context}: monitoredPMIDs["${pmid}"].noticeFingerprint is required when status is "${record.status}"`,
+          );
+        }
         if (record.noticeFingerprint !== undefined) {
           assert(isNonEmptyString(record.noticeFingerprint), `${context}: monitoredPMIDs["${pmid}"].noticeFingerprint must be non-empty string`);
         }
@@ -3930,6 +3936,35 @@ function validateSyntheticFixtures() {
     );
   }
   assert(programMetadataFailed, "Expected record metadata with researchState to fail validation");
+
+  // Mutation probe: monitoredPMIDs with has-erratum or retracted requires noticeFingerprint
+  const invalidErratumFpProbe = cloneJson(valid.company);
+  invalidErratumFpProbe.researchState = {
+    checkpointVersion: 1,
+    workflowRevision: "rev-1",
+    discoveryCheckpoint: {
+      asOf: "2026-09-15",
+      literature: {
+        monitoredPMIDs: {
+          "12345678": {
+            status: "has-erratum",
+            lastCheckedAt: "2026-09-15",
+          },
+        },
+      },
+    },
+  };
+  let erratumFpFailed = false;
+  try {
+    validateCompany(invalidErratumFpProbe, "synthetic:company-erratum-fp-probe");
+  } catch (error) {
+    erratumFpFailed = true;
+    assert(
+      /noticeFingerprint is required when status is "has-erratum"/.test(error.message),
+      `Expected noticeFingerprint required message, received: ${error.message}`,
+    );
+  }
+  assert(erratumFpFailed, "Expected monitoredPMID with has-erratum without noticeFingerprint to fail validation");
 
   const multiCompanyDir = path.join(syntheticFixtureDir, "valid-multi-company");
   const multiCompanyA = readCompanyFolder(multiCompanyDir, "company-a", true);

@@ -28,6 +28,7 @@ import {
   probeRegistryUpdate,
   probeSecFilings,
   resolveCik,
+  resolveDoisAndPmcsToPmids,
   saveBaselineCheckpoint,
 } from "../scripts/research-preflight.mjs";
 
@@ -1233,4 +1234,211 @@ test("Regression 15: researchState schema placement restricted strictly to autho
       }
     }
   }
+});
+
+test("Regression 16: Bi-directional adverse notice delta detection and noticeFingerprint validator invariant", async () => {
+  const pmid = "12345678";
+  const initialNotices = [{ refType: "ErratumIn", source: "Nat Med. 2026", noticePmid: "12345679" }];
+  const initialFp = computeNoticeFingerprint(initialNotices, false);
+
+  // 1. erratum -> clean transition: baseline had erratum, now PubMed returns clean paper
+  const erratumBaselineContext = {
+    knownPMIDs: [pmid],
+    baseline: {
+      discoveryCheckpoint: {
+        literature: {
+          monitoredPMIDs: {
+            [pmid]: {
+              status: "has-erratum",
+              noticeFingerprint: initialFp,
+              noticeTypes: ["ErratumIn"],
+              lastCheckedAt: "2026-09-01",
+            },
+          },
+        },
+      },
+    },
+  };
+
+  const cleanPaperXml = `
+    <PubmedArticle>
+      <MedlineCitation>
+        <PMID>${pmid}</PMID>
+        <Article>
+          <ArticleTitle>Clean Paper Without Erratum</ArticleTitle>
+          <Journal><JournalIssue><PubDate><Year>2026</Year></PubDate></JournalIssue></Journal>
+        </Article>
+      </MedlineCitation>
+    </PubmedArticle>
+  `;
+
+  const mockFetchClean = async () => ({ ok: true, text: async () => cleanPaperXml });
+  const resClean = await probeLiteratureHealth(erratumBaselineContext, mockFetchClean);
+
+  assert.strictEqual(resClean.hasDelta, true, "erratum -> clean transition must be flagged as a delta");
+  assert.strictEqual(resClean.deltaVerdict, "LITERATURE_NOTICE_CHANGED");
+  assert.notStrictEqual(resClean.deltaVerdict, "CLEAN", "Silent clean on notice removal/resolution is strictly forbidden");
+  assert.strictEqual(resClean.checked[0].deltaVerdict, "LITERATURE_NOTICE_CHANGED");
+  assert.strictEqual(resClean.checked[0].hasDelta, true);
+
+  // 2. retracted -> changed notice set: baseline had retraction with initialFp, now retraction notice set has changed
+  const retractionBaselineContext = {
+    knownPMIDs: [pmid],
+    baseline: {
+      discoveryCheckpoint: {
+        literature: {
+          monitoredPMIDs: {
+            [pmid]: {
+              status: "retracted",
+              noticeFingerprint: initialFp,
+              noticeTypes: ["RetractionIn"],
+              lastCheckedAt: "2026-09-01",
+            },
+          },
+        },
+      },
+    },
+  };
+
+  const updatedRetractionXml = `
+    <PubmedArticle>
+      <MedlineCitation>
+        <PMID>${pmid}</PMID>
+        <CommentsCorrectionsList>
+          <CommentsCorrections RefType="RetractionIn">
+            <RefSource>Nat Med. 2026 Nov; Updated Retraction Notice</RefSource>
+            <PMID>99999999</PMID>
+          </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <Article>
+          <ArticleTitle>Retracted Paper With Modified Notice</ArticleTitle>
+          <Journal><JournalIssue><PubDate><Year>2026</Year></PubDate></JournalIssue></Journal>
+        </Article>
+      </MedlineCitation>
+    </PubmedArticle>
+  `;
+
+  const mockFetchUpdatedRetraction = async () => ({ ok: true, text: async () => updatedRetractionXml });
+  const resUpdatedRetraction = await probeLiteratureHealth(retractionBaselineContext, mockFetchUpdatedRetraction);
+
+  assert.strictEqual(resUpdatedRetraction.hasDelta, true, "retracted -> changed notice set must be flagged as a delta");
+  assert.strictEqual(resUpdatedRetraction.deltaVerdict, "RETRACTION_DETECTED");
+  assert.strictEqual(resUpdatedRetraction.checked[0].hasDelta, true);
+
+  // 3. 동일 notice -> no delta
+  const sameErratumXml = `
+    <PubmedArticle>
+      <MedlineCitation>
+        <PMID>${pmid}</PMID>
+        <CommentsCorrectionsList>
+          <CommentsCorrections RefType="ErratumIn">
+            <RefSource>Nat Med. 2026</RefSource>
+            <PMID>12345679</PMID>
+          </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <Article>
+          <ArticleTitle>Paper with Identical Erratum</ArticleTitle>
+          <Journal><JournalIssue><PubDate><Year>2026</Year></PubDate></JournalIssue></Journal>
+        </Article>
+      </MedlineCitation>
+    </PubmedArticle>
+  `;
+
+  const mockFetchSame = async () => ({ ok: true, text: async () => sameErratumXml });
+  const resSame = await probeLiteratureHealth(erratumBaselineContext, mockFetchSame);
+
+  assert.strictEqual(resSame.hasDelta, false, "Identical notice must produce no delta");
+  assert.strictEqual(resSame.deltaVerdict, "CLEAN");
+  assert.strictEqual(resSame.checked[0].deltaVerdict, "KNOWN_ERRATUM");
+  assert.strictEqual(resSame.checked[0].hasDelta, false);
+
+  // 4. Invariant assertion via synthetic data validation
+  const synthOut = childProcess.execSync("node scripts/data-registry.mjs validate:synthetic", {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  assert.match(synthOut, /Validated synthetic fixtures/);
+});
+
+test("Regression 17: Genuine non-PubMed DOIs do not block checkpoint advance, while API/network errors do", async () => {
+  const nonPubMedDoi = "10.1016/j.jacc.2026.01.001";
+  const failingDoi = "10.1056/nejmoa2600001";
+
+  // 1. Normal 200 OK query with 0 hits on PubMed (e.g. non-PubMed indexed journal or book)
+  const mockFetchNonPubMed = async () => ({
+    ok: true,
+    status: 200,
+    json: async () => ({ esearchresult: { idlist: [] } }),
+  });
+
+  const { pmidMap: pm1, unresolved: un1, nonPubMed: np1 } = await resolveDoisAndPmcsToPmids([nonPubMedDoi], [], mockFetchNonPubMed);
+  assert.strictEqual(pm1.size, 0);
+  assert.strictEqual(un1.length, 0, "Normal 0-hit query must NOT be placed in unresolvedIdentifiers");
+  assert.strictEqual(np1.length, 1, "Normal 0-hit query must be placed in nonPubMed");
+  assert.strictEqual(np1[0].reason, "NOT_FOUND_ON_PUBMED");
+
+  const cleanContextNonPubMed = {
+    companyId: "viking-therapeutics",
+    targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
+    targetFileExists: true,
+    baseline: { discoveryCheckpoint: { asOf: "2026-01-01" } },
+    knownPMIDs: [],
+    unresolvedIdentifiers: un1,
+    nonPubMedIdentifiers: np1,
+  };
+
+  const healthResNonPubMed = await probeLiteratureHealth(cleanContextNonPubMed, mockFetchNonPubMed);
+  assert.strictEqual(healthResNonPubMed.hasIncomplete, false, "Non-PubMed sources must NOT set hasIncomplete");
+  assert.strictEqual(healthResNonPubMed.deltaVerdict, "CLEAN");
+  assert.strictEqual(healthResNonPubMed.nonPubMedIdentifiers.length, 1);
+
+  const gateAllowed = canAdvanceCheckpoint(cleanContextNonPubMed, null, null, healthResNonPubMed, null, null, { advance: true });
+  assert.strictEqual(gateAllowed.allowed, true, "Checkpoint advance must be permitted when valid sources are non-PubMed");
+
+  // 2. Network / API failure (e.g. HTTP 500 error from NCBI)
+  const mockFetchApiError = async () => ({
+    ok: false,
+    status: 500,
+  });
+
+  const { pmidMap: pm2, unresolved: un2, nonPubMed: np2 } = await resolveDoisAndPmcsToPmids([failingDoi], [], mockFetchApiError);
+  assert.strictEqual(pm2.size, 0);
+  assert.strictEqual(un2.length, 1);
+  assert.strictEqual(un2[0].reason, "HTTP_500");
+  assert.strictEqual(np2.length, 0);
+
+  const errorContext = {
+    ...cleanContextNonPubMed,
+    unresolvedIdentifiers: un2,
+    nonPubMedIdentifiers: np2,
+  };
+
+  const healthResApiError = await probeLiteratureHealth(errorContext, mockFetchApiError);
+  assert.strictEqual(healthResApiError.hasIncomplete, true, "API failure must set hasIncomplete=true");
+  assert.strictEqual(healthResApiError.deltaVerdict, "UNRESOLVED_IDENTIFIERS");
+
+  const gateBlockedApi = canAdvanceCheckpoint(errorContext, null, null, healthResApiError, null, null, { advance: true });
+  assert.strictEqual(gateBlockedApi.allowed, false, "Checkpoint advance must be blocked on API failure");
+  assert.match(gateBlockedApi.reason, /Errors or incomplete data detected/);
+
+  // 3. Ambiguous resolution (multiple PMIDs returned for single DOI)
+  const mockFetchAmbiguous = async () => ({
+    ok: true,
+    status: 200,
+    json: async () => ({ esearchresult: { idlist: ["12345678", "87654321"] } }),
+  });
+
+  const { unresolved: un3 } = await resolveDoisAndPmcsToPmids([failingDoi], [], mockFetchAmbiguous);
+  assert.strictEqual(un3.length, 1);
+  assert.strictEqual(un3[0].reason, "AMBIGUOUS_MULTIPLE_PMIDS");
+
+  const ambiguousContext = {
+    ...cleanContextNonPubMed,
+    unresolvedIdentifiers: un3,
+  };
+  const healthResAmbiguous = await probeLiteratureHealth(ambiguousContext, mockFetchAmbiguous);
+  assert.strictEqual(healthResAmbiguous.hasIncomplete, true);
+
+  const gateBlockedAmbiguous = canAdvanceCheckpoint(ambiguousContext, null, null, healthResAmbiguous, null, null, { advance: true });
+  assert.strictEqual(gateBlockedAmbiguous.allowed, false);
 });
