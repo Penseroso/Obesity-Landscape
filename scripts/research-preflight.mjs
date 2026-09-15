@@ -106,7 +106,7 @@ export function resolveCik(companyId, cliCik, context = null) {
 
 /**
  * Parses CLI arguments.
- * Deprecates ambiguous legacy aliases `--baseline` and `--write-checkpoint`.
+ * Deprecates ambiguous legacy aliases `--baseline`, `--write-checkpoint`, and redundant `--ack-all`.
  */
 export function parseArgs(argv) {
   const args = argv.slice(2);
@@ -1414,6 +1414,7 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
   const prevPMIDs = context.baseline?.discoveryCheckpoint?.literature?.monitoredPMIDs ?? {};
 
   const knownNCTsMap = updateRes ? {} : { ...prevNCTs };
+  // Defensive compatibility: supports updateRes as object ({ results: [...] }) or raw array
   const updateList = updateRes?.results ?? (Array.isArray(updateRes) ? updateRes : []);
   for (const r of updateList) {
     if (r.nctId && r.lastUpdatePostDate && knownNCTsSet.has(r.nctId)) {
@@ -1427,6 +1428,8 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
   const monitoredPMIDsMap = healthRes ? {} : { ...prevPMIDs };
   for (const h of (healthRes?.checked ?? [])) {
     if (h.pmid && h.status !== "NOT_FOUND" && knownPMIDsSet.has(h.pmid)) {
+      // Defensive compatibility: accept standard status ("retracted", "has-erratum", "clean")
+      // and map legacy/diagnostic "ERRATUM_DETECTED" to canonical "has-erratum".
       const status = ["retracted", "has-erratum", "clean"].includes(h.status)
         ? h.status
         : (h.status === "ERRATUM_DETECTED" ? "has-erratum" : "clean");
