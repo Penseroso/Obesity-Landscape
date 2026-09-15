@@ -11,9 +11,10 @@ Defines the contract for derived files under `data/generated/`: what they are,
 how they are produced, what they guarantee to downstream consumers (UI, reports,
 future tools), and what they do not. The Company/Pipeline aggregates describe
 current Contract 1.2 behavior (ADR-0030, ADR-0053) and preserve the stage
-semantics (ADR-0024); generation is a verbatim passthrough and adds no new
-fields beyond the `scopeClass` field Contract 1.2 introduced on the operating
-source itself.
+semantics (ADR-0024); generation is a verbatim passthrough for canonical business
+fields and adds no new fields beyond the `scopeClass` field Contract 1.2 introduced
+on the operating source itself. Operational research checkpoints (`researchState`)
+are intentionally stripped from generated consumer aggregates.
 `clinical-evidence.json` belongs to the separate Clinical Evidence data layer.
 
 ## 1. Source-of-truth boundary
@@ -30,10 +31,13 @@ source itself.
   `npm run data:generate:clinical-evidence` is the narrower Clinical Evidence
   workflow command: it writes only the two Clinical Evidence-owned generated
   files and treats Company/Pipeline source and generated artifacts as read only.
-- Generation creates **no new canonical facts**: aggregate records are verbatim
-  copies of operating records (see §4). It aggregates and orders them; the
-  separately versioned asset-study projection derives only reciprocal links
-  already present in canonical Study and Arm records.
+- Generation creates **no new canonical facts**: aggregate records carry
+  canonical business facts verbatim from operating records (see §4).
+  Operational `researchState` checkpoints (used by deterministic preflights) are
+  intentionally stripped before emitting consumer aggregates. Generation
+  aggregates and orders canonical data; the separately versioned asset-study
+  projection derives only reciprocal links already present in canonical Study
+  and Arm records.
 
 ## 2. Determinism and ordering
 
@@ -89,8 +93,11 @@ the current UI does not display regimens (ADR-0017).
 
 ## 4. Field-level guarantees
 
-Generated program and regimen records are **byte-identical** to their operating
-source records — every field is passed through verbatim, none added or stripped.
+All **canonical business fields** in operating records are passed through
+verbatim to generated outputs. Program and regimen records are byte-identical to
+their operating source records — every canonical field is preserved, none added
+or modified.
+
 For pipeline programs the generated output preserves, when present in the source:
 
 - `id`, `assetId`, `companyId`
@@ -106,7 +113,22 @@ For pipeline programs the generated output preserves, when present in the source
 - `scopeClass` (Contract 1.2, ADR-0053 — required on every program; see
   [Data Protocol §Dataset scope](./README.md#dataset-scope))
 
-`companies.json` preserves `id`, `name`, and `headquartersCountry` verbatim.
+`companies.json` preserves all canonical Company business fields verbatim:
+- `id`, `name`, `headquartersCountry`
+- `officialWebsite`, `officialPipeline` (when present)
+- `secCik` (when present; canonical SEC Central Index Key for EDGAR filings)
+
+**Operational researchState exclusion**:
+Operating company records may carry an operational `researchState` object
+recording deterministic preflight checkpoints (trial registry hashes, monitored
+PMIDs, SEC acceptance timestamps). This object is **intentionally stripped** by
+the generator (`scripts/data-registry.mjs`) when producing `data/generated/companies.json`:
+- `researchState` is an operational research and preflight tracking mechanism; it
+  is **not** part of the UI, reports, or business read-model contract.
+- The generator strips `researchState` and `npm run data:validate:generated`
+  strictly asserts `company.researchState === undefined` for every record in
+  `data/generated/companies.json`.
+
 Regimen records preserve their full operating shape (`id`, `companyId`, `name`,
 `configurationKey`, `components`, `indications`, `development`,
 `regulatoryStates`, `administration`, `relationships`, `metadata`,
@@ -187,9 +209,9 @@ Downstream UI, report, and tool consumers:
 
 ## 7. Relationship with Contract 1.2 semantics
 
-Because generation is a verbatim passthrough, generated outputs preserve the
-ADR-0024 / ADR-0030 stage and identity semantics exactly, and the ADR-0053
-`scopeClass` semantics identically:
+Because generation is a verbatim passthrough for canonical business fields,
+generated outputs preserve the ADR-0024 / ADR-0030 stage and identity semantics
+exactly, and the ADR-0053 `scopeClass` semantics identically:
 
 - `development.stage` remains the most advanced official current development
   stage for the program scope.

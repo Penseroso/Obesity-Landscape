@@ -53,9 +53,9 @@ explicit **segments** — each re-verifying a declared subset of the company's
    **not** do is claim to have performed the company-wide discovery sweep
    itself.
 3. **What stays company-wide.** Full sponsor-pipeline reconciliation (item 1),
-   the company-wide independent second discovery pass (items 4–7), and
-   re-review of every candidate any segment excluded or deferred are not
-   repeated per segment — they are the closing consolidation pass's exclusive
+   deterministic company-wide preflight and discovery (item 4), and re-review
+   of every candidate any segment excluded or deferred are not repeated per
+   segment — they are the closing consolidation pass's exclusive
    responsibility (item 5). A segmented execution reports its own scope as
    **segment complete**, never as company-level **GO** — GO remains reserved
    for the outcome defined in section 5, unchanged.
@@ -77,15 +77,21 @@ explicit **segments** — each re-verifying a declared subset of the company's
    determination — in `decision-log.md` and git history — not a reason to
    override it on fresh judgment alone.
 5. **Consolidation pass.** Company-level GO requires one execution, after
-   every declared segment reports segment-complete, to: reconcile the
-   sponsor's full official pipeline (item 1); run one genuinely independent
-   company-wide discovery pass (items 4–7) without reusing any segment's
-   source list; read every segment's commit messages and `decision-log.md` to
-   re-review every candidate any segment excluded or deferred, alongside
-   every candidate the company-wide pass newly surfaces; confirm every row's
-   `metadata.lastVerifiedAt` falls within the refresh effort; and re-run the
-   full validation and probe suite (section 6) against the cumulative working
-   tree. Only this pass may report company-level **GO**.
+   every declared segment reports segment-complete, to:
+   - reconcile the sponsor's full official pipeline (item 1);
+   - run deterministic company-wide preflight and discovery probes (item 4) across
+     trial registry, literature, and SEC EDGAR surfaces;
+   - re-check previously DEFERRED or unresolved candidates alongside segment
+     commit messages and `decision-log.md`;
+   - classify and disposition every candidate surfaced across segments or
+     consolidation (item 7: zero undispositioned candidates);
+   - execute a Conclusion-Blind Audit (Section 5a) triggered if high-risk
+     mutations occurred during segment or consolidation runs;
+   - confirm every row's `metadata.lastVerifiedAt` falls within the refresh effort;
+   - advance the company checkpoint once all deltas and findings are reconciled;
+   - re-run the cumulative validation and probe suite (section 6) against the
+     working tree.
+   Only this pass may report company-level **GO**.
 
 ## 2. Discover and classify
 
@@ -508,7 +514,7 @@ Report, without a rigid template:
   change) or from a source reopened this run (`lastVerifiedAt` and that
   source's `checkedAt` updated) — see
   [Source and Entry Policy §Metadata effects of an authored-field backfill](./source-and-entry-policy.md#metadata-effects-of-an-authored-field-backfill);
-- final independent coverage-pass result;
+- preflight, delta-detection, and Conclusion-Blind Audit results (or cold-path clean verification);
 - principal sources;
 - generation and validation results;
 - blockers or source-access failures;
