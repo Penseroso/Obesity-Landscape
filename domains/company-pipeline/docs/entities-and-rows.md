@@ -312,6 +312,19 @@ nested indication.
   (ADR-0018, ADR-0019). For example Novo Nordisk's `ubt251` row is company-local
   while the originator/licensor roles, territories, rights, and effective date
   are captured in `relationships`.
+- A `licensor`/`licensee` pair or a `co-developer` pair is expected to be
+  recorded on **both** tracked companies' own rows, each naming the other by
+  `externalCompanyName` (ADR-0072) — this is not enforced by the validator and
+  is not required for every relationship (an `originator`, acquisition, or
+  other historical-transfer role is one-directional by meaning and carries no
+  such expectation). `npm run data:probe:relationship-reciprocity` reports,
+  advisory-only, where one side's own row has no matching relationship back
+  under a tracked counterpart's exact `company.name`, or names it back under
+  an unexpected role. A finding is not itself evidence a relationship is
+  missing — an `externalCompanyName` that does not exactly match a tracked
+  company's name (a subsidiary or legal-entity name, or a genuinely untracked
+  company) is reported separately and is never assumed to be a gap — verify
+  against a primary source before adding or correcting either side's row.
 
 ## Program identity
 

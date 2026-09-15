@@ -4559,6 +4559,412 @@ function probeScopeClass() {
   );
 }
 
+// --- Relationship reciprocity audit (ADR-0072) ---
+//
+// Advisory only: reports where a tracked company's own program/regimen
+// `relationships[]` names another *tracked* company for a role that is
+// semantically reciprocal (licensor <-> licensee, co-developer <->
+// co-developer), but that other company's own rows carry no matching
+// relationship back. It never edits data, never infers or authors a
+// relationship, and never decides which side is correct - that is a
+// separate Company/Pipeline research task grounded in a primary source.
+//
+// Deliberately excludes `originator` and every acquisition/historical-
+// transfer-flavored role: those are one-directional by meaning (an
+// originator does not "reciprocally" originate anything back), so requiring
+// a mirror entry for them would manufacture false gaps, not real ones.
+//
+// A relationship's counterpart is always `externalCompanyName` free text in
+// this dataset, even when the counterpart is itself a tracked company (see
+// `jiangsu-hengrui-pharmaceuticals`/`kailera-therapeutics`, which name each
+// other by `externalCompanyName`, never `companyId`) - `relationship.companyId`
+// is reserved for a row's own company stating its own role in a documented
+// multi-party arrangement, never for pointing at a different company. This
+// audit therefore resolves a counterpart by an exact, normalized match
+// against a tracked company's own `company.name` only. No alias, subsidiary,
+// or legal-entity-name resolution is attempted (ADR-0022, edge-cases.md
+// "Cross-company entity resolution"): an `externalCompanyName` that does not
+// exactly match any tracked company's name is reported separately, as a
+// weaker, unresolved signal for manual review - not as a confirmed company,
+// and not as a confirmed gap.
+
+const reciprocalRelationshipRoles = new Map([
+  ["licensor", ["licensee"]],
+  ["licensee", ["licensor"]],
+  ["co-developer", ["co-developer"]],
+]);
+
+/**
+ * Relationship-reciprocity candidate finder (ADR-0072). Pure function over
+ * already-loaded `companies`, `programs`, and `regimens` - no I/O.
+ *
+ * Returns three advisory signal lists:
+ *
+ *   - `missingReciprocal` - company A names tracked company B with a
+ *     reciprocal-role relationship, but no row of B names A back with any of
+ *     the expected reciprocal roles.
+ *   - `inconsistentReciprocalRole` - B does name A back, but with a role
+ *     outside the expected reciprocal set (for example A says "licensor",
+ *     B's own entry for A says "co-developer" rather than "licensee").
+ *   - `unresolvedCounterpartName` - the relationship's role is in scope, but
+ *     `externalCompanyName` does not exactly match any tracked company's
+ *     `company.name`; it may be a genuinely external company, or a tracked
+ *     company under a subsidiary/legal-entity name this audit does not
+ *     resolve. Reported for awareness only, never as a gap.
+ */
+function findRelationshipReciprocityCandidates(companies, programs, regimens) {
+  const companyNameById = new Map(companies.map((company) => [company.id, company.name]));
+  const companyIdByNormalizedName = new Map(
+    companies.map((company) => [normalize(company.name), company.id]),
+  );
+
+  const rows = [
+    ...programs.map((program) => ({
+      kind: "program",
+      id: program.id,
+      companyId: program.companyId,
+      assetLabel: program.assetName,
+      relationships: program.relationships,
+    })),
+    ...regimens.map((regimen) => ({
+      kind: "regimen",
+      id: regimen.id,
+      companyId: regimen.companyId,
+      assetLabel: regimen.id,
+      relationships: regimen.relationships,
+    })),
+  ];
+
+  // Every in-scope, cross-company-pointing relationship, grouped by the
+  // company whose row carries it. A `relationship.companyId` entry is the
+  // row's own company describing its own role (never a counterpart) and is
+  // excluded here, not treated as pointing at "itself".
+  const outboundByCompany = new Map();
+  for (const row of rows) {
+    for (const relationship of row.relationships ?? []) {
+      if (!reciprocalRelationshipRoles.has(relationship.role)) continue;
+      if (relationship.externalCompanyName === undefined) continue;
+
+      const list = outboundByCompany.get(row.companyId) ?? [];
+      list.push({
+        role: relationship.role,
+        externalCompanyName: relationship.externalCompanyName,
+        normalizedExternalCompanyName: normalize(relationship.externalCompanyName),
+        rowId: row.id,
+        rowKind: row.kind,
+        assetLabel: row.assetLabel,
+        sourceUrls: relationship.sourceUrls ?? [],
+      });
+      outboundByCompany.set(row.companyId, list);
+    }
+  }
+
+  const missingReciprocal = [];
+  const inconsistentReciprocalRole = [];
+  const unresolvedCounterpartName = [];
+
+  for (const [companyId, outbound] of outboundByCompany.entries()) {
+    const companyName = companyNameById.get(companyId);
+    const normalizedCompanyName = normalize(companyName);
+
+    for (const entry of outbound) {
+      const counterpartCompanyId = companyIdByNormalizedName.get(entry.normalizedExternalCompanyName);
+
+      if (counterpartCompanyId === undefined) {
+        unresolvedCounterpartName.push({ companyId, companyName, ...entry });
+        continue;
+      }
+      if (counterpartCompanyId === companyId) {
+        // A tracked company's own name coincidentally matching its own
+        // externalCompanyName text is not a cross-company reference to check.
+        continue;
+      }
+
+      const expectedReciprocalRoles = reciprocalRelationshipRoles.get(entry.role);
+      const counterpartOutbound = outboundByCompany.get(counterpartCompanyId) ?? [];
+      const backReferences = counterpartOutbound.filter(
+        (back) => back.normalizedExternalCompanyName === normalizedCompanyName,
+      );
+
+      if (backReferences.some((back) => expectedReciprocalRoles.includes(back.role))) {
+        continue; // consistent - a matching reciprocal entry exists
+      }
+
+      const counterpartName = companyNameById.get(counterpartCompanyId);
+      if (backReferences.length > 0) {
+        inconsistentReciprocalRole.push({
+          companyId,
+          companyName,
+          counterpartCompanyId,
+          counterpartName,
+          role: entry.role,
+          expectedReciprocalRoles,
+          observedCounterpartRoles: backReferences.map((back) => back.role),
+          rowId: entry.rowId,
+          rowKind: entry.rowKind,
+          assetLabel: entry.assetLabel,
+          sourceUrls: entry.sourceUrls,
+        });
+      } else {
+        missingReciprocal.push({
+          companyId,
+          companyName,
+          counterpartCompanyId,
+          counterpartName,
+          role: entry.role,
+          expectedReciprocalRoles,
+          rowId: entry.rowId,
+          rowKind: entry.rowKind,
+          assetLabel: entry.assetLabel,
+          sourceUrls: entry.sourceUrls,
+        });
+      }
+    }
+  }
+
+  return { missingReciprocal, inconsistentReciprocalRole, unresolvedCounterpartName };
+}
+
+/**
+ * Self-check for `findRelationshipReciprocityCandidates` against small
+ * in-memory synthetic companies/rows (the same style as
+ * `selfCheckScopeClassCandidates`), proving each signal fires - and does not
+ * misfire - before reporting live-data candidates.
+ */
+function selfCheckRelationshipReciprocity() {
+  const company = (id, name) => ({ id, name });
+  const program = (id, companyId, relationships) => ({
+    id,
+    companyId,
+    assetId: `${id}-asset`,
+    assetName: `${id} asset`,
+    relationships,
+  });
+  const rel = (role, overrides) => ({ role, sourceUrls: ["https://example.test/source"], ...overrides });
+
+  // 1: clean opposite-role reciprocity (licensor <-> licensee) - no signal.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })]),
+      program("p-b", "co-b", [rel("licensee", { externalCompanyName: "Company A" })]),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 &&
+        result.inconsistentReciprocalRole.length === 0 &&
+        result.unresolvedCounterpartName.length === 0,
+      "self-check: a clean licensor/licensee reciprocal pair must produce no signal",
+    );
+  }
+
+  // 2: clean same-role reciprocity (co-developer <-> co-developer) - no signal.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a", "co-a", [rel("co-developer", { externalCompanyName: "Company B" })]),
+      program("p-b", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })]),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 && result.inconsistentReciprocalRole.length === 0,
+      "self-check: a clean co-developer/co-developer reciprocal pair must produce no signal",
+    );
+  }
+
+  // 3: missing reciprocal - B has no relationship back to A at all.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })]),
+      program("p-b", "co-b", []),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 1 &&
+        result.missingReciprocal[0].companyId === "co-a" &&
+        result.missingReciprocal[0].counterpartCompanyId === "co-b",
+      "self-check: a tracked counterpart with no relationship back must trigger missing-reciprocal-relationship",
+    );
+    assert(
+      result.inconsistentReciprocalRole.length === 0,
+      "self-check: a wholly absent counterpart entry must not also report inconsistent-reciprocal-role",
+    );
+  }
+
+  // 4: inconsistent role - B does reference A back, but not as licensee. Both
+  // directions are mismatched from each other's point of view, so each side
+  // reports its own inconsistent-reciprocal-role entry (row/asset context
+  // legitimately differs per company; this is not a duplicate).
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })]),
+      program("p-b", "co-b", [rel("co-developer", { externalCompanyName: "Company A" })]),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0,
+      "self-check: an existing but mismatched back-reference must not also report missing-reciprocal-relationship",
+    );
+    assert(
+      result.inconsistentReciprocalRole.length === 2,
+      "self-check: a mismatched pair must report inconsistent-reciprocal-role from both companies' own perspectives",
+    );
+    const fromA = result.inconsistentReciprocalRole.find((entry) => entry.companyId === "co-a");
+    const fromB = result.inconsistentReciprocalRole.find((entry) => entry.companyId === "co-b");
+    assert(
+      fromA !== undefined && fromA.observedCounterpartRoles.includes("co-developer"),
+      "self-check: company A's entry must report B's actual (mismatched) role of co-developer",
+    );
+    assert(
+      fromB !== undefined && fromB.observedCounterpartRoles.includes("licensor"),
+      "self-check: company B's entry must report A's actual (mismatched) role of licensor",
+    );
+  }
+
+  // 5: unresolved counterpart name - externalCompanyName matches no tracked
+  // company; must not be reported as missing or inconsistent.
+  {
+    const companies = [company("co-a", "Company A")];
+    const programs = [program("p-a", "co-a", [rel("licensor", { externalCompanyName: "Untracked Co" })])];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.unresolvedCounterpartName.length === 1,
+      "self-check: an externalCompanyName matching no tracked company must trigger unresolved-relationship-counterpart-name",
+    );
+    assert(
+      result.missingReciprocal.length === 0 && result.inconsistentReciprocalRole.length === 0,
+      "self-check: an unresolved counterpart name must never be reported as a confirmed gap",
+    );
+  }
+
+  // 6: originator is out of scope - a tracked-company-matching originator
+  // reference with no reciprocal entry must never fire any signal.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [program("p-a", "co-a", [rel("originator", { externalCompanyName: "Company B" })])];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 &&
+        result.inconsistentReciprocalRole.length === 0 &&
+        result.unresolvedCounterpartName.length === 0,
+      "self-check: an originator relationship must never be checked for reciprocity",
+    );
+  }
+
+  // 7: a self-referential companyId entry (a row's own company stating its
+  // own role) must never be treated as a cross-company pointer to check.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const programs = [
+      program("p-a", "co-a", [
+        rel("licensor", { externalCompanyName: "Company B" }),
+        rel("licensee", { companyId: "co-a" }),
+      ]),
+      program("p-b", "co-b", [rel("licensee", { externalCompanyName: "Company A" })]),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 && result.inconsistentReciprocalRole.length === 0,
+      "self-check: a self-referential companyId relationship entry must not affect reciprocity checking",
+    );
+  }
+
+  // 8: name matching is whitespace/case-insensitive but not fuzzy - an exact
+  // normalized match still resolves; a legal-entity-name variant does not.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B, Inc.")];
+    const programs = [
+      program("p-a", "co-a", [rel("licensor", { externalCompanyName: "  company b, inc.  " })]),
+      program("p-b", "co-b", [rel("licensee", { externalCompanyName: "Company A" })]),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, programs, []);
+    assert(
+      result.missingReciprocal.length === 0 && result.unresolvedCounterpartName.length === 0,
+      "self-check: matching must be case/whitespace-insensitive but exact otherwise",
+    );
+
+    const legalNameVariant = [
+      program("p-a2", "co-a", [rel("licensor", { externalCompanyName: "B Holdings Ltd (parent of Company B)" })]),
+    ];
+    const legalNameResult = findRelationshipReciprocityCandidates(companies, legalNameVariant, []);
+    assert(
+      legalNameResult.unresolvedCounterpartName.length === 1 &&
+        legalNameResult.missingReciprocal.length === 0,
+      "self-check: a non-exact legal-entity-name variant must be reported unresolved, never guessed as a gap",
+    );
+  }
+
+  // 9: regimen rows participate the same as program rows.
+  {
+    const companies = [company("co-a", "Company A"), company("co-b", "Company B")];
+    const regimen = (id, companyId, relationships) => ({ id, companyId, relationships });
+    const regimens = [
+      regimen("r-a", "co-a", [rel("licensor", { externalCompanyName: "Company B" })]),
+    ];
+    const result = findRelationshipReciprocityCandidates(companies, [], regimens);
+    assert(
+      result.missingReciprocal.length === 1 && result.missingReciprocal[0].rowKind === "regimen",
+      "self-check: a regimen row's relationships must be checked the same as a program row's",
+    );
+  }
+}
+
+/**
+ * `data:probe:relationship-reciprocity` (ADR-0072) - advisory only, never
+ * fails, never edits data, never decides which side of a mismatch is
+ * correct. Runs the self-check above, then reports live-data candidates.
+ * Any finding here is a prompt to verify against a primary source and
+ * correct it as an ordinary Company/Pipeline edit - never auto-resolved by
+ * this audit.
+ */
+function probeRelationshipReciprocity() {
+  selfCheckRelationshipReciprocity();
+
+  const { companies, programs, regimens } = loadCompanySources();
+  const result = findRelationshipReciprocityCandidates(companies, programs, regimens);
+
+  console.log("Relationship reciprocity audit (ADR-0072)");
+  console.log(
+    `  summary: ${result.missingReciprocal.length} missing-reciprocal-relationship, ${result.inconsistentReciprocalRole.length} inconsistent-reciprocal-role, ${result.unresolvedCounterpartName.length} unresolved-relationship-counterpart-name`,
+  );
+  console.log("  in scope: licensor <-> licensee, co-developer <-> co-developer only");
+
+  if (result.missingReciprocal.length > 0) {
+    console.log("  missing-reciprocal-relationship:");
+    for (const entry of result.missingReciprocal) {
+      console.log(
+        `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.counterpartName}" (${entry.counterpartCompanyId}) as ${entry.role}, expected ${entry.counterpartCompanyId} to name ${entry.companyName} back as one of [${entry.expectedReciprocalRoles.join(", ")}] - no such relationship found`,
+      );
+    }
+  }
+
+  if (result.inconsistentReciprocalRole.length > 0) {
+    console.log("  inconsistent-reciprocal-role:");
+    for (const entry of result.inconsistentReciprocalRole) {
+      console.log(
+        `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.counterpartName}" (${entry.counterpartCompanyId}) as ${entry.role}, expected one of [${entry.expectedReciprocalRoles.join(", ")}] back but found [${entry.observedCounterpartRoles.join(", ")}]`,
+      );
+    }
+  }
+
+  if (result.unresolvedCounterpartName.length > 0) {
+    console.log(
+      "  unresolved-relationship-counterpart-name (not a confirmed company or a confirmed gap - review manually):",
+    );
+    for (const entry of result.unresolvedCounterpartName) {
+      console.log(
+        `    ${entry.companyId} (${entry.rowKind} ${entry.rowId}, ${entry.assetLabel}) names "${entry.externalCompanyName}" as ${entry.role} - no tracked company's name matches exactly`,
+      );
+    }
+  }
+
+  console.log(
+    "This audit is advisory only: it never edits data, never infers or authors a relationship, and never decides which side is correct. A finding is a prompt to verify against a primary source and fix it as a separate Company/Pipeline edit.",
+  );
+}
+
 // --- Registry-citation reuse audit (ADR-0054) ---
 //
 // Advisory only: reports where a Company/Pipeline-stored registry locator and
@@ -5455,6 +5861,9 @@ try {
       break;
     case "probe:scope-class":
       probeScopeClass();
+      break;
+    case "probe:relationship-reciprocity":
+      probeRelationshipReciprocity();
       break;
     case "probe:registry-citations": {
       const { company } = parseRegistryCitationsArgs(process.argv.slice(3));

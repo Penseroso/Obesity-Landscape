@@ -430,6 +430,7 @@ npm run data:probe:indication-scope
 npm run data:probe:scope-class
 npm run data:probe:registry-citations
 npm run data:probe:mechanism-families
+npm run data:probe:relationship-reciprocity
 npm run lint
 npm run build
 git diff --check
@@ -490,6 +491,18 @@ colliding normalized label — against mutated copies of the live registry; see
 [Entities and Rows §Mechanism family](./entities-and-rows.md#mechanism-family).
 It is a registry self-consistency check, not a row-level candidate report, and
 runs whenever this run adds a new mechanism string or family.
+
+`data:probe:relationship-reciprocity` (ADR-0072) is likewise advisory: it
+self-checks its own detection rules, then reports where a `licensor`/`licensee`
+or `co-developer`/`co-developer` relationship is recorded on only one of the
+two tracked companies' own rows, or with a mismatched role on the other side —
+see [Entities and Rows §Licensed and in-licensed
+assets](./entities-and-rows.md#licensed-and-in-licensed-assets). It never
+fails a run, edits data, or decides which side is correct; it is most relevant
+whenever this run adds, edits, or reads a `relationships` entry with one of
+these two roles, and a reported candidate resolves the same way as any other
+advisory signal here — verify against a primary source, then correct either
+side's row as an ordinary edit.
 
 ## 7. Report
 

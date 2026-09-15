@@ -130,6 +130,49 @@ a locator this workflow anchors to a *different* row — which is Company/
 Pipeline's own consistency signal, not an input to this workflow's anchor
 decision.
 
+### Cross-company sponsor resolution (ADR-0071)
+
+A discovered registry record can plausibly belong to more than one company
+when licensing, co-development, or a regional rights split applies to the
+asset (for example an originator/licensee pair, or a global/regional
+territory split). Before authoring the Study, decide its canonical anchor
+with this cascade rather than defaulting to whichever company is currently
+under research:
+
+1. Read the registry's own lead sponsor (or sponsor, where the registry does
+   not distinguish lead from collaborator). This is the **primary signal**,
+   not an automatic answer.
+2. Resolve that sponsor to a Company/Pipeline-tracked `companyId`, including
+   a disclosed legal subsidiary or affiliate name that resolves to its
+   tracked parent.
+3. Confirm the resolved company's own Company/Pipeline manifest carries a
+   matching asset/program anchor for this molecule. This step is what keeps
+   an investigator- or academic-sponsored study, or a similarly named but
+   unrelated company, from being mistaken for the developer of record.
+4. When steps 1–3 all resolve cleanly, that `companyId` is the canonical
+   anchor: author the Study there, even when it differs from the company
+   currently under research.
+
+When resolution fails or conflicts — the sponsor does not resolve to any
+tracked company, the resolved company carries no matching asset anchor, or
+the registry's own sponsor changed during the trial — review the official
+sponsor source together with the tracked companies' Company/Pipeline
+`relationships` (role, territory, `effectiveDate`) before deciding. If the
+anchor is still genuinely unclear after that review, use the existing
+`DEFERRED_SCHEMA_CASE` status (§5) rather than forcing an anchor or silently
+omitting the evidence.
+
+This cascade governs **evidence attribution**, not identity authority, and
+does not change the mutual non-authority principle above: Company/Pipeline
+still decides its own Program/Study disposition on sponsor evidence alone,
+and this workflow still decides its own Study anchor independently. It does
+not create multi-anchor storage: a registry identity resolved to another
+company's canonical anchor is not stored a second time under the company
+currently being researched. Recording that a specific registry identity was
+discovered and attributed elsewhere is an operational disposition, not a
+schema change; its exact mechanism is left to a future revision of this
+workflow.
+
 ## 1a. Asset-scoped execution for a named asset (ADR-0069)
 
 When a request explicitly names one or more of the company's existing assets —
