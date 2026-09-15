@@ -6,6 +6,7 @@
  */
 
 import assert from "node:assert";
+import childProcess from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
@@ -1149,4 +1150,87 @@ test("canonicalizeJson and parseEfetchXml unit assertions", () => {
 
   assert.strictEqual(parseEfetchXml("").size, 0);
   assert.strictEqual(parseEfetchXml(null).size, 0);
+});
+
+test("Regression 15: researchState schema placement restricted strictly to authoritative envelopes", () => {
+  // 1. Assert data/generated/clinical-evidence.json does not carry researchState
+  const generatedClinicalPath = path.join(ROOT, "data", "generated", "clinical-evidence.json");
+  if (fs.existsSync(generatedClinicalPath)) {
+    const aggregate = JSON.parse(fs.readFileSync(generatedClinicalPath, "utf8"));
+    assert.strictEqual(
+      aggregate.researchState,
+      undefined,
+      "ClinicalEvidenceAggregate in data/generated/clinical-evidence.json must NOT expose operational researchState",
+    );
+  }
+
+  // 2. Validate synthetic fixtures enforce RecordMetadata exclusion and envelope placement
+  const cpSynthetic = childProcess.execSync("node scripts/data-registry.mjs validate:synthetic", {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  assert.match(cpSynthetic, /Validated synthetic fixtures/);
+
+  const ceSynthetic = childProcess.execSync("node scripts/data-registry.mjs validate:clinical-evidence:synthetic", {
+    cwd: ROOT,
+    encoding: "utf8",
+  });
+  assert.match(ceSynthetic, /Validated Clinical Evidence synthetic fixtures/);
+
+  // 3. Assert no canonical record in programs or regimens carries researchState in metadata
+  const companiesDir = path.join(ROOT, "domains", "company-pipeline", "data", "companies");
+  for (const companyFolder of fs.readdirSync(companiesDir)) {
+    const programsPath = path.join(companiesDir, companyFolder, "pipeline-programs.json");
+    if (fs.existsSync(programsPath)) {
+      const programs = JSON.parse(fs.readFileSync(programsPath, "utf8"));
+      for (const p of programs) {
+        assert.strictEqual(
+          p.metadata?.researchState,
+          undefined,
+          `Program ${p.id} metadata must not carry researchState`,
+        );
+      }
+    }
+    const regimensPath = path.join(companiesDir, companyFolder, "regimens.json");
+    if (fs.existsSync(regimensPath)) {
+      const regimens = JSON.parse(fs.readFileSync(regimensPath, "utf8"));
+      for (const r of regimens) {
+        assert.strictEqual(
+          r.metadata?.researchState,
+          undefined,
+          `Regimen ${r.id} metadata must not carry researchState`,
+        );
+      }
+    }
+  }
+
+  // 4. Assert no clinical study, arm, endpoint, outcome carries researchState in metadata
+  const ceDir = path.join(ROOT, "domains", "clinical-evidence", "data", "clinical-evidence");
+  for (const companyFolder of fs.readdirSync(ceDir)) {
+    const companyPath = path.join(ceDir, companyFolder);
+    if (!fs.statSync(companyPath).isDirectory()) continue;
+    for (const assetFolder of fs.readdirSync(companyPath)) {
+      const assetPath = path.join(companyPath, assetFolder);
+      if (!fs.statSync(assetPath).isDirectory()) continue;
+      const ceFilePath = path.join(assetPath, "clinical-evidence.json");
+      if (fs.existsSync(ceFilePath)) {
+        const ceData = JSON.parse(fs.readFileSync(ceFilePath, "utf8"));
+        for (const s of ceData.studies ?? []) {
+          assert.strictEqual(s.metadata?.researchState, undefined, `Study ${s.id} metadata must not carry researchState`);
+        }
+        for (const a of ceData.arms ?? []) {
+          assert.strictEqual(a.metadata?.researchState, undefined, `Arm ${a.id} metadata must not carry researchState`);
+        }
+        for (const ag of ceData.analysisGroups ?? []) {
+          assert.strictEqual(ag.metadata?.researchState, undefined, `AnalysisGroup ${ag.id} metadata must not carry researchState`);
+        }
+        for (const ep of ceData.endpoints ?? []) {
+          assert.strictEqual(ep.metadata?.researchState, undefined, `Endpoint ${ep.id} metadata must not carry researchState`);
+        }
+        for (const o of ceData.outcomes ?? []) {
+          assert.strictEqual(o.metadata?.researchState, undefined, `Outcome ${o.id} metadata must not carry researchState`);
+        }
+      }
+    }
+  }
 });

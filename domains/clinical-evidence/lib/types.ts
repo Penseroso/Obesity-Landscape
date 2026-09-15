@@ -15,12 +15,36 @@ export const CLINICAL_EVIDENCE_SCHEMA_VERSION = "3.1";
 
 export type ClinicalEvidenceAggregate = {
   clinicalEvidenceSchemaVersion: string;
+  studies: ClinicalStudyRecord[];
+  arms: ClinicalArmRecord[];
+  analysisGroups: ClinicalAnalysisGroupRecord[];
+  endpoints: ClinicalEndpointRecord[];
+  outcomes: ClinicalOutcomeRecord[];
+};
+
+/**
+ * Operating source shape for per-asset clinical-evidence.json files.
+ * Carries an optional operational researchState checkpoint.
+ */
+export type ClinicalEvidenceAssetSource = {
+  clinicalEvidenceSchemaVersion: string;
+  companyId: string;
+  assetId: string;
   researchState?: ResearchStateMetadata;
   studies: ClinicalStudyRecord[];
   arms: ClinicalArmRecord[];
   analysisGroups: ClinicalAnalysisGroupRecord[];
   endpoints: ClinicalEndpointRecord[];
   outcomes: ClinicalOutcomeRecord[];
+};
+
+/**
+ * Operating source envelope for company-level Clinical Evidence preflight state
+ * (<companyId>/company-research-state.json).
+ */
+export type ClinicalEvidenceCompanyResearchStateEnvelope = {
+  companyId: string;
+  researchState?: ResearchStateMetadata;
 };
 
 export type ClinicalRegistryIdentifier = {

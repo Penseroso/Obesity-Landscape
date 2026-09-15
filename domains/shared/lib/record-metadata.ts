@@ -43,5 +43,4 @@ export type RecordMetadata = {
   lastVerifiedAt: string;
   updatedAt: string;
   sources: SourceReference[];
-  researchState?: ResearchStateMetadata;
 };

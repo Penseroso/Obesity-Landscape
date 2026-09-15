@@ -957,9 +957,10 @@ function validateMetadata(metadata, context) {
     validateSource(source, `${context}: metadata.sources[${index}]`);
   }
 
-  if (metadata.researchState !== undefined) {
-    validateResearchState(metadata.researchState, `${context}: metadata.researchState`);
-  }
+  assert(
+    metadata.researchState === undefined,
+    `${context}: researchState is an operational checkpoint restricted to authoritative envelopes (Company top-level, asset-scoped Clinical Evidence, or company-research-state.json) and must not be placed inside record metadata`,
+  );
 }
 
 function validateResearchState(researchState, context) {
@@ -2450,6 +2451,10 @@ function validateClinicalEvidenceAggregate(aggregate, references, context) {
     aggregate.clinicalEvidenceSchemaVersion === clinicalEvidenceSchemaVersion,
     `${context}: clinicalEvidenceSchemaVersion must be "${clinicalEvidenceSchemaVersion}"`,
   );
+  assert(
+    aggregate.researchState === undefined,
+    `${context}: aggregate must not carry operational researchState; research checkpoints belong in source envelopes only`,
+  );
   assert(Array.isArray(aggregate.studies), `${context}: studies must be an array`);
   assert(Array.isArray(aggregate.arms), `${context}: arms must be an array`);
   assert(Array.isArray(aggregate.analysisGroups), `${context}: analysisGroups must be an array`);
@@ -3210,6 +3215,52 @@ function validateClinicalEvidenceSyntheticFixtures() {
     "clinical evidence valid fixture must contain the dose-ranging between-arm outcome",
   );
 
+  // Mutation probe: ClinicalEvidenceAggregate must strictly forbid researchState
+  const invalidAggregateProbe = cloneJson(validAggregate);
+  invalidAggregateProbe.researchState = {
+    checkpointVersion: 1,
+    workflowRevision: "rev-1",
+    discoveryCheckpoint: { asOf: "2026-09-15" },
+  };
+  let aggregateProbeFailed = false;
+  try {
+    validateClinicalEvidenceAggregate(
+      invalidAggregateProbe,
+      validReferences,
+      "synthetic:clinical-evidence-aggregate-researchState-probe",
+    );
+  } catch (error) {
+    aggregateProbeFailed = true;
+    assert(
+      /aggregate must not carry operational researchState/.test(error.message),
+      `Expected aggregate researchState rejection message, received: ${error.message}`,
+    );
+  }
+  assert(aggregateProbeFailed, "Expected aggregate with researchState to fail validation");
+
+  // Mutation probe: Study metadata must strictly forbid researchState
+  const invalidStudyMetadataProbe = cloneJson(validAggregate);
+  invalidStudyMetadataProbe.studies[0].metadata.researchState = {
+    checkpointVersion: 1,
+    workflowRevision: "rev-1",
+    discoveryCheckpoint: { asOf: "2026-09-15" },
+  };
+  let studyMetadataFailed = false;
+  try {
+    validateClinicalEvidenceAggregate(
+      invalidStudyMetadataProbe,
+      validReferences,
+      "synthetic:study-metadata-researchState-probe",
+    );
+  } catch (error) {
+    studyMetadataFailed = true;
+    assert(
+      /researchState is an operational checkpoint restricted to authoritative envelopes/.test(error.message),
+      `Expected envelope restriction message, received: ${error.message}`,
+    );
+  }
+  assert(studyMetadataFailed, "Expected study metadata with researchState to fail validation");
+
   // Mutations that must still validate: a distinct analysis unit or a source-supported
   // subgroup is a distinct outcome, not a duplicate.
   const validExpectations = [
@@ -3853,6 +3904,32 @@ function validateSyntheticFixtures() {
     registries,
     { companyLocalReferences: true },
   );
+
+  // RecordMetadata must strictly forbid researchState
+  const invalidProgramMetadataProbe = cloneJson(valid.programs);
+  invalidProgramMetadataProbe[0].metadata.researchState = {
+    checkpointVersion: 1,
+    workflowRevision: "rev-1",
+    discoveryCheckpoint: { asOf: "2026-09-15" },
+  };
+  let programMetadataFailed = false;
+  try {
+    validateDataset(
+      [valid.company],
+      invalidProgramMetadataProbe,
+      valid.regimens,
+      "synthetic:program-metadata-researchState-probe",
+      registries,
+      { companyLocalReferences: true },
+    );
+  } catch (error) {
+    programMetadataFailed = true;
+    assert(
+      /researchState is an operational checkpoint restricted to authoritative envelopes/.test(error.message),
+      `Expected envelope restriction message, received: ${error.message}`,
+    );
+  }
+  assert(programMetadataFailed, "Expected record metadata with researchState to fail validation");
 
   const multiCompanyDir = path.join(syntheticFixtureDir, "valid-multi-company");
   const multiCompanyA = readCompanyFolder(multiCompanyDir, "company-a", true);
