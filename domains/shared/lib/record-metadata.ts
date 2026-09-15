@@ -17,6 +17,7 @@ export type ResearchStateMetadata = {
       latestAccessionNumber?: string;
     };
     clinicalTrials?: {
+      semanticFingerprintVersion?: number;
       sponsorQuery?: string;
       assetAliases?: string[];
       lastQueriedAt?: string;

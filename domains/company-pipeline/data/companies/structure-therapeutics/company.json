@@ -15,13 +15,14 @@
     "checkpointVersion": 1,
     "workflowRevision": "ADR-0070",
     "discoveryCheckpoint": {
-      "asOf": "2026-09-14",
+      "asOf": "2026-09-15",
       "secEdgar": {
         "cik": "0001888886",
         "latestAcceptanceDateTime": "2026-09-08T12:09:26.000Z",
         "latestAccessionNumber": "0001104659-26-105688"
       },
       "clinicalTrials": {
+        "semanticFingerprintVersion": 2,
         "sponsorQuery": "Structure Therapeutics",
         "assetAliases": [
           "ACCG-2671",
@@ -30,39 +31,39 @@
           "Aleniglipron",
           "GSBR-1290"
         ],
-        "lastQueriedAt": "2026-09-14",
+        "lastQueriedAt": "2026-09-15",
         "knownNCTs": {
           "NCT05762471": {
             "lastUpdatePostDate": "2024-04-25",
-            "semanticHash": "685d171f5f4250e1a9b6d55cc393e97dd23f5a4184905ede8ec5fc00643d7790"
+            "semanticHash": "1820281de7a3b0501307dbcefff3e12afd0a682ae93e7737a04a58847d22aefa"
           },
           "NCT06139055": {
             "lastUpdatePostDate": "2024-02-15",
-            "semanticHash": "c731b4219a5b814e0280c36d327f1a351729eecf9a7bc8f60e2543625e6082fc"
+            "semanticHash": "683c9fb3376d9f23331c3a24e1672f9c48acbcf9ed54a856f53ef1c8f87e0ef8"
           },
           "NCT06693843": {
             "lastUpdatePostDate": "2026-08-10",
-            "semanticHash": "48abbc9b2a9632ce65306ad2e8224c381357786746ca5de426a9eb3b10e262ce"
+            "semanticHash": "8fac72d9c33770e6e39cb2fb49ff99b828c0d14e7e602fd4a9fac769a1854cf3"
           },
           "NCT06703021": {
             "lastUpdatePostDate": "2026-04-28",
-            "semanticHash": "a1e50afbb487165cf61472d85b092c7bfd3aa6cb344e3d33c4ec2ebc0d367ac1"
+            "semanticHash": "aeaf2968adbb7753fa9247324bbe8100c3f6a006341cec158a1cfb905809e2be"
           },
           "NCT07169942": {
             "lastUpdatePostDate": "2026-03-03",
-            "semanticHash": "13323a5e1958705139ea0189682bcc54a7a34fc3945d7cf1a93b5f5c2f21bf20"
+            "semanticHash": "b7807d3848df478eaf0e4d5ad7b31e8438814fb34a6f99e2c0daba05a0c8215a"
           },
           "NCT07400588": {
             "lastUpdatePostDate": "2026-04-27",
-            "semanticHash": "274cc5ba0aede3bb0f515e84b82fbfd3b76a07f36e176625c3e0038cfb6bfb45"
+            "semanticHash": "beab826da918cf92ccca3e1aa71bc562e8d212cc08a63f2503916a7227c37397"
           },
           "NCT07654361": {
             "lastUpdatePostDate": "2026-08-10",
-            "semanticHash": "d116fadde31b9750d23500220df7a90f5f9db411e9ef0749fcf04668f20502c9"
+            "semanticHash": "2b978a39eca7c324c53dab8afbb812e29f70a7354ad27a891c864498265672e0"
           },
           "NCT07654374": {
             "lastUpdatePostDate": "2026-09-11",
-            "semanticHash": "301ada0db00b1d09851e5e7b8c78f68d2a0406c21011bf8591184fdb5d885100"
+            "semanticHash": "7a520396973568cf8c8a450067515fd8112917e00593ae2b68ed74a312b90dfb"
           }
         }
       },
@@ -74,15 +75,15 @@
           "Aleniglipron",
           "GSBR-1290"
         ],
-        "lastQueriedAt": "2026-09-14",
+        "lastQueriedAt": "2026-09-15",
         "monitoredPMIDs": {
           "42249138": {
-            "status": "clean",
-            "lastCheckedAt": "2026-09-14"
+            "status": "has-erratum",
+            "lastCheckedAt": "2026-09-15"
           },
           "42343118": {
             "status": "clean",
-            "lastCheckedAt": "2026-09-14"
+            "lastCheckedAt": "2026-09-15"
           }
         }
       }

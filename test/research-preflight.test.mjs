@@ -2,7 +2,7 @@
  * test/research-preflight.test.mjs
  *
  * Offline, zero-network unit test suite for research preflight architecture.
- * Verifies all 8 required invariant guarantees and safety gates.
+ * Verifies all invariant guarantees, safety gates, and regression cases.
  */
 
 import assert from "node:assert";
@@ -11,12 +11,14 @@ import path from "node:path";
 import test from "node:test";
 
 import {
+  CURRENT_FINGERPRINT_VERSION,
   KNOWN_SEC_CIKS,
   canAdvanceCheckpoint,
   canonicalizeJson,
   computeScientificFingerprint,
   evaluatePreflight,
   loadCompanyContext,
+  parseArgs,
   parseEfetchXml,
   probeLiteratureDiscovery,
   probeLiteratureHealth,
@@ -114,6 +116,7 @@ test("Test 1: Administrative-only update -> ADMIN_UPDATE_BYPASS", async () => {
     baseline: {
       discoveryCheckpoint: {
         clinicalTrials: {
+          semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
           knownNCTs: {
             NCT06068946: {
               lastUpdatePostDate: "2024-03-01",
@@ -128,7 +131,6 @@ test("Test 1: Administrative-only update -> ADMIN_UPDATE_BYPASS", async () => {
   // Study has updated post date, but scientific fields are unchanged
   const studyWithNewPostDate = JSON.parse(JSON.stringify(baseStudy));
   studyWithNewPostDate.protocolSection.statusModule.lastUpdatePostDateStruct.date = "2024-05-15";
-  // Add a new site in contact module
   studyWithNewPostDate.protocolSection.contactsLocationsModule.locations.push({
     facility: "Research Site 2",
     city: "Austin",
@@ -140,11 +142,13 @@ test("Test 1: Administrative-only update -> ADMIN_UPDATE_BYPASS", async () => {
     json: async () => studyWithNewPostDate,
   });
 
-  const results = await probeRegistryUpdate(context, mockFetch);
-  assert.strictEqual(results.length, 1);
-  assert.strictEqual(results[0].deltaVerdict, "ADMIN_UPDATE_BYPASS");
-  assert.strictEqual(results[0].scientificHash, hash);
-  assert.match(results[0].deltaMessage, /Administrative update only/);
+  const updateRes = await probeRegistryUpdate(context, mockFetch);
+  assert.strictEqual(updateRes.results.length, 1);
+  assert.strictEqual(updateRes.results[0].deltaVerdict, "ADMIN_UPDATE_BYPASS");
+  assert.strictEqual(updateRes.results[0].scientificHash, hash);
+  assert.strictEqual(updateRes.hasDelta, false);
+  assert.strictEqual(updateRes.hasError, false);
+  assert.match(updateRes.results[0].deltaMessage, /Administrative update only/);
 });
 
 test("Test 2: Dose/intervention scientific change -> SCIENTIFIC_UPDATE_DETECTED", async () => {
@@ -180,6 +184,7 @@ test("Test 2: Dose/intervention scientific change -> SCIENTIFIC_UPDATE_DETECTED"
     baseline: {
       discoveryCheckpoint: {
         clinicalTrials: {
+          semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
           knownNCTs: {
             NCT06068946: {
               lastUpdatePostDate: "2024-03-01",
@@ -196,10 +201,11 @@ test("Test 2: Dose/intervention scientific change -> SCIENTIFIC_UPDATE_DETECTED"
     json: async () => studyWithDoseChange,
   });
 
-  const results = await probeRegistryUpdate(context, mockFetch);
-  assert.strictEqual(results.length, 1);
-  assert.strictEqual(results[0].deltaVerdict, "SCIENTIFIC_UPDATE_DETECTED");
-  assert.match(results[0].deltaMessage, /Scientific protocol changed/);
+  const updateRes = await probeRegistryUpdate(context, mockFetch);
+  assert.strictEqual(updateRes.results.length, 1);
+  assert.strictEqual(updateRes.results[0].deltaVerdict, "SCIENTIFIC_UPDATE_DETECTED");
+  assert.strictEqual(updateRes.hasDelta, true);
+  assert.match(updateRes.results[0].deltaMessage, /Scientific protocol changed/);
 });
 
 test("Test 3: Discovery network failure -> CLEAN forbidden (ACCESS_UNKNOWN / PARTIAL / FETCH_ERROR)", async () => {
@@ -224,21 +230,25 @@ test("Test 3: Discovery network failure -> CLEAN forbidden (ACCESS_UNKNOWN / PAR
   // 1. Registry Discovery network failure
   const regDisc = await probeRegistryDiscovery(context, failingFetch);
   assert.strictEqual(regDisc.deltaVerdict, "FETCH_ERROR");
+  assert.strictEqual(regDisc.hasError, true);
   assert.notStrictEqual(regDisc.deltaVerdict, "CLEAN");
 
   // 2. Literature Discovery network failure
   const litDisc = await probeLiteratureDiscovery(context, failingFetch);
   assert.strictEqual(litDisc.deltaVerdict, "NETWORK_ERROR");
+  assert.strictEqual(litDisc.hasError, true);
   assert.notStrictEqual(litDisc.deltaVerdict, "CLEAN");
 
   // 3. Literature Health network failure
   const litHealth = await probeLiteratureHealth(context, failingFetch);
   assert.strictEqual(litHealth.deltaVerdict, "NETWORK_ERROR");
+  assert.strictEqual(litHealth.hasError, true);
   assert.notStrictEqual(litHealth.deltaVerdict, "CLEAN");
 
   // 4. SEC EDGAR network failure
   const sec = await probeSecFilings("viking-therapeutics", null, null, context, failingFetch);
   assert.strictEqual(sec.deltaVerdict, "NETWORK_ERROR");
+  assert.strictEqual(sec.hasError, true);
   assert.notStrictEqual(sec.deltaVerdict, "CLEAN");
 
   // 5. Composite verdict must promote child network errors
@@ -252,6 +262,7 @@ test("Test 4: Unresolved delta -> checkpoint write blocked", async () => {
   const context = {
     companyId: "viking-therapeutics",
     targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
+    targetFileExists: true,
     baseline: {
       discoveryCheckpoint: {
         asOf: "2024-03-01",
@@ -261,12 +272,19 @@ test("Test 4: Unresolved delta -> checkpoint write blocked", async () => {
     },
   };
 
-  const updateRes = [
-    { nctId: "NCT06068946", deltaVerdict: "SCIENTIFIC_UPDATE_DETECTED" },
-  ];
+  const updateRes = {
+    hasDelta: true,
+    hasError: false,
+    hasIncomplete: false,
+    deltaVerdict: "SCIENTIFIC_UPDATE_DETECTED",
+    results: [{ nctId: "NCT06068946", deltaVerdict: "SCIENTIFIC_UPDATE_DETECTED" }],
+  };
   const secRes = {
     status: "OK",
     deltaVerdict: "NEW_FILINGS_DETECTED",
+    hasDelta: true,
+    hasError: false,
+    hasIncomplete: false,
     newFilingsCount: 2,
     filings: [{ form: "8-K" }],
   };
@@ -286,27 +304,24 @@ test("Test 4: Unresolved delta -> checkpoint write blocked", async () => {
   // Attempt advance with full ack (--ack-deltas) -> ALLOWED
   const gateFullAck = canAdvanceCheckpoint(context, updateRes, null, null, null, secRes, { advance: true, ackDeltas: true });
   assert.strictEqual(gateFullAck.allowed, true);
-
-  // If a fetch error exists, EVEN full ack MUST BE BLOCKED
-  const errorUpdateRes = [
-    { nctId: "NCT06068946", deltaVerdict: "FETCH_ERROR" },
-  ];
-  const gateErrorWithAck = canAdvanceCheckpoint(context, errorUpdateRes, null, null, null, secRes, { advance: true, ackDeltas: true });
-  assert.strictEqual(gateErrorWithAck.allowed, false);
-  assert.match(gateErrorWithAck.reason, /Network errors or incomplete data detected/);
 });
 
 test("Test 5: Legacy no-checkpoint -> bootstrap baseline allowed", async () => {
   const cleanContextNoBaseline = {
     companyId: "novo-nordisk",
     targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "novo-nordisk", "company.json"),
+    targetFileExists: true,
     baseline: null,
   };
 
-  const updateRes = [
-    { nctId: "NCT01234567", deltaVerdict: "LEGACY_UNBASELINED", lastUpdatePostDate: "2024-01-01", scientificHash: "abc123" },
-  ];
-  const secRes = { status: "OK", deltaVerdict: "LEGACY_UNBASELINED", allRecentKeyFilings: [] };
+  const updateRes = {
+    hasDelta: false,
+    hasError: false,
+    hasIncomplete: false,
+    deltaVerdict: "LEGACY_UNBASELINED",
+    results: [{ nctId: "NCT01234567", deltaVerdict: "LEGACY_UNBASELINED", lastUpdatePostDate: "2024-01-01", scientificHash: "abc123" }],
+  };
+  const secRes = { status: "OK", deltaVerdict: "LEGACY_UNBASELINED", hasDelta: false, hasError: false, hasIncomplete: false, allRecentKeyFilings: [] };
 
   // Bootstrap allowed when baseline is null
   const bootstrapGate = canAdvanceCheckpoint(cleanContextNoBaseline, updateRes, null, null, null, secRes, { bootstrap: true });
@@ -320,6 +335,8 @@ test("Test 5: Legacy no-checkpoint -> bootstrap baseline allowed", async () => {
   // Bootstrap NOT allowed when baseline already exists
   const contextWithBaseline = {
     companyId: "novo-nordisk",
+    targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "novo-nordisk", "company.json"),
+    targetFileExists: true,
     baseline: { discoveryCheckpoint: { asOf: "2024-01-01" } },
   };
   const bootstrapOnExisting = canAdvanceCheckpoint(contextWithBaseline, updateRes, null, null, null, secRes, { bootstrap: true });
@@ -341,7 +358,7 @@ test("Test 6: New NCT / new PMID / new SEC filing -> delta detection", async () 
   };
   const regContext = {
     companyName: "Structure Therapeutics",
-    knownNCTs: ["NCT07169942"], // does not contain NCT09999999
+    knownNCTs: ["NCT07169942"],
     assetAliases: ["GSBR-1290"],
     targetAssetId: null,
   };
@@ -351,6 +368,7 @@ test("Test 6: New NCT / new PMID / new SEC filing -> delta detection", async () 
   });
   const regDisc = await probeRegistryDiscovery(regContext, mockCtGovFetch);
   assert.strictEqual(regDisc.deltaVerdict, "NEW_TRIALS_DETECTED");
+  assert.strictEqual(regDisc.hasDelta, true);
   assert.strictEqual(regDisc.newlyDiscoveredCount, 1);
   assert.strictEqual(regDisc.newlyDiscovered[0].nctId, "NCT09999999");
 
@@ -389,8 +407,8 @@ test("Test 6: New NCT / new PMID / new SEC filing -> delta detection", async () 
       discoveryCheckpoint: {
         literature: {
           monitoredPMIDs: {
-            "42302084": { status: "clean" }, // was clean, now has erratum
-            "42676624": { status: "clean" }, // was clean, now retracted
+            "42302084": { status: "clean" },
+            "42676624": { status: "clean" },
           },
         },
       },
@@ -402,6 +420,7 @@ test("Test 6: New NCT / new PMID / new SEC filing -> delta detection", async () 
   });
   const litHealth = await probeLiteratureHealth(litContext, mockXmlFetch);
   assert.strictEqual(litHealth.deltaVerdict, "NEW_ERRATUM_DETECTED");
+  assert.strictEqual(litHealth.hasDelta, true);
   assert.strictEqual(litHealth.newErrataCount, 2);
 
   // 3. SEC EDGAR detects new filing past baseline
@@ -425,6 +444,7 @@ test("Test 6: New NCT / new PMID / new SEC filing -> delta detection", async () 
   const checkpoint = { secEdgar: { latestAcceptanceDateTime: "2024-06-01T00:00:00.000Z" } };
   const secRes = await probeSecFilings("structure-therapeutics", "0001888886", checkpoint, null, mockSecFetch);
   assert.strictEqual(secRes.deltaVerdict, "NEW_FILINGS_DETECTED");
+  assert.strictEqual(secRes.hasDelta, true);
   assert.strictEqual(secRes.newFilingsCount, 1);
   assert.strictEqual(secRes.filings[0].accessionNumber, "0001888886-24-000020");
 });
@@ -470,10 +490,215 @@ test("Test 8: Generated outputs -> researchState omitted", () => {
   }
 });
 
+// ============================================================================
+// REGRESSION TESTS FOR 10 REMAINING DEFECTS
+// ============================================================================
+
+test("Regression 1: Mixed state delta + fetch error -> write BLOCKED even with --ack-deltas", () => {
+  const context = {
+    companyId: "viking-therapeutics",
+    targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
+    targetFileExists: true,
+    baseline: {
+      discoveryCheckpoint: {
+        asOf: "2024-03-01",
+        clinicalTrials: {},
+      },
+    },
+  };
+
+  // Mixed state: 1 new trial discovered, but sponsor query encountered a fetch error
+  const discRes = {
+    deltaVerdict: "NEW_TRIALS_DETECTED",
+    hasDelta: true,
+    hasError: true,
+    hasIncomplete: false,
+    newlyDiscoveredCount: 1,
+    newlyDiscovered: [{ nctId: "NCT09999999" }],
+  };
+
+  const gate = canAdvanceCheckpoint(context, null, discRes, null, null, null, { advance: true, ackDeltas: true });
+  assert.strictEqual(gate.allowed, false, "Must block write when hasError is true, despite ackDeltas");
+  assert.match(gate.reason, /Errors or incomplete data detected/);
+});
+
+test("Regression 2: Mixed state delta + truncation -> write BLOCKED even with --ack-deltas", () => {
+  const context = {
+    companyId: "viking-therapeutics",
+    targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
+    targetFileExists: true,
+    baseline: {
+      discoveryCheckpoint: {
+        asOf: "2024-03-01",
+        clinicalTrials: {},
+      },
+    },
+  };
+
+  // Mixed state: 2 new publications discovered, but pagination was truncated
+  const litDiscRes = {
+    deltaVerdict: "NEW_PUBLICATIONS_DETECTED",
+    hasDelta: true,
+    hasError: false,
+    hasIncomplete: true,
+    newDiscoveredCount: 2,
+    truncated: true,
+  };
+
+  const gate = canAdvanceCheckpoint(context, null, null, null, litDiscRes, null, { advance: true, ackDeltas: true });
+  assert.strictEqual(gate.allowed, false, "Must block write when hasIncomplete is true, despite ackDeltas");
+  assert.match(gate.reason, /Errors or incomplete data detected/);
+});
+
+test("Regression 3: Semantic fingerprint version mismatch -> REBASELINE_REQUIRED", async () => {
+  const { hash } = computeScientificFingerprint(baseStudy);
+
+  // Baseline has old version 1, whereas current version is 2
+  const context = {
+    knownNCTs: ["NCT06068946"],
+    baseline: {
+      discoveryCheckpoint: {
+        clinicalTrials: {
+          semanticFingerprintVersion: 1, // old version
+          knownNCTs: {
+            NCT06068946: {
+              lastUpdatePostDate: "2024-03-01",
+              semanticHash: hash,
+            },
+          },
+        },
+      },
+    },
+  };
+
+  const mockFetch = async () => ({
+    ok: true,
+    json: async () => baseStudy,
+  });
+
+  const updateRes = await probeRegistryUpdate(context, mockFetch);
+  assert.strictEqual(updateRes.deltaVerdict, "REBASELINE_REQUIRED");
+  assert.strictEqual(updateRes.isVersionMismatch, true);
+  assert.strictEqual(updateRes.hasDelta, true);
+  assert.strictEqual(updateRes.results[0].deltaVerdict, "REBASELINE_REQUIRED");
+  assert.match(updateRes.results[0].deltaMessage, /Semantic fingerprint version mismatch/);
+});
+
+test("Regression 4: Asset bootstrap without canonical CE file -> blocked with ASSET_CANONICAL_TARGET_MISSING", async () => {
+  // Target asset has no clinical-evidence.json
+  const context = await loadCompanyContext("structure-therapeutics", "non-existent-synthetic-asset");
+  assert.strictEqual(context.targetAssetId, "non-existent-synthetic-asset");
+  assert.strictEqual(context.targetFileExists, false);
+  assert.notStrictEqual(context.targetFile, path.join(ROOT, "domains", "company-pipeline", "data", "companies", "structure-therapeutics", "company.json"));
+
+  const gate = canAdvanceCheckpoint(context, null, null, null, null, null, { bootstrap: true });
+  assert.strictEqual(gate.allowed, false);
+  assert.match(gate.reason, /ASSET_CANONICAL_TARGET_MISSING/);
+});
+
+test("Regression 5: Regimen components[].assetId scope correctly includes related and excludes unrelated sibling regimens", async () => {
+  // Eli Lilly: ly3298176 (Tirzepatide)
+  const tirzContext = await loadCompanyContext("eli-lilly-and-company", "ly3298176");
+
+  // In Lilly regimens.json:
+  // "eli-lilly-and-company-bimagrumab-tirzepatide-obesity" components:
+  // [{ "assetName": "Bimagrumab" }, { "assetId": "ly3298176" }] -> cites NCT06643728
+  assert.ok(
+    tirzContext.knownNCTs.includes("NCT06643728"),
+    "NCT06643728 from Bimagrumab+Tirzepatide regimen component must be included in Tirzepatide scope",
+  );
+
+  // In Lilly regimens.json:
+  // "eli-lilly-and-company-bimagrumab-semaglutide-obesity" components:
+  // [{ "assetName": "Bimagrumab" }, { "assetName": "Semaglutide" }] -> cites NCT05616013 (no Tirzepatide)
+  assert.strictEqual(
+    tirzContext.knownNCTs.includes("NCT05616013"),
+    false,
+    "NCT05616013 from Bimagrumab+Semaglutide regimen must NOT be included in Tirzepatide scope",
+  );
+});
+
+test("Regression 6: ESearch new PMID found + ESummary failure -> delta preserved, hasIncomplete flagged, never CLEAN", async () => {
+  const context = {
+    knownPMIDs: ["11111111"],
+    assetAliases: ["TestAssetX"],
+  };
+
+  const mockFetch = async (url) => {
+    if (url.includes("esearch.fcgi")) {
+      return {
+        ok: true,
+        json: async () => ({
+          esearchresult: { count: "2", idlist: ["11111111", "99999999"] }, // 99999999 is brand new
+        }),
+      };
+    }
+    if (url.includes("esummary.fcgi")) {
+      // Upstream ESummary service 500 error
+      return { ok: false, status: 500 };
+    }
+    throw new Error(`Unexpected URL: ${url}`);
+  };
+
+  const litDisc = await probeLiteratureDiscovery(context, mockFetch);
+  assert.strictEqual(litDisc.deltaVerdict, "NEW_PUBLICATIONS_DETECTED");
+  assert.strictEqual(litDisc.hasDelta, true);
+  assert.strictEqual(litDisc.hasIncomplete, true, "Must flag hasIncomplete when summary enrichment fails");
+  assert.notStrictEqual(litDisc.deltaVerdict, "CLEAN");
+  assert.strictEqual(litDisc.newPMIDs.length, 1);
+  assert.strictEqual(litDisc.newPMIDs[0].pmid, "99999999");
+});
+
+test("Regression 7: Canonical CIK vs checkpoint CIK disagreement -> CIK_CONFLICT", async () => {
+  const conflictingContext = {
+    company: { secCik: "0001888886" }, // Structure CIK
+    baseline: { discoveryCheckpoint: { secEdgar: { cik: "0001607678" } } }, // Viking CIK
+  };
+
+  const resolved = resolveCik("structure-therapeutics", null, conflictingContext);
+  assert.strictEqual(resolved.status, "CIK_CONFLICT");
+  assert.strictEqual(resolved.cik, null);
+  assert.match(resolved.message, /CIK conflict detected/);
+
+  const secRes = await probeSecFilings("structure-therapeutics", null, null, conflictingContext);
+  assert.strictEqual(secRes.status, "CIK_CONFLICT");
+  assert.strictEqual(secRes.deltaVerdict, "CIK_CONFLICT");
+  assert.strictEqual(secRes.hasError, true);
+});
+
+test("Regression 8: Ambiguous checkpoint write mode without --bootstrap/--advance is blocked", () => {
+  const context = {
+    companyId: "viking-therapeutics",
+    targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
+    targetFileExists: true,
+    baseline: { discoveryCheckpoint: { asOf: "2024-03-01" } },
+  };
+
+  // Calling canAdvanceCheckpoint with empty flags (or legacy ambiguous flags) must be rejected
+  const gateNoMode = canAdvanceCheckpoint(context, null, null, null, null, null, {});
+  assert.strictEqual(gateNoMode.allowed, false);
+  assert.match(gateNoMode.reason, /Ambiguous mode/);
+
+  // parseArgs correctly parses explicit modes
+  const parsedBootstrap = parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--bootstrap"]);
+  assert.strictEqual(parsedBootstrap.bootstrap, true);
+  assert.strictEqual(parsedBootstrap.advance, false);
+
+  const parsedAdvance = parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--advance"]);
+  assert.strictEqual(parsedAdvance.advance, true);
+  assert.strictEqual(parsedAdvance.bootstrap, false);
+});
+
+test("Regression 9: Package engines node requirement is at least >=22.19.0", () => {
+  const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8"));
+  assert.ok(pkg.engines?.node, "package.json must declare engines.node");
+  assert.match(pkg.engines.node, />=22\.19\.0/, "engines.node must require >=22.19.0 for reliable system CA");
+});
+
 test("CIK resolution hierarchy and mapping checks", () => {
   // AstraZeneca CIK check
   assert.strictEqual(KNOWN_SEC_CIKS["astrazeneca"], "0000901832");
-  assert.notStrictEqual(KNOWN_SEC_CIKS["astrazeneca"], "0001053092"); // was Credit Suisse
+  assert.notStrictEqual(KNOWN_SEC_CIKS["astrazeneca"], "0001053092");
 
   // Zealand Pharma CIK check
   assert.strictEqual(KNOWN_SEC_CIKS["zealand-pharma"], "0002068427");
@@ -484,30 +709,27 @@ test("CIK resolution hierarchy and mapping checks", () => {
   // Merck CIK check
   assert.strictEqual(KNOWN_SEC_CIKS["merck-co"], "0000310158");
 
-  // Hierarchy check: CLI override > baseline > company metadata > default mapping
+  // Hierarchy check: CLI override > company metadata > baseline > default mapping
   const mockContext = {
     company: { secCik: "0009999991" },
-    baseline: { discoveryCheckpoint: { secEdgar: { cik: "0009999992" } } },
+    baseline: { discoveryCheckpoint: { secEdgar: { cik: "0009999991" } } },
   };
 
   // 1. CLI override takes top precedence
-  assert.strictEqual(resolveCik("astrazeneca", "0009999999", mockContext), "0009999999");
-  // 2. Baseline checkpoint takes next precedence
-  assert.strictEqual(resolveCik("astrazeneca", null, mockContext), "0009999992");
-  // 3. Company metadata takes next precedence
-  assert.strictEqual(resolveCik("astrazeneca", null, { company: mockContext.company }), "0009999991");
+  assert.strictEqual(resolveCik("astrazeneca", "0009999999", mockContext).cik, "0009999999");
+  // 2. Canonical company metadata
+  assert.strictEqual(resolveCik("astrazeneca", null, mockContext).cik, "0009999991");
+  // 3. Stored checkpoint (when company metadata absent)
+  assert.strictEqual(resolveCik("astrazeneca", null, { baseline: mockContext.baseline }).cik, "0009999991");
   // 4. Fallback mapping
-  assert.strictEqual(resolveCik("astrazeneca", null, null), "0000901832");
+  assert.strictEqual(resolveCik("astrazeneca", null, null).cik, "0000901832");
 });
 
 test("canonicalizeJson and parseEfetchXml unit assertions", () => {
-  // canonicalizeJson sorts nested keys deterministically
   const obj1 = { z: 1, a: { y: 2, b: 3 } };
   const obj2 = { a: { b: 3, y: 2 }, z: 1 };
   assert.strictEqual(JSON.stringify(canonicalizeJson(obj1)), JSON.stringify(canonicalizeJson(obj2)));
 
-  // parseEfetchXml handles empty/malformed input gracefully
   assert.strictEqual(parseEfetchXml("").size, 0);
   assert.strictEqual(parseEfetchXml(null).size, 0);
 });
-

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22.18.0"
+    "node": ">=22.19.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -39,7 +39,7 @@
     "research:preflight:literature:discovery": "node --use-system-ca scripts/research-preflight.mjs literature:discovery",
     "research:preflight:sec": "node --use-system-ca scripts/research-preflight.mjs sec",
     "test:research-preflight": "node test/research-preflight.test.mjs",
-    "gate": "npm run data:generate && npm run data:validate:registries && npm run data:validate:companies && npm run data:validate:generated && npm run data:validate:synthetic && npm run data:validate:clinical-evidence && npm run data:validate:clinical-evidence:generated && npm run data:validate:clinical-evidence:synthetic && npm run data:validate:news && npm run data:validate:news:synthetic && npm run data:probe:indication-scope && npm run data:probe:scope-class && npm run data:probe:registry-citations && npm run data:probe:mechanism-families && npm run data:probe:efficacy-population-coverage && npm run data:probe:efficacy-comparison && npm run data:probe:news-source-overlap && npm run lint && npm run build && git diff --check"
+    "gate": "npm run data:generate && npm run data:validate:registries && npm run data:validate:companies && npm run data:validate:generated && npm run data:validate:synthetic && npm run data:validate:clinical-evidence && npm run data:validate:clinical-evidence:generated && npm run data:validate:clinical-evidence:synthetic && npm run data:validate:news && npm run data:validate:news:synthetic && npm run data:probe:indication-scope && npm run data:probe:scope-class && npm run data:probe:registry-citations && npm run data:probe:mechanism-families && npm run data:probe:efficacy-population-coverage && npm run data:probe:efficacy-comparison && npm run data:probe:news-source-overlap && npm run test:research-preflight && npm run lint && npm run build && git diff --check"
   },
   "dependencies": {
     "lucide-react": "^1.31.0",

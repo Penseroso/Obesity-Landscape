@@ -15,39 +15,40 @@
     "checkpointVersion": 1,
     "workflowRevision": "ADR-0070",
     "discoveryCheckpoint": {
-      "asOf": "2026-09-14",
+      "asOf": "2026-09-15",
       "secEdgar": {
         "cik": "0001607678",
         "latestAcceptanceDateTime": "2026-07-29T21:15:35.000Z",
         "latestAccessionNumber": "0001193125-26-324219"
       },
       "clinicalTrials": {
+        "semanticFingerprintVersion": 2,
         "sponsorQuery": "Viking Therapeutics",
         "assetAliases": [
           "VK2735",
           "VK3019"
         ],
-        "lastQueriedAt": "2026-09-14",
+        "lastQueriedAt": "2026-09-15",
         "knownNCTs": {
           "NCT05203237": {
             "lastUpdatePostDate": "2025-02-17",
-            "semanticHash": "f56237c06f3a13c9a550c2bc3d919e8407832b6494a821425fc340063b106d7b"
+            "semanticHash": "3534f1c25cde6e4090393cd06d26c8f844cfb60560aa97887362d2dc91de6147"
           },
           "NCT06068946": {
             "lastUpdatePostDate": "2025-02-12",
-            "semanticHash": "11eaf3f7fe31a20f10da18d674b088a99b71ceca002ecdaa4248baf25a4e2f22"
+            "semanticHash": "27c818e509c7561406927dbaa0ecf49da74b100f3c0d86b2cae1a3f936f43489"
           },
           "NCT06828055": {
             "lastUpdatePostDate": "2025-10-06",
-            "semanticHash": "56c3cbf36112209ed1ceef534e2ff69061a9ccc9ee8284499755ea1ccd4ab11d"
+            "semanticHash": "3f2f24f1ffa8eecdbf4e919726fcdd4eec9a64f9af1ff485498a0020a840e331"
           },
           "NCT07104383": {
             "lastUpdatePostDate": "2026-04-07",
-            "semanticHash": "65a6685345a96464730aaf18a05ed72d3d9bc7749bf0ab6379ef659e8e317b2c"
+            "semanticHash": "3bab2115ceb4152762eaf674039a42824d0b774baff258bb722af22c8deac1bd"
           },
           "NCT07104500": {
             "lastUpdatePostDate": "2025-11-24",
-            "semanticHash": "25a752202ce3e2278ca2d10bc4113a40b7d206c2a958eb59782caee007f30300"
+            "semanticHash": "9889a50704c8d49ce87b7cf9a76ba74bc8393b5f497092207884dfc079ea6ce0"
           }
         }
       },
@@ -56,11 +57,11 @@
           "VK2735",
           "VK3019"
         ],
-        "lastQueriedAt": "2026-09-14",
+        "lastQueriedAt": "2026-09-15",
         "monitoredPMIDs": {
           "41508550": {
             "status": "clean",
-            "lastCheckedAt": "2026-09-14"
+            "lastCheckedAt": "2026-09-15"
           }
         }
       }

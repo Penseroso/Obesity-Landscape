@@ -16,7 +16,7 @@
  *   1. Strictly decoupled from offline CI (`npm run gate` is 100% reproducible and network-independent).
  *   2. Zero shadow databases or persistent external state files created.
  *   3. Free of LLM token consumption (pure HTTP GET + deterministic normalization & diffing).
- *   4. Checkpoint write safety: blocked on any unresolved delta or network error unless explicitly acknowledged.
+ *   4. Checkpoint write safety: blocked on any unresolved delta, network error, or incomplete state.
  */
 
 import crypto from "node:crypto";
@@ -29,11 +29,13 @@ const ROOT = process.cwd();
 const COMPANY_DIR = path.join(ROOT, "domains", "company-pipeline", "data", "companies");
 const CLINICAL_DIR = path.join(ROOT, "domains", "clinical-evidence", "data", "clinical-evidence");
 
+export const CURRENT_FINGERPRINT_VERSION = 2;
+
 export const USER_AGENT_SEC = "ObesityLandscapeResearch/1.0 (research@obesitylandscape.org)";
 export const USER_AGENT_PUBMED_TOOL = "obesity-landscape";
 export const USER_AGENT_PUBMED_EMAIL = "research@obesitylandscape.org";
 
-// Known public biopharma CIK registry mapping (verified with SEC EDGAR company_tickers.json)
+// Bootstrap convenience fallback mapping (verified with SEC EDGAR company_tickers.json)
 export const KNOWN_SEC_CIKS = {
   "structure-therapeutics": "0001888886", // GPCR
   "viking-therapeutics": "0001607678",    // VKTX
@@ -41,13 +43,13 @@ export const KNOWN_SEC_CIKS = {
   "novo-nordisk": "0000353278",           // NVO
   "amgen": "0000318154",                  // AMGN
   "pfizer": "0000078003",                 // PFE
-  "astrazeneca": "0000901832",            // AZN (Fixed: AstraZeneca PLC)
+  "astrazeneca": "0000901832",            // AZN
   "regeneron": "0000872589",              // REGN
   "abbvie": "0001551152",                 // ABBV
-  "zealand-pharma": "0002068427",         // ZLDPF (Fixed: Zealand Pharma A/S ADR)
-  "neurocrine-biosciences": "0000914475", // NBIX (Fixed: Neurocrine Biosciences Inc)
-  "merck-co": "0000310158",               // MRK (Fixed: Merck & Co., Inc.)
-  "innovent-biologics": "0001774163",     // IVBXF ADR
+  "zealand-pharma": "0002068427",         // ZLDPF
+  "neurocrine-biosciences": "0000914475", // NBIX
+  "merck-co": "0000310158",               // MRK
+  "innovent-biologics": "0001774163",     // IVBXF
   "ascletis-pharma": "FOREIGN_EXCHANGE_HKEX",
   "hansoh-pharma": "FOREIGN_EXCHANGE_HKEX",
   "jiangsu-hengrui-pharmaceuticals": "FOREIGN_EXCHANGE_SSE",
@@ -64,24 +66,47 @@ export const KNOWN_SEC_CIKS = {
 
 /**
  * Resolves SEC CIK following the authoritative hierarchy:
- * 1. CLI override (`--cik <cik>`)
- * 2. Stored baseline checkpoint (`baseline.secEdgar?.cik`)
- * 3. Canonical company metadata (`company.secCik`)
- * 4. Bootstrap code-level mapping (`KNOWN_SEC_CIKS`)
+ * 1. explicit CLI override (`--cik <cik>`)
+ * 2. canonical company metadata (`company.secCik`)
+ * 3. stored baseline checkpoint (`baseline.secEdgar?.cik`)
+ * 4. bootstrap fallback mapping (`KNOWN_SEC_CIKS`)
+ *
+ * Conflict detection:
+ * If canonical `company.secCik` and stored checkpoint CIK both exist and disagree,
+ * returns status `CIK_CONFLICT` to halt execution.
  */
 export function resolveCik(companyId, cliCik, context = null) {
-  if (cliCik) return cliCik;
-  if (context?.baseline?.discoveryCheckpoint?.secEdgar?.cik) {
-    return context.baseline.discoveryCheckpoint.secEdgar.cik;
+  // 1. Explicit CLI override takes highest precedence
+  if (cliCik) return { cik: cliCik, status: "OK" };
+
+  const canonicalCik = context?.company?.secCik ?? null;
+  const checkpointCik = context?.baseline?.discoveryCheckpoint?.secEdgar?.cik ?? null;
+
+  // Conflict check: if both exist and do not match
+  if (canonicalCik && checkpointCik && canonicalCik !== checkpointCik) {
+    return {
+      cik: null,
+      status: "CIK_CONFLICT",
+      message: `CIK conflict detected: canonical company.secCik (${canonicalCik}) does not match stored checkpoint CIK (${checkpointCik}). Canonical update or re-baseline required.`,
+    };
   }
-  if (context?.company?.secCik) {
-    return context.company.secCik;
-  }
-  return KNOWN_SEC_CIKS[companyId] ?? null;
+
+  // 2. Canonical company.secCik takes precedence over checkpoint
+  if (canonicalCik) return { cik: canonicalCik, status: "OK" };
+
+  // 3. Stored checkpoint CIK
+  if (checkpointCik) return { cik: checkpointCik, status: "OK" };
+
+  // 4. Bootstrap fallback mapping
+  const fallback = KNOWN_SEC_CIKS[companyId] ?? null;
+  if (fallback) return { cik: fallback, status: "OK" };
+
+  return { cik: null, status: "UNMAPPED_CIK", message: "Company CIK not in registry mapping. Specify --cik <cik>." };
 }
 
 /**
  * Parses CLI arguments.
+ * Deprecates ambiguous legacy aliases `--baseline` and `--write-checkpoint`.
  */
 export function parseArgs(argv) {
   const args = argv.slice(2);
@@ -89,7 +114,6 @@ export function parseArgs(argv) {
   let companyId = null;
   let assetId = null;
   let cik = null;
-  let baseline = false;
   let bootstrap = false;
   let advance = false;
   let ackFilings = false;
@@ -116,8 +140,8 @@ export function parseArgs(argv) {
       advance = true;
       i += 1;
     } else if (arg === "--baseline" || arg === "--write-checkpoint") {
-      baseline = true;
-      i += 1;
+      console.error("Error: '--baseline' and '--write-checkpoint' are deprecated ambiguous aliases. Explicitly specify '--bootstrap' (to establish initial baseline) or '--advance' (to advance an existing checkpoint).");
+      process.exit(1);
     } else if (arg === "--ack-filings") {
       ackFilings = true;
       i += 1;
@@ -147,7 +171,7 @@ export function parseArgs(argv) {
     }
   }
 
-  return { command, companyId, assetId, cik, baseline, bootstrap, advance, ackFilings, ackDeltas, json, verbose };
+  return { command, companyId, assetId, cik, bootstrap, advance, ackFilings, ackDeltas, json, verbose };
 }
 
 /**
@@ -166,19 +190,6 @@ export function canonicalizeJson(val) {
 
 /**
  * Normalizes scientific fields of a CT.gov study and computes a SHA-256 fingerprint.
- *
- * Includes:
- *   - Arm labels, types, descriptions, and interventions
- *   - Intervention names, types, descriptions, otherNames, and armGroupLabels
- *   - Enrollment count and type
- *   - Study design info and phases
- *   - Eligibility criteria text, sex, min/max age, healthyVolunteers
- *   - Primary and secondary outcome measures, timeFrames, and descriptions
- *   - Start, primary completion, and study completion dates
- *
- * Excludes non-scientific operational data:
- *   - Contacts, locations, investigators, facility names, central contacts
- *   - Sponsor collaborator admin contacts
  */
 export function computeScientificFingerprint(study) {
   const protocol = study?.protocolSection ?? {};
@@ -241,7 +252,6 @@ export function computeScientificFingerprint(study) {
 
 /**
  * Resolves external DOIs and PMC IDs to PMIDs via PubMed E-utilities.
- * Returns both the resolved mapping and any unresolved identifiers.
  */
 export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
   const pmidMap = new Map();
@@ -292,12 +302,13 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
 
 /**
  * Reads and indexes company, pipeline, and clinical evidence targets from disk.
- * Extracts NCTs, PMIDs, DOIs, PMCs, and existing checkpoints.
  *
- * Asset scoping:
- *   When targetAssetId is provided, extracts ONLY aliases, programs, regimens,
- *   and clinical-evidence studies belonging to that specific asset. Sibling assets
- *   are strictly excluded.
+ * Invariant:
+ * When targetAssetId is provided:
+ * - Scopes programs to prog.assetId === targetAssetId.
+ * - Scopes regimens to reg.components[].assetId === targetAssetId.
+ * - Target file is strictly the asset's clinical-evidence.json (NEVER falls back to company.json).
+ * - Tracks whether targetFileExists on disk.
  */
 export async function loadCompanyContext(companyId, targetAssetId = null, customDirs = null) {
   const companyDir = customDirs?.companyDir ?? COMPANY_DIR;
@@ -363,19 +374,25 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
     scanSources(prog.metadata?.sources);
   }
 
-  // 2. Extract from regimens (scoped to targetAssetId if specified)
+  // 2. Extract from regimens based on schema components[].assetId
   const scopedRegimens = targetAssetId
-    ? allRegimens.filter((r) => r.assetId === targetAssetId || r.componentAssetIds?.includes(targetAssetId))
+    ? allRegimens.filter((reg) => {
+        const hasMatchingComponent = (reg.components ?? []).some((c) => c.assetId === targetAssetId);
+        const hasMatchingRegimenAsset = reg.assetId === targetAssetId;
+        return hasMatchingComponent || hasMatchingRegimenAsset;
+      })
     : allRegimens;
 
   for (const reg of scopedRegimens) {
     scanSources(reg.metadata?.sources);
   }
 
-  // 3. Extract from clinical evidence (scoped to targetAssetId if specified)
+  // 3. Extract from clinical evidence
   let assetBaseline = null;
-  let assetClinicalEvidencePath = null;
   const ceCompanyPath = path.join(clinicalDir, companyId);
+  const targetAssetCePath = targetAssetId ? path.join(ceCompanyPath, targetAssetId, "clinical-evidence.json") : null;
+  const targetFileExists = targetAssetId ? fs.existsSync(targetAssetCePath) : true;
+  const targetFile = targetAssetId ? targetAssetCePath : companyJsonPath;
 
   if (fs.existsSync(ceCompanyPath)) {
     const assetFolders = fs.readdirSync(ceCompanyPath, { withFileTypes: true })
@@ -390,7 +407,6 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
         const ceData = JSON.parse(fs.readFileSync(ceFile, "utf8"));
         if (targetAssetId && assetFolder === targetAssetId) {
           assetBaseline = ceData.researchState ?? null;
-          assetClinicalEvidencePath = ceFile;
         }
 
         for (const study of ceData.studies ?? []) {
@@ -416,7 +432,6 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
   }
 
   const baseline = targetAssetId ? assetBaseline : (company.researchState ?? null);
-  const targetFile = targetAssetId ? (assetClinicalEvidencePath ?? companyJsonPath) : companyJsonPath;
 
   return {
     companyId,
@@ -424,6 +439,7 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
     company,
     targetAssetId,
     targetFile,
+    targetFileExists,
     baseline,
     knownNCTs: [...knownNCTs].sort(),
     knownPMIDs: [...knownPMIDs].sort(),
@@ -434,17 +450,25 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
 
 /**
  * PROBE 1: Registry Update Probe (Known NCTs timestamp & scientific hash delta)
+ * Checks semanticFingerprintVersion and flags REBASELINE_REQUIRED if version changed.
  */
 export async function probeRegistryUpdate(context, fetchFn = fetch) {
   const results = [];
   const fieldMask = "protocolSection.identificationModule,protocolSection.statusModule,protocolSection.designModule,protocolSection.armsInterventionsModule,protocolSection.eligibilityModule,protocolSection.outcomesModule";
+
+  const storedVersion = context.baseline?.discoveryCheckpoint?.clinicalTrials?.semanticFingerprintVersion ?? 1;
+  const isVersionMismatch = context.baseline?.discoveryCheckpoint && (storedVersion !== CURRENT_FINGERPRINT_VERSION);
+
+  let hasDelta = false;
+  let hasError = false;
 
   for (const nctId of context.knownNCTs) {
     const url = `https://clinicaltrials.gov/api/v2/studies/${nctId}?fields=${fieldMask}`;
     try {
       const res = await fetchFn(url);
       if (!res.ok) {
-        results.push({ nctId, deltaVerdict: "FETCH_ERROR", httpStatus: res.status });
+        hasError = true;
+        results.push({ nctId, deltaVerdict: "FETCH_ERROR", hasDelta: false, hasError: true, httpStatus: res.status });
         continue;
       }
       const data = await res.json();
@@ -456,9 +480,20 @@ export async function probeRegistryUpdate(context, fetchFn = fetch) {
       const baselineEntry = context.baseline?.discoveryCheckpoint?.clinicalTrials?.knownNCTs?.[nctId];
       let deltaVerdict = "LEGACY_UNBASELINED";
       let deltaMessage = "No stored baseline for study.";
+      let itemHasDelta = false;
 
-      if (baselineEntry) {
-        if (baselineEntry.lastUpdatePostDate === lastUpdatePostDate) {
+      if (context.baseline?.discoveryCheckpoint) {
+        if (isVersionMismatch) {
+          deltaVerdict = "REBASELINE_REQUIRED";
+          deltaMessage = `Semantic fingerprint version mismatch (stored: ${storedVersion}, current: ${CURRENT_FINGERPRINT_VERSION}). Targeted re-baseline required.`;
+          itemHasDelta = true;
+          hasDelta = true;
+        } else if (!baselineEntry) {
+          deltaVerdict = "LEGACY_UNBASELINED";
+          deltaMessage = "Trial is known in canonical data but not in stored baseline.";
+          itemHasDelta = true;
+          hasDelta = true;
+        } else if (baselineEntry.lastUpdatePostDate === lastUpdatePostDate) {
           deltaVerdict = "UNCHANGED";
           deltaMessage = `Post date unchanged (${lastUpdatePostDate}). Verification skipped.`;
         } else if (baselineEntry.semanticHash && baselineEntry.semanticHash === hash) {
@@ -467,6 +502,8 @@ export async function probeRegistryUpdate(context, fetchFn = fetch) {
         } else {
           deltaVerdict = "SCIENTIFIC_UPDATE_DETECTED";
           deltaMessage = `Scientific protocol changed! Post date: ${baselineEntry.lastUpdatePostDate} -> ${lastUpdatePostDate}. Hash changed.`;
+          itemHasDelta = true;
+          hasDelta = true;
         }
       }
 
@@ -479,19 +516,39 @@ export async function probeRegistryUpdate(context, fetchFn = fetch) {
         baselinePostDate: baselineEntry?.lastUpdatePostDate ?? null,
         deltaVerdict,
         deltaMessage,
+        hasDelta: itemHasDelta,
+        hasError: false,
         payload,
       });
     } catch (err) {
-      results.push({ nctId, deltaVerdict: "NETWORK_ERROR", message: err.message });
+      hasError = true;
+      results.push({ nctId, deltaVerdict: "NETWORK_ERROR", hasDelta: false, hasError: true, message: err.message });
     }
   }
 
-  return results;
+  let deltaVerdict = "UNCHANGED";
+  if (isVersionMismatch) {
+    deltaVerdict = "REBASELINE_REQUIRED";
+  } else if (hasDelta) {
+    deltaVerdict = "SCIENTIFIC_UPDATE_DETECTED";
+  } else if (hasError) {
+    deltaVerdict = "FETCH_ERROR";
+  } else if (!context.baseline?.discoveryCheckpoint) {
+    deltaVerdict = "LEGACY_UNBASELINED";
+  }
+
+  return {
+    deltaVerdict,
+    hasDelta,
+    hasError,
+    hasIncomplete: false,
+    isVersionMismatch,
+    results,
+  };
 }
 
 /**
  * Helper to fetch studies from CT.gov API v2 with nextPageToken pagination.
- * Tracks truncation and network errors explicitly.
  */
 export async function fetchCtGovStudies(baseUrl, maxPages = 5, fetchFn = fetch) {
   let currentUrl = baseUrl;
@@ -533,10 +590,7 @@ export async function fetchCtGovStudies(baseUrl, maxPages = 5, fetchFn = fetch) 
 
 /**
  * PROBE 2: Registry Discovery Probe (Company/Asset search to discover brand-new NCTs)
- *
- * When targetAssetId is specified:
- *   Sponsor query is bypassed to avoid pulling in sibling assets' trials.
- *   Only the asset's specific intervention aliases are queried.
+ * Maintains independent hasDelta, hasError, and hasIncomplete.
  */
 export async function probeRegistryDiscovery(context, fetchFn = fetch) {
   const candidateNCTs = new Map();
@@ -567,7 +621,7 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
 
   // 2. Query asset aliases
   for (const alias of context.assetAliases) {
-    if (alias.length < 4) continue; // skip ambiguous short tokens
+    if (alias.length < 4) continue;
     const intrUrl = `https://clinicaltrials.gov/api/v2/studies?query.intr=${encodeURIComponent(alias)}&pageSize=20&fields=${fields}`;
     const aliasRes = await fetchCtGovStudies(intrUrl, 3, fetchFn);
     if (aliasRes.hasError) hasError = true;
@@ -595,8 +649,11 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
     }
   }
 
+  const hasDelta = newlyDiscovered.length > 0;
+  const hasIncomplete = truncated;
+
   let deltaVerdict = "CLEAN";
-  if (newlyDiscovered.length > 0) {
+  if (hasDelta) {
     deltaVerdict = "NEW_TRIALS_DETECTED";
   } else if (hasError) {
     deltaVerdict = "FETCH_ERROR";
@@ -608,7 +665,9 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
     totalCandidates: candidateNCTs.size,
     newlyDiscoveredCount: newlyDiscovered.length,
     deltaVerdict,
+    hasDelta,
     hasError,
+    hasIncomplete,
     truncated,
     newlyDiscovered,
   };
@@ -685,17 +744,23 @@ export function parseEfetchXml(xml) {
 
 /**
  * PROBE 3: Literature Health Check (Checks cited PMIDs via PubMed EFetch XML)
+ * Maintains independent hasDelta, hasError, and hasIncomplete.
  */
 export async function probeLiteratureHealth(context, fetchFn = fetch) {
+  const unresolved = context.unresolvedIdentifiers ?? [];
+  const hasUnresolved = unresolved.length > 0;
+
   if (context.knownPMIDs.length === 0) {
-    const hasUnresolved = (context.unresolvedIdentifiers ?? []).length > 0;
     return {
       citedCount: 0,
       errataCount: 0,
       newErrataCount: 0,
       deltaVerdict: hasUnresolved ? "UNRESOLVED_IDENTIFIERS" : "CLEAN",
+      hasDelta: false,
+      hasError: false,
+      hasIncomplete: hasUnresolved,
       checked: [],
-      unresolvedIdentifiers: context.unresolvedIdentifiers ?? [],
+      unresolvedIdentifiers: unresolved,
     };
   }
 
@@ -710,9 +775,12 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
         errataCount: 0,
         newErrataCount: 0,
         deltaVerdict: "FETCH_ERROR",
+        hasDelta: false,
+        hasError: true,
+        hasIncomplete: hasUnresolved,
         httpStatus: res.status,
         checked: [],
-        unresolvedIdentifiers: context.unresolvedIdentifiers ?? [],
+        unresolvedIdentifiers: unresolved,
       };
     }
     xml = await res.text();
@@ -722,9 +790,12 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
       errataCount: 0,
       newErrataCount: 0,
       deltaVerdict: "NETWORK_ERROR",
+      hasDelta: false,
+      hasError: true,
+      hasIncomplete: hasUnresolved,
       message: err.message,
       checked: [],
-      unresolvedIdentifiers: context.unresolvedIdentifiers ?? [],
+      unresolvedIdentifiers: unresolved,
     };
   }
 
@@ -771,10 +842,13 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
     }
   }
 
+  const hasDelta = newErrataCount > 0;
+  const hasIncomplete = hasMissingPmids || hasUnresolved;
+
   let deltaVerdict = "CLEAN";
-  if (newErrataCount > 0) {
+  if (hasDelta) {
     deltaVerdict = "NEW_ERRATUM_DETECTED";
-  } else if (hasMissingPmids || (context.unresolvedIdentifiers ?? []).length > 0) {
+  } else if (hasIncomplete) {
     deltaVerdict = "PARTIAL";
   }
 
@@ -783,17 +857,21 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
     errataCount,
     newErrataCount,
     deltaVerdict,
+    hasDelta,
+    hasError: false,
+    hasIncomplete,
     checked,
-    unresolvedIdentifiers: context.unresolvedIdentifiers ?? [],
+    unresolvedIdentifiers: unresolved,
   };
 }
 
 /**
  * PROBE 4: Literature Discovery Probe (Queries PubMed for asset aliases -> ID diff)
+ * Preserves new PMIDs and flags hasIncomplete when ESummary fetch fails, never returning false CLEAN.
  */
 export async function probeLiteratureDiscovery(context, fetchFn = fetch) {
   if (context.assetAliases.length === 0) {
-    return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "CLEAN", newPMIDs: [] };
+    return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "CLEAN", hasDelta: false, hasError: false, hasIncomplete: false, newPMIDs: [] };
   }
 
   const aliasTerms = context.assetAliases
@@ -802,7 +880,7 @@ export async function probeLiteratureDiscovery(context, fetchFn = fetch) {
     .join(" OR ");
 
   if (!aliasTerms) {
-    return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "CLEAN", newPMIDs: [] };
+    return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "CLEAN", hasDelta: false, hasError: false, hasIncomplete: false, newPMIDs: [] };
   }
 
   const query = `(${aliasTerms}) AND (obesity[Title/Abstract] OR overweight[Title/Abstract] OR "weight loss"[Title/Abstract] OR "body weight"[Title/Abstract])`;
@@ -813,13 +891,13 @@ export async function probeLiteratureDiscovery(context, fetchFn = fetch) {
   try {
     const searchRes = await fetchFn(searchUrl);
     if (!searchRes.ok) {
-      return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "FETCH_ERROR", httpStatus: searchRes.status, newPMIDs: [] };
+      return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "FETCH_ERROR", hasDelta: false, hasError: true, hasIncomplete: false, httpStatus: searchRes.status, newPMIDs: [] };
     }
     const searchData = await searchRes.json();
     totalCount = Number(searchData.esearchresult?.count ?? 0);
     idList = searchData.esearchresult?.idlist ?? [];
   } catch (err) {
-    return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "NETWORK_ERROR", message: err.message, newPMIDs: [] };
+    return { totalHits: 0, fetchedHits: 0, newDiscoveredCount: 0, deltaVerdict: "NETWORK_ERROR", hasDelta: false, hasError: true, hasIncomplete: false, message: err.message, newPMIDs: [] };
   }
 
   const knownSet = new Set(context.knownPMIDs);
@@ -827,6 +905,8 @@ export async function probeLiteratureDiscovery(context, fetchFn = fetch) {
   const isTruncated = totalCount > idList.length;
 
   const newPMIDs = [];
+  let summaryFetchFailed = false;
+
   if (newIdList.length > 0) {
     try {
       const summaryUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=${newIdList.slice(0, 20).join(",")}&retmode=json&tool=${USER_AGENT_PUBMED_TOOL}&email=${USER_AGENT_PUBMED_EMAIL}`;
@@ -842,16 +922,25 @@ export async function probeLiteratureDiscovery(context, fetchFn = fetch) {
             pubdate: doc?.pubdate ?? "",
           });
         }
+      } else {
+        summaryFetchFailed = true;
+        for (const id of newIdList.slice(0, 20)) {
+          newPMIDs.push({ pmid: id, title: "", source: "", pubdate: "" });
+        }
       }
     } catch {
+      summaryFetchFailed = true;
       for (const id of newIdList.slice(0, 20)) {
         newPMIDs.push({ pmid: id, title: "", source: "", pubdate: "" });
       }
     }
   }
 
+  const hasDelta = newPMIDs.length > 0;
+  const hasIncomplete = isTruncated || summaryFetchFailed;
+
   let deltaVerdict = "CLEAN";
-  if (newPMIDs.length > 0) {
+  if (hasDelta) {
     deltaVerdict = "NEW_PUBLICATIONS_DETECTED";
   } else if (isTruncated) {
     deltaVerdict = "PARTIAL_TRUNCATED";
@@ -862,23 +951,54 @@ export async function probeLiteratureDiscovery(context, fetchFn = fetch) {
     fetchedHits: idList.length,
     newDiscoveredCount: newPMIDs.length,
     deltaVerdict,
+    hasDelta,
+    hasError: false,
+    hasIncomplete,
     truncated: isTruncated,
+    summaryFetchFailed,
     newPMIDs,
   };
 }
 
 /**
  * PROBE 5: SEC EDGAR Filings Probe (Full scan + checkpoint delta comparator)
+ * Evaluates CIK authority hierarchy and detects CIK conflicts.
  */
 export async function probeSecFilings(companyId, cikOverride, checkpoint, context = null, fetchFn = fetch) {
-  const cik = resolveCik(companyId, cikOverride, context);
+  const cikRes = resolveCik(companyId, cikOverride, context);
 
-  if (!cik) {
-    return { status: "UNMAPPED_CIK", deltaVerdict: "ACCESS_UNKNOWN", message: "Company CIK not in registry mapping. Specify --cik <cik>." };
+  if (cikRes.status === "CIK_CONFLICT") {
+    return {
+      status: "CIK_CONFLICT",
+      deltaVerdict: "CIK_CONFLICT",
+      hasDelta: false,
+      hasError: true,
+      hasIncomplete: false,
+      message: cikRes.message,
+    };
   }
 
+  if (cikRes.status === "UNMAPPED_CIK") {
+    return {
+      status: "UNMAPPED_CIK",
+      deltaVerdict: "ACCESS_UNKNOWN",
+      hasDelta: false,
+      hasError: true,
+      hasIncomplete: false,
+      message: cikRes.message,
+    };
+  }
+
+  const cik = cikRes.cik;
   if (cik.startsWith("FOREIGN_EXCHANGE") || cik.startsWith("PRIVATE")) {
-    return { status: "NON_SEC_REPORTING", deltaVerdict: "NON_SEC_REPORTING", classification: cik };
+    return {
+      status: "NON_SEC_REPORTING",
+      deltaVerdict: "NON_SEC_REPORTING",
+      hasDelta: false,
+      hasError: false,
+      hasIncomplete: false,
+      classification: cik,
+    };
   }
 
   const paddedCik = cik.padStart(10, "0");
@@ -887,7 +1007,7 @@ export async function probeSecFilings(companyId, cikOverride, checkpoint, contex
   try {
     const res = await fetchFn(url, { headers: { "User-Agent": USER_AGENT_SEC } });
     if (!res.ok) {
-      return { status: "FETCH_ERROR", deltaVerdict: "FETCH_ERROR", httpStatus: res.status, cik: paddedCik };
+      return { status: "FETCH_ERROR", deltaVerdict: "FETCH_ERROR", hasDelta: false, hasError: true, hasIncomplete: false, httpStatus: res.status, cik: paddedCik };
     }
 
     const data = await res.json();
@@ -912,6 +1032,7 @@ export async function probeSecFilings(companyId, cikOverride, checkpoint, contex
     const baselineAcceptance = checkpoint?.secEdgar?.latestAcceptanceDateTime;
     let deltaVerdict = "LEGACY_UNBASELINED";
     let newFilings = keyFilings;
+    let hasDelta = false;
 
     if (baselineAcceptance) {
       newFilings = keyFilings.filter((f) => f.acceptanceDateTime > baselineAcceptance);
@@ -919,6 +1040,7 @@ export async function probeSecFilings(companyId, cikOverride, checkpoint, contex
         deltaVerdict = "UNCHANGED";
       } else {
         deltaVerdict = "NEW_FILINGS_DETECTED";
+        hasDelta = true;
       }
     }
 
@@ -927,6 +1049,9 @@ export async function probeSecFilings(companyId, cikOverride, checkpoint, contex
       companyName: data.name,
       cik: paddedCik,
       deltaVerdict,
+      hasDelta,
+      hasError: false,
+      hasIncomplete: false,
       baselineAcceptance: baselineAcceptance ?? null,
       totalKeyFilings: keyFilings.length,
       newFilingsCount: newFilings.length,
@@ -934,13 +1059,13 @@ export async function probeSecFilings(companyId, cikOverride, checkpoint, contex
       allRecentKeyFilings: keyFilings.slice(0, 10),
     };
   } catch (err) {
-    return { status: "NETWORK_ERROR", deltaVerdict: "NETWORK_ERROR", message: err.message, cik: paddedCik };
+    return { status: "NETWORK_ERROR", deltaVerdict: "NETWORK_ERROR", hasDelta: false, hasError: true, hasIncomplete: false, message: err.message, cik: paddedCik };
   }
 }
 
 /**
  * Composite evaluation of all preflight probe results.
- * Promotes child errors, incomplete data, and deltas into a unified composite verdict.
+ * Evaluates hasDelta, hasError, and hasIncomplete independently.
  */
 export function evaluatePreflight(context, updateRes, discRes, healthRes, litDiscRes, secRes) {
   const deltaSources = new Set();
@@ -948,69 +1073,42 @@ export function evaluatePreflight(context, updateRes, discRes, healthRes, litDis
   const incompleteSources = new Set();
   const blockedReasons = [];
 
-  // 1. Registry Update
-  if (updateRes) {
-    for (const r of updateRes) {
-      if (r.deltaVerdict === "SCIENTIFIC_UPDATE_DETECTED") {
-        deltaSources.add("registryUpdate");
-        blockedReasons.push(`Scientific update detected in trial ${r.nctId}`);
-      } else if (r.deltaVerdict === "FETCH_ERROR" || r.deltaVerdict === "NETWORK_ERROR") {
-        errorSources.add("registryUpdate");
-        blockedReasons.push(`Failed to fetch trial ${r.nctId} (${r.deltaVerdict})`);
+  const probes = [
+    { name: "registryUpdate", res: updateRes },
+    { name: "registryDiscovery", res: discRes },
+    { name: "literatureHealth", res: healthRes },
+    { name: "literatureDiscovery", res: litDiscRes },
+    { name: "sec", res: secRes },
+  ];
+
+  for (const { name, res } of probes) {
+    if (!res) continue;
+
+    if (res.hasDelta) {
+      deltaSources.add(name);
+      if (res.deltaVerdict === "REBASELINE_REQUIRED") {
+        blockedReasons.push("ClinicalTrials semantic fingerprint version mismatch (re-baseline required)");
+      } else if (res.deltaMessage) {
+        blockedReasons.push(res.deltaMessage);
+      } else if (res.newlyDiscoveredCount) {
+        blockedReasons.push(`${name}: ${res.newlyDiscoveredCount} newly discovered items`);
+      } else if (res.newFilingsCount) {
+        blockedReasons.push(`${name}: ${res.newFilingsCount} new filings`);
+      } else if (res.newErrataCount) {
+        blockedReasons.push(`${name}: ${res.newErrataCount} new errata`);
+      } else {
+        blockedReasons.push(`${name}: delta detected (${res.deltaVerdict})`);
       }
     }
-  }
 
-  // 2. Registry Discovery
-  if (discRes) {
-    if (discRes.deltaVerdict === "NEW_TRIALS_DETECTED") {
-      deltaSources.add("registryDiscovery");
-      blockedReasons.push(`${discRes.newlyDiscoveredCount} newly registered trials discovered`);
-    } else if (discRes.deltaVerdict === "FETCH_ERROR" || discRes.deltaVerdict === "NETWORK_ERROR") {
-      errorSources.add("registryDiscovery");
-      blockedReasons.push(`Registry discovery probe failed (${discRes.deltaVerdict})`);
-    } else if (discRes.deltaVerdict === "PARTIAL_TRUNCATED") {
-      incompleteSources.add("registryDiscovery");
-      blockedReasons.push("Registry discovery probe results truncated");
+    if (res.hasError) {
+      errorSources.add(name);
+      blockedReasons.push(`${name}: error (${res.deltaVerdict || res.status || "network failure"})`);
     }
-  }
 
-  // 3. Literature Health
-  if (healthRes) {
-    if (healthRes.deltaVerdict === "NEW_ERRATUM_DETECTED" || healthRes.newErrataCount > 0) {
-      deltaSources.add("literatureHealth");
-      blockedReasons.push(`${healthRes.newErrataCount} new errata or retractions detected in cited literature`);
-    } else if (healthRes.deltaVerdict === "FETCH_ERROR" || healthRes.deltaVerdict === "NETWORK_ERROR") {
-      errorSources.add("literatureHealth");
-      blockedReasons.push(`Literature health check failed (${healthRes.deltaVerdict})`);
-    } else if (healthRes.deltaVerdict === "PARTIAL" || healthRes.deltaVerdict === "UNRESOLVED_IDENTIFIERS") {
-      incompleteSources.add("literatureHealth");
-      blockedReasons.push("Literature health check has unresolved or missing identifiers");
-    }
-  }
-
-  // 4. Literature Discovery
-  if (litDiscRes) {
-    if (litDiscRes.deltaVerdict === "NEW_PUBLICATIONS_DETECTED") {
-      deltaSources.add("literatureDiscovery");
-      blockedReasons.push(`${litDiscRes.newDiscoveredCount} new publications discovered`);
-    } else if (litDiscRes.deltaVerdict === "FETCH_ERROR" || litDiscRes.deltaVerdict === "NETWORK_ERROR") {
-      errorSources.add("literatureDiscovery");
-      blockedReasons.push(`Literature discovery probe failed (${litDiscRes.deltaVerdict})`);
-    } else if (litDiscRes.deltaVerdict === "PARTIAL_TRUNCATED") {
-      incompleteSources.add("literatureDiscovery");
-      blockedReasons.push("Literature discovery search hits exceeded pagination limit (truncated)");
-    }
-  }
-
-  // 5. SEC
-  if (secRes) {
-    if (secRes.deltaVerdict === "NEW_FILINGS_DETECTED") {
-      deltaSources.add("sec");
-      blockedReasons.push(`${secRes.newFilingsCount} new SEC filings detected`);
-    } else if (secRes.deltaVerdict === "FETCH_ERROR" || secRes.deltaVerdict === "NETWORK_ERROR" || secRes.deltaVerdict === "ACCESS_UNKNOWN") {
-      errorSources.add("sec");
-      blockedReasons.push(`SEC probe error (${secRes.deltaVerdict}: ${secRes.message ?? secRes.status})`);
+    if (res.hasIncomplete) {
+      incompleteSources.add(name);
+      blockedReasons.push(`${name}: incomplete / truncated data or unresolved identifiers`);
     }
   }
 
@@ -1045,26 +1143,45 @@ export function evaluatePreflight(context, updateRes, discRes, healthRes, litDis
  * Validates whether a baseline checkpoint can be written to disk.
  *
  * Rules:
- *   1. Error/Incomplete states: writing is STRICTLY FORBIDDEN under all circumstances.
- *   2. Bootstrap mode: only permitted for unbaselined targets.
- *   3. Advance mode: only permitted for established baselines. If deltas exist, requires
+ *   1. Error/Incomplete states: writing is STRICTLY FORBIDDEN under all circumstances,
+ *      regardless of whether --ack-deltas is supplied.
+ *   2. Missing asset CE target: if targetAssetId specified and CE file does not exist,
+ *      blocks with ASSET_CANONICAL_TARGET_MISSING.
+ *   3. Bootstrap mode: only permitted for unbaselined targets.
+ *   4. Advance mode: only permitted for established baselines. If deltas exist, requires
  *      explicit confirmation flags (--ack-filings, --ack-deltas).
  */
 export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, litDiscRes, secRes, flags = {}) {
   const isBootstrap = flags.bootstrap === true;
   const isAdvance = flags.advance === true;
 
-  const evalResult = evaluatePreflight(context, updateRes, discRes, healthRes, litDiscRes, secRes);
-
-  // 1. Incomplete or error states CANNOT write checkpoint
-  if (evalResult.hasErrors || evalResult.hasIncomplete) {
+  // 0. Explicit mode check: legacy aliases are strictly rejected
+  if (!isBootstrap && !isAdvance) {
     return {
       allowed: false,
-      reason: `Checkpoint write blocked: Network errors or incomplete data detected (${evalResult.blockedReasons.join("; ")})`,
+      reason: "Checkpoint write blocked: Ambiguous mode. Explicitly specify '--bootstrap' (to establish initial baseline) or '--advance' (to advance an existing checkpoint).",
     };
   }
 
-  // 2. Mode enforcement
+  // 1. Asset-scoped target validity check
+  if (context.targetAssetId && !context.targetFileExists) {
+    return {
+      allowed: false,
+      reason: `Checkpoint write blocked: ASSET_CANONICAL_TARGET_MISSING. Clinical evidence canonical target missing at ${context.targetFile}. Create canonical clinical-evidence.json before bootstrapping asset checkpoint.`,
+    };
+  }
+
+  const evalResult = evaluatePreflight(context, updateRes, discRes, healthRes, litDiscRes, secRes);
+
+  // 2. Error or Incomplete state: STRICTLY FORBIDDEN regardless of --ack-deltas
+  if (evalResult.hasErrors || evalResult.hasIncomplete) {
+    return {
+      allowed: false,
+      reason: `Checkpoint write blocked: Errors or incomplete data detected (${evalResult.blockedReasons.join("; ")}). Checkpoint write is strictly prohibited until errors and truncation are resolved.`,
+    };
+  }
+
+  // 3. Mode enforcement
   const hasExistingBaseline = Boolean(context.baseline?.discoveryCheckpoint);
 
   if (isBootstrap && hasExistingBaseline) {
@@ -1081,32 +1198,30 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
     };
   }
 
-  // 3. Delta safety for advancing established baseline
-  if (hasExistingBaseline) {
-    if (evalResult.hasDeltas) {
-      const unacknowledged = [];
-      if (evalResult.deltaSources.has("sec") && !flags.ackFilings && !flags.ackDeltas) {
-        unacknowledged.push("SEC filings (pass --ack-filings or --ack-deltas after reviewing)");
-      }
-      if (evalResult.deltaSources.has("registryUpdate") && !flags.ackDeltas) {
-        unacknowledged.push("Registry scientific updates (pass --ack-deltas after reviewing)");
-      }
-      if (evalResult.deltaSources.has("registryDiscovery") && !flags.ackDeltas) {
-        unacknowledged.push("New clinical trials discovered (pass --ack-deltas after reviewing)");
-      }
-      if (evalResult.deltaSources.has("literatureHealth") && !flags.ackDeltas) {
-        unacknowledged.push("New errata/retractions discovered (pass --ack-deltas after reviewing)");
-      }
-      if (evalResult.deltaSources.has("literatureDiscovery") && !flags.ackDeltas) {
-        unacknowledged.push("New literature publications discovered (pass --ack-deltas after reviewing)");
-      }
+  // 4. Delta safety for advancing established baseline
+  if (hasExistingBaseline && evalResult.hasDeltas) {
+    const unacknowledged = [];
+    if (evalResult.deltaSources.has("sec") && !flags.ackFilings && !flags.ackDeltas) {
+      unacknowledged.push("SEC filings (pass --ack-filings or --ack-deltas after reviewing)");
+    }
+    if (evalResult.deltaSources.has("registryUpdate") && !flags.ackDeltas) {
+      unacknowledged.push("Registry scientific updates (pass --ack-deltas after reviewing)");
+    }
+    if (evalResult.deltaSources.has("registryDiscovery") && !flags.ackDeltas) {
+      unacknowledged.push("New clinical trials discovered (pass --ack-deltas after reviewing)");
+    }
+    if (evalResult.deltaSources.has("literatureHealth") && !flags.ackDeltas) {
+      unacknowledged.push("New errata/retractions discovered (pass --ack-deltas after reviewing)");
+    }
+    if (evalResult.deltaSources.has("literatureDiscovery") && !flags.ackDeltas) {
+      unacknowledged.push("New literature publications discovered (pass --ack-deltas after reviewing)");
+    }
 
-      if (unacknowledged.length > 0) {
-        return {
-          allowed: false,
-          reason: `Checkpoint advance blocked: Unresolved deltas detected: ${unacknowledged.join("; ")}`,
-        };
-      }
+    if (unacknowledged.length > 0) {
+      return {
+        allowed: false,
+        reason: `Checkpoint advance blocked: Unresolved deltas detected: ${unacknowledged.join("; ")}`,
+      };
     }
   }
 
@@ -1115,14 +1230,17 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
 
 /**
  * Constructs and writes the updated researchState checkpoint to canonical JSON.
- * Notice: Does NOT emit premature coldPathEligible flag.
+ * Strictly writes only NCTs and PMIDs present in the canonical source tree.
  */
 export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
   const asOf = new Date().toISOString().slice(0, 10);
-  const knownNCTsMap = {};
+  const knownNCTsSet = new Set(context.knownNCTs);
+  const knownPMIDsSet = new Set(context.knownPMIDs);
 
-  for (const r of (updateRes ?? [])) {
-    if (r.nctId && r.lastUpdatePostDate) {
+  const knownNCTsMap = {};
+  const updateList = updateRes?.results ?? (Array.isArray(updateRes) ? updateRes : []);
+  for (const r of updateList) {
+    if (r.nctId && r.lastUpdatePostDate && knownNCTsSet.has(r.nctId)) {
       knownNCTsMap[r.nctId] = {
         lastUpdatePostDate: r.lastUpdatePostDate,
         semanticHash: r.scientificHash,
@@ -1132,7 +1250,7 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
 
   const monitoredPMIDsMap = {};
   for (const h of (healthRes?.checked ?? [])) {
-    if (h.pmid && h.status !== "NOT_FOUND") {
+    if (h.pmid && h.status !== "NOT_FOUND" && knownPMIDsSet.has(h.pmid)) {
       monitoredPMIDsMap[h.pmid] = {
         status: h.status === "ERRATUM_DETECTED" ? "has-erratum" : "clean",
         lastCheckedAt: asOf,
@@ -1159,6 +1277,7 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
       asOf,
       ...(secEdgar ? { secEdgar } : {}),
       clinicalTrials: {
+        semanticFingerprintVersion: CURRENT_FINGERPRINT_VERSION,
         sponsorQuery: context.companyName,
         assetAliases: context.assetAliases,
         lastQueriedAt: asOf,
@@ -1203,9 +1322,10 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
   console.log("================================================================================");
 
   if (updateRes) {
-    console.log(`\n[1/5] Registry Update Probe (Tracked NCTs: ${updateRes.length})`);
+    const list = updateRes.results ?? (Array.isArray(updateRes) ? updateRes : []);
+    console.log(`\n[1/5] Registry Update Probe (Tracked NCTs: ${list.length})`);
     console.log("--------------------------------------------------------------------------------");
-    for (const r of updateRes) {
+    for (const r of list) {
       const badge = `[${r.deltaVerdict}]`.padEnd(28);
       console.log(`  ${badge} ${r.nctId} | ${(r.overallStatus ?? "UNKNOWN").padEnd(20)} | PostDate: ${r.lastUpdatePostDate ?? "N/A"} | Hash: ${r.scientificHash?.slice(0, 10)}...`);
       if (r.briefTitle) console.log(`    "${r.briefTitle.slice(0, 75)}"`);
@@ -1213,6 +1333,8 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
         console.log(`    => Administrative update only (PostDate was ${r.baselinePostDate}). Scientific payload identical. Full-text re-reading skipped.`);
       } else if (r.deltaVerdict === "SCIENTIFIC_UPDATE_DETECTED") {
         console.log(`    => ALERT: Scientific payload changed since baseline (${r.baselinePostDate}). Targeted audit required.`);
+      } else if (r.deltaVerdict === "REBASELINE_REQUIRED") {
+        console.log(`    => NOTICE: Fingerprint version mismatch. Re-baseline required.`);
       }
     }
   }
@@ -1323,7 +1445,6 @@ export async function main() {
     companyId,
     assetId,
     cik,
-    baseline,
     bootstrap,
     advance,
     ackFilings,
@@ -1363,13 +1484,12 @@ export async function main() {
   const evalResult = evaluatePreflight(context, updateRes, discRes, healthRes, litDiscRes, secRes);
 
   let savedBaseline = null;
-  const wantsCheckpointWrite = baseline || bootstrap || advance;
+  const wantsCheckpointWrite = bootstrap || advance;
 
   if (wantsCheckpointWrite) {
     const gateCheck = canAdvanceCheckpoint(context, updateRes, discRes, healthRes, litDiscRes, secRes, {
       bootstrap,
       advance,
-      baseline,
       ackFilings,
       ackDeltas,
     });

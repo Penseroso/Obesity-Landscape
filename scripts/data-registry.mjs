@@ -979,6 +979,12 @@ function validateResearchState(researchState, context) {
   }
   if (cp.clinicalTrials !== undefined) {
     assert(isObject(cp.clinicalTrials), `${context}: clinicalTrials must be an object`);
+    if (cp.clinicalTrials.semanticFingerprintVersion !== undefined) {
+      assert(
+        Number.isInteger(cp.clinicalTrials.semanticFingerprintVersion) && cp.clinicalTrials.semanticFingerprintVersion > 0,
+        `${context}: clinicalTrials.semanticFingerprintVersion must be a positive integer`,
+      );
+    }
     if (cp.clinicalTrials.sponsorQuery !== undefined) {
       assert(isNonEmptyString(cp.clinicalTrials.sponsorQuery), `${context}: clinicalTrials.sponsorQuery must be non-empty string`);
     }
