@@ -259,12 +259,14 @@ apply per segment and which are company-wide.
    authority, and official date in `regulatoryStates`.
 3. Classify every newly surfaced candidate.
 4. **Deterministic Preflight & Prior Checkpoint Diff (ADR-0070).**
-   Run network preflights to detect registry, literature, and SEC deltas without LLM token waste:
-   - Routine inspection: `npm run research:preflight -- --company <companyId>`
-   - State lifecycle transitions:
-     - `LEGACY_UNBASELINED`: After completing baseline investigation, establish initial baseline: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --bootstrap` (pass `--ack-deltas` if unbaselined deltas exist).
-     - `CLEAN` refresh: Advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance`
-     - `DELTA_DETECTED`: After drafting canonical mutations and completing factual audits, advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance --ack-deltas`
+   Run network preflights to detect registry, literature, and SEC deltas without LLM token waste.
+   - **Domain ownership**: Company/Pipeline owns and writes `company.json`. Known NCTs and PMIDs are strictly scoped to Company/Pipeline files (`company.json`, `pipeline-programs.json`, `regimens.json`). NCTs or PMIDs cited only in Clinical Evidence (`clinical-evidence.json`) are never treated as known by Company/Pipeline preflight.
+   - **Monitored surface & CLEAN semantics**: Preflight directly monitors only deterministic surfaces (ClinicalTrials.gov, PubMed EFetch/ESearch, SEC EDGAR). `CLEAN` certifies zero delta on monitored surfaces only; it does **not** prove absence of new disclosures on Sponsor IR, newsrooms, investor presentations, or medical congresses. Sponsor IR/newsroom/congress discovery obligations remain mandatory during both initial research and refresh runs.
+   - **Routine inspection**: `npm run research:preflight -- --company <companyId> [--pipeline]`
+   - **State lifecycle transitions**:
+     - `LEGACY_UNBASELINED`: After completing baseline investigation, establish initial baseline: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --domain company-pipeline --bootstrap` (pass `--ack-deltas` if unbaselined deltas exist).
+     - `CLEAN` refresh: Advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --domain company-pipeline --advance`
+     - `DELTA_DETECTED`: After drafting canonical mutations and completing factual audits, advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --domain company-pipeline --advance --ack-deltas`
      - `FETCH_ERROR` / `PARTIAL`: Checkpoint advance is strictly blocked until network issues or data truncations are resolved.
 5. **Coverage verification via Conclusion-Blind Audit (Section 5a).**
    - For an **initial company investigation**, run a Targeted Conclusion-Blind Audit

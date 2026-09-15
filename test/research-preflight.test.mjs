@@ -871,6 +871,247 @@ test("Regression 12: Unbaselined target with adverse notice is BLOCKED on --boot
   assert.strictEqual(gateWithAck.allowed, true);
 });
 
+test("Regression 13: Clinical Evidence company-wide bootstrap/advance targets company-research-state.json and does not touch company.json", async () => {
+  const tempFixtureDir = path.join(ROOT, "test", "fixtures", "reg13");
+  const tempCompanyDir = path.join(tempFixtureDir, "companies");
+  const tempClinicalDir = path.join(tempFixtureDir, "clinical-evidence");
+
+  fs.mkdirSync(path.join(tempCompanyDir, "mock-corp"), { recursive: true });
+  fs.mkdirSync(path.join(tempClinicalDir, "mock-corp", "mock-asset"), { recursive: true });
+
+  const initialCompanyJson = {
+    id: "mock-corp",
+    name: "Mock Corp",
+    researchState: {
+      checkpointVersion: 1,
+      workflowRevision: "ADR-0070",
+      discoveryCheckpoint: {
+        asOf: "2026-01-01",
+        clinicalTrials: { knownNCTs: {} },
+        literature: { monitoredPMIDs: {} },
+      },
+    },
+  };
+  const companyJsonPath = path.join(tempCompanyDir, "mock-corp", "company.json");
+  fs.writeFileSync(companyJsonPath, JSON.stringify(initialCompanyJson, null, 2) + "\n", "utf8");
+  const originalCompanyJsonContent = fs.readFileSync(companyJsonPath, "utf8");
+
+  const initialCeAssetJson = {
+    clinicalEvidenceSchemaVersion: "3.1",
+    companyId: "mock-corp",
+    assetId: "mock-asset",
+    studies: [
+      {
+        id: "mock-corp-mock-asset-study1",
+        companyId: "mock-corp",
+        assetId: "mock-asset",
+        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT99990001" }],
+      },
+    ],
+    arms: [],
+    analysisGroups: [],
+    endpoints: [],
+    outcomes: [],
+  };
+  fs.writeFileSync(
+    path.join(tempClinicalDir, "mock-corp", "mock-asset", "clinical-evidence.json"),
+    JSON.stringify(initialCeAssetJson, null, 2) + "\n",
+    "utf8",
+  );
+
+  // Load CE context for company-wide execution
+  const ceContext = await loadCompanyContext("mock-corp", null, {
+    companyDir: tempCompanyDir,
+    clinicalDir: tempClinicalDir,
+    domain: "clinical-evidence",
+  });
+
+  assert.strictEqual(ceContext.domain, "clinical-evidence");
+  assert.strictEqual(
+    ceContext.targetFile,
+    path.join(tempClinicalDir, "mock-corp", "company-research-state.json"),
+  );
+  assert.ok(ceContext.knownNCTs.includes("NCT99990001"));
+
+  // Bootstrap baseline checkpoint for Clinical Evidence company-wide
+  const mockUpdateRes = {
+    results: [
+      {
+        nctId: "NCT99990001",
+        lastUpdatePostDate: "2026-09-15",
+        scientificHash: "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+      },
+    ],
+  };
+  const saved = saveBaselineCheckpoint(ceContext, mockUpdateRes, null, null);
+
+  // 1. Assert company-research-state.json was created
+  const envelopePath = path.join(tempClinicalDir, "mock-corp", "company-research-state.json");
+  assert.strictEqual(saved.targetPath, envelopePath);
+  assert.ok(fs.existsSync(envelopePath));
+
+  const envelope = JSON.parse(fs.readFileSync(envelopePath, "utf8"));
+  assert.strictEqual(envelope.companyId, "mock-corp");
+  assert.strictEqual(envelope.researchState.checkpointVersion, 1);
+  assert.ok(envelope.researchState.discoveryCheckpoint.clinicalTrials.knownNCTs["NCT99990001"]);
+
+  // 2. Assert Company/Pipeline company.json was NEVER modified
+  const currentCompanyJsonContent = fs.readFileSync(companyJsonPath, "utf8");
+  assert.strictEqual(
+    currentCompanyJsonContent,
+    originalCompanyJsonContent,
+    "Company/Pipeline company.json must NOT be touched by Clinical Evidence bootstrap/advance",
+  );
+
+  // Clean up
+  fs.rmSync(tempFixtureDir, { recursive: true, force: true });
+});
+
+test("Regression 14: Company/Pipeline and Clinical Evidence maintain strictly isolated known NCT/PMID sets", async () => {
+  const mockFetch = async () => ({
+    ok: true,
+    json: async () => ({ esearchresult: { idlist: [] } }),
+  });
+
+  // 1. Synthetic test verifying strict bidirectional isolation
+  const tempFixtureDir = path.join(ROOT, "test", "fixtures", "reg14");
+  const tempCompanyDir = path.join(tempFixtureDir, "companies");
+  const tempClinicalDir = path.join(tempFixtureDir, "clinical-evidence");
+
+  fs.mkdirSync(path.join(tempCompanyDir, "iso-corp"), { recursive: true });
+  fs.mkdirSync(path.join(tempClinicalDir, "iso-corp", "iso-asset"), { recursive: true });
+
+  fs.writeFileSync(
+    path.join(tempCompanyDir, "iso-corp", "company.json"),
+    JSON.stringify({ id: "iso-corp", name: "Isolation Corp", metadata: { sources: [{ url: "https://clinicaltrials.gov/study/NCT11111111", pmid: "11111111" }] } }, null, 2),
+    "utf8",
+  );
+  fs.writeFileSync(
+    path.join(tempClinicalDir, "iso-corp", "iso-asset", "clinical-evidence.json"),
+    JSON.stringify({
+      clinicalEvidenceSchemaVersion: "3.1",
+      companyId: "iso-corp",
+      assetId: "iso-asset",
+      studies: [{
+        id: "iso-study",
+        companyId: "iso-corp",
+        assetId: "iso-asset",
+        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT22222222" }],
+        metadata: { sources: [{ pmid: "22222222" }] },
+      }],
+      arms: [], analysisGroups: [], endpoints: [], outcomes: [],
+    }, null, 2),
+    "utf8",
+  );
+
+  const syntheticCpContext = await loadCompanyContext("iso-corp", null, {
+    companyDir: tempCompanyDir,
+    clinicalDir: tempClinicalDir,
+    domain: "company-pipeline",
+    fetchFn: mockFetch,
+  });
+  const syntheticCeContext = await loadCompanyContext("iso-corp", null, {
+    companyDir: tempCompanyDir,
+    clinicalDir: tempClinicalDir,
+    domain: "clinical-evidence",
+    fetchFn: mockFetch,
+  });
+
+  // Synthetic CP context knows ONLY CP sources
+  assert.deepStrictEqual(syntheticCpContext.knownNCTs, ["NCT11111111"]);
+  assert.deepStrictEqual(syntheticCpContext.knownPMIDs, ["11111111"]);
+  assert.strictEqual(syntheticCpContext.knownNCTs.includes("NCT22222222"), false);
+  assert.strictEqual(syntheticCpContext.knownPMIDs.includes("22222222"), false);
+
+  // Synthetic CE context knows ONLY CE sources
+  assert.deepStrictEqual(syntheticCeContext.knownNCTs, ["NCT22222222"]);
+  assert.deepStrictEqual(syntheticCeContext.knownPMIDs, ["22222222"]);
+  assert.strictEqual(syntheticCeContext.knownNCTs.includes("NCT11111111"), false);
+  assert.strictEqual(syntheticCeContext.knownPMIDs.includes("11111111"), false);
+
+  fs.rmSync(tempFixtureDir, { recursive: true, force: true });
+
+  // 2. Real repo verification: Structure Therapeutics
+  const cpStructureContext = await loadCompanyContext("structure-therapeutics", null, {
+    domain: "company-pipeline",
+    fetchFn: mockFetch,
+  });
+  const ceStructureContext = await loadCompanyContext("structure-therapeutics", null, {
+    domain: "clinical-evidence",
+    fetchFn: mockFetch,
+  });
+
+  // Company/Pipeline knows only its 3 active pipeline NCTs
+  assert.deepStrictEqual(cpStructureContext.knownNCTs, ["NCT07400588", "NCT07654361", "NCT07654374"]);
+  // Company/Pipeline must not know Clinical Evidence's 5 earlier/completed study NCTs
+  assert.strictEqual(cpStructureContext.knownNCTs.includes("NCT05762471"), false);
+  assert.strictEqual(cpStructureContext.knownNCTs.includes("NCT06139055"), false);
+  assert.strictEqual(cpStructureContext.knownNCTs.includes("NCT06693843"), false);
+  assert.strictEqual(cpStructureContext.knownNCTs.includes("NCT06703021"), false);
+  assert.strictEqual(cpStructureContext.knownNCTs.includes("NCT07169942"), false);
+  assert.strictEqual(cpStructureContext.knownPMIDs.length, 0);
+
+  // Clinical Evidence knows all 8 of its authored studies
+  assert.strictEqual(ceStructureContext.knownNCTs.length, 8);
+  assert.ok(ceStructureContext.knownNCTs.includes("NCT05762471"));
+
+  // 3. Real repo verification: Viking Therapeutics
+  const cpVikingContext = await loadCompanyContext("viking-therapeutics", null, {
+    domain: "company-pipeline",
+    fetchFn: mockFetch,
+  });
+  const ceVikingContext = await loadCompanyContext("viking-therapeutics", null, {
+    domain: "clinical-evidence",
+    fetchFn: mockFetch,
+  });
+
+  // Company/Pipeline knows only its 2 pipeline NCTs
+  assert.deepStrictEqual(cpVikingContext.knownNCTs, ["NCT07104383", "NCT07104500"]);
+  // Company/Pipeline must not know Clinical Evidence's 3 completed trial NCTs
+  assert.strictEqual(cpVikingContext.knownNCTs.includes("NCT05203237"), false);
+  assert.strictEqual(cpVikingContext.knownNCTs.includes("NCT06068946"), false);
+  assert.strictEqual(cpVikingContext.knownNCTs.includes("NCT06828055"), false);
+
+  // Clinical Evidence knows its completed trial NCTs
+  assert.ok(ceVikingContext.knownNCTs.includes("NCT05203237"));
+  assert.ok(ceVikingContext.knownNCTs.includes("NCT06068946"));
+  assert.ok(ceVikingContext.knownNCTs.includes("NCT06828055"));
+
+  // 4. parseArgs domain flags validation
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--ce"]).domain,
+    "clinical-evidence",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--clinical"]).domain,
+    "clinical-evidence",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--domain", "clinical-evidence"]).domain,
+    "clinical-evidence",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--cp"]).domain,
+    "company-pipeline",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--pipeline"]).domain,
+    "company-pipeline",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--domain", "company-pipeline"]).domain,
+    "company-pipeline",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--asset", "vk2735"]).domain,
+    "clinical-evidence",
+  );
+  assert.strictEqual(
+    parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics"]).domain,
+    "company-pipeline",
+  );
+});
+
 test("CIK resolution hierarchy and mapping checks", () => {
   // AstraZeneca CIK check
   assert.strictEqual(KNOWN_SEC_CIKS["astrazeneca"], "0000901832");

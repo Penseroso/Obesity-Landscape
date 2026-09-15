@@ -181,29 +181,33 @@ To eliminate redundant web searches and unnecessary LLM token consumption while
 maintaining 100% factual accuracy, Clinical Evidence research utilizes
 zero-token Node.js network preflights strictly outside the offline CI gate.
 
-### State lifecycle & routine execution commands
+### State lifecycle & domain-scoped execution commands
 Research preflight is integrated into routine investigation and refresh workflows.
-Do not maintain shadow logs or postpone checkpoint updates:
+Checkpoint ownership is strictly partitioned by domain:
+- **Company/Pipeline**: Owns `company.json`.
+- **Clinical Evidence**: Owns `<assetId>/clinical-evidence.json` (asset-scoped) and `<companyId>/company-research-state.json` (company-wide envelope). **Under no circumstances does Clinical Evidence modify `company.json`, `pipeline-programs.json`, or `regimens.json`.**
 
 ```text
 # 1. Routine Preflight Inspection (read-only inspection across all 5 probes)
-npm run research:preflight -- --company <companyId>
-# For asset-scoped run:
+# Asset-scoped Clinical Evidence run (target: <assetId>/clinical-evidence.json):
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId>
 
-# 2. Lifecycle Checkpoint Transitions:
+# Company-scoped Clinical Evidence run (target: <companyId>/company-research-state.json):
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --ce
+
+# 2. Lifecycle Checkpoint Transitions (Clinical Evidence domain):
 # [LEGACY_UNBASELINED] -> Initial investigation complete; establish baseline checkpoint:
-node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --bootstrap
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId> --bootstrap
 # (Note: If adverse notices or deltas are surfaced on unbaselined data, pass --bootstrap --ack-deltas after reviewing)
 
-# [CLEAN REFRESH] -> All probes report CLEAN / UNCHANGED; advance checkpoint:
-node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance
+# [CLEAN REFRESH] -> All monitored deterministic probes report CLEAN / UNCHANGED; advance checkpoint:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId> --advance
 
 # [DELTA_DETECTED] -> Protocol amended, new trial, erratum/retraction, or new publication:
 # Perform canonical updates & conclusion-blind audit, then advance checkpoint:
-node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance --ack-deltas
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId> --advance --ack-deltas
 
-# [FETCH_ERROR / NETWORK_ERROR / PARTIAL] -> Checkpoint write is STRICTLY BLOCKED until errors/truncation are resolved.
+# [FETCH_ERROR / NETWORK_ERROR / PARTIAL] -> Checkpoint advance is STRICTLY BLOCKED until errors/truncation are resolved.
 ```
 
 ### Two-stage delta detection & decoupled probes
@@ -214,13 +218,14 @@ node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --
    - Health check queries PubMed E-utilities (`efetch.fcgi` XML) for all cited PMIDs, parsing `<CommentsCorrections>` (`ErratumIn`, `RetractionIn`, `ExpressionOfConcernIn`) and `<PublicationType>` (`Retracted Publication`). It computes a granular `noticeFingerprint`. If a previously known erratum paper subsequently receives a retraction or secondary erratum, the fingerprint change immediately surfaces a new delta (`RETRACTION_DETECTED` or `NEW_ERRATUM_DETECTED`).
    - Discovery probe queries PubMed E-utilities (`esearch.fcgi`) for asset aliases to detect newly indexed peer-reviewed journal articles that may supersede earlier interim disclosures or press releases ($\text{Discovered PMIDs} \setminus \text{Known PMIDs}$). Failure of follow-up detail fetch preserves discovered delta IDs with `hasIncomplete: true`, never collapsing into a false `CLEAN`.
 
-### Cold-Path execution ("Freeze the source, not the study")
+### Cold-Path execution & CLEAN semantics ("Freeze the source, not the study")
 Completed Studies with established Tier 1 peer-reviewed publications (e.g. STEP 1, SURMOUNT-1, SELECT) older than 12 months enter **Cold-Path Execution**:
-- **Do not freeze the Study**: The Study is never removed from the refresh workflow or frozen permanently.
-- **Freeze the source text**: Re-downloading and re-parsing immutable full-text papers (30k+ tokens) is skipped.
-- **Probes remain vigilant**: Preflight probes actively monitor PubMed errata, registry status changes, and newly indexed follow-up publications.
-- If all preflights report `CLEAN`, the Study's evidence is confirmed as `COLD_PATH_VERIFIED` with zero token waste.
-- If an erratum, retraction, protocol amendment, or new publication is detected, immediately trigger targeted review of that specific delta payload only.
+- **Monitored surface boundary**: Preflight directly monitors **only** deterministic surfaces: ClinicalTrials.gov API v2, PubMed E-utilities (EFetch/ESearch), and SEC EDGAR.
+- **CLEAN semantics**: `CLEAN` certifies zero delta on deterministic monitored surfaces only. It does **not** prove absence of new disclosures on Sponsor IR, company newsrooms, investor presentations, or medical congresses.
+- **Mandatory primary discovery obligations**: Sponsor IR, newsroom, and congress discovery obligations remain mandatory during both initial research and refresh runs. Preflight does not exempt the operator or agent from checking primary disclosure channels.
+- **Freeze the source text, not discovery**: Cold-Path is an operational optimization to bypass redundant re-reading and re-parsing of immutable source text (saving 30k+ tokens per study); it is **not** an exemption from primary source discovery.
+- **Operational label**: `COLD_PATH_VERIFIED` is an in-session operational label indicating that a study's monitored primary sources passed preflight cleanly without deltas. It is **not** a schema state or a field written to `clinical-evidence.json`.
+- **Deltas trigger targeted audit**: If an erratum, retraction, protocol amendment, or new publication is detected, immediately trigger targeted review of that specific delta payload only.
 
 ## 2. Establish and traverse the evidence set
 

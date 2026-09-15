@@ -2949,6 +2949,21 @@ function validateClinicalEvidenceSources() {
     createClinicalReferenceContext(companies, programs, regimens),
     "data/clinical-evidence",
   );
+
+  // Validate company-level researchState envelope if present
+  if (existsSync(clinicalEvidenceSourceDir)) {
+    for (const companyFolder of getCompanySourceFolders(clinicalEvidenceSourceDir)) {
+      const envelopePath = path.join(clinicalEvidenceSourceDir, companyFolder, "company-research-state.json");
+      if (existsSync(envelopePath)) {
+        const envelope = readJson(envelopePath);
+        assert(envelope.companyId === companyFolder, `${envelopePath}: companyId must match folder name`);
+        if (envelope.researchState !== undefined) {
+          validateResearchState(envelope.researchState, `${envelopePath}: researchState`);
+        }
+      }
+    }
+  }
+
   console.log(
     `Validated Clinical Evidence source data with ${aggregate.studies.length} study record(s).`,
   );

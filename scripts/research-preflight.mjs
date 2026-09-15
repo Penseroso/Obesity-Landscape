@@ -114,6 +114,7 @@ export function parseArgs(argv) {
   let companyId = null;
   let assetId = null;
   let cik = null;
+  let domain = null;
   let bootstrap = false;
   let advance = false;
   let ackFilings = false;
@@ -130,6 +131,15 @@ export function parseArgs(argv) {
     } else if (arg === "--asset") {
       assetId = args[i + 1];
       i += 2;
+    } else if (arg === "--domain") {
+      domain = args[i + 1];
+      i += 2;
+    } else if (arg === "--clinical" || arg === "--ce") {
+      domain = "clinical-evidence";
+      i += 1;
+    } else if (arg === "--pipeline" || arg === "--cp") {
+      domain = "company-pipeline";
+      i += 1;
     } else if (arg === "--cik") {
       cik = args[i + 1];
       i += 2;
@@ -171,7 +181,13 @@ export function parseArgs(argv) {
     }
   }
 
-  return { command, companyId, assetId, cik, bootstrap, advance, ackFilings, ackDeltas, json, verbose };
+  if (domain && !["company-pipeline", "clinical-evidence"].includes(domain)) {
+    console.error(`Error: Invalid --domain '${domain}'. Must be 'company-pipeline' or 'clinical-evidence'.`);
+    process.exit(1);
+  }
+
+  const effectiveDomain = domain || (assetId ? "clinical-evidence" : "company-pipeline");
+  return { command, companyId, assetId, domain: effectiveDomain, cik, bootstrap, advance, ackFilings, ackDeltas, json, verbose };
 }
 
 /**
@@ -301,18 +317,29 @@ export async function resolveDoisAndPmcsToPmids(dois, pmcs, fetchFn = fetch) {
 }
 
 /**
+/**
  * Reads and indexes company, pipeline, and clinical evidence targets from disk.
  *
- * Invariant:
- * When targetAssetId is provided:
- * - Scopes programs to prog.assetId === targetAssetId.
- * - Scopes regimens to reg.components[].assetId === targetAssetId.
- * - Target file is strictly the asset's clinical-evidence.json (NEVER falls back to company.json).
- * - Tracks whether targetFileExists on disk.
+ * Domain Authority Separation (ADR-0070):
+ * - domain === "company-pipeline":
+ *     Operating target is company.json.
+ *     Known NCTs and PMIDs are strictly scanned from Company/Pipeline sources
+ *     (company.json, pipeline-programs.json, regimens.json).
+ *     Clinical Evidence is NOT scanned to prevent cross-domain discovery state pollution.
+ * - domain === "clinical-evidence":
+ *     When targetAssetId is specified:
+ *       Target is <companyId>/<assetId>/clinical-evidence.json.
+ *       Known NCTs and PMIDs are strictly scanned from that asset's Clinical Evidence.
+ *     When targetAssetId is omitted (company-wide CE):
+ *       Target is <companyId>/company-research-state.json.
+ *       Known NCTs and PMIDs are aggregated across all CE asset files for that company.
+ *     Company/Pipeline source files (company.json) are NEVER touched or written.
  */
-export async function loadCompanyContext(companyId, targetAssetId = null, customDirs = null) {
-  const companyDir = customDirs?.companyDir ?? COMPANY_DIR;
-  const clinicalDir = customDirs?.clinicalDir ?? CLINICAL_DIR;
+export async function loadCompanyContext(companyId, targetAssetId = null, options = null) {
+  const companyDir = options?.companyDir ?? COMPANY_DIR;
+  const clinicalDir = options?.clinicalDir ?? CLINICAL_DIR;
+  const domain = options?.domain ?? (targetAssetId ? "clinical-evidence" : "company-pipeline");
+  const fetchFn = options?.fetchFn ?? fetch;
 
   const companyFolderPath = path.join(companyDir, companyId);
   if (!fs.existsSync(companyFolderPath)) {
@@ -360,54 +387,66 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
     }
   }
 
-  // 1. Extract from pipeline programs (scoped to targetAssetId if specified)
-  const scopedPrograms = targetAssetId
-    ? allPrograms.filter((p) => p.assetId === targetAssetId || p.id === targetAssetId)
-    : allPrograms;
+  let targetFile = null;
+  let targetFileExists = false;
+  let baseline = null;
 
-  for (const prog of scopedPrograms) {
-    if (prog.assetName) assetAliases.add(prog.assetName);
-    if (prog.codeName) assetAliases.add(prog.codeName);
-    for (const alias of prog.aliases ?? []) {
-      if (alias.value) assetAliases.add(alias.value);
+  if (domain === "company-pipeline") {
+    // -------------------------------------------------------------------------
+    // DOMAIN 1: Company/Pipeline Research
+    // Authority Owner: Company/Pipeline domain
+    // Operating Target: domains/company-pipeline/data/companies/<companyId>/company.json
+    // Known NCTs/PMIDs: strictly from company.json, pipeline-programs.json, regimens.json
+    // (Never reads clinical-evidence to prevent cross-domain discovery state pollution)
+    // -------------------------------------------------------------------------
+    targetFile = companyJsonPath;
+    targetFileExists = fs.existsSync(companyJsonPath);
+    baseline = company.researchState ?? null;
+
+    scanSources(company.metadata?.sources);
+
+    for (const prog of allPrograms) {
+      if (prog.assetName) assetAliases.add(prog.assetName);
+      if (prog.codeName) assetAliases.add(prog.codeName);
+      for (const alias of prog.aliases ?? []) {
+        if (alias.value) assetAliases.add(alias.value);
+      }
+      scanSources(prog.metadata?.sources);
     }
-    scanSources(prog.metadata?.sources);
-  }
 
-  // 2. Extract from regimens based on schema components[].assetId
-  const scopedRegimens = targetAssetId
-    ? allRegimens.filter((reg) => {
-        const hasMatchingComponent = (reg.components ?? []).some((c) => c.assetId === targetAssetId);
-        const hasMatchingRegimenAsset = reg.assetId === targetAssetId;
-        return hasMatchingComponent || hasMatchingRegimenAsset;
-      })
-    : allRegimens;
+    for (const reg of allRegimens) {
+      scanSources(reg.metadata?.sources);
+    }
+  } else {
+    // -------------------------------------------------------------------------
+    // DOMAIN 2: Clinical Evidence Research
+    // Authority Owner: Clinical Evidence domain
+    // Invariant: Company/Pipeline operating files are strictly read-only reference
+    // -------------------------------------------------------------------------
+    const ceCompanyPath = path.join(clinicalDir, companyId);
 
-  for (const reg of scopedRegimens) {
-    scanSources(reg.metadata?.sources);
-  }
+    // Extract asset aliases for search query targeting
+    const scopedPrograms = targetAssetId
+      ? allPrograms.filter((p) => p.assetId === targetAssetId || p.id === targetAssetId)
+      : allPrograms;
 
-  // 3. Extract from clinical evidence
-  let assetBaseline = null;
-  const ceCompanyPath = path.join(clinicalDir, companyId);
-  const targetAssetCePath = targetAssetId ? path.join(ceCompanyPath, targetAssetId, "clinical-evidence.json") : null;
-  const targetFileExists = targetAssetId ? fs.existsSync(targetAssetCePath) : true;
-  const targetFile = targetAssetId ? targetAssetCePath : companyJsonPath;
+    for (const prog of scopedPrograms) {
+      if (prog.assetName) assetAliases.add(prog.assetName);
+      if (prog.codeName) assetAliases.add(prog.codeName);
+      for (const alias of prog.aliases ?? []) {
+        if (alias.value) assetAliases.add(alias.value);
+      }
+    }
 
-  if (fs.existsSync(ceCompanyPath)) {
-    const assetFolders = fs.readdirSync(ceCompanyPath, { withFileTypes: true })
-      .filter((d) => d.isDirectory())
-      .map((d) => d.name);
+    if (targetAssetId) {
+      // 2a. Asset-scoped Clinical Evidence run
+      const targetAssetCePath = path.join(ceCompanyPath, targetAssetId, "clinical-evidence.json");
+      targetFile = targetAssetCePath;
+      targetFileExists = fs.existsSync(targetAssetCePath);
 
-    for (const assetFolder of assetFolders) {
-      if (targetAssetId && assetFolder !== targetAssetId) continue;
-
-      const ceFile = path.join(ceCompanyPath, assetFolder, "clinical-evidence.json");
-      if (fs.existsSync(ceFile)) {
-        const ceData = JSON.parse(fs.readFileSync(ceFile, "utf8"));
-        if (targetAssetId && assetFolder === targetAssetId) {
-          assetBaseline = ceData.researchState ?? null;
-        }
+      if (targetFileExists) {
+        const ceData = JSON.parse(fs.readFileSync(targetAssetCePath, "utf8"));
+        baseline = ceData.researchState ?? null;
 
         for (const study of ceData.studies ?? []) {
           for (const regId of study.registryIdentifiers ?? []) {
@@ -418,22 +457,57 @@ export async function loadCompanyContext(companyId, targetAssetId = null, custom
           scanSources(study.metadata?.sources);
         }
       }
+    } else {
+      // 2b. Company-scoped Clinical Evidence run
+      const envelopePath = path.join(ceCompanyPath, "company-research-state.json");
+      targetFile = envelopePath;
+      targetFileExists = fs.existsSync(envelopePath);
+
+      if (targetFileExists) {
+        try {
+          const envelope = JSON.parse(fs.readFileSync(envelopePath, "utf8"));
+          baseline = envelope.researchState ?? null;
+        } catch {
+          baseline = null;
+        }
+      }
+
+      // Aggregate all known NCTs/PMIDs across all CE assets for this company
+      if (fs.existsSync(ceCompanyPath)) {
+        const assetFolders = fs.readdirSync(ceCompanyPath, { withFileTypes: true })
+          .filter((d) => d.isDirectory())
+          .map((d) => d.name);
+
+        for (const assetFolder of assetFolders) {
+          const ceFile = path.join(ceCompanyPath, assetFolder, "clinical-evidence.json");
+          if (fs.existsSync(ceFile)) {
+            const ceData = JSON.parse(fs.readFileSync(ceFile, "utf8"));
+            for (const study of ceData.studies ?? []) {
+              for (const regId of study.registryIdentifiers ?? []) {
+                if (regId.id && /^NCT\d{8}$/i.test(regId.id)) {
+                  knownNCTs.add(regId.id.toUpperCase());
+                }
+              }
+              scanSources(study.metadata?.sources);
+            }
+          }
+        }
+      }
     }
   }
 
-  // 4. Resolve external DOIs and PMCs to PMIDs
+  // Resolve external DOIs and PMCs to PMIDs
   const unresolvedIdentifiers = [];
   if (knownDOIs.size > 0 || knownPMCs.size > 0) {
-    const { pmidMap, unresolved } = await resolveDoisAndPmcsToPmids([...knownDOIs], [...knownPMCs]);
+    const { pmidMap, unresolved } = await resolveDoisAndPmcsToPmids([...knownDOIs], [...knownPMCs], fetchFn);
     for (const pmid of pmidMap.values()) {
       knownPMIDs.add(pmid);
     }
     unresolvedIdentifiers.push(...unresolved);
   }
 
-  const baseline = targetAssetId ? assetBaseline : (company.researchState ?? null);
-
   return {
+    domain,
     companyId,
     companyName: company.name,
     company,
@@ -1348,7 +1422,21 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
   };
 
   const targetPath = context.targetFile;
-  const existingJson = JSON.parse(fs.readFileSync(targetPath, "utf8"));
+  let existingJson = {};
+  if (fs.existsSync(targetPath)) {
+    try {
+      existingJson = JSON.parse(fs.readFileSync(targetPath, "utf8"));
+    } catch {
+      existingJson = {};
+    }
+  } else {
+    fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+    if (context.domain === "clinical-evidence" && !context.targetAssetId) {
+      existingJson = {
+        companyId: context.companyId,
+      };
+    }
+  }
   existingJson.researchState = researchState;
   fs.writeFileSync(targetPath, JSON.stringify(existingJson, null, 2) + "\n", "utf8");
 
@@ -1364,9 +1452,10 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
 export function printReport(context, updateRes, discRes, healthRes, litDiscRes, secRes, savedBaseline, evalResult) {
   const hasBaseline = Boolean(context.baseline?.discoveryCheckpoint);
   const baselineDate = context.baseline?.discoveryCheckpoint?.asOf ?? "NONE";
+  const domainBadge = context.domain === "clinical-evidence" ? "[CLINICAL-EVIDENCE]" : "[COMPANY-PIPELINE]";
 
   console.log("================================================================================");
-  console.log(` RESEARCH PREFLIGHT REPORT: ${context.companyId}${context.targetAssetId ? ` (Asset: ${context.targetAssetId})` : ""}`);
+  console.log(` RESEARCH PREFLIGHT REPORT: ${context.companyId}${context.targetAssetId ? ` (Asset: ${context.targetAssetId})` : ""} ${domainBadge}`);
   console.log(` Target File : ${path.relative(ROOT, context.targetFile)}`);
   console.log(` Baseline    : ${hasBaseline ? `ESTABLISHED (asOf ${baselineDate})` : "LEGACY UNBASELINED"}`);
   if (evalResult) {
@@ -1375,6 +1464,9 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
       console.log(` Alerts      : ${evalResult.blockedReasons.join("; ")}`);
     }
   }
+  console.log(" Scope Note  : Preflight directly monitors deterministic surfaces (CT.gov, PubMed, SEC EDGAR).");
+  console.log("               Cold-Path CLEAN does NOT prove absence of Sponsor IR/newsroom/congress");
+  console.log("               disclosures. Primary source discovery obligations remain active.");
   console.log("================================================================================");
 
   if (updateRes) {
@@ -1502,6 +1594,7 @@ export async function main() {
     command,
     companyId,
     assetId,
+    domain,
     cik,
     bootstrap,
     advance,
@@ -1515,7 +1608,7 @@ export async function main() {
     process.exit(1);
   }
 
-  const context = await loadCompanyContext(companyId, assetId);
+  const context = await loadCompanyContext(companyId, assetId, { domain });
 
   let updateRes = null;
   let discRes = null;

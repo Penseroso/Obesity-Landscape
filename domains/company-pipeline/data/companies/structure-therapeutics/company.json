@@ -33,26 +33,6 @@
         ],
         "lastQueriedAt": "2026-09-15",
         "knownNCTs": {
-          "NCT05762471": {
-            "lastUpdatePostDate": "2024-04-25",
-            "semanticHash": "1820281de7a3b0501307dbcefff3e12afd0a682ae93e7737a04a58847d22aefa"
-          },
-          "NCT06139055": {
-            "lastUpdatePostDate": "2024-02-15",
-            "semanticHash": "683c9fb3376d9f23331c3a24e1672f9c48acbcf9ed54a856f53ef1c8f87e0ef8"
-          },
-          "NCT06693843": {
-            "lastUpdatePostDate": "2026-08-10",
-            "semanticHash": "8fac72d9c33770e6e39cb2fb49ff99b828c0d14e7e602fd4a9fac769a1854cf3"
-          },
-          "NCT06703021": {
-            "lastUpdatePostDate": "2026-04-28",
-            "semanticHash": "aeaf2968adbb7753fa9247324bbe8100c3f6a006341cec158a1cfb905809e2be"
-          },
-          "NCT07169942": {
-            "lastUpdatePostDate": "2026-03-03",
-            "semanticHash": "b7807d3848df478eaf0e4d5ad7b31e8438814fb34a6f99e2c0daba05a0c8215a"
-          },
           "NCT07400588": {
             "lastUpdatePostDate": "2026-04-27",
             "semanticHash": "beab826da918cf92ccca3e1aa71bc562e8d212cc08a63f2503916a7227c37397"
@@ -76,20 +56,7 @@
           "GSBR-1290"
         ],
         "lastQueriedAt": "2026-09-15",
-        "monitoredPMIDs": {
-          "42249138": {
-            "status": "has-erratum",
-            "noticeFingerprint": "8f3bd8736ccae80e",
-            "noticeTypes": [
-              "ErratumIn"
-            ],
-            "lastCheckedAt": "2026-09-15"
-          },
-          "42343118": {
-            "status": "clean",
-            "lastCheckedAt": "2026-09-15"
-          }
-        }
+        "monitoredPMIDs": {}
       }
     }
   }
