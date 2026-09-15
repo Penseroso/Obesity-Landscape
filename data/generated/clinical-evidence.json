@@ -11174,7 +11174,7 @@
         "randomization": "Randomized",
         "masking": "Double-blind",
         "comparator": "Placebo",
-        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Per Structure Therapeutics' March 2026 disclosure, participants initiate aleniglipron at a 2.5 mg starting dose and titrate monthly to a 120 mg target dose. CORRECTION (2026-09-15): a prior pass mis-stated this trial's target dose as 180 mg, apparently cross-attributed from the separate ACCOMPLISH-1/ACCOMPLISH-2 Phase 3 dosing (45/90/180 mg); the September 2026 8-K exhibit cited for that figure does not mention any dose for this trial at all, and no source anywhere states a 180 mg dose for the Body Composition study specifically - reverted to the sole directly-supported figure, 120 mg. Per the registry, dosing spans approximately 40 weeks with primary/secondary DXA outcome measures assessed at Week 44; Structure's own August 2026 earnings-release language separately describes the trial as assessing body fat loss 'over a 44-week evaluation period,' updating the March release's '40-week evaluation period' phrasing - both are recorded with their own sourcing rather than merged into one unstated sentence."
+        "description": "Trial evaluating body-composition effects (total body fat mass by DXA, visceral adipose tissue, lean mass, body weight, waist circumference) of once-daily oral aleniglipron versus placebo (5:1 randomization). Current design, independently and identically confirmed by Structure Therapeutics' Form 10-Q for the quarters ended March 31, 2026 (filed 2026-05-07) and June 30, 2026 (filed 2026-08-06): 'the body composition trial is ongoing to assess the effect of aleniglipron on body fat loss over a 44-week evaluation period, which includes a 28-week titration period and a starting dose of 2.5 mg and target dose of 180 mg of aleniglipron.' Structure Therapeutics' earlier March 2026 topline disclosure (8-K Exhibit 99.1, 2026-03-16) instead described a 2.5 mg starting dose titrated to a 120 mg target over a '40-week evaluation period'; this is treated as an earlier, superseded design statement, not current design authority, since two later and independent 10-Q filings both directly state 180 mg / 28-week titration / 44-week evaluation. Per the registry, primary and secondary DXA outcome measures are timed at Week 44, consistent with the 10-Qs' 44-week evaluation period."
       },
       "population": "Adults (18-79 years) with obesity (BMI >=30 kg/m^2), without diabetes (HbA1c <6.5%) and without an endocrine cause of obesity (e.g. Cushing's syndrome, Prader-Willi syndrome, MC4R deficiency).",
       "populationProfile": {
@@ -11183,7 +11183,7 @@
         "requiresAdditionalCondition": false,
         "treatmentContext": "initial-treatment"
       },
-      "overallDuration": "Approximately 40 weeks of dosing (registry); primary/secondary DXA outcome measures at Week 44 (registry); described by the sponsor's most recent (August 2026) disclosure as a 44-week evaluation period, updating its own March 2026 '40-week evaluation period' phrasing",
+      "overallDuration": "44-week evaluation period, including a 28-week titration period (Form 10-Q for the quarters ended March 31, 2026 and June 30, 2026, independently and identically stated); primary/secondary DXA outcome measures timed at Week 44 (registry), consistent with the 10-Qs. Superseded design (2026-03-16 topline): 40-week evaluation period.",
       "safetySummary": "An interim disclosure (71 participants enrolled) indicated that initiating treatment with a lower 2.5 mg starting dose improved tolerability, with no adverse-event-related discontinuations reported during the initial dosing period. Full efficacy and safety results were not yet available as of this research; topline data were expected in Q4 2026.",
       "metadata": {
         "lastVerifiedAt": "2026-09-15",
@@ -11197,14 +11197,28 @@
           },
           {
             "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926028023/tm268880d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial (interim Body Composition study commentary: 2.5 mg starting dose, 120 mg target dose, 40-week evaluation period)",
+            "title": "Structure Therapeutics Reports Positive Topline Data from Phase 2 ACCESS II Trial (interim Body Composition study commentary: 2.5 mg starting dose, 120 mg target dose, 40-week evaluation period - EARLIER/SUPERSEDED design, see the two later Form 10-Q filings below)",
             "sourceType": "company topline release",
             "publishedAt": "2026-03-16",
             "checkedAt": "2026-09-15"
           },
           {
+            "url": "https://www.sec.gov/Archives/edgar/data/0001888886/000110465926057230/gpcr-20260331x10q.htm",
+            "title": "Structure Therapeutics Inc. Form 10-Q for the quarter ended March 31, 2026 (directly states: body composition trial assesses body fat loss over a 44-week evaluation period, including a 28-week titration period and a starting dose of 2.5 mg and target dose of 180 mg)",
+            "sourceType": "SEC filing",
+            "publishedAt": "2026-05-07",
+            "checkedAt": "2026-09-15"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926092057/gpcr-20260630x10q.htm",
+            "title": "Structure Therapeutics Inc. Form 10-Q for the quarter ended June 30, 2026 (independently and identically restates: body composition trial over a 44-week evaluation period, including a 28-week titration period and a starting dose of 2.5 mg and target dose of 180 mg)",
+            "sourceType": "SEC filing",
+            "publishedAt": "2026-08-06",
+            "checkedAt": "2026-09-15"
+          },
+          {
             "url": "https://www.sec.gov/Archives/edgar/data/1888886/000110465926092017/tm2622407d1_ex99-1.htm",
-            "title": "Structure Therapeutics Reports Second Quarter 2026 Financial Results and Recent Highlights (Body Composition trial described as a 44-week evaluation period; no dose given)",
+            "title": "Structure Therapeutics Reports Second Quarter 2026 Financial Results and Recent Highlights (narrative corroboration of the 44-week evaluation period; this earnings-release exhibit does not itself state a dose - the dose figure comes from the Form 10-Q filings above, not this document)",
             "sourceType": "company topline release",
             "publishedAt": "2026-08-06",
             "checkedAt": "2026-09-15"
@@ -22893,7 +22907,7 @@
       "dose": "Matched placebo",
       "route": "Oral",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "40 weeks"
+      "treatmentDuration": "44-week evaluation period (including the 28-week titration period)"
     },
     {
       "id": "s5-active",
@@ -22906,10 +22920,10 @@
         "assetId": "gsbr-1290"
       },
       "dose": "180 mg target dose",
-      "titration": "2.5 mg starting dose, escalated to a 180 mg target dose (supersedes earlier 120 mg target description)",
+      "titration": "2.5 mg starting dose, escalated over a 28-week titration period to a 180 mg target dose (per the March/June 2026 quarter Form 10-Q filings; supersedes an earlier 2026-03-16 topline disclosure describing a 120 mg target)",
       "route": "Oral",
       "dosingFrequency": "Once daily",
-      "treatmentDuration": "40 weeks"
+      "treatmentDuration": "44-week evaluation period (including the 28-week titration period)"
     },
     {
       "id": "s2-part1-seq1",
