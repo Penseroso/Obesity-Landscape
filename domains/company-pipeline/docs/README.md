@@ -64,6 +64,15 @@ change becomes invalid — the new assertion only ever rejects the literal
 sentinel string outside its allowed stage range, a combination no correctly
 authored pre-existing row used.
 
+ADR-0070 added an optional canonical `Company.secCik` field (10-digit zero-padded
+SEC Central Index Key, validated against `/^\d{10}$/`) and an optional operational
+`researchState` preflight checkpoint envelope on `company.json`. These are strictly
+scoped to Company/Pipeline domain. Canonical business fields are passed through
+verbatim while operational `researchState` is intentionally stripped before emitting
+generated consumer aggregates (`data/generated/companies.json`). This is not a new
+Contract version: no existing valid row became invalid, and existing consumer-facing
+generated output shapes remain unchanged.
+
 ## Canonical ownership
 
 | Topic | Authority |
@@ -168,7 +177,7 @@ from `scopeClass` — see
 
 ```text
 domains/company-pipeline/data/companies/<company-id>/
-  company.json
+  company.json            (canonical Company fields including optional secCik, and operational researchState envelope)
   pipeline-programs.json
   regimens.json
 

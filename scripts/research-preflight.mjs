@@ -120,7 +120,6 @@ export function parseArgs(argv) {
   let ackFilings = false;
   let ackDeltas = false;
   let json = false;
-  let verbose = false;
 
   let i = 0;
   while (i < args.length) {
@@ -155,15 +154,15 @@ export function parseArgs(argv) {
     } else if (arg === "--ack-filings") {
       ackFilings = true;
       i += 1;
-    } else if (arg === "--ack-deltas" || arg === "--ack-all") {
+    } else if (arg === "--ack-deltas") {
       ackDeltas = true;
       ackFilings = true;
       i += 1;
+    } else if (arg === "--ack-all") {
+      console.error("Error: '--ack-all' is deprecated. Use '--ack-deltas' instead.");
+      process.exit(1);
     } else if (arg === "--json") {
       json = true;
-      i += 1;
-    } else if (arg === "--verbose") {
-      verbose = true;
       i += 1;
     } else if (!arg.startsWith("--")) {
       if (["all", "registry:update", "registry:discovery", "literature:health", "literature:discovery", "sec"].includes(arg)) {
@@ -187,7 +186,7 @@ export function parseArgs(argv) {
   }
 
   const effectiveDomain = domain || (assetId ? "clinical-evidence" : "company-pipeline");
-  return { command, companyId, assetId, domain: effectiveDomain, cik, bootstrap, advance, ackFilings, ackDeltas, json, verbose };
+  return { command, companyId, assetId, domain: effectiveDomain, cik, bootstrap, advance, ackFilings, ackDeltas, json };
 }
 
 /**

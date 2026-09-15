@@ -693,6 +693,27 @@ test("Regression 8: Ambiguous checkpoint write mode without --bootstrap/--advanc
   const parsedAdvance = parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--advance"]);
   assert.strictEqual(parsedAdvance.advance, true);
   assert.strictEqual(parsedAdvance.bootstrap, false);
+
+  const parsedAckDeltas = parseArgs(["node", "research-preflight.mjs", "--company", "viking-therapeutics", "--ack-deltas"]);
+  assert.strictEqual(parsedAckDeltas.ackDeltas, true);
+  assert.strictEqual(parsedAckDeltas.ackFilings, true);
+  assert.strictEqual("verbose" in parsedAckDeltas, false);
+
+  // Deprecated --ack-all triggers exit(1)
+  const origExit = process.exit;
+  const origError = console.error;
+  let exitCode = null;
+  let errorMsg = "";
+  try {
+    process.exit = (code) => { exitCode = code; throw new Error("EXIT"); };
+    console.error = (msg) => { errorMsg = msg; };
+    assert.throws(() => parseArgs(["node", "research-preflight.mjs", "--ack-all"]), /EXIT/);
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /'--ack-all' is deprecated/);
+  } finally {
+    process.exit = origExit;
+    console.error = origError;
+  }
 });
 
 test("Regression 9: Package engines node requirement is at least >=22.19.0", () => {

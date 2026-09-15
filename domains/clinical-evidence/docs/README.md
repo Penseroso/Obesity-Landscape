@@ -71,8 +71,9 @@ Editable source data is company/asset scoped:
 ```text
 domains/clinical-evidence/data/clinical-evidence/
 └─ <company-id>/
+   ├─ company-research-state.json (optional company-scoped preflight checkpoint envelope)
    └─ <asset-id>/
-      └─ clinical-evidence.json
+      └─ clinical-evidence.json   (contains canonical arrays and optional asset-scoped researchState envelope)
 ```
 
 Each asset file declares its schema version and contains five parallel arrays:
@@ -82,6 +83,7 @@ Each asset file declares its schema version and contains five parallel arrays:
   "clinicalEvidenceSchemaVersion": "3.1",
   "companyId": "<company-id>",
   "assetId": "<asset-id>",
+  "researchState": { ... },
   "studies": [],
   "arms": [],
   "analysisGroups": [],
@@ -89,6 +91,18 @@ Each asset file declares its schema version and contains five parallel arrays:
   "outcomes": []
 }
 ```
+
+When company-wide preflight runs under Clinical Evidence domain (`--ce`), checkpoint state is stored in:
+`domains/clinical-evidence/data/clinical-evidence/<company-id>/company-research-state.json`:
+
+```json
+{
+  "companyId": "<company-id>",
+  "researchState": { ... }
+}
+```
+
+**Operational researchState separation.** Operational preflight state (`researchState`) is an operational tracking envelope (ADR-0070), completely separate from the canonical semantic contract (`clinicalEvidenceSchemaVersion: "3.1"`). It records deterministic preflight checkpoints (trial registry hashes, monitored PMIDs, SEC acceptance timestamps) to eliminate redundant LLM token spend. It is strictly owned by Clinical Evidence, never modifies Company/Pipeline files (`company.json`), and is never emitted into generated aggregates (`data/generated/clinical-evidence.json` or `data/generated/clinical-evidence-asset-studies.json`).
 
 Generated output is a deterministic read-only aggregate, plus one derived
 projection:
