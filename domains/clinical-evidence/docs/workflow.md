@@ -179,26 +179,40 @@ traverses every current asset under section 1's complete-manifest rule.
 
 To eliminate redundant web searches and unnecessary LLM token consumption while
 maintaining 100% factual accuracy, Clinical Evidence research utilizes
-zero-token Node.js network preflights strictly outside the offline CI gate:
+zero-token Node.js network preflights strictly outside the offline CI gate.
+
+### State lifecycle & routine execution commands
+Research preflight is integrated into routine investigation and refresh workflows.
+Do not maintain shadow logs or postpone checkpoint updates:
 
 ```text
-# Run all preflight checks for the target company
-npm run research:preflight -- <companyId>
+# 1. Routine Preflight Inspection (read-only inspection across all 5 probes)
+npm run research:preflight -- --company <companyId>
+# For asset-scoped run:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId>
 
-# Or run specific decoupled probes
-npm run research:preflight:registry <companyId>
-npm run research:preflight:registry:discovery <companyId>
-npm run research:preflight:literature <companyId>
-npm run research:preflight:literature:discovery <companyId>
+# 2. Lifecycle Checkpoint Transitions:
+# [LEGACY_UNBASELINED] -> Initial investigation complete; establish baseline checkpoint:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --bootstrap
+# (Note: If adverse notices or deltas are surfaced on unbaselined data, pass --bootstrap --ack-deltas after reviewing)
+
+# [CLEAN REFRESH] -> All probes report CLEAN / UNCHANGED; advance checkpoint:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance
+
+# [DELTA_DETECTED] -> Protocol amended, new trial, erratum/retraction, or new publication:
+# Perform canonical updates & conclusion-blind audit, then advance checkpoint:
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance --ack-deltas
+
+# [FETCH_ERROR / NETWORK_ERROR / PARTIAL] -> Checkpoint write is STRICTLY BLOCKED until errors/truncation are resolved.
 ```
 
 ### Two-stage delta detection & decoupled probes
 1. **Registry Update Probe (`registry:update`) vs Registry Discovery Probe (`registry:discovery`)**:
-   - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`). Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped).
+   - Update probe checks known NCTs on ClinicalTrials.gov API v2: evaluates `lastUpdatePostDate`. If changed, computes SHA-256 over normalized scientific fields (`overallStatus`, `phases`, `designInfo`, `armGroups`, `primaryOutcomes`, `secondaryOutcomes`, `eligibility`, `enrollmentCount`) under `semanticFingerprintVersion: 2`. Benign administrative edits (e.g. contact/site changes) are classified as `ADMIN_UPDATE_BYPASS` (LLM re-read skipped). Version mismatches trigger `REBASELINE_REQUIRED`.
    - Discovery probe executes deterministic queries with company name and asset aliases, computing an ID set difference ($\text{Candidates} \setminus \text{Known NCTs}$) to surface brand-new trial registrations at 0 LLM tokens.
 2. **Literature Health Check (`literature:health`) vs Literature Discovery Probe (`literature:discovery`)**:
-   - Health check queries PubMed E-utilities (`esummary`) for all cited PMIDs, scanning `CommentsCorrectionsList` for `ErratumIn`, `RetractionIn`, or other adverse notices.
-   - Discovery probe queries PubMed E-utilities (`esearch`) for asset aliases to detect newly indexed peer-reviewed journal articles that may supersede earlier interim disclosures or press releases ($\text{Discovered PMIDs} \setminus \text{Known PMIDs}$).
+   - Health check queries PubMed E-utilities (`efetch.fcgi` XML) for all cited PMIDs, parsing `<CommentsCorrections>` (`ErratumIn`, `RetractionIn`, `ExpressionOfConcernIn`) and `<PublicationType>` (`Retracted Publication`). It computes a granular `noticeFingerprint`. If a previously known erratum paper subsequently receives a retraction or secondary erratum, the fingerprint change immediately surfaces a new delta (`RETRACTION_DETECTED` or `NEW_ERRATUM_DETECTED`).
+   - Discovery probe queries PubMed E-utilities (`esearch.fcgi`) for asset aliases to detect newly indexed peer-reviewed journal articles that may supersede earlier interim disclosures or press releases ($\text{Discovered PMIDs} \setminus \text{Known PMIDs}$). Failure of follow-up detail fetch preserves discovered delta IDs with `hasIncomplete: true`, never collapsing into a false `CLEAN`.
 
 ### Cold-Path execution ("Freeze the source, not the study")
 Completed Studies with established Tier 1 peer-reviewed publications (e.g. STEP 1, SURMOUNT-1, SELECT) older than 12 months enter **Cold-Path Execution**:
@@ -206,7 +220,7 @@ Completed Studies with established Tier 1 peer-reviewed publications (e.g. STEP 
 - **Freeze the source text**: Re-downloading and re-parsing immutable full-text papers (30k+ tokens) is skipped.
 - **Probes remain vigilant**: Preflight probes actively monitor PubMed errata, registry status changes, and newly indexed follow-up publications.
 - If all preflights report `CLEAN`, the Study's evidence is confirmed as `COLD_PATH_VERIFIED` with zero token waste.
-- If an erratum, protocol amendment, or new publication is detected, immediately trigger targeted LLM review of that specific delta payload only.
+- If an erratum, retraction, protocol amendment, or new publication is detected, immediately trigger targeted review of that specific delta payload only.
 
 ## 2. Establish and traverse the evidence set
 

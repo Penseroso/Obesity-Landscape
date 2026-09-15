@@ -743,8 +743,29 @@ export function parseEfetchXml(xml) {
 }
 
 /**
+ * Computes a deterministic SHA-256 fingerprint for PubMed adverse notices (errata, retractions, expressions of concern).
+ * Any change in notice count, types, notice PMIDs, or individual notice sources will alter the fingerprint.
+ */
+export function computeNoticeFingerprint(notices, isRetracted = false) {
+  if ((!notices || notices.length === 0) && !isRetracted) return null;
+  const normalized = (notices ?? []).map((n) => ({
+    noticePmid: n.noticePmid || "",
+    refType: n.refType || "",
+    source: (n.source || "").trim(),
+  })).sort((a, b) => `${a.refType}:${a.noticePmid}:${a.source}`.localeCompare(`${b.refType}:${b.noticePmid}:${b.source}`));
+
+  const payload = {
+    isRetracted: Boolean(isRetracted),
+    notices: normalized,
+  };
+  const canonical = canonicalizeJson(payload);
+  return crypto.createHash("sha256").update(JSON.stringify(canonical)).digest("hex").slice(0, 16);
+}
+
+/**
  * PROBE 3: Literature Health Check (Checks cited PMIDs via PubMed EFetch XML)
  * Maintains independent hasDelta, hasError, and hasIncomplete.
+ * Tracks granular noticeFingerprint to catch erratum-to-retraction transitions and secondary errata.
  */
 export async function probeLiteratureHealth(context, fetchFn = fetch) {
   const unresolved = context.unresolvedIdentifiers ?? [];
@@ -816,19 +837,41 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
     }
 
     const prevBaseline = monitored[pmid];
+    const docStatus = doc.isRetracted ? "retracted" : (doc.hasErratum ? "has-erratum" : "clean");
+    const noticeFingerprint = computeNoticeFingerprint(doc.notices, doc.isRetracted);
+    const noticeTypes = [...new Set((doc.notices ?? []).map((n) => n.refType))].sort();
 
     if (doc.hasErratum || doc.isRetracted) {
       errataCount += 1;
-      const isKnown = prevBaseline?.status === "has-erratum" || prevBaseline?.status === "retracted";
-      const deltaVerdict = isKnown ? "KNOWN_ERRATUM" : "NEW_ERRATUM_DETECTED";
-      if (!isKnown) newErrataCount += 1;
+      const isRetractionUpgrade = doc.isRetracted && prevBaseline?.status !== "retracted";
+      const isFingerprintMatch = prevBaseline?.noticeFingerprint
+        ? prevBaseline.noticeFingerprint === noticeFingerprint
+        : (prevBaseline?.status === docStatus && !isRetractionUpgrade);
+
+      const isKnown = Boolean(prevBaseline && isFingerprintMatch && !isRetractionUpgrade);
+
+      let deltaVerdict = "KNOWN_ERRATUM";
+      let itemHasDelta = false;
+
+      if (!isKnown) {
+        itemHasDelta = true;
+        newErrataCount += 1;
+        if (doc.isRetracted) {
+          deltaVerdict = "RETRACTION_DETECTED";
+        } else {
+          deltaVerdict = "NEW_ERRATUM_DETECTED";
+        }
+      }
 
       checked.push({
         pmid,
         title: doc.title,
-        status: "ERRATUM_DETECTED",
+        status: docStatus,
         deltaVerdict,
         notices: doc.notices,
+        noticeFingerprint,
+        noticeTypes,
+        hasDelta: itemHasDelta,
       });
     } else {
       checked.push({
@@ -836,8 +879,11 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
         title: doc.title,
         pubdate: doc.pubdate,
         source: doc.source,
-        status: "CLEAN",
+        status: "clean",
         deltaVerdict: "CLEAN",
+        noticeFingerprint: null,
+        noticeTypes: [],
+        hasDelta: false,
       });
     }
   }
@@ -847,7 +893,8 @@ export async function probeLiteratureHealth(context, fetchFn = fetch) {
 
   let deltaVerdict = "CLEAN";
   if (hasDelta) {
-    deltaVerdict = "NEW_ERRATUM_DETECTED";
+    const hasRetractions = checked.some((c) => c.hasDelta && c.status === "retracted");
+    deltaVerdict = hasRetractions ? "RETRACTION_DETECTED" : "NEW_ERRATUM_DETECTED";
   } else if (hasIncomplete) {
     deltaVerdict = "PARTIAL";
   }
@@ -1198,8 +1245,8 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
     };
   }
 
-  // 4. Delta safety for advancing established baseline
-  if (hasExistingBaseline && evalResult.hasDeltas) {
+  // 4. Delta safety for BOTH bootstrap and advance modes
+  if (evalResult.hasDeltas) {
     const unacknowledged = [];
     if (evalResult.deltaSources.has("sec") && !flags.ackFilings && !flags.ackDeltas) {
       unacknowledged.push("SEC filings (pass --ack-filings or --ack-deltas after reviewing)");
@@ -1211,16 +1258,17 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
       unacknowledged.push("New clinical trials discovered (pass --ack-deltas after reviewing)");
     }
     if (evalResult.deltaSources.has("literatureHealth") && !flags.ackDeltas) {
-      unacknowledged.push("New errata/retractions discovered (pass --ack-deltas after reviewing)");
+      unacknowledged.push("Adverse literature notices (errata/retractions) discovered (pass --ack-deltas after reviewing)");
     }
     if (evalResult.deltaSources.has("literatureDiscovery") && !flags.ackDeltas) {
       unacknowledged.push("New literature publications discovered (pass --ack-deltas after reviewing)");
     }
 
     if (unacknowledged.length > 0) {
+      const modeText = isBootstrap ? "Bootstrap write blocked" : "Checkpoint advance blocked";
       return {
         allowed: false,
-        reason: `Checkpoint advance blocked: Unresolved deltas detected: ${unacknowledged.join("; ")}`,
+        reason: `${modeText}: Unresolved deltas detected: ${unacknowledged.join("; ")}`,
       };
     }
   }
@@ -1254,8 +1302,13 @@ export function saveBaselineCheckpoint(context, updateRes, healthRes, secRes) {
   const monitoredPMIDsMap = healthRes ? {} : { ...prevPMIDs };
   for (const h of (healthRes?.checked ?? [])) {
     if (h.pmid && h.status !== "NOT_FOUND" && knownPMIDsSet.has(h.pmid)) {
+      const status = ["retracted", "has-erratum", "clean"].includes(h.status)
+        ? h.status
+        : (h.status === "ERRATUM_DETECTED" ? "has-erratum" : "clean");
       monitoredPMIDsMap[h.pmid] = {
-        status: h.status === "ERRATUM_DETECTED" ? "has-erratum" : "clean",
+        status,
+        ...(h.noticeFingerprint ? { noticeFingerprint: h.noticeFingerprint } : {}),
+        ...(h.noticeTypes?.length ? { noticeTypes: h.noticeTypes } : {}),
         lastCheckedAt: asOf,
       };
     }
@@ -1370,8 +1423,10 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
       console.log(`  CLEAN: 0 errata/retractions across ${healthRes.citedCount} monitored publications.`);
     } else {
       console.log(`  NOTICES: ${healthRes.errataCount} errata/retractions detected (${healthRes.newErrataCount} new since baseline):`);
-      for (const c of healthRes.checked.filter((x) => x.status === "ERRATUM_DETECTED")) {
-        console.log(`    ! [${c.deltaVerdict}] PMID ${c.pmid}: "${c.title}"`);
+      for (const c of healthRes.checked.filter((x) => x.status === "has-erratum" || x.status === "retracted" || x.status === "ERRATUM_DETECTED")) {
+        const badge = c.status === "retracted" ? "[RETRACTED]" : `[${c.deltaVerdict}]`;
+        console.log(`    ! ${badge} PMID ${c.pmid}: "${c.title}"`);
+        if (c.noticeFingerprint) console.log(`      Notice Fingerprint: ${c.noticeFingerprint} (${(c.noticeTypes ?? []).join(", ")})`);
         for (const n of c.notices ?? []) {
           console.log(`      - ${n.refType || "Notice"}: ${n.source}`);
         }

@@ -1020,6 +1020,12 @@ function validateResearchState(researchState, context) {
         assert(/^\d+$/.test(pmid), `${context}: monitoredPMIDs key "${pmid}" must be numeric PMID`);
         assert(isObject(record), `${context}: monitoredPMIDs["${pmid}"] must be an object`);
         assert(["clean", "has-erratum", "retracted"].includes(record.status), `${context}: monitoredPMIDs status "${record.status}" is invalid`);
+        if (record.noticeFingerprint !== undefined) {
+          assert(isNonEmptyString(record.noticeFingerprint), `${context}: monitoredPMIDs["${pmid}"].noticeFingerprint must be non-empty string`);
+        }
+        if (record.noticeTypes !== undefined) {
+          assert(Array.isArray(record.noticeTypes), `${context}: monitoredPMIDs["${pmid}"].noticeTypes must be an array`);
+        }
         if (record.lastCheckedAt !== undefined) {
           assert(isValidFullDate(record.lastCheckedAt), `${context}: monitoredPMIDs["${pmid}"].lastCheckedAt must be YYYY-MM-DD`);
         }

@@ -31,6 +31,8 @@ export type ResearchStateMetadata = {
       lastQueriedAt?: string;
       monitoredPMIDs?: Record<string, {
         status: "clean" | "has-erratum" | "retracted";
+        noticeFingerprint?: string;
+        noticeTypes?: string[];
         lastCheckedAt: string;
       }>;
     };

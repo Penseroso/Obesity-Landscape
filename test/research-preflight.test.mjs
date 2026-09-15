@@ -15,6 +15,7 @@ import {
   KNOWN_SEC_CIKS,
   canAdvanceCheckpoint,
   canonicalizeJson,
+  computeNoticeFingerprint,
   computeScientificFingerprint,
   evaluatePreflight,
   loadCompanyContext,
@@ -420,7 +421,9 @@ test("Test 6: New NCT / new PMID / new SEC filing -> delta detection", async () 
     text: async () => syntheticEfetchXml,
   });
   const litHealth = await probeLiteratureHealth(litContext, mockXmlFetch);
-  assert.strictEqual(litHealth.deltaVerdict, "NEW_ERRATUM_DETECTED");
+  assert.strictEqual(litHealth.deltaVerdict, "RETRACTION_DETECTED");
+  assert.strictEqual(litHealth.checked[0].deltaVerdict, "NEW_ERRATUM_DETECTED");
+  assert.strictEqual(litHealth.checked[1].deltaVerdict, "RETRACTION_DETECTED");
   assert.strictEqual(litHealth.hasDelta, true);
   assert.strictEqual(litHealth.newErrataCount, 2);
 
@@ -766,6 +769,106 @@ test("Regression 10: saveBaselineCheckpoint defends unrun probes against map del
   } finally {
     if (fs.existsSync(tempFile)) fs.unlinkSync(tempFile);
   }
+});
+
+test("Regression 11: Erratum to Retraction transition triggers RETRACTION_DETECTED and flags new delta", async () => {
+  const pmid = "12345678";
+  const initialNotices = [{ refType: "ErratumIn", source: "Nat Med. 2026", noticePmid: "12345679" }];
+  const initialFp = computeNoticeFingerprint(initialNotices, false);
+
+  const context = {
+    knownPMIDs: [pmid],
+    baseline: {
+      discoveryCheckpoint: {
+        literature: {
+          monitoredPMIDs: {
+            [pmid]: {
+              status: "has-erratum",
+              noticeFingerprint: initialFp,
+              noticeTypes: ["ErratumIn"],
+              lastCheckedAt: "2026-09-01",
+            },
+          },
+        },
+      },
+    },
+  };
+
+  // 1. Same erratum notice -> KNOWN_ERRATUM, no delta
+  const sameErratumXml = `
+    <PubmedArticle>
+      <MedlineCitation>
+        <PMID>${pmid}</PMID>
+        <Article><ArticleTitle>Test Study</ArticleTitle></Article>
+        <CommentsCorrectionsList>
+          <CommentsCorrections RefType="ErratumIn">
+            <RefSource>Nat Med. 2026</RefSource>
+            <PMID>12345679</PMID>
+          </CommentsCorrections>
+        </CommentsCorrectionsList>
+      </MedlineCitation>
+    </PubmedArticle>
+  `;
+  const resSame = await probeLiteratureHealth(context, async () => ({ ok: true, text: async () => sameErratumXml }));
+  assert.strictEqual(resSame.checked[0].deltaVerdict, "KNOWN_ERRATUM");
+  assert.strictEqual(resSame.hasDelta, false);
+  assert.strictEqual(resSame.newErrataCount, 0);
+
+  // 2. Paper receives subsequent Retraction -> RETRACTION_DETECTED, hasDelta = true!
+  const retractedXml = `
+    <PubmedArticle>
+      <MedlineCitation>
+        <PMID>${pmid}</PMID>
+        <Article><ArticleTitle>Test Study</ArticleTitle></Article>
+        <CommentsCorrectionsList>
+          <CommentsCorrections RefType="ErratumIn">
+            <RefSource>Nat Med. 2026</RefSource>
+            <PMID>12345679</PMID>
+          </CommentsCorrections>
+          <CommentsCorrections RefType="RetractionIn">
+            <RefSource>Nat Med. 2027</RefSource>
+            <PMID>12345680</PMID>
+          </CommentsCorrections>
+        </CommentsCorrectionsList>
+      </MedlineCitation>
+    </PubmedArticle>
+  `;
+  const resRetracted = await probeLiteratureHealth(context, async () => ({ ok: true, text: async () => retractedXml }));
+  assert.strictEqual(resRetracted.checked[0].deltaVerdict, "RETRACTION_DETECTED");
+  assert.strictEqual(resRetracted.checked[0].status, "retracted");
+  assert.strictEqual(resRetracted.hasDelta, true);
+  assert.strictEqual(resRetracted.newErrataCount, 1);
+  assert.strictEqual(resRetracted.deltaVerdict, "RETRACTION_DETECTED");
+});
+
+test("Regression 12: Unbaselined target with adverse notice is BLOCKED on --bootstrap without --ack-deltas", () => {
+  const cleanContextNoBaseline = {
+    companyId: "temp-unbaselined",
+    targetFile: path.join(ROOT, "domains", "company-pipeline", "data", "companies", "viking-therapeutics", "company.json"),
+    targetFileExists: true,
+    baseline: null,
+  };
+
+  const healthResWithErratum = {
+    citedCount: 1,
+    errataCount: 1,
+    newErrataCount: 1,
+    deltaVerdict: "NEW_ERRATUM_DETECTED",
+    hasDelta: true,
+    hasError: false,
+    hasIncomplete: false,
+    checked: [{ pmid: "99999999", status: "has-erratum", deltaVerdict: "NEW_ERRATUM_DETECTED", hasDelta: true }],
+  };
+
+  // Attempt bootstrap without ack -> BLOCKED!
+  const gateWithoutAck = canAdvanceCheckpoint(cleanContextNoBaseline, null, null, healthResWithErratum, null, null, { bootstrap: true });
+  assert.strictEqual(gateWithoutAck.allowed, false);
+  assert.match(gateWithoutAck.reason, /Bootstrap write blocked/);
+  assert.match(gateWithoutAck.reason, /Adverse literature notices/);
+
+  // Attempt bootstrap with explicit ack-deltas -> ALLOWED!
+  const gateWithAck = canAdvanceCheckpoint(cleanContextNoBaseline, null, null, healthResWithErratum, null, null, { bootstrap: true, ackDeltas: true });
+  assert.strictEqual(gateWithAck.allowed, true);
 });
 
 test("CIK resolution hierarchy and mapping checks", () => {

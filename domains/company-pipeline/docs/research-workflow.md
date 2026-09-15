@@ -258,9 +258,14 @@ apply per segment and which are company-wide.
 2. For every `Filed` or `Approved` program, reconcile disclosed jurisdiction,
    authority, and official date in `regulatoryStates`.
 3. Classify every newly surfaced candidate.
-4. **Deterministic Preflight & Prior Checkpoint Diff (ADR-0070).** For a refresh run,
-   execute `npm run research:preflight -- <companyId>` to check registry update/discovery,
-   literature health/discovery, and SEC EDGAR filings before drafting mutations.
+4. **Deterministic Preflight & Prior Checkpoint Diff (ADR-0070).**
+   Run network preflights to detect registry, literature, and SEC deltas without LLM token waste:
+   - Routine inspection: `npm run research:preflight -- --company <companyId>`
+   - State lifecycle transitions:
+     - `LEGACY_UNBASELINED`: After completing baseline investigation, establish initial baseline: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --bootstrap` (pass `--ack-deltas` if unbaselined deltas exist).
+     - `CLEAN` refresh: Advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance`
+     - `DELTA_DETECTED`: After drafting canonical mutations and completing factual audits, advance checkpoint: `node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --advance --ack-deltas`
+     - `FETCH_ERROR` / `PARTIAL`: Checkpoint advance is strictly blocked until network issues or data truncations are resolved.
 5. **Coverage verification via Conclusion-Blind Audit (Section 5a).**
    - For an **initial company investigation**, run a Targeted Conclusion-Blind Audit
      covering negative space (untracked obesity assets), borderline exclusions/deferrals,

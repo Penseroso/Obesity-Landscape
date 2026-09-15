@@ -79,6 +79,10 @@
         "monitoredPMIDs": {
           "42249138": {
             "status": "has-erratum",
+            "noticeFingerprint": "8f3bd8736ccae80e",
+            "noticeTypes": [
+              "ErratumIn"
+            ],
             "lastCheckedAt": "2026-09-15"
           },
           "42343118": {
