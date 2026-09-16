@@ -6532,7 +6532,7 @@
       "sources": [
         {
           "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-09-05/600276_20260905_1.pdf",
-          "title": "Jiangsu Hengrui Pharmaceuticals Co., Ltd. Announcement on Receipt of NMPA NDA Acceptance Notice for HRS-7535 Tablets for Long-Term Weight Management (Acceptance No. CXHS2600124)",
+          "title": "Jiangsu Hengrui Pharmaceuticals Co., Ltd. Announcement on Receipt of NMPA NDA Acceptance Notice for HRS-7535 Tablets for Long-Term Weight Management (Acceptance Nos. CXHS2600124, CXHS2600125)",
           "sourceType": "regulatory filing",
           "publishedAt": "2026-09",
           "checkedAt": "2026-09-16"
@@ -7227,7 +7227,7 @@
         }
       ]
     },
-    "scopeClass": "obesity-comorbidity"
+    "scopeClass": "metabolic-adjacent"
   },
   {
     "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection-heart-failure",
