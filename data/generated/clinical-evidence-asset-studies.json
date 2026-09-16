@@ -160,6 +160,7 @@
         "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
         "eli-lilly-and-company-eloralintide-nct06345066",
         "eli-lilly-and-company-tirzepatide-nct06643728",
+        "eli-lilly-and-company-tirzepatide-nct06901349",
         "eli-lilly-and-company-eloralintide-nct06603571",
         "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
         "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
@@ -617,7 +618,8 @@
       "companyId": "eli-lilly-and-company",
       "regimenId": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
       "focalStudyIds": [
-        "eli-lilly-and-company-tirzepatide-nct06643728"
+        "eli-lilly-and-company-tirzepatide-nct06643728",
+        "eli-lilly-and-company-tirzepatide-nct06901349"
       ]
     },
     {
