@@ -10338,6 +10338,55 @@
       }
     },
     {
+      "id": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "companyId": "roche",
+      "regimenId": "roche-petrelintide-enicepatide-obesity",
+      "officialTitle": "A Phase II, Randomized, Double-Blind, Placebo-Controlled, Dose-Finding Study to Evaluate the Efficacy and Safety of Petrelintide Co-Administered With RO7795068 in Adults With Obesity or Overweight",
+      "acronym": "ZYNERGY",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07589686"
+        }
+      ],
+      "protocolIdentifiers": [
+        "CC46372"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07589686",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-09-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo and component monotherapies",
+        "description": "Six-arm dose-finding study evaluating once-weekly petrelintide co-administered with enicepatide (RO7795068) across three dosing regimens compared with component monotherapies and matching placebos."
+      },
+      "population": "Adults with obesity or overweight.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07589686",
+            "title": "ZYNERGY study record (NCT07589686)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
       "id": "sciwind-biosciences-ecnoglutide-ctr20213434",
       "companyId": "sciwind-biosciences",
       "assetId": "ecnoglutide",
@@ -11802,46 +11851,6 @@
           {
             "url": "https://clinicaltrials.gov/study/NCT06926842",
             "title": "ZUPREME 2 study record (NCT06926842)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "companyId": "zealand-pharma",
-      "assetId": "petrelintide-ct-388-fdc",
-      "programId": "zealand-pharma-petrelintide-ct-388-fdc-subcutaneous-injection",
-      "officialTitle": "A Phase II, Randomized, Double-Blind, Placebo-Controlled, Dose-Finding Study to Evaluate the Efficacy and Safety of Petrelintide Co-Administered With RO7795068 in Adults With Obesity or Overweight",
-      "acronym": "ZYNERGY",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT07589686"
-        }
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT07589686",
-        "overallStatus": "not-yet-recruiting",
-        "sourceStatus": "Not yet recruiting",
-        "statusUpdatedAt": "2026-07-07"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Adults with obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT07589686",
-            "title": "ZYNERGY study record (NCT07589686)",
             "sourceType": "trial registry",
             "checkedAt": "2026-07-14"
           }
@@ -22150,6 +22159,80 @@
       "intervention": "Volume-matched placebo once weekly, subcutaneous"
     },
     {
+      "id": "zynergy-arm-1-petrelintide-enicepatide-dosing-regimen-1",
+      "studyId": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "role": "experimental",
+      "label": "Arm 1: Petrelintide + Enicepatide Dosing Regimen 1",
+      "intervention": "Petrelintide plus Enicepatide",
+      "linkedAsset": {
+        "companyId": "roche",
+        "assetId": "petrelintide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "zynergy-arm-2-petrelintide-enicepatide-dosing-regimen-2",
+      "studyId": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "role": "experimental",
+      "label": "Arm 2: Petrelintide + Enicepatide Dosing Regimen 2",
+      "intervention": "Petrelintide plus Enicepatide",
+      "linkedAsset": {
+        "companyId": "roche",
+        "assetId": "petrelintide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "zynergy-arm-3-petrelintide-enicepatide-dosing-regimen-3",
+      "studyId": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "role": "experimental",
+      "label": "Arm 3: Petrelintide + Enicepatide Dosing Regimen 3",
+      "intervention": "Petrelintide plus Enicepatide",
+      "linkedAsset": {
+        "companyId": "roche",
+        "assetId": "petrelintide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "zynergy-arm-4-petrelintide-matching-placebo-enicepatide",
+      "studyId": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "role": "experimental",
+      "label": "Arm 4: Petrelintide-matching Placebo + Enicepatide",
+      "intervention": "Enicepatide plus Petrelintide-matching Placebo",
+      "linkedAsset": {
+        "companyId": "roche",
+        "assetId": "enicepatide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "zynergy-arm-5-petrelintide-enicepatide-matching-placebo",
+      "studyId": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "role": "experimental",
+      "label": "Arm 5: Petrelintide + Enicepatide-matching Placebo",
+      "intervention": "Petrelintide plus Enicepatide-matching Placebo",
+      "linkedAsset": {
+        "companyId": "roche",
+        "assetId": "petrelintide"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
+      "id": "zynergy-arm-6-petrelintide-matching-placebo-enicepatide-matching-placebo",
+      "studyId": "roche-petrelintide-enicepatide-zynergy-nct07589686",
+      "role": "placebo",
+      "label": "Arm 6: Petrelintide-matching Placebo + Enicepatide-matching Placebo",
+      "intervention": "Petrelintide-matching Placebo plus Enicepatide-matching Placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly"
+    },
+    {
       "id": "ecno-1014-18",
       "studyId": "sciwind-biosciences-ecnoglutide-ctr20213434",
       "role": "experimental",
@@ -23700,64 +23783,6 @@
       "intervention": "Placebo",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly"
-    },
-    {
-      "id": "zynergy-arm-1-petrelintide-enicepatide-dosing-regimen-1",
-      "studyId": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "role": "experimental",
-      "label": "Arm 1: Petrelintide + Enicepatide Dosing Regimen 1",
-      "intervention": "Petrelintide plus Enicepatide",
-      "linkedAsset": {
-        "companyId": "zealand-pharma",
-        "assetId": "petrelintide"
-      }
-    },
-    {
-      "id": "zynergy-arm-2-petrelintide-enicepatide-dosing-regimen-2",
-      "studyId": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "role": "experimental",
-      "label": "Arm 2: Petrelintide + Enicepatide Dosing Regimen 2",
-      "intervention": "Petrelintide plus Enicepatide",
-      "linkedAsset": {
-        "companyId": "zealand-pharma",
-        "assetId": "petrelintide"
-      }
-    },
-    {
-      "id": "zynergy-arm-3-petrelintide-enicepatide-dosing-regimen-3",
-      "studyId": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "role": "experimental",
-      "label": "Arm 3: Petrelintide + Enicepatide Dosing Regimen 3",
-      "intervention": "Petrelintide plus Enicepatide",
-      "linkedAsset": {
-        "companyId": "zealand-pharma",
-        "assetId": "petrelintide"
-      }
-    },
-    {
-      "id": "zynergy-arm-4-petrelintide-matching-placebo-enicepatide",
-      "studyId": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "role": "experimental",
-      "label": "Arm 4: Petrelintide-matching Placebo + Enicepatide",
-      "intervention": "Enicepatide plus Petrelintide-matching Placebo"
-    },
-    {
-      "id": "zynergy-arm-5-petrelintide-enicepatide-matching-placebo",
-      "studyId": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "role": "experimental",
-      "label": "Arm 5: Petrelintide + Enicepatide-matching Placebo",
-      "intervention": "Petrelintide plus Enicepatide-matching Placebo",
-      "linkedAsset": {
-        "companyId": "zealand-pharma",
-        "assetId": "petrelintide"
-      }
-    },
-    {
-      "id": "zynergy-arm-6-petrelintide-matching-placebo-enicepatide-matching-placebo",
-      "studyId": "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686",
-      "role": "placebo",
-      "label": "Arm 6: Petrelintide-matching Placebo + Enicepatide-matching Placebo",
-      "intervention": "Petrelintide-matching Placebo plus Enicepatide-matching Placebo"
     },
     {
       "id": "zupreme-2-treatment-a-petrelintide-dose-1",

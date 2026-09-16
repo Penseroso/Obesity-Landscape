@@ -522,7 +522,17 @@
         "roche-enicepatide-enith2-nct07351058",
         "roche-enicepatide-ct388-101-nct04838405"
       ],
-      "linkedStudyIds": []
+      "linkedStudyIds": [
+        "roche-petrelintide-enicepatide-zynergy-nct07589686"
+      ]
+    },
+    {
+      "companyId": "roche",
+      "assetId": "petrelintide",
+      "focalStudyIds": [],
+      "linkedStudyIds": [
+        "roche-petrelintide-enicepatide-zynergy-nct07589686"
+      ]
     },
     {
       "companyId": "sciwind-biosciences",
@@ -581,16 +591,6 @@
       "focalStudyIds": [
         "zealand-pharma-petrelintide-zupreme-nct06662539",
         "zealand-pharma-petrelintide-zupreme-2-nct06926842"
-      ],
-      "linkedStudyIds": [
-        "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686"
-      ]
-    },
-    {
-      "companyId": "zealand-pharma",
-      "assetId": "petrelintide-ct-388-fdc",
-      "focalStudyIds": [
-        "zealand-pharma-petrelintide-ct-388-fixed-dose-combination-zynergy-nct07589686"
       ],
       "linkedStudyIds": []
     }
@@ -668,6 +668,13 @@
       "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
       "focalStudyIds": [
         "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086"
+      ]
+    },
+    {
+      "companyId": "roche",
+      "regimenId": "roche-petrelintide-enicepatide-obesity",
+      "focalStudyIds": [
+        "roche-petrelintide-enicepatide-zynergy-nct07589686"
       ]
     }
   ]

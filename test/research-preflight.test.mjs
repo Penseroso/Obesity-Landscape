@@ -3145,8 +3145,8 @@ test("Regression 39: targetRegimenId context (Roche ZYNERGY-shaped, 2 internal c
   );
   assert.strictEqual(
     context.targetFileExists,
-    false,
-    "Roche's ZYNERGY regimen has not migrated to a regimen-native leaf yet - this must reflect that, not invent one",
+    true,
+    "Roche's ZYNERGY regimen has migrated to a regimen-native leaf",
   );
 
   // Both components are Roche's own internal Programs -> 2 conjunctive
@@ -3193,8 +3193,8 @@ test("Regression 41: company-pipeline domain rejects targetRegimenId exactly as 
 });
 
 test("Regression 42: regimen bootstrap without a canonical CE file is blocked with REGIMEN_CANONICAL_TARGET_MISSING, mirroring ASSET_CANONICAL_TARGET_MISSING", async () => {
-  const context = await loadCompanyContext("roche", null, {
-    targetRegimenId: "roche-petrelintide-enicepatide-obesity",
+  const context = await loadCompanyContext("zealand-pharma", null, {
+    targetRegimenId: "zealand-pharma-petrelintide-enicepatide-obesity",
   });
   assert.strictEqual(context.targetFileExists, false);
 
