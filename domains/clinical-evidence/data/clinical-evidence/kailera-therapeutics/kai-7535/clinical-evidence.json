@@ -59,56 +59,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "kailera-therapeutics-kai-7535-nct07294898",
-      "companyId": "kailera-therapeutics",
-      "assetId": "kai-7535",
-      "programId": "kailera-therapeutics-kai-7535-oral-tablets",
-      "officialTitle": "A Phase 1, Open-Label, Randomized, Crossover Study to Evaluate the Effect of a Low-Fat Meal and Evening Dosing on the Pharmacokinetics of KAI-7535 in Healthy Participants Living With Obesity or Overweight",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT07294898"
-        }
-      ],
-      "protocolIdentifiers": [
-        "K7535-1709"
-      ],
-      "phase": "Phase 1",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT07294898",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-01-29"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Open-label",
-        "comparator": "None",
-        "description": "Phase 1, open-label, randomized, crossover study evaluating the effect of a low-fat meal and evening dosing on the single-dose pharmacokinetics of KAI-7535 in healthy participants living with obesity or overweight."
-      },
-      "population": "Healthy adults aged 18 to 65 years living with obesity or overweight (BMI 25.0 to 40.0 kg/m2), without clinically significant medical conditions.",
-      "populationProfile": {
-        "ageGroup": "adult",
-        "diabetesStatus": "without-type-2-diabetes",
-        "requiresAdditionalCondition": false,
-        "treatmentContext": "initial-treatment"
-      },
-      "overallDuration": "Single-dose administration across crossover periods up to 12 days",
-      "metadata": {
-        "lastVerifiedAt": "2026-09-16",
-        "updatedAt": "2026-09-16",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT07294898",
-            "title": "A Study to Investigate the Effect of a Low-fat Meal and Evening Dosing on KAI-7535 in Participants Living With Obesity or Overweight",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-09-16"
-          }
-        ]
-      }
     }
   ],
   "arms": [
@@ -146,27 +96,6 @@
       "role": "placebo",
       "label": "Placebo",
       "intervention": "Matching oral placebo tablets once daily"
-    },
-    {
-      "id": "kai-7535-1709-morning-fed",
-      "studyId": "kailera-therapeutics-kai-7535-nct07294898",
-      "role": "experimental",
-      "label": "KAI-7535 Morning Dosing Fed",
-      "intervention": "Single oral dose of KAI-7535 in the morning following a low-fat meal"
-    },
-    {
-      "id": "kai-7535-1709-morning-fasted",
-      "studyId": "kailera-therapeutics-kai-7535-nct07294898",
-      "role": "experimental",
-      "label": "KAI-7535 Morning Dosing Fasted",
-      "intervention": "Single oral dose of KAI-7535 in the morning following an overnight fast"
-    },
-    {
-      "id": "kai-7535-1709-evening",
-      "studyId": "kailera-therapeutics-kai-7535-nct07294898",
-      "role": "experimental",
-      "label": "KAI-7535 Evening Dosing",
-      "intervention": "Single oral dose of KAI-7535 in the evening"
     }
   ],
   "analysisGroups": [],
@@ -187,10 +116,6 @@
         ],
         "lastQueriedAt": "2026-09-16",
         "knownNCTs": {
-          "NCT07294898": {
-            "lastUpdatePostDate": "2026-01-29",
-            "semanticHash": "71af8d6474ffc3c3e567a5111e151ee2d9b058dcd6e1bb3b1f3d7296f15a9fea"
-          },
           "NCT07497880": {
             "lastUpdatePostDate": "2026-09-09",
             "semanticHash": "eeb1c07d68679ebb0e67a3d27f9ae69d01f911b69fadb4d69f5c58b4ad35172c"

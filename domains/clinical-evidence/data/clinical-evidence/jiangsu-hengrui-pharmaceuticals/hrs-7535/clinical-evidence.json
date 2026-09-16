@@ -326,57 +326,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07269756",
-      "companyId": "jiangsu-hengrui-pharmaceuticals",
-      "assetId": "hrs-7535",
-      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet",
-      "officialTitle": "An Open, Fixed-sequence, Self-controlled Pharmacokinetic Study to Evaluate the Drug Interactions of HRS-7535 With Acetaminophen, Digoxin, Rosuvastatin, and Omeprazole in Obese or Overweight Subjects",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT07269756"
-        }
-      ],
-      "protocolIdentifiers": [
-        "HRS-7535-110"
-      ],
-      "phase": "Phase 1",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT07269756",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-06-29"
-      },
-      "design": {
-        "randomization": "Not applicable",
-        "masking": "Open-label",
-        "comparator": "None",
-        "description": "Open-label, fixed-sequence, self-controlled single-group pharmacokinetic drug-drug interaction study evaluating the effects of once-daily oral HRS-7535 on acetaminophen, digoxin, rosuvastatin, and omeprazole in obese or overweight subjects."
-      },
-      "population": "Chinese adult participants with overweight or obesity.",
-      "populationProfile": {
-        "ageGroup": "adult",
-        "diabetesStatus": "without-type-2-diabetes",
-        "requiresAdditionalCondition": false,
-        "treatmentContext": "initial-treatment",
-        "regionRestriction": "China"
-      },
-      "overallDuration": "63 days of study participation",
-      "metadata": {
-        "lastVerifiedAt": "2026-09-16",
-        "updatedAt": "2026-09-16",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT07269756",
-            "title": "An Open, Fixed-sequence, Self-controlled Pharmacokinetic Study to Evaluate the Drug Interactions of HRS-7535 With Acetaminophen, Digoxin, Rosuvastatin, and Omeprazole in Obese or Overweight Subjects",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-09-16"
-          }
-        ]
-      }
     }
   ],
   "arms": [
@@ -568,13 +517,6 @@
       "role": "placebo",
       "label": "Placebo",
       "intervention": "Matching oral placebo tablets once daily"
-    },
-    {
-      "id": "hrs-7535-110-oral-group",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07269756",
-      "role": "experimental",
-      "label": "Oral Medication Group",
-      "intervention": "HRS-7535 oral tablets with probe substrates"
     }
   ],
   "analysisGroups": [],
@@ -1188,7 +1130,7 @@
       "armIds": [
         "harbor-1-placebo"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "16.2%",
         "numericValue": 16.2,
@@ -1217,7 +1159,7 @@
       "armIds": [
         "harbor-1-hrs-7535-120mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "70.3%",
         "numericValue": 70.3,
@@ -1246,7 +1188,7 @@
       "armIds": [
         "harbor-1-hrs-7535-180mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "70.0%",
         "numericValue": 70,
@@ -1275,7 +1217,7 @@
       "armIds": [
         "harbor-1-placebo"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "4.5%",
         "numericValue": 4.5,
@@ -1304,7 +1246,7 @@
       "armIds": [
         "harbor-1-hrs-7535-120mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "66.7%",
         "numericValue": 66.7,
@@ -1333,7 +1275,7 @@
       "armIds": [
         "harbor-1-hrs-7535-180mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "68.6%",
         "numericValue": 68.6,
@@ -1362,7 +1304,7 @@
       "armIds": [
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-2.50%",
         "numericValue": -2.5,
@@ -1392,7 +1334,7 @@
       "armIds": [
         "hrs-7535-202-30mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-2.99%",
         "numericValue": -2.99,
@@ -1422,7 +1364,7 @@
       "armIds": [
         "hrs-7535-202-60mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-7.09%",
         "numericValue": -7.09,
@@ -1452,7 +1394,7 @@
       "armIds": [
         "hrs-7535-202-120mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-6.17%",
         "numericValue": -6.17,
@@ -1482,7 +1424,7 @@
       "armIds": [
         "hrs-7535-202-180mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-9.36%",
         "numericValue": -9.36,
@@ -1513,7 +1455,7 @@
         "hrs-7535-202-30mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-0.49%",
         "numericValue": -0.49,
@@ -1547,7 +1489,7 @@
         "hrs-7535-202-60mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-4.60%",
         "numericValue": -4.6,
@@ -1581,7 +1523,7 @@
         "hrs-7535-202-120mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-3.67%",
         "numericValue": -3.67,
@@ -1615,7 +1557,7 @@
         "hrs-7535-202-180mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-6.87%",
         "numericValue": -6.87,
@@ -1648,7 +1590,7 @@
       "armIds": [
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-1.39%",
         "numericValue": -1.39,
@@ -1678,7 +1620,7 @@
       "armIds": [
         "hrs-7535-202-30mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-2.44%",
         "numericValue": -2.44,
@@ -1708,7 +1650,7 @@
       "armIds": [
         "hrs-7535-202-60mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-5.36%",
         "numericValue": -5.36,
@@ -1738,7 +1680,7 @@
       "armIds": [
         "hrs-7535-202-120mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-5.36%",
         "numericValue": -5.36,
@@ -1768,7 +1710,7 @@
       "armIds": [
         "hrs-7535-202-180mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-9.46%",
         "numericValue": -9.46,
@@ -1799,7 +1741,7 @@
         "hrs-7535-202-30mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-1.06%",
         "numericValue": -1.06,
@@ -1833,7 +1775,7 @@
         "hrs-7535-202-60mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-3.98%",
         "numericValue": -3.98,
@@ -1867,7 +1809,7 @@
         "hrs-7535-202-120mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-3.97%",
         "numericValue": -3.97,
@@ -1901,7 +1843,7 @@
         "hrs-7535-202-180mg",
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "-8.08%",
         "numericValue": -8.08,
@@ -1934,7 +1876,7 @@
       "armIds": [
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "23.9%",
         "numericValue": 23.9,
@@ -1965,7 +1907,7 @@
       "armIds": [
         "hrs-7535-202-30mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "31.3%",
         "numericValue": 31.3,
@@ -1996,7 +1938,7 @@
       "armIds": [
         "hrs-7535-202-60mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "53.2%",
         "numericValue": 53.2,
@@ -2027,7 +1969,7 @@
       "armIds": [
         "hrs-7535-202-120mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "50.0%",
         "numericValue": 50,
@@ -2058,7 +2000,7 @@
       "armIds": [
         "hrs-7535-202-180mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "54.2%",
         "numericValue": 54.2,
@@ -2089,7 +2031,7 @@
       "armIds": [
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "6.5%",
         "numericValue": 6.5,
@@ -2120,7 +2062,7 @@
       "armIds": [
         "hrs-7535-202-30mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "6.3%",
         "numericValue": 6.3,
@@ -2151,7 +2093,7 @@
       "armIds": [
         "hrs-7535-202-60mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "25.5%",
         "numericValue": 25.5,
@@ -2182,7 +2124,7 @@
       "armIds": [
         "hrs-7535-202-120mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "26.1%",
         "numericValue": 26.1,
@@ -2213,7 +2155,7 @@
       "armIds": [
         "hrs-7535-202-180mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "41.7%",
         "numericValue": 41.7,
@@ -2244,7 +2186,7 @@
       "armIds": [
         "hrs-7535-202-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "0.0%",
         "numericValue": 0,
@@ -2275,7 +2217,7 @@
       "armIds": [
         "hrs-7535-202-30mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "0.0%",
         "numericValue": 0,
@@ -2306,7 +2248,7 @@
       "armIds": [
         "hrs-7535-202-60mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "12.8%",
         "numericValue": 12.8,
@@ -2337,7 +2279,7 @@
       "armIds": [
         "hrs-7535-202-120mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "10.9%",
         "numericValue": 10.9,
@@ -2368,7 +2310,7 @@
       "armIds": [
         "hrs-7535-202-180mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Intention-to-treat (ITT) population",
       "result": {
         "value": "22.9%",
         "numericValue": 22.9,
@@ -2862,10 +2804,6 @@
           "NCT06904105": {
             "lastUpdatePostDate": "2026-07-27",
             "semanticHash": "ccb949011b3067fdb29c706c3a51681c9b24b1798a810866e665f6ac65e15668"
-          },
-          "NCT07269756": {
-            "lastUpdatePostDate": "2026-06-29",
-            "semanticHash": "96e3bbb236be826fda05997a75c07309983e89b0eae866317086917412a474d6"
           },
           "NCT07528027": {
             "lastUpdatePostDate": "2026-06-05",
