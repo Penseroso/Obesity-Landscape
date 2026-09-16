@@ -1,0 +1,2908 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "jiangsu-hengrui-pharmaceuticals",
+  "assetId": "hrs-7535",
+  "studies": [
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet",
+      "officialTitle": "A Phase 3 Clinical Study to Evaluate the Efficacy and Safety of HRS-7535 Tablets in Subjects With Overweight or Obesity",
+      "acronym": "HARBOR-1",
+      "studyFamily": "HARBOR",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06904105"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-303"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06904105",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-07-27"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 3 trial evaluating once-daily oral HRS-7535 at 120 mg and 180 mg versus placebo (2:2:1 randomization) for 44 weeks, continuing through Week 50, in Chinese adults with overweight or obesity."
+      },
+      "population": "Chinese adults aged 18 years or older with overweight or obesity (mean baseline body weight 94.1 kg, mean baseline BMI 34.0 kg/m2, 62% female), without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "44 weeks of randomized treatment, continuing through Week 50",
+      "safetySummary": "Most treatment-emergent adverse events were mild to moderate and gastrointestinal-related. Common TEAEs with HRS-7535 (120 mg and 180 mg, respectively) were nausea (70.3% and 70.0% vs 16.2% placebo), vomiting (66.7% and 68.6% vs 4.5% placebo), and diarrhea (36.9% and 35.9% vs 15.3% placebo). Treatment discontinuations due to TEAEs were 4.1% (120 mg) and 3.1% (180 mg) vs 2.7% (placebo). No liver safety signals were observed.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06904105",
+            "title": "A Phase 3 Clinical Study to Evaluate the Efficacy and Safety of HRS-7535 Tablets in Subjects With Overweight or Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet",
+      "officialTitle": "A Multicenter, Randomized, Double-blinded, Placebo-controlled, Parallel-group Phase ⅡStudy to Evaluate the Efficacy and Safety of HRS-7535 in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06250946"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-202"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06250946",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-04-13"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 2 trial conducted at 29 centers in China evaluating once-daily oral HRS-7535 at target doses of 30 mg, 60 mg, 120 mg, and 180 mg versus placebo (1:1:1:1:1) over 26 weeks, continuing through Week 36, in adults with obesity without diabetes."
+      },
+      "population": "Chinese adults aged 18 to 75 years with obesity (BMI 28.0 to 40.0 kg/m2) without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "26 weeks of primary treatment, continuing through Week 36",
+      "safetySummary": "Treatment-emergent adverse events occurred in 93.5%-97.9% of participants receiving HRS-7535 versus 91.3% with placebo, predominantly mild to moderate gastrointestinal events during dose escalation. Nausea (16.7%-58.3% vs 4.3%), vomiting (18.8%-43.8% vs 2.2%), and diarrhea (18.8%-26.1% vs 8.7%) were the most common. Serious AEs occurred in 1 (2.1%), 2 (4.3%), 0 (0%), and 3 (6.3%) receiving 30, 60, 120, and 180 mg, versus 1 (2.2%) with placebo. Discontinuations due to AEs occurred in 1 (2.1%), 1 (2.1%), 0 (0%), and 3 (6.3%) versus 0 with placebo. One death occurred in the 30 mg group (unrelated sudden death). No liver function abnormalities or acute pancreatitis occurred.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06250946",
+            "title": "A Multicenter, Randomized, Double-blinded, Placebo-controlled, Parallel-group Phase ⅡStudy to Evaluate the Efficacy and Safety of HRS-7535 in Obese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06671821",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet",
+      "officialTitle": "HRS-7535-202 Follow-up Study: A Long-term Evaluation of Safety, Tolerability, and Efficacy in Obese Subjects (Open-label, Extension Trial)",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06671821"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-202-Extension"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06671821",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-11-17"
+      },
+      "design": {
+        "randomization": "Non-randomized",
+        "masking": "Open-label",
+        "comparator": "None",
+        "description": "Multicenter, open-label extension study evaluating the long-term safety, tolerability, and efficacy of once-daily oral HRS-7535 (dose escalation or maximum tolerated dose) over 32 weeks in obese subjects who completed the HRS-7535-202 trial."
+      },
+      "population": "Chinese adults with obesity who completed the prior Phase 2 trial (HRS-7535-202).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "maintenance-or-continuation",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "32-week open-label extension treatment period",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06671821",
+            "title": "HRS-7535-202 Follow-up Study: A Long-term Evaluation of Safety, Tolerability, and Efficacy in Obese Subjects (Open-label, Extension Trial)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet",
+      "officialTitle": "To Explore the Safety, Tolerability, and Pharmacokinetics/Pharmacodynamics of Multiple Doses of HRS-7535 in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06621316"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-107"
+      ],
+      "phase": "Phase 1/Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06621316",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-08-24"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo parallel-controlled Phase 1b/2 clinical study evaluating the safety, tolerability, pharmacokinetics, and pharmacodynamics of multiple escalating doses of once-daily oral HRS-7535 tablets versus placebo over 24 weeks in obese subjects."
+      },
+      "population": "Chinese adults aged 18 to 65 years with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "24 weeks of multiple-dose treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06621316",
+            "title": "To Explore the Safety, Tolerability, and Pharmacokinetics/Pharmacodynamics of Multiple Doses of HRS-7535 in Obese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06820099",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet-heart-failure",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase II Clinical Study Evaluating the Efficacy and Safety of HRS-7535 in Subjects With Heart Failure, Mild Reduction/Preservation of Ejection Fraction, and Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06820099"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-206"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06820099",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2025-12-29"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 2 clinical study evaluating the efficacy and safety of once-daily oral HRS-7535 versus placebo over 36 weeks in participants with heart failure with mildly reduced or preserved ejection fraction (HFmrEF/HFpEF) and obesity."
+      },
+      "population": "Chinese adults aged 18 years or older with heart failure (HFmrEF or HFpEF, LVEF >= 40%) and obesity (BMI >= 28 kg/m2).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "36 weeks of randomized treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06820099",
+            "title": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase II Clinical Study Evaluating the Efficacy and Safety of HRS-7535 in Subjects With Heart Failure, Mild Reduction/Preservation of Ejection Fraction, and Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07528027",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet-hypertension",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of HRS-7535 for the Treatment of Hypertension in Participants With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07528027"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-306"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07528027",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-06-05"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 3 clinical study evaluating once-daily oral HRS-7535 versus placebo over 48 weeks for the treatment of hypertension in participants with overweight or obesity."
+      },
+      "population": "Chinese adults aged 18 years or older with hypertension complicated by overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "48 weeks of randomized treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07528027",
+            "title": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of HRS-7535 for the Treatment of Hypertension in Participants With Obesity or Overweight",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07269756",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "programId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-oral-tablet",
+      "officialTitle": "An Open, Fixed-sequence, Self-controlled Pharmacokinetic Study to Evaluate the Drug Interactions of HRS-7535 With Acetaminophen, Digoxin, Rosuvastatin, and Omeprazole in Obese or Overweight Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07269756"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS-7535-110"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07269756",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06-29"
+      },
+      "design": {
+        "randomization": "Not applicable",
+        "masking": "Open-label",
+        "comparator": "None",
+        "description": "Open-label, fixed-sequence, self-controlled single-group pharmacokinetic drug-drug interaction study evaluating the effects of once-daily oral HRS-7535 on acetaminophen, digoxin, rosuvastatin, and omeprazole in obese or overweight subjects."
+      },
+      "population": "Chinese adult participants with overweight or obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "63 days of study participation",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07269756",
+            "title": "An Open, Fixed-sequence, Self-controlled Pharmacokinetic Study to Evaluate the Drug Interactions of HRS-7535 With Acetaminophen, Digoxin, Rosuvastatin, and Omeprazole in Obese or Overweight Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "harbor-1-hrs-7535-120mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "role": "experimental",
+      "label": "HRS-7535 120 mg",
+      "intervention": "HRS-7535 oral tablets 120 mg once daily",
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks of randomized treatment, continuing through Week 50"
+    },
+    {
+      "id": "harbor-1-hrs-7535-180mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "role": "experimental",
+      "label": "HRS-7535 180 mg",
+      "intervention": "HRS-7535 oral tablets 180 mg once daily",
+      "dose": "180 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks of randomized treatment, continuing through Week 50"
+    },
+    {
+      "id": "harbor-1-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching oral placebo tablets once daily",
+      "dose": "0 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "44 weeks of randomized treatment, continuing through Week 50"
+    },
+    {
+      "id": "hrs-7535-202-30mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "role": "experimental",
+      "label": "HRS-7535 30 mg",
+      "intervention": "HRS-7535 oral tablets 30 mg once daily",
+      "dose": "30 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks of randomized treatment, continuing through Week 36",
+      "plannedN": 48,
+      "analyzedN": 48
+    },
+    {
+      "id": "hrs-7535-202-60mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "role": "experimental",
+      "label": "HRS-7535 60 mg",
+      "intervention": "HRS-7535 oral tablets 60 mg once daily",
+      "dose": "60 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks of randomized treatment, continuing through Week 36",
+      "plannedN": 47,
+      "analyzedN": 47
+    },
+    {
+      "id": "hrs-7535-202-120mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "role": "experimental",
+      "label": "HRS-7535 120 mg",
+      "intervention": "HRS-7535 oral tablets 120 mg once daily",
+      "dose": "120 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks of randomized treatment, continuing through Week 36",
+      "plannedN": 46,
+      "analyzedN": 46
+    },
+    {
+      "id": "hrs-7535-202-180mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "role": "experimental",
+      "label": "HRS-7535 180 mg",
+      "intervention": "HRS-7535 oral tablets 180 mg once daily",
+      "dose": "180 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks of randomized treatment, continuing through Week 36",
+      "plannedN": 48,
+      "analyzedN": 48
+    },
+    {
+      "id": "hrs-7535-202-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching oral placebo tablets once daily",
+      "dose": "0 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks of randomized treatment, continuing through Week 36",
+      "plannedN": 46,
+      "analyzedN": 46
+    },
+    {
+      "id": "hrs-7535-202-ext-group-a",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06671821",
+      "role": "experimental",
+      "label": "Group A",
+      "intervention": "HRS-7535 oral tablets escalated dose or maximum tolerated dose"
+    },
+    {
+      "id": "hrs-7535-202-ext-group-b",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06671821",
+      "role": "experimental",
+      "label": "Group B",
+      "intervention": "HRS-7535 oral tablets escalated dose or maximum tolerated dose"
+    },
+    {
+      "id": "hrs-7535-202-ext-group-c",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06671821",
+      "role": "experimental",
+      "label": "Group C",
+      "intervention": "HRS-7535 oral tablets escalated dose or maximum tolerated dose"
+    },
+    {
+      "id": "hrs-7535-202-ext-group-d",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06671821",
+      "role": "experimental",
+      "label": "Group D",
+      "intervention": "HRS-7535 oral tablets escalated dose or maximum tolerated dose"
+    },
+    {
+      "id": "hrs-7535-107-treatment-a",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+      "role": "experimental",
+      "label": "Treatment group A",
+      "intervention": "HRS-7535 oral tablets at dose level 1"
+    },
+    {
+      "id": "hrs-7535-107-treatment-b",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+      "role": "experimental",
+      "label": "Treatment group B",
+      "intervention": "HRS-7535 oral tablets at dose level 2"
+    },
+    {
+      "id": "hrs-7535-107-treatment-c",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+      "role": "experimental",
+      "label": "Treatment group C",
+      "intervention": "HRS-7535 oral tablets at dose level 3"
+    },
+    {
+      "id": "hrs-7535-107-treatment-d",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+      "role": "experimental",
+      "label": "Treatment group D",
+      "intervention": "HRS-7535 oral tablets at dose level 4"
+    },
+    {
+      "id": "hrs-7535-107-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching oral placebo tablets once daily"
+    },
+    {
+      "id": "hrs-7535-206-hrs-7535",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06820099",
+      "role": "experimental",
+      "label": "HRS-7535 Group",
+      "intervention": "HRS-7535 oral tablets once daily"
+    },
+    {
+      "id": "hrs-7535-206-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06820099",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching oral placebo tablets once daily"
+    },
+    {
+      "id": "hrs-7535-306-hrs-7535",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07528027",
+      "role": "experimental",
+      "label": "HRS-7535 Group",
+      "intervention": "HRS-7535 oral tablets once daily"
+    },
+    {
+      "id": "hrs-7535-306-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07528027",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching oral placebo tablets once daily"
+    },
+    {
+      "id": "hrs-7535-110-oral-group",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07269756",
+      "role": "experimental",
+      "label": "Oral Medication Group",
+      "intervention": "HRS-7535 oral tablets with probe substrates"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [
+    {
+      "id": "harbor-1-weight-loss-percentage-week-44-treatment-policy",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Percentage change from baseline in body weight at Week 44 (treatment policy estimand)",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
+    },
+    {
+      "id": "harbor-1-weight-loss-percentage-week-44-efficacy",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Percentage change from baseline in body weight at Week 44 (efficacy estimand)",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
+    },
+    {
+      "id": "harbor-1-responder-5-pct-week-44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Proportion of participants with ≥5% body weight reduction at Week 44",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
+    },
+    {
+      "id": "harbor-1-responder-10-pct-week-44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Proportion of participants with ≥10% body weight reduction at Week 44",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
+    },
+    {
+      "id": "harbor-1-responder-15-pct-week-44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Proportion of participants with ≥15% body weight reduction at Week 44",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 44",
+      "assessmentTimepointWeeks": 44
+    },
+    {
+      "id": "harbor-1-weight-loss-percentage-week-50-efficacy",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Percentage change from baseline in body weight at Week 50 (efficacy estimand)",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 50",
+      "assessmentTimepointWeeks": 50
+    },
+    {
+      "id": "harbor-1-nausea",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 50",
+      "assessmentTimepointWeeks": 50
+    },
+    {
+      "id": "harbor-1-vomiting",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 50",
+      "assessmentTimepointWeeks": 50
+    },
+    {
+      "id": "hrs-7535-202-bw-pct-change-week-26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Percentage change from baseline in body weight at Week 26",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hrs-7535-202-bw-pct-change-week-36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Percentage change from baseline in body weight at Week 36",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "hrs-7535-202-responder-5-pct-week-26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Proportion of participants achieving ≥5% body weight reduction at Week 26",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hrs-7535-202-responder-10-pct-week-26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Proportion of participants achieving ≥10% body weight reduction at Week 26",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hrs-7535-202-responder-15-pct-week-26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Proportion of participants achieving ≥15% body weight reduction at Week 26",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hrs-7535-202-sae",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "hrs-7535-202-nausea",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "hrs-7535-202-vomiting",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "harbor-1-placebo-weight-loss-w44-tp",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-44-treatment-policy",
+      "armIds": [
+        "harbor-1-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-2.4%",
+        "numericValue": -2.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-weight-loss-w44-tp",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-44-treatment-policy",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-8.0%",
+        "numericValue": -8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-weight-loss-w44-tp",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-44-treatment-policy",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "-9.8%",
+        "numericValue": -9.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-placebo-weight-loss-w44-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-44-efficacy",
+      "armIds": [
+        "harbor-1-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.5%",
+        "numericValue": -2.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-weight-loss-w44-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-44-efficacy",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.5%",
+        "numericValue": -9.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-weight-loss-w44-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-44-efficacy",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-10.9%",
+        "numericValue": -10.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-responder-5-pct-w44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-responder-5-pct-week-44",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "58.6%",
+        "numericValue": 58.6,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-responder-5-pct-w44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-responder-5-pct-week-44",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "68.2%",
+        "numericValue": 68.2,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-responder-10-pct-w44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-responder-10-pct-week-44",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "39.6%",
+        "numericValue": 39.6,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-responder-10-pct-w44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-responder-10-pct-week-44",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "46.6%",
+        "numericValue": 46.6,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-responder-15-pct-w44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-responder-15-pct-week-44",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "18.5%",
+        "numericValue": 18.5,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-responder-15-pct-w44",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-responder-15-pct-week-44",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Treatment policy estimand",
+      "result": {
+        "value": "26.0%",
+        "numericValue": 26,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-placebo-weight-loss-w50-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-50-efficacy",
+      "armIds": [
+        "harbor-1-placebo"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.6%",
+        "numericValue": -2.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-weight-loss-w50-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-50-efficacy",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-9.5%",
+        "numericValue": -9.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-weight-loss-w50-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-weight-loss-percentage-week-50-efficacy",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-11.1%",
+        "numericValue": -11.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-placebo-nausea-w50",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-nausea",
+      "armIds": [
+        "harbor-1-placebo"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "16.2%",
+        "numericValue": 16.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-nausea-w50",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-nausea",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "70.3%",
+        "numericValue": 70.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-nausea-w50",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-nausea",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "70.0%",
+        "numericValue": 70,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-placebo-vomiting-w50",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-vomiting",
+      "armIds": [
+        "harbor-1-placebo"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "4.5%",
+        "numericValue": 4.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-120mg-vomiting-w50",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-vomiting",
+      "armIds": [
+        "harbor-1-hrs-7535-120mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "66.7%",
+        "numericValue": 66.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "harbor-1-180mg-vomiting-w50",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+      "endpointId": "harbor-1-vomiting",
+      "armIds": [
+        "harbor-1-hrs-7535-180mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "68.6%",
+        "numericValue": 68.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/07/07/3323036/0/en/kailera-therapeutics-announces-positive-topline-data-from-two-hengrui-pharma-phase-3-clinical-trials-of-oral-small-molecule-glp-1-receptor-agonist-hrs-7535-kai-7535.html",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-bw-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-2.50%",
+        "numericValue": -2.5,
+        "unit": "percent",
+        "confidenceInterval": "-4.34 to -0.65",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-bw-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-2.99%",
+        "numericValue": -2.99,
+        "unit": "percent",
+        "confidenceInterval": "-4.84 to -1.14",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-bw-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-7.09%",
+        "numericValue": -7.09,
+        "unit": "percent",
+        "confidenceInterval": "-8.95 to -5.24",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-bw-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-6.17%",
+        "numericValue": -6.17,
+        "unit": "percent",
+        "confidenceInterval": "-8.03 to -4.31",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-bw-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-9.36%",
+        "numericValue": -9.36,
+        "unit": "percent",
+        "confidenceInterval": "-11.21 to -7.52",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-30mg-vs-placebo-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-30mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-0.49%",
+        "numericValue": -0.49,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-3.11 to 2.12",
+        "pValue": "0.7104",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-60mg-vs-placebo-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-60mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-4.60%",
+        "numericValue": -4.6,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-7.21 to -1.98",
+        "pValue": "0.0006",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-120mg-vs-placebo-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-120mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-3.67%",
+        "numericValue": -3.67,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-6.29 to -1.05",
+        "pValue": "0.0062",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-180mg-vs-placebo-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-26",
+      "armIds": [
+        "hrs-7535-202-180mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-6.87%",
+        "numericValue": -6.87,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-9.48 to -4.26",
+        "pValue": "<0.0001",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-bw-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-1.39%",
+        "numericValue": -1.39,
+        "unit": "percent",
+        "confidenceInterval": "-3.52 to 0.74",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-bw-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-2.44%",
+        "numericValue": -2.44,
+        "unit": "percent",
+        "confidenceInterval": "-4.62 to -0.27",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-bw-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-5.36%",
+        "numericValue": -5.36,
+        "unit": "percent",
+        "confidenceInterval": "-7.51 to -3.22",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-bw-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-5.36%",
+        "numericValue": -5.36,
+        "unit": "percent",
+        "confidenceInterval": "-7.51 to -3.21",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-bw-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-9.46%",
+        "numericValue": -9.46,
+        "unit": "percent",
+        "confidenceInterval": "-11.61 to -7.32",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-30mg-vs-placebo-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-30mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-1.06%",
+        "numericValue": -1.06,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-4.10 to 1.99",
+        "pValue": "0.4945",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-60mg-vs-placebo-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-60mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-3.98%",
+        "numericValue": -3.98,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-7.00 to -0.96",
+        "pValue": "0.0101",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-120mg-vs-placebo-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-120mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-3.97%",
+        "numericValue": -3.97,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-7.00 to -0.95",
+        "pValue": "0.0103",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-diff-180mg-vs-placebo-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-bw-pct-change-week-36",
+      "armIds": [
+        "hrs-7535-202-180mg",
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "-8.08%",
+        "numericValue": -8.08,
+        "unit": "percentage points",
+        "effectMeasure": "Estimated treatment difference",
+        "comparisonType": "Least-squares mean difference, treatment minus placebo",
+        "confidenceInterval": "-11.10 to -5.05",
+        "pValue": "<0.0001",
+        "resultType": "between-arm"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-resp5-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-5-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "23.9%",
+        "numericValue": 23.9,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "confidenceInterval": "12.6 to 38.8",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-resp5-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-5-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "31.3%",
+        "numericValue": 31.3,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "confidenceInterval": "18.7 to 46.3",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-resp5-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-5-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "53.2%",
+        "numericValue": 53.2,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "confidenceInterval": "38.1 to 67.9",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-resp5-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-5-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "50.0%",
+        "numericValue": 50,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "confidenceInterval": "34.9 to 65.1",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-resp5-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-5-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "54.2%",
+        "numericValue": 54.2,
+        "unit": "percent",
+        "responderThreshold": ">=5%",
+        "confidenceInterval": "39.2 to 68.6",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-resp10-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-10-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "6.5%",
+        "numericValue": 6.5,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "confidenceInterval": "1.4 to 17.9",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-resp10-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-10-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "6.3%",
+        "numericValue": 6.3,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "confidenceInterval": "1.3 to 17.2",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-resp10-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-10-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "25.5%",
+        "numericValue": 25.5,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "confidenceInterval": "13.9 to 40.4",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-resp10-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-10-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "26.1%",
+        "numericValue": 26.1,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "confidenceInterval": "14.3 to 41.1",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-resp10-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-10-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "41.7%",
+        "numericValue": 41.7,
+        "unit": "percent",
+        "responderThreshold": ">=10%",
+        "confidenceInterval": "27.6 to 56.8",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-resp15-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-15-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "0.0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "confidenceInterval": "0 to 7.7",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-resp15-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-15-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "0.0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "confidenceInterval": "0 to 7.4",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-resp15-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-15-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "12.8%",
+        "numericValue": 12.8,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "confidenceInterval": "4.8 to 25.7",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-resp15-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-15-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "10.9%",
+        "numericValue": 10.9,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "confidenceInterval": "3.6 to 23.6",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-resp15-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-responder-15-pct-week-26",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "result": {
+        "value": "22.9%",
+        "numericValue": 22.9,
+        "unit": "percent",
+        "responderThreshold": ">=15%",
+        "confidenceInterval": "12.0 to 37.3",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-sae-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-sae",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "2.2%",
+        "numericValue": 2.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-sae-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-sae",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "2.1%",
+        "numericValue": 2.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-sae-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-sae",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "4.3%",
+        "numericValue": 4.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-sae-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-sae",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "0.0%",
+        "numericValue": 0,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-sae-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-sae",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "6.3%",
+        "numericValue": 6.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-nausea-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-nausea",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "4.3%",
+        "numericValue": 4.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-nausea-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-nausea",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "16.7%",
+        "numericValue": 16.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-nausea-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-nausea",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "34.0%",
+        "numericValue": 34,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-nausea-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-nausea",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "41.3%",
+        "numericValue": 41.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-nausea-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-nausea",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "58.3%",
+        "numericValue": 58.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-placebo-vomiting-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-vomiting",
+      "armIds": [
+        "hrs-7535-202-placebo"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "2.2%",
+        "numericValue": 2.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-30mg-vomiting-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-vomiting",
+      "armIds": [
+        "hrs-7535-202-30mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "18.8%",
+        "numericValue": 18.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-60mg-vomiting-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-vomiting",
+      "armIds": [
+        "hrs-7535-202-60mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "29.8%",
+        "numericValue": 29.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-120mg-vomiting-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-vomiting",
+      "armIds": [
+        "hrs-7535-202-120mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "39.1%",
+        "numericValue": 39.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hrs-7535-202-180mg-vomiting-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+      "endpointId": "hrs-7535-202-vomiting",
+      "armIds": [
+        "hrs-7535-202-180mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "43.8%",
+        "numericValue": 43.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41467-026-73018-y",
+            "title": "HRS-7535, an oral small-molecule GLP-1 receptor agonist, in Chinese adults with obesity without diabetes: a randomized, double-blind, placebo-controlled phase 2 trial",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-22",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    }
+  ],
+  "researchState": {
+    "checkpointVersion": 1,
+    "workflowRevision": "ADR-0070",
+    "discoveryCheckpoint": {
+      "asOf": "2026-09-16",
+      "clinicalTrials": {
+        "semanticFingerprintVersion": 2,
+        "sponsorQuery": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+        "assetAliases": [
+          "HRS-7535",
+          "KAI-7535",
+          "hrs-7535"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "knownNCTs": {
+          "NCT06250946": {
+            "lastUpdatePostDate": "2025-04-13",
+            "semanticHash": "0fde090b380079b59868ba0e07bac7f057dea8e0bfffae8b68c05871611ed667"
+          },
+          "NCT06621316": {
+            "lastUpdatePostDate": "2026-08-24",
+            "semanticHash": "6d025273c09b18aa95de20391f05a94f910e387be1fd28dd74816c978de1b64e"
+          },
+          "NCT06671821": {
+            "lastUpdatePostDate": "2025-11-17",
+            "semanticHash": "2431a17d3ee961829b3c3ad5a39be0dac24770c8da9ac67b285996190a53e1f4"
+          },
+          "NCT06820099": {
+            "lastUpdatePostDate": "2025-12-29",
+            "semanticHash": "362c0cf920ff8e5df7153c600475327e8eb6f444fb268466fb96dbe0940dc43b"
+          },
+          "NCT06904105": {
+            "lastUpdatePostDate": "2026-07-27",
+            "semanticHash": "ccb949011b3067fdb29c706c3a51681c9b24b1798a810866e665f6ac65e15668"
+          },
+          "NCT07269756": {
+            "lastUpdatePostDate": "2026-06-29",
+            "semanticHash": "96e3bbb236be826fda05997a75c07309983e89b0eae866317086917412a474d6"
+          },
+          "NCT07528027": {
+            "lastUpdatePostDate": "2026-06-05",
+            "semanticHash": "ad88a61b572122eedbe3451bc3a4034e6483fc99c6198d508efa5babf98f6580"
+          }
+        },
+        "foreignStudyDispositions": {
+          "NCT07497880": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "kailera-therapeutics",
+            "ownerAssetId": "kai-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Kailera"
+          },
+          "NCT07294898": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "kailera-therapeutics",
+            "ownerAssetId": "kai-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Kailera"
+          }
+        }
+      },
+      "literature": {
+        "assetAliases": [
+          "HRS-7535",
+          "KAI-7535",
+          "hrs-7535"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "monitoredPMIDs": {
+          "42331800": {
+            "status": "clean",
+            "lastCheckedAt": "2026-09-16"
+          }
+        }
+      }
+    }
+  }
+}

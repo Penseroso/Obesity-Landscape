@@ -309,6 +309,20 @@
     },
     {
       "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "hrs-7535",
+      "focalStudyIds": [
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06904105",
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06250946",
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06671821",
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06621316",
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct06820099",
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07528027",
+        "jiangsu-hengrui-pharmaceuticals-hrs-7535-nct07269756"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
       "assetId": "ribupatide",
       "focalStudyIds": [
         "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
@@ -322,6 +336,15 @@
         "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06974851",
         "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06994650",
         "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07709910"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "kailera-therapeutics",
+      "assetId": "kai-7535",
+      "focalStudyIds": [
+        "kailera-therapeutics-kai-7535-nct07497880",
+        "kailera-therapeutics-kai-7535-nct07294898"
       ],
       "linkedStudyIds": []
     },

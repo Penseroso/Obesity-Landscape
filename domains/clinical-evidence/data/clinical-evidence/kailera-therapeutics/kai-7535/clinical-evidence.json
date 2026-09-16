@@ -1,0 +1,353 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "kailera-therapeutics",
+  "assetId": "kai-7535",
+  "studies": [
+    {
+      "id": "kailera-therapeutics-kai-7535-nct07497880",
+      "companyId": "kailera-therapeutics",
+      "assetId": "kai-7535",
+      "programId": "kailera-therapeutics-kai-7535-oral-tablets",
+      "officialTitle": "A Phase 2, Multicenter, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of Oral KAI-7535 in Adult Participants Living With Obesity or Overweight With at Least 1 Weight-Related Comorbidity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07497880"
+        }
+      ],
+      "protocolIdentifiers": [
+        "K7535-2101"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07497880",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-09-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 2, multicenter, randomized, double-blind, placebo-controlled study evaluating once-daily oral KAI-7535 (dose escalation from 15 mg up to 180 mg or 360 mg/MTD across morning and evening dosing schedules) versus placebo for 44 weeks in adult participants living with obesity or overweight with at least one weight-related comorbidity."
+      },
+      "population": "Adult participants aged 18 years or older living with obesity (BMI >= 30 kg/m2) or overweight (BMI >= 27 kg/m2) with at least 1 weight-related comorbidity, with or without diabetes mellitus.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "44 weeks of randomized treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07497880",
+            "title": "Efficacy and Safety of Oral KAI-7535 in Adult Participants Living With Obesity or Overweight With at Least 1 Weight-Related Comorbidity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-therapeutics-announces-positive-topline-data-two-hengrui",
+            "title": "Kailera Therapeutics Announces Positive Topline Data from Two Hengrui Pharma Phase 3 Clinical Trials of Oral Small Molecule GLP-1 Receptor Agonist HRS-7535/KAI-7535",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-07",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-kai-7535-nct07294898",
+      "companyId": "kailera-therapeutics",
+      "assetId": "kai-7535",
+      "programId": "kailera-therapeutics-kai-7535-oral-tablets",
+      "officialTitle": "A Phase 1, Open-Label, Randomized, Crossover Study to Evaluate the Effect of a Low-Fat Meal and Evening Dosing on the Pharmacokinetics of KAI-7535 in Healthy Participants Living With Obesity or Overweight",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07294898"
+        }
+      ],
+      "protocolIdentifiers": [
+        "K7535-1709"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07294898",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-01-29"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "None",
+        "description": "Phase 1, open-label, randomized, crossover study evaluating the effect of a low-fat meal and evening dosing on the single-dose pharmacokinetics of KAI-7535 in healthy participants living with obesity or overweight."
+      },
+      "population": "Healthy adults aged 18 to 65 years living with obesity or overweight (BMI 25.0 to 40.0 kg/m2), without clinically significant medical conditions.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "Single-dose administration across crossover periods up to 12 days",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07294898",
+            "title": "A Study to Investigate the Effect of a Low-fat Meal and Evening Dosing on KAI-7535 in Participants Living With Obesity or Overweight",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "kai-7535-2101-dose-schedule-1",
+      "studyId": "kailera-therapeutics-kai-7535-nct07497880",
+      "role": "experimental",
+      "label": "KAI-7535 Dose Schedule 1",
+      "intervention": "KAI-7535 oral tablets once daily"
+    },
+    {
+      "id": "kai-7535-2101-dose-schedule-2",
+      "studyId": "kailera-therapeutics-kai-7535-nct07497880",
+      "role": "experimental",
+      "label": "KAI-7535 Dose Schedule 2",
+      "intervention": "KAI-7535 oral tablets once daily"
+    },
+    {
+      "id": "kai-7535-2101-dose-schedule-3",
+      "studyId": "kailera-therapeutics-kai-7535-nct07497880",
+      "role": "experimental",
+      "label": "KAI-7535 Dose Schedule 3",
+      "intervention": "KAI-7535 oral tablets once daily"
+    },
+    {
+      "id": "kai-7535-2101-dose-schedule-4",
+      "studyId": "kailera-therapeutics-kai-7535-nct07497880",
+      "role": "experimental",
+      "label": "KAI-7535 Dose Schedule 4",
+      "intervention": "KAI-7535 oral tablets once daily"
+    },
+    {
+      "id": "kai-7535-2101-placebo",
+      "studyId": "kailera-therapeutics-kai-7535-nct07497880",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching oral placebo tablets once daily"
+    },
+    {
+      "id": "kai-7535-1709-morning-fed",
+      "studyId": "kailera-therapeutics-kai-7535-nct07294898",
+      "role": "experimental",
+      "label": "KAI-7535 Morning Dosing Fed",
+      "intervention": "Single oral dose of KAI-7535 in the morning following a low-fat meal"
+    },
+    {
+      "id": "kai-7535-1709-morning-fasted",
+      "studyId": "kailera-therapeutics-kai-7535-nct07294898",
+      "role": "experimental",
+      "label": "KAI-7535 Morning Dosing Fasted",
+      "intervention": "Single oral dose of KAI-7535 in the morning following an overnight fast"
+    },
+    {
+      "id": "kai-7535-1709-evening",
+      "studyId": "kailera-therapeutics-kai-7535-nct07294898",
+      "role": "experimental",
+      "label": "KAI-7535 Evening Dosing",
+      "intervention": "Single oral dose of KAI-7535 in the evening"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": [],
+  "researchState": {
+    "checkpointVersion": 1,
+    "workflowRevision": "ADR-0070",
+    "discoveryCheckpoint": {
+      "asOf": "2026-09-16",
+      "clinicalTrials": {
+        "semanticFingerprintVersion": 2,
+        "sponsorQuery": "Kailera Therapeutics, Inc.",
+        "assetAliases": [
+          "HRS-7535",
+          "KAI-7535",
+          "kai-7535"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "knownNCTs": {
+          "NCT07294898": {
+            "lastUpdatePostDate": "2026-01-29",
+            "semanticHash": "71af8d6474ffc3c3e567a5111e151ee2d9b058dcd6e1bb3b1f3d7296f15a9fea"
+          },
+          "NCT07497880": {
+            "lastUpdatePostDate": "2026-09-09",
+            "semanticHash": "eeb1c07d68679ebb0e67a3d27f9ae69d01f911b69fadb4d69f5c58b4ad35172c"
+          }
+        },
+        "foreignStudyDispositions": {
+          "NCT06820099": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT07269756": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06727838": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06671821": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06415214": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06132204": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06422039": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06672172": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06589765": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT07625774": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06495931": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06961643": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06904105": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06819488": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT07528027": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06621316": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06393348": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT06250946": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT05347758": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          },
+          "NCT05759897": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "hrs-7535",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Shandong Suncadia Medicine Co., Ltd."
+          }
+        }
+      },
+      "literature": {
+        "assetAliases": [
+          "HRS-7535",
+          "KAI-7535",
+          "kai-7535"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "monitoredPMIDs": {}
+      }
+    }
+  }
+}

@@ -931,20 +931,7 @@
       "intervention": "Matching placebo administered subcutaneously once weekly"
     }
   ],
-  "analysisGroups": [
-    {
-      "id": "hengrui-ribupatide-nct06595797-ribupatide-group",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
-      "kind": "pooled",
-      "label": "Ribupatide (pooled/unspecified dose)",
-      "memberArmIds": [
-        "hengrui-ribupatide-nct06595797-1mg",
-        "hengrui-ribupatide-nct06595797-2mg",
-        "hengrui-ribupatide-nct06595797-4mg"
-      ],
-      "description": "Participants in the ribupatide group (across 1 mg, 2 mg, and 4 mg doses). Initial topline releases report 'up to' headline values without specific dose attribution."
-    }
-  ],
+  "analysisGroups": [],
   "endpoints": [
     {
       "id": "hengrui-ribupatide-nct06396429-bw-change-w48",
@@ -1026,24 +1013,6 @@
       "domain": "safety",
       "assessmentTimepoint": "Week 26",
       "assessmentTimepointWeeks": 26
-    },
-    {
-      "id": "hengrui-ribupatide-nct06595797-bw-change-w32",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
-      "name": "Percentage change from baseline in body weight at Week 32",
-      "role": "primary",
-      "domain": "body weight",
-      "assessmentTimepoint": "Week 32",
-      "assessmentTimepointWeeks": 32
-    },
-    {
-      "id": "hengrui-ribupatide-nct06595797-bw-loss-5pct-w32",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
-      "name": "Proportion of participants achieving >= 5% body weight reduction at Week 32",
-      "role": "secondary",
-      "domain": "body weight",
-      "assessmentTimepoint": "Week 32",
-      "assessmentTimepointWeeks": 32
     }
   ],
   "outcomes": [
@@ -2004,91 +1973,6 @@
             "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
             "sourceType": "company press release",
             "publishedAt": "2026-02-10",
-            "checkedAt": "2026-09-16"
-          }
-        ]
-      }
-    },
-    {
-      "id": "hengrui-ribupatide-nct06595797-bw-w32-tp",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
-      "endpointId": "hengrui-ribupatide-nct06595797-bw-change-w32",
-      "analysisGroupId": "hengrui-ribupatide-nct06595797-ribupatide-group",
-      "analysisPopulation": "Not reported",
-      "estimand": "Treatment-policy estimand",
-      "result": {
-        "value": "-20.2%",
-        "numericValue": -20.2,
-        "unit": "percent",
-        "resultType": "arm-level"
-      },
-      "maturity": "topline",
-      "metadata": {
-        "lastVerifiedAt": "2026-09-16",
-        "updatedAt": "2026-09-16",
-        "sources": [
-          {
-            "url": "https://www.hengrui.com/en/media/detail-991.html",
-            "title": "Positive Topline Data from Phase 2 Trial (HRS9531-207) of Ribupatide Injection in Obesity With Polyendocrine-metabolic Ovarian Syndrome (PMOS)",
-            "sourceType": "company press release",
-            "publishedAt": "2026-07-08",
-            "checkedAt": "2026-09-16"
-          }
-        ]
-      }
-    },
-    {
-      "id": "hengrui-ribupatide-nct06595797-bw-w32-eff",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
-      "endpointId": "hengrui-ribupatide-nct06595797-bw-change-w32",
-      "analysisGroupId": "hengrui-ribupatide-nct06595797-ribupatide-group",
-      "analysisPopulation": "Not reported",
-      "estimand": "Efficacy estimand",
-      "result": {
-        "value": "-21.2%",
-        "numericValue": -21.2,
-        "unit": "percent",
-        "resultType": "arm-level"
-      },
-      "maturity": "topline",
-      "metadata": {
-        "lastVerifiedAt": "2026-09-16",
-        "updatedAt": "2026-09-16",
-        "sources": [
-          {
-            "url": "https://investors.kailera.com/",
-            "title": "Kailera Therapeutics Reports Second Quarter 2026 Financial Results and Provides Corporate Updates",
-            "sourceType": "company press release",
-            "publishedAt": "2026-08-12",
-            "checkedAt": "2026-09-16"
-          }
-        ]
-      }
-    },
-    {
-      "id": "hengrui-ribupatide-nct06595797-resp-5pct",
-      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
-      "endpointId": "hengrui-ribupatide-nct06595797-bw-loss-5pct-w32",
-      "analysisGroupId": "hengrui-ribupatide-nct06595797-ribupatide-group",
-      "analysisPopulation": "Not reported",
-      "estimand": "Treatment-policy estimand",
-      "result": {
-        "value": "97.5%",
-        "numericValue": 97.5,
-        "unit": "percent",
-        "resultType": "arm-level",
-        "responderThreshold": ">=5%"
-      },
-      "maturity": "topline",
-      "metadata": {
-        "lastVerifiedAt": "2026-09-16",
-        "updatedAt": "2026-09-16",
-        "sources": [
-          {
-            "url": "https://www.hengrui.com/en/media/detail-991.html",
-            "title": "Positive Topline Data from Phase 2 Trial (HRS9531-207) of Ribupatide Injection in Obesity With Polyendocrine-metabolic Ovarian Syndrome (PMOS)",
-            "sourceType": "company press release",
-            "publishedAt": "2026-07-08",
             "checkedAt": "2026-09-16"
           }
         ]
