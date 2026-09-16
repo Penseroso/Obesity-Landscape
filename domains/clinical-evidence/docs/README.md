@@ -577,6 +577,29 @@ name, role, domain, timepoint); this blocks the obvious case but is **not** a
 complete guarantee — non-identical paraphrases still slip through, so the reuse rule
 above remains the primary control.
 
+## Dose narrative/structured consistency probe (advisory)
+
+`npm run data:probe:dose-narrative-consistency` (part of `npm run gate`) is an
+**advisory, non-blocking** check, not a contract requirement — it never fails the
+build, and its absence from a run is not evidence a Study's narrative and
+structured fields agree. It flags a narrow, high-precision shape only: a Study
+with exactly one dose-bearing, non-placebo Arm belonging to the Study's own
+focal asset, whose `design.description` states a single, unambiguous
+titration/target dose that numerically disagrees (after mg/mcg/g unit
+normalization) with that Arm's resolved dose (checked in order: `dose`, then
+`titration`'s terminal value, then `label`, then `intervention`).
+
+It is deliberately silent outside that shape: a Study with more than one dosed
+Arm, an ambiguous narrative (two or more distinct dose candidates near a
+titration/target phrase), or no extractable structured dose anywhere in the
+fallback chain is skipped, not flagged — missing structured data is a separate
+coverage gap, not a narrative contradiction. There is no keyword-based
+suppression (e.g. for "superseded" or "unresolved conflict" language); a
+record that correctly documents one past superseded design remains fully
+checkable for any other, unrelated contradiction. See
+`scripts/dose-narrative-consistency.mjs` for the exact detection logic and its
+self-check fixtures.
+
 ## Generated outputs
 
 Generation, ordering, the canonical aggregate, and the independently versioned

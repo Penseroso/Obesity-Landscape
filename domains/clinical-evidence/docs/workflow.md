@@ -629,6 +629,7 @@ npm run data:validate:clinical-evidence:generated
 npm run data:validate:clinical-evidence:synthetic
 npm run data:validate:generated
 npm run data:probe:registry-citations -- --company <companyId>
+npm run data:probe:dose-narrative-consistency
 npm run lint
 npm run build
 git diff --check
@@ -650,6 +651,15 @@ failure, a parser-contract violation, or a source-read error fail it, the same
 as any other probe or validator. Re-running it here surfaces any new anchor
 ambiguity or still-unmatched locator this run's changes created, for reporting
 only.
+
+`data:probe:dose-narrative-consistency` is likewise advisory only: it flags a
+Study whose `design.description` states a single, unambiguous dose that
+numerically disagrees with its own focal Arm's structured dose, and is silent
+on any Study outside that narrow shape (multi-arm, ambiguous narrative, or no
+extractable structured dose). A `REVIEW_REQUIRED` line in its output is a
+signal to re-verify against the primary source before changing canonical
+data — it is never itself sufficient grounds for a correction (see
+[Clinical Evidence Data Contract](README.md#dose-narrativestructured-consistency-probe-advisory)).
 
 Before claiming completion, reconcile the in-session result-review manifest:
 

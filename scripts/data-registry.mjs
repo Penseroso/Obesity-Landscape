@@ -23,6 +23,7 @@ import {
   buildRowIdentityKeys,
   identityKeysIntersect as relationshipNameKeysIntersect,
 } from "../domains/company-pipeline/lib/relationship-identity.mjs";
+import { probeDoseNarrativeConsistency } from "./dose-narrative-consistency.mjs";
 
 const root = process.cwd();
 const dataDir = path.join(root, "data");
@@ -6911,6 +6912,14 @@ if (isCliEntrypoint) {
       case "probe:registry-citations": {
         const { company } = parseRegistryCitationsArgs(process.argv.slice(3));
         probeRegistryCitations({ company });
+        break;
+      }
+      case "probe:dose-narrative-consistency": {
+        const ceAggregate = readClinicalEvidenceSourceTree(
+          clinicalEvidenceSourceDir,
+          "domains/clinical-evidence/data/clinical-evidence",
+        );
+        probeDoseNarrativeConsistency({ studies: ceAggregate.studies, arms: ceAggregate.arms });
         break;
       }
       case "generate":
