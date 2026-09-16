@@ -59,6 +59,7 @@
     "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Macupatide plus eloralintide for obesity or overweight",
+    "focalAssetId": "ly3532226",
     "mechanismFamilyId": "amylin-plus-gip-combination",
     "components": [
       { "assetId": "ly3532226", "role": "GIP receptor agonist" },
@@ -95,6 +96,7 @@
     "id": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Eloralintide plus tirzepatide for obesity or overweight",
+    "focalAssetId": "ly3841136",
     "mechanismFamilyId": "amylin-plus-glp1-gip-combination",
     "components": [
       { "assetId": "ly3841136", "role": "amylin receptor agonist" },

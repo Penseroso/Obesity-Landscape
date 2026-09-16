@@ -8,6 +8,7 @@ import {
 } from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 // Canonicalization is shared with the Application read model so the validator's semantic
 // keys and the UI's comparison groups cannot drift apart.
 import {
@@ -1531,6 +1532,19 @@ function validateRegimen(regimen, context, registries, dataset) {
   );
 
   validateComponents(regimen.components, context, dataset, 2);
+  if (regimen.focalAssetId !== undefined) {
+    assert(
+      isNonEmptyString(regimen.focalAssetId),
+      `${context}: focalAssetId must be a non-empty string`,
+    );
+    const internalComponentAssetIds = (regimen.components ?? [])
+      .filter((component) => isNonEmptyString(component.assetId))
+      .map((component) => component.assetId);
+    assert(
+      internalComponentAssetIds.includes(regimen.focalAssetId),
+      `${context}: focalAssetId "${regimen.focalAssetId}" is not an internal component asset of regimen ${regimen.id} (${internalComponentAssetIds.join(", ") || "none"})`,
+    );
+  }
   validateIndications(regimen.indications, context);
   validateDevelopment(regimen.development, context, registries);
   validateRegulatoryStates(regimen.regulatoryStates, context, registries);
@@ -2121,10 +2135,21 @@ function validateClinicalStudy(study, context, references) {
       internalComponentAssetIds.length > 0,
       `${context}: regimenId ${study.regimenId} has no internal component asset to anchor Clinical Evidence storage`,
     );
-    assert(
-      internalComponentAssetIds.includes(study.assetId),
-      `${context}: assetId ${study.assetId} is not an internal component of regimenId ${study.regimenId}`,
-    );
+    if (internalComponentAssetIds.length === 1) {
+      assert(
+        study.assetId === internalComponentAssetIds[0],
+        `${context}: regimenId ${study.regimenId} has exactly one internal component (${internalComponentAssetIds[0]}); Study.assetId must match it, got ${study.assetId} (assetId ${study.assetId} is not an internal component of regimenId ${study.regimenId})`,
+      );
+    } else {
+      assert(
+        isNonEmptyString(regimen.focalAssetId),
+        `${context}: regimenId ${study.regimenId} has multiple internal components (${internalComponentAssetIds.join(", ")}) but no focalAssetId defined; Clinical Evidence attribution cannot be determined (DEFERRED_SCHEMA_CASE)`,
+      );
+      assert(
+        study.assetId === regimen.focalAssetId,
+        `${context}: regimenId ${study.regimenId} defines focalAssetId ${regimen.focalAssetId}; Study.assetId must match it, got ${study.assetId}`,
+      );
+    }
   }
 
   assert(isNonEmptyString(study.officialTitle), `${context}: officialTitle is required`);
@@ -3538,6 +3563,30 @@ function validateClinicalEvidenceSyntheticFixtures() {
         intervention: "Fixture Asset plus Partner X",
       });
     }],
+    ["regimen-multi-internal-focal-matched-study", (fixture) => {
+      const study = {
+        ...cloneJson(fixture.studies[0]),
+        id: "fixture-study-regimen-multi-focal",
+        officialTitle: "Synthetic Multi-internal Regimen-linked Study with matching focalAssetId",
+        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000008" }],
+        registryStatus: {
+          registry: "ClinicalTrials.gov",
+          registryId: "NCT30000008",
+          overallStatus: "not-yet-recruiting",
+          sourceStatus: "Not yet recruiting",
+        },
+        regimenId: "fixture-co-two-internal-with-focal",
+      };
+      delete study.programId;
+      fixture.studies.push(study);
+      fixture.arms.push({
+        id: "fixture-arm-regimen-multi-focal",
+        studyId: "fixture-study-regimen-multi-focal",
+        role: "experimental",
+        label: "Fixture combination multi focal",
+        intervention: "Fixture Asset plus Fixture Asset 2",
+      });
+    }],
     // The reference registry (registryStatus) is not required to be the first entry in
     // registryIdentifiers; selectors must key off registryStatus.registryId, never position.
     ["reference-registry-not-first-identifier", (fixture) => {
@@ -3869,6 +3918,29 @@ function validateClinicalEvidenceSyntheticFixtures() {
         intervention: "Fixture Asset",
       });
     }],
+    ["regimen-multi-internal-without-focal-deferred", /DEFERRED_SCHEMA_CASE/, (fixture) => {
+      const study = {
+        ...cloneJson(fixture.studies[0]),
+        id: "fixture-study-regimen-multi-nofocal",
+        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000009" }],
+        registryStatus: {
+          registry: "ClinicalTrials.gov",
+          registryId: "NCT30000009",
+          overallStatus: "recruiting",
+          sourceStatus: "Recruiting",
+        },
+        regimenId: "fixture-co-two-internal-without-focal",
+      };
+      delete study.programId;
+      fixture.studies.push(study);
+      fixture.arms.push({
+        id: "fixture-arm-regimen-multi-nofocal",
+        studyId: study.id,
+        role: "experimental",
+        label: "Fixture Asset",
+        intervention: "Fixture Asset",
+      });
+    }],
     ["study-with-legacy-status-field", /status is not a valid field/, (fixture) => {
       fixture.studies[0].status = "Recruiting";
     }],
@@ -4105,6 +4177,52 @@ function validateSyntheticFixtures() {
     );
   }
   assert(programMetadataFailed, "Expected record metadata with researchState to fail validation");
+
+  // Mutation probe: multi-internal regimen with invalid focalAssetId not in components
+  const invalidRegimenFocalProbe = cloneJson(valid.regimens);
+  invalidRegimenFocalProbe.push({
+    id: "fixture-co-invalid-focal-regimen",
+    companyId: "fixture-co",
+    name: "Fixture Invalid Focal Regimen",
+    focalAssetId: "non-existent-asset",
+    components: [
+      { assetId: "alpha", role: "component 1" },
+      { assetId: "beta", role: "component 2" },
+    ],
+    indications: ["Obesity"],
+    development: { stage: "Phase 2", status: "Active" },
+    metadata: {
+      lastVerifiedAt: "2026-07-14",
+      updatedAt: "2026-07-14",
+      sources: [
+        {
+          url: "https://example.com/fixture-regimen-invalid-focal",
+          title: "Fixture invalid focal source",
+          sourceType: "synthetic fixture",
+          checkedAt: "2026-07-14",
+        },
+      ],
+    },
+    scopeClass: "obesity-treatment",
+  });
+  let invalidRegimenFocalFailed = false;
+  try {
+    validateDataset(
+      [valid.company],
+      valid.programs,
+      invalidRegimenFocalProbe,
+      "synthetic:regimen-invalid-focal-probe",
+      registries,
+      { companyLocalReferences: true },
+    );
+  } catch (error) {
+    invalidRegimenFocalFailed = true;
+    assert(
+      /is not an internal component asset of regimen/.test(error.message),
+      `Expected invalid focalAssetId message, received: ${error.message}`,
+    );
+  }
+  assert(invalidRegimenFocalFailed, "Expected regimen with invalid focalAssetId to fail validation");
 
   // Mutation probe: monitoredPMIDs with has-erratum or retracted requires noticeFingerprint
   const invalidErratumFpProbe = cloneJson(valid.company);
@@ -6747,65 +6865,79 @@ function probeRegistryCitations({ company } = {}) {
   console.log(registryCitationDisclaimer);
 }
 
-const command = process.argv[2];
+const isCliEntrypoint = Boolean(
+  process.argv[1] &&
+    fileURLToPath(import.meta.url) === path.resolve(process.argv[1]),
+);
 
-try {
-  switch (command) {
-    case "validate:registries":
-      loadRegistries();
-      console.log("Validated registries.");
-      break;
-    case "validate:companies":
-      validateCompanySources();
-      break;
-    case "validate:clinical-evidence":
-      validateClinicalEvidenceSources();
-      break;
-    case "validate:clinical-evidence:generated":
-      validateClinicalEvidenceGenerated();
-      break;
-    case "validate:clinical-evidence:synthetic":
-      validateClinicalEvidenceSyntheticFixtures();
-      break;
-    case "validate:synthetic":
-      validateSyntheticFixtures();
-      break;
-    case "probe:mechanism-families":
-      probeMechanismFamilyRegistry();
-      break;
-    case "probe:efficacy-population-coverage":
-      probeEfficacyPopulationCoverage();
-      break;
-    case "probe:indication-scope":
-      probeIndicationScope();
-      break;
-    case "probe:scope-class":
-      probeScopeClass();
-      break;
-    case "probe:relationship-reciprocity":
-      probeRelationshipReciprocity();
-      break;
-    case "probe:registry-citations": {
-      const { company } = parseRegistryCitationsArgs(process.argv.slice(3));
-      probeRegistryCitations({ company });
-      break;
+if (isCliEntrypoint) {
+  const command = process.argv[2];
+  try {
+    switch (command) {
+      case "validate:registries":
+        loadRegistries();
+        console.log("Validated registries.");
+        break;
+      case "validate:companies":
+        validateCompanySources();
+        break;
+      case "validate:clinical-evidence":
+        validateClinicalEvidenceSources();
+        break;
+      case "validate:clinical-evidence:generated":
+        validateClinicalEvidenceGenerated();
+        break;
+      case "validate:clinical-evidence:synthetic":
+        validateClinicalEvidenceSyntheticFixtures();
+        break;
+      case "validate:synthetic":
+        validateSyntheticFixtures();
+        break;
+      case "probe:mechanism-families":
+        probeMechanismFamilyRegistry();
+        break;
+      case "probe:efficacy-population-coverage":
+        probeEfficacyPopulationCoverage();
+        break;
+      case "probe:indication-scope":
+        probeIndicationScope();
+        break;
+      case "probe:scope-class":
+        probeScopeClass();
+        break;
+      case "probe:relationship-reciprocity":
+        probeRelationshipReciprocity();
+        break;
+      case "probe:registry-citations": {
+        const { company } = parseRegistryCitationsArgs(process.argv.slice(3));
+        probeRegistryCitations({ company });
+        break;
+      }
+      case "generate":
+        generateAggregates();
+        break;
+      case "generate:clinical-evidence":
+        generateClinicalEvidenceAggregates();
+        break;
+      case "validate:company-pipeline:manifest":
+        validateCompanyPipelineManifest();
+        break;
+      case "validate:generated":
+        validateGenerated();
+        break;
+      default:
+        throw new Error(`Unknown command: ${command ?? "(none)"}`);
     }
-    case "generate":
-      generateAggregates();
-      break;
-    case "generate:clinical-evidence":
-      generateClinicalEvidenceAggregates();
-      break;
-    case "validate:company-pipeline:manifest":
-      validateCompanyPipelineManifest();
-      break;
-    case "validate:generated":
-      validateGenerated();
-      break;
-    default:
-      throw new Error(`Unknown command: ${command ?? "(none)"}`);
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : error);
+    process.exit(1);
   }
-} catch (error) {
-  console.error(error instanceof Error ? error.message : error);
-  process.exit(1);
 }
+
+export {
+  validateClinicalStudy,
+  validateRegimen,
+  createClinicalReferenceContext,
+  createDatasetContext,
+  loadRegistries,
+};

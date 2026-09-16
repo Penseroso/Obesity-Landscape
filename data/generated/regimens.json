@@ -326,6 +326,7 @@
     "id": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Eloralintide plus tirzepatide for obesity or overweight",
+    "focalAssetId": "ly3841136",
     "mechanismFamilyId": "amylin-plus-glp1-gip-combination",
     "components": [
       {
@@ -447,6 +448,7 @@
     "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Macupatide plus eloralintide for obesity or overweight",
+    "focalAssetId": "ly3532226",
     "mechanismFamilyId": "amylin-plus-gip-combination",
     "components": [
       {
@@ -848,6 +850,53 @@
     "scopeClass": "obesity-adjunct"
   },
   {
+    "id": "roche-petrelintide-enicepatide-obesity",
+    "companyId": "roche",
+    "name": "Petrelintide plus enicepatide for obesity or overweight",
+    "mechanismFamilyId": "amylin-plus-glp1-gip-combination",
+    "components": [
+      {
+        "assetId": "petrelintide",
+        "role": "amylin analog"
+      },
+      {
+        "assetId": "enicepatide",
+        "role": "GLP-1/GIP receptor dual agonist"
+      }
+    ],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07589686",
+          "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight (ZYNERGY)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-05-15",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
+          "title": "Roche enters into an exclusive collaboration & licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide, including a fixed-dose combination with CT-388",
+          "sourceType": "press release",
+          "publishedAt": "2025-03-12",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
     "id": "verdiva-bio-ecnoglutide-vrb-103-regimen",
     "companyId": "verdiva-bio",
     "name": "Ecnoglutide (VRB-101) plus VRB-103",
@@ -887,6 +936,55 @@
           "url": "https://clinicaltrials.gov/study/NCT07628127",
           "title": "A Trial of Oral VRB-103 Alone or in Combination With Oral Ecnoglutide (VRB-101) in Participants With Obesity or Overweight",
           "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "zealand-pharma-petrelintide-enicepatide-obesity",
+    "companyId": "zealand-pharma",
+    "name": "Petrelintide plus enicepatide for obesity or overweight",
+    "mechanismFamilyId": "amylin-plus-glp1-gip-combination",
+    "components": [
+      {
+        "assetId": "petrelintide",
+        "role": "amylin analog"
+      },
+      {
+        "assetName": "Enicepatide",
+        "codeName": "CT-388",
+        "externalCompanyName": "Roche",
+        "role": "GLP-1/GIP receptor dual agonist"
+      }
+    ],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
+    "development": {
+      "stage": "Phase 2",
+      "status": "Active",
+      "stageBasis": "Operational evidence",
+      "stageOperationalState": "Not yet recruiting"
+    },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-31",
+      "updatedAt": "2026-07-31",
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT07589686",
+          "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight (ZYNERGY)",
+          "sourceType": "trial registry",
+          "publishedAt": "2026-05-15",
+          "checkedAt": "2026-07-31"
+        },
+        {
+          "url": "https://www.roche.com/media/releases/med-cor-2025-03-12",
+          "title": "Roche enters into an exclusive collaboration & licensing agreement with Zealand Pharma to co-develop and co-commercialise petrelintide, including a fixed-dose combination with CT-388",
+          "sourceType": "press release",
+          "publishedAt": "2025-03-12",
           "checkedAt": "2026-07-31"
         }
       ]

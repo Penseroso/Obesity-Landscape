@@ -58,5 +58,54 @@
       ]
     },
     "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "fixture-co-two-internal-with-focal",
+    "companyId": "fixture-co",
+    "name": "Fixture Asset plus Fixture Asset 2 with focal",
+    "focalAssetId": "fixture-asset",
+    "components": [
+      { "assetId": "fixture-asset", "role": "focal component" },
+      { "assetId": "fixture-asset-2", "role": "secondary component" }
+    ],
+    "indications": ["Obesity"],
+    "development": { "stage": "Phase 2", "status": "Active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-14",
+      "updatedAt": "2026-07-14",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-regimen-multi",
+          "title": "Fixture multi-component regimen with focal",
+          "sourceType": "synthetic fixture",
+          "checkedAt": "2026-07-14"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
+  },
+  {
+    "id": "fixture-co-two-internal-without-focal",
+    "companyId": "fixture-co",
+    "name": "Fixture Asset plus Fixture Asset 2 without focal",
+    "components": [
+      { "assetId": "fixture-asset", "role": "component 1" },
+      { "assetId": "fixture-asset-2", "role": "component 2" }
+    ],
+    "indications": ["Overweight"],
+    "development": { "stage": "Phase 2", "status": "Active" },
+    "metadata": {
+      "lastVerifiedAt": "2026-07-14",
+      "updatedAt": "2026-07-14",
+      "sources": [
+        {
+          "url": "https://example.com/fixture-regimen-multi-nofocal",
+          "title": "Fixture multi-component regimen without focal",
+          "sourceType": "synthetic fixture",
+          "checkedAt": "2026-07-14"
+        }
+      ]
+    },
+    "scopeClass": "obesity-treatment"
   }
 ]

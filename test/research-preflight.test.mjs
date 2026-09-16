@@ -33,6 +33,14 @@ import {
   saveBaselineCheckpoint,
 } from "../scripts/research-preflight.mjs";
 
+import {
+  createClinicalReferenceContext,
+  createDatasetContext,
+  loadRegistries,
+  validateClinicalStudy,
+  validateRegimen,
+} from "../scripts/data-registry.mjs";
+
 const ROOT = process.cwd();
 
 // Synthetic sample study data
@@ -2897,4 +2905,180 @@ test("Regression 32: resurfaced foreign disposition vs genuinely NEW trial - can
   } finally {
     fs.rmSync(fixtureDir, { recursive: true, force: true });
   }
+});
+
+// ---------------------------------------------------------------------------
+// Regimen-based Clinical Evidence assetId determination rules (ADR-0075 / CE Contract 3.1)
+// ---------------------------------------------------------------------------
+
+test("Regression 33: 1-internal Regimen -> assetId matches internal component -> passes validation", () => {
+  const ceFixture = JSON.parse(
+    fs.readFileSync(
+      path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
+      "utf8",
+    ),
+  );
+  const baseStudy = ceFixture.studies[0];
+  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
+  const programs = [
+    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
+    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
+  ];
+  const regimen = {
+    id: "fixture-regimen-single-internal",
+    companyId: "fixture-co",
+    name: "Fixture Single Internal Regimen",
+    components: [
+      { assetId: "fixture-asset", role: "component 1" },
+      { assetName: "Partner X", externalCompanyName: "Other Co", role: "partner" },
+    ],
+  };
+  const references = createClinicalReferenceContext(companies, programs, [regimen]);
+  const study = {
+    ...structuredClone(baseStudy),
+    regimenId: "fixture-regimen-single-internal",
+    assetId: "fixture-asset",
+  };
+  delete study.programId;
+
+  assert.doesNotThrow(() => validateClinicalStudy(study, "test", references));
+});
+
+test("Regression 34: 1-internal Regimen -> different assetId specified -> CE validation fails", () => {
+  const ceFixture = JSON.parse(
+    fs.readFileSync(
+      path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
+      "utf8",
+    ),
+  );
+  const baseStudy = ceFixture.studies[0];
+  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
+  const programs = [
+    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
+    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
+  ];
+  const regimen = {
+    id: "fixture-regimen-single-internal",
+    companyId: "fixture-co",
+    name: "Fixture Single Internal Regimen",
+    components: [
+      { assetId: "fixture-asset", role: "component 1" },
+      { assetName: "Partner X", externalCompanyName: "Other Co", role: "partner" },
+    ],
+  };
+  const references = createClinicalReferenceContext(companies, programs, [regimen]);
+  const study = {
+    ...structuredClone(baseStudy),
+    regimenId: "fixture-regimen-single-internal",
+    assetId: "fixture-asset-2",
+  };
+  delete study.programId;
+
+  assert.throws(
+    () => validateClinicalStudy(study, "test", references),
+    /is not an internal component of regimenId/,
+  );
+});
+
+test("Regression 35: >=2-internal Regimen + focalAssetId -> focalAssetId matches Study.assetId -> passes validation", () => {
+  const ceFixture = JSON.parse(
+    fs.readFileSync(
+      path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
+      "utf8",
+    ),
+  );
+  const baseStudy = ceFixture.studies[0];
+  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
+  const programs = [
+    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
+    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
+  ];
+  const regimen = {
+    id: "fixture-regimen-multi-with-focal",
+    companyId: "fixture-co",
+    name: "Fixture Multi Internal Regimen With Focal",
+    focalAssetId: "fixture-asset",
+    components: [
+      { assetId: "fixture-asset", role: "component 1" },
+      { assetId: "fixture-asset-2", role: "component 2" },
+    ],
+  };
+  const references = createClinicalReferenceContext(companies, programs, [regimen]);
+  const study = {
+    ...structuredClone(baseStudy),
+    regimenId: "fixture-regimen-multi-with-focal",
+    assetId: "fixture-asset",
+  };
+  delete study.programId;
+
+  assert.doesNotThrow(() => validateClinicalStudy(study, "test", references));
+});
+
+test("Regression 36: >=2-internal Regimen + focalAssetId missing -> CE validation fails with DEFERRED_SCHEMA_CASE", () => {
+  const ceFixture = JSON.parse(
+    fs.readFileSync(
+      path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
+      "utf8",
+    ),
+  );
+  const baseStudy = ceFixture.studies[0];
+  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
+  const programs = [
+    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
+    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
+  ];
+  const regimen = {
+    id: "fixture-regimen-multi-no-focal",
+    companyId: "fixture-co",
+    name: "Fixture Multi Internal Regimen Without Focal",
+    components: [
+      { assetId: "fixture-asset", role: "component 1" },
+      { assetId: "fixture-asset-2", role: "component 2" },
+    ],
+  };
+  const references = createClinicalReferenceContext(companies, programs, [regimen]);
+  const study = {
+    ...structuredClone(baseStudy),
+    regimenId: "fixture-regimen-multi-no-focal",
+    assetId: "fixture-asset",
+  };
+  delete study.programId;
+
+  assert.throws(
+    () => validateClinicalStudy(study, "test", references),
+    /DEFERRED_SCHEMA_CASE/,
+  );
+});
+
+test("Regression 37: >=2-internal Regimen + focalAssetId not in internal components -> CP Regimen validation fails", () => {
+  const registries = loadRegistries();
+  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
+  const programs = [
+    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
+    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
+  ];
+  const dataset = createDatasetContext(companies, programs, "fixture-co");
+  const regimen = {
+    id: "fixture-regimen-invalid-focal",
+    companyId: "fixture-co",
+    name: "Fixture Invalid Focal Regimen",
+    focalAssetId: "non-existent-asset",
+    components: [
+      { assetId: "fixture-asset", role: "component 1" },
+      { assetId: "fixture-asset-2", role: "component 2" },
+    ],
+    indications: ["Obesity"],
+    development: { stage: "Phase 2", status: "Active" },
+    metadata: {
+      lastVerifiedAt: "2026-07-14",
+      updatedAt: "2026-07-14",
+      sources: [{ url: "https://example.com", title: "Example", sourceType: "synthetic fixture", checkedAt: "2026-07-14" }],
+    },
+    scopeClass: "obesity-treatment",
+  };
+
+  assert.throws(
+    () => validateRegimen(regimen, "test", registries, dataset),
+    /is not an internal component asset of regimen/,
+  );
 });

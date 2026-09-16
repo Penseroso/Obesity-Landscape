@@ -126,6 +126,11 @@ official title, registry identifier, phase, `registryStatus`, study design, popu
 optional duration/follow-up/safety summary/safety incidence fields, and verification
 metadata. NCT IDs must match `NCT########`.
 
+When anchoring to `regimenId`:
+- If the referenced Regimen has exactly one internal component belonging to `companyId`, `Study.assetId` must match that single component's `assetId`.
+- If the referenced Regimen has two or more internal components belonging to `companyId`, the Regimen must explicitly define `focalAssetId` (backed by official primary evidence), and `Study.assetId` must match `regimen.focalAssetId`.
+- If a multi-internal Regimen lacks primary evidence establishing a canonical focal asset, `focalAssetId` is omitted, and Clinical Evidence storage is deferred (`DEFERRED_SCHEMA_CASE`). Authors must never arbitrarily guess or infer a focal asset from component order or dosage.
+
 `registryStatus` identifies the **single reference registry** used for tracking
 and UI. Its `registry` + `registryId` must match one `registryIdentifiers` entry.
 `overallStatus` uses: `not-yet-recruiting`, `recruiting`,

@@ -13441,9 +13441,9 @@
     ],
     "development": {
       "stage": "Phase 2",
-      "status": "Active",
-      "stageBasis": "Operational evidence",
-      "stageOperationalState": "Not yet recruiting"
+      "status": "Planned",
+      "stageBasis": "Sponsor-declared current pipeline stage",
+      "stageOperationalState": "Planned, not yet initiated"
     },
     "relationships": [
       {
@@ -13471,13 +13471,6 @@
           "url": "https://www.zealandpharma.com/pipeline/petrelintide-ct-388/",
           "title": "Petrelintide / CT-388 - Pipeline - Zealand Pharma",
           "sourceType": "company pipeline page",
-          "checkedAt": "2026-07-31"
-        },
-        {
-          "url": "https://clinicaltrials.gov/study/NCT07589686",
-          "title": "A Dose-Finding Study of Petrelintide With Enicepatide (RO7795068) in Adults With Obesity or Overweight (ZYNERGY)",
-          "sourceType": "trial registry",
-          "publishedAt": "2026-05-15",
           "checkedAt": "2026-07-31"
         },
         {

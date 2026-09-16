@@ -133,6 +133,11 @@ check the validator already performs on `assetName`, `codeName`, and `aliases`.
   layer, not the current regimen registry.
 - If a second regimen needs a `configurationKey` but the official configuration
   discriminator cannot be confirmed, defer it instead of inventing one.
+- **Focal asset for Clinical Evidence anchoring (`focalAssetId`)**:
+  - A regimen carrying two or more internal components requires an explicit, primary-evidence-backed `focalAssetId` naming one of its company's own internal component `assetId`s to anchor Clinical Evidence studies.
+  - When a regimen has exactly one internal component, Clinical Evidence automatically anchors to that component's `assetId`.
+  - When a regimen has two or more internal components and no primary source establishes a canonical focal asset, `focalAssetId` must remain undefined. Clinical Evidence attribution for studies referencing that regimen is deferred (`DEFERRED_SCHEMA_CASE`).
+  - Never infer `focalAssetId` from component authoring order, trial titles, dosage comparisons, or arbitrary heuristics.
 
 ## Combination and regimen boundaries
 
