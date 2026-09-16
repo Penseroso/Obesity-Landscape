@@ -4,10 +4,163 @@
   "headquartersCountry": "China",
   "officialWebsite": {
     "url": "https://www.hengrui.com/en/",
-    "checkedAt": "2026-08-13"
+    "checkedAt": "2026-09-16"
   },
   "officialPipeline": {
     "url": "https://www.hengrui.com/en/pipeline.html",
-    "checkedAt": "2026-08-13"
+    "checkedAt": "2026-09-16"
+  },
+  "researchState": {
+    "checkpointVersion": 1,
+    "workflowRevision": "ADR-0070",
+    "discoveryCheckpoint": {
+      "asOf": "2026-09-16",
+      "clinicalTrials": {
+        "semanticFingerprintVersion": 2,
+        "sponsorQuery": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+        "assetAliases": [
+          "HR17031",
+          "HRS-4729",
+          "HRS-7535",
+          "HRS9531",
+          "HS-20004",
+          "KAI-4729",
+          "KAI-7535",
+          "KAI-9531",
+          "Noiiglutide",
+          "Ribupatide",
+          "SHR-1816",
+          "SHR-2906",
+          "SHR20004"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "knownNCTs": {
+          "NCT04799327": {
+            "lastUpdatePostDate": "2022-03-15",
+            "semanticHash": "4faa1e65f38c047ab2a5d402df433d8a020b245c7a4a0dad84ec91e2f71b1bfe"
+          },
+          "NCT05330208": {
+            "lastUpdatePostDate": "2025-04-20",
+            "semanticHash": "387b9c6baeaa555c645b48ae95614b7ef4be42fd766666377f3918f635b17859"
+          },
+          "NCT06391710": {
+            "lastUpdatePostDate": "2025-11-24",
+            "semanticHash": "32f1e2e18d4f1e492c597e69ff2ed9b392ead4b3bdc1ba89819d1bf60bc55a0f"
+          },
+          "NCT06396429": {
+            "lastUpdatePostDate": "2025-07-11",
+            "semanticHash": "a1af84ea04a7831a2b35e9591d73544cb78dad2504aa98776fab418e82fc9356"
+          },
+          "NCT06415214": {
+            "lastUpdatePostDate": "2026-01-05",
+            "semanticHash": "6c0846bde5b03b5b8d2475783d07293ac6a8427b1e7bd9474f0a389a19236139"
+          },
+          "NCT06589765": {
+            "lastUpdatePostDate": "2026-06-30",
+            "semanticHash": "0faa6fa5311d79c8b5491544b212cbae0073feda69ad9ad2652fd5a735614cb9"
+          },
+          "NCT06595797": {
+            "lastUpdatePostDate": "2024-09-19",
+            "semanticHash": "fe02505552cb5cf29b8c50e9c22c60ef688b3e7d009d3fe85e979db4b0a8a655"
+          },
+          "NCT06649344": {
+            "lastUpdatePostDate": "2026-07-30",
+            "semanticHash": "26c92261867d012f31f6a534caaea39c2b8961588a55e591c4b350b92924174b"
+          },
+          "NCT06649773": {
+            "lastUpdatePostDate": "2026-08-25",
+            "semanticHash": "71903362149555aa7f1ba51c03040715e75f1473150a0c9bbbeb9c8b442eb7d9"
+          },
+          "NCT06762600": {
+            "lastUpdatePostDate": "2026-04-30",
+            "semanticHash": "37cdf929b177755783a83a57e509cb6a38b4500086797458629140f3b9b06e42"
+          },
+          "NCT06820099": {
+            "lastUpdatePostDate": "2025-12-29",
+            "semanticHash": "362c0cf920ff8e5df7153c600475327e8eb6f444fb268466fb96dbe0940dc43b"
+          },
+          "NCT06841445": {
+            "lastUpdatePostDate": "2026-04-03",
+            "semanticHash": "1649fe8833d2d03567689fc23d006bf44de42c4c34d34babd423fbe4849fdb0f"
+          },
+          "NCT06871761": {
+            "lastUpdatePostDate": "2026-01-13",
+            "semanticHash": "c8da3cae268ca223948539c92d1f8401d855d3047f92a61e13274b5f39842930"
+          },
+          "NCT06904105": {
+            "lastUpdatePostDate": "2026-07-27",
+            "semanticHash": "ccb949011b3067fdb29c706c3a51681c9b24b1798a810866e665f6ac65e15668"
+          },
+          "NCT06994650": {
+            "lastUpdatePostDate": "2026-01-26",
+            "semanticHash": "31fcf363ca4101ca230fba1a4786bad049e8a0e8bcef804743bd21c08346350b"
+          },
+          "NCT07280936": {
+            "lastUpdatePostDate": "2026-05-14",
+            "semanticHash": "efc25bbf0a889f110d2685220a1abc38bf4fb6ceb69dff80e55d4386eb0221ac"
+          },
+          "NCT07528027": {
+            "lastUpdatePostDate": "2026-06-05",
+            "semanticHash": "ad88a61b572122eedbe3451bc3a4034e6483fc99c6198d508efa5babf98f6580"
+          },
+          "NCT07551492": {
+            "lastUpdatePostDate": "2026-09-08",
+            "semanticHash": "4f11b331204d6199fd7e30b95d83f0b381d3a676e88131f2ded60966e01a98c5"
+          },
+          "NCT07599410": {
+            "lastUpdatePostDate": "2026-07-23",
+            "semanticHash": "b9244b33ff8adf5bdb83189865aed738a45e789eab54955e8443cd353e797588"
+          },
+          "NCT07625774": {
+            "lastUpdatePostDate": "2026-06-04",
+            "semanticHash": "18adaaadd6759d4716d49c11ff2b6bf257ca6462c3dfcdf296ef9049707d20d5"
+          },
+          "NCT07660848": {
+            "lastUpdatePostDate": "2026-08-26",
+            "semanticHash": "1373cc22926a16d15efa2792e125190fc2f2671e6a0f7a6f18d80b9f26539301"
+          },
+          "NCT07670884": {
+            "lastUpdatePostDate": "2026-08-13",
+            "semanticHash": "267076b91f497e1538c7e9fb052e3e94ba3c966604f901d695507306c2fe7aa6"
+          },
+          "NCT07690826": {
+            "lastUpdatePostDate": "2026-07-08",
+            "semanticHash": "7131e88c10cd8595ef5c9ffcb4fa498842cd6e023effc616037f49d4a68b1248"
+          },
+          "NCT07709910": {
+            "lastUpdatePostDate": "2026-07-17",
+            "semanticHash": "1533ea26a5dd4702cbe36e676388b13584f27d32eb3ba0f059f00daf5860c4ea"
+          }
+        }
+      },
+      "literature": {
+        "assetAliases": [
+          "HR17031",
+          "HRS-4729",
+          "HRS-7535",
+          "HRS9531",
+          "HS-20004",
+          "KAI-4729",
+          "KAI-7535",
+          "KAI-9531",
+          "Noiiglutide",
+          "Ribupatide",
+          "SHR-1816",
+          "SHR-2906",
+          "SHR20004"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "monitoredPMIDs": {
+          "38105342": {
+            "status": "clean",
+            "lastCheckedAt": "2026-09-16"
+          },
+          "40859882": {
+            "status": "clean",
+            "lastCheckedAt": "2026-09-16"
+          }
+        }
+      }
+    }
   }
 }
