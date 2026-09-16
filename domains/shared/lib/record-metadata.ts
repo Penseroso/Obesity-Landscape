@@ -28,19 +28,29 @@ export type ResearchStateMetadata = {
       /**
        * ADR-0074: a registry identity discovered under this asset's scope but
        * whose ADR-0071 sponsor-resolution cascade confirmed a *different*
-       * tracked company/asset as canonical owner. Never a copy of that
-       * owner's evidence - purely an operational disposition that suppresses
-       * repeat `NEW` discovery noise for the same identity until it fails
-       * re-validation (owner company/asset no longer resolves, leadSponsor
+       * tracked company as canonical owner. Never a copy of that owner's
+       * evidence - purely an operational disposition that suppresses repeat
+       * `NEW` discovery noise for the same identity until it fails
+       * re-validation (owner company/entity no longer resolves, leadSponsor
        * changed, or CP identity no longer sustains the resolution).
+       *
+       * The owner entity within that company is exactly one of
+       * `ownerAssetId` (Program-anchored) or `ownerRegimenId` (Regimen-native,
+       * ADR-0076 follow-up, ADR-0074 attribution closure) - mirroring
+       * `ClinicalStudyRecord`'s own `assetId`/`regimenId` discriminant.
+       * ADR-0071's cascade still decides *which company*; this field alone
+       * decides *which entity within that company* - that responsibility
+       * boundary does not move.
        */
       foreignStudyDispositions?: Record<string, {
         disposition: "CROSS_COMPANY_OWNED";
         ownerCompanyId: string;
-        ownerAssetId: string;
         recordedAt: string;
         recordedLeadSponsor: string;
-      }>;
+      } & (
+        | { ownerAssetId: string; ownerRegimenId?: undefined }
+        | { ownerRegimenId: string; ownerAssetId?: undefined }
+      )>;
     };
     literature?: {
       assetAliases?: string[];

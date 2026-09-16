@@ -1031,9 +1031,16 @@ function validateResearchState(researchState, context) {
           isNonEmptyString(entry.ownerCompanyId),
           `${context}: foreignStudyDispositions["${nctId}"].ownerCompanyId is required`,
         );
+        assertOptionalNonEmptyString(entry.ownerAssetId, `${context}: foreignStudyDispositions["${nctId}"].ownerAssetId`);
+        assertOptionalNonEmptyString(entry.ownerRegimenId, `${context}: foreignStudyDispositions["${nctId}"].ownerRegimenId`);
+        // Exactly one owner entity within the owner company (ADR-0076
+        // follow-up closure): asset (Program-anchored) or regimen
+        // (Regimen-native) - mirroring Study's own assetId/regimenId
+        // discriminant. ADR-0071's cascade decides which company; this
+        // field alone decides which entity within it.
         assert(
-          isNonEmptyString(entry.ownerAssetId),
-          `${context}: foreignStudyDispositions["${nctId}"].ownerAssetId is required`,
+          (entry.ownerAssetId !== undefined) !== (entry.ownerRegimenId !== undefined),
+          `${context}: foreignStudyDispositions["${nctId}"] requires exactly one of ownerAssetId or ownerRegimenId`,
         );
         assert(
           isValidFullDate(entry.recordedAt),
@@ -2969,14 +2976,22 @@ function validateForeignStudyDispositions(researchStateEnvelopes, references) {
         entry.ownerCompanyId !== envelope.companyId,
         `${entryContext}: ownerCompanyId must not be the envelope's own company "${envelope.companyId}" - a disposition records a *different* company's ownership`,
       );
-      assert(
-        isNonEmptyString(entry.ownerAssetId),
-        `${entryContext}: ownerAssetId is required`,
-      );
-      assert(
-        references.assetKeys.has(`${entry.ownerCompanyId}|${entry.ownerAssetId}`),
-        `${entryContext}: ownerAssetId "${entry.ownerAssetId}" does not exist at company "${entry.ownerCompanyId}"`,
-      );
+      // Exactly one owner entity within that company (ADR-0076 follow-up
+      // closure): asset or regimen. The structural check already enforced
+      // the XOR shape; this resolves whichever one is present against the
+      // tracked registry - the same references.assetKeys/regimenKeys sets
+      // Study's own programId/regimenId resolution already uses.
+      if (entry.ownerAssetId !== undefined) {
+        assert(
+          references.assetKeys.has(`${entry.ownerCompanyId}|${entry.ownerAssetId}`),
+          `${entryContext}: ownerAssetId "${entry.ownerAssetId}" does not exist at company "${entry.ownerCompanyId}"`,
+        );
+      } else {
+        assert(
+          references.regimenKeys.has(`${entry.ownerCompanyId}|${entry.ownerRegimenId}`),
+          `${entryContext}: ownerRegimenId "${entry.ownerRegimenId}" does not exist at company "${entry.ownerCompanyId}"`,
+        );
+      }
     }
   }
 }
@@ -3523,6 +3538,9 @@ function validateClinicalEvidenceSyntheticFixtures() {
     const foreignDispositionReferences = {
       companyIds: new Set(["fixture-co", "fixture-partner-co"]),
       assetKeys: new Set(["fixture-co|fixture-asset", "fixture-partner-co|partner-asset"]),
+      // ADR-0076 follow-up (attribution closure): a foreign disposition's
+      // owner entity may be a regimen instead of an asset.
+      regimenKeys: new Set(["fixture-partner-co|partner-regimen"]),
     };
     const baseEnvelope = () => ({
       companyId: "fixture-co",
@@ -3583,10 +3601,22 @@ function validateClinicalEvidenceSyntheticFixtures() {
       "unresolvable-owner-asset",
     );
     expectRejection(
-      (d) => { delete d.NCT20000002.ownerAssetId; },
-      /ownerAssetId is required/,
-      "missing-owner-asset",
+      (d) => { delete d.NCT20000002.ownerAssetId; d.NCT20000002.ownerRegimenId = "no-such-regimen"; },
+      /ownerRegimenId "no-such-regimen" does not exist at company/,
+      "unresolvable-owner-regimen",
     );
+
+    // ADR-0076 follow-up (attribution closure): the owner entity may be a
+    // regimen instead of an asset - exactly the same resolution path, keyed
+    // by regimenKeys instead of assetKeys. ADR-0071's cascade still decided
+    // *which company*; this only ever decided *which entity within it*.
+    const regimenOwnedEnvelope = () => {
+      const envelope = baseEnvelope();
+      delete envelope.researchState.discoveryCheckpoint.clinicalTrials.foreignStudyDispositions.NCT20000002.ownerAssetId;
+      envelope.researchState.discoveryCheckpoint.clinicalTrials.foreignStudyDispositions.NCT20000002.ownerRegimenId = "partner-regimen";
+      return envelope;
+    };
+    validateForeignStudyDispositions([regimenOwnedEnvelope()], foreignDispositionReferences);
   }
 
   // Mutations that must still validate: a distinct analysis unit or a source-supported

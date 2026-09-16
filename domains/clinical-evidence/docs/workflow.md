@@ -198,9 +198,14 @@ registry identity:
 
 Write this entry the same way a Study itself is authored — by hand, in the
 same file, immediately after the cascade resolves — never through a separate
-CLI or interactive flag. `ownerAssetId` is required, confirming the owner
-company's canonical asset anchor in its own manifest (ADR-0071 cascade step 4);
-company-only suppression is strictly forbidden. `disposition` currently has
+CLI or interactive flag. Exactly one of `ownerAssetId` or `ownerRegimenId` is
+required (ADR-0076 attribution closure), confirming the owner company's own
+canonical anchor — an asset (Program-anchored) or a regimen (Regimen-native)
+— in its own manifest (ADR-0071 cascade step 4); company-only suppression is
+strictly forbidden. This mirrors `ClinicalStudyRecord`'s own `assetId`/
+`regimenId` discriminant: ADR-0071's cascade still decides only *which
+company*; this field alone decides *which entity within that company*.
+`disposition` currently has
 exactly one allowed value. This is purely an operational fact ("investigated,
 and currently attributed elsewhere under this cascade") and carries **no other
 meaning**: it does not assert the owner's evidence review is complete, that
@@ -222,9 +227,11 @@ disposition; only this cascade's own verdict is.
 The entry is **not permanent**. Every `registry:discovery` run re-validates
 each currently-recorded disposition:
 - **Local anchor & own identity check**: re-validates that the owner company is
-  still tracked, the `ownerAssetId` still resolves, and that row still shares
-  confirmed **own identity** (`buildRowOwnIdentityKeys`) with a Program or
-  Regimen in the focal scope. Component-only overlap (focal A + composing A+B vs
+  still tracked, the `ownerAssetId` or `ownerRegimenId` still resolves (against
+  the matching row kind — Program or Regimen — in the owner company's own
+  manifest), and that row still shares confirmed **own identity**
+  (`buildRowOwnIdentityKeys`) with a Program or Regimen in the focal scope.
+  Component-only overlap (focal A + composing A+B vs
   owner B) does *not* sustain ownership and invalidates the disposition with
   `identity-no-longer-sustained`. True combination rows with matching own
   identity remain sustained.

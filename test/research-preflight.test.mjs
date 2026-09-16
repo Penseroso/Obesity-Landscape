@@ -2254,11 +2254,11 @@ function buildForeignDispositionFixture(fixtureDir, options = {}) {
   const companyDir = path.join(fixtureDir, "companies");
   const clinicalDir = path.join(fixtureDir, "clinical-evidence");
 
-  function writeCompany(id, name, programs) {
+  function writeCompany(id, name, programs, regimens = []) {
     fs.mkdirSync(path.join(companyDir, id), { recursive: true });
     fs.writeFileSync(path.join(companyDir, id, "company.json"), JSON.stringify({ id, name }, null, 2) + "\n", "utf8");
     fs.writeFileSync(path.join(companyDir, id, "pipeline-programs.json"), JSON.stringify(programs, null, 2) + "\n", "utf8");
-    fs.writeFileSync(path.join(companyDir, id, "regimens.json"), "[]\n", "utf8");
+    fs.writeFileSync(path.join(companyDir, id, "regimens.json"), JSON.stringify(regimens, null, 2) + "\n", "utf8");
   }
 
   writeCompany("focal-fx", "Focal Fixture Co.", [
@@ -2284,7 +2284,7 @@ function buildForeignDispositionFixture(fixtureDir, options = {}) {
         aliases: [],
         relationships: [],
       },
-    ]);
+    ], options.ownerRegimens ?? []);
   }
 
   const foreignStudyDispositions = options.foreignStudyDispositions ?? {
@@ -3358,4 +3358,84 @@ test("Regression 45: Lilly's real bimagrumab-tirzepatide regimen (1 internal/Pro
   assert.match(query, / AND /);
   assert.match(query, /AREA\[InterventionName\]"Bimagrumab"/);
   assert.match(query, /AREA\[InterventionName\]"Tirzepatide"/);
+});
+
+test("Regression 46: a foreign disposition owned by a Regimen (ownerRegimenId, ADR-0076 attribution closure) resolves and suppresses NEW exactly like an ownerAssetId one, and an unresolvable ownerRegimenId invalidates it the same way", async () => {
+  const regimenOwnedDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-owner-regimen");
+  const unresolvableRegimenDir = path.join(ROOT, "test", "fixtures", "foreign-disposition-owner-regimen-unresolvable");
+  fs.rmSync(regimenOwnedDir, { recursive: true, force: true });
+  fs.rmSync(unresolvableRegimenDir, { recursive: true, force: true });
+
+  try {
+    const dispositionFor = (ownerRegimenId) => ({
+      NCT20000002: {
+        disposition: "CROSS_COMPANY_OWNED",
+        ownerCompanyId: "owner-fx",
+        ownerRegimenId,
+        recordedAt: "2026-08-01",
+        recordedLeadSponsor: "Owner Fixture Co.",
+      },
+    });
+    // Shares the "Fixture Asset A" identity term with the focal asset (see
+    // buildForeignDispositionFixture's own default owner Program), so
+    // identityKeysIntersect confirms the resolution exactly as it would for
+    // an ownerAssetId-owned disposition.
+    const ownerRegimen = {
+      id: "owner-fx-owner-regimen-a",
+      companyId: "owner-fx",
+      name: "Fixture Asset A",
+      components: [{ assetId: "owner-asset-a", role: "component" }],
+    };
+
+    // Sub-case A: ownerRegimenId resolves and sustains identity -> suppresses NEW.
+    // Needs a mock that would otherwise *find* NCT20000002 as a fresh
+    // candidate (mirroring Regression 22's ownerAssetId case exactly), so
+    // "not reported as NEW" is proof of suppression, not merely of never
+    // having been discovered as a candidate in this run.
+    {
+      const { companyDir, clinicalDir } = buildForeignDispositionFixture(regimenOwnedDir, {
+        foreignStudyDispositions: dispositionFor("owner-fx-owner-regimen-a"),
+        ownerRegimens: [ownerRegimen],
+      });
+      const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+      const mockFetch = async (url) => {
+        const parsed = new URL(url);
+        if (parsed.pathname.endsWith("/NCT20000002")) {
+          return ctgovSponsorResponse("Owner Fixture Co.");
+        }
+        const intr = parsed.searchParams.get("query.intr");
+        if (intr === "Fixture Asset A" || intr === "FA-100") {
+          return ctgovCandidateResponse("NCT20000002", "Cross-company owned fixture trial");
+        }
+        return { ok: true, json: async () => ({ studies: [] }) };
+      };
+      const result = await probeRegistryDiscovery(context, mockFetch);
+
+      assert.ok(
+        !result.newlyDiscovered.some((d) => d.nctId === "NCT20000002"),
+        "a valid ownerRegimenId disposition must suppress repeat NEW reporting exactly like ownerAssetId does",
+      );
+      assert.ok(result.foreignDispositionStatus.valid.includes("NCT20000002"));
+      assert.strictEqual(result.resurfacedForeignDispositions.length, 0);
+      assert.strictEqual(result.deltaVerdict, "CLEAN");
+    }
+
+    // Sub-case B: ownerRegimenId does not resolve in the owner company's own manifest.
+    {
+      const { companyDir, clinicalDir } = buildForeignDispositionFixture(unresolvableRegimenDir, {
+        foreignStudyDispositions: dispositionFor("owner-fx-regimen-does-not-exist"),
+        ownerRegimens: [ownerRegimen],
+      });
+      const context = await loadCompanyContext("focal-fx", "asset-a", { companyDir, clinicalDir, domain: "clinical-evidence" });
+      const result = await probeRegistryDiscovery(context, async () => ({ ok: true, json: async () => ({ studies: [] }) }));
+
+      const resurfaced = result.resurfacedForeignDispositions.find((r) => r.nctId === "NCT20000002");
+      assert.ok(resurfaced, "an unresolvable ownerRegimenId must invalidate the disposition, same as an unresolvable ownerAssetId");
+      assert.strictEqual(resurfaced.reason, "owner-regimen-unresolvable");
+      assert.notStrictEqual(result.deltaVerdict, "CLEAN");
+    }
+  } finally {
+    fs.rmSync(regimenOwnedDir, { recursive: true, force: true });
+    fs.rmSync(unresolvableRegimenDir, { recursive: true, force: true });
+  }
 });

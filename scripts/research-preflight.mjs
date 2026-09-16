@@ -1000,25 +1000,36 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
 /**
  * ADR-0074: re-validates one operator-authored foreign-owner disposition
  * against the *current* local Company/Pipeline manifests only (no network) -
- * conditions 2 ("ownerCompanyId no longer tracked"), 3 ("ownerAssetId no
+ * conditions 2 ("ownerCompanyId no longer tracked"), 3 ("owner entity no
  * longer resolves"), and 5 ("CP identity no longer sustains the resolution")
  * of the five deterministic invalidation conditions. Reuses exactly the same
  * lookups and shared identity authority `computePartnerAwareDiscoveryTerms`
  * already relies on - no new resolver.
+ *
+ * ADR-0076 follow-up (attribution closure): the owner entity within the
+ * owner company is exactly one of `ownerAssetId` (a Program) or
+ * `ownerRegimenId` (a Regimen, Regimen-native) - mirroring Study's own
+ * `assetId`/`regimenId` discriminant. Which one is present decides which
+ * row kind to resolve against; this does not change what ADR-0071's cascade
+ * itself decides (still only which company).
  */
 function checkForeignDispositionLocalValidity(disp, context) {
   const { nameById } = loadTrackedCompanyDirectory(context.companyDir);
   if (!nameById.has(disp.ownerCompanyId)) {
     return { valid: false, reason: "owner-company-untracked" };
   }
-  if (!disp.ownerAssetId || typeof disp.ownerAssetId !== "string" || disp.ownerAssetId.trim().length === 0) {
-    return { valid: false, reason: "owner-asset-unresolvable" };
+  const isRegimenOwner = disp.ownerRegimenId !== undefined;
+  const ownerEntityId = isRegimenOwner ? disp.ownerRegimenId : disp.ownerAssetId;
+  const unresolvableReason = isRegimenOwner ? "owner-regimen-unresolvable" : "owner-asset-unresolvable";
+  if (!ownerEntityId || typeof ownerEntityId !== "string" || ownerEntityId.trim().length === 0) {
+    return { valid: false, reason: unresolvableReason };
   }
+  const expectedKind = isRegimenOwner ? "regimen" : "program";
   const ownerRow = loadCounterpartAssetRows(context.companyDir, disp.ownerCompanyId).find(
-    ({ row, kind }) => (kind === "program" ? row.assetId : row.id) === disp.ownerAssetId,
+    ({ row, kind }) => kind === expectedKind && (kind === "program" ? row.assetId : row.id) === ownerEntityId,
   );
   if (!ownerRow) {
-    return { valid: false, reason: "owner-asset-unresolvable" };
+    return { valid: false, reason: unresolvableReason };
   }
   if (!identityKeysIntersect(context.focalIdentityKeys, buildRowOwnIdentityKeys(ownerRow.row, ownerRow.kind))) {
     return { valid: false, reason: "identity-no-longer-sustained" };
