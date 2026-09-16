@@ -172,14 +172,6 @@ export type RegimenRecord = {
   name: string;
   configurationKey?: string;
   /**
-   * Optional canonical focal asset id for Clinical Evidence attribution.
-   *
-   * Must reference an internal component assetId of the regimen's company.
-   * Required for Clinical Evidence anchoring when a regimen has two or more
-   * internal components.
-   */
-  focalAssetId?: string;
-  /**
    * Authored mechanism-family id from `mechanism-families.json`.
    *
    * A Regimen carries no `technical.mechanism` of its own - only free-text

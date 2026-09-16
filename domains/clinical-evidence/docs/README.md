@@ -127,23 +127,14 @@ optional duration/follow-up/safety summary/safety incidence fields, and verifica
 metadata. NCT IDs must match `NCT########`.
 
 `assetId` is required when anchoring to `programId` (it must match that Program's
-own `assetId`) and **absent** when anchoring to `regimenId` under Regimen-native
-anchoring (ADR-0075 follow-up) — storage/registry identity for a Regimen-anchored
-Study is derived directly from the regimen itself, at
+own `assetId`) and **forbidden** when anchoring to `regimenId` (Regimen-native
+anchoring, ADR-0076) — storage/registry identity for a Regimen-anchored Study is
+derived directly from the regimen itself, at
 `<companyId>/<regimenId>/clinical-evidence.json`, the same directory convention an
-asset leaf uses, keyed by `regimenId` instead. No internal-component count, and no
-`focalAssetId`, decides anything for a Regimen-native Study.
-
-**Legacy asset-proxy anchoring** (ADR-0075, retained only for Studies not yet
-migrated to a regimen-native leaf): a `regimenId`-anchored Study may instead still
-carry `assetId`, in which case it lives in an ordinary asset leaf and the old rule
-applies — if the referenced Regimen has exactly one internal component belonging to
-`companyId`, `Study.assetId` must match that component's own `assetId`; if it has two
-or more, the Regimen must define `focalAssetId` (backed by official primary
-evidence) and `Study.assetId` must match it, or Clinical Evidence storage is
-deferred (`DEFERRED_SCHEMA_CASE`) rather than guessed. This path is scheduled for
-removal once migration to regimen-native leaves completes — do not author new
-Studies against it.
+asset leaf uses, keyed by `regimenId` instead. No internal-component count decides
+anything for a Regimen-anchored Study, and there is no focal-asset field to author
+at all: ADR-0075's `focalAssetId` (which existed only to let a multi-internal-
+component Regimen still satisfy the old single-`assetId` storage rule) is retired.
 
 `registryStatus` identifies the **single reference registry** used for tracking
 and UI. Its `registry` + `registryId` must match one `registryIdentifiers` entry.

@@ -63,7 +63,6 @@
     "id": "fixture-co-two-internal-with-focal",
     "companyId": "fixture-co",
     "name": "Fixture Asset plus Fixture Asset 2 with focal",
-    "focalAssetId": "fixture-asset",
     "components": [
       { "assetId": "fixture-asset", "role": "focal component" },
       { "assetId": "fixture-asset-2", "role": "secondary component" }

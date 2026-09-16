@@ -1535,19 +1535,15 @@ function validateRegimen(regimen, context, registries, dataset) {
   );
 
   validateComponents(regimen.components, context, dataset, 2);
-  if (regimen.focalAssetId !== undefined) {
-    assert(
-      isNonEmptyString(regimen.focalAssetId),
-      `${context}: focalAssetId must be a non-empty string`,
-    );
-    const internalComponentAssetIds = (regimen.components ?? [])
-      .filter((component) => isNonEmptyString(component.assetId))
-      .map((component) => component.assetId);
-    assert(
-      internalComponentAssetIds.includes(regimen.focalAssetId),
-      `${context}: focalAssetId "${regimen.focalAssetId}" is not an internal component asset of regimen ${regimen.id} (${internalComponentAssetIds.join(", ") || "none"})`,
-    );
-  }
+  // focalAssetId (ADR-0075) is retired (ADR-0076, Regimen-native anchoring):
+  // it existed solely to let a multi-internal-component Regimen still
+  // satisfy the old single-`assetId` Clinical Evidence storage rule.
+  // Regimen-anchored Studies now anchor to the regimen itself
+  // (<companyId>/<regimenId>/), so no focal asset choice is needed at all.
+  assert(
+    regimen.focalAssetId === undefined,
+    `${context}: focalAssetId is not a valid field; Regimen-native Clinical Evidence anchoring (ADR-0076) no longer needs a focal asset - Studies anchor to the regimen itself`,
+  );
   validateIndications(regimen.indications, context);
   validateDevelopment(regimen.development, context, registries);
   validateRegulatoryStates(regimen.regulatoryStates, context, registries);
@@ -2250,17 +2246,19 @@ function validateClinicalStudy(study, context, references) {
     `${context}: exactly one of programId or regimenId is required`,
   );
   // assetId is required for a Program-anchored Study (its storage/registry
-  // identity is its Program's own assetId), and optional for a
-  // Regimen-anchored one: absent means regimen-native anchoring (ADR-0075
-  // follow-up, storage identity is the regimen itself); present means the
-  // legacy asset-proxy shape (ADR-0075), retained only for already-committed
-  // data pending migration to a regimen-native leaf (removed once migration
-  // completes). It is never valid on its own without one of programId or
-  // regimenId, already enforced above.
-  assertOptionalNonEmptyString(study.assetId, `${context}: assetId`);
+  // identity is its Program's own assetId), and forbidden for a
+  // Regimen-anchored one (ADR-0076, Regimen-native anchoring): storage
+  // identity is the regimen itself, at <companyId>/<regimenId>/ - no forced
+  // single-asset choice, and no focalAssetId. The legacy asset-proxy shape
+  // (ADR-0075) that required assetId here too is retired; every real Study
+  // migrated to a regimen-native leaf (Phase 1 of this rework).
   assert(
     study.programId === undefined || isNonEmptyString(study.assetId),
     `${context}: assetId is required when programId is set`,
+  );
+  assert(
+    study.regimenId === undefined || study.assetId === undefined,
+    `${context}: assetId is not valid on a regimenId-anchored Study; Regimen-native anchoring (ADR-0076) derives storage identity from the regimen itself`,
   );
   if (study.assetId !== undefined) {
     assert(
@@ -2280,43 +2278,6 @@ function validateClinicalStudy(study, context, references) {
     const regimen = references.regimenById.get(study.regimenId);
     assert(regimen, `${context}: missing regimenId reference ${study.regimenId}`);
     assert(regimen.companyId === study.companyId, `${context}: regimenId ${study.regimenId} belongs to another company`);
-
-    if (study.assetId === undefined) {
-      // Regimen-native anchoring (ADR-0075 follow-up): storage/registry
-      // identity is derived directly from the regimen itself. No forced
-      // single-asset choice and no focalAssetId requirement - this is what
-      // dissolves the ambiguity the legacy branch below resolves by fiat.
-      // The enclosing envelope's own regimenId-matches-folder and
-      // regimenKeys-membership checks live in readClinicalEvidenceSourceTree
-      // and createClinicalReferenceContext, not here.
-    } else {
-      // Legacy asset-proxy anchoring (ADR-0075): retained only for
-      // already-committed Studies that have not yet migrated to a
-      // regimen-native leaf. Phase 2 (this ADR-0075 follow-up's own
-      // migration) removes this branch once migration completes.
-      const internalComponentAssetIds = (regimen.components ?? [])
-        .filter((component) => isNonEmptyString(component.assetId))
-        .map((component) => component.assetId);
-      assert(
-        internalComponentAssetIds.length > 0,
-        `${context}: regimenId ${study.regimenId} has no internal component asset to anchor Clinical Evidence storage`,
-      );
-      if (internalComponentAssetIds.length === 1) {
-        assert(
-          study.assetId === internalComponentAssetIds[0],
-          `${context}: regimenId ${study.regimenId} has exactly one internal component (${internalComponentAssetIds[0]}); Study.assetId must match it, got ${study.assetId} (assetId ${study.assetId} is not an internal component of regimenId ${study.regimenId})`,
-        );
-      } else {
-        assert(
-          isNonEmptyString(regimen.focalAssetId),
-          `${context}: regimenId ${study.regimenId} has multiple internal components (${internalComponentAssetIds.join(", ")}) but no focalAssetId defined; Clinical Evidence attribution cannot be determined (DEFERRED_SCHEMA_CASE)`,
-        );
-        assert(
-          study.assetId === regimen.focalAssetId,
-          `${context}: regimenId ${study.regimenId} defines focalAssetId ${regimen.focalAssetId}; Study.assetId must match it, got ${study.assetId}`,
-        );
-      }
-    }
   }
 
   assert(isNonEmptyString(study.officialTitle), `${context}: officialTitle is required`);
@@ -3721,6 +3682,9 @@ function validateClinicalEvidenceSyntheticFixtures() {
         regimenId: "fixture-co-fixture-asset-partner-combination",
       };
       delete study.programId;
+      // Regimen-native anchoring (ADR-0076): storage identity is the regimen
+      // itself; assetId is not valid here at all.
+      delete study.assetId;
       fixture.studies.push(study);
       fixture.arms.push({
         id: "fixture-arm-regimen-inventory",
@@ -3730,11 +3694,14 @@ function validateClinicalEvidenceSyntheticFixtures() {
         intervention: "Fixture Asset plus Partner X",
       });
     }],
-    ["regimen-multi-internal-focal-matched-study", (fixture) => {
+    // ADR-0076: a 2+-internal-component regimen no longer needs a focal
+    // asset choice at all - regimen-native anchoring dissolves the
+    // ambiguity ADR-0075's focalAssetId used to resolve by fiat.
+    ["regimen-multi-internal-native-anchor-study", (fixture) => {
       const study = {
         ...cloneJson(fixture.studies[0]),
-        id: "fixture-study-regimen-multi-focal",
-        officialTitle: "Synthetic Multi-internal Regimen-linked Study with matching focalAssetId",
+        id: "fixture-study-regimen-multi-native",
+        officialTitle: "Synthetic Multi-internal Regimen-native Study",
         registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000008" }],
         registryStatus: {
           registry: "ClinicalTrials.gov",
@@ -3745,13 +3712,69 @@ function validateClinicalEvidenceSyntheticFixtures() {
         regimenId: "fixture-co-two-internal-with-focal",
       };
       delete study.programId;
+      delete study.assetId;
       fixture.studies.push(study);
       fixture.arms.push({
-        id: "fixture-arm-regimen-multi-focal",
-        studyId: "fixture-study-regimen-multi-focal",
+        id: "fixture-arm-regimen-multi-native",
+        studyId: "fixture-study-regimen-multi-native",
         role: "experimental",
-        label: "Fixture combination multi focal",
+        label: "Fixture combination multi native",
         intervention: "Fixture Asset plus Fixture Asset 2",
+      });
+    }],
+    // ADR-0076: neither a 2+-internal regimen with no evidenced focal asset
+    // (formerly DEFERRED_SCHEMA_CASE) nor a fully-external-component regimen
+    // (formerly "no internal component asset to anchor" - a hard failure)
+    // needs any internal-component reasoning at all under regimen-native
+    // anchoring. Both are now ordinary, valid anchors.
+    ["regimen-without-focal-native-anchor-study", (fixture) => {
+      const study = {
+        ...cloneJson(fixture.studies[0]),
+        id: "fixture-study-regimen-multi-nofocal-native",
+        officialTitle: "Synthetic Multi-internal Regimen-native Study, no focal asset needed",
+        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000009" }],
+        registryStatus: {
+          registry: "ClinicalTrials.gov",
+          registryId: "NCT30000009",
+          overallStatus: "not-yet-recruiting",
+          sourceStatus: "Not yet recruiting",
+        },
+        regimenId: "fixture-co-two-internal-without-focal",
+      };
+      delete study.programId;
+      delete study.assetId;
+      fixture.studies.push(study);
+      fixture.arms.push({
+        id: "fixture-arm-regimen-multi-nofocal-native",
+        studyId: "fixture-study-regimen-multi-nofocal-native",
+        role: "experimental",
+        label: "Fixture combination without focal",
+        intervention: "Fixture Asset plus Fixture Asset 2",
+      });
+    }],
+    ["regimen-external-only-native-anchor-study", (fixture) => {
+      const study = {
+        ...cloneJson(fixture.studies[0]),
+        id: "fixture-study-regimen-external-only-native",
+        officialTitle: "Synthetic External-only Regimen-native Study",
+        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000010" }],
+        registryStatus: {
+          registry: "ClinicalTrials.gov",
+          registryId: "NCT30000010",
+          overallStatus: "not-yet-recruiting",
+          sourceStatus: "Not yet recruiting",
+        },
+        regimenId: "fixture-co-external-only-combination",
+      };
+      delete study.programId;
+      delete study.assetId;
+      fixture.studies.push(study);
+      fixture.arms.push({
+        id: "fixture-arm-regimen-external-only-native",
+        studyId: "fixture-study-regimen-external-only-native",
+        role: "experimental",
+        label: "Fixture combination external only",
+        intervention: "Partner X plus Partner Y",
       });
     }],
     // The reference registry (registryStatus) is not required to be the first entry in
@@ -4030,6 +4053,11 @@ function validateClinicalEvidenceSyntheticFixtures() {
     }],
     ["study-missing-regimen-reference", /missing regimenId reference fixture-regimen-does-not-exist/, (fixture) => {
       delete fixture.studies[0].programId;
+      // Regimen-native anchoring (ADR-0076) forbids assetId outright on a
+      // regimenId-anchored Study; deleting it here keeps this mutation
+      // testing the intended "missing regimenId reference" assertion rather
+      // than tripping the (also-correct, but different) assetId-forbidden one.
+      delete fixture.studies[0].assetId;
       fixture.studies[0].regimenId = "fixture-regimen-does-not-exist";
     }],
     ["study-without-focal-mapping", /exactly one of programId or regimenId is required/, (fixture) => {
@@ -4038,10 +4066,14 @@ function validateClinicalEvidenceSyntheticFixtures() {
     ["study-with-both-focal-mappings", /exactly one of programId or regimenId is required/, (fixture) => {
       fixture.studies[0].regimenId = "fixture-co-fixture-asset-partner-combination";
     }],
-    ["regimen-linked-study-unrelated-asset", /is not an internal component of regimenId/, (fixture) => {
+    // ADR-0076: assetId is forbidden outright on a regimenId-anchored Study
+    // - not merely required to match a specific internal component. This
+    // mutation (assetId explicitly present alongside regimenId) now tests
+    // exactly that blanket rule.
+    ["regimen-linked-study-assetId-forbidden", /assetId is not valid on a regimenId-anchored Study/, (fixture) => {
       const study = {
         ...cloneJson(fixture.studies[0]),
-        id: "fixture-study-regimen-unrelated-asset",
+        id: "fixture-study-regimen-assetId-forbidden",
         assetId: "fixture-asset-2",
         registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000003" }],
         registryStatus: {
@@ -4055,57 +4087,11 @@ function validateClinicalEvidenceSyntheticFixtures() {
       delete study.programId;
       fixture.studies.push(study);
       fixture.arms.push({
-        id: "fixture-arm-regimen-unrelated-asset",
+        id: "fixture-arm-regimen-assetId-forbidden",
         studyId: study.id,
         role: "experimental",
         label: "Fixture Asset 2",
         intervention: "Fixture Asset 2",
-      });
-    }],
-    ["regimen-linked-study-no-internal-anchor", /has no internal component asset to anchor Clinical Evidence storage/, (fixture) => {
-      const study = {
-        ...cloneJson(fixture.studies[0]),
-        id: "fixture-study-regimen-no-internal-anchor",
-        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000004" }],
-        registryStatus: {
-          registry: "ClinicalTrials.gov",
-          registryId: "NCT30000004",
-          overallStatus: "recruiting",
-          sourceStatus: "Recruiting",
-        },
-        regimenId: "fixture-co-external-only-combination",
-      };
-      delete study.programId;
-      fixture.studies.push(study);
-      fixture.arms.push({
-        id: "fixture-arm-regimen-no-internal-anchor",
-        studyId: study.id,
-        role: "experimental",
-        label: "Fixture Asset",
-        intervention: "Fixture Asset",
-      });
-    }],
-    ["regimen-multi-internal-without-focal-deferred", /DEFERRED_SCHEMA_CASE/, (fixture) => {
-      const study = {
-        ...cloneJson(fixture.studies[0]),
-        id: "fixture-study-regimen-multi-nofocal",
-        registryIdentifiers: [{ registry: "ClinicalTrials.gov", id: "NCT30000009" }],
-        registryStatus: {
-          registry: "ClinicalTrials.gov",
-          registryId: "NCT30000009",
-          overallStatus: "recruiting",
-          sourceStatus: "Recruiting",
-        },
-        regimenId: "fixture-co-two-internal-without-focal",
-      };
-      delete study.programId;
-      fixture.studies.push(study);
-      fixture.arms.push({
-        id: "fixture-arm-regimen-multi-nofocal",
-        studyId: study.id,
-        role: "experimental",
-        label: "Fixture Asset",
-        intervention: "Fixture Asset",
       });
     }],
     ["study-with-legacy-status-field", /status is not a valid field/, (fixture) => {
@@ -4345,13 +4331,15 @@ function validateSyntheticFixtures() {
   }
   assert(programMetadataFailed, "Expected record metadata with researchState to fail validation");
 
-  // Mutation probe: multi-internal regimen with invalid focalAssetId not in components
+  // Mutation probe (ADR-0076): focalAssetId is retired outright - authoring
+  // it on a Regimen at all must fail, regardless of whether the value would
+  // have been a valid internal component under the old rule.
   const invalidRegimenFocalProbe = cloneJson(valid.regimens);
   invalidRegimenFocalProbe.push({
     id: "fixture-co-invalid-focal-regimen",
     companyId: "fixture-co",
     name: "Fixture Invalid Focal Regimen",
-    focalAssetId: "non-existent-asset",
+    focalAssetId: "alpha",
     components: [
       { assetId: "alpha", role: "component 1" },
       { assetId: "beta", role: "component 2" },
@@ -4385,11 +4373,11 @@ function validateSyntheticFixtures() {
   } catch (error) {
     invalidRegimenFocalFailed = true;
     assert(
-      /is not an internal component asset of regimen/.test(error.message),
-      `Expected invalid focalAssetId message, received: ${error.message}`,
+      /focalAssetId is not a valid field/.test(error.message),
+      `Expected retired-focalAssetId message, received: ${error.message}`,
     );
   }
-  assert(invalidRegimenFocalFailed, "Expected regimen with invalid focalAssetId to fail validation");
+  assert(invalidRegimenFocalFailed, "Expected regimen authoring focalAssetId at all to fail validation (ADR-0076 retired it)");
 
   // Mutation probe: monitoredPMIDs with has-erratum or retracted requires noticeFingerprint
   const invalidErratumFpProbe = cloneJson(valid.company);

@@ -188,11 +188,12 @@ export type ClinicalStudyProgramRecord = ClinicalStudyRecordBase & {
 };
 
 /**
- * Regimen-anchored Study (Regimen-native anchoring; ADR-0075 follow-up): its
- * focal Company/Pipeline mapping is `regimenId`, and storage/registry identity
- * is derived directly from the Regimen itself — it carries no `assetId` at
- * all. This is what dissolves the old single-internal-component-asset
- * ambiguity (`RegimenRecord.focalAssetId`) rather than resolving it by fiat.
+ * Regimen-anchored Study (Regimen-native anchoring, ADR-0076): its focal
+ * Company/Pipeline mapping is `regimenId`, and storage/registry identity is
+ * derived directly from the Regimen itself — it carries no `assetId` at all.
+ * This is what dissolves the old single-internal-component-asset ambiguity
+ * that `RegimenRecord.focalAssetId` (ADR-0075, retired by ADR-0076) used to
+ * resolve by fiat, rather than resolving it the same way.
  */
 export type ClinicalStudyRegimenRecord = ClinicalStudyRecordBase & {
   assetId?: undefined;

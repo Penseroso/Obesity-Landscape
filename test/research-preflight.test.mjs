@@ -2924,7 +2924,7 @@ test("Regression 32: resurfaced foreign disposition vs genuinely NEW trial - can
 // Regimen-based Clinical Evidence assetId determination rules (ADR-0075 / CE Contract 3.1)
 // ---------------------------------------------------------------------------
 
-test("Regression 33: 1-internal Regimen -> assetId matches internal component -> passes validation", () => {
+test("Regression 33: 1-internal Regimen, Study carries no assetId at all -> passes validation (Regimen-native anchoring, ADR-0076)", () => {
   const ceFixture = JSON.parse(
     fs.readFileSync(
       path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
@@ -2947,6 +2947,42 @@ test("Regression 33: 1-internal Regimen -> assetId matches internal component ->
     ],
   };
   const references = createClinicalReferenceContext(companies, programs, [regimen]);
+  const study = {
+    ...structuredClone(baseStudy),
+    regimenId: "fixture-regimen-single-internal",
+  };
+  delete study.programId;
+  delete study.assetId;
+
+  assert.doesNotThrow(() => validateClinicalStudy(study, "test", references));
+});
+
+test("Regression 34: regimenId-anchored Study carrying any assetId at all -> CE validation fails (ADR-0076 forbids it outright, not just a mismatch)", () => {
+  const ceFixture = JSON.parse(
+    fs.readFileSync(
+      path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
+      "utf8",
+    ),
+  );
+  const baseStudy = ceFixture.studies[0];
+  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
+  const programs = [
+    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
+    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
+  ];
+  const regimen = {
+    id: "fixture-regimen-single-internal",
+    companyId: "fixture-co",
+    name: "Fixture Single Internal Regimen",
+    components: [
+      { assetId: "fixture-asset", role: "component 1" },
+      { assetName: "Partner X", externalCompanyName: "Other Co", role: "partner" },
+    ],
+  };
+  const references = createClinicalReferenceContext(companies, programs, [regimen]);
+  // Even the regimen's own correct internal component asset is forbidden
+  // here now, not just an unrelated one - assetId has no valid value at all
+  // on a regimenId-anchored Study under Regimen-native anchoring.
   const study = {
     ...structuredClone(baseStudy),
     regimenId: "fixture-regimen-single-internal",
@@ -2954,46 +2990,13 @@ test("Regression 33: 1-internal Regimen -> assetId matches internal component ->
   };
   delete study.programId;
 
-  assert.doesNotThrow(() => validateClinicalStudy(study, "test", references));
-});
-
-test("Regression 34: 1-internal Regimen -> different assetId specified -> CE validation fails", () => {
-  const ceFixture = JSON.parse(
-    fs.readFileSync(
-      path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
-      "utf8",
-    ),
-  );
-  const baseStudy = ceFixture.studies[0];
-  const companies = [{ id: "fixture-co", name: "Fixture Co" }];
-  const programs = [
-    { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
-    { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
-  ];
-  const regimen = {
-    id: "fixture-regimen-single-internal",
-    companyId: "fixture-co",
-    name: "Fixture Single Internal Regimen",
-    components: [
-      { assetId: "fixture-asset", role: "component 1" },
-      { assetName: "Partner X", externalCompanyName: "Other Co", role: "partner" },
-    ],
-  };
-  const references = createClinicalReferenceContext(companies, programs, [regimen]);
-  const study = {
-    ...structuredClone(baseStudy),
-    regimenId: "fixture-regimen-single-internal",
-    assetId: "fixture-asset-2",
-  };
-  delete study.programId;
-
   assert.throws(
     () => validateClinicalStudy(study, "test", references),
-    /is not an internal component of regimenId/,
+    /assetId is not valid on a regimenId-anchored Study/,
   );
 });
 
-test("Regression 35: >=2-internal Regimen + focalAssetId -> focalAssetId matches Study.assetId -> passes validation", () => {
+test("Regression 35: >=2-internal Regimen, Study carries no assetId -> passes validation with no focal-asset choice needed at all (ADR-0076)", () => {
   const ceFixture = JSON.parse(
     fs.readFileSync(
       path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
@@ -3007,10 +3010,9 @@ test("Regression 35: >=2-internal Regimen + focalAssetId -> focalAssetId matches
     { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
   ];
   const regimen = {
-    id: "fixture-regimen-multi-with-focal",
+    id: "fixture-regimen-multi-internal",
     companyId: "fixture-co",
-    name: "Fixture Multi Internal Regimen With Focal",
-    focalAssetId: "fixture-asset",
+    name: "Fixture Multi Internal Regimen",
     components: [
       { assetId: "fixture-asset", role: "component 1" },
       { assetId: "fixture-asset-2", role: "component 2" },
@@ -3019,15 +3021,15 @@ test("Regression 35: >=2-internal Regimen + focalAssetId -> focalAssetId matches
   const references = createClinicalReferenceContext(companies, programs, [regimen]);
   const study = {
     ...structuredClone(baseStudy),
-    regimenId: "fixture-regimen-multi-with-focal",
-    assetId: "fixture-asset",
+    regimenId: "fixture-regimen-multi-internal",
   };
   delete study.programId;
+  delete study.assetId;
 
   assert.doesNotThrow(() => validateClinicalStudy(study, "test", references));
 });
 
-test("Regression 36: >=2-internal Regimen + focalAssetId missing -> CE validation fails with DEFERRED_SCHEMA_CASE", () => {
+test("Regression 36: a formerly-DEFERRED_SCHEMA_CASE regimen (2+ internal components, no focalAssetId ever authored) is now an ordinary valid Regimen-native anchor - no deferral, no error at all (ADR-0076)", () => {
   const ceFixture = JSON.parse(
     fs.readFileSync(
       path.join(ROOT, "domains/clinical-evidence/data/validation-fixtures/clinical-evidence/valid/clinical-evidence/fixture-co/fixture-asset/clinical-evidence.json"),
@@ -3040,6 +3042,9 @@ test("Regression 36: >=2-internal Regimen + focalAssetId missing -> CE validatio
     { id: "fixture-co-fixture-asset-prog", companyId: "fixture-co", assetId: "fixture-asset", assetName: "Fixture Asset", codeName: null, aliases: [] },
     { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
   ];
+  // Same shape as the old "multi-internal regimen without focal" fixture
+  // that used to be structurally deferred - it never authors focalAssetId
+  // (the field no longer even exists), and this must not throw.
   const regimen = {
     id: "fixture-regimen-multi-no-focal",
     companyId: "fixture-co",
@@ -3053,17 +3058,14 @@ test("Regression 36: >=2-internal Regimen + focalAssetId missing -> CE validatio
   const study = {
     ...structuredClone(baseStudy),
     regimenId: "fixture-regimen-multi-no-focal",
-    assetId: "fixture-asset",
   };
   delete study.programId;
+  delete study.assetId;
 
-  assert.throws(
-    () => validateClinicalStudy(study, "test", references),
-    /DEFERRED_SCHEMA_CASE/,
-  );
+  assert.doesNotThrow(() => validateClinicalStudy(study, "test", references));
 });
 
-test("Regression 37: >=2-internal Regimen + focalAssetId not in internal components -> CP Regimen validation fails", () => {
+test("Regression 37: authoring focalAssetId on a Regimen at all -> CP Regimen validation fails (ADR-0076 retired the field outright)", () => {
   const registries = loadRegistries();
   const companies = [{ id: "fixture-co", name: "Fixture Co" }];
   const programs = [
@@ -3071,11 +3073,14 @@ test("Regression 37: >=2-internal Regimen + focalAssetId not in internal compone
     { id: "fixture-co-fixture-asset-2-prog", companyId: "fixture-co", assetId: "fixture-asset-2", assetName: "Fixture Asset 2", codeName: null, aliases: [] },
   ];
   const dataset = createDatasetContext(companies, programs, "fixture-co");
+  // Even a focalAssetId value that WOULD have been valid under the old rule
+  // (a genuine internal component) must now fail, since the field itself is
+  // retired, not merely re-validated.
   const regimen = {
     id: "fixture-regimen-invalid-focal",
     companyId: "fixture-co",
     name: "Fixture Invalid Focal Regimen",
-    focalAssetId: "non-existent-asset",
+    focalAssetId: "fixture-asset",
     components: [
       { assetId: "fixture-asset", role: "component 1" },
       { assetId: "fixture-asset-2", role: "component 2" },
@@ -3092,7 +3097,7 @@ test("Regression 37: >=2-internal Regimen + focalAssetId not in internal compone
 
   assert.throws(
     () => validateRegimen(regimen, "test", registries, dataset),
-    /is not an internal component asset of regimen/,
+    /focalAssetId is not a valid field/,
   );
 });
 
