@@ -179,8 +179,9 @@ currently being researched.
 **Recording the cascade's foreign-owner verdict is implemented (ADR-0074).**
 When this cascade's four steps clearly resolve a discovered registry identity
 to a *different* tracked company's canonical anchor, record that verdict in
-the asset-scoped `clinical-evidence.json`'s own `researchState` — the same
-ADR-0070 operational envelope `knownNCTs` already lives in, under
+the focal CE leaf's own `researchState` — an asset leaf or a Regimen-native
+leaf (ADR-0076), whichever this run is scoped to — the same ADR-0070
+operational envelope `knownNCTs` already lives in, under
 `discoveryCheckpoint.clinicalTrials.foreignStudyDispositions`, keyed by the
 registry identity:
 
@@ -251,9 +252,10 @@ each currently-recorded disposition:
 A future workflow revision that changes this cascade's own rules invalidates
 every existing disposition the same way any other `workflowRevision` bump
 already forces a full re-baseline. The same real registry identity legitimately
-recorded in more than one focal asset's own `foreignStudyDispositions`
-(independent discovery provenance from two different asset-scoped runs) is not a
-conflict; only a collision with that *same file's own* local canonical Study is.
+recorded in more than one focal CE leaf's own `foreignStudyDispositions`
+(independent discovery provenance from two different scoped runs, asset or
+Regimen-native) is not a conflict; only a collision with that *same file's
+own* local canonical Study is.
 
 **Partner-aware discovery is implemented.** Section 1's asset-scoped registry
 discovery preflight (`scripts/research-preflight.mjs`,

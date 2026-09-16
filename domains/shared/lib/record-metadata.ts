@@ -26,7 +26,8 @@ export type ResearchStateMetadata = {
         semanticHash?: string;
       }>;
       /**
-       * ADR-0074: a registry identity discovered under this asset's scope but
+       * ADR-0074: a registry identity discovered under this focal CE leaf's
+       * scope (an asset leaf or a Regimen-native leaf, ADR-0076) but
        * whose ADR-0071 sponsor-resolution cascade confirmed a *different*
        * tracked company as canonical owner. Never a copy of that owner's
        * evidence - purely an operational disposition that suppresses repeat
