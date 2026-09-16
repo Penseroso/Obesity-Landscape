@@ -6990,6 +6990,804 @@
       }
     },
     {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase 3 Trial to Compare the Efficacy and Safety of HRS9531 and Placebo in Subjects With Overweight or Obese",
+      "acronym": "GEMINI-1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06396429"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-301"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06396429",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm 1:1:1:1 randomized, double-blind, placebo-controlled Phase 3 trial evaluating once-weekly subcutaneous injections of HRS9531 at 2 mg, 4 mg, and 6 mg versus placebo for 48 weeks across clinical sites in China."
+      },
+      "population": "Chinese adults aged 18 years or older with obesity (BMI >= 28 kg/m2) or overweight (BMI >= 24 kg/m2) with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "48 weeks of treatment",
+      "safetySummary": "Most treatment-emergent adverse events were mild to moderate and gastrointestinal-related. Permanent treatment discontinuation rates due to TEAEs were very low: 0.7% (2 mg), 0.7% (4 mg), 1.4% (6 mg), and 0% (placebo).",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06396429",
+            "title": "To Compare the Efficacy and Safety of HRS9531 and Placebo in Subjects With Overweight or Obese",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/07/15/3115481/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Report-Positive-Topline-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Report Positive Topline Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-07-15",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection",
+      "officialTitle": "Efficacy and Safety of HRS9531 Injections in Overweight or Obese Subjects: A Multicenter, Randomized, Double-Blind, Placebo-Controlled Phase 2 Trial",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06054698"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-201-EXT"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06054698",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2025-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 2 study evaluating once-weekly subcutaneous HRS9531 doses including 8 mg versus placebo for 36 weeks in Chinese adults with overweight or obesity."
+      },
+      "population": "Chinese adults aged 18 to 65 years with obesity or overweight without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "36 weeks of treatment",
+      "safetySummary": "Safety profile was favorable and consistent with other GLP-1/GIP dual agonists, with predominantly mild to moderate gastrointestinal adverse events.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06054698",
+            "title": "Efficacy and Safety of HRS9531 Injections in Overweight or Obese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct05881837",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-parallel-controlled Phase II Clinical Study Evaluating the Efficacy and Safety of HRS9531 Injection in Obese Subjects Without Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05881837"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-201"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05881837",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2024-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 2 study evaluating multiple once-weekly doses of HRS9531 versus placebo in Chinese adults with obesity."
+      },
+      "population": "Chinese adults aged 18 to 65 years with obesity (BMI >= 28 kg/m2) or overweight (BMI >= 24 kg/m2) without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "24 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05881837",
+            "title": "Efficacy and Safety of HRS9531 Injection in Obese Subjects Without Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07285902",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Multicenter, Randomized, Open-Label, Active-Controlled Phase III Clinical Study to Compare the Efficacy and Safety of HRS9531 Injection With Semaglutide Injection in Subjects With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07285902"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-304"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07285902",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open Label",
+        "comparator": "Active comparator",
+        "description": "Multicenter, randomized, active-controlled Phase 3 study comparing once-weekly HRS9531 subcutaneous injection with once-weekly semaglutide injection in Chinese participants with obesity."
+      },
+      "population": "Chinese adults aged 18 to 75 years with obesity (BMI >= 28 kg/m2) or overweight (BMI >= 24 kg/m2) with weight-related comorbidities.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "44 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07285902",
+            "title": "A Study Comparing the Efficacy and Safety of HRS9531 Injection With Semaglutide Injection in Subjects With Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07559136",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Single-Center, Open-Label, Phase I Clinical Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of HRS9531 Injection in Adolescents With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07559136"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-112"
+      ],
+      "phase": "Phase 1",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07559136",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Non-Randomized",
+        "masking": "None (Open Label)",
+        "comparator": "None",
+        "description": "Single-center, open-label Phase 1 study assessing safety, tolerability, pharmacokinetics, and pharmacodynamics of HRS9531 injection in adolescents with obesity."
+      },
+      "population": "Adolescents aged 12 to 17 years with obesity or overweight.",
+      "populationProfile": {
+        "ageGroup": "adolescent",
+        "diabetesStatus": "not-specified",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07559136",
+            "title": "A Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of HRS9531 Injection in Adolescents With Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-oral-tablet",
+      "officialTitle": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled Phase 2 Clinical Study to Evaluate the Efficacy and Safety of HRS9531 Tablets in Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06841445"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-T-201"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06841445",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-02"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm 1:1:1:1 randomized, double-blind, placebo-controlled Phase 2 trial of once-daily oral ribupatide tablets at 10 mg, 25 mg, and 50 mg versus placebo for 26 weeks in adults living with obesity without diabetes."
+      },
+      "population": "Chinese adults aged 18 to 65 years with obesity (BMI >= 28 kg/m2) and without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "26 weeks of treatment",
+      "safetySummary": "Most treatment-emergent adverse events were mild to moderate and gastrointestinal. Rates of vomiting were 2.4% (10 mg), 11.4% (25 mg), and 7.5% (50 mg); rates of nausea were 11.9% (10 mg), 22.7% (25 mg), and 20.0% (50 mg). No permanent treatment discontinuations or down-titrations due to nausea, vomiting, diarrhea, or constipation were reported.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06841445",
+            "title": "Efficacy and Safety of HRS9531 Tablet in Obese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07670884",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-oral-tablet",
+      "officialTitle": "A Multicenter, Randomized, Double-Blind, Placebo-Controlled, Parallel-Group Phase III Clinical Study to Evaluate the Efficacy and Safety of HRS9531 Tablets in Overweight or Obese Subjects",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07670884"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-T-301"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07670884",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-08"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 3 study evaluating the efficacy and safety of once-daily oral HRS9531 tablets versus placebo for 52 weeks in Chinese adults with overweight or obesity."
+      },
+      "population": "Chinese adults aged 18 to 75 years with obesity or overweight with at least one weight-related comorbidity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07670884",
+            "title": "A Clinical Study to Evaluate the Efficacy and Safety of HRS9531 Tablets in Overweight or Obese Subjects",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection-pmos",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-parallel-controlled Phase II Clinical Study Evaluating the Efficacy and Safety of HRS9531 Injection in Obese Subjects With Polycystic Ovary Syndrome",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06595797"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-207"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06595797",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Four-arm 1:1:1:1 randomized, double-blind, placebo-controlled Phase 2 trial evaluating once-weekly subcutaneous ribupatide at 1 mg, 2 mg, and 4 mg versus placebo for 32 weeks in Chinese women with obesity and polyendocrine-metabolic ovarian syndrome (PMOS/PCOS)."
+      },
+      "population": "Chinese adult women aged 18 to 45 years with obesity and polycystic ovary syndrome (PCOS/PMOS).",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "32 weeks of treatment",
+      "safetySummary": "Ribupatide was well-tolerated with a favorable safety profile; most TEAEs were mild and gastrointestinal-related.",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06595797",
+            "title": "HRS9531 Injection in Obese Subjects With Polycystic Ovary Syndrome",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://www.hengrui.com/en/media/detail-991.html",
+            "title": "Jiangsu Hengrui Pharmaceuticals Co., Ltd. — Positive Topline Data from Phase 2 Trial (HRS9531-207) of Ribupatide Injection in Obesity With Polyendocrine-metabolic Ovarian Syndrome (PMOS)",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-08",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06974851",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection-osa",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study Evaluating the Efficacy and Safety of HRS9531 Injection in Subjects With Obstructive Sleep Apnea (OSA) and Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06974851"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-306"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06974851",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2025-11"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 3 study evaluating once-weekly subcutaneous HRS9531 versus placebo in Chinese adults with moderate-to-severe OSA and obesity."
+      },
+      "population": "Chinese adults aged 18 to 75 years with moderate-to-severe obstructive sleep apnea and obesity.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06974851",
+            "title": "A Phase III Study Evaluating the Efficacy and Safety of HRS9531 Injection in Subjects With Obstructive Sleep Apnea (OSA) and Obesity",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06994650",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection-osa",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of HRS9531 Injection in Subjects With Obstructive Sleep Apnea (OSA) and Obesity Who Are on Positive Airway Pressure Ventilation (PAP) Therapy",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06994650"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-307"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06994650",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-01"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 3 study evaluating once-weekly subcutaneous HRS9531 versus placebo in subjects with moderate-to-severe OSA and obesity on PAP therapy."
+      },
+      "population": "Chinese adults aged 18 to 75 years with moderate-to-severe OSA and obesity who are adhering to positive airway pressure (PAP) therapy.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "52 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06994650",
+            "title": "Efficacy and Safety of HRS9531 in OSA and Obesity on PAP Therapy",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07709910",
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "programId": "jiangsu-hengrui-pharmaceuticals-ribupatide-subcutaneous-injection-knee-osteoarthritis",
+      "officialTitle": "A Multicenter, Randomized, Double-blind, Placebo-parallel-controlled Phase III Clinical Study to Evaluate the Efficacy and Safety of Ribupatide Injection in Participants With Obesity and Knee Osteoarthritis",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07709910"
+        }
+      ],
+      "protocolIdentifiers": [
+        "HRS9531-311"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07709910",
+        "overallStatus": "not-yet-recruiting",
+        "sourceStatus": "Not yet recruiting",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Multicenter, randomized, double-blind, placebo-controlled Phase 3 study evaluating once-weekly subcutaneous ribupatide versus placebo in participants with obesity and knee osteoarthritis."
+      },
+      "population": "Adults aged 18 to 75 years with obesity (BMI >= 28 kg/m2) and symptomatic knee osteoarthritis.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": true,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "68 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07709910",
+            "title": "A Trial of Ribupatide Injection in Participants With Obesity and Knee Osteoarthritis",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07284875",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of KAI-9531 Administered Once Weekly in Participants Living With Obesity or Overweight With Weight-Related Comorbidities Who Do Not Have Diabetes",
+      "acronym": "KaiNETIC-1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07284875"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07284875",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 3, randomized, double-blind, placebo-controlled multicenter global study evaluating the efficacy and safety of once-weekly subcutaneous ribupatide (KAI-9531) maintenance doses up to 10 mg versus placebo for 76 weeks in adults living with obesity or overweight without diabetes."
+      },
+      "population": "Adults aged 18 years or older with obesity (BMI >= 30 kg/m2) or overweight (BMI >= 27 kg/m2) with weight-related comorbidities, without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07284875",
+            "title": "Efficacy and Safety of Ribupatide in Participants Living With Obesity or Overweight With Weight-Related Comorbidities Who Do Not Have Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-therapeutics-announces-first-participants-randomized",
+            "title": "Kailera Therapeutics Announces First Participants Randomized in KaiNETIC Global Phase 3 Clinical Program of GLP-1/GIP Receptor Dual Agonist Ribupatide (KAI-9531)",
+            "sourceType": "company press release",
+            "publishedAt": "2026-01-12",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07284901",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of KAI-9531 Administered Once Weekly in Participants Living With Obesity or Overweight and Diabetes",
+      "acronym": "KaiNETIC-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07284901"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07284901",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 3, randomized, double-blind, placebo-controlled study evaluating the efficacy and safety of once-weekly subcutaneous ribupatide versus placebo for 76 weeks in participants living with obesity or overweight and type 2 diabetes."
+      },
+      "population": "Adults aged 18 years or older with obesity or overweight and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07284901",
+            "title": "Efficacy and Safety of Ribupatide Administered Once Weekly in Participants Living With Obesity or Overweight and Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07284979",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Active- and Placebo-Controlled, Partially-Blinded Study to Compare the Efficacy and Safety of KAI-9531 Administered Once Weekly Versus Semaglutide and Placebo in Participants Living With Obesity Who Do Not Have Diabetes",
+      "acronym": "KaiNETIC-3",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07284979"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07284979",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Active comparator",
+        "description": "Phase 3, randomized, active- and placebo-controlled, partially-blinded study comparing once-weekly ribupatide versus semaglutide (Wegovy) and placebo for 76 weeks in adults living with obesity who do not have diabetes."
+      },
+      "population": "Adults aged 18 years or older living with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07284979",
+            "title": "Efficacy and Safety of Ribupatide Administered Once Weekly Compared With Semaglutide and Placebo in Participants Living With Obesity Who Do Not Have Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07458269",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 2b, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of KAI-9531 Administered Once Weekly in Participants Living With Obesity Who Do Not Have Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07458269"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07458269",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 2b, randomized, double-blind, placebo-controlled study evaluating higher maintenance doses and titration schedules of once-weekly KAI-9531 versus placebo for 48 weeks in adults living with obesity."
+      },
+      "population": "Adults aged 18 years or older living with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "48 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07458269",
+            "title": "Efficacy and Safety of Ribupatide (KAI-9531) Administered Once Weekly in Participants Living With Obesity Who Do Not Have Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
       "id": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
@@ -18938,6 +19736,428 @@
       "intervention": "Matching placebo, subcutaneous, once weekly for 32 weeks"
     },
     {
+      "id": "hengrui-ribupatide-nct05881837-experimental",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct05881837",
+      "role": "experimental",
+      "label": "HRS9531 dose groups",
+      "intervention": "HRS9531 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct05881837-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct05881837",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06054698-8mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+      "role": "experimental",
+      "label": "Ribupatide 8 mg",
+      "intervention": "Ribupatide 8 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "8 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06054698-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-2mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "role": "experimental",
+      "label": "Ribupatide 2 mg",
+      "intervention": "Ribupatide 2 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "2 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "role": "experimental",
+      "label": "Ribupatide 4 mg",
+      "intervention": "Ribupatide 4 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-6mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "role": "experimental",
+      "label": "Ribupatide 6 mg",
+      "intervention": "Ribupatide 6 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-1mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "role": "experimental",
+      "label": "Ribupatide 1 mg",
+      "intervention": "Ribupatide 1 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "1 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "32 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-2mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "role": "experimental",
+      "label": "Ribupatide 2 mg",
+      "intervention": "Ribupatide 2 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "2 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "32 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "role": "experimental",
+      "label": "Ribupatide 4 mg",
+      "intervention": "Ribupatide 4 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "32 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly",
+      "dose": "Matching placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "32 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-10mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "role": "experimental",
+      "label": "Oral Ribupatide 10 mg",
+      "intervention": "Ribupatide 10 mg tablet administered orally once daily",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "10 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "role": "experimental",
+      "label": "Oral Ribupatide 25 mg",
+      "intervention": "Ribupatide 25 mg tablet administered orally once daily",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "25 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "role": "experimental",
+      "label": "Oral Ribupatide 50 mg",
+      "intervention": "Ribupatide 50 mg tablet administered orally once daily",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      },
+      "dose": "50 mg",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo tablet administered orally once daily",
+      "dose": "Matching placebo",
+      "route": "Oral",
+      "dosingFrequency": "Once daily",
+      "treatmentDuration": "26 weeks"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06974851-hrs9531",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06974851",
+      "role": "experimental",
+      "label": "HRS9531 injection",
+      "intervention": "HRS9531 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06974851-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06974851",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "hengrui-ribupatide-nct06994650-hrs9531",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06994650",
+      "role": "experimental",
+      "label": "HRS9531 injection",
+      "intervention": "HRS9531 administered subcutaneously once weekly with PAP",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06994650-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06994650",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly with PAP"
+    },
+    {
+      "id": "hengrui-ribupatide-nct07285902-hrs9531",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07285902",
+      "role": "experimental",
+      "label": "HRS9531",
+      "intervention": "HRS9531 injection once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct07285902-semaglutide",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07285902",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide injection once weekly",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct07559136-hrs9531",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07559136",
+      "role": "experimental",
+      "label": "HRS9531 adolescent cohort",
+      "intervention": "HRS9531 injection once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct07670884-tablet",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07670884",
+      "role": "experimental",
+      "label": "HRS9531 tablets",
+      "intervention": "HRS9531 tablet orally once daily",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct07670884-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07670884",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo tablet orally once daily"
+    },
+    {
+      "id": "hengrui-ribupatide-nct07709910-ribupatide",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07709910",
+      "role": "experimental",
+      "label": "Ribupatide injection",
+      "intervention": "Ribupatide administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "jiangsu-hengrui-pharmaceuticals",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct07709910-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07709910",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07284875-dose3",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284875",
+      "role": "experimental",
+      "label": "Ribupatide Dose 3",
+      "intervention": "Ribupatide dose 3 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284875-dose4",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284875",
+      "role": "experimental",
+      "label": "Ribupatide Dose 4",
+      "intervention": "Ribupatide dose 4 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284875-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284875",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07284901-dose3",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284901",
+      "role": "experimental",
+      "label": "Ribupatide Dose 3",
+      "intervention": "Ribupatide dose 3 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284901-dose4",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284901",
+      "role": "experimental",
+      "label": "Ribupatide Dose 4",
+      "intervention": "Ribupatide dose 4 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284901-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284901",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07284979-ribupatide",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284979",
+      "role": "experimental",
+      "label": "Ribupatide",
+      "intervention": "Ribupatide administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284979-semaglutide",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284979",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide 2.4 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284979-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284979",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07458269-experimental",
+      "studyId": "kailera-therapeutics-ribupatide-nct07458269",
+      "role": "experimental",
+      "label": "KAI-9531 dose regimens",
+      "intervention": "KAI-9531 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07458269-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07458269",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
       "id": "amyoral-100",
       "studyId": "novo-nordisk-amycretin-oral-phase1-nct05369390",
       "role": "experimental",
@@ -25846,6 +27066,105 @@
       "domain": "glycemic",
       "assessmentTimepoint": "Week 32",
       "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "hengrui-ribupatide-nct06054698-bw-change-w36",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+      "name": "Percentage change from baseline in body weight at Week 36",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 36",
+      "assessmentTimepointWeeks": 36
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "name": "Percentage change from baseline in body weight at Week 48",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-loss-5pct-w48",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "name": "Proportion of participants achieving >= 5% body weight reduction at Week 48",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-loss-20pct-w48",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "name": "Proportion of participants achieving >= 20% body weight reduction at Week 48",
+      "role": "key-secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-bw-change-w32",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "name": "Percentage change from baseline in body weight at Week 32",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-bw-loss-5pct-w32",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "name": "Proportion of participants achieving >= 5% body weight reduction at Week 32",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "name": "Percentage change from baseline in body weight at Week 26",
+      "role": "primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-loss-10pct-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "name": "Proportion of participants achieving >= 10% body weight reduction at Week 26",
+      "role": "key-secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-loss-15pct-w26",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "name": "Proportion of participants achieving >= 15% body weight reduction at Week 26",
+      "role": "key-secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-nausea",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-vomiting",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 26",
+      "assessmentTimepointWeeks": 26
     },
     {
       "id": "amyoral-weight-week12",
@@ -49105,6 +50424,1029 @@
             "sourceType": "company topline announcement",
             "checkedAt": "2026-09-07",
             "publishedAt": "2025-10-26"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06054698-bw-w36-tp-8mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+      "endpointId": "hengrui-ribupatide-nct06054698-bw-change-w36",
+      "armIds": [
+        "hengrui-ribupatide-nct06054698-8mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-22.8%",
+        "numericValue": -22.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06054698-bw-w36-hypo-8mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+      "endpointId": "hengrui-ribupatide-nct06054698-bw-change-w36",
+      "armIds": [
+        "hengrui-ribupatide-nct06054698-8mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Hypothetical strategy estimand",
+      "result": {
+        "value": "-23.6%",
+        "numericValue": -23.6,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-tp-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-1.4%",
+        "numericValue": -1.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-tp-2mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-2mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-10.7%",
+        "numericValue": -10.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-tp-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-4mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-16.4%",
+        "numericValue": -16.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-tp-6mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-6mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-17.7%",
+        "numericValue": -17.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-hypo-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-placebo"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Hypothetical strategy estimand",
+      "result": {
+        "value": "-1.4%",
+        "numericValue": -1.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-hypo-2mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-2mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Hypothetical strategy estimand",
+      "result": {
+        "value": "-11.2%",
+        "numericValue": -11.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-hypo-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-4mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Hypothetical strategy estimand",
+      "result": {
+        "value": "-17.4%",
+        "numericValue": -17.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-bw-w48-hypo-6mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-change-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-6mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Hypothetical strategy estimand",
+      "result": {
+        "value": "-19.2%",
+        "numericValue": -19.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-resp-5pct-2mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-loss-5pct-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-2mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "68.1%",
+        "numericValue": 68.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-resp-5pct-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-loss-5pct-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-4mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "88.0%",
+        "numericValue": 88,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-resp-5pct-6mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-loss-5pct-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-6mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "85.7%",
+        "numericValue": 85.7,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06396429-resp-20pct-6mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+      "endpointId": "hengrui-ribupatide-nct06396429-bw-loss-20pct-w48",
+      "armIds": [
+        "hengrui-ribupatide-nct06396429-6mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "44.4%",
+        "numericValue": 44.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=20%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2025/11/04/3180679/0/en/Hengrui-Pharma-and-Kailera-Therapeutics-Announce-Additional-Data-from-Phase-3-Obesity-Trial-in-China-of-Dual-GLP-1-GIP-Receptor-Agonist-HRS9531.html",
+            "title": "Hengrui Pharma and Kailera Therapeutics Announce Additional Data from Phase 3 Obesity Trial in China of Dual GLP-1/GIP Receptor Agonist HRS9531",
+            "sourceType": "company press release",
+            "publishedAt": "2025-11-04",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-bw-w32-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "endpointId": "hengrui-ribupatide-nct06595797-bw-change-w32",
+      "armIds": [
+        "hengrui-ribupatide-nct06595797-4mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-20.2%",
+        "numericValue": -20.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.hengrui.com/en/media/detail-991.html",
+            "title": "Positive Topline Data from Phase 2 Trial (HRS9531-207) of Ribupatide Injection in Obesity With Polyendocrine-metabolic Ovarian Syndrome (PMOS)",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-08",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-resp-5pct-4mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "endpointId": "hengrui-ribupatide-nct06595797-bw-loss-5pct-w32",
+      "armIds": [
+        "hengrui-ribupatide-nct06595797-4mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "97.5%",
+        "numericValue": 97.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.hengrui.com/en/media/detail-991.html",
+            "title": "Positive Topline Data from Phase 2 Trial (HRS9531-207) of Ribupatide Injection in Obesity With Polyendocrine-metabolic Ovarian Syndrome (PMOS)",
+            "sourceType": "company press release",
+            "publishedAt": "2026-07-08",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-eff-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-placebo"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-2.3%",
+        "numericValue": -2.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-eff-10mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-10mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-6.9%",
+        "numericValue": -6.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-eff-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-25mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.1%",
+        "numericValue": -12.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-eff-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-50mg"
+      ],
+      "analysisPopulation": "Per-protocol set",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.1%",
+        "numericValue": -12.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-tp-placebo",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-placebo"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-2.1%",
+        "numericValue": -2.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-tp-10mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-10mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-6.7%",
+        "numericValue": -6.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-tp-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-25mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-11.9%",
+        "numericValue": -11.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-bw-w26-tp-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-change-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-50mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-11.4%",
+        "numericValue": -11.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-resp-10pct-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-loss-10pct-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-25mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "59.1%",
+        "numericValue": 59.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-resp-10pct-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-loss-10pct-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-50mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "52.5%",
+        "numericValue": 52.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-resp-15pct-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-loss-15pct-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-25mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "38.6%",
+        "numericValue": 38.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-resp-15pct-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-bw-loss-15pct-w26",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-50mg"
+      ],
+      "analysisPopulation": "Full analysis set",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "37.5%",
+        "numericValue": 37.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-nausea-10mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-nausea",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-10mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "11.9%",
+        "numericValue": 11.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-nausea-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-nausea",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-25mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "22.7%",
+        "numericValue": 22.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-nausea-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-nausea",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-50mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "20.0%",
+        "numericValue": 20,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-vomiting-10mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-vomiting",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-10mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "2.4%",
+        "numericValue": 2.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-vomiting-25mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-vomiting",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-25mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "11.4%",
+        "numericValue": 11.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06841445-vomiting-50mg",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+      "endpointId": "hengrui-ribupatide-nct06841445-vomiting",
+      "armIds": [
+        "hengrui-ribupatide-nct06841445-50mg"
+      ],
+      "analysisPopulation": "Safety population",
+      "result": {
+        "value": "7.5%",
+        "numericValue": 7.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.globenewswire.com/news-release/2026/02/10/3235172/0/en/Kailera-Therapeutics-and-Hengrui-Pharma-Report-Positive-Topline-Data-from-Phase-2-Obesity-Trial-of-Oral-Ribupatide.html",
+            "title": "Kailera Therapeutics and Hengrui Pharma Report Positive Topline Data from Phase 2 Obesity Trial of Oral Ribupatide",
+            "sourceType": "company press release",
+            "publishedAt": "2026-02-10",
+            "checkedAt": "2026-09-16"
           }
         ]
       }

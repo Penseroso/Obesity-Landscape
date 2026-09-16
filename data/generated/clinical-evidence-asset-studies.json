@@ -308,6 +308,35 @@
       "linkedStudyIds": []
     },
     {
+      "companyId": "jiangsu-hengrui-pharmaceuticals",
+      "assetId": "ribupatide",
+      "focalStudyIds": [
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06396429",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06054698",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct05881837",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07285902",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07559136",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06841445",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07670884",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06974851",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06994650",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07709910"
+      ],
+      "linkedStudyIds": []
+    },
+    {
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "focalStudyIds": [
+        "kailera-therapeutics-ribupatide-nct07284875",
+        "kailera-therapeutics-ribupatide-nct07284901",
+        "kailera-therapeutics-ribupatide-nct07284979",
+        "kailera-therapeutics-ribupatide-nct07458269"
+      ],
+      "linkedStudyIds": []
+    },
+    {
       "companyId": "novo-nordisk",
       "assetId": "amycretin",
       "focalStudyIds": [
@@ -423,6 +452,8 @@
         "gan-lee-pharmaceuticals-gzr18-nct07150975",
         "gan-lee-pharmaceuticals-gzr18-nct07622810",
         "innovent-biologics-mazdutide-nct06184568",
+        "jiangsu-hengrui-pharmaceuticals-ribupatide-nct07285902",
+        "kailera-therapeutics-ribupatide-nct07284979",
         "novo-nordisk-cagrisema-redefine-1-nct05567796",
         "pfizer-pf-07081532-nct05579977",
         "roche-ct-996-bp45703-nct07112872",

@@ -1,0 +1,444 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "kailera-therapeutics",
+  "assetId": "ribupatide",
+  "studies": [
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07284875",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of KAI-9531 Administered Once Weekly in Participants Living With Obesity or Overweight With Weight-Related Comorbidities Who Do Not Have Diabetes",
+      "acronym": "KaiNETIC-1",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07284875"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07284875",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 3, randomized, double-blind, placebo-controlled multicenter global study evaluating the efficacy and safety of once-weekly subcutaneous ribupatide (KAI-9531) maintenance doses up to 10 mg versus placebo for 76 weeks in adults living with obesity or overweight without diabetes."
+      },
+      "population": "Adults aged 18 years or older with obesity (BMI >= 30 kg/m2) or overweight (BMI >= 27 kg/m2) with weight-related comorbidities, without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07284875",
+            "title": "Efficacy and Safety of Ribupatide in Participants Living With Obesity or Overweight With Weight-Related Comorbidities Who Do Not Have Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://investors.kailera.com/news-releases/news-release-details/kailera-therapeutics-announces-first-participants-randomized",
+            "title": "Kailera Therapeutics Announces First Participants Randomized in KaiNETIC Global Phase 3 Clinical Program of GLP-1/GIP Receptor Dual Agonist Ribupatide (KAI-9531)",
+            "sourceType": "company press release",
+            "publishedAt": "2026-01-12",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07284901",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of KAI-9531 Administered Once Weekly in Participants Living With Obesity or Overweight and Diabetes",
+      "acronym": "KaiNETIC-2",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07284901"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07284901",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 3, randomized, double-blind, placebo-controlled study evaluating the efficacy and safety of once-weekly subcutaneous ribupatide versus placebo for 76 weeks in participants living with obesity or overweight and type 2 diabetes."
+      },
+      "population": "Adults aged 18 years or older with obesity or overweight and type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "with-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07284901",
+            "title": "Efficacy and Safety of Ribupatide Administered Once Weekly in Participants Living With Obesity or Overweight and Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07284979",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 3, Randomized, Active- and Placebo-Controlled, Partially-Blinded Study to Compare the Efficacy and Safety of KAI-9531 Administered Once Weekly Versus Semaglutide and Placebo in Participants Living With Obesity Who Do Not Have Diabetes",
+      "acronym": "KaiNETIC-3",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07284979"
+        }
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07284979",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-09"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Active comparator",
+        "description": "Phase 3, randomized, active- and placebo-controlled, partially-blinded study comparing once-weekly ribupatide versus semaglutide (Wegovy) and placebo for 76 weeks in adults living with obesity who do not have diabetes."
+      },
+      "population": "Adults aged 18 years or older living with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "76 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07284979",
+            "title": "Efficacy and Safety of Ribupatide Administered Once Weekly Compared With Semaglutide and Placebo in Participants Living With Obesity Who Do Not Have Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kailera-therapeutics-ribupatide-nct07458269",
+      "companyId": "kailera-therapeutics",
+      "assetId": "ribupatide",
+      "programId": "kailera-therapeutics-ribupatide-subcutaneous-injection",
+      "officialTitle": "A Phase 2b, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of KAI-9531 Administered Once Weekly in Participants Living With Obesity Who Do Not Have Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07458269"
+        }
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07458269",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Phase 2b, randomized, double-blind, placebo-controlled study evaluating higher maintenance doses and titration schedules of once-weekly KAI-9531 versus placebo for 48 weeks in adults living with obesity."
+      },
+      "population": "Adults aged 18 years or older living with obesity without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "48 weeks of treatment",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07458269",
+            "title": "Efficacy and Safety of Ribupatide (KAI-9531) Administered Once Weekly in Participants Living With Obesity Who Do Not Have Diabetes",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "kailera-ribupatide-nct07284875-dose3",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284875",
+      "role": "experimental",
+      "label": "Ribupatide Dose 3",
+      "intervention": "Ribupatide dose 3 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284875-dose4",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284875",
+      "role": "experimental",
+      "label": "Ribupatide Dose 4",
+      "intervention": "Ribupatide dose 4 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284875-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284875",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07284901-dose3",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284901",
+      "role": "experimental",
+      "label": "Ribupatide Dose 3",
+      "intervention": "Ribupatide dose 3 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284901-dose4",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284901",
+      "role": "experimental",
+      "label": "Ribupatide Dose 4",
+      "intervention": "Ribupatide dose 4 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284901-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284901",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07284979-ribupatide",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284979",
+      "role": "experimental",
+      "label": "Ribupatide",
+      "intervention": "Ribupatide administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284979-semaglutide",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284979",
+      "role": "active comparator",
+      "label": "Semaglutide",
+      "intervention": "Semaglutide 2.4 mg administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "novo-nordisk",
+        "assetId": "semaglutide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07284979-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07284979",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    },
+    {
+      "id": "kailera-ribupatide-nct07458269-experimental",
+      "studyId": "kailera-therapeutics-ribupatide-nct07458269",
+      "role": "experimental",
+      "label": "KAI-9531 dose regimens",
+      "intervention": "KAI-9531 administered subcutaneously once weekly",
+      "linkedAsset": {
+        "companyId": "kailera-therapeutics",
+        "assetId": "ribupatide"
+      }
+    },
+    {
+      "id": "kailera-ribupatide-nct07458269-placebo",
+      "studyId": "kailera-therapeutics-ribupatide-nct07458269",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matching placebo administered subcutaneously once weekly"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": [],
+  "researchState": {
+    "checkpointVersion": 1,
+    "workflowRevision": "ADR-0070",
+    "discoveryCheckpoint": {
+      "asOf": "2026-09-16",
+      "clinicalTrials": {
+        "semanticFingerprintVersion": 2,
+        "sponsorQuery": "Kailera Therapeutics, Inc.",
+        "assetAliases": [
+          "HRS9531",
+          "HRS9531-T",
+          "KAI-9531",
+          "KAI-9531-T",
+          "Ribupatide",
+          "ribupatide"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "knownNCTs": {
+          "NCT07284875": {
+            "lastUpdatePostDate": "2026-09-03",
+            "semanticHash": "d08b3dab41c5bfd91ac55a49ac835bdffc86d485f491cd1f3cf3df64df59be2b"
+          },
+          "NCT07284901": {
+            "lastUpdatePostDate": "2026-09-03",
+            "semanticHash": "c647312cc61f95c6684cf5dbe7b72bb6bd5a1c0288c03a774c93f991ba96683e"
+          },
+          "NCT07284979": {
+            "lastUpdatePostDate": "2026-09-01",
+            "semanticHash": "5936bd9b45acb2e79b0d0b9b5a79e227f50f32042ef55a8bb2db1b8e132160d8"
+          },
+          "NCT07458269": {
+            "lastUpdatePostDate": "2026-07-15",
+            "semanticHash": "8683448c740e14df4661e294ed6ccddd8fc6140b673ea068bff343bac516ff20"
+          }
+        },
+        "foreignStudyDispositions": {
+          "NCT06396429": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT06841445": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT06054698": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT05881837": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT07285902": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT07670884": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT06595797": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT06974851": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT06994650": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT07709910": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          },
+          "NCT07559136": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "jiangsu-hengrui-pharmaceuticals",
+            "ownerAssetId": "ribupatide",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Fujian Shengdi Pharmaceutical Co., Ltd."
+          }
+        }
+      },
+      "literature": {
+        "assetAliases": [
+          "HRS9531",
+          "HRS9531-T",
+          "KAI-9531",
+          "KAI-9531-T",
+          "Ribupatide",
+          "ribupatide"
+        ],
+        "lastQueriedAt": "2026-09-16",
+        "monitoredPMIDs": {}
+      }
+    }
+  }
+}
