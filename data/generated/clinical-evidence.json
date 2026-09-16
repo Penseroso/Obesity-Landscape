@@ -7433,6 +7433,13 @@
             "sourceType": "company press release",
             "publishedAt": "2026-07-08",
             "checkedAt": "2026-09-16"
+          },
+          {
+            "url": "https://investors.kailera.com/",
+            "title": "Kailera Therapeutics Reports Second Quarter 2026 Financial Results and Provides Corporate Updates",
+            "sourceType": "company press release",
+            "publishedAt": "2026-08-12",
+            "checkedAt": "2026-09-16"
           }
         ]
       }
@@ -25405,6 +25412,18 @@
         "reta-p2-8mg-start4"
       ],
       "description": "The publication reports the two 8 mg starting-dose arms as one combined 8-mg group."
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-ribupatide-group",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "kind": "pooled",
+      "label": "Ribupatide (pooled/unspecified dose)",
+      "memberArmIds": [
+        "hengrui-ribupatide-nct06595797-1mg",
+        "hengrui-ribupatide-nct06595797-2mg",
+        "hengrui-ribupatide-nct06595797-4mg"
+      ],
+      "description": "Participants in the ribupatide group (across 1 mg, 2 mg, and 4 mg doses). Initial topline releases report 'up to' headline values without specific dose attribution."
     },
     {
       "id": "step6-pooled-placebo",
@@ -50448,7 +50467,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06054698-8mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-22.8%",
@@ -50478,7 +50497,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06054698-8mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Hypothetical strategy estimand",
       "result": {
         "value": "-23.6%",
@@ -50508,7 +50527,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-1.4%",
@@ -50538,7 +50557,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-2mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-10.7%",
@@ -50568,7 +50587,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-4mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-16.4%",
@@ -50598,7 +50617,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-6mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-17.7%",
@@ -50628,7 +50647,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-placebo"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Hypothetical strategy estimand",
       "result": {
         "value": "-1.4%",
@@ -50658,7 +50677,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-2mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Hypothetical strategy estimand",
       "result": {
         "value": "-11.2%",
@@ -50688,7 +50707,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-4mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Hypothetical strategy estimand",
       "result": {
         "value": "-17.4%",
@@ -50718,7 +50737,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-6mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Hypothetical strategy estimand",
       "result": {
         "value": "-19.2%",
@@ -50748,7 +50767,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-2mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "68.1%",
@@ -50779,7 +50798,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-4mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "88.0%",
@@ -50810,7 +50829,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-6mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "85.7%",
@@ -50841,7 +50860,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06396429-6mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "44.4%",
@@ -50866,13 +50885,11 @@
       }
     },
     {
-      "id": "hengrui-ribupatide-nct06595797-bw-w32-4mg",
+      "id": "hengrui-ribupatide-nct06595797-bw-w32-tp",
       "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
       "endpointId": "hengrui-ribupatide-nct06595797-bw-change-w32",
-      "armIds": [
-        "hengrui-ribupatide-nct06595797-4mg"
-      ],
-      "analysisPopulation": "Full analysis set",
+      "analysisGroupId": "hengrui-ribupatide-nct06595797-ribupatide-group",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-20.2%",
@@ -50896,13 +50913,39 @@
       }
     },
     {
-      "id": "hengrui-ribupatide-nct06595797-resp-5pct-4mg",
+      "id": "hengrui-ribupatide-nct06595797-bw-w32-eff",
+      "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
+      "endpointId": "hengrui-ribupatide-nct06595797-bw-change-w32",
+      "analysisGroupId": "hengrui-ribupatide-nct06595797-ribupatide-group",
+      "analysisPopulation": "Not reported",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-21.2%",
+        "numericValue": -21.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "topline",
+      "metadata": {
+        "lastVerifiedAt": "2026-09-16",
+        "updatedAt": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://investors.kailera.com/",
+            "title": "Kailera Therapeutics Reports Second Quarter 2026 Financial Results and Provides Corporate Updates",
+            "sourceType": "company press release",
+            "publishedAt": "2026-08-12",
+            "checkedAt": "2026-09-16"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hengrui-ribupatide-nct06595797-resp-5pct",
       "studyId": "jiangsu-hengrui-pharmaceuticals-ribupatide-nct06595797",
       "endpointId": "hengrui-ribupatide-nct06595797-bw-loss-5pct-w32",
-      "armIds": [
-        "hengrui-ribupatide-nct06595797-4mg"
-      ],
-      "analysisPopulation": "Full analysis set",
+      "analysisGroupId": "hengrui-ribupatide-nct06595797-ribupatide-group",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "97.5%",
@@ -50933,7 +50976,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-placebo"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-2.3%",
@@ -50963,7 +51006,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-10mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-6.9%",
@@ -50993,7 +51036,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-25mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12.1%",
@@ -51023,7 +51066,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-50mg"
       ],
-      "analysisPopulation": "Per-protocol set",
+      "analysisPopulation": "Not reported",
       "estimand": "Efficacy estimand",
       "result": {
         "value": "-12.1%",
@@ -51053,7 +51096,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-placebo"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-2.1%",
@@ -51083,7 +51126,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-10mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-6.7%",
@@ -51113,7 +51156,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-25mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-11.9%",
@@ -51143,7 +51186,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-50mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "-11.4%",
@@ -51173,7 +51216,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-25mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "59.1%",
@@ -51204,7 +51247,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-50mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "52.5%",
@@ -51235,7 +51278,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-25mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "38.6%",
@@ -51266,7 +51309,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-50mg"
       ],
-      "analysisPopulation": "Full analysis set",
+      "analysisPopulation": "Not reported",
       "estimand": "Treatment-policy estimand",
       "result": {
         "value": "37.5%",
@@ -51297,7 +51340,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-10mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "11.9%",
         "numericValue": 11.9,
@@ -51326,7 +51369,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-25mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "22.7%",
         "numericValue": 22.7,
@@ -51355,7 +51398,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-50mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "20.0%",
         "numericValue": 20,
@@ -51384,7 +51427,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-10mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "2.4%",
         "numericValue": 2.4,
@@ -51413,7 +51456,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-25mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "11.4%",
         "numericValue": 11.4,
@@ -51442,7 +51485,7 @@
       "armIds": [
         "hengrui-ribupatide-nct06841445-50mg"
       ],
-      "analysisPopulation": "Safety population",
+      "analysisPopulation": "Not reported",
       "result": {
         "value": "7.5%",
         "numericValue": 7.5,
