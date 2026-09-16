@@ -1,0 +1,74 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "eli-lilly-and-company",
+  "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
+  "studies": [
+    {
+      "id": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
+      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight",
+      "acronym": "COMMIT-CD",
+      "studyFamily": "COMMIT",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06937099"
+        }
+      ],
+      "protocolIdentifiers": [
+        "2024-520210-21-00",
+        "I6T-MC-AMCE"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06937099",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Mirikizumab plus placebo"
+      },
+      "population": "Participants with Crohn's disease and obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06937099",
+            "title": "COMMIT-CD study record (NCT06937099)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "commit-cd-mirikizumab-tirzepatide",
+      "studyId": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
+      "role": "experimental",
+      "label": "Mirikizumab + Tirzepatide",
+      "intervention": "Mirikizumab plus Tirzepatide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "commit-cd-mirikizumab-placebo",
+      "studyId": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
+      "role": "experimental",
+      "label": "Mirikizumab + Placebo",
+      "intervention": "Mirikizumab plus Placebo"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

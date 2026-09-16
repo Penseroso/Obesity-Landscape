@@ -1,0 +1,141 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "eli-lilly-and-company",
+  "regimenId": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
+  "studies": [
+    {
+      "id": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
+      "officialTitle": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled, Proof-of-Concept Study of Once-Weekly Tirzepatide Plus Mibavademab Compared With Tirzepatide Alone in Adult Participants With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06373146"
+        }
+      ],
+      "protocolIdentifiers": [
+        "I8F-MC-GPIV"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06373146",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-05-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Participants with obesity.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06373146",
+            "title": "study record (NCT06373146)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "nct06373146-tirzepatide-tzp-mibavademab-miba-group-a",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "Tirzepatide (TZP) + Mibavademab (MIBA) [Group A]",
+      "intervention": "Tirzepatide plus Mibavademab",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-mibavademab-placebo-miba-pbo-group-b",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + Mibavademab-placebo (MIBA-PBO) [Group B]",
+      "intervention": "Tirzepatide plus Mibavademab-Placebo",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-miba-then-tirzepatide-placebo-tzp-pbo-miba-group-c",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + MIBA then Tirzepatide-placebo (TZP-PBO) + MIBA [Group C]",
+      "intervention": "Tirzepatide plus Mibavademab plus Tirzepatide-Placebo",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-miba-group-d",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + MIBA [Group D]",
+      "intervention": "Tirzepatide plus Mibavademab",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-miba-pbo-group-e",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + MIBA-PBO [Group E]",
+      "intervention": "Tirzepatide plus Mibavademab-Placebo",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-miba-pbo-then-tzp-pbo-miba-group-f",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + MIBA-PBO then TZP-PBO + MIBA [Group F]",
+      "intervention": "Tirzepatide plus Mibavademab plus Tirzepatide-Placebo plus Mibavademab-Placebo",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-miba-pbo-then-tzp-miba-group-g",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + MIBA-PBO then TZP + MIBA [Group G]",
+      "intervention": "Tirzepatide plus Mibavademab plus Mibavademab-Placebo",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    },
+    {
+      "id": "nct06373146-tzp-miba-pbo-then-tzp-pbo-miba-pbo-group-h",
+      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "role": "experimental",
+      "label": "TZP + MIBA-PBO then TZP-PBO + MIBA-PBO [Group H]",
+      "intervention": "Tirzepatide plus Tirzepatide-Placebo plus Mibavademab-Placebo",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

@@ -1,0 +1,194 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "astrazeneca",
+  "regimenId": "astrazeneca-azd9550-azd6234-obesity",
+  "studies": [
+    {
+      "id": "astrazeneca-azd6234-nct06862791",
+      "companyId": "astrazeneca",
+      "regimenId": "astrazeneca-azd9550-azd6234-obesity",
+      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of Co-administration of AZD9550 and AZD6234 in Participants Living With Obesity or Overweight With Co-morbidity (ASCEND)",
+      "acronym": "ASCEND",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06862791"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8460C00004",
+        "2024-516176-15-00"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06862791",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo and component monotherapies",
+        "description": "Nine-arm reduced-factorial study of once-weekly AZD9550 and AZD6234 dose combinations, component monotherapies, or corresponding placebos."
+      },
+      "population": "Adults with obesity, or overweight with hypertension, dyslipidemia, or obstructive sleep apnoea, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks of treatment; approximately 47 weeks including screening and follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06862791",
+            "title": "ASCEND study record (NCT06862791)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/",
+            "title": "ASCEND AstraZeneca study page",
+            "sourceType": "company trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "ascend-arm1",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 1",
+      "intervention": "AZD9550 low dose plus AZD6234 low dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm2",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 2",
+      "intervention": "AZD9550 medium dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm3",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 3",
+      "intervention": "AZD9550 high dose plus AZD6234 high dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm4",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 4",
+      "intervention": "AZD9550 low dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm5",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 5",
+      "intervention": "AZD9550 medium dose plus AZD6234 low dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm6",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 6",
+      "intervention": "AZD9550 high dose plus AZD6234 medium dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm7",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "experimental",
+      "label": "Arm 7",
+      "intervention": "AZD9550 medium dose plus AZD6234 high dose or corresponding placebos",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm8",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "active comparator",
+      "label": "Arm 8",
+      "intervention": "AZD9550 high dose monotherapy or corresponding placebo",
+      "linkedAsset": {
+        "assetName": "AZD9550"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    },
+    {
+      "id": "ascend-arm9",
+      "studyId": "astrazeneca-azd6234-nct06862791",
+      "role": "active comparator",
+      "label": "Arm 9",
+      "intervention": "AZD6234 high dose monotherapy or corresponding placebo",
+      "linkedAsset": {
+        "companyId": "astrazeneca",
+        "assetId": "azd6234"
+      },
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "36 weeks"
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}

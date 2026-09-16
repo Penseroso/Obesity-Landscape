@@ -1,12 +1,11 @@
 {
   "clinicalEvidenceSchemaVersion": "3.1",
   "companyId": "eli-lilly-and-company",
-  "assetId": "ly3532226",
+  "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
   "studies": [
     {
       "id": "eli-lilly-and-company-macupatide-nct07215559",
       "companyId": "eli-lilly-and-company",
-      "assetId": "ly3532226",
       "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
       "officialTitle": "A Phase 2, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Reduction With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight and With Type 2 Diabetes",
       "registryIdentifiers": [
@@ -48,7 +47,6 @@
     {
       "id": "eli-lilly-and-company-macupatide-nct07589608",
       "companyId": "eli-lilly-and-company",
-      "assetId": "ly3532226",
       "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
       "officialTitle": "A Phase 2b, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight and Without Type 2 Diabetes",
       "registryIdentifiers": [

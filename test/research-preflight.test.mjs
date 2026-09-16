@@ -693,20 +693,32 @@ test("Regression 4: Asset bootstrap without canonical CE file -> blocked with AS
   assert.match(gate.reason, /ASSET_CANONICAL_TARGET_MISSING/);
 });
 
-test("Regression 5: Asset-scoped Clinical Evidence context isolates known NCTs from target asset's canonical CE source (including anchored regimen studies) and excludes unrelated regimen studies", async () => {
+test("Regression 5: Asset-scoped Clinical Evidence context isolates known NCTs from target asset's own canonical CE source, and Regimen-native migration (ADR-0075 follow-up) moved a formerly asset-hosted regimen study's known-NCT membership to its own regimen leaf rather than duplicating or losing it", async () => {
   // Eli Lilly: ly3298176 (Tirzepatide)
   const tirzContext = await loadCompanyContext("eli-lilly-and-company", "ly3298176");
 
-  // In Lilly CE source (domains/clinical-evidence/data/clinical-evidence/eli-lilly-and-company/ly3298176/clinical-evidence.json):
-  // Study NCT06643728 is anchored to regimen "eli-lilly-and-company-bimagrumab-tirzepatide-obesity"
-  // which belongs to Tirzepatide CE scope:
-  assert.ok(
+  // NCT06643728 (Bimagrumab+Tirzepatide regimen) has migrated out of Tirzepatide's
+  // own CE file into its own regimen-native leaf (Phase 1 of the ADR-0075
+  // follow-up) - it must no longer be counted as Tirzepatide's own known NCT,
+  // since that file no longer stores it at all.
+  assert.strictEqual(
     tirzContext.knownNCTs.includes("NCT06643728"),
-    "NCT06643728 from Bimagrumab+Tirzepatide regimen study in Tirzepatide CE file must be included in Tirzepatide scope",
+    false,
+    "NCT06643728 migrated out of Tirzepatide's own CE file into its own regimen-native leaf - it must not remain in Tirzepatide's asset-scoped knownNCTs",
+  );
+
+  // The regimen-native context for that same regimen must be the one that
+  // now knows about it - the migration must not have lost this NCT.
+  const bimagrumabTirzContext = await loadCompanyContext("eli-lilly-and-company", null, {
+    targetRegimenId: "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
+  });
+  assert.ok(
+    bimagrumabTirzContext.knownNCTs.includes("NCT06643728"),
+    "NCT06643728 must be known from its own regimen-native leaf after migration",
   );
 
   // In contrast, Bimagrumab+Semaglutide regimen (NCT05616013) is not an asset in Lilly CE
-  // and has no study in ly3298176 CE file:
+  // and has no study in ly3298176 CE file, before or after migration:
   assert.strictEqual(
     tirzContext.knownNCTs.includes("NCT05616013"),
     false,
@@ -3134,8 +3146,8 @@ test("Regression 39: targetRegimenId context (Roche ZYNERGY-shaped, 2 internal c
 
   // Both components are Roche's own internal Programs -> 2 conjunctive
   // groups, one per component's own identity, never merged into one group.
-  assert.strictEqual(context.regimenInternalComponentTermGroups.length, 2);
-  const groupSets = context.regimenInternalComponentTermGroups.map((g) => new Set(g));
+  assert.strictEqual(context.regimenComponentTermGroups.length, 2);
+  const groupSets = context.regimenComponentTermGroups.map((g) => new Set(g));
   const hasPetrelintideGroup = groupSets.some((g) => g.has("petrelintide") && g.has("ZP8396"));
   const hasEnicepatideGroup = groupSets.some((g) => g.has("enicepatide") && g.has("RO7795068") && g.has("CT-388"));
   assert.ok(hasPetrelintideGroup, "one group must be petrelintide's own identity");
@@ -3194,7 +3206,7 @@ test("Regression 43: probeRegistryDiscovery issues the conjunctive query.term re
     knownNCTs: [],
     assetAliases: ["Petrelintide plus enicepatide for obesity or overweight"],
     partnerAssetAliases: [],
-    regimenInternalComponentTermGroups: [
+    regimenComponentTermGroups: [
       ["petrelintide", "Petrelintide", "ZP8396"],
       ["enicepatide", "Enicepatide", "RO7795068", "CT-388"],
     ],
@@ -3290,4 +3302,55 @@ test("Regression 44: parseArgs --regimen flag mirrors --asset (domain inference,
     process.exit = origExit;
     console.error = origError;
   }
+});
+
+test("Regression 45: Lilly's real bimagrumab-tirzepatide regimen (1 internal/Program-tracked component + 1 internal-but-untracked component with no Program row) must trigger conjunctive discovery, not the single-target additive path - tirzepatide's own name must never stand alone as an unguarded alias", async () => {
+  const context = await loadCompanyContext("eli-lilly-and-company", null, {
+    targetRegimenId: "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
+  });
+
+  assert.strictEqual(context.targetRegimenId, "eli-lilly-and-company-bimagrumab-tirzepatide-obesity");
+
+  // bimagrumab (LY3985863) has no Program row of its own - the old
+  // "count only internal, Program-tracked components" logic would have seen
+  // exactly 1 (tirzepatide) and treated it as an ordinary single-target
+  // search, pooling all of tirzepatide's own terms into flat additive
+  // aliases and pulling in its entire monotherapy trial history. The fix
+  // must instead see 2 *identifiable* components and route both into the
+  // conjunctive groups.
+  assert.strictEqual(
+    context.regimenComponentTermGroups.length,
+    2,
+    "bimagrumab (no Program row) and tirzepatide (Program-tracked) are both identifiable components - the conjunction trigger is component composition, not a count of only the tracked ones",
+  );
+
+  const groupSets = context.regimenComponentTermGroups.map((g) => new Set(g));
+  const hasBimagrumabGroup = groupSets.some((g) => g.has("Bimagrumab") && g.has("LY3985863"));
+  const hasTirzepatideGroup = groupSets.some(
+    (g) => g.has("ly3298176") && g.has("Tirzepatide") && g.has("LY3298176") && g.has("Mounjaro") && g.has("Zepbound"),
+  );
+  assert.ok(hasBimagrumabGroup, "one group must be bimagrumab's own free-text identity (assetName/codeName, no Program row to resolve)");
+  assert.ok(hasTirzepatideGroup, "the other group must be tirzepatide's own fully-resolved Program identity");
+
+  // The core regression: tirzepatide's own name/code/brand aliases must
+  // never appear as flat, standalone additive aliases for this regimen -
+  // that is exactly what would let a plain query.intr=Tirzepatide call pull
+  // in tirzepatide's entire unrelated monotherapy trial history.
+  for (const term of ["ly3298176", "Tirzepatide", "LY3298176", "Mounjaro", "Zepbound"]) {
+    assert.ok(
+      !context.assetAliases.includes(term),
+      `tirzepatide's own term "${term}" must never become a flat additive alias for this regimen`,
+    );
+  }
+  assert.ok(
+    !context.assetAliases.includes("Bimagrumab") && !context.assetAliases.includes("LY3985863"),
+    "bimagrumab's own term must never become a flat additive alias either - only the conjunction may use it",
+  );
+
+  // The conjunctive query itself must AND the two groups, never pool them.
+  const query = buildRegimenConjunctiveIntrQuery(context.regimenComponentTermGroups);
+  assert.ok(query, "2 identifiable components must produce a conjunctive query");
+  assert.match(query, / AND /);
+  assert.match(query, /AREA\[InterventionName\]"Bimagrumab"/);
+  assert.match(query, /AREA\[InterventionName\]"Tirzepatide"/);
 });

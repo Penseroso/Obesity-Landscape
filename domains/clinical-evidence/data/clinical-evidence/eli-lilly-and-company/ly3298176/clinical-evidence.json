@@ -666,268 +666,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
-      "officialTitle": "A Phase 2, Double-Blind, Randomized, Placebo-Controlled Study of Bimagrumab and Tirzepatide, Alone or in Combination, to Investigate the Efficacy and Safety in Adult Participants With Obesity or Overweight Without Type 2 Diabetes",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06643728"
-        }
-      ],
-      "protocolIdentifiers": [
-        "J4Z-MC-GIDF"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06643728",
-        "overallStatus": "active-not-recruiting",
-        "sourceStatus": "Active, not recruiting",
-        "statusUpdatedAt": "2026-05-26"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Participants with obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06643728",
-            "title": "study record (NCT06643728)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
-      "officialTitle": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled, Proof-of-Concept Study of Once-Weekly Tirzepatide Plus Mibavademab Compared With Tirzepatide Alone in Adult Participants With Obesity",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06373146"
-        }
-      ],
-      "protocolIdentifiers": [
-        "I8F-MC-GPIV"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06373146",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-05-06"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Participants with obesity.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06373146",
-            "title": "study record (NCT06373146)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-plaque-psoriasis-obesity",
-      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsO)",
-      "acronym": "TOGETHER-PsO",
-      "studyFamily": "TOGETHER",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06588283"
-        }
-      ],
-      "protocolIdentifiers": [
-        "I1F-MC-RHDC"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06588283",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-06-17"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Open-label",
-        "comparator": "Ixekizumab monotherapy"
-      },
-      "population": "Adults with moderate-to-severe plaque psoriasis and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06588283",
-            "title": "TOGETHER-PsO study record (NCT06588283)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
-      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Active Psoriatic Arthritis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsA)",
-      "acronym": "TOGETHER-PsA",
-      "studyFamily": "TOGETHER",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06588296"
-        }
-      ],
-      "protocolIdentifiers": [
-        "I1F-MC-RHDB"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06588296",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-05-13"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Open-label",
-        "comparator": "Ixekizumab monotherapy"
-      },
-      "population": "Adults with active psoriatic arthritis and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06588296",
-            "title": "TOGETHER-PsA study record (NCT06588296)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
-      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight",
-      "acronym": "COMMIT-UC",
-      "studyFamily": "COMMIT",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06937086"
-        }
-      ],
-      "protocolIdentifiers": [
-        "2024-520209-38-00",
-        "I6T-MC-AMCD"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06937086",
-        "overallStatus": "recruiting",
-        "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-07"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Mirikizumab plus placebo"
-      },
-      "population": "Participants with ulcerative colitis and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06937086",
-            "title": "COMMIT-UC study record (NCT06937086)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
-      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight",
-      "acronym": "COMMIT-CD",
-      "studyFamily": "COMMIT",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06937099"
-        }
-      ],
-      "protocolIdentifiers": [
-        "2024-520210-21-00",
-        "I6T-MC-AMCE"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06937099",
-        "overallStatus": "recruiting",
-        "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-07"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Mirikizumab plus placebo"
-      },
-      "population": "Participants with Crohn's disease and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06937099",
-            "title": "COMMIT-CD study record (NCT06937099)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
     }
   ],
   "arms": [
@@ -1392,282 +1130,6 @@
       "intervention": "Placebo",
       "route": "Subcutaneous",
       "dosingFrequency": "Once weekly"
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-dose-2-tirzepatide-placebo",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part A: Bimagrumab Dose 2 + Tirzepatide Placebo",
-      "intervention": "Bimagrumab plus Tirzepatide Placebo"
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-placebo-tirzepatide-dose-1",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "active comparator",
-      "label": "Part A: Bimagrumab Placebo + Tirzepatide Dose 1",
-      "intervention": "Tirzepatide plus Bimagrumab Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-placebo-tirzepatide-dose-2",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "active comparator",
-      "label": "Part A: Bimagrumab Placebo + Tirzepatide Dose 2",
-      "intervention": "Tirzepatide plus Bimagrumab Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-dose-1-tirzepatide-dose-1",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part A: Bimagrumab Dose 1 + Tirzepatide Dose 1",
-      "intervention": "Bimagrumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-dose-1-tirzepatide-dose-2",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part A: Bimagrumab Dose 1 + Tirzepatide Dose 2",
-      "intervention": "Bimagrumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-dose-2-tirzepatide-dose-2",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part A: Bimagrumab Dose 2 + Tirzepatide Dose 2",
-      "intervention": "Bimagrumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-a-bimagrumab-placebo-tirzepatide-placebo",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "placebo",
-      "label": "Part A: Bimagrumab Placebo + Tirzepatide Placebo",
-      "intervention": "Bimagrumab Placebo plus Tirzepatide Placebo"
-    },
-    {
-      "id": "nct06643728-part-b-bimagrumab-dose-2-no-titration-tirzepatide-dose-1",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part B: Bimagrumab Dose 2 (no titration) + Tirzepatide Dose 1",
-      "intervention": "Bimagrumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-b-bimagrumab-dose-2-fast-titration-tirzepatide-dose-1",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part B: Bimagrumab Dose 2 (fast titration) + Tirzepatide Dose 1",
-      "intervention": "Bimagrumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-b-bimagrumab-dose-2-slow-titration-tirzepatide-dose-1",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part B: Bimagrumab Dose 2 (slow titration) + Tirzepatide Dose 1",
-      "intervention": "Bimagrumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06643728-part-b-bimagrumab-dose-1-tirzepatide-placebo",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "experimental",
-      "label": "Part B: Bimagrumab Dose 1 + Tirzepatide Placebo",
-      "intervention": "Bimagrumab plus Tirzepatide Placebo"
-    },
-    {
-      "id": "nct06643728-part-b-bimagrumab-placebo-tirzepatide-placebo",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "role": "placebo",
-      "label": "Part B: Bimagrumab Placebo + Tirzepatide Placebo",
-      "intervention": "Bimagrumab Placebo plus Tirzepatide Placebo"
-    },
-    {
-      "id": "nct06373146-tirzepatide-tzp-mibavademab-miba-group-a",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "Tirzepatide (TZP) + Mibavademab (MIBA) [Group A]",
-      "intervention": "Tirzepatide plus Mibavademab",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-mibavademab-placebo-miba-pbo-group-b",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + Mibavademab-placebo (MIBA-PBO) [Group B]",
-      "intervention": "Tirzepatide plus Mibavademab-Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-miba-then-tirzepatide-placebo-tzp-pbo-miba-group-c",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + MIBA then Tirzepatide-placebo (TZP-PBO) + MIBA [Group C]",
-      "intervention": "Tirzepatide plus Mibavademab plus Tirzepatide-Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-miba-group-d",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + MIBA [Group D]",
-      "intervention": "Tirzepatide plus Mibavademab",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-miba-pbo-group-e",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + MIBA-PBO [Group E]",
-      "intervention": "Tirzepatide plus Mibavademab-Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-miba-pbo-then-tzp-pbo-miba-group-f",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + MIBA-PBO then TZP-PBO + MIBA [Group F]",
-      "intervention": "Tirzepatide plus Mibavademab plus Tirzepatide-Placebo plus Mibavademab-Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-miba-pbo-then-tzp-miba-group-g",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + MIBA-PBO then TZP + MIBA [Group G]",
-      "intervention": "Tirzepatide plus Mibavademab plus Mibavademab-Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "nct06373146-tzp-miba-pbo-then-tzp-pbo-miba-pbo-group-h",
-      "studyId": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "role": "experimental",
-      "label": "TZP + MIBA-PBO then TZP-PBO + MIBA-PBO [Group H]",
-      "intervention": "Tirzepatide plus Tirzepatide-Placebo plus Mibavademab-Placebo",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "together-pso-ixekizumab",
-      "studyId": "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
-      "role": "experimental",
-      "label": "Ixekizumab",
-      "intervention": "Ixekizumab"
-    },
-    {
-      "id": "together-pso-ixekizumab-and-tirzepatide",
-      "studyId": "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
-      "role": "experimental",
-      "label": "Ixekizumab and Tirzepatide",
-      "intervention": "Ixekizumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "together-psa-ixekizumab",
-      "studyId": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
-      "role": "experimental",
-      "label": "Ixekizumab",
-      "intervention": "Ixekizumab"
-    },
-    {
-      "id": "together-psa-ixekizumab-and-tirzepatide",
-      "studyId": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
-      "role": "experimental",
-      "label": "Ixekizumab and Tirzepatide",
-      "intervention": "Ixekizumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "commit-uc-mirikizumab-tirzepatide",
-      "studyId": "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
-      "role": "experimental",
-      "label": "Mirikizumab + Tirzepatide",
-      "intervention": "Mirikizumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "commit-uc-mirikizumab-placebo",
-      "studyId": "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
-      "role": "experimental",
-      "label": "Mirikizumab + Placebo",
-      "intervention": "Mirikizumab plus Placebo"
-    },
-    {
-      "id": "commit-cd-mirikizumab-tirzepatide",
-      "studyId": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
-      "role": "experimental",
-      "label": "Mirikizumab + Tirzepatide",
-      "intervention": "Mirikizumab plus Tirzepatide",
-      "linkedAsset": {
-        "companyId": "eli-lilly-and-company",
-        "assetId": "ly3298176"
-      }
-    },
-    {
-      "id": "commit-cd-mirikizumab-placebo",
-      "studyId": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
-      "role": "experimental",
-      "label": "Mirikizumab + Placebo",
-      "intervention": "Mirikizumab plus Placebo"
     }
   ],
   "analysisGroups": [],
@@ -3064,149 +2526,395 @@
       "id": "sm3-responder-5-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-5-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 5% body-weight reduction from randomization", "value": "87.5", "numericValue": 87.5, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 5% body-weight reduction from randomization",
+        "value": "87.5",
+        "numericValue": 87.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-5-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-5-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 5% body-weight reduction from randomization", "value": "16.5", "numericValue": 16.5, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 5% body-weight reduction from randomization",
+        "value": "16.5",
+        "numericValue": 16.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-10-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-10-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 10% body-weight reduction from randomization", "value": "76.7", "numericValue": 76.7, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 10% body-weight reduction from randomization",
+        "value": "76.7",
+        "numericValue": 76.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-10-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-10-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 10% body-weight reduction from randomization", "value": "8.9", "numericValue": 8.9, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 10% body-weight reduction from randomization",
+        "value": "8.9",
+        "numericValue": 8.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-15-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-15-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 15% body-weight reduction from randomization", "value": "65.4", "numericValue": 65.4, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 15% body-weight reduction from randomization",
+        "value": "65.4",
+        "numericValue": 65.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-15-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-15-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 15% body-weight reduction from randomization", "value": "4.2", "numericValue": 4.2, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 15% body-weight reduction from randomization",
+        "value": "4.2",
+        "numericValue": 4.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-20-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-20-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 20% body-weight reduction from randomization", "value": "44.7", "numericValue": 44.7, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 20% body-weight reduction from randomization",
+        "value": "44.7",
+        "numericValue": 44.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-responder-20-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-responder-20-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Modified intention-to-treat (overall)",
       "estimand": "Treatment-regimen estimand",
-      "result": {"responderThreshold": "At least 20% body-weight reduction from randomization", "value": "2.2", "numericValue": 2.2, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "responderThreshold": "At least 20% body-weight reduction from randomization",
+        "value": "2.2",
+        "numericValue": 2.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-sae-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-sae-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Safety population (overall)",
-      "result": {"value": "5.9", "numericValue": 5.9, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "value": "5.9",
+        "numericValue": 5.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-sae-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-sae-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Safety population (overall)",
-      "result": {"value": "4.8", "numericValue": 4.8, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "value": "4.8",
+        "numericValue": 4.8,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-nausea-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-nausea-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Safety population (overall)",
-      "result": {"value": "39.7", "numericValue": 39.7, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "value": "39.7",
+        "numericValue": 39.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-nausea-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-nausea-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Safety population (overall)",
-      "result": {"value": "14.0", "numericValue": 14.0, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "value": "14.0",
+        "numericValue": 14,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-vomiting-tirz",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-vomiting-week72",
-      "armIds": ["sm3-tirz"],
+      "armIds": [
+        "sm3-tirz"
+      ],
       "analysisPopulation": "Safety population (overall)",
-      "result": {"value": "18.1", "numericValue": 18.1, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "value": "18.1",
+        "numericValue": 18.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm3-vomiting-placebo",
       "studyId": "eli-lilly-and-company-tirzepatide-surmount-3-nct04657016",
       "endpointId": "sm3-vomiting-week72",
-      "armIds": ["sm3-placebo"],
+      "armIds": [
+        "sm3-placebo"
+      ],
       "analysisPopulation": "Safety population (overall)",
-      "result": {"value": "1.4", "numericValue": 1.4, "unit": "percent", "resultType": "arm-level"},
+      "result": {
+        "value": "1.4",
+        "numericValue": 1.4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
       "maturity": "peer-reviewed publication",
-      "metadata": {"lastVerifiedAt": "2026-07-24", "updatedAt": "2026-07-24", "sources": [{"url": "https://doi.org/10.1038/s41591-023-02597-w", "sourceType": "peer-reviewed publication", "checkedAt": "2026-07-24"}]}
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1038/s41591-023-02597-w",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
     },
     {
       "id": "sm4-weight-tirz",

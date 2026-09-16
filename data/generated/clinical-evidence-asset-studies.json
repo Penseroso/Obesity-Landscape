@@ -45,10 +45,11 @@
       "focalStudyIds": [
         "astrazeneca-azd6234-nct06132841",
         "astrazeneca-azd6234-nct06595238",
-        "astrazeneca-azd6234-nct06851858",
-        "astrazeneca-azd6234-nct06862791"
+        "astrazeneca-azd6234-nct06851858"
       ],
-      "linkedStudyIds": []
+      "linkedStudyIds": [
+        "astrazeneca-azd6234-nct06862791"
+      ]
     },
     {
       "companyId": "astrazeneca",
@@ -99,13 +100,14 @@
         "astrazeneca-pramlintide-nct00112021",
         "astrazeneca-pramlintide-nct00189514",
         "astrazeneca-pramlintide-nct00402077",
-        "astrazeneca-pramlintide-nct00444561",
+        "astrazeneca-pramlintide-nct00444561"
+      ],
+      "linkedStudyIds": [
         "astrazeneca-pramlintide-metreleptin-nct00392925",
         "astrazeneca-pramlintide-metreleptin-nct00673387",
         "astrazeneca-pramlintide-metreleptin-nct00819234",
         "astrazeneca-pramlintide-metreleptin-nct01235741"
-      ],
-      "linkedStudyIds": []
+      ]
     },
     {
       "companyId": "boehringer-ingelheim",
@@ -152,18 +154,18 @@
         "eli-lilly-and-company-tirzepatide-nct06037252",
         "eli-lilly-and-company-tirzepatide-treasure-ckd-nct05536804",
         "eli-lilly-and-company-tirzepatide-surmount-adolescents-2-nct06439277",
-        "eli-lilly-and-company-tirzepatide-surpass-t1d-1-nct06914895",
-        "eli-lilly-and-company-tirzepatide-nct06643728",
-        "eli-lilly-and-company-tirzepatide-nct06373146",
-        "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
-        "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
-        "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
-        "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099"
+        "eli-lilly-and-company-tirzepatide-surpass-t1d-1-nct06914895"
       ],
       "linkedStudyIds": [
         "eli-lilly-and-company-retatrutide-triumph-5-nct06662383",
         "eli-lilly-and-company-eloralintide-nct06345066",
+        "eli-lilly-and-company-tirzepatide-nct06643728",
         "eli-lilly-and-company-eloralintide-nct06603571",
+        "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
+        "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+        "eli-lilly-and-company-tirzepatide-nct06373146",
+        "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
+        "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
         "gan-lee-pharmaceuticals-gzr18-nct06737042"
       ]
     },
@@ -210,11 +212,11 @@
     {
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3532226",
-      "focalStudyIds": [
+      "focalStudyIds": [],
+      "linkedStudyIds": [
         "eli-lilly-and-company-macupatide-nct07215559",
         "eli-lilly-and-company-macupatide-nct07589608"
-      ],
-      "linkedStudyIds": []
+      ]
     },
     {
       "companyId": "eli-lilly-and-company",
@@ -249,10 +251,10 @@
         "eli-lilly-and-company-eloralintide-enlighten-2-nct07282600",
         "eli-lilly-and-company-eloralintide-nct06345066",
         "eli-lilly-and-company-eloralintide-enlighten-4-nct07353931",
-        "eli-lilly-and-company-eloralintide-enlighten-3-nct07369011",
-        "eli-lilly-and-company-eloralintide-nct06603571"
+        "eli-lilly-and-company-eloralintide-enlighten-3-nct07369011"
       ],
       "linkedStudyIds": [
+        "eli-lilly-and-company-eloralintide-nct06603571",
         "eli-lilly-and-company-macupatide-nct07215559",
         "eli-lilly-and-company-macupatide-nct07589608"
       ]
@@ -593,5 +595,80 @@
       "linkedStudyIds": []
     }
   ],
-  "regimens": []
+  "regimens": [
+    {
+      "companyId": "astrazeneca",
+      "regimenId": "astrazeneca-azd9550-azd6234-obesity",
+      "focalStudyIds": [
+        "astrazeneca-azd6234-nct06862791"
+      ]
+    },
+    {
+      "companyId": "astrazeneca",
+      "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
+      "focalStudyIds": [
+        "astrazeneca-pramlintide-metreleptin-nct00392925",
+        "astrazeneca-pramlintide-metreleptin-nct00673387",
+        "astrazeneca-pramlintide-metreleptin-nct00819234",
+        "astrazeneca-pramlintide-metreleptin-nct01235741"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-nct06643728"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-eloralintide-nct06603571"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-plaque-psoriasis-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-together-pso-nct06588283"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-together-psa-nct06588296"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-macupatide-nct07215559",
+        "eli-lilly-and-company-macupatide-nct07589608"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-nct06373146"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099"
+      ]
+    },
+    {
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
+      "focalStudyIds": [
+        "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086"
+      ]
+    }
+  ]
 }

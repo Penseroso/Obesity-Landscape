@@ -1078,64 +1078,6 @@
       }
     },
     {
-      "id": "astrazeneca-azd6234-nct06862791",
-      "companyId": "astrazeneca",
-      "assetId": "azd6234",
-      "regimenId": "astrazeneca-azd9550-azd6234-obesity",
-      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of Co-administration of AZD9550 and AZD6234 in Participants Living With Obesity or Overweight With Co-morbidity (ASCEND)",
-      "acronym": "ASCEND",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06862791"
-        }
-      ],
-      "protocolIdentifiers": [
-        "D8460C00004",
-        "2024-516176-15-00"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06862791",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-06"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Quadruple-blind",
-        "comparator": "Placebo and component monotherapies",
-        "description": "Nine-arm reduced-factorial study of once-weekly AZD9550 and AZD6234 dose combinations, component monotherapies, or corresponding placebos."
-      },
-      "population": "Adults with obesity, or overweight with hypertension, dyslipidemia, or obstructive sleep apnoea, without diabetes.",
-      "populationProfile": {
-        "ageGroup": "adult",
-        "diabetesStatus": "without-type-2-diabetes",
-        "requiresAdditionalCondition": false,
-        "treatmentContext": "initial-treatment"
-      },
-      "overallDuration": "36 weeks of treatment; approximately 47 weeks including screening and follow-up",
-      "metadata": {
-        "lastVerifiedAt": "2026-08-10",
-        "updatedAt": "2026-08-10",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06862791",
-            "title": "ASCEND study record (NCT06862791)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-08-10"
-          },
-          {
-            "url": "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/",
-            "title": "ASCEND AstraZeneca study page",
-            "sourceType": "company trial registry",
-            "checkedAt": "2026-08-10"
-          }
-        ]
-      }
-    },
-    {
       "id": "astrazeneca-cotadutide-nct02548585",
       "companyId": "astrazeneca",
       "assetId": "cotadutide",
@@ -2128,9 +2070,65 @@
       }
     },
     {
+      "id": "astrazeneca-azd6234-nct06862791",
+      "companyId": "astrazeneca",
+      "regimenId": "astrazeneca-azd9550-azd6234-obesity",
+      "officialTitle": "A Phase IIb Randomised, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety and Tolerability of Co-administration of AZD9550 and AZD6234 in Participants Living With Obesity or Overweight With Co-morbidity (ASCEND)",
+      "acronym": "ASCEND",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06862791"
+        }
+      ],
+      "protocolIdentifiers": [
+        "D8460C00004",
+        "2024-516176-15-00"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06862791",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Quadruple-blind",
+        "comparator": "Placebo and component monotherapies",
+        "description": "Nine-arm reduced-factorial study of once-weekly AZD9550 and AZD6234 dose combinations, component monotherapies, or corresponding placebos."
+      },
+      "population": "Adults with obesity, or overweight with hypertension, dyslipidemia, or obstructive sleep apnoea, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment"
+      },
+      "overallDuration": "36 weeks of treatment; approximately 47 weeks including screening and follow-up",
+      "metadata": {
+        "lastVerifiedAt": "2026-08-10",
+        "updatedAt": "2026-08-10",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06862791",
+            "title": "ASCEND study record (NCT06862791)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-08-10"
+          },
+          {
+            "url": "https://www.astrazenecaclinicaltrials.com/study/D8460C00004/",
+            "title": "ASCEND AstraZeneca study page",
+            "sourceType": "company trial registry",
+            "checkedAt": "2026-08-10"
+          }
+        ]
+      }
+    },
+    {
       "id": "astrazeneca-pramlintide-metreleptin-nct00392925",
       "companyId": "astrazeneca",
-      "assetId": "pramlintide",
       "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
       "officialTitle": "A Phase 2A, Randomized, Controlled, Double-Blind, Multicenter Study to Evaluate the Safety, Tolerability, and Effect on Body Weight of Recombinant-Methionyl Human Leptin Administered in Conjunction With Pramlintide in Overweight and Obese Subjects",
       "registryIdentifiers": [
@@ -2178,7 +2176,6 @@
     {
       "id": "astrazeneca-pramlintide-metreleptin-nct00673387",
       "companyId": "astrazeneca",
-      "assetId": "pramlintide",
       "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
       "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Dose-Ranging Study to Examine the Safety, Tolerability, and Effect on Body Weight of Metreleptin Administered in Conjunction With Pramlintide in Obese and Overweight Subjects.",
       "registryIdentifiers": [
@@ -2227,7 +2224,6 @@
     {
       "id": "astrazeneca-pramlintide-metreleptin-nct00819234",
       "companyId": "astrazeneca",
-      "assetId": "pramlintide",
       "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
       "officialTitle": "Extension Study of Protocol DFA102 to Examine the Long-Term Safety, Tolerability, and Effect on Body Weight of Pramlintide Administered in Combination With Metreleptin in Obese and Overweight Subjects",
       "registryIdentifiers": [
@@ -2276,7 +2272,6 @@
     {
       "id": "astrazeneca-pramlintide-metreleptin-nct01235741",
       "companyId": "astrazeneca",
-      "assetId": "pramlintide",
       "regimenId": "astrazeneca-pramlintide-metreleptin-obesity",
       "officialTitle": "A Randomized, Double-Blind, Placebo-Controled, Multicenter Study To Examine The Efficacy And Safety Of Pramlintide+Metreleptin In Obese Subjects Following A Low-Calorie Diet Lead-In",
       "registryIdentifiers": [
@@ -3857,268 +3852,6 @@
       }
     },
     {
-      "id": "eli-lilly-and-company-tirzepatide-nct06643728",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
-      "officialTitle": "A Phase 2, Double-Blind, Randomized, Placebo-Controlled Study of Bimagrumab and Tirzepatide, Alone or in Combination, to Investigate the Efficacy and Safety in Adult Participants With Obesity or Overweight Without Type 2 Diabetes",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06643728"
-        }
-      ],
-      "protocolIdentifiers": [
-        "J4Z-MC-GIDF"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06643728",
-        "overallStatus": "active-not-recruiting",
-        "sourceStatus": "Active, not recruiting",
-        "statusUpdatedAt": "2026-05-26"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Participants with obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06643728",
-            "title": "study record (NCT06643728)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-nct06373146",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
-      "officialTitle": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled, Proof-of-Concept Study of Once-Weekly Tirzepatide Plus Mibavademab Compared With Tirzepatide Alone in Adult Participants With Obesity",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06373146"
-        }
-      ],
-      "protocolIdentifiers": [
-        "I8F-MC-GPIV"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06373146",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-05-06"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Participants with obesity.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06373146",
-            "title": "study record (NCT06373146)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-plaque-psoriasis-obesity",
-      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsO)",
-      "acronym": "TOGETHER-PsO",
-      "studyFamily": "TOGETHER",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06588283"
-        }
-      ],
-      "protocolIdentifiers": [
-        "I1F-MC-RHDC"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06588283",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-06-17"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Open-label",
-        "comparator": "Ixekizumab monotherapy"
-      },
-      "population": "Adults with moderate-to-severe plaque psoriasis and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06588283",
-            "title": "TOGETHER-PsO study record (NCT06588283)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
-      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Active Psoriatic Arthritis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsA)",
-      "acronym": "TOGETHER-PsA",
-      "studyFamily": "TOGETHER",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06588296"
-        }
-      ],
-      "protocolIdentifiers": [
-        "I1F-MC-RHDB"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06588296",
-        "overallStatus": "completed",
-        "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-05-13"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Open-label",
-        "comparator": "Ixekizumab monotherapy"
-      },
-      "population": "Adults with active psoriatic arthritis and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06588296",
-            "title": "TOGETHER-PsA study record (NCT06588296)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
-      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight",
-      "acronym": "COMMIT-UC",
-      "studyFamily": "COMMIT",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06937086"
-        }
-      ],
-      "protocolIdentifiers": [
-        "2024-520209-38-00",
-        "I6T-MC-AMCD"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06937086",
-        "overallStatus": "recruiting",
-        "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-07"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Mirikizumab plus placebo"
-      },
-      "population": "Participants with ulcerative colitis and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06937086",
-            "title": "COMMIT-UC study record (NCT06937086)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3298176",
-      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
-      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight",
-      "acronym": "COMMIT-CD",
-      "studyFamily": "COMMIT",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT06937099"
-        }
-      ],
-      "protocolIdentifiers": [
-        "2024-520210-21-00",
-        "I6T-MC-AMCE"
-      ],
-      "phase": "Phase 3",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT06937099",
-        "overallStatus": "recruiting",
-        "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-07"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Mirikizumab plus placebo"
-      },
-      "population": "Participants with Crohn's disease and obesity or overweight.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT06937099",
-            "title": "COMMIT-CD study record (NCT06937099)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
       "id": "eli-lilly-and-company-mazdutide-nct06124807",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3305677",
@@ -5030,91 +4763,6 @@
       }
     },
     {
-      "id": "eli-lilly-and-company-macupatide-nct07215559",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3532226",
-      "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
-      "officialTitle": "A Phase 2, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Reduction With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight and With Type 2 Diabetes",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT07215559"
-        }
-      ],
-      "protocolIdentifiers": [
-        "J2V-MC-GZLF"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT07215559",
-        "overallStatus": "recruiting",
-        "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07-07"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Participants with obesity or overweight, with or without type 2 diabetes.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT07215559",
-            "title": "study record (NCT07215559)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
-      "id": "eli-lilly-and-company-macupatide-nct07589608",
-      "companyId": "eli-lilly-and-company",
-      "assetId": "ly3532226",
-      "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
-      "officialTitle": "A Phase 2b, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight and Without Type 2 Diabetes",
-      "registryIdentifiers": [
-        {
-          "registry": "ClinicalTrials.gov",
-          "id": "NCT07589608"
-        }
-      ],
-      "protocolIdentifiers": [
-        "W8M-MC-MC01",
-        "W8M-MC-CWMM"
-      ],
-      "phase": "Phase 2",
-      "registryStatus": {
-        "registry": "ClinicalTrials.gov",
-        "registryId": "NCT07589608",
-        "overallStatus": "recruiting",
-        "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-06-24"
-      },
-      "design": {
-        "randomization": "Randomized",
-        "masking": "Double-blind",
-        "comparator": "Placebo"
-      },
-      "population": "Participants with overweight or obesity.",
-      "metadata": {
-        "lastVerifiedAt": "2026-07-14",
-        "updatedAt": "2026-07-14",
-        "sources": [
-          {
-            "url": "https://clinicaltrials.gov/study/NCT07589608",
-            "title": "study record (NCT07589608)",
-            "sourceType": "trial registry",
-            "checkedAt": "2026-07-14"
-          }
-        ]
-      }
-    },
-    {
       "id": "eli-lilly-and-company-brenipatide-nct07476118",
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3537031",
@@ -5522,9 +5170,49 @@
       }
     },
     {
+      "id": "eli-lilly-and-company-tirzepatide-nct06643728",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-bimagrumab-tirzepatide-obesity",
+      "officialTitle": "A Phase 2, Double-Blind, Randomized, Placebo-Controlled Study of Bimagrumab and Tirzepatide, Alone or in Combination, to Investigate the Efficacy and Safety in Adult Participants With Obesity or Overweight Without Type 2 Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06643728"
+        }
+      ],
+      "protocolIdentifiers": [
+        "J4Z-MC-GIDF"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06643728",
+        "overallStatus": "active-not-recruiting",
+        "sourceStatus": "Active, not recruiting",
+        "statusUpdatedAt": "2026-05-26"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Participants with obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06643728",
+            "title": "study record (NCT06643728)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
       "id": "eli-lilly-and-company-eloralintide-nct06603571",
       "companyId": "eli-lilly-and-company",
-      "assetId": "ly3841136",
       "regimenId": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
       "officialTitle": "A Phase 2, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Management With LY3841136 and Tirzepatide, Alone or in Combination, in Adult Participants With Obesity or Overweight With Type 2 Diabetes",
       "registryIdentifiers": [
@@ -5558,6 +5246,304 @@
           {
             "url": "https://clinicaltrials.gov/study/NCT06603571",
             "title": "study record (NCT06603571)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-tirzepatide-together-pso-nct06588283",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-plaque-psoriasis-obesity",
+      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsO)",
+      "acronym": "TOGETHER-PsO",
+      "studyFamily": "TOGETHER",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06588283"
+        }
+      ],
+      "protocolIdentifiers": [
+        "I1F-MC-RHDC"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06588283",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-06-17"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Ixekizumab monotherapy"
+      },
+      "population": "Adults with moderate-to-severe plaque psoriasis and obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06588283",
+            "title": "TOGETHER-PsO study record (NCT06588283)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
+      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Active Psoriatic Arthritis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsA)",
+      "acronym": "TOGETHER-PsA",
+      "studyFamily": "TOGETHER",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06588296"
+        }
+      ],
+      "protocolIdentifiers": [
+        "I1F-MC-RHDB"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06588296",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-05-13"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Ixekizumab monotherapy"
+      },
+      "population": "Adults with active psoriatic arthritis and obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06588296",
+            "title": "TOGETHER-PsA study record (NCT06588296)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-macupatide-nct07215559",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
+      "officialTitle": "A Phase 2, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Reduction With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight and With Type 2 Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07215559"
+        }
+      ],
+      "protocolIdentifiers": [
+        "J2V-MC-GZLF"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07215559",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Participants with obesity or overweight, with or without type 2 diabetes.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07215559",
+            "title": "study record (NCT07215559)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-macupatide-nct07589608",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-macupatide-eloralintide-obesity",
+      "officialTitle": "A Phase 2b, Parallel-Group, Double-Blind, Placebo-Controlled Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight and Without Type 2 Diabetes",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT07589608"
+        }
+      ],
+      "protocolIdentifiers": [
+        "W8M-MC-MC01",
+        "W8M-MC-CWMM"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT07589608",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-06-24"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Participants with overweight or obesity.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT07589608",
+            "title": "study record (NCT07589608)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-tirzepatide-nct06373146",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mibavademab-tirzepatide-obesity",
+      "officialTitle": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled, Proof-of-Concept Study of Once-Weekly Tirzepatide Plus Mibavademab Compared With Tirzepatide Alone in Adult Participants With Obesity",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06373146"
+        }
+      ],
+      "protocolIdentifiers": [
+        "I8F-MC-GPIV"
+      ],
+      "phase": "Phase 2",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06373146",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-05-06"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo"
+      },
+      "population": "Participants with obesity.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06373146",
+            "title": "study record (NCT06373146)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-tirzepatide-commit-cd-nct06937099",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-crohns-disease-obesity",
+      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight",
+      "acronym": "COMMIT-CD",
+      "studyFamily": "COMMIT",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06937099"
+        }
+      ],
+      "protocolIdentifiers": [
+        "2024-520210-21-00",
+        "I6T-MC-AMCE"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06937099",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Mirikizumab plus placebo"
+      },
+      "population": "Participants with Crohn's disease and obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06937099",
+            "title": "COMMIT-CD study record (NCT06937099)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eli-lilly-and-company-tirzepatide-commit-uc-nct06937086",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-mirikizumab-tirzepatide-ulcerative-colitis-obesity",
+      "officialTitle": "A Phase 3b, Randomized, Multicenter, Controlled Study of Mirikizumab and Placebo or Mirikizumab Concomitantly Administered With Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight",
+      "acronym": "COMMIT-UC",
+      "studyFamily": "COMMIT",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06937086"
+        }
+      ],
+      "protocolIdentifiers": [
+        "2024-520209-38-00",
+        "I6T-MC-AMCD"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06937086",
+        "overallStatus": "recruiting",
+        "sourceStatus": "Recruiting",
+        "statusUpdatedAt": "2026-07-07"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Mirikizumab plus placebo"
+      },
+      "population": "Participants with ulcerative colitis and obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06937086",
+            "title": "COMMIT-UC study record (NCT06937086)",
             "sourceType": "trial registry",
             "checkedAt": "2026-07-14"
           }

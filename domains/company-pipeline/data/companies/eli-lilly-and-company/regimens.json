@@ -5,10 +5,21 @@
     "name": "Bimagrumab plus semaglutide for obesity or overweight",
     "mechanismFamilyId": "glp1-plus-activin-receptor-combination",
     "components": [
-      { "assetName": "Bimagrumab", "codeName": "LY3985863", "role": "activin type II receptor antibody" },
-      { "assetName": "Semaglutide", "externalCompanyName": "Novo Nordisk A/S", "role": "GLP-1 receptor agonist" }
+      {
+        "assetName": "Bimagrumab",
+        "codeName": "LY3985863",
+        "role": "activin type II receptor antibody"
+      },
+      {
+        "assetName": "Semaglutide",
+        "externalCompanyName": "Novo Nordisk A/S",
+        "role": "GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Obesity", "Overweight"],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 2",
       "status": "Active",
@@ -18,12 +29,14 @@
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
       "updatedAt": "2026-07-25",
-      "sources": [{
-        "url": "https://clinicaltrials.gov/study/NCT05616013",
-        "title": "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
-        "sourceType": "trial registry",
-        "checkedAt": "2026-07-13"
-      }]
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT05616013",
+          "title": "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-13"
+        }
+      ]
     },
     "scopeClass": "obesity-adjunct"
   },
@@ -33,10 +46,20 @@
     "name": "Bimagrumab plus tirzepatide for obesity or overweight",
     "mechanismFamilyId": "glp1-gip-plus-activin-receptor-combination",
     "components": [
-      { "assetName": "Bimagrumab", "codeName": "LY3985863", "role": "activin type II receptor antibody" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetName": "Bimagrumab",
+        "codeName": "LY3985863",
+        "role": "activin type II receptor antibody"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Obesity", "Overweight"],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 2",
       "status": "Active",
@@ -46,12 +69,14 @@
     "metadata": {
       "lastVerifiedAt": "2026-07-13",
       "updatedAt": "2026-07-25",
-      "sources": [{
-        "url": "https://clinicaltrials.gov/study/NCT06643728",
-        "title": "A Study to Investigate Weight Management With Bimagrumab (LY3985863) and Tirzepatide (LY3298176), Alone or in Combination, in Adults With Obesity or Overweight",
-        "sourceType": "trial registry",
-        "checkedAt": "2026-07-13"
-      }]
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06643728",
+          "title": "A Study to Investigate Weight Management With Bimagrumab (LY3985863) and Tirzepatide (LY3298176), Alone or in Combination, in Adults With Obesity or Overweight",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-13"
+        }
+      ]
     },
     "scopeClass": "obesity-adjunct"
   },
@@ -59,13 +84,21 @@
     "id": "eli-lilly-and-company-macupatide-eloralintide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Macupatide plus eloralintide for obesity or overweight",
-    "focalAssetId": "ly3532226",
     "mechanismFamilyId": "amylin-plus-gip-combination",
     "components": [
-      { "assetId": "ly3532226", "role": "GIP receptor agonist" },
-      { "assetId": "ly3841136", "role": "amylin receptor agonist" }
+      {
+        "assetId": "ly3532226",
+        "role": "GIP receptor agonist"
+      },
+      {
+        "assetId": "ly3841136",
+        "role": "amylin receptor agonist"
+      }
     ],
-    "indications": ["Obesity", "Overweight"],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 2",
       "status": "Active",
@@ -96,13 +129,21 @@
     "id": "eli-lilly-and-company-eloralintide-tirzepatide-obesity",
     "companyId": "eli-lilly-and-company",
     "name": "Eloralintide plus tirzepatide for obesity or overweight",
-    "focalAssetId": "ly3841136",
     "mechanismFamilyId": "amylin-plus-glp1-gip-combination",
     "components": [
-      { "assetId": "ly3841136", "role": "amylin receptor agonist" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetId": "ly3841136",
+        "role": "amylin receptor agonist"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Obesity", "Overweight"],
+    "indications": [
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 2",
       "status": "Active",
@@ -129,10 +170,20 @@
     "name": "Mibavademab plus tirzepatide for obesity",
     "mechanismFamilyId": "glp1-gip-plus-leptin-receptor-combination",
     "components": [
-      { "assetName": "Mibavademab", "codeName": "REGN4461", "externalCompanyName": "Regeneron Pharmaceuticals, Inc.", "role": "leptin receptor agonist antibody" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetName": "Mibavademab",
+        "codeName": "REGN4461",
+        "externalCompanyName": "Regeneron Pharmaceuticals, Inc.",
+        "role": "leptin receptor agonist antibody"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Obesity"],
+    "indications": [
+      "Obesity"
+    ],
     "development": {
       "stage": "Phase 2",
       "status": "Active",
@@ -166,10 +217,21 @@
     "name": "Ixekizumab plus tirzepatide for plaque psoriasis with obesity",
     "mechanismFamilyId": "glp1-gip-plus-il17a-combination",
     "components": [
-      { "assetName": "Ixekizumab", "codeName": "LY2439821", "role": "IL-17A antagonist" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetName": "Ixekizumab",
+        "codeName": "LY2439821",
+        "role": "IL-17A antagonist"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Plaque psoriasis", "Obesity", "Overweight"],
+    "indications": [
+      "Plaque psoriasis",
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 3b",
       "status": "Active",
@@ -179,12 +241,14 @@
     "metadata": {
       "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-31",
-      "sources": [{
-        "url": "https://clinicaltrials.gov/study/NCT06588283",
-        "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight (TOGETHER-PsO)",
-        "sourceType": "trial registry",
-        "checkedAt": "2026-07-31"
-      }]
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06588283",
+          "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Moderate-to-Severe Plaque Psoriasis and Obesity or Overweight (TOGETHER-PsO)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
     },
     "scopeClass": "obesity-treatment"
   },
@@ -194,10 +258,21 @@
     "name": "Ixekizumab plus tirzepatide for psoriatic arthritis with obesity",
     "mechanismFamilyId": "glp1-gip-plus-il17a-combination",
     "components": [
-      { "assetName": "Ixekizumab", "codeName": "LY2439821", "role": "IL-17A antagonist" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetName": "Ixekizumab",
+        "codeName": "LY2439821",
+        "role": "IL-17A antagonist"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Psoriatic arthritis", "Obesity", "Overweight"],
+    "indications": [
+      "Psoriatic arthritis",
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 3b",
       "status": "Active",
@@ -207,12 +282,14 @@
     "metadata": {
       "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-31",
-      "sources": [{
-        "url": "https://clinicaltrials.gov/study/NCT06588296",
-        "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Psoriatic Arthritis and Obesity or Overweight (TOGETHER-PsA)",
-        "sourceType": "trial registry",
-        "checkedAt": "2026-07-31"
-      }]
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06588296",
+          "title": "Ixekizumab Concomitantly Administered With Tirzepatide in Adults With Psoriatic Arthritis and Obesity or Overweight (TOGETHER-PsA)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
     },
     "scopeClass": "obesity-treatment"
   },
@@ -222,10 +299,21 @@
     "name": "Mirikizumab plus tirzepatide for ulcerative colitis with obesity",
     "mechanismFamilyId": "glp1-gip-plus-il23-combination",
     "components": [
-      { "assetName": "Mirikizumab", "codeName": "LY3074828", "role": "IL-23p19 antagonist" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetName": "Mirikizumab",
+        "codeName": "LY3074828",
+        "role": "IL-23p19 antagonist"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Ulcerative colitis", "Obesity", "Overweight"],
+    "indications": [
+      "Ulcerative colitis",
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 3b",
       "status": "Active",
@@ -235,12 +323,14 @@
     "metadata": {
       "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-31",
-      "sources": [{
-        "url": "https://clinicaltrials.gov/study/NCT06937086",
-        "title": "Mirikizumab Administered at the Same Time as Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight (COMMIT-UC)",
-        "sourceType": "trial registry",
-        "checkedAt": "2026-07-31"
-      }]
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06937086",
+          "title": "Mirikizumab Administered at the Same Time as Tirzepatide in Adult Participants With Moderately to Severely Active Ulcerative Colitis and Obesity or Overweight (COMMIT-UC)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
     },
     "scopeClass": "obesity-treatment"
   },
@@ -250,10 +340,21 @@
     "name": "Mirikizumab plus tirzepatide for Crohn's disease with obesity",
     "mechanismFamilyId": "glp1-gip-plus-il23-combination",
     "components": [
-      { "assetName": "Mirikizumab", "codeName": "LY3074828", "role": "IL-23p19 antagonist" },
-      { "assetId": "ly3298176", "role": "GIP and GLP-1 receptor agonist" }
+      {
+        "assetName": "Mirikizumab",
+        "codeName": "LY3074828",
+        "role": "IL-23p19 antagonist"
+      },
+      {
+        "assetId": "ly3298176",
+        "role": "GIP and GLP-1 receptor agonist"
+      }
     ],
-    "indications": ["Crohn's disease", "Obesity", "Overweight"],
+    "indications": [
+      "Crohn's disease",
+      "Obesity",
+      "Overweight"
+    ],
     "development": {
       "stage": "Phase 3b",
       "status": "Active",
@@ -263,12 +364,14 @@
     "metadata": {
       "lastVerifiedAt": "2026-07-31",
       "updatedAt": "2026-07-31",
-      "sources": [{
-        "url": "https://clinicaltrials.gov/study/NCT06937099",
-        "title": "Mirikizumab and Tirzepatide Administered in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight (COMMIT-CD)",
-        "sourceType": "trial registry",
-        "checkedAt": "2026-07-31"
-      }]
+      "sources": [
+        {
+          "url": "https://clinicaltrials.gov/study/NCT06937099",
+          "title": "Mirikizumab and Tirzepatide Administered in Adult Participants With Moderately to Severely Active Crohn's Disease and Obesity or Overweight (COMMIT-CD)",
+          "sourceType": "trial registry",
+          "checkedAt": "2026-07-31"
+        }
+      ]
     },
     "scopeClass": "obesity-treatment"
   }

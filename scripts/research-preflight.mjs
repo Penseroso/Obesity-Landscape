@@ -601,8 +601,9 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
  *       Target is <companyId>/<regimenId>/clinical-evidence.json - the same
  *       directory convention as an asset leaf, keyed by regimenId instead.
  *       Known NCTs and PMIDs are strictly scanned from that regimen's own
- *       Clinical Evidence. A regimen with 2+ internal components additionally
- *       populates `regimenInternalComponentTermGroups` for
+ *       Clinical Evidence. A regimen with 2+ *identifiable* components -
+ *       internal (Program-tracked or not) or external, in any mix -
+ *       additionally populates `regimenComponentTermGroups` for
  *       `probeRegistryDiscovery`'s conjunctive query - see
  *       `buildRegimenConjunctiveIntrQuery`.
  *     When neither is specified (company-wide CE):
@@ -661,7 +662,7 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
   // populated only inside the clinical-evidence/targetRegimenId branch below
   // - declared here so the company-pipeline domain path (which never touches
   // it) still returns a well-defined, empty value.
-  let regimenInternalComponentTermGroups = [];
+  let regimenComponentTermGroups = [];
 
   function scanSources(sources) {
     for (const src of sources ?? []) {
@@ -734,7 +735,7 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       ? allPrograms.filter((p) => p.assetId === targetAssetId || p.id === targetAssetId)
       : targetRegimenId
         // No directly-named Program in a regimen-scoped run; the target
-        // regimen's own internal components are resolved separately below.
+        // regimen's own components are resolved separately below.
         ? []
         : allPrograms;
 
@@ -754,36 +755,68 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       );
       if (regimen) {
         scopedRegimens = [regimen];
-        const internalComponentAssetIds = (regimen.components ?? [])
-          .map((component) => component?.assetId)
-          .filter((assetId) => typeof assetId === "string" && assetId.length > 0);
-        const internalPrograms = allPrograms.filter(
-          (p) => p.companyId === companyId && internalComponentAssetIds.includes(p.assetId),
-        );
 
-        if (internalComponentAssetIds.length === 1) {
-          // A single internal component is an ordinary, unambiguous focal
-          // asset (this is the case that already auto-anchors under the
-          // legacy rule too) - its own terms are safe as flat additive
-          // aliases, and it gets the same partner-aware expansion an
-          // asset-scoped run would, below.
-          scopedPrograms = internalPrograms;
-        } else if (internalComponentAssetIds.length >= 2) {
-          // 2+ internal components - the symmetric multi-internal case
-          // ADR-0075's focalAssetId existed only to patch around, and what
-          // regimen-native anchoring exists to dissolve. Pooling each
-          // component's own strong terms into one flat additive/OR set
-          // would independently match each molecule's own unrelated
-          // monotherapy trials - exactly the contamination ADR-0073's
-          // own-identity/component-search discipline forbids. These never
-          // flow into `assetAliases`; they only feed the conjunctive query
-          // groups consumed by probeRegistryDiscovery.
-          regimenInternalComponentTermGroups = internalComponentAssetIds
-            .map((assetId) => {
-              const program = internalPrograms.find((p) => p.assetId === assetId);
-              return program ? collectRowOwnSearchTerms(program, "program") : [assetId];
-            })
-            .filter((terms) => terms.length > 0);
+        // Every *identifiable* component - not just an internal, Program-
+        // tracked one. A component with no `assetId` (no separate Program
+        // row) but its own `assetName`/`codeName` is just as real a second
+        // molecule as one that happens to have a tracked Program - Lilly's
+        // own `bimagrumab` (LY3985863) has no Program row at all, yet
+        // co-administered-with-tirzepatide is exactly the multi-molecule
+        // case that must never let tirzepatide's own name stand alone as an
+        // unguarded additive alias (it would pull in tirzepatide's entire
+        // monotherapy trial history). The conjunction trigger is the
+        // regimen's own component *composition*, never a count of only the
+        // internal ones.
+        const componentTermGroups = (regimen.components ?? [])
+          .map((component) => {
+            if (typeof component?.assetId === "string" && component.assetId.length > 0) {
+              const program = allPrograms.find(
+                (p) => p.companyId === companyId && p.assetId === component.assetId,
+              );
+              return program
+                ? collectRowOwnSearchTerms(program, "program")
+                : [component.assetId];
+            }
+            // External, or internal-but-untracked (no Program row): the
+            // component's own free-text name/code is the only identity
+            // available, and is exactly as legitimate a conjunction operand
+            // as a tracked Program's own terms.
+            return [component?.assetName, component?.codeName].filter(
+              (term) => typeof term === "string" && term.trim().length > 0,
+            );
+          })
+          .filter((terms) => terms.length > 0);
+
+        if (componentTermGroups.length === 1) {
+          // Exactly one identifiable component: an ordinary, unambiguous
+          // single-target search, with no second molecule to accidentally
+          // pull in - safe as flat additive aliases, same as an asset-scoped
+          // run searching for its one focal asset. When that component is
+          // an internal, Program-tracked one, it also gets the same
+          // partner-aware expansion an asset-scoped run would, below.
+          for (const term of componentTermGroups[0]) assetAliases.add(term);
+          const soleComponentAssetId = (regimen.components ?? [])
+            .map((component) => component?.assetId)
+            .find((assetId) => typeof assetId === "string" && assetId.length > 0);
+          if (soleComponentAssetId) {
+            scopedPrograms = allPrograms.filter(
+              (p) => p.companyId === companyId && p.assetId === soleComponentAssetId,
+            );
+          }
+        } else if (componentTermGroups.length >= 2) {
+          // 2+ identifiable components (internal, untracked-internal, or
+          // external, in any mix) - the case ADR-0075's focalAssetId existed
+          // only to patch around for the storage question, and what
+          // regimen-native anchoring exists to dissolve for the discovery
+          // question. Pooling each component's own strong terms into one
+          // flat additive/OR set would independently match each molecule's
+          // own unrelated monotherapy trials - exactly the contamination
+          // ADR-0073's own-identity/component-search discipline forbids.
+          // These never flow into `assetAliases`; they only feed the
+          // conjunctive query groups consumed by probeRegistryDiscovery.
+          // scopedPrograms stays empty here deliberately, so this case gets
+          // no partner-aware expansion (no live case needs it).
+          regimenComponentTermGroups = componentTermGroups;
         }
       }
     }
@@ -868,10 +901,11 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       }
 
       // Partner-aware discovery expansion only ever applies to the
-      // single-internal-component case above (scopedPrograms carries that
-      // one Program then); a 2+-internal regimen's conjunctive groups are
-      // deliberately not partner-expanded here (no live case needs it -
-      // both of Roche's ZYNERGY components, for example, are Roche's own).
+      // single-identifiable-component case above (scopedPrograms carries
+      // that one Program then, when it is internally tracked); a
+      // 2+-component regimen's conjunctive groups are deliberately not
+      // partner-expanded here (no live case needs it - both of Roche's
+      // ZYNERGY components, for example, are Roche's own).
       Object.assign(
         partnerAwareDiscoveryResult,
         computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, companyDir),
@@ -950,8 +984,8 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     assetAliases: [...assetAliases].filter(Boolean).sort(),
     // Regimen-native conjunctive discovery groups (ADR-0075 follow-up) - see
     // probeRegistryDiscovery. Empty except for a targetRegimenId run whose
-    // regimen has 2+ internal components.
-    regimenInternalComponentTermGroups,
+    // regimen has 2+ identifiable components (internal or external).
+    regimenComponentTermGroups,
     partnerAssetAliases: partnerAwareDiscoveryResult.partnerAssetAliases,
     partnerAliasProvenance: partnerAwareDiscoveryResult.partnerAliasProvenance,
     partnerDiscoveryDiagnostics: partnerAwareDiscoveryResult.partnerDiscoveryDiagnostics,
@@ -1206,13 +1240,19 @@ export async function fetchCtGovStudies(baseUrl, maxPages = 5, fetchFn = fetch) 
 
 /**
  * Regimen-native conjunctive query construction (ADR-0075 follow-up): a
- * 2+-internal-component regimen's own discovery signal is "every internal
+ * regimen with 2+ *identifiable* components - internal (Program-tracked or
+ * not) or external, in any mix - has a discovery signal of "every
  * component's identity co-occurs in the same trial," never "any one of them
- * appears" - the flat, single-term-per-call `query.intr` mechanism every
- * other discovery step in this file uses has no way to express that at all
- * (confirmed directly against this file's own fetch calls: every existing
- * step issues one alias per request, with results unioned across requests -
- * that is inherently an OR across calls, not an AND within one).
+ * appears." An internal component with no Program row (for example Lilly's
+ * own `bimagrumab`/LY3985863, co-administered with tirzepatide, which has no
+ * separate Program row of its own) is just as real a second molecule as one
+ * that happens to be tracked - the trigger is the regimen's own component
+ * composition, never a count of only the Program-tracked ones. The flat,
+ * single-term-per-call `query.intr` mechanism every other discovery step in
+ * this file uses has no way to express a conjunction at all (confirmed
+ * directly against this file's own fetch calls: every existing step issues
+ * one alias per request, with results unioned across requests - that is
+ * inherently an OR across calls, not an AND within one).
  *
  * Built as a single `query.term` value using ClinicalTrials.gov's Essie
  * `AREA[InterventionName]` field-scoped syntax, which documented boolean
@@ -1330,10 +1370,11 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
   }
 
   // 4. Regimen-native conjunctive query (ADR-0075 follow-up): only present
-  // for a targetRegimenId run whose regimen has 2+ internal components -
-  // see buildRegimenConjunctiveIntrQuery and loadCompanyContext.
+  // for a targetRegimenId run whose regimen has 2+ identifiable components
+  // (internal or external, in any mix) - see buildRegimenConjunctiveIntrQuery
+  // and loadCompanyContext.
   const conjunctiveQuery = buildRegimenConjunctiveIntrQuery(
-    context.regimenInternalComponentTermGroups,
+    context.regimenComponentTermGroups,
   );
   if (conjunctiveQuery) {
     const termUrl = `https://clinicaltrials.gov/api/v2/studies?query.term=${encodeURIComponent(conjunctiveQuery)}&pageSize=20&fields=${fields}`;

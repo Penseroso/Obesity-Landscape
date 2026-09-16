@@ -1,0 +1,73 @@
+{
+  "clinicalEvidenceSchemaVersion": "3.1",
+  "companyId": "eli-lilly-and-company",
+  "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
+  "studies": [
+    {
+      "id": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+      "companyId": "eli-lilly-and-company",
+      "regimenId": "eli-lilly-and-company-ixekizumab-tirzepatide-psoriatic-arthritis-obesity",
+      "officialTitle": "Efficacy and Safety of Ixekizumab or Ixekizumab Concomitantly Administered With Tirzepatide in Adult Participants With Active Psoriatic Arthritis and Obesity or Overweight: A Phase 3b, Randomized, Multicenter, Open-Label Study (TOGETHER-PsA)",
+      "acronym": "TOGETHER-PsA",
+      "studyFamily": "TOGETHER",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06588296"
+        }
+      ],
+      "protocolIdentifiers": [
+        "I1F-MC-RHDB"
+      ],
+      "phase": "Phase 3",
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06588296",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed",
+        "statusUpdatedAt": "2026-05-13"
+      },
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Open-label",
+        "comparator": "Ixekizumab monotherapy"
+      },
+      "population": "Adults with active psoriatic arthritis and obesity or overweight.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-14",
+        "updatedAt": "2026-07-14",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06588296",
+            "title": "TOGETHER-PsA study record (NCT06588296)",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-14"
+          }
+        ]
+      }
+    }
+  ],
+  "arms": [
+    {
+      "id": "together-psa-ixekizumab",
+      "studyId": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+      "role": "experimental",
+      "label": "Ixekizumab",
+      "intervention": "Ixekizumab"
+    },
+    {
+      "id": "together-psa-ixekizumab-and-tirzepatide",
+      "studyId": "eli-lilly-and-company-tirzepatide-together-psa-nct06588296",
+      "role": "experimental",
+      "label": "Ixekizumab and Tirzepatide",
+      "intervention": "Ixekizumab plus Tirzepatide",
+      "linkedAsset": {
+        "companyId": "eli-lilly-and-company",
+        "assetId": "ly3298176"
+      }
+    }
+  ],
+  "analysisGroups": [],
+  "endpoints": [],
+  "outcomes": []
+}
