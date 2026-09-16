@@ -16,13 +16,16 @@
           "id": "NCT07284875"
         }
       ],
+      "protocolIdentifiers": [
+        "K9531-3103"
+      ],
       "phase": "Phase 3",
       "registryStatus": {
         "registry": "ClinicalTrials.gov",
         "registryId": "NCT07284875",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-09"
+        "statusUpdatedAt": "2026-09-03"
       },
       "design": {
         "randomization": "Randomized",
@@ -71,13 +74,16 @@
           "id": "NCT07284901"
         }
       ],
+      "protocolIdentifiers": [
+        "K9531-3104"
+      ],
       "phase": "Phase 3",
       "registryStatus": {
         "registry": "ClinicalTrials.gov",
         "registryId": "NCT07284901",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-09"
+        "statusUpdatedAt": "2026-09-03"
       },
       "design": {
         "randomization": "Randomized",
@@ -119,13 +125,16 @@
           "id": "NCT07284979"
         }
       ],
+      "protocolIdentifiers": [
+        "K9531-3107"
+      ],
       "phase": "Phase 3",
       "registryStatus": {
         "registry": "ClinicalTrials.gov",
         "registryId": "NCT07284979",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-09"
+        "statusUpdatedAt": "2026-09-01"
       },
       "design": {
         "randomization": "Randomized",
@@ -166,13 +175,16 @@
           "id": "NCT07458269"
         }
       ],
+      "protocolIdentifiers": [
+        "K9531-2110"
+      ],
       "phase": "Phase 2",
       "registryStatus": {
         "registry": "ClinicalTrials.gov",
         "registryId": "NCT07458269",
         "overallStatus": "active-not-recruiting",
         "sourceStatus": "Active, not recruiting",
-        "statusUpdatedAt": "2026-07"
+        "statusUpdatedAt": "2026-07-15"
       },
       "design": {
         "randomization": "Randomized",

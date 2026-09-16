@@ -25,7 +25,7 @@
         "registryId": "NCT06396429",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2025-07"
+        "statusUpdatedAt": "2025-07-11"
       },
       "design": {
         "randomization": "Randomized",
@@ -83,6 +83,7 @@
         }
       ],
       "protocolIdentifiers": [
+        "HRS9531-203",
         "HRS9531-201-EXT"
       ],
       "phase": "Phase 2",
@@ -91,7 +92,7 @@
         "registryId": "NCT06054698",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2025-07"
+        "statusUpdatedAt": "2026-05-22"
       },
       "design": {
         "randomization": "Randomized",
@@ -150,7 +151,7 @@
         "registryId": "NCT05881837",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2024-08"
+        "statusUpdatedAt": "2025-04-30"
       },
       "design": {
         "randomization": "Randomized",
@@ -193,7 +194,7 @@
         }
       ],
       "protocolIdentifiers": [
-        "HRS9531-304"
+        "HRS9531-308"
       ],
       "phase": "Phase 3",
       "registryStatus": {
@@ -201,7 +202,7 @@
         "registryId": "NCT07285902",
         "overallStatus": "active-not-recruiting",
         "sourceStatus": "Active, not recruiting",
-        "statusUpdatedAt": "2026-06"
+        "statusUpdatedAt": "2026-02-27"
       },
       "design": {
         "randomization": "Randomized",
@@ -217,7 +218,7 @@
         "treatmentContext": "initial-treatment",
         "regionRestriction": "China"
       },
-      "overallDuration": "44 weeks of treatment",
+      "overallDuration": "52 weeks of treatment",
       "metadata": {
         "lastVerifiedAt": "2026-09-16",
         "updatedAt": "2026-09-16",
@@ -244,7 +245,7 @@
         }
       ],
       "protocolIdentifiers": [
-        "HRS9531-112"
+        "HRS9531-111"
       ],
       "phase": "Phase 1",
       "registryStatus": {
@@ -252,7 +253,7 @@
         "registryId": "NCT07559136",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-07"
+        "statusUpdatedAt": "2026-07-31"
       },
       "design": {
         "randomization": "Non-Randomized",
@@ -302,7 +303,7 @@
         "registryId": "NCT06841445",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-02"
+        "statusUpdatedAt": "2026-04-03"
       },
       "design": {
         "randomization": "Randomized",
@@ -361,7 +362,7 @@
         "registryId": "NCT07670884",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-08"
+        "statusUpdatedAt": "2026-08-13"
       },
       "design": {
         "randomization": "Randomized",
@@ -412,7 +413,7 @@
         "registryId": "NCT06595797",
         "overallStatus": "completed",
         "sourceStatus": "Completed",
-        "statusUpdatedAt": "2026-07"
+        "statusUpdatedAt": "2024-09-19"
       },
       "design": {
         "randomization": "Randomized",
@@ -471,7 +472,7 @@
         "registryId": "NCT06974851",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2025-11"
+        "statusUpdatedAt": "2025-11-17"
       },
       "design": {
         "randomization": "Randomized",
@@ -522,7 +523,7 @@
         "registryId": "NCT06994650",
         "overallStatus": "recruiting",
         "sourceStatus": "Recruiting",
-        "statusUpdatedAt": "2026-01"
+        "statusUpdatedAt": "2026-01-26"
       },
       "design": {
         "randomization": "Randomized",
@@ -573,7 +574,7 @@
         "registryId": "NCT07709910",
         "overallStatus": "not-yet-recruiting",
         "sourceStatus": "Not yet recruiting",
-        "statusUpdatedAt": "2026-07"
+        "statusUpdatedAt": "2026-07-17"
       },
       "design": {
         "randomization": "Randomized",
