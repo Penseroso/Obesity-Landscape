@@ -5466,5 +5466,23 @@
         ]
       }
     }
-  ]
+  ],
+  "researchState": {
+    "checkpointVersion": 1,
+    "workflowRevision": "ADR-0070",
+    "discoveryCheckpoint": {
+      "asOf": "2026-09-16",
+      "clinicalTrials": {
+        "foreignStudyDispositions": {
+          "NCT06124807": {
+            "disposition": "CROSS_COMPANY_OWNED",
+            "ownerCompanyId": "eli-lilly-and-company",
+            "ownerAssetId": "ly3305677",
+            "recordedAt": "2026-09-16",
+            "recordedLeadSponsor": "Eli Lilly and Company"
+          }
+        }
+      }
+    }
+  }
 }
