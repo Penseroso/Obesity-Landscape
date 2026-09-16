@@ -619,8 +619,8 @@ function probeMechanismFamilyRegistry() {
 const efficacyPopulationCoverageSnapshot = {
   bodyWeightOutcomeStudies: 92,
   bodyWeightStudiesMissingProfile: 8,
-  evidenceBearingUnits: 39,
-  eligibleUnits: 21,
+  evidenceBearingUnits: 38,
+  eligibleUnits: 20,
   gapUnits: 18,
   gaps: {
     "abbvie/abbv-295/abbvie-abbv-295-subcutaneous-injection":

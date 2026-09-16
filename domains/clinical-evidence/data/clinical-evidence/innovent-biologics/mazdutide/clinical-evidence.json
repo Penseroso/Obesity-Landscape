@@ -600,6 +600,120 @@
           }
         ]
       }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection",
+      "officialTitle": "A Study of Mazdutide in Chinese Adults With Obesity or Overweight",
+      "acronym": "GLORY-1",
+      "studyFamily": "GLORY",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT05607680"
+        }
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group dose-ranging trial conducted in China."
+      },
+      "population": "Chinese adults with obesity, or overweight with at least one weight-related comorbidity, without diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "without-type-2-diabetes",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "48 weeks",
+      "safetySummary": "Gastrointestinal adverse events were the most common and were generally mild to moderate; the safety profile was consistent with the known pharmacology.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT05607680",
+            "title": "GLORY-1 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "title": "Once-Weekly Mazdutide in Chinese Adults with Obesity or Overweight",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2025-06-22",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT05607680",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      }
+    },
+    {
+      "id": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "companyId": "innovent-biologics",
+      "assetId": "mazdutide",
+      "programId": "innovent-biologics-mazdutide-subcutaneous-injection",
+      "officialTitle": "A Study of Mazdutide in Chinese Adults With Obesity",
+      "acronym": "GLORY-2",
+      "studyFamily": "GLORY",
+      "registryIdentifiers": [
+        {
+          "registry": "ClinicalTrials.gov",
+          "id": "NCT06164873"
+        }
+      ],
+      "phase": "Phase 3",
+      "design": {
+        "randomization": "Randomized",
+        "masking": "Double-blind",
+        "comparator": "Placebo",
+        "description": "Parallel-group trial of high-dose mazdutide conducted in China."
+      },
+      "population": "Chinese adults with obesity, with or without type 2 diabetes.",
+      "populationProfile": {
+        "ageGroup": "adult",
+        "diabetesStatus": "mixed",
+        "requiresAdditionalCondition": false,
+        "treatmentContext": "initial-treatment",
+        "regionRestriction": "China"
+      },
+      "overallDuration": "60 weeks",
+      "safetySummary": "Serious adverse events occurred in 7.2% with mazdutide and 5.2% with placebo. Vomiting (53.1% vs 1.3%) and nausea (46.9% vs 3.2%) were more frequent with mazdutide.",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://clinicaltrials.gov/study/NCT06164873",
+            "title": "GLORY-2 study record",
+            "sourceType": "trial registry",
+            "checkedAt": "2026-07-13"
+          },
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "title": "Treatment With 9-mg Mazdutide for Weight Reduction in Chinese Adults With Obesity",
+            "sourceType": "peer-reviewed publication",
+            "publishedAt": "2026-06-07",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      },
+      "registryStatus": {
+        "registry": "ClinicalTrials.gov",
+        "registryId": "NCT06164873",
+        "overallStatus": "completed",
+        "sourceStatus": "Completed"
+      }
     }
   ],
   "arms": [
@@ -1017,6 +1131,73 @@
       "plannedN": 60,
       "analyzedN": 60,
       "titration": "3 mg for 4 weeks; 6 mg for 4 weeks; 9 mg for the remaining 16 weeks"
+    },
+    {
+      "id": "glory1-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "role": "experimental",
+      "label": "Mazdutide 4 mg",
+      "intervention": "Mazdutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "4 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "glory1-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "role": "experimental",
+      "label": "Mazdutide 6 mg",
+      "intervention": "Mazdutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "6 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "glory1-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "48 weeks"
+    },
+    {
+      "id": "glory2-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "role": "experimental",
+      "label": "Mazdutide 9 mg",
+      "intervention": "Mazdutide plus lifestyle intervention",
+      "linkedAsset": {
+        "companyId": "innovent-biologics",
+        "assetId": "mazdutide"
+      },
+      "dose": "9 mg",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "60 weeks"
+    },
+    {
+      "id": "glory2-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "role": "placebo",
+      "label": "Placebo",
+      "intervention": "Matched placebo plus lifestyle intervention",
+      "dose": "Matched placebo",
+      "route": "Subcutaneous",
+      "dosingFrequency": "Once weekly",
+      "treatmentDuration": "60 weeks"
     }
   ],
   "analysisGroups": [],
@@ -1307,6 +1488,141 @@
       "domain": "safety",
       "assessmentTimepoint": "Stage 2, through study",
       "assessmentTimepointWeeks": null
+    },
+    {
+      "id": "glory1-weight-week32",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "glory1-responder5-week32",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Percentage of participants who achieve at least 5% body-weight reduction",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 32",
+      "assessmentTimepointWeeks": 32
+    },
+    {
+      "id": "glory1-weight-week48",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Percentage change from baseline in body weight",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "glory2-weight-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Percentage change from baseline in body weight",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-responder5-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Percentage of participants who achieve at least 5% body-weight reduction",
+      "role": "co-primary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-responder10-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Percentage of participants who achieve at least 10% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-responder15-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Percentage of participants who achieve at least 15% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-responder20-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Percentage of participants who achieve at least 20% body-weight reduction",
+      "role": "secondary",
+      "domain": "body weight",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-sae-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-nausea-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory2-vomiting-week60",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 60",
+      "assessmentTimepointWeeks": 60
+    },
+    {
+      "id": "glory1-sae-week48",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Serious adverse events",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "glory1-nausea-week48",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Nausea",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "glory1-vomiting-week48",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Vomiting",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
+    },
+    {
+      "id": "glory1-ada-week48",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "name": "Anti-drug antibodies",
+      "role": "safety",
+      "domain": "safety",
+      "assessmentTimepoint": "Week 48",
+      "assessmentTimepointWeeks": 48
     }
   ],
   "outcomes": [
@@ -3996,6 +4312,1156 @@
             "sourceType": "peer-reviewed publication",
             "checkedAt": "2026-09-07",
             "publishedAt": "2026-05-08"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-11.00",
+        "numericValue": -11,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-14.01",
+        "numericValue": -14.01,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "0.30",
+        "numericValue": 0.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-16.65",
+        "numericValue": -16.65,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-1.50",
+        "numericValue": -1.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz4-efficacy",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-12.05",
+        "numericValue": -12.05,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-maz6-efficacy",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-14.84",
+        "numericValue": -14.84,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight-placebo-efficacy",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-0.47",
+        "numericValue": -0.47,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight32-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week32",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-10.09",
+        "numericValue": -10.09,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -11.15 to -9.04"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight32-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week32",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "-12.55",
+        "numericValue": -12.55,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -13.64 to -11.45"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-weight32-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-weight-week32",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "0.45",
+        "numericValue": 0.45,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, -0.61 to 1.52"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-responder5-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-responder5-week32",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "73.9",
+        "numericValue": 73.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, 67.8 to 79.9",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-responder5-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-responder5-week32",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "82.0",
+        "numericValue": 82,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, 76.7 to 87.4",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-responder5-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-responder5-week32",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "10.5",
+        "numericValue": 10.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, 6.2 to 14.7",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-23",
+        "updatedAt": "2026-07-23",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-23"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-maz9-efficacy",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-18.55",
+        "numericValue": -18.55,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-weight-placebo-efficacy",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-weight-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Efficacy estimand",
+      "result": {
+        "value": "-3.02",
+        "numericValue": -3.02,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-13",
+        "updatedAt": "2026-07-13",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42251595/",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-13"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-sae-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-sae-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "5.9",
+        "numericValue": 5.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-sae-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-sae-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "4.0",
+        "numericValue": 4,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-sae-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-sae-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "6.3",
+        "numericValue": 6.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-nausea-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-nausea-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "32.5",
+        "numericValue": 32.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-nausea-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-nausea-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "50.5",
+        "numericValue": 50.5,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-nausea-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-nausea-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "5.9",
+        "numericValue": 5.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-vomiting-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-vomiting-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "26.1",
+        "numericValue": 26.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-vomiting-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-vomiting-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "43.1",
+        "numericValue": 43.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-vomiting-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-vomiting-week48",
+      "armIds": [
+        "glory1-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "2.9",
+        "numericValue": 2.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-ada-maz4",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-ada-week48",
+      "armIds": [
+        "glory1-maz4"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "45.0",
+        "numericValue": 45,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory1-ada-maz6",
+      "studyId": "innovent-biologics-mazdutide-glory-1-nct05607680",
+      "endpointId": "glory1-ada-week48",
+      "armIds": [
+        "glory1-maz6"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "43.7",
+        "numericValue": 43.7,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1056/NEJMoa2411528",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder5-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder5-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "84.3",
+        "numericValue": 84.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, 80.0 to 88.5",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder5-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder5-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "33.1",
+        "numericValue": 33.1,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "confidenceInterval": "95% CI, 25.5 to 40.6",
+        "responderThreshold": ">=5%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder10-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder10-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "69.9",
+        "numericValue": 69.9,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder10-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder10-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "14.4",
+        "numericValue": 14.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=10%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder15-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder15-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "57.3",
+        "numericValue": 57.3,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder15-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder15-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "6.5",
+        "numericValue": 6.5,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=15%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder20-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder20-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "42.4",
+        "numericValue": 42.4,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=20%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-responder20-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-responder20-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Full analysis set (overall)",
+      "estimand": "Treatment-policy estimand",
+      "result": {
+        "value": "2.6",
+        "numericValue": 2.6,
+        "unit": "percent",
+        "resultType": "arm-level",
+        "responderThreshold": ">=20%"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-sae-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-sae-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "7.2",
+        "numericValue": 7.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-sae-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-sae-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "5.2",
+        "numericValue": 5.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-nausea-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-nausea-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "46.9",
+        "numericValue": 46.9,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-nausea-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-nausea-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "3.2",
+        "numericValue": 3.2,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-vomiting-maz9",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-vomiting-week60",
+      "armIds": [
+        "glory2-maz9"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "53.1",
+        "numericValue": 53.1,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
+          }
+        ]
+      }
+    },
+    {
+      "id": "glory2-vomiting-placebo",
+      "studyId": "innovent-biologics-mazdutide-glory-2-nct06164873",
+      "endpointId": "glory2-vomiting-week60",
+      "armIds": [
+        "glory2-placebo"
+      ],
+      "analysisPopulation": "Safety population (overall)",
+      "result": {
+        "value": "1.3",
+        "numericValue": 1.3,
+        "unit": "percent",
+        "resultType": "arm-level"
+      },
+      "maturity": "peer-reviewed publication",
+      "metadata": {
+        "lastVerifiedAt": "2026-07-24",
+        "updatedAt": "2026-07-24",
+        "sources": [
+          {
+            "url": "https://doi.org/10.1001/jama.2026.8142",
+            "sourceType": "peer-reviewed publication",
+            "checkedAt": "2026-07-24"
           }
         ]
       }

@@ -171,8 +171,6 @@
       "companyId": "eli-lilly-and-company",
       "assetId": "ly3305677",
       "focalStudyIds": [
-        "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
-        "eli-lilly-and-company-mazdutide-glory-2-nct06164873",
         "eli-lilly-and-company-mazdutide-nct06124807"
       ],
       "linkedStudyIds": []
@@ -300,7 +298,9 @@
         "innovent-biologics-mazdutide-nct06937749",
         "innovent-biologics-mazdutide-nct07767552",
         "innovent-biologics-mazdutide-nct07000955",
-        "innovent-biologics-mazdutide-nct05606913"
+        "innovent-biologics-mazdutide-nct05606913",
+        "innovent-biologics-mazdutide-glory-1-nct05607680",
+        "innovent-biologics-mazdutide-glory-2-nct06164873"
       ],
       "linkedStudyIds": []
     },

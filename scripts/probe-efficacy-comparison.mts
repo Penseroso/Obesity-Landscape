@@ -81,9 +81,9 @@ const armById = new Map(aggregate.arms.map((arm) => [arm.id, arm]));
  * eligibility rule was relaxed or tightened in this refresh.
  */
 const REVIEWED_TOTALS = {
-  eligibleUnits: 21,
+  eligibleUnits: 20,
   gapUnits: 18,
-  totalUnits: 39,
+  totalUnits: 38,
   headToHeadStudies: 12,
   headToHeadGroups: 12,
 };
@@ -306,23 +306,7 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: ["en103-weight-efficacy"],
   },
-  // Duration tie-break (ADR-0068): week 32 (co-primary) and week 48 (secondary)
-  // both carry "Treatment-policy estimand", so once role no longer decides
-  // first, the longer-duration week-48 result wins over the co-primary week-32
-  // result. (Week 32's co-primary endpoints were added from the NEJM
-  // publication by "Fix two primary/co-primary endpoint gaps found in a full
-  // role-coverage sweep"; week 48 remains correctly secondary — role is
-  // unchanged, only its position in the ranking moved.)
-  "asset:eli-lilly-and-company/ly3305677/eli-lilly-and-company-ly3305677-subcutaneous-injection": {
-    familyId: "glp1-glucagon-agonist",
-    studyId: "eli-lilly-and-company-mazdutide-glory-1-nct05607680",
-    endpointId: "glory1-weight-week48",
-    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
-    treatmentOutcomeIds: ["glory1-weight-maz4", "glory1-weight-maz6"],
-    placeboOutcomeIds: ["glory1-weight-placebo"],
-    activeComparatorOutcomeIds: [],
-    betweenArmOutcomeIds: [],
-  },
+
   "asset:boehringer-ingelheim/survodutide/boehringer-ingelheim-survodutide-subcutaneous-injection": {
     familyId: "glp1-glucagon-agonist",
     studyId: "boehringer-ingelheim-survodutide-nct06066515",
@@ -472,17 +456,17 @@ const REVIEWED_EVIDENCE: Record<
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },
+  // Cross-company migration (ADR-0071): GLORY-1 (Phase 3, 48 weeks) migrated from
+  // Eli Lilly to Innovent Biologics, beating Innovent's Phase 2 NCT04904913 on phaseTier.
+  // Duration tie-break (ADR-0068): week 32 (co-primary) and week 48 (secondary)
+  // both carry "Treatment-policy estimand", so the longer-duration week-48 result wins.
   "asset:innovent-biologics/mazdutide/innovent-biologics-mazdutide-subcutaneous-injection": {
     familyId: "glp1-glucagon-agonist",
-    studyId: "innovent-biologics-mazdutide-nct04904913",
-    endpointId: "innovent-biologics-mazdutide-nct04904913-body-weight-week-24",
-    comparisonGroupKey: "arm-level|not reported|",
-    treatmentOutcomeIds: [
-      "innovent-biologics-mazdutide-nct04904913-3mg-body-weight-week-24",
-      "innovent-biologics-mazdutide-nct04904913-4-5mg-body-weight-week-24",
-      "innovent-biologics-mazdutide-nct04904913-6mg-body-weight-week-24",
-    ],
-    placeboOutcomeIds: ["innovent-biologics-mazdutide-nct04904913-placebo-body-weight-week-24"],
+    studyId: "innovent-biologics-mazdutide-glory-1-nct05607680",
+    endpointId: "glory1-weight-week48",
+    comparisonGroupKey: "arm-level|full analysis set(overall)|treatment policy",
+    treatmentOutcomeIds: ["glory1-weight-maz4", "glory1-weight-maz6"],
+    placeboOutcomeIds: ["glory1-weight-placebo"],
     activeComparatorOutcomeIds: [],
     betweenArmOutcomeIds: [],
   },

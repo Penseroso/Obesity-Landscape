@@ -6,16 +6,11 @@ lastCheckedAt: 2026-09-07
 
 # Innovent Biologics Clinical Evidence source-access handover
 
-## GLORY-1 / GLORY-2 / US Phase 2 (NCT06124807) shared registry identity with eli-lilly-and-company/ly3305677
+## GLORY-1 / GLORY-2 (NCT05607680, NCT06164873) and US Phase 2 (NCT06124807) — RESOLVED 2026-09-16
 
 - Company / asset / Studies: Innovent Biologics / mazdutide — NCT05607680 (GLORY-1), NCT06164873 (GLORY-2), NCT06124807 (US Phase 2, 3-6/10/16 mg)
-- Highest-priority known source: https://clinicaltrials.gov/study/NCT05607680, https://clinicaltrials.gov/study/NCT06164873, https://clinicaltrials.gov/study/NCT06124807
-- Access status: `DEFERRED_SCHEMA_CASE`
-- Blocker: all three registry identities are already anchored to `eli-lilly-and-company/ly3305677` (Study ids `eli-lilly-and-company-mazdutide-glory-1-nct05607680`, `eli-lilly-and-company-mazdutide-glory-2-nct06164873`, `eli-lilly-and-company-mazdutide-nct06124807`), the licensor/originator's own development code for the same molecule. A `registry|id` must be globally unique across Studies (Entities and Rows; edge-cases.md "Clinical Evidence: multi-focal or external-asset study anchoring"), and storage ownership stays with the existing anchor by design, not scientific primacy.
-- Confirmed scope: all three are genuine, in-scope obesity Studies with disclosed results (GLORY-1 body-weight results published in NEJM; GLORY-2 and the US Phase 2 have company topline/peer-reviewed data). Result availability is not in doubt.
-- Currently affected scope: the entire canonical Study, its protocol Arms, Endpoints, and Outcomes for all three trials, from the `innovent-biologics/mazdutide` side specifically. The Eli Lilly-side records already carry this evidence.
-- Re-entry condition: represent these three trials under `innovent-biologics/mazdutide` only if the contract adds a shared/multi-focal Study anchor, or another authoritative mapping rule reassigns single ownership (for example, splitting by sponsor-of-record rather than first-claimed identity) without losing the Eli Lilly-side coverage.
-- Last checked: 2026-09-07
+- Resolution: Under ADR-0071 sponsor-resolution cascade, GLORY-1 (NCT05607680) and GLORY-2 (NCT06164873) have Innovent Biologics as registry lead sponsor and match Innovent's `mazdutide` asset anchor. Both trials and their complete arm, endpoint, and outcome hierarchies were migrated to `innovent-biologics/mazdutide` (`innovent-biologics-mazdutide-glory-1-nct05607680` and `innovent-biologics-mazdutide-glory-2-nct06164873`). Eli Lilly's `ly3305677` records `foreignStudyDispositions` under ADR-0074. NCT06124807 has Eli Lilly as lead sponsor and legitimately remains anchored under `eli-lilly-and-company/ly3305677`.
+- Last checked: 2026-09-16
 
 ## DREAMS-2 (NCT05606913) conflicting body-weight and HbA1c figures across secondary sources — RESOLVED 2026-09-07
 
