@@ -1,5 +1,5 @@
 {
-  "projectionSchemaVersion": "2.0",
+  "projectionSchemaVersion": "2.1",
   "assets": [
     {
       "companyId": "abbvie",
@@ -592,5 +592,6 @@
       ],
       "linkedStudyIds": []
     }
-  ]
+  ],
+  "regimens": []
 }

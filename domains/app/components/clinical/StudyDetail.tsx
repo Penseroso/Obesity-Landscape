@@ -220,7 +220,7 @@ function AnalysisGroupCard({ group }: { group: AnalysisGroupView }) {
 export function StudyDetail({ detail }: { detail: StudyDetailView }) {
   const {
     study,
-    asset,
+    focus,
     arms,
     analysisGroups,
     endpointGroups,
@@ -230,13 +230,22 @@ export function StudyDetail({ detail }: { detail: StudyDetailView }) {
   return (
     <div className="space-y-6 pb-10">
       <section className="pt-2">
-        <Link
-          href={`/assets/${asset.companyId}/${asset.assetId}`}
-          className="text-sm font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          <ArrowLeft aria-hidden="true" className="mr-1 inline h-4 w-4" />
-          {asset.assetName}
-        </Link>
+        {focus.kind === "asset" ? (
+          <Link
+            href={`/assets/${focus.asset.companyId}/${focus.asset.assetId}`}
+            className="text-sm font-medium text-primary underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            <ArrowLeft aria-hidden="true" className="mr-1 inline h-4 w-4" />
+            {focus.asset.assetName}
+          </Link>
+        ) : (
+          // Regimens have no detail route today (matches the existing Efficacy
+          // Comparison precedent) — name only, no back-link.
+          <span className="text-sm font-medium text-muted-foreground">
+            <ArrowLeft aria-hidden="true" className="mr-1 inline h-4 w-4" />
+            {focus.regimen.regimenName}
+          </span>
+        )}
         <PageHeading
           className="pt-3"
           title={study.acronym?.trim() || study.officialTitle}

@@ -7,11 +7,15 @@ import {
   clinicalAssetStudyIndex,
   clinicalEndpointsByStudyId,
   clinicalOutcomesByStudyId,
+  clinicalRegimenIndexByKey,
+  clinicalRegimenNameByKey,
   clinicalStudies,
   clinicalStudiesById,
   clinicalStudiesByProgramId,
   companyNameById,
   pipelineAssetKeys,
+  pipelineRegimenKeys,
+  regimenKeyOf,
 } from "@/domains/clinical-evidence/lib/data";
 import {
   canonicalizeClinicalAnalysisPopulation,
@@ -47,6 +51,19 @@ export type ClinicalAssetRef = {
 };
 
 /**
+ * Regimen-native sibling of `ClinicalAssetRef` (ADR-0075 follow-up). A regimen
+ * has no detail route today (mirrors the existing Efficacy Comparison
+ * precedent, `domains/app/lib/efficacy-comparison/read-model.ts`), so this
+ * carries display identity only, never an implied href.
+ */
+export type ClinicalRegimenRef = {
+  companyId: string;
+  regimenId: string;
+  regimenName: string;
+  companyName?: string;
+};
+
+/**
  * Study-intrinsic summary. Deliberately carries NO focal/linked relation: that
  * relationship exists only relative to an asset context, not as a property of
  * the study. Asset-context views express it via array membership instead.
@@ -54,7 +71,8 @@ export type ClinicalAssetRef = {
 export type StudySummaryView = {
   id: string;
   companyId: string;
-  assetId: string;
+  /** Absent for a Regimen-anchored Study (ADR-0075 follow-up) — see `regimenContext`. */
+  assetId?: string;
   officialTitle: string;
   acronym?: string;
   /** Preferred short label: acronym when present, else official title. */
@@ -178,10 +196,19 @@ export type AnalysisGroupView = ClinicalAnalysisGroupRecord & {
   memberArmLabels: string[];
 };
 
+/**
+ * The study's canonical focal entity (back-link target) — asset-shaped for a
+ * Program-anchored Study, regimen-shaped for a Regimen-anchored one (ADR-0075
+ * follow-up). Discriminated rather than one field forced to always resolve to
+ * an asset, since a Regimen-anchored Study has no single owning asset.
+ */
+export type StudyFocusView =
+  | { kind: "asset"; asset: ClinicalAssetRef }
+  | { kind: "regimen"; regimen: ClinicalRegimenRef };
+
 export type StudyDetailView = {
   study: ClinicalStudyRecord;
-  /** The study's canonical focal asset (back-link target). */
-  asset: ClinicalAssetRef;
+  focus: StudyFocusView;
   arms: ArmView[];
   analysisGroups: AnalysisGroupView[];
   endpointGroups: EndpointGroupView[];
@@ -199,6 +226,21 @@ export type AssetStudiesView = {
   focalFamilyGroups: StudyFamilyGroupView[];
   linkedStudies: StudySummaryView[];
   linkedFamilyGroups: StudyFamilyGroupView[];
+};
+
+/**
+ * Regimen-native sibling of `AssetStudiesView` (ADR-0075 follow-up). A regimen
+ * is only ever a Study's focal anchor — nothing reciprocally "links" to a
+ * regimen the way an asset can via `Arm.linkedAsset` — so there is no
+ * `linkedStudies` counterpart here.
+ */
+export type RegimenStudiesView = {
+  companyId: string;
+  regimenId: string;
+  regimenName: string;
+  companyName?: string;
+  focalStudies: StudySummaryView[];
+  focalFamilyGroups: StudyFamilyGroupView[];
 };
 
 /**
@@ -262,6 +304,17 @@ function assetRef(companyId: string, assetId: string): ClinicalAssetRef {
     companyId,
     assetId,
     assetName: clinicalAssetNameByKey.get(key) ?? assetId,
+    companyName: companyNameById.get(companyId),
+  };
+}
+
+/** Regimen-native sibling of `assetRef` (ADR-0075 follow-up). */
+function regimenRef(companyId: string, regimenId: string): ClinicalRegimenRef {
+  const key = regimenKeyOf(companyId, regimenId);
+  return {
+    companyId,
+    regimenId,
+    regimenName: clinicalRegimenNameByKey.get(key) ?? regimenId,
     companyName: companyNameById.get(companyId),
   };
 }
@@ -691,9 +744,17 @@ export function getStudyDetail(studyId: string): StudyDetailView | undefined {
     .filter((entry) => entry.linkedStudyIds.includes(studyId))
     .map((entry) => assetRef(entry.companyId, entry.assetId));
 
+  // Narrows on `!== undefined`, not truthiness — see the note in
+  // `read-model.ts`'s `addStudyToUnits` for why this matters for a
+  // discriminated union with a general `string` field on one side.
+  const focus: StudyFocusView =
+    study.programId !== undefined
+      ? { kind: "asset", asset: assetRef(study.companyId, study.assetId) }
+      : { kind: "regimen", regimen: regimenRef(study.companyId, study.regimenId) };
+
   return {
     study,
-    asset: assetRef(study.companyId, study.assetId),
+    focus,
     arms,
     analysisGroups,
     endpointGroups,
@@ -776,6 +837,64 @@ export function getAssetStudies(
     focalFamilyGroups,
     linkedStudies,
     linkedFamilyGroups,
+  };
+}
+
+/**
+ * Regimen-native sibling of `getAssetStudies` (ADR-0075 follow-up). A regimen
+ * is only ever a focal anchor (no reciprocal "linked" membership — see
+ * `RegimenStudiesView`), so this is simpler than the asset accessor: no
+ * linked-studies list, and no Program-ownership branch, since a regimen-
+ * anchored Study's only possible mapping is the regimen itself.
+ */
+export function getRegimenStudies(
+  companyId: string,
+  regimenId: string,
+): RegimenStudiesView | undefined {
+  const key = regimenKeyOf(companyId, regimenId);
+  const entry = clinicalRegimenIndexByKey.get(key);
+
+  // A valid Company/Pipeline regimen with no clinical evidence yields an empty
+  // view (rendered as an empty state); only a genuinely unknown regimen is 404.
+  if (!entry && !pipelineRegimenKeys.has(key)) {
+    return undefined;
+  }
+
+  const canonicalFocalStudyIds = entry?.focalStudyIds ?? [];
+  const focalStudies = canonicalFocalStudyIds
+    .map((id) => getStudySummary(id))
+    .filter((summary): summary is StudySummaryView => Boolean(summary));
+
+  // Mirrors getAssetStudies's ownership re-assertion: a regimen-index focal
+  // Study must actually carry this exact regimenId, never inferred.
+  for (const summary of focalStudies) {
+    const study = clinicalStudiesById.get(summary.id);
+    if (!study) {
+      throw new Error(
+        `Clinical Evidence focal Study "${summary.id}" is missing for regimen "${companyId}/${regimenId}"`,
+      );
+    }
+    if (study.regimenId !== regimenId) {
+      throw new Error(
+        `Clinical Evidence Study "${study.id}" does not carry regimenId "${regimenId}" for regimen "${companyId}/${regimenId}"`,
+      );
+    }
+  }
+
+  const focalFamilyGroups = toFamilyGroups(focalStudies);
+  assertFamilyPartition(
+    focalFamilyGroups,
+    canonicalFocalStudyIds,
+    `focal studies of regimen "${companyId}/${regimenId}"`,
+  );
+
+  return {
+    companyId,
+    regimenId,
+    regimenName: clinicalRegimenNameByKey.get(key) ?? regimenId,
+    companyName: companyNameById.get(companyId),
+    focalStudies,
+    focalFamilyGroups,
   };
 }
 
@@ -864,5 +983,16 @@ export function listClinicalAssetKeys(): {
   return clinicalAssetStudyIndex.assets.map((entry) => ({
     companyId: entry.companyId,
     assetId: entry.assetId,
+  }));
+}
+
+/** Regimen-native sibling of `listClinicalAssetKeys` (ADR-0075 follow-up). */
+export function listClinicalRegimenKeys(): {
+  companyId: string;
+  regimenId: string;
+}[] {
+  return clinicalAssetStudyIndex.regimens.map((entry) => ({
+    companyId: entry.companyId,
+    regimenId: entry.regimenId,
   }));
 }

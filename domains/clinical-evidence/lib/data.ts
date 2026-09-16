@@ -1,6 +1,6 @@
 import clinicalEvidenceData from "@/data/generated/clinical-evidence.json";
 import clinicalAssetStudyIndexData from "@/data/generated/clinical-evidence-asset-studies.json";
-import { companies, pipelinePrograms } from "@/domains/company-pipeline/lib/data";
+import { companies, pipelinePrograms, regimens } from "@/domains/company-pipeline/lib/data";
 import type {
   ClinicalAnalysisGroupRecord,
   ClinicalArmRecord,
@@ -9,7 +9,10 @@ import type {
   ClinicalEndpointRecord,
   ClinicalEvidenceAggregate,
   ClinicalOutcomeRecord,
+  ClinicalRegimenStudyIndexEntry,
+  ClinicalStudyProgramRecord,
   ClinicalStudyRecord,
+  ClinicalStudyRegimenRecord,
 } from "./types";
 
 /**
@@ -42,6 +45,17 @@ export function assetKeyOf(companyId: string, assetId: string) {
 }
 
 /**
+ * Composite key for the company-scoped regimen identity (Regimen-native
+ * anchoring; ADR-0075 follow-up). Deliberately the same shape as
+ * `assetKeyOf` — asset and regimen keys are never compared against each
+ * other, only looked up within their own map, so sharing a format is a
+ * convenience, not a collision risk in practice.
+ */
+export function regimenKeyOf(companyId: string, regimenId: string) {
+  return `${companyId}|${regimenId}`;
+}
+
+/**
  * Append-only accumulator: each bucket keeps records in the exact order they appear
  * in the generated array, which is how curated source order reaches the read model
  * and the UI. Never sort here — that would discard the authored ordering the
@@ -60,16 +74,31 @@ function groupByStudyId<T extends { studyId: string }>(records: T[]) {
   return map;
 }
 
-function groupStudiesByExplicitMapping(
-  field: "programId" | "regimenId",
-) {
-  const map = new Map<string, ClinicalStudyRecord[]>();
+/**
+ * Groups Studies by an explicit focal mapping, narrowed to the matching union
+ * member (`ClinicalStudyProgramRecord`/`ClinicalStudyRegimenRecord`) rather
+ * than the general `ClinicalStudyRecord` union — narrows on `!== undefined`,
+ * not truthiness, for the same reason noted throughout the app layer: only an
+ * explicit `undefined` comparison narrows a discriminated union correctly.
+ */
+function groupProgramStudies(): Map<string, ClinicalStudyProgramRecord[]> {
+  const map = new Map<string, ClinicalStudyProgramRecord[]>();
   for (const study of clinicalStudies) {
-    const id = study[field];
-    if (!id) continue;
-    const list = map.get(id);
+    if (study.programId === undefined) continue;
+    const list = map.get(study.programId);
     if (list) list.push(study);
-    else map.set(id, [study]);
+    else map.set(study.programId, [study]);
+  }
+  return map;
+}
+
+function groupRegimenStudies(): Map<string, ClinicalStudyRegimenRecord[]> {
+  const map = new Map<string, ClinicalStudyRegimenRecord[]>();
+  for (const study of clinicalStudies) {
+    if (study.regimenId === undefined) continue;
+    const list = map.get(study.regimenId);
+    if (list) list.push(study);
+    else map.set(study.regimenId, [study]);
   }
   return map;
 }
@@ -79,8 +108,8 @@ export const clinicalStudiesById = new Map<string, ClinicalStudyRecord>(
   clinicalStudies.map((study) => [study.id, study]),
 );
 /** Explicit focal mappings only; selectors must never infer these joins. */
-export const clinicalStudiesByProgramId = groupStudiesByExplicitMapping("programId");
-export const clinicalStudiesByRegimenId = groupStudiesByExplicitMapping("regimenId");
+export const clinicalStudiesByProgramId = groupProgramStudies();
+export const clinicalStudiesByRegimenId = groupRegimenStudies();
 export const clinicalArmsByStudyId = groupByStudyId<ClinicalArmRecord>(
   clinicalArms,
 );
@@ -102,6 +131,17 @@ export const clinicalAssetIndexByKey = new Map<
   ]),
 );
 
+/** Regimen-native sibling of `clinicalAssetIndexByKey` (ADR-0075 follow-up). */
+export const clinicalRegimenIndexByKey = new Map<
+  string,
+  ClinicalRegimenStudyIndexEntry
+>(
+  clinicalAssetStudyIndex.regimens.map((entry) => [
+    regimenKeyOf(entry.companyId, entry.regimenId),
+    entry,
+  ]),
+);
+
 // Asset display names + asset existence come from the Company/Pipeline registry,
 // the naming authority; Clinical Evidence records carry only companyId/assetId.
 // This is the single cross-module join site (mirrors companiesById in
@@ -115,6 +155,14 @@ export const clinicalAssetNameByKey = new Map<string, string>(
 
 /** Every valid Company/Pipeline asset key; authority for "does this asset exist". */
 export const pipelineAssetKeys = new Set<string>(clinicalAssetNameByKey.keys());
+
+/** Regimen-native sibling of `clinicalAssetNameByKey` (ADR-0075 follow-up). */
+export const clinicalRegimenNameByKey = new Map<string, string>(
+  regimens.map((regimen) => [regimenKeyOf(regimen.companyId, regimen.id), regimen.name]),
+);
+
+/** Every valid Company/Pipeline regimen key; authority for "does this regimen exist". */
+export const pipelineRegimenKeys = new Set<string>(clinicalRegimenNameByKey.keys());
 
 export const companyNameById = new Map<string, string>(
   companies.map((company) => [company.id, company.name]),

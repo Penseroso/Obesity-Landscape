@@ -63,7 +63,12 @@ export function resolveArmEntity(
   }
 
   if (arm.role === "experimental") {
-    if (study.regimenId) {
+    // Narrows on `!== undefined`, not truthiness: `regimenId` is `string` on
+    // one union member and always exactly `undefined` on the other, and only
+    // an explicit `undefined` comparison narrows correctly in both branches
+    // (a bare truthiness check narrows only the truthy one) — see the same
+    // note in `read-model.ts`'s `addStudyToUnits`.
+    if (study.regimenId !== undefined) {
       return {
         key: `regimen:${study.regimenId}`,
         label: study.regimenId,

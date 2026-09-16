@@ -65,7 +65,8 @@ export type EfficacyBetweenArmValue = EfficacyValue & {
 export type RepresentativeEvidence = {
   studyId: string;
   studyCompanyId: string;
-  studyAssetId: string;
+  /** Absent for a Regimen-anchored Study (ADR-0075 follow-up). */
+  studyAssetId?: string;
   sponsorName?: string;
   studyRegion: string;
   developmentScope?: string;

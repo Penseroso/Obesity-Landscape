@@ -1,7 +1,9 @@
 import {
   getAssetStudies,
+  getRegimenStudies,
   getStudyDetail,
   listClinicalAssetKeys,
+  listClinicalRegimenKeys,
 } from "@/domains/app/lib/clinical-evidence/selectors";
 import type { StudyDetailView } from "@/domains/app/lib/clinical-evidence/selectors";
 import {
@@ -109,12 +111,14 @@ type UnitAccumulator = {
 };
 
 /**
- * Builds the comparison units.
+ * Adds one Study (by summary id) to the accumulating unit map. Split out of
+ * `collectUnits` so both the asset-indexed discovery loop and the
+ * Regimen-native discovery loop (ADR-0075 follow-up) route through identical
+ * unit-assignment logic.
  *
  * A Study belongs to the regimen unit when it carries `regimenId`, and to the asset
  * unit otherwise — the focal asset/regimen split the Clinical Evidence contract
- * already enforces. Without this, a regimen-mapped Study would be counted under the
- * component asset it happens to be stored beneath.
+ * already enforces.
  *
  * A plain asset unit further keys on `study.programId`. The Entities and Rows
  * contract defines `programId` as the stable combination of company, asset, route,
@@ -126,6 +130,73 @@ type UnitAccumulator = {
  * `programId` (unmapped) still groups consistently: every such Study coerces to the
  * same `undefined` key segment. Global-asset-group and regimen units are unaffected
  * — they already carry their own explicit identity.
+ *
+ * Narrows on `study.regimenId !== undefined` rather than truthiness: `regimenId` is
+ * `string` on one union member and always exactly `undefined` on the other, and only
+ * an explicit `undefined` comparison narrows correctly in both branches of a
+ * discriminated union — a bare truthiness check narrows only the truthy branch.
+ */
+function addStudyToUnits(
+  units: Map<string, UnitAccumulator>,
+  detailByStudyId: Map<string, StudyDetailView>,
+  summaryId: string,
+): void {
+  const detail = getStudyDetail(summaryId);
+  if (!detail) return;
+  detailByStudyId.set(summaryId, detail);
+
+  const { study } = detail;
+
+  let key: string;
+  let unitKind: EfficacyUnitKind;
+  let assetId: string | undefined;
+  let programId: string | undefined;
+  let regimenId: string | undefined;
+  let globalAssetGroup: EfficacyGlobalAssetGroup | undefined;
+
+  if (study.regimenId !== undefined) {
+    key = `regimen:${study.regimenId}`;
+    unitKind = "regimen";
+    regimenId = study.regimenId;
+  } else {
+    const globalMembership = getEfficacyGlobalAssetMembership(
+      study.companyId,
+      study.assetId,
+    );
+    if (globalMembership) {
+      key = `global-asset:${globalMembership.group.id}`;
+      unitKind = "global-asset";
+      globalAssetGroup = globalMembership.group;
+    } else {
+      key = `asset:${study.companyId}/${study.assetId}/${study.programId}`;
+      unitKind = "asset";
+      assetId = study.assetId;
+      programId = study.programId;
+    }
+  }
+
+  const existing = units.get(key);
+  if (existing) {
+    existing.studyIds.push(study.id);
+    return;
+  }
+  units.set(key, {
+    unitKind,
+    companyId: study.companyId,
+    assetId,
+    programId,
+    regimenId,
+    globalAssetGroup,
+    studyIds: [study.id],
+  });
+}
+
+/**
+ * Builds the comparison units by discovering every Study through both the
+ * asset-indexed and the Regimen-native (ADR-0075 follow-up) canonical
+ * projections. Both loops are required: a Regimen-anchored Study is not any
+ * asset's focal study once it lives in its own regimen leaf, so relying on
+ * `listClinicalAssetKeys()` alone would silently stop discovering it.
  */
 function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
   const units = new Map<string, UnitAccumulator>();
@@ -133,40 +204,16 @@ function collectUnits(detailByStudyId: Map<string, StudyDetailView>) {
   for (const { companyId, assetId } of listClinicalAssetKeys()) {
     const assetStudies = getAssetStudies(companyId, assetId);
     if (!assetStudies) continue;
-
     for (const summary of assetStudies.focalStudies) {
-      const detail = getStudyDetail(summary.id);
-      if (!detail) continue;
-      detailByStudyId.set(summary.id, detail);
+      addStudyToUnits(units, detailByStudyId, summary.id);
+    }
+  }
 
-      const { study } = detail;
-      const globalMembership = study.regimenId
-        ? undefined
-        : getEfficacyGlobalAssetMembership(study.companyId, study.assetId);
-      const key = study.regimenId
-        ? `regimen:${study.regimenId}`
-        : globalMembership
-          ? `global-asset:${globalMembership.group.id}`
-          : `asset:${study.companyId}/${study.assetId}/${study.programId}`;
-
-      const existing = units.get(key);
-      if (existing) {
-        existing.studyIds.push(study.id);
-        continue;
-      }
-      units.set(key, {
-        unitKind: study.regimenId
-          ? "regimen"
-          : globalMembership
-            ? "global-asset"
-            : "asset",
-        companyId: study.companyId,
-        assetId: study.regimenId ? undefined : study.assetId,
-        programId: study.regimenId || globalMembership ? undefined : study.programId,
-        regimenId: study.regimenId,
-        globalAssetGroup: globalMembership?.group,
-        studyIds: [study.id],
-      });
+  for (const { companyId, regimenId } of listClinicalRegimenKeys()) {
+    const regimenStudies = getRegimenStudies(companyId, regimenId);
+    if (!regimenStudies) continue;
+    for (const summary of regimenStudies.focalStudies) {
+      addStudyToUnits(units, detailByStudyId, summary.id);
     }
   }
 
@@ -317,10 +364,15 @@ function computeEfficacyComparison(): EfficacyComparisonView {
     }
 
     const evidence = selectRepresentative(candidates, detailByStudyId);
-    const evidenceDisplay = getAssetDisplay(
-      evidence.studyCompanyId,
-      evidence.studyAssetId,
-    );
+    // Only a global-asset unit ever reads evidenceDisplay (below); computing
+    // it unconditionally would also stop type-checking once a regimen unit's
+    // representative evidence has no `studyAssetId` at all (ADR-0075
+    // follow-up) — a regimen or plain-asset unit's evidence is never a
+    // global-asset candidate, so `studyAssetId` is always defined here.
+    const evidenceDisplay =
+      unit.unitKind === "global-asset"
+        ? getAssetDisplay(evidence.studyCompanyId, evidence.studyAssetId!)
+        : undefined;
 
     // Chart-only widening target: which asset(s) a registry-linked active
     // comparator arm must resolve to for its evidence to count as this
@@ -352,7 +404,7 @@ function computeEfficacyComparison(): EfficacyComparisonView {
       name: display.name,
       companyName:
         unit.unitKind === "global-asset"
-          ? evidenceDisplay.companyName
+          ? evidenceDisplay!.companyName
           : display.companyName,
       companyId:
         unit.unitKind === "global-asset"
@@ -361,7 +413,7 @@ function computeEfficacyComparison(): EfficacyComparisonView {
       mechanism: display.mechanism,
       href:
         unit.unitKind === "global-asset"
-          ? `/assets/${evidence.studyCompanyId}/${evidence.studyAssetId}`
+          ? `/assets/${evidence.studyCompanyId}/${evidence.studyAssetId!}`
           : href,
       evidence,
       chartDoseSeries,

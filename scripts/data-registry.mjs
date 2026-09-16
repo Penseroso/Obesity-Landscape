@@ -119,7 +119,9 @@ const clinicalEvidenceSchemaVersion = "3.1";
 // regenerated deterministically and may change shape independently of the
 // canonical schema. It therefore carries its own,
 // separately-numbered version field rather than reusing clinicalEvidenceSchemaVersion.
-const clinicalAssetStudyIndexProjectionVersion = "2.0";
+// 2.1 (ADR-0075 follow-up): added the sibling `regimens` array. Additive to
+// the existing `assets` shape, not a breaking restructure.
+const clinicalAssetStudyIndexProjectionVersion = "2.1";
 const clinicalRegistryStatuses = new Set([
   "not-yet-recruiting",
   "recruiting",
@@ -1760,11 +1762,38 @@ function createInternalAssetNameIndex(programs) {
   return index;
 }
 
+// Same-root leaf-key disjointness (ADR-0075 follow-up): asset leaves and
+// regimen leaves both live under <companyId>/<key>/clinical-evidence.json.
+// Nothing else in the schema stops a company's own assetId and regimenId
+// sets from colliding on disk; this is the one place both sets are built
+// together, so it is the one place that can enforce it as a hard invariant
+// rather than leaving the shared-root design to naming convention.
+function assertClinicalLeafKeysDisjoint(programs, regimens) {
+  const assetIdsByCompany = new Map();
+  for (const program of programs) {
+    const ids = assetIdsByCompany.get(program.companyId) ?? new Set();
+    ids.add(program.assetId);
+    assetIdsByCompany.set(program.companyId, ids);
+  }
+
+  for (const regimen of regimens) {
+    const assetIds = assetIdsByCompany.get(regimen.companyId);
+    assert(
+      !assetIds || !assetIds.has(regimen.id),
+      `${regimen.companyId}: regimen id "${regimen.id}" collides with an existing asset id of the same company - asset and regimen leaves share <companyId>/<key>/clinical-evidence.json, so their id spaces must stay disjoint`,
+    );
+  }
+}
+
 function createClinicalReferenceContext(companies, programs, regimens) {
+  assertClinicalLeafKeysDisjoint(programs, regimens);
   return {
     companyIds: new Set(companies.map((company) => company.id)),
     assetKeys: new Set(
       programs.map((program) => `${program.companyId}|${program.assetId}`),
+    ),
+    regimenKeys: new Set(
+      regimens.map((regimen) => `${regimen.companyId}|${regimen.id}`),
     ),
     programById: new Map(programs.map((program) => [program.id, program])),
     regimenById: new Map(regimens.map((regimen) => [regimen.id, regimen])),
@@ -1772,6 +1801,11 @@ function createClinicalReferenceContext(companies, programs, regimens) {
   };
 }
 
+// A leaf folder holds either an asset-anchored or a regimen-native
+// (ADR-0075 follow-up) clinical-evidence.json — the walker enumerates every
+// leaf generically; which kind a given leaf is comes from the file's own
+// declared `assetId` XOR `regimenId`, checked by the caller, not from the
+// folder name alone.
 function getClinicalEvidenceSourceFiles(baseDir) {
   if (!existsSync(baseDir)) {
     return [];
@@ -1780,15 +1814,15 @@ function getClinicalEvidenceSourceFiles(baseDir) {
   const files = [];
   for (const companyFolder of getCompanySourceFolders(baseDir)) {
     const companyPath = path.join(baseDir, companyFolder);
-    const assetFolders = getCompanySourceFolders(companyPath);
+    const leafFolders = getCompanySourceFolders(companyPath);
 
-    for (const assetFolder of assetFolders) {
-      const filePath = path.join(companyPath, assetFolder, "clinical-evidence.json");
+    for (const leafFolder of leafFolders) {
+      const filePath = path.join(companyPath, leafFolder, "clinical-evidence.json");
       if (existsSync(filePath)) {
         files.push({
           filePath,
           companyFolder,
-          assetFolder,
+          leafFolder,
           data: readJson(filePath),
         });
       }
@@ -1824,18 +1858,38 @@ function sortPreservingSourceOrder(records, by) {
 /**
  * Source encounter order is the curated authoring order: the order records
  * appear in their source file, with files traversed by company folder then
- * asset folder ascending. It carries clinical curation an id sort destroys —
+ * leaf folder ascending. It carries clinical curation an id sort destroys —
  * dose-ascending arms, placebo last, numbered trial sequences — so it is
  * authoritative within each grouping boundary. Outcomes group by study only:
  * endpoint grouping is a read-model concern, and outcomes are deliberately not
  * required to be endpoint-contiguous here.
+ *
+ * A Study's grouping key is focal-kind-aware (ADR-0075 follow-up): a
+ * Program-anchored Study groups on its `assetId`, a Regimen-anchored one on
+ * its `regimenId` — never `assetId` unconditionally, which a Regimen-anchored
+ * Study no longer carries at all. Prefixed by kind so an asset id and a
+ * regimen id can never collide as sort keys even though the disjointness
+ * invariant (`createClinicalReferenceContext`) already keeps their underlying
+ * id spaces disjoint. The source-encounter-order tie-break above is
+ * unchanged; only this primary grouping key changed.
  */
+function clinicalStudyFocalSortKey(study) {
+  // Checked on assetId presence, not regimenId presence: a legacy asset-proxy
+  // regimen-anchored Study (ADR-0075, pending migration) still carries both
+  // fields and must still sort by its physical assetId location, exactly as
+  // before this function existed - only a true regimen-native Study (no
+  // assetId at all) uses the new regimen key.
+  return study.assetId !== undefined
+    ? `asset:${study.assetId}`
+    : `regimen:${study.regimenId}`;
+}
+
 function sortClinicalEvidenceAggregate(aggregate) {
   sortPreservingSourceOrder(
     aggregate.studies,
     (a, b) =>
       a.companyId.localeCompare(b.companyId) ||
-      a.assetId.localeCompare(b.assetId),
+      clinicalStudyFocalSortKey(a).localeCompare(clinicalStudyFocalSortKey(b)),
   );
   for (const key of ["arms", "analysisGroups", "endpoints", "outcomes"]) {
     sortPreservingSourceOrder(aggregate[key], (a, b) =>
@@ -1849,7 +1903,7 @@ function readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopes
   const files = getClinicalEvidenceSourceFiles(baseDir);
 
   for (const file of files) {
-    const fileContext = `${context}/${file.companyFolder}/${file.assetFolder}/clinical-evidence.json`;
+    const fileContext = `${context}/${file.companyFolder}/${file.leafFolder}/clinical-evidence.json`;
     const data = file.data;
     assert(isObject(data), `${fileContext}: root must be an object`);
     assert(
@@ -1857,7 +1911,26 @@ function readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopes
       `${fileContext}: clinicalEvidenceSchemaVersion must be "${clinicalEvidenceSchemaVersion}"; this file is not migrated to the current Clinical Evidence schema`,
     );
     assert(data.companyId === file.companyFolder, `${fileContext}: companyId must match folder name`);
-    assert(data.assetId === file.assetFolder, `${fileContext}: assetId must match folder name`);
+
+    // Regimen-native envelope (ADR-0075 follow-up): keyed by `regimenId`
+    // instead of `assetId`, and carries no `assetId` of its own at all.
+    const isRegimenLeaf = data.regimenId !== undefined;
+    if (isRegimenLeaf) {
+      assert(
+        data.assetId === undefined,
+        `${fileContext}: a regimen-native envelope must not also declare assetId`,
+      );
+      assert(
+        data.regimenId === file.leafFolder,
+        `${fileContext}: regimenId must match folder name`,
+      );
+    } else {
+      assert(
+        isNonEmptyString(data.assetId),
+        `${fileContext}: assetId is required (or regimenId, for a regimen-native envelope)`,
+      );
+      assert(data.assetId === file.leafFolder, `${fileContext}: assetId must match folder name`);
+    }
     assert(Array.isArray(data.studies), `${fileContext}: studies must be an array`);
     assert(Array.isArray(data.arms), `${fileContext}: arms must be an array`);
     assert(Array.isArray(data.analysisGroups), `${fileContext}: analysisGroups must be an array`);
@@ -1870,7 +1943,18 @@ function readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopes
 
     for (const study of data.studies) {
       assert(study.companyId === data.companyId, `${fileContext}: study ${study.id} companyId must match file companyId`);
-      assert(study.assetId === data.assetId, `${fileContext}: study ${study.id} assetId must match file assetId`);
+      if (isRegimenLeaf) {
+        assert(
+          study.assetId === undefined,
+          `${fileContext}: study ${study.id} must not carry assetId in a regimen-native envelope`,
+        );
+        assert(
+          study.regimenId === data.regimenId,
+          `${fileContext}: study ${study.id} regimenId must match file regimenId`,
+        );
+      } else {
+        assert(study.assetId === data.assetId, `${fileContext}: study ${study.id} assetId must match file assetId`);
+      }
     }
 
     if (researchStateEnvelopesOut) {
@@ -1883,6 +1967,7 @@ function readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopes
       researchStateEnvelopesOut.push({
         companyId: data.companyId,
         assetId: data.assetId,
+        regimenId: data.regimenId,
         researchState: data.researchState,
         localNctIds,
         fileContext,
@@ -1903,7 +1988,13 @@ function readClinicalEvidenceSourceTree(baseDir, context, researchStateEnvelopes
 // Derived projection (ADR-0037): reciprocal asset -> studies discovery computed from the
 // canonical internal links only. Never authored, no independent identity, and outside the
 // canonical Clinical Evidence contract — it is regenerated deterministically from the aggregate.
-function buildClinicalAssetStudyIndex(aggregate) {
+//
+// `regimens` (ADR-0075 follow-up) adds the regimen-native sibling of this same projection:
+// a regimen-native Study (regimenId set, no assetId at all) is not any asset's focal study,
+// so it needs its own index entry, and its internal component assets need a reciprocal
+// `linkedStudyIds` entry symmetric to the existing Arm.linkedAsset reciprocity below - without
+// it, a regimen-anchored study would be invisible from every one of its own components' pages.
+function buildClinicalAssetStudyIndex(aggregate, regimens = []) {
   const entries = new Map();
 
   const entryFor = (companyId, assetId) => {
@@ -1923,8 +2014,25 @@ function buildClinicalAssetStudyIndex(aggregate) {
     return created;
   };
 
+  const regimenEntries = new Map();
+  const regimenEntryFor = (companyId, regimenId) => {
+    const key = `${companyId}|${regimenId}`;
+    const existing = regimenEntries.get(key);
+    if (existing) {
+      return existing;
+    }
+    const created = { companyId, regimenId, focalStudyIds: new Set() };
+    regimenEntries.set(key, created);
+    return created;
+  };
+  const regimenById = new Map(regimens.map((regimen) => [regimen.id, regimen]));
+
   for (const study of aggregate.studies) {
-    entryFor(study.companyId, study.assetId).focalStudyIds.add(study.id);
+    if (study.regimenId !== undefined && study.assetId === undefined) {
+      regimenEntryFor(study.companyId, study.regimenId).focalStudyIds.add(study.id);
+    } else {
+      entryFor(study.companyId, study.assetId).focalStudyIds.add(study.id);
+    }
   }
 
   const studyById = new Map(aggregate.studies.map((study) => [study.id, study]));
@@ -1941,6 +2049,22 @@ function buildClinicalAssetStudyIndex(aggregate) {
     }
 
     entryFor(linkedAsset.companyId, linkedAsset.assetId).linkedStudyIds.add(study.id);
+  }
+
+  for (const study of aggregate.studies) {
+    if (study.regimenId === undefined || study.assetId !== undefined) {
+      continue;
+    }
+    const regimen = regimenById.get(study.regimenId);
+    if (!regimen) {
+      continue;
+    }
+    for (const component of regimen.components ?? []) {
+      if (!isNonEmptyString(component.assetId)) {
+        continue;
+      }
+      entryFor(study.companyId, component.assetId).linkedStudyIds.add(study.id);
+    }
   }
 
   // Both id arrays are ordered by each study's position in the canonical studies array,
@@ -1971,6 +2095,19 @@ function buildClinicalAssetStudyIndex(aggregate) {
       .sort(
         (a, b) =>
           a.companyId.localeCompare(b.companyId) || a.assetId.localeCompare(b.assetId),
+      ),
+    // Regimen-native sibling of `assets` (ADR-0075 follow-up). A regimen is only ever a
+    // focal anchor - nothing reciprocally "links" to a regimen the way an asset can, so
+    // there is no linkedStudyIds counterpart here.
+    regimens: [...regimenEntries.values()]
+      .map((entry) => ({
+        companyId: entry.companyId,
+        regimenId: entry.regimenId,
+        focalStudyIds: byStudyOrder(entry.focalStudyIds),
+      }))
+      .sort(
+        (a, b) =>
+          a.companyId.localeCompare(b.companyId) || a.regimenId.localeCompare(b.regimenId),
       ),
   };
 }
@@ -2102,14 +2239,9 @@ function validateClinicalStudy(study, context, references) {
   assert(study.hasReportedOutcomes === undefined, `${context}: hasReportedOutcomes is not a valid field; it is derived from Outcome existence`);
   assert(isNonEmptyString(study.id), `${context}: id is required`);
   assert(isNonEmptyString(study.companyId), `${context}: companyId is required`);
-  assert(isNonEmptyString(study.assetId), `${context}: assetId is required`);
   assert(
     references.companyIds.has(study.companyId),
     `${context}: missing companyId reference ${study.companyId}`,
-  );
-  assert(
-    references.assetKeys.has(`${study.companyId}|${study.assetId}`),
-    `${context}: missing asset reference ${study.companyId}/${study.assetId}`,
   );
   assertOptionalNonEmptyString(study.programId, `${context}: programId`);
   assertOptionalNonEmptyString(study.regimenId, `${context}: regimenId`);
@@ -2117,6 +2249,25 @@ function validateClinicalStudy(study, context, references) {
     (study.programId !== undefined) !== (study.regimenId !== undefined),
     `${context}: exactly one of programId or regimenId is required`,
   );
+  // assetId is required for a Program-anchored Study (its storage/registry
+  // identity is its Program's own assetId), and optional for a
+  // Regimen-anchored one: absent means regimen-native anchoring (ADR-0075
+  // follow-up, storage identity is the regimen itself); present means the
+  // legacy asset-proxy shape (ADR-0075), retained only for already-committed
+  // data pending migration to a regimen-native leaf (removed once migration
+  // completes). It is never valid on its own without one of programId or
+  // regimenId, already enforced above.
+  assertOptionalNonEmptyString(study.assetId, `${context}: assetId`);
+  assert(
+    study.programId === undefined || isNonEmptyString(study.assetId),
+    `${context}: assetId is required when programId is set`,
+  );
+  if (study.assetId !== undefined) {
+    assert(
+      references.assetKeys.has(`${study.companyId}|${study.assetId}`),
+      `${context}: missing asset reference ${study.companyId}/${study.assetId}`,
+    );
+  }
 
   if (study.programId !== undefined) {
     const program = references.programById.get(study.programId);
@@ -2129,27 +2280,42 @@ function validateClinicalStudy(study, context, references) {
     const regimen = references.regimenById.get(study.regimenId);
     assert(regimen, `${context}: missing regimenId reference ${study.regimenId}`);
     assert(regimen.companyId === study.companyId, `${context}: regimenId ${study.regimenId} belongs to another company`);
-    const internalComponentAssetIds = (regimen.components ?? [])
-      .filter((component) => isNonEmptyString(component.assetId))
-      .map((component) => component.assetId);
-    assert(
-      internalComponentAssetIds.length > 0,
-      `${context}: regimenId ${study.regimenId} has no internal component asset to anchor Clinical Evidence storage`,
-    );
-    if (internalComponentAssetIds.length === 1) {
-      assert(
-        study.assetId === internalComponentAssetIds[0],
-        `${context}: regimenId ${study.regimenId} has exactly one internal component (${internalComponentAssetIds[0]}); Study.assetId must match it, got ${study.assetId} (assetId ${study.assetId} is not an internal component of regimenId ${study.regimenId})`,
-      );
+
+    if (study.assetId === undefined) {
+      // Regimen-native anchoring (ADR-0075 follow-up): storage/registry
+      // identity is derived directly from the regimen itself. No forced
+      // single-asset choice and no focalAssetId requirement - this is what
+      // dissolves the ambiguity the legacy branch below resolves by fiat.
+      // The enclosing envelope's own regimenId-matches-folder and
+      // regimenKeys-membership checks live in readClinicalEvidenceSourceTree
+      // and createClinicalReferenceContext, not here.
     } else {
+      // Legacy asset-proxy anchoring (ADR-0075): retained only for
+      // already-committed Studies that have not yet migrated to a
+      // regimen-native leaf. Phase 2 (this ADR-0075 follow-up's own
+      // migration) removes this branch once migration completes.
+      const internalComponentAssetIds = (regimen.components ?? [])
+        .filter((component) => isNonEmptyString(component.assetId))
+        .map((component) => component.assetId);
       assert(
-        isNonEmptyString(regimen.focalAssetId),
-        `${context}: regimenId ${study.regimenId} has multiple internal components (${internalComponentAssetIds.join(", ")}) but no focalAssetId defined; Clinical Evidence attribution cannot be determined (DEFERRED_SCHEMA_CASE)`,
+        internalComponentAssetIds.length > 0,
+        `${context}: regimenId ${study.regimenId} has no internal component asset to anchor Clinical Evidence storage`,
       );
-      assert(
-        study.assetId === regimen.focalAssetId,
-        `${context}: regimenId ${study.regimenId} defines focalAssetId ${regimen.focalAssetId}; Study.assetId must match it, got ${study.assetId}`,
-      );
+      if (internalComponentAssetIds.length === 1) {
+        assert(
+          study.assetId === internalComponentAssetIds[0],
+          `${context}: regimenId ${study.regimenId} has exactly one internal component (${internalComponentAssetIds[0]}); Study.assetId must match it, got ${study.assetId} (assetId ${study.assetId} is not an internal component of regimenId ${study.regimenId})`,
+        );
+      } else {
+        assert(
+          isNonEmptyString(regimen.focalAssetId),
+          `${context}: regimenId ${study.regimenId} has multiple internal components (${internalComponentAssetIds.join(", ")}) but no focalAssetId defined; Clinical Evidence attribution cannot be determined (DEFERRED_SCHEMA_CASE)`,
+        );
+        assert(
+          study.assetId === regimen.focalAssetId,
+          `${context}: regimenId ${study.regimenId} defines focalAssetId ${regimen.focalAssetId}; Study.assetId must match it, got ${study.assetId}`,
+        );
+      }
     }
   }
 
@@ -2917,7 +3083,7 @@ function buildCurrentClinicalEvidenceAggregate(companies, programs, regimens) {
 function generateAggregates() {
   const { companies, programs, regimens } = loadValidatedCompanyPipelineAggregates();
   const clinicalEvidence = buildCurrentClinicalEvidenceAggregate(companies, programs, regimens);
-  const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence);
+  const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence, regimens);
 
   mkdirSync(generatedDir, { recursive: true });
   writeJson(path.join(generatedDir, "companies.json"), companies);
@@ -2936,7 +3102,7 @@ function generateAggregates() {
 function generateClinicalEvidenceAggregates() {
   const { companies, programs, regimens } = validateCompanyPipelineManifest();
   const clinicalEvidence = buildCurrentClinicalEvidenceAggregate(companies, programs, regimens);
-  const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence);
+  const clinicalAssetStudyIndex = buildClinicalAssetStudyIndex(clinicalEvidence, regimens);
 
   mkdirSync(generatedDir, { recursive: true });
   writeJson(path.join(generatedDir, "clinical-evidence.json"), clinicalEvidence);
@@ -3048,7 +3214,7 @@ function validateGenerated() {
     createClinicalReferenceContext(companies, programs, regimens),
     "data/generated/clinical-evidence.json",
   );
-  assertClinicalAssetStudyIndexMatches(clinicalEvidence);
+  assertClinicalAssetStudyIndexMatches(clinicalEvidence, regimens);
   console.log(
     `Validated generated aggregate with ${companies.length} company record(s), ${programs.length} program record(s), ${regimens.length} regimen record(s), and ${clinicalEvidence.studies.length} clinical study record(s).`,
   );
@@ -3056,7 +3222,7 @@ function validateGenerated() {
 
 // The reciprocal asset index is a derived projection: it must always equal a deterministic
 // recomputation from the canonical aggregate, never a hand-edited artifact.
-function assertClinicalAssetStudyIndexMatches(clinicalEvidence) {
+function assertClinicalAssetStudyIndexMatches(clinicalEvidence, regimens = []) {
   const indexPath = path.join(generatedDir, "clinical-evidence-asset-studies.json");
   assert(
     existsSync(indexPath),
@@ -3064,7 +3230,7 @@ function assertClinicalAssetStudyIndexMatches(clinicalEvidence) {
   );
   assert(
     JSON.stringify(readJson(indexPath)) ===
-      JSON.stringify(buildClinicalAssetStudyIndex(clinicalEvidence)),
+      JSON.stringify(buildClinicalAssetStudyIndex(clinicalEvidence, regimens)),
     "data/generated/clinical-evidence-asset-studies.json differs from deterministic regeneration",
   );
 }
@@ -3118,7 +3284,7 @@ function validateClinicalEvidenceGenerated() {
     JSON.stringify(actual) === JSON.stringify(expected),
     "data/generated/clinical-evidence.json differs from deterministic regeneration",
   );
-  assertClinicalAssetStudyIndexMatches(actual);
+  assertClinicalAssetStudyIndexMatches(actual, regimens);
   console.log(
     `Validated generated Clinical Evidence aggregate with ${actual.studies.length} study record(s), ${actual.analysisGroups.length} analysis group(s), and the derived reciprocal asset index.`,
   );
@@ -3176,7 +3342,7 @@ function readFixtureReferenceDataset(baseDir, context) {
  * same single sort by canonical `studies`-array position, which is already globally
  * companyId -> assetId -> curated, so a third fixture asset would add no coverage.
  */
-function assertClinicalEvidenceSourceOrderPreserved(aggregate) {
+function assertClinicalEvidenceSourceOrderPreserved(aggregate, regimens = []) {
   const context = "clinical evidence source order";
   const assertSequence = (label, actual, expected) => {
     // A sequence that already reads in ascending id order cannot distinguish curated
@@ -3274,7 +3440,7 @@ function assertClinicalEvidenceSourceOrderPreserved(aggregate) {
     "fixture-outcome-tp-w24-t2d",
   ]);
 
-  const projection = buildClinicalAssetStudyIndex(aggregate);
+  const projection = buildClinicalAssetStudyIndex(aggregate, regimens);
   const entryFor = (assetId) => projection.assets.find((asset) => asset.assetId === assetId);
 
   assertSequence("projection focalStudyIds for fixture-asset", entryFor("fixture-asset").focalStudyIds, [
@@ -3314,7 +3480,7 @@ function validateClinicalEvidenceSyntheticFixtures() {
     "clinical evidence valid fixture must contain at least one analysis group",
   );
 
-  assertClinicalEvidenceSourceOrderPreserved(validAggregate);
+  assertClinicalEvidenceSourceOrderPreserved(validAggregate, validRefs.regimens);
 
   const validAnalysisPopulationProbe = cloneJson(validAggregate.outcomes[0]);
   validAnalysisPopulationProbe.analysisPopulation = "Full analysis set (overall)";

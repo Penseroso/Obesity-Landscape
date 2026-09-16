@@ -125,6 +125,7 @@ export function parseArgs(argv) {
   let command = "all";
   let companyId = null;
   let assetId = null;
+  let regimenId = null;
   let cik = null;
   let domain = null;
   let bootstrap = false;
@@ -143,6 +144,9 @@ export function parseArgs(argv) {
       i += 2;
     } else if (arg === "--asset") {
       assetId = args[i + 1];
+      i += 2;
+    } else if (arg === "--regimen") {
+      regimenId = args[i + 1];
       i += 2;
     } else if (arg === "--domain") {
       domain = args[i + 1];
@@ -203,8 +207,13 @@ export function parseArgs(argv) {
     process.exit(1);
   }
 
-  if (hasCpFlag && assetId) {
-    console.error("Error: Invalid argument combination. '--pipeline' / 'company-pipeline' domain is company-wide and does not support '--asset'. Use '--clinical' / '--ce' with '--asset', or omit '--pipeline' for automatic Clinical Evidence routing with '--asset'.");
+  if (hasCpFlag && (assetId || regimenId)) {
+    console.error("Error: Invalid argument combination. '--pipeline' / 'company-pipeline' domain is company-wide and does not support '--asset' or '--regimen'. Use '--clinical' / '--ce' with '--asset'/'--regimen', or omit '--pipeline' for automatic Clinical Evidence routing.");
+    process.exit(1);
+  }
+
+  if (assetId && regimenId) {
+    console.error("Error: Invalid argument combination. '--asset' and '--regimen' are mutually exclusive scoping targets.");
     process.exit(1);
   }
 
@@ -213,8 +222,8 @@ export function parseArgs(argv) {
     process.exit(1);
   }
 
-  const effectiveDomain = domain || (assetId ? "clinical-evidence" : "company-pipeline");
-  return { command, companyId, assetId, domain: effectiveDomain, cik, bootstrap, advance, ackFilings, ackDeltas, json };
+  const effectiveDomain = domain || (assetId || regimenId ? "clinical-evidence" : "company-pipeline");
+  return { command, companyId, assetId, regimenId, domain: effectiveDomain, cik, bootstrap, advance, ackFilings, ackDeltas, json };
 }
 
 /**
@@ -587,7 +596,16 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
  *     When targetAssetId is specified:
  *       Target is <companyId>/<assetId>/clinical-evidence.json.
  *       Known NCTs and PMIDs are strictly scanned from that asset's Clinical Evidence.
- *     When targetAssetId is omitted (company-wide CE):
+ *     When targetRegimenId is specified (ADR-0075 follow-up, Regimen-native
+ *     anchoring; mutually exclusive with targetAssetId):
+ *       Target is <companyId>/<regimenId>/clinical-evidence.json - the same
+ *       directory convention as an asset leaf, keyed by regimenId instead.
+ *       Known NCTs and PMIDs are strictly scanned from that regimen's own
+ *       Clinical Evidence. A regimen with 2+ internal components additionally
+ *       populates `regimenInternalComponentTermGroups` for
+ *       `probeRegistryDiscovery`'s conjunctive query - see
+ *       `buildRegimenConjunctiveIntrQuery`.
+ *     When neither is specified (company-wide CE):
  *       Target is <companyId>/company-research-state.json.
  *       Known NCTs and PMIDs are aggregated across all CE asset files for that company.
  *     Company/Pipeline source files (company.json) are NEVER touched or written.
@@ -595,11 +613,19 @@ function computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, compa
 export async function loadCompanyContext(companyId, targetAssetId = null, options = null) {
   const companyDir = options?.companyDir ?? COMPANY_DIR;
   const clinicalDir = options?.clinicalDir ?? CLINICAL_DIR;
-  const domain = options?.domain ?? (targetAssetId ? "clinical-evidence" : "company-pipeline");
+  // Regimen-native scoping (ADR-0075 follow-up), mirroring targetAssetId's own
+  // domain-guard pattern below - a discovery run targets exactly one leaf
+  // kind or the whole company, never two at once.
+  const targetRegimenId = options?.targetRegimenId ?? null;
+  const domain =
+    options?.domain ?? (targetAssetId || targetRegimenId ? "clinical-evidence" : "company-pipeline");
   const fetchFn = options?.fetchFn ?? fetch;
 
-  if (domain === "company-pipeline" && targetAssetId) {
-    throw new Error(`Invalid context: domain 'company-pipeline' is company-wide and does not support targetAssetId '${targetAssetId}'`);
+  if (domain === "company-pipeline" && (targetAssetId || targetRegimenId)) {
+    throw new Error(`Invalid context: domain 'company-pipeline' is company-wide and does not support targetAssetId or targetRegimenId '${targetAssetId ?? targetRegimenId}'`);
+  }
+  if (targetAssetId && targetRegimenId) {
+    throw new Error("Invalid context: targetAssetId and targetRegimenId are mutually exclusive scoping targets");
   }
 
   const companyFolderPath = path.join(companyDir, companyId);
@@ -631,6 +657,11 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
   };
   let foreignStudyDispositions = {};
   const focalIdentityKeys = new Set();
+  // Regimen-native conjunctive discovery groups (ADR-0075 follow-up),
+  // populated only inside the clinical-evidence/targetRegimenId branch below
+  // - declared here so the company-pipeline domain path (which never touches
+  // it) still returns a well-defined, empty value.
+  let regimenInternalComponentTermGroups = [];
 
   function scanSources(sources) {
     for (const src of sources ?? []) {
@@ -701,7 +732,11 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     // identical same-asset identity semantics.
     const directPrograms = targetAssetId
       ? allPrograms.filter((p) => p.assetId === targetAssetId || p.id === targetAssetId)
-      : allPrograms;
+      : targetRegimenId
+        // No directly-named Program in a regimen-scoped run; the target
+        // regimen's own internal components are resolved separately below.
+        ? []
+        : allPrograms;
 
     let scopedPrograms = directPrograms;
     let scopedRegimens = [];
@@ -713,6 +748,44 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       const composingPrograms = allPrograms.filter((p) => !directIds.has(p.id) && composesTargetAsset(p));
       scopedPrograms = [...directPrograms, ...composingPrograms];
       scopedRegimens = allRegimens.filter(composesTargetAsset);
+    } else if (targetRegimenId) {
+      const regimen = allRegimens.find(
+        (r) => r.id === targetRegimenId && r.companyId === companyId,
+      );
+      if (regimen) {
+        scopedRegimens = [regimen];
+        const internalComponentAssetIds = (regimen.components ?? [])
+          .map((component) => component?.assetId)
+          .filter((assetId) => typeof assetId === "string" && assetId.length > 0);
+        const internalPrograms = allPrograms.filter(
+          (p) => p.companyId === companyId && internalComponentAssetIds.includes(p.assetId),
+        );
+
+        if (internalComponentAssetIds.length === 1) {
+          // A single internal component is an ordinary, unambiguous focal
+          // asset (this is the case that already auto-anchors under the
+          // legacy rule too) - its own terms are safe as flat additive
+          // aliases, and it gets the same partner-aware expansion an
+          // asset-scoped run would, below.
+          scopedPrograms = internalPrograms;
+        } else if (internalComponentAssetIds.length >= 2) {
+          // 2+ internal components - the symmetric multi-internal case
+          // ADR-0075's focalAssetId existed only to patch around, and what
+          // regimen-native anchoring exists to dissolve. Pooling each
+          // component's own strong terms into one flat additive/OR set
+          // would independently match each molecule's own unrelated
+          // monotherapy trials - exactly the contamination ADR-0073's
+          // own-identity/component-search discipline forbids. These never
+          // flow into `assetAliases`; they only feed the conjunctive query
+          // groups consumed by probeRegistryDiscovery.
+          regimenInternalComponentTermGroups = internalComponentAssetIds
+            .map((assetId) => {
+              const program = internalPrograms.find((p) => p.assetId === assetId);
+              return program ? collectRowOwnSearchTerms(program, "program") : [assetId];
+            })
+            .filter((terms) => terms.length > 0);
+        }
+      }
     }
 
     // A composing row's own name/code (for example a fixed-dose combination's
@@ -764,6 +837,46 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
       // same shared identity authority as the partner-aware expansion above)
       // so probeRegistryDiscovery can re-check condition 5 ("CP identity
       // still sustains the resolution") without a second identity mechanism.
+      foreignStudyDispositions = baseline?.discoveryCheckpoint?.clinicalTrials?.foreignStudyDispositions ?? {};
+      for (const { row, kind } of [
+        ...scopedPrograms.map((row) => ({ row, kind: "program" })),
+        ...scopedRegimens.map((row) => ({ row, kind: "regimen" })),
+      ]) {
+        for (const key of buildRowOwnIdentityKeys(row, kind)) focalIdentityKeys.add(key);
+      }
+    } else if (targetRegimenId) {
+      // 2a'. Regimen-native Clinical Evidence run (ADR-0075 follow-up):
+      // mirrors 2a exactly, just against <companyId>/<regimenId>/ instead of
+      // <companyId>/<assetId>/ - the leaf file has no assetId of its own at
+      // all, so there is no assetId-shaped target here.
+      const targetRegimenCePath = path.join(ceCompanyPath, targetRegimenId, "clinical-evidence.json");
+      targetFile = targetRegimenCePath;
+      targetFileExists = fs.existsSync(targetRegimenCePath);
+
+      if (targetFileExists) {
+        const ceData = JSON.parse(fs.readFileSync(targetRegimenCePath, "utf8"));
+        baseline = ceData.researchState ?? null;
+
+        for (const study of ceData.studies ?? []) {
+          for (const regId of study.registryIdentifiers ?? []) {
+            if (regId.id && /^NCT\d{8}$/i.test(regId.id)) {
+              knownNCTs.add(regId.id.toUpperCase());
+            }
+          }
+          scanSources(study.metadata?.sources);
+        }
+      }
+
+      // Partner-aware discovery expansion only ever applies to the
+      // single-internal-component case above (scopedPrograms carries that
+      // one Program then); a 2+-internal regimen's conjunctive groups are
+      // deliberately not partner-expanded here (no live case needs it -
+      // both of Roche's ZYNERGY components, for example, are Roche's own).
+      Object.assign(
+        partnerAwareDiscoveryResult,
+        computePartnerAwareDiscoveryTerms(scopedPrograms, scopedRegimens, companyDir),
+      );
+
       foreignStudyDispositions = baseline?.discoveryCheckpoint?.clinicalTrials?.foreignStudyDispositions ?? {};
       for (const { row, kind } of [
         ...scopedPrograms.map((row) => ({ row, kind: "program" })),
@@ -828,12 +941,17 @@ export async function loadCompanyContext(companyId, targetAssetId = null, option
     companyName: company.name,
     company,
     targetAssetId,
+    targetRegimenId,
     targetFile,
     targetFileExists,
     baseline,
     knownNCTs: [...knownNCTs].sort(),
     knownPMIDs: [...knownPMIDs].sort(),
     assetAliases: [...assetAliases].filter(Boolean).sort(),
+    // Regimen-native conjunctive discovery groups (ADR-0075 follow-up) - see
+    // probeRegistryDiscovery. Empty except for a targetRegimenId run whose
+    // regimen has 2+ internal components.
+    regimenInternalComponentTermGroups,
     partnerAssetAliases: partnerAwareDiscoveryResult.partnerAssetAliases,
     partnerAliasProvenance: partnerAwareDiscoveryResult.partnerAliasProvenance,
     partnerDiscoveryDiagnostics: partnerAwareDiscoveryResult.partnerDiscoveryDiagnostics,
@@ -1087,6 +1205,45 @@ export async function fetchCtGovStudies(baseUrl, maxPages = 5, fetchFn = fetch) 
 }
 
 /**
+ * Regimen-native conjunctive query construction (ADR-0075 follow-up): a
+ * 2+-internal-component regimen's own discovery signal is "every internal
+ * component's identity co-occurs in the same trial," never "any one of them
+ * appears" - the flat, single-term-per-call `query.intr` mechanism every
+ * other discovery step in this file uses has no way to express that at all
+ * (confirmed directly against this file's own fetch calls: every existing
+ * step issues one alias per request, with results unioned across requests -
+ * that is inherently an OR across calls, not an AND within one).
+ *
+ * Built as a single `query.term` value using ClinicalTrials.gov's Essie
+ * `AREA[InterventionName]` field-scoped syntax, which documented boolean
+ * support (AND/OR, and parenthesised grouping) covers, rather than gambling
+ * on undocumented boolean behavior inside `query.intr` itself: one
+ * parenthesised `OR` group per component (covering that component's own
+ * synonym variants), the groups joined by `AND`. Terms are double-quoted so
+ * a multi-word code name is matched as a phrase, not tokenized apart.
+ *
+ * Returns null when fewer than 2 non-empty term groups are available - a
+ * conjunction of one group, or zero, is not a conjunction at all, and the
+ * caller must not fall back to searching a lone group as if it were safe to
+ * treat as a standalone additive alias (that decision belongs upstream, in
+ * `loadCompanyContext`, which only ever populates this for the 2+ case).
+ */
+export function buildRegimenConjunctiveIntrQuery(termGroups) {
+  const clauses = (termGroups ?? [])
+    .map((group) => (group ?? []).filter((term) => typeof term === "string" && term.trim().length > 0))
+    .filter((group) => group.length > 0)
+    .map((group) => {
+      const orClause = group.map((term) => `AREA[InterventionName]"${term}"`).join(" OR ");
+      return group.length > 1 ? `(${orClause})` : orClause;
+    });
+
+  if (clauses.length < 2) {
+    return null;
+  }
+  return clauses.join(" AND ");
+}
+
+/**
  * PROBE 2: Registry Discovery Probe (Company/Asset search to discover brand-new NCTs)
  * Maintains independent hasDelta, hasError, and hasIncomplete.
  */
@@ -1097,8 +1254,9 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
   let truncated = false;
   let hasIncomplete = false;
 
-  // 1. Query sponsor with pagination (only if not scoped to a specific asset)
-  if (!context.targetAssetId && context.companyName) {
+  // 1. Query sponsor with pagination (only if not scoped to a specific asset
+  // or regimen)
+  if (!context.targetAssetId && !context.targetRegimenId && context.companyName) {
     const sponsorUrl = `https://clinicaltrials.gov/api/v2/studies?query.spons=${encodeURIComponent(context.companyName)}&pageSize=50&fields=${fields}`;
     const sponsorRes = await fetchCtGovStudies(sponsorUrl, 5, fetchFn);
     if (sponsorRes.hasError) hasError = true;
@@ -1166,6 +1324,33 @@ export async function probeRegistryDiscovery(context, fetchFn = fetch) {
           lastUpdatePostDate: study.protocolSection?.statusModule?.lastUpdatePostDateStruct?.date ?? null,
           matchedOn: `partner-intervention: ${alias} (via ${counterpartLabel})`,
           discoveryPath: "partner",
+        });
+      }
+    }
+  }
+
+  // 4. Regimen-native conjunctive query (ADR-0075 follow-up): only present
+  // for a targetRegimenId run whose regimen has 2+ internal components -
+  // see buildRegimenConjunctiveIntrQuery and loadCompanyContext.
+  const conjunctiveQuery = buildRegimenConjunctiveIntrQuery(
+    context.regimenInternalComponentTermGroups,
+  );
+  if (conjunctiveQuery) {
+    const termUrl = `https://clinicaltrials.gov/api/v2/studies?query.term=${encodeURIComponent(conjunctiveQuery)}&pageSize=20&fields=${fields}`;
+    const conjunctiveRes = await fetchCtGovStudies(termUrl, 3, fetchFn);
+    if (conjunctiveRes.hasError) hasError = true;
+    if (conjunctiveRes.truncated) truncated = true;
+
+    for (const study of conjunctiveRes.studies) {
+      const id = study.protocolSection?.identificationModule?.nctId;
+      if (id && !candidateNCTs.has(id)) {
+        candidateNCTs.set(id, {
+          nctId: id,
+          briefTitle: study.protocolSection?.identificationModule?.briefTitle ?? "",
+          overallStatus: study.protocolSection?.statusModule?.overallStatus ?? "UNKNOWN",
+          lastUpdatePostDate: study.protocolSection?.statusModule?.lastUpdatePostDateStruct?.date ?? null,
+          matchedOn: `regimen-conjunctive: ${conjunctiveQuery}`,
+          discoveryPath: "focal",
         });
       }
     }
@@ -1820,11 +2005,18 @@ export function canAdvanceCheckpoint(context, updateRes, discRes, healthRes, lit
     };
   }
 
-  // 1. Asset-scoped target validity check
+  // 1. Asset- or regimen-scoped target validity check (ADR-0075 follow-up
+  // for the regimen-native case, mirroring the asset one exactly).
   if (context.targetAssetId && !context.targetFileExists) {
     return {
       allowed: false,
       reason: `Checkpoint write blocked: ASSET_CANONICAL_TARGET_MISSING. Clinical evidence canonical target missing at ${context.targetFile}. Create canonical clinical-evidence.json before bootstrapping asset checkpoint.`,
+    };
+  }
+  if (context.targetRegimenId && !context.targetFileExists) {
+    return {
+      allowed: false,
+      reason: `Checkpoint write blocked: REGIMEN_CANONICAL_TARGET_MISSING. Clinical evidence canonical target missing at ${context.targetFile}. Create canonical clinical-evidence.json before bootstrapping regimen checkpoint.`,
     };
   }
 
@@ -2006,7 +2198,12 @@ export function saveBaselineCheckpoint(context, updateRes, discRes, healthRes, s
     }
   } else {
     fs.mkdirSync(path.dirname(targetPath), { recursive: true });
-    if (context.domain === "clinical-evidence" && !context.targetAssetId) {
+    // Only a genuinely company-scoped run auto-creates its envelope shell
+    // (company-research-state.json). A missing asset or regimen target is
+    // never auto-created here - canAdvanceCheckpoint already blocks the
+    // write entirely in that case (ASSET_/REGIMEN_CANONICAL_TARGET_MISSING);
+    // this stays an explicit double-check, not a second source of truth.
+    if (context.domain === "clinical-evidence" && !context.targetAssetId && !context.targetRegimenId) {
       existingJson = {
         companyId: context.companyId,
       };
@@ -2030,7 +2227,7 @@ export function printReport(context, updateRes, discRes, healthRes, litDiscRes, 
   const domainBadge = context.domain === "clinical-evidence" ? "[CLINICAL-EVIDENCE]" : "[COMPANY-PIPELINE]";
 
   console.log("================================================================================");
-  console.log(` RESEARCH PREFLIGHT REPORT: ${context.companyId}${context.targetAssetId ? ` (Asset: ${context.targetAssetId})` : ""} ${domainBadge}`);
+  console.log(` RESEARCH PREFLIGHT REPORT: ${context.companyId}${context.targetAssetId ? ` (Asset: ${context.targetAssetId})` : ""}${context.targetRegimenId ? ` (Regimen: ${context.targetRegimenId})` : ""} ${domainBadge}`);
   console.log(` Target File : ${path.relative(ROOT, context.targetFile)}`);
   console.log(` Baseline    : ${hasBaseline ? `ESTABLISHED (asOf ${baselineDate})` : "LEGACY UNBASELINED"}`);
   if (evalResult) {
@@ -2229,6 +2426,7 @@ export async function main() {
     command,
     companyId,
     assetId,
+    regimenId,
     domain,
     cik,
     bootstrap,
@@ -2243,7 +2441,7 @@ export async function main() {
     process.exit(1);
   }
 
-  const context = await loadCompanyContext(companyId, assetId, { domain });
+  const context = await loadCompanyContext(companyId, assetId, { domain, targetRegimenId: regimenId });
 
   let updateRes = null;
   let discRes = null;

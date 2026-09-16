@@ -146,16 +146,22 @@ under research:
    a disclosed legal subsidiary or affiliate name that resolves to its
    tracked parent.
 3. Confirm the resolved company's own Company/Pipeline manifest carries a
-   matching asset/program anchor for this molecule. This step is what keeps
-   an investigator- or academic-sponsored study, or a similarly named but
-   unrelated company, from being mistaken for the developer of record.
+   matching asset, program, **or regimen anchor** for this molecule (a
+   Regimen-native anchor, ADR-0075 follow-up, is an equally valid outcome of
+   this check — this step only confirms the company's manifest recognizes
+   the molecule under *some* focal entity, not specifically an asset). This
+   step is what keeps an investigator- or academic-sponsored study, or a
+   similarly named but unrelated company, from being mistaken for the
+   developer of record.
 4. When steps 1–3 all resolve cleanly, that `companyId` is the canonical
    anchor: author the Study there, even when it differs from the company
-   currently under research.
+   currently under research. Which entity within that company anchors the
+   Study — Program or Regimen — is decided independently by the Clinical
+   Evidence Data Contract's own focal-mapping rules, not by this cascade.
 
 When resolution fails or conflicts — the sponsor does not resolve to any
-tracked company, the resolved company carries no matching asset anchor, or
-the registry's own sponsor changed during the trial — review the official
+tracked company, the resolved company carries no matching asset, program, or
+regimen anchor, or the registry's own sponsor changed during the trial — review the official
 sponsor source together with the tracked companies' Company/Pipeline
 `relationships` (role, territory, `effectiveDate`) before deciding. If the
 anchor is still genuinely unclear after that review, use the existing
@@ -349,12 +355,16 @@ zero-token Node.js network preflights strictly outside the offline CI gate.
 Research preflight is integrated into routine investigation and refresh workflows.
 Checkpoint ownership is strictly partitioned by domain:
 - **Company/Pipeline**: Owns `company.json`.
-- **Clinical Evidence**: Owns `<assetId>/clinical-evidence.json` (asset-scoped) and `<companyId>/company-research-state.json` (company-wide envelope). **Under no circumstances does Clinical Evidence modify `company.json`, `pipeline-programs.json`, or `regimens.json`.**
+- **Clinical Evidence**: Owns `<assetId>/clinical-evidence.json` (asset-scoped), `<regimenId>/clinical-evidence.json` (Regimen-native, ADR-0075 follow-up), and `<companyId>/company-research-state.json` (company-wide envelope). **Under no circumstances does Clinical Evidence modify `company.json`, `pipeline-programs.json`, or `regimens.json`.**
 
 ```text
 # 1. Routine Preflight Inspection (read-only inspection across all 5 probes)
 # Asset-scoped Clinical Evidence run (target: <assetId>/clinical-evidence.json):
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId>
+
+# Regimen-scoped Clinical Evidence run (ADR-0075 follow-up; target: <regimenId>/clinical-evidence.json;
+# mutually exclusive with --asset):
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --regimen <regimenId>
 
 # Company-scoped Clinical Evidence run (target: <companyId>/company-research-state.json):
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --ce
@@ -371,6 +381,14 @@ node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --
 # [DELTA_DETECTED] -> Protocol amended, new trial, erratum/retraction, or new publication:
 # Perform canonical updates & conclusion-blind audit, then advance checkpoint:
 node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --asset <assetId> --advance --ack-deltas
+
+# --- Regimen-scoped lifecycle (ADR-0075 follow-up; target: <companyId>/<regimenId>/clinical-evidence.json) ---
+# Identical semantics to the asset-scoped lifecycle above, just keyed by --regimen instead of --asset.
+# Bootstrap and advance are both blocked with REGIMEN_CANONICAL_TARGET_MISSING until the regimen-native
+# clinical-evidence.json exists on disk - this tool never creates one on its own.
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --regimen <regimenId> --bootstrap
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --regimen <regimenId> --advance
+node --use-system-ca scripts/research-preflight.mjs all --company <companyId> --regimen <regimenId> --advance --ack-deltas
 
 # --- Company-wide lifecycle (target: <companyId>/company-research-state.json) ---
 # Company-wide CE initial baseline:

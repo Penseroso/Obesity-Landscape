@@ -121,15 +121,29 @@ authoritative; generated output must not be edited by hand.
 ## Entity And Field Rules
 
 **Study** is one identifiable clinical protocol or registry study. It requires a
-stable study ID, `companyId`, `assetId`, exactly one of `programId` or `regimenId`,
-official title, registry identifier, phase, `registryStatus`, study design, population,
+stable study ID, `companyId`, exactly one of `programId` or `regimenId`, official
+title, registry identifier, phase, `registryStatus`, study design, population,
 optional duration/follow-up/safety summary/safety incidence fields, and verification
 metadata. NCT IDs must match `NCT########`.
 
-When anchoring to `regimenId`:
-- If the referenced Regimen has exactly one internal component belonging to `companyId`, `Study.assetId` must match that single component's `assetId`.
-- If the referenced Regimen has two or more internal components belonging to `companyId`, the Regimen must explicitly define `focalAssetId` (backed by official primary evidence), and `Study.assetId` must match `regimen.focalAssetId`.
-- If a multi-internal Regimen lacks primary evidence establishing a canonical focal asset, `focalAssetId` is omitted, and Clinical Evidence storage is deferred (`DEFERRED_SCHEMA_CASE`). Authors must never arbitrarily guess or infer a focal asset from component order or dosage.
+`assetId` is required when anchoring to `programId` (it must match that Program's
+own `assetId`) and **absent** when anchoring to `regimenId` under Regimen-native
+anchoring (ADR-0075 follow-up) — storage/registry identity for a Regimen-anchored
+Study is derived directly from the regimen itself, at
+`<companyId>/<regimenId>/clinical-evidence.json`, the same directory convention an
+asset leaf uses, keyed by `regimenId` instead. No internal-component count, and no
+`focalAssetId`, decides anything for a Regimen-native Study.
+
+**Legacy asset-proxy anchoring** (ADR-0075, retained only for Studies not yet
+migrated to a regimen-native leaf): a `regimenId`-anchored Study may instead still
+carry `assetId`, in which case it lives in an ordinary asset leaf and the old rule
+applies — if the referenced Regimen has exactly one internal component belonging to
+`companyId`, `Study.assetId` must match that component's own `assetId`; if it has two
+or more, the Regimen must define `focalAssetId` (backed by official primary
+evidence) and `Study.assetId` must match it, or Clinical Evidence storage is
+deferred (`DEFERRED_SCHEMA_CASE`) rather than guessed. This path is scheduled for
+removal once migration to regimen-native leaves completes — do not author new
+Studies against it.
 
 `registryStatus` identifies the **single reference registry** used for tracking
 and UI. Its `registry` + `registryId` must match one `registryIdentifiers` entry.
@@ -517,8 +531,9 @@ Clinical Evidence reuses existing identity anchors where applicable:
 - `programId`
 - `regimenId`
 
-The company and asset referenced by a source file must exist in the existing
-Company/Pipeline source data. Exactly one focal mapping is required. A
+The company and asset (or, for a Regimen-native source file, the company and
+regimen — ADR-0075 follow-up) referenced by a source file must exist in the
+existing Company/Pipeline source data. Exactly one focal mapping is required. A
 `programId` must belong to the same company and asset; a `regimenId` must belong
 to the same company. Program-specific selectors use only explicit `programId`;
 they never infer a connection from asset, indication, acronym/title, comparator
@@ -531,8 +546,10 @@ analysis group from that same study.
 
 A `linkedAsset` is the one reference that may cross companies: an internally
 resolvable comparator carries the other company's `companyId` + `assetId`. This is a
-reference only — it never moves storage ownership, which stays with the single
-`companyId`/`assetId` anchor of the Study and its source file.
+reference only — it never moves storage ownership, which stays with the Study's
+own source file: the single `companyId`/`assetId` anchor for a Program-anchored
+Study, or the single `companyId`/`regimenId` anchor for a Regimen-native one
+(ADR-0075 follow-up).
 
 Existing company-local identity rules remain in force. This module does not
 require cross-company entity resolution and does not redefine company, asset,

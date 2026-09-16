@@ -39,6 +39,25 @@ export type ClinicalEvidenceAssetSource = {
 };
 
 /**
+ * Operating source shape for per-regimen clinical-evidence.json files
+ * (Regimen-native anchoring; ADR-0075 follow-up). Mirrors
+ * `ClinicalEvidenceAssetSource` exactly except its storage key is `regimenId`,
+ * not `assetId` — a Regimen-anchored Study carries no `assetId` at all (see
+ * `ClinicalStudyRecord`), so it cannot share the asset-keyed envelope.
+ */
+export type ClinicalEvidenceRegimenSource = {
+  clinicalEvidenceSchemaVersion: string;
+  companyId: string;
+  regimenId: string;
+  researchState?: ResearchStateMetadata;
+  studies: ClinicalStudyRecord[];
+  arms: ClinicalArmRecord[];
+  analysisGroups: ClinicalAnalysisGroupRecord[];
+  endpoints: ClinicalEndpointRecord[];
+  outcomes: ClinicalOutcomeRecord[];
+};
+
+/**
  * Operating source envelope for company-level Clinical Evidence preflight state
  * (<companyId>/company-research-state.json).
  */
@@ -129,12 +148,9 @@ export type ClinicalPopulationProfile = {
   regionRestriction?: string;
 };
 
-export type ClinicalStudyRecord = {
+type ClinicalStudyRecordBase = {
   id: string;
   companyId: string;
-  assetId: string;
-  programId?: string;
-  regimenId?: string;
   officialTitle: string;
   acronym?: string;
   /**
@@ -160,6 +176,41 @@ export type ClinicalStudyRecord = {
   safetySummary?: string;
   metadata: RecordMetadata;
 };
+
+/**
+ * Program-anchored Study: its focal Company/Pipeline mapping is `programId`,
+ * and storage/registry identity is derived from that Program's own `assetId`.
+ */
+export type ClinicalStudyProgramRecord = ClinicalStudyRecordBase & {
+  assetId: string;
+  programId: string;
+  regimenId?: undefined;
+};
+
+/**
+ * Regimen-anchored Study (Regimen-native anchoring; ADR-0075 follow-up): its
+ * focal Company/Pipeline mapping is `regimenId`, and storage/registry identity
+ * is derived directly from the Regimen itself — it carries no `assetId` at
+ * all. This is what dissolves the old single-internal-component-asset
+ * ambiguity (`RegimenRecord.focalAssetId`) rather than resolving it by fiat.
+ */
+export type ClinicalStudyRegimenRecord = ClinicalStudyRecordBase & {
+  assetId?: undefined;
+  programId?: undefined;
+  regimenId: string;
+};
+
+/**
+ * A Study's focal entity is exactly `programId` XOR `regimenId` — this union
+ * types that invariant directly rather than leaving it to runtime validation
+ * only, so every consumer that already branches on `programId`/`regimenId`
+ * (which is all of them) gets correct type narrowing for free. Not a new
+ * abstraction: it tightens the existing discriminant fields, it does not add
+ * one.
+ */
+export type ClinicalStudyRecord =
+  | ClinicalStudyProgramRecord
+  | ClinicalStudyRegimenRecord;
 
 export type ClinicalArmRole =
   | "experimental"
@@ -318,6 +369,27 @@ export type ClinicalAssetStudyIndexEntry = {
   linkedStudyIds: string[];
 };
 
+/**
+ * Regimen-native sibling of `ClinicalAssetStudyIndexEntry` (Regimen-native
+ * anchoring; ADR-0075 follow-up). A Regimen has no single component asset to
+ * carry reciprocal `linkedStudyIds` membership on its own behalf — that
+ * reciprocity lives on each internal component's own
+ * `ClinicalAssetStudyIndexEntry.linkedStudyIds` instead (see
+ * `buildClinicalAssetStudyIndex`) — so this entry carries only the Regimen's
+ * own canonical `focalStudyIds`.
+ */
+export type ClinicalRegimenStudyIndexEntry = {
+  companyId: string;
+  regimenId: string;
+  /**
+   * Studies whose canonical anchor is this regimen. Order is meaningful: each
+   * id is ordered by its position in the canonical `studies` array, i.e.
+   * curated source order — same convention as
+   * `ClinicalAssetStudyIndexEntry.focalStudyIds`.
+   */
+  focalStudyIds: string[];
+};
+
 export type ClinicalAssetStudyIndex = {
   /**
    * This projection's own format version — independent of
@@ -327,4 +399,6 @@ export type ClinicalAssetStudyIndex = {
    */
   projectionSchemaVersion: string;
   assets: ClinicalAssetStudyIndexEntry[];
+  /** Regimen-native sibling of `assets` (ADR-0075 follow-up). */
+  regimens: ClinicalRegimenStudyIndexEntry[];
 };

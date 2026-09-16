@@ -15,6 +15,7 @@ import {
   CURRENT_FINGERPRINT_VERSION,
   CURRENT_WORKFLOW_REVISION,
   KNOWN_SEC_CIKS,
+  buildRegimenConjunctiveIntrQuery,
   canAdvanceCheckpoint,
   canonicalizeJson,
   computeNoticeFingerprint,
@@ -3081,4 +3082,212 @@ test("Regression 37: >=2-internal Regimen + focalAssetId not in internal compone
     () => validateRegimen(regimen, "test", registries, dataset),
     /is not an internal component asset of regimen/,
   );
+});
+
+test("Regression 38: buildRegimenConjunctiveIntrQuery requires 2+ non-empty term groups and never pools components into one flat OR set", () => {
+  assert.strictEqual(buildRegimenConjunctiveIntrQuery([]), null, "no groups -> no conjunction");
+  assert.strictEqual(buildRegimenConjunctiveIntrQuery([["petrelintide"]]), null, "one group -> not a conjunction");
+  assert.strictEqual(
+    buildRegimenConjunctiveIntrQuery([["petrelintide"], []]),
+    null,
+    "an empty second group leaves only one usable group -> not a conjunction",
+  );
+
+  const query = buildRegimenConjunctiveIntrQuery([
+    ["petrelintide", "Petrelintide", "ZP8396"],
+    ["enicepatide", "Enicepatide", "RO7795068", "CT-388"],
+  ]);
+  assert.ok(query, "2 non-empty groups must produce a query");
+  assert.match(query, / AND /, "groups must be joined by AND, never pooled into one OR set");
+  assert.match(
+    query,
+    /^\(AREA\[InterventionName\]"petrelintide" OR AREA\[InterventionName\]"Petrelintide" OR AREA\[InterventionName\]"ZP8396"\) AND \(AREA\[InterventionName\]"enicepatide" OR AREA\[InterventionName\]"Enicepatide" OR AREA\[InterventionName\]"RO7795068" OR AREA\[InterventionName\]"CT-388"\)$/,
+    "each group's own synonyms are OR'd and parenthesised; groups are ANDed",
+  );
+
+  const singleTermGroups = buildRegimenConjunctiveIntrQuery([["petrelintide"], ["enicepatide"]]);
+  assert.strictEqual(
+    singleTermGroups,
+    'AREA[InterventionName]"petrelintide" AND AREA[InterventionName]"enicepatide"',
+    "a single-term group is not parenthesised (no OR to group)",
+  );
+});
+
+test("Regression 39: targetRegimenId context (Roche ZYNERGY-shaped, 2 internal components) resolves the regimen-native leaf path, isolates conjunctive term groups per component, and never pools them into assetAliases", async () => {
+  const context = await loadCompanyContext("roche", null, {
+    targetRegimenId: "roche-petrelintide-enicepatide-obesity",
+  });
+
+  assert.strictEqual(context.domain, "clinical-evidence");
+  assert.strictEqual(context.targetAssetId, null);
+  assert.strictEqual(context.targetRegimenId, "roche-petrelintide-enicepatide-obesity");
+  assert.match(
+    context.targetFile.replace(/\\/g, "/"),
+    /roche\/roche-petrelintide-enicepatide-obesity\/clinical-evidence\.json$/,
+    "target leaf path uses the same <companyId>/<key>/ convention as an asset leaf, keyed by regimenId",
+  );
+  assert.strictEqual(
+    context.targetFileExists,
+    false,
+    "Roche's ZYNERGY regimen has not migrated to a regimen-native leaf yet - this must reflect that, not invent one",
+  );
+
+  // Both components are Roche's own internal Programs -> 2 conjunctive
+  // groups, one per component's own identity, never merged into one group.
+  assert.strictEqual(context.regimenInternalComponentTermGroups.length, 2);
+  const groupSets = context.regimenInternalComponentTermGroups.map((g) => new Set(g));
+  const hasPetrelintideGroup = groupSets.some((g) => g.has("petrelintide") && g.has("ZP8396"));
+  const hasEnicepatideGroup = groupSets.some((g) => g.has("enicepatide") && g.has("RO7795068") && g.has("CT-388"));
+  assert.ok(hasPetrelintideGroup, "one group must be petrelintide's own identity");
+  assert.ok(hasEnicepatideGroup, "the other group must be enicepatide's own identity");
+  assert.ok(
+    !groupSets.some((g) => g.has("petrelintide") && g.has("enicepatide")),
+    "the two components' identities must never be merged into a single group",
+  );
+
+  // The 2+-internal-component case must never leak either component's bare
+  // name into the ordinary additive assetAliases pool - only the regimen's
+  // own (weak, safe) name belongs there.
+  assert.ok(
+    !context.assetAliases.includes("petrelintide") && !context.assetAliases.includes("enicepatide"),
+    "internal component names must never become flat additive aliases for a 2+-internal regimen - that is exactly the contamination the conjunctive query exists to avoid",
+  );
+});
+
+test("Regression 40: targetAssetId and targetRegimenId are mutually exclusive scoping targets", async () => {
+  await assert.rejects(
+    () =>
+      loadCompanyContext("roche", "petrelintide", {
+        targetRegimenId: "roche-petrelintide-enicepatide-obesity",
+      }),
+    /mutually exclusive/,
+  );
+});
+
+test("Regression 41: company-pipeline domain rejects targetRegimenId exactly as it already rejects targetAssetId", async () => {
+  await assert.rejects(
+    () =>
+      loadCompanyContext("roche", null, {
+        domain: "company-pipeline",
+        targetRegimenId: "roche-petrelintide-enicepatide-obesity",
+      }),
+    /company-wide and does not support/,
+  );
+});
+
+test("Regression 42: regimen bootstrap without a canonical CE file is blocked with REGIMEN_CANONICAL_TARGET_MISSING, mirroring ASSET_CANONICAL_TARGET_MISSING", async () => {
+  const context = await loadCompanyContext("roche", null, {
+    targetRegimenId: "roche-petrelintide-enicepatide-obesity",
+  });
+  assert.strictEqual(context.targetFileExists, false);
+
+  const result = canAdvanceCheckpoint(context, null, null, null, null, null, { bootstrap: true });
+  assert.strictEqual(result.allowed, false);
+  assert.match(result.reason, /REGIMEN_CANONICAL_TARGET_MISSING/);
+});
+
+test("Regression 43: probeRegistryDiscovery issues the conjunctive query.term request for a 2+-internal regimen and records a matching candidate distinctly from the ordinary per-alias path", async () => {
+  const context = {
+    targetAssetId: null,
+    targetRegimenId: "roche-petrelintide-enicepatide-obesity",
+    companyName: "Roche",
+    knownNCTs: [],
+    assetAliases: ["Petrelintide plus enicepatide for obesity or overweight"],
+    partnerAssetAliases: [],
+    regimenInternalComponentTermGroups: [
+      ["petrelintide", "Petrelintide", "ZP8396"],
+      ["enicepatide", "Enicepatide", "RO7795068", "CT-388"],
+    ],
+    foreignStudyDispositions: {},
+    focalIdentityKeys: new Set(),
+  };
+
+  const requestedUrls = [];
+  const mockFetch = async (url) => {
+    requestedUrls.push(url);
+    if (url.includes("query.term=")) {
+      return {
+        ok: true,
+        json: async () => ({
+          studies: [
+            {
+              protocolSection: {
+                identificationModule: { nctId: "NCT07589686", briefTitle: "ZYNERGY" },
+                statusModule: { overallStatus: "NOT_YET_RECRUITING", lastUpdatePostDateStruct: { date: "2026-07-07" } },
+              },
+            },
+          ],
+        }),
+      };
+    }
+    return { ok: true, json: async () => ({ studies: [] }) };
+  };
+
+  const result = await probeRegistryDiscovery(context, mockFetch);
+
+  const termUrl = requestedUrls.find((u) => u.includes("query.term="));
+  assert.ok(termUrl, "a query.term request must be issued for the conjunctive query");
+  assert.ok(
+    decodeURIComponent(termUrl).includes("AREA[InterventionName]") &&
+      decodeURIComponent(termUrl).includes(" AND "),
+    "the conjunctive request must use AREA[InterventionName] clauses joined by AND",
+  );
+  // The regimen's own (weak, safe) name legitimately goes through the
+  // ordinary per-alias query.intr path, same as any other additive alias -
+  // what must never happen is either component's bare own name becoming its
+  // own standalone query.intr call, which is exactly the contamination the
+  // conjunctive query exists to avoid.
+  const intrUrls = requestedUrls.filter((u) => u.includes("query.intr="));
+  assert.ok(
+    intrUrls.some((u) => decodeURIComponent(u).includes("Petrelintide plus enicepatide")),
+    "the regimen's own name must still reach the ordinary per-alias path",
+  );
+  assert.ok(
+    !intrUrls.some((u) => /query\.intr=(petrelintide|enicepatide)$/i.test(decodeURIComponent(u))),
+    "neither component's bare own name must ever become its own standalone query.intr call",
+  );
+
+  const found = result.newlyDiscovered.find((r) => r.nctId === "NCT07589686");
+  assert.ok(found, "the conjunctively-discovered NCT must be reported");
+  assert.match(found.matchedOn, /^regimen-conjunctive:/);
+  assert.strictEqual(found.discoveryPath, "focal");
+});
+
+test("Regression 44: parseArgs --regimen flag mirrors --asset (domain inference, mutual exclusivity with --asset, and company-pipeline rejection)", () => {
+  const parsedRegimen = parseArgs([
+    "node", "research-preflight.mjs", "--company", "roche", "--regimen", "roche-petrelintide-enicepatide-obesity",
+  ]);
+  assert.strictEqual(parsedRegimen.regimenId, "roche-petrelintide-enicepatide-obesity");
+  assert.strictEqual(parsedRegimen.assetId, null);
+  assert.strictEqual(parsedRegimen.domain, "clinical-evidence", "a --regimen target infers Clinical Evidence exactly as --asset does");
+
+  const origExit = process.exit;
+  const origError = console.error;
+  let exitCode = null;
+  let errorMsg = "";
+  try {
+    process.exit = (code) => { exitCode = code; throw new Error("EXIT"); };
+    console.error = (msg) => { errorMsg = msg; };
+
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "roche", "--asset", "petrelintide", "--regimen", "roche-petrelintide-enicepatide-obesity"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /mutually exclusive scoping targets/);
+
+    exitCode = null;
+    errorMsg = "";
+    assert.throws(
+      () => parseArgs(["node", "research-preflight.mjs", "--company", "roche", "--pipeline", "--regimen", "roche-petrelintide-enicepatide-obesity"]),
+      /EXIT/,
+    );
+    assert.strictEqual(exitCode, 1);
+    assert.match(errorMsg, /company-wide and does not support '--asset' or '--regimen'/);
+  } finally {
+    process.exit = origExit;
+    console.error = origError;
+  }
 });

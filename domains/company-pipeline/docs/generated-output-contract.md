@@ -51,21 +51,30 @@ in `scripts/data-registry.mjs`, not merely observed:
 - **Company order:** by `id` ascending (`localeCompare`).
 - **Program order:** by `companyId`, then program `id` (`localeCompare`).
 - **Regimen order:** by `companyId`, then regimen `id` (`localeCompare`).
-- **Clinical Evidence order:** studies by `companyId`, `assetId`, then source
-  encounter order; arms, analysis groups, endpoints, and outcomes by `studyId`,
-  then source encounter order (`localeCompare` for the grouping keys).
+- **Clinical Evidence order:** studies by `companyId`, then a focal-kind-aware
+  key — `assetId` for a Program-anchored Study, `regimenId` for a
+  Regimen-native one (ADR-0075 follow-up; a Regimen-native Study carries no
+  `assetId` at all) — then source encounter order; arms, analysis groups,
+  endpoints, and outcomes by `studyId`, then source encounter order
+  (`localeCompare` for the grouping keys).
 - **Source encounter order** is the order records appear in their source file,
-  with files traversed by company folder then asset folder ascending. It is the
-  curated authoring order — dose-ascending arms, placebo last, numbered trial
-  sequences — and is authoritative within each grouping boundary. An `id` sort
+  with files traversed by company folder then leaf folder ascending (an asset
+  leaf or a Regimen-native leaf, ADR-0075 follow-up — the walk is generic over
+  both). It is the curated authoring order — dose-ascending arms, placebo last,
+  numbered trial sequences — and is authoritative within each grouping
+  boundary. An `id` sort
   destroys it and must not be reintroduced.
 - Outcomes group by study only and are **not** endpoint-contiguous. Grouping
   outcomes under an endpoint is a read-model concern that preserves their
   relative source order.
 - **Asset-study projection:** `focalStudyIds` and `linkedStudyIds` are ordered
   by each study's position in the canonical `studies` array. `linkedStudyIds`
-  is derived reciprocal discovery, accumulated by scanning arms; its membership
-  has no authored order of its own and may span several owner assets.
+  is derived reciprocal discovery, accumulated by scanning arms **and**, for a
+  Regimen-native Study (ADR-0075 follow-up), by scanning its regimen's own
+  internal components; its membership has no authored order of its own and may
+  span several owner assets. The projection's sibling `regimens` array
+  (ADR-0075 follow-up) carries only `focalStudyIds`, ordered the same way — a
+  regimen is only ever a focal anchor, never a reciprocal-link target.
 - Sort keys are unique within their array — `companyId`/`assetId`/`studyId`
   group records, and the source encounter ordinal breaks every tie — so
   ordering is total and independent of sort stability.
@@ -84,7 +93,7 @@ output.
 | `pipeline-programs.json` | every `domains/company-pipeline/data/companies/*/pipeline-programs.json` | JSON array of `PipelineProgramRecord` | flat aggregate | UI program board/detail, filtering, reports | yes |
 | `regimens.json` | every `domains/company-pipeline/data/companies/*/regimens.json` | JSON array of `RegimenRecord` | flat aggregate | future regimen views/tooling | yes |
 | `clinical-evidence.json` | every `domains/clinical-evidence/data/clinical-evidence/*/*/clinical-evidence.json` | v3 object with `studies`, `arms`, `analysisGroups`, `endpoints`, and `outcomes` arrays | flat aggregate | Clinical selectors and Study/Asset/Company UI | no; separate Clinical Evidence output |
-| `clinical-evidence-asset-studies.json` | canonical Study and internal Arm links | v2 focal/linked Study IDs per asset | derived projection | asset-wide Clinical selectors | independently versioned |
+| `clinical-evidence-asset-studies.json` | canonical Study and internal Arm links | v2.1 focal/linked Study IDs per asset, plus a Regimen-native sibling index (`regimens`, focal-only, ADR-0075 follow-up) | derived projection | asset-wide and regimen-wide Clinical selectors | independently versioned |
 
 The four aggregate files concatenate corresponding operating records and sort
 them per §2. The asset-study projection is an index, not a canonical record or
